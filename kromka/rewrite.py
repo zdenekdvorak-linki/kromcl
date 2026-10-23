@@ -77,7 +77,8 @@ Souhlas nemáme. Fakta jsou volná a smíš je použít; formulace města nikoli
    Čtenář žádný jiný text nevidí. Píšeš zprávu, ne komentář k cizí zprávě.
 8. Číslo nikdy nepoužívej jako vtip vedle jiného čísla. Dvě různá čísla
    v jedné větě čtenáře zmatou.
-9. Žádné e-maily, telefonní čísla ani čísla účtů.
+9. Žádné e-maily, telefonní čísla ani čísla účtů. Kontakty prostě vynech
+   a neodkazuj na to, že jsou k dohledání někde jinde.
 10. Vybírej, nepřevyprávěj. Vezmi, co má pro čtenáře cenu, zbytek vynech.
    Odstavec má do 80 slov. Historické odbočky a výčty institucí vypusť.
 

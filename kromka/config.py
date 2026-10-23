@@ -102,6 +102,5 @@ MAX_SELHANI = 3
 # --- Atribuce -------------------------------------------------------------
 DISCLAIMER = (
     "Zpravodajství o Kroměříži pro mladé duchem i jazykem. Co se ve městě "
-    "děje, si přečteme, ověříme a převyprávíme po svém. Oficiální verzi "
-    "vydává radnice — odkaz máš u každé zprávy."
+    "děje, si přečteme, ověříme a převyprávíme po svém."
 )

@@ -5,7 +5,7 @@ import sys
 import traceback
 from datetime import datetime, timezone
 
-from . import config, net, obrazky, rewrite, sources, store
+from . import config, htmlutil, net, obrazky, rewrite, sources, store
 from .errors import NeresolvovanyClanek
 
 
@@ -65,6 +65,11 @@ def zpracuj(polozka, verbose=True):
 
     clanek = dict(polozka)
     clanek.update(data)
+    # Adresa článku se odvozuje z NAŠEHO titulku, ne z toho, odkud informace
+    # přišla. Jinak by adresy obou webů seděly jedna ku jedné.
+    clanek["zdroj_slug"] = polozka["slug"]
+    clanek["slug"] = _volny_slug(htmlutil.slugify(data["headline"])[:80],
+                                 clanek["id"])
     vystup = " ".join([data["headline"]]
                       + [o["text"] for o in data["tldr"]] + data["body"])
     clanek["zdroj_snimek"] = {
@@ -106,6 +111,19 @@ def davka(limit, nejstarsi=False, jen_novejsi=False):
             traceback.print_exc(limit=1, file=sys.stderr)
             _zapis_selhani(polozka["id"], str(exc))
     return hotove
+
+
+def _volny_slug(zaklad, vlastni_id):
+    """Zajistí, že dva články se stejným nadpisem nepřepíšou jeden druhého."""
+    zaklad = zaklad or "zprava"
+    obsazene = {c["slug"]: c["id"] for c in store.vsechny()}
+    if obsazene.get(zaklad) in (None, vlastni_id):
+        return zaklad
+    for n in range(2, 50):
+        kandidat = "{0}-{1}".format(zaklad, n)
+        if obsazene.get(kandidat) in (None, vlastni_id):
+            return kandidat
+    return "{0}-{1}".format(zaklad, abs(hash(vlastni_id)) % 1000)
 
 
 def _stahni_obrazek(polozka):
