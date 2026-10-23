@@ -122,6 +122,11 @@ TVARY = {
         _oci(24, 40, 38, 3),
         '<path d="M24 44q8 6 16 0"/>',
     ],
+    "plocha": [  # čtverečkovaná plocha, prostřední políčko kouká; karta m² v článku
+        '<rect x="8" y="14" width="48" height="40"/>',
+        '<path d="M8 27h48M8 41h48M24 14v40M40 14v40"/>',
+        _oci(28, 36, 34, 2.4),
+    ],
     # --- Typy akcí z otevřených dat města -------------------------------
     "kino": [  # klapka, spodní deska je obličej
         '<path d="M8 26h48v26H8z"/>',

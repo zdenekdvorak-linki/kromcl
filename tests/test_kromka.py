@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from kromka import (akce, config, htmlutil, kino_dk, piktogramy,  # noqa: E402
+from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
                     pipeline, render, rewrite, styl)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -570,6 +570,62 @@ class PrepisBezSite(unittest.TestCase):
             self.assertEqual(odpovedi, [])
         finally:
             rewrite._zeptej_se = puvodni
+
+
+class Ilustrace(unittest.TestCase):
+    def hodnoty(self, *odstavce):
+        return ["\u00a0".join(filter(None, k[1:3])) for k in ilustrace.karty(list(odstavce))]
+
+    def test_penize_ve_vsech_zapisech(self):
+        self.assertEqual(self.hodnoty("Zaplatí cca 390 tisíc korun."), ["390\u00a0tis.\u00a0Kč"])
+        self.assertEqual(self.hodnoty("Stojí 1,2 milionu korun."), ["1,2\u00a0mil.\u00a0Kč"])
+        self.assertEqual(self.hodnoty("Vyšlo to na 53 245 korun."), ["53\u00a0245\u00a0Kč"])
+        self.assertEqual(self.hodnoty("Vyšlo to na 53.245 korun."), ["53\u00a0245\u00a0Kč"])
+        self.assertEqual(self.hodnoty("Dá 2 miliardy korun."), ["2\u00a0mld.\u00a0Kč"])
+        self.assertEqual(self.hodnoty("Vstup za 80 Kč."), ["80\u00a0Kč"])
+
+    def test_karty_v_poradi_textu_a_kazdy_druh_jednou(self):
+        karty = ilustrace.karty(["Stavět se začne v listopadu, plocha 85 m², cena 390 tisíc korun.",
+                                 "Pak v prosinci a dalších 10 m²."])
+        self.assertEqual([k[0] for k in karty], ["akce", "plocha", "penize"])
+        self.assertEqual(karty[0][1], "listopad")
+
+    def test_mrizka_jen_do_sta_metru(self):
+        self.assertEqual(ilustrace.karty(["Plocha 85 m²."])[0][4], 85)
+        self.assertIsNone(ilustrace.karty(["Plocha 250 m²."])[0][4])
+        self.assertIsNone(ilustrace.karty(["Plocha 85,5 m²."])[0][4])
+
+    def test_jedina_karta_jde_na_celou_sirku(self):
+        self.assertIn("ilu-jedna", ilustrace.karty_html(["Stojí 390 tisíc korun."]))
+        self.assertNotIn("ilu-jedna", ilustrace.karty_html(["Stojí 390 tisíc korun, hotovo v září."]))
+        self.assertEqual(ilustrace.karty_html(["Bez jediného čísla."]), "")
+
+    def test_kdy_bere_drivejsi_z_data_a_mesice(self):
+        self.assertEqual(self.hodnoty("Od 19. října jedou pasti, v listopadu konec."), ["19. října"])
+        self.assertEqual(self.hodnoty("V listopadu začnou, 2. prosince konec."), ["listopad"])
+        self.assertEqual(self.hodnoty("Začnou v listopadu, 2. prosince konec."), ["listopad"])
+
+    def test_ikony_se_v_clanku_neopakuji(self):
+        self.assertEqual(ilustrace.ikony(["Nové hřiště.", "Další hřiště.", "Bez obrázku tady."]),
+                         ["sport", None, None])
+
+    def test_parkovani_neni_park(self):
+        self.assertEqual(ilustrace.ikony(["Ubude parkování."]), ["doprava"])
+        self.assertEqual(ilustrace.ikony(["Vysadí stromy v parku."]), ["priroda"])
+
+    def test_stavba_se_nechyta_na_podobnych_slovech(self):
+        self.assertEqual(ilustrace.ikony(["Je to postava z příběhu."]), [None])
+        self.assertEqual(ilustrace.ikony(["Referent dopravy Pavel."]), ["doprava"])
+        self.assertEqual(ilustrace.ikony(["Opravy vozovek začnou."]), ["stavba"])
+        self.assertEqual(ilustrace.ikony(["Ulice Dolnozahradská."]), [None])
+
+    def test_clanek_ma_karty_po_prvnim_odstavci(self):
+        clanek = {"headline": "T", "slug": "t", "tags": ["sport"], "tldr": [],
+                  "body": ["Hřiště bude.", "Stojí 390 tisíc korun, staví se v listopadu."]}
+        stranka = render._clanek(clanek, [])
+        self.assertLess(stranka.index("Hřiště bude."), stranka.index("ilu-cisla"))
+        self.assertLess(stranka.index("ilu-cisla"), stranka.index("Stojí 390"))
+        self.assertIn('class="s-ikonou"', stranka)
 
 
 if __name__ == "__main__":

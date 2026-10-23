@@ -15,7 +15,7 @@ import re
 import shutil
 from datetime import date, datetime, timedelta, timezone
 
-from . import akce, config, htmlutil, piktogramy
+from . import akce, config, htmlutil, ilustrace, piktogramy
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
 
@@ -165,6 +165,42 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .akce-cas { font-size: 17px; }
   .akce-znak { width: 30px; }
   .akce-telo h3 { font-size: 17px; }
+}
+/* Obrázky v textu článku (kromka/ilustrace.py). Ikona visí na desktopu na
+   levém okraji vedle 720px sloupce; pod 1000 px na okraj nevyjde, tak ji
+   text obtéká zprava. Karta peněz nese akcent, aby blok neměl tři stejné. */
+.ilu-cisla { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin: 28px 0; }
+.ilu-cislo { border: 3px solid var(--ram); background: var(--karta); box-shadow: 6px 6px 0 var(--ram); padding: 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; container-type: inline-size; }
+.ilu-text { display: flex; flex-direction: column; gap: 4px; }
+.ilu-jedna { grid-template-columns: 1fr; }
+.ilu-jedna .ilu-cislo { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 18px; }
+.ilu-jedna .ilu-cislo b { font-size: 30px; }
+.ilu-jedna .ilu-cislo .piktogram { margin-bottom: 0; }
+.ilu-cislo .piktogram { width: 60px; height: 60px; margin-bottom: 6px; flex: none; }
+/* Velikost čísla podle šířky karty (cqi): třetina 720px sloupce i polovina
+   telefonu. Prohlížeč bez container queries dostane pevných 22 px. */
+.ilu-cislo b { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 22px; font-size: clamp(18px, 15cqi, 30px); line-height: 1.05; }
+.ilu-cislo small { font-size: .6em; }
+.ilu-popis { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--slabe); }
+.ilu-penize { background: var(--akcent); color: #000; }
+.ilu-penize .ilu-popis { color: #000; opacity: .7; }
+.ilu-mrizka { display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 2px; width: 100%; flex-basis: 100%; margin-top: 8px; }
+.ilu-mrizka i { aspect-ratio: 1; border: 1px solid var(--slabe); }
+.ilu-mrizka i.plne { background: var(--akcent); border-color: var(--akcent); }
+.ilu-ikona { float: right; width: 64px; height: 64px; margin: 4px 0 6px 14px; display: grid; place-items: center; background: var(--akcent); color: #000; border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); transform: rotate(4deg); }
+.ilu-ikona .piktogram { width: 44px; height: 44px; }
+.s-ikonou:nth-of-type(even) .ilu-ikona { transform: rotate(-4deg); }
+@media (min-width: 1000px) {
+  .s-ikonou { position: relative; }
+  .ilu-ikona { float: none; position: absolute; left: -108px; top: 0; width: 80px; height: 80px; margin: 0; }
+  .ilu-ikona .piktogram { width: 54px; height: 54px; }
+}
+@media (max-width: 640px) {
+  .ilu-cisla { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ilu-cisla.ilu-jedna { grid-template-columns: 1fr; }
+  .ilu-s-mrizkou { grid-column: 1 / -1; order: 3; }
+  .ilu-cislo { box-shadow: 4px 4px 0 var(--ram); padding: 12px; }
+  .ilu-cislo .piktogram { width: 46px; height: 46px; }
 }
 """.replace("ACCENT", config.ACCENT)
 
@@ -368,8 +404,14 @@ def _clanek(clanek, souvisejici):
     if polozky:
         casti.append('<div class="tldr"><h2>TL;DR</h2><ul>{0}</ul></div>'.format(polozky))
 
-    for odstavec in clanek.get("body", []):
-        casti.append("<p>{0}</p>".format(_e(odstavec)))
+    # Obrázky v textu skládá ilustrace.py z hotového přepisu; proč ne nové
+    # pole od modelu, stojí v hlavičce toho modulu.
+    odstavce = clanek.get("body", [])
+    for i, (odstavec, ikona) in enumerate(zip(odstavce, ilustrace.ikony(odstavce))):
+        casti.append("<p{0}>{1}{2}</p>".format(
+            ' class="s-ikonou"' if ikona else "", ilustrace.ikona_html(ikona), _e(odstavec)))
+        if i == 0:
+            casti.append(ilustrace.karty_html(odstavce))
 
     telo = '<article class="clanek">{0}</article>'.format("".join(casti))
 

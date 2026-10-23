@@ -25,6 +25,9 @@
 - **Popisek hlavní fotky je v atributu `alt`**, ne jako text pod obrázkem.
 - **Pojistka na čísla musí znát číslovky slovy.** Při rozšiřování `_CISLOVKY`
   přidej i test.
+- **Slovník ikon v `ilustrace._IKONY` chytá i podobná slova.** „postava" není stavba,
+  „dopravy" obsahuje „opravy". Při rozšiřování přidej test na falešnou shodu
+  (`test_stavba_se_nechyta_na_podobnych_slovech`).
 - **`data/articles/*.json` se nepřepisují.** Když se mění prompt, starý článek
   zůstává takový, jaký je; přegenerování je vědomý krok (smazat JSON).
 

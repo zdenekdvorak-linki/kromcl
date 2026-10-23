@@ -193,6 +193,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/pipeline.py:101` | `_zapis_selhani` — počítadlo pádů a vzdání se |
 | `kromka/render.py:204` | `vykresli` — celý statický web |
 | `kromka/render.py:17` | `CSS` — vizuál, tmavý režim, mobil |
+| `kromka/ilustrace.py` | obrázky v těle článku: `karty` (peníze, plocha, kdy) a `ikony` u odstavců podle slovníku `_IKONY` |
 | `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
@@ -282,6 +283,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Výměna hlídá čerstvost archivu | `backfill` bere od nejstaršího, takže čistý běh z prázdné evidence vyrobil archiv končící 2025-03-21, zatímco živý sahal po dnešek. Z počtu článků to vidět není a na zpravodajském webu je to horší než chybějící článek |
 | 2026-10-23 | Identifikátor článku je otisk slugu, ne slug sám | Soubory v repu se jmenovaly `mesto-kromeriz__<slug oznámení>.json`, takže veřejné `data/` prozrazovalo adresu zdroje. Otisk je deterministický, evidence zpracovaných funguje dál |
 | 2026-10-23 | `bin/vymena_archivu.py` | Výměna archivu má jednu prověřenou cestu místo ručních kroků; bez `--potvrdit` jen hlásí, co by udělala |
+| 2026-10-23 | **Obrázky v těle článku**: karty s čísly pod prvním odstavcem a ikona u odstavce, obojí z piktogramů webu | Holý text pod TL;DR působil chudě. Skládá se z hotového přepisu regexem a slovníkem, takže platí pro celý archiv a nepřidává fakt. Pravidlo „aspoň dvě karty" dávalo karty 7 článkům z 64; s jednou kartou a daty 48 |
 | 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
 
 ## Výměna archivu
@@ -328,3 +330,7 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Konverze fotek do WebP | Vyžaduje Pillow, tedy závislost navíc; řeší se až kdyby vadila velikost |
 | Další zdroje (kultura, sport, policie) | Nejdřív jeden zdroj živě; registr v `sources/__init__.py` je na to připravený |
 | Komentáře a reakce | Moderace lokálního webu je práce navíc, kterou zatím nikdo nechce |
+| Typografické ozdoby textu: iniciála, zvýrazněná čísla, předěly, vytažená hláška, číslované odstavce | Zamítnuto v mockupu 23. 10. 2026. „Chudé" znamenalo chybějící obraz, ne typografii |
+| Text jako karty, chat s botem, čtverečkovaný panel, šikmá páska, slovníček slangu s bublinami | Zamítnuto v mockupu 23. 10. 2026 ze stejného důvodu |
+| Časová osa (vydání → měsíc z textu) | Bez nového pole má jen dva body, třetí by byl vymyšlený (princip 2); ukáže se jen u článků s měsícem |
+| Scéna se štítky článku jako postavami | Opakuje hero piktogram o kus výš |
