@@ -205,6 +205,25 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | `ROZLISOVAT_CITLIVOST=False`, klasifikace se nevolá | Rozhodnutí Zdeňka: web je celý v nadsázce, město o negativních událostech píše samo. Klasifikátor byl navíc přecitlivělý (odchyt holubů, EIA cihelny). Ušetří to i jedno volání API na článek |
 | 2026-10-23 | Složka přejmenována `Weby/Kromka` → `Weby/Kromcl` | Sjednocení se značkou a doménou |
 | 2026-10-23 | Backfill: 54 článků v archivu, 32/32 bez jediné chyby | První velký běh; žádný článek nespadl na pojistkách ani nezůstal bez odkazu |
+| 2026-10-23 | Pojistka na kontaktní údaje ve výstupu | Model přepsal do textu e-maily úředníků a dostaly se na web |
+| 2026-10-23 | Fotky do WebP, rozměry do `<img>`, hero eager | 11,6 → 7,3 MB; bez rozměrů skáče layout, lazy u hero brzdí LCP |
+| 2026-10-23 | SEO vrstva: kanonická adresa, OG, JSON-LD, témata, drobečky, související | Articles byly slepé uličky bez prolinkování a bez strukturovaných dat |
+| 2026-10-23 | Render maže generované složky před zápisem | Po převodu na WebP zůstaly v `site/` staré JPEGy, na které nic neodkazuje |
+| 2026-10-23 | Adresy témat přes `slugify` | `/tema/školství.html` je křehká URL |
+| 2026-10-23 | `jen_novejsi` pro `run` a `all` | Hodinový cron s limitem 10 by projel 649 článků archivu sám za tři dny |
+| 2026-10-23 | Nasazeno na GitHub Pages, doména `kromcl.cz` | Actions-based Pages si doménu z artefaktu nevezme, musí se nastavit v repu |
+
+## Nasazení
+
+Repozitář `zdenekdvorak-linki/kromcl`, veřejný. Pages se zdrojem GitHub Actions,
+vlastní doména `kromcl.cz`. Secret `ANTHROPIC_API_KEY` a proměnná
+`KROMKA_SITE_URL` jsou nastavené v repu.
+
+Doména běží na Forpsi a potřebuje čtyři A záznamy na `@`:
+`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`, plus `www` jako CNAME na
+`zdenekdvorak-linki.github.io`. Dokud nejsou, `github.io` se přesměrovává na
+`kromcl.cz` a web není dostupný. Po propsání DNS se v Settings → Pages zapne
+Enforce HTTPS (certifikát se vydá až po ověření domény).
 
 ## Parking lot
 
