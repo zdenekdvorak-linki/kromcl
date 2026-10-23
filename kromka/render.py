@@ -3,13 +3,18 @@
 
 Vlastní vizuál, ne kopie předlohy: tučné černé linky a tvrdé stíny, ale světlé
 pozadí, jedna signální zelená na akcenty a podpora tmavého režimu.
+
+SEO vrstva je tu schválně celá na jednom místě: kanonická adresa, Open Graph,
+Twitter karta, JSON-LD a drobečková navigace se skládají v `_stranka`, aby se
+na žádném typu stránky nedaly zapomenout.
 """
 
 import html
+import json
 import shutil
 from datetime import datetime, timezone
 
-from . import config
+from . import config, htmlutil
 
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
@@ -19,7 +24,6 @@ CSS = """
   --papir: #f5f3ee; --inkoust: #0c0c0c; --akcent: ACCENT;
   --slabe: #6b6b6b; --ram: #0c0c0c; --karta: #ffffff;
 }
-:root:not([data-theme="light"]) { }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --papir: #121212; --inkoust: #f2f2f2; --slabe: #9a9a9a;
@@ -35,49 +39,66 @@ body {
   margin: 0; background: var(--papir); color: var(--inkoust);
   font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
 }
-h1, h2, h3, .logo { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 800; line-height: 1.1; }
+h1, h2, h3, .logo { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 800; line-height: 1.12; }
 a { color: inherit; }
+img { max-width: 100%; height: auto; }
 .obal { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.preskocit { position: absolute; left: -9999px; }
+.preskocit:focus { left: 8px; top: 8px; background: var(--akcent); color: #000; padding: 8px 12px; z-index: 50; }
 header.hlava { border-bottom: 4px solid var(--ram); background: var(--karta); position: sticky; top: 0; z-index: 10; }
 .hlava .obal { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
-.logo { font-size: clamp(28px, 7vw, 44px); letter-spacing: -0.04em; text-decoration: none; }
+.logo { font-size: clamp(26px, 7vw, 44px); letter-spacing: -0.04em; text-decoration: none; }
 .logo span { color: var(--akcent); }
 .tagline { font-size: 13px; color: var(--slabe); text-transform: uppercase; letter-spacing: 0.08em; }
-main { padding: 32px 0 64px; }
-.mrizka { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+main { padding: 28px 0 56px; }
+.drobecky { font-size: 13px; color: var(--slabe); margin-bottom: 14px; }
+.drobecky a { text-decoration: none; border-bottom: 1px solid var(--slabe); }
+.mrizka { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
 .karta {
   background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram);
   display: flex; flex-direction: column; text-decoration: none; overflow: hidden;
   transition: transform .15s ease, box-shadow .15s ease;
 }
-.karta:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 var(--ram); }
+.karta:hover, .karta:focus-visible { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 var(--ram); }
 .karta img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; border-bottom: 3px solid var(--ram); }
 .karta .telo { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.karta h2 { font-size: 20px; margin: 0; }
+.karta h2, .karta h3 { font-size: 20px; margin: 0; }
 .stitky { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.stitek { background: var(--inkoust); color: var(--papir); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 7px; }
-.stitek.jemny { background: transparent; color: var(--slabe); border: 2px solid var(--slabe); }
+.stitek { background: var(--inkoust); color: var(--papir); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 7px; text-decoration: none; }
+a.stitek:hover { background: var(--akcent); color: #000; }
 .datum { font-size: 13px; color: var(--slabe); }
 .hlavni { grid-column: 1 / -1; }
-.hlavni h2 { font-size: clamp(26px, 5vw, 40px); }
+.hlavni h2 { font-size: clamp(24px, 5vw, 40px); }
 .hlavni img { aspect-ratio: 21/9; }
 article.clanek { max-width: 720px; margin: 0 auto; }
-article.clanek h1 { font-size: clamp(28px, 6vw, 46px); margin: 10px 0 14px; }
+article.clanek h1 { font-size: clamp(27px, 6vw, 44px); margin: 10px 0 14px; }
 article.clanek img.hero { width: 100%; border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); display: block; }
+figure { margin: 0 0 8px; }
 figcaption { font-size: 13px; color: var(--slabe); margin-top: 10px; }
 .tldr { border: 3px solid var(--ram); background: var(--karta); box-shadow: 6px 6px 0 var(--ram); padding: 18px 20px; margin: 28px 0; }
-.tldr h3 { margin: 0 0 12px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+.tldr h2 { margin: 0 0 12px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
 .tldr ul { margin: 0; padding-left: 20px; }
 .tldr li { margin-bottom: 10px; }
 .tldr b { background: linear-gradient(transparent 62%, var(--akcent) 62%); }
 .zdroj { border: 3px dashed var(--slabe); padding: 16px 18px; margin: 34px 0 0; font-size: 15px; }
 .zdroj a { font-weight: 700; }
-footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 28px 0; font-size: 14px; color: var(--slabe); }
+.dalsi { margin-top: 48px; }
+.dalsi h2 { font-size: 18px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 26px 0; font-size: 14px; color: var(--slabe); }
 footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
-.strankovani { display: flex; gap: 12px; justify-content: center; margin-top: 40px; }
+.strankovani { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 .strankovani a { border: 3px solid var(--ram); padding: 8px 16px; text-decoration: none; font-weight: 700; background: var(--karta); box-shadow: 4px 4px 0 var(--ram); }
-@media (max-width: 640px) { .hlava .obal { flex-direction: column; gap: 2px; } .tagline { font-size: 11px; } }
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hlava .obal { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .tagline { font-size: 11px; }
+  .mrizka { grid-template-columns: 1fr; gap: 18px; }
+  .karta, .tldr, article.clanek img.hero { box-shadow: 4px 4px 0 var(--ram); }
+  .tldr { padding: 14px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("ACCENT", config.ACCENT)
 
 ZAKLAD = """<!doctype html>
@@ -87,26 +108,32 @@ ZAKLAD = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{titulek}</title>
 <meta name="description" content="{popis}">
+<link rel="canonical" href="{kanonicka}">
 <meta property="og:title" content="{og_titulek}">
 <meta property="og:description" content="{popis}">
 <meta property="og:type" content="{og_typ}">
+<meta property="og:url" content="{kanonicka}">
+<meta property="og:site_name" content="{brand}">
 <meta property="og:locale" content="{locale}">
-{og_obrazek}
+{og_obrazek}{og_cas}
+<meta name="twitter:card" content="{tw_karta}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="alternate" type="application/rss+xml" title="{brand}" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>{css}</style>
-</head>
+{jsonld}</head>
 <body>
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
 <header class="hlava"><div class="obal">
   <a class="logo" href="/">{brand}<span>.</span></a>
-  <div class="tagline">{tagline}</div>
+  <p class="tagline">{tagline}</p>
 </div></header>
-<main><div class="obal">{obsah}</div></main>
+<main id="obsah"><div class="obal">{obsah}</div></main>
 <footer><div class="obal">
-  <div style="max-width:620px">{disclaimer}</div>
-  <div><a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></div>
+  <p style="max-width:620px;margin:0">{disclaimer}</p>
+  <p style="margin:0"><a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></p>
 </div></footer>
 </body>
 </html>
@@ -115,6 +142,21 @@ ZAKLAD = """<!doctype html>
 
 def _e(text):
     return html.escape(text or "", quote=True)
+
+
+def _domena():
+    """Holá doména z SITE_URL, bez schématu a bez koncového lomítka."""
+    return config.SITE_URL.split("://", 1)[-1].rstrip("/")
+
+
+def _tema_cesta(tag):
+    """URL tématu. Název tématu má diakritiku, adresa ji mít nesmí —
+    procentem kódovaná čeština v URL se špatně sdílí i loguje."""
+    return "/tema/{0}.html".format(htmlutil.slugify(tag))
+
+
+def _abs(cesta):
+    return config.SITE_URL.rstrip("/") + cesta
 
 
 def _datum_cesky(iso):
@@ -127,129 +169,288 @@ def _datum_cesky(iso):
     return "{0}. {1} {2}".format(d.day, MESICE[d.month], d.year)
 
 
-def _stranka(titulek, popis, obsah, og_typ="website", obrazek="", og_titulek=None):
-    og = ''
+def _zkrat(text, limit=155):
+    """Popisek pro vyhledávač. Ořez na hranici slova, ne uprostřed."""
+    text = " ".join((text or "").split())
+    if len(text) <= limit:
+        return text
+    orez = text[:limit].rsplit(" ", 1)[0]
+    return orez.rstrip(",.;:–-") + "…"
+
+
+def _jsonld(*bloky):
+    bloky = [b for b in bloky if b]
+    if not bloky:
+        return ""
+    data = bloky[0] if len(bloky) == 1 else bloky
+    text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    # </script> uvnitř řetězce by ukončil blok dřív, než má.
+    text = text.replace("</", "<\\/")
+    return '<script type="application/ld+json">{0}</script>\n'.format(text)
+
+
+def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
+             og_titulek=None, jsonld="", publikovano=""):
+    og = ""
     if obrazek:
-        og = '<meta property="og:image" content="{0}">'.format(_e(obrazek))
+        og = ('<meta property="og:image" content="{0}">\n'
+              '<meta property="og:image:alt" content="{1}">\n').format(
+            _e(obrazek), _e(og_titulek or titulek))
+    cas = ""
+    if publikovano:
+        cas = '<meta property="article:published_time" content="{0}">\n'.format(_e(publikovano))
     return ZAKLAD.format(
-        titulek=_e(titulek), popis=_e(popis), og_typ=og_typ,
-        og_titulek=_e(og_titulek or titulek), og_obrazek=og,
-        locale=config.LOCALE, css=CSS, brand=_e(config.BRAND),
-        tagline=_e(config.TAGLINE), disclaimer=_e(config.DISCLAIMER),
-        obsah=obsah,
+        titulek=_e(titulek), popis=_e(_zkrat(popis)), og_typ=og_typ,
+        og_titulek=_e(og_titulek or titulek), og_obrazek=og, og_cas=cas,
+        kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
+        brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
+        disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
+        tw_karta="summary_large_image" if obrazek else "summary",
     )
 
 
-def _karta(clanek, hlavni=False):
-    obrazek = ""
-    if clanek.get("image_local"):
-        obrazek = '<img src="/img/{0}" alt="" loading="lazy">'.format(_e(clanek["image_local"]))
+def _obrazek_tag(clanek, trida="", lazy=True):
+    """<img> i s rozměry. Bez nich stránka při načítání poskakuje (CLS).
+
+    Fotka nad ohybem se nesmí odkládat — je to skoro vždy ten prvek, podle
+    kterého se měří LCP. Proto u ní eager a fetchpriority high.
+    """
+    if not clanek.get("image_local"):
+        return ""
+    rozmery = ""
+    if clanek.get("image_w") and clanek.get("image_h"):
+        rozmery = ' width="{0}" height="{1}"'.format(clanek["image_w"], clanek["image_h"])
+    nacitani = ' loading="lazy"' if lazy else ' fetchpriority="high"'
+    return '<img{trida} src="/img/{soubor}" alt="{alt}"{rozmery}{nacitani} decoding="async">'.format(
+        trida=' class="{0}"'.format(trida) if trida else "",
+        soubor=_e(clanek["image_local"]),
+        alt=_e(clanek.get("image_caption") or clanek.get("headline", "")),
+        rozmery=rozmery, nacitani=nacitani)
+
+
+def _karta(clanek, hlavni=False, uroven="h2"):
     stitky = "".join(
-        '<span class="stitek">{0}</span>'.format(_e(t)) for t in clanek.get("tags", [])
-    )
-    if clanek.get("sensitivity") == "neutralni":
-        stitky += '<span class="stitek jemny">bez slangu</span>'
+        '<a class="stitek" href="{0}">{1}</a>'.format(_e(_tema_cesta(t)), _e(t))
+        for t in clanek.get("tags", []))
     return (
-        '<a class="karta{hlavni}" href="/clanek/{slug}.html">{obrazek}'
+        '<article class="karta{hlavni}">{obrazek}'
         '<div class="telo"><div class="stitky">{stitky}</div>'
-        '<h2>{nadpis}</h2>'
-        '<div class="datum">{datum}</div></div></a>'
+        '<{u}><a href="/clanek/{slug}.html" style="text-decoration:none">{nadpis}</a></{u}>'
+        '<p class="datum" style="margin:0">{datum}</p></div></article>'
     ).format(
-        hlavni=" hlavni" if hlavni else "",
-        slug=_e(clanek["slug"]), obrazek=obrazek, stitky=stitky,
-        nadpis=_e(clanek["headline"]), datum=_datum_cesky(clanek.get("published")),
+        hlavni=" hlavni" if hlavni else "", u=uroven,
+        slug=_e(clanek["slug"]), obrazek=_obrazek_tag(clanek, lazy=not hlavni),
+        stitky=stitky, nadpis=_e(clanek["headline"]),
+        datum=_datum_cesky(clanek.get("published")),
     )
 
 
-def _clanek(clanek):
+def _drobecky(polozky):
+    """polozky = [(nazev, cesta nebo None)] — poslední je aktuální stránka."""
+    kusy = []
+    for nazev, cesta in polozky:
+        if cesta:
+            kusy.append('<a href="{0}">{1}</a>'.format(_e(cesta), _e(nazev)))
+        else:
+            kusy.append(_e(nazev))
+    return '<nav class="drobecky" aria-label="Drobečková navigace">{0}</nav>'.format(
+        " / ".join(kusy))
+
+
+def _clanek(clanek, souvisejici):
     casti = []
-    stitky = "".join('<span class="stitek">{0}</span>'.format(_e(t)) for t in clanek.get("tags", []))
-    if clanek.get("sensitivity") == "neutralni":
-        # Ať čtenář ví, proč tenhle článek čte jinak než ostatní.
-        stitky += '<span class="stitek jemny">citlivé téma, bez slangu</span>'
-    casti.append('<div class="stitky">{0}<span class="datum">{1}</span></div>'.format(
-        stitky, _datum_cesky(clanek.get("published"))))
+    tema = (clanek.get("tags") or [None])[0]
+    casti.append(_drobecky([
+        ("Domů", "/"),
+        (tema, _tema_cesta(tema)) if tema else ("Článek", None),
+        (clanek["headline"][:40], None),
+    ]))
+
+    stitky = "".join('<a class="stitek" href="{0}">{1}</a>'.format(_e(_tema_cesta(t)), _e(t))
+                     for t in clanek.get("tags", []))
+    casti.append('<div class="stitky">{0}<time class="datum" datetime="{1}">{2}</time></div>'.format(
+        stitky, _e((clanek.get("published") or "")[:10]),
+        _datum_cesky(clanek.get("published"))))
     casti.append("<h1>{0}</h1>".format(_e(clanek["headline"])))
 
     if clanek.get("image_local"):
-        casti.append(
-            '<figure style="margin:0 0 8px"><img class="hero" src="/img/{0}" alt="{1}">'
-            "<figcaption>{2} Foto: {3}</figcaption></figure>".format(
-                _e(clanek["image_local"]), _e(clanek.get("image_caption", "")),
-                _e(clanek.get("image_caption", "")), _e(clanek.get("author") or clanek["source_name"]))
-        )
+        casti.append("<figure>{img}<figcaption>{popis} Foto: {autor}</figcaption></figure>".format(
+            img=_obrazek_tag(clanek, trida="hero", lazy=False),
+            popis=_e(clanek.get("image_caption", "")),
+            autor=_e(clanek.get("author") or clanek["source_name"])))
 
     polozky = "".join(
         "<li>{emoji}<b>{label}</b> {text}</li>".format(
             emoji=(_e(p.get("emoji", "")) + " ") if p.get("emoji") else "",
             label=_e(p.get("label", "")), text=_e(p.get("text", "")))
-        for p in clanek.get("tldr", [])
-    )
+        for p in clanek.get("tldr", []))
     if polozky:
-        casti.append('<div class="tldr"><h3>TL;DR</h3><ul>{0}</ul></div>'.format(polozky))
+        casti.append('<div class="tldr"><h2>TL;DR</h2><ul>{0}</ul></div>'.format(polozky))
 
     for odstavec in clanek.get("body", []):
         casti.append("<p>{0}</p>".format(_e(odstavec)))
 
     casti.append(
         '<div class="zdroj">Tohle je AI přepis tiskové zprávy města. '
-        'Originál se vším všudy: <a href="{url}">{titulek}</a> '
+        'Originál se vším všudy: <a href="{url}" rel="nofollow">{titulek}</a> '
         "({zdroj}, {datum}).</div>".format(
             url=_e(clanek["url"]), titulek=_e(clanek["title"]),
-            zdroj=_e(clanek["source_name"]), datum=_datum_cesky(clanek.get("published")))
-    )
-    return '<article class="clanek">{0}</article>'.format("".join(casti))
+            zdroj=_e(clanek["source_name"]), datum=_datum_cesky(clanek.get("published"))))
+
+    telo = '<article class="clanek">{0}</article>'.format("".join(casti))
+
+    if souvisejici:
+        karty = "".join(_karta(c, uroven="h3") for c in souvisejici)
+        telo += ('<section class="dalsi"><h2>Další z Kroměříže</h2>'
+                 '<div class="mrizka">{0}</div></section>'.format(karty))
+    return telo
+
+
+def _ld_clanek(clanek):
+    cesta = "/clanek/{0}.html".format(clanek["slug"])
+    data = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": clanek["headline"][:110],
+        "description": _zkrat(" ".join(p.get("text", "") for p in clanek.get("tldr", []))),
+        "datePublished": clanek.get("published", ""),
+        "dateModified": clanek.get("rewritten_at") or clanek.get("published", ""),
+        "inLanguage": "cs-CZ",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": _abs(cesta)},
+        "url": _abs(cesta),
+        "author": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
+        "publisher": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
+        # Poctivé přiznání, že jde o přepis cizí zprávy.
+        "isBasedOn": clanek["url"],
+        "keywords": ", ".join(clanek.get("tags", [])),
+    }
+    if clanek.get("image_local"):
+        data["image"] = [_abs("/img/" + clanek["image_local"])]
+    return data
+
+
+def _ld_drobecky(clanek):
+    tema = (clanek.get("tags") or [None])[0]
+    polozky = [{"@type": "ListItem", "position": 1, "name": "Domů", "item": config.SITE_URL}]
+    if tema:
+        polozky.append({"@type": "ListItem", "position": 2, "name": tema,
+                        "item": _abs(_tema_cesta(tema))})
+    polozky.append({"@type": "ListItem", "position": len(polozky) + 1,
+                    "name": clanek["headline"]})
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": polozky}
+
+
+def _ld_web():
+    return {
+        "@context": "https://schema.org", "@type": "WebSite",
+        "name": config.BRAND, "url": config.SITE_URL,
+        "description": config.TAGLINE, "inLanguage": "cs-CZ",
+        "publisher": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
+    }
+
+
+def _souvisejici(clanek, vsechny, pocet=3):
+    """Články se stejným tématem. Interní prolinkování, aby článek nebyl slepý."""
+    moje = set(clanek.get("tags", []))
+    kandidati = [c for c in vsechny if c["slug"] != clanek["slug"]]
+    kandidati.sort(key=lambda c: (-len(moje & set(c.get("tags", []))),
+                                  c.get("published", "")), reverse=False)
+    vybrane = [c for c in kandidati if moje & set(c.get("tags", []))][:pocet]
+    if len(vybrane) < pocet:
+        zbytek = [c for c in kandidati if c not in vybrane]
+        zbytek.sort(key=lambda c: c.get("published", ""), reverse=True)
+        vybrane += zbytek[:pocet - len(vybrane)]
+    return vybrane
 
 
 def vykresli(clanky):
     """Vyrobí celý web do config.SITE. Vrací počet zapsaných souborů."""
     config.SITE.mkdir(parents=True, exist_ok=True)
-    (config.SITE / "clanek").mkdir(exist_ok=True)
-    obrazky = config.SITE / "img"
-    obrazky.mkdir(exist_ok=True)
+    # Tyhle složky jsou celé generované. Bez úklidu v nich zůstávají soubory
+    # ze starších běhů (po převodu na WebP třeba původní JPEGy) a vyvezou se
+    # na web, kde na ně nic neodkazuje.
+    for podslozka in ("clanek", "img", "tema"):
+        shutil.rmtree(str(config.SITE / podslozka), ignore_errors=True)
+        (config.SITE / podslozka).mkdir(parents=True, exist_ok=True)
     for soubor in config.IMAGES.glob("*"):
-        shutil.copy2(soubor, obrazky / soubor.name)
+        shutil.copy2(soubor, config.SITE / "img" / soubor.name)
 
     zapsano = 0
     for clanek in clanky:
-        cesta = config.SITE / "clanek" / (clanek["slug"] + ".html")
-        obrazek = ""
-        if clanek.get("image_local"):
-            obrazek = "{0}/img/{1}".format(config.SITE_URL, clanek["image_local"])
-        cesta.write_text(_stranka(
+        cesta = "/clanek/{0}.html".format(clanek["slug"])
+        obrazek = _abs("/img/" + clanek["image_local"]) if clanek.get("image_local") else ""
+        (config.SITE / "clanek" / (clanek["slug"] + ".html")).write_text(_stranka(
             "{0} – {1}".format(clanek["headline"], config.BRAND),
-            " ".join(p.get("text", "") for p in clanek.get("tldr", []))[:300],
-            _clanek(clanek), og_typ="article", obrazek=obrazek,
-            og_titulek=clanek["headline"],
+            " ".join(p.get("text", "") for p in clanek.get("tldr", [])),
+            _clanek(clanek, _souvisejici(clanek, clanky)),
+            cesta=cesta, og_typ="article", obrazek=obrazek,
+            og_titulek=clanek["headline"], publikovano=clanek.get("published", ""),
+            jsonld=_jsonld(_ld_clanek(clanek), _ld_drobecky(clanek)),
         ), encoding="utf-8")
         zapsano += 1
 
-    stranky = [clanky[i:i + config.PAGE_SIZE] for i in range(0, len(clanky), config.PAGE_SIZE)] or [[]]
-    for cislo, davka in enumerate(stranky, start=1):
-        karty = "".join(_karta(c, hlavni=(cislo == 1 and i == 0)) for i, c in enumerate(davka))
-        obsah = '<div class="mrizka">{0}</div>{1}'.format(karty, _strankovani(cislo, len(stranky)))
-        nazev = config.SITE / ("index.html" if cislo == 1 else "strana-{0}.html".format(cislo))
-        nazev.write_text(_stranka(
-            "{0} — {1}".format(config.BRAND, config.TAGLINE),
-            config.DISCLAIMER, obsah,
-        ), encoding="utf-8")
-        zapsano += 1
+    zapsano += _rozcestniky(clanky)
+    zapsano += _temata(clanky)
 
     (config.SITE / "o-webu.html").write_text(_stranka(
-        "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu()), encoding="utf-8")
+        "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu(),
+        cesta="/o-webu.html"), encoding="utf-8")
+    (config.SITE / "404.html").write_text(_stranka(
+        "Stránka nenalezena – " + config.BRAND,
+        "Tahle stránka tu není. Zkus úvodku.",
+        '<article class="clanek"><h1>404, tady nic není</h1>'
+        '<p>Odkaz je rozbitý nebo článek zmizel. '
+        '<a href="/">Zpátky na úvodku.</a></p></article>',
+        cesta="/404.html"), encoding="utf-8")
     (config.SITE / "feed.xml").write_text(_rss(clanky), encoding="utf-8")
     (config.SITE / "sitemap.xml").write_text(_sitemap(clanky), encoding="utf-8")
     (config.SITE / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL), encoding="utf-8")
-    # GitHub Pages čte vlastní doménu ze souboru CNAME ve vydaném webu.
-    # Musí se generovat sem, jinak ho každé nasazení smaže.
+        "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
+        encoding="utf-8")
     (config.SITE / "CNAME").write_text(_domena() + "\n", encoding="utf-8")
-    return zapsano + 5
+    return zapsano + 6
 
 
-def _domena():
-    """Holá doména z SITE_URL, bez schématu a bez koncového lomítka."""
-    return config.SITE_URL.split("://", 1)[-1].rstrip("/")
+def _rozcestniky(clanky):
+    stranky = [clanky[i:i + config.PAGE_SIZE]
+               for i in range(0, len(clanky), config.PAGE_SIZE)] or [[]]
+    for cislo, davka in enumerate(stranky, start=1):
+        karty = "".join(_karta(c, hlavni=(cislo == 1 and i == 0))
+                        for i, c in enumerate(davka))
+        obsah = '<div class="mrizka">{0}</div>{1}'.format(
+            karty, _strankovani(cislo, len(stranky)))
+        cesta = "/" if cislo == 1 else "/strana-{0}.html".format(cislo)
+        nazev = "index.html" if cislo == 1 else "strana-{0}.html".format(cislo)
+        titulek = "{0} — {1}".format(config.BRAND, config.TAGLINE)
+        if cislo > 1:
+            titulek = "{0} — strana {1}".format(config.BRAND, cislo)
+        (config.SITE / nazev).write_text(_stranka(
+            titulek, config.DISCLAIMER, obsah, cesta=cesta,
+            jsonld=_jsonld(_ld_web()) if cislo == 1 else "",
+        ), encoding="utf-8")
+    return len(stranky)
+
+
+def _temata(clanky):
+    """Stránka na každé téma. Prolinkuje archiv a dá vyhledávači co indexovat."""
+    podle_tematu = {}
+    for clanek in clanky:
+        for tag in clanek.get("tags", []):
+            podle_tematu.setdefault(tag, []).append(clanek)
+    for tag, seznam in podle_tematu.items():
+        karty = "".join(_karta(c) for c in seznam)
+        obsah = (_drobecky([("Domů", "/"), (tag, None)])
+                 + "<h1>Téma: {0}</h1>".format(_e(tag))
+                 + '<p class="datum">{0} článků</p>'.format(len(seznam))
+                 + '<div class="mrizka">{0}</div>'.format(karty))
+        (config.SITE / "tema" / (htmlutil.slugify(tag) + ".html")).write_text(_stranka(
+            "{0} v Kroměříži – {1}".format(tag.capitalize(), config.BRAND),
+            "Všechno, co {0} napsal na téma {1}. Celkem {2} článků.".format(
+                config.BRAND, tag, len(seznam)),
+            obsah, cesta=_tema_cesta(tag),
+        ), encoding="utf-8")
+    return len(podle_tematu)
 
 
 def _strankovani(cislo, celkem):
@@ -261,48 +462,66 @@ def _strankovani(cislo, celkem):
             "/" if cislo == 2 else "/strana-{0}.html".format(cislo - 1)))
     if cislo < celkem:
         odkazy.append('<a href="/strana-{0}.html">starší →</a>'.format(cislo + 1))
-    return '<div class="strankovani">{0}</div>'.format("".join(odkazy))
+    return '<nav class="strankovani">{0}</nav>'.format("".join(odkazy))
 
 
 def _o_webu():
     return (
-        '<article class="clanek"><h1>O webu</h1>'
+        '<article class="clanek">{drobecky}<h1>O webu</h1>'
         "<p>{disclaimer}</p>"
         "<p>Zdrojem je veřejný RSS kanál města Kroměříž. Každý článek odkazuje na "
         "originál a nic z toho, co tady čteš, není oficiální stanovisko radnice.</p>"
-        "<p>Citlivá témata — neštěstí, trestné činy, konflikty — se přepisují "
-        "věcným tónem bez slangu, nebo se nepřepisují vůbec.</p>"
-        "<p>Přepis dělá jazykový model. Fakta se strojově kontrolují proti "
-        "originálu, ale chyba se stát může. Když nějakou najdeš, napiš.</p>"
+        "<p>Přepis dělá jazykový model. Čísla a data se strojově kontrolují proti "
+        "originálu, nikoho tu necitujeme v uvozovkách a kontaktní údaje sem nedáváme. "
+        "Chyba se ale stát může. Když nějakou najdeš, napiš.</p>"
         "</article>"
-    ).format(disclaimer=_e(config.DISCLAIMER))
+    ).format(disclaimer=_e(config.DISCLAIMER),
+             drobecky=_drobecky([("Domů", "/"), ("O webu", None)]))
 
 
 def _rss(clanky):
     polozky = []
     for clanek in clanky[:50]:
+        adresa = _abs("/clanek/{0}.html".format(clanek["slug"]))
         polozky.append(
-            "<item><title>{t}</title><link>{u}</link><guid>{u}</guid>"
+            "<item><title>{t}</title><link>{u}</link><guid isPermaLink=\"true\">{u}</guid>"
             "<description><![CDATA[{d}]]></description><pubDate>{p}</pubDate></item>".format(
-                t=_e(clanek["headline"]),
-                u="{0}/clanek/{1}.html".format(config.SITE_URL, clanek["slug"]),
+                t=_e(clanek["headline"]), u=_e(adresa),
                 d=" ".join(p.get("text", "") for p in clanek.get("tldr", [])),
-                p=clanek.get("published", ""))
-        )
+                p=_rfc822(clanek.get("published", ""))))
     return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
-        "<title>{b}</title><link>{s}</link><description>{d}</description>{i}"
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
+        "<title>{b}</title><link>{s}</link><description>{d}</description>"
+        '<language>cs</language>'
+        '<atom:link href="{s}/feed.xml" rel="self" type="application/rss+xml"/>{i}'
         "</channel></rss>"
     ).format(b=_e(config.BRAND), s=config.SITE_URL, d=_e(config.TAGLINE), i="".join(polozky))
 
 
+def _rfc822(iso):
+    """RSS chce RFC 822, ne ISO. Čtečky si na tom jinak vylámou zuby."""
+    if not iso:
+        return ""
+    try:
+        from email.utils import format_datetime
+        return format_datetime(datetime.fromisoformat(iso))
+    except (ValueError, ImportError):
+        return iso
+
+
 def _sitemap(clanky):
     dnes = datetime.now(timezone.utc).date().isoformat()
-    url = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod></url>'.format(config.SITE_URL, dnes)]
+    radky = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
+        config.SITE_URL, dnes)]
+    temata = sorted({t for c in clanky for t in c.get("tags", [])})
+    for tag in temata:
+        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.6</priority></url>".format(
+            _abs(_tema_cesta(tag)), dnes))
     for clanek in clanky:
-        url.append("<url><loc>{0}/clanek/{1}.html</loc><lastmod>{2}</lastmod></url>".format(
-            config.SITE_URL, clanek["slug"], (clanek.get("published") or dnes)[:10]))
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{0}</urlset>'
-    ).format("".join(url))
+        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.8</priority></url>".format(
+            _abs("/clanek/{0}.html".format(clanek["slug"])),
+            (clanek.get("published") or dnes)[:10]))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{0}</urlset>'
+            ).format("".join(radky))

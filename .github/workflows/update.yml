@@ -38,7 +38,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           KROMKA_SITE_URL: ${{ vars.KROMKA_SITE_URL }}
-        run: python -m kromka all --limit ${{ inputs.limit || '10' }}
+        # `all` bere jen články novější než poslední hotový, takže cron
+        # nikdy nesáhne na nezpracovaný archiv. Backfill se pouští ručně.
+        run: python -m kromka all --limit ${{ inputs.limit || '5' }}
 
       - name: Uložit archiv zpátky do repa
         run: |

@@ -15,8 +15,10 @@ def main(argv=None):
     p = pod.add_parser("nove", help="vypíše, co je ve feedu a ještě nemá přepis")
     p.add_argument("--limit", type=int, default=20)
 
-    p = pod.add_parser("run", help="zpracuje nové články (nejnovější první)")
+    p = pod.add_parser("run", help="zpracuje jen opravdu nové články (pro cron)")
     p.add_argument("--limit", type=int, default=10)
+    p.add_argument("--i-archiv", action="store_true",
+                   help="ber i nezpracovaný archiv, ne jen články novější než poslední hotový")
 
     p = pod.add_parser("backfill", help="zpracuje archiv (nejstarší první)")
     p.add_argument("--limit", type=int, default=25)
@@ -48,7 +50,11 @@ def main(argv=None):
         return 0
 
     if args.prikaz in ("run", "backfill", "all"):
-        pipeline.davka(args.limit, nejstarsi=(args.prikaz == "backfill"))
+        # `run` i `all` jedou v cronu, takže se archivu nedotknou, dokud se to
+        # výslovně nepovolí. Jinak by hodinový běh archiv sežral sám.
+        jen_novejsi = args.prikaz in ("run", "all") and not getattr(args, "i_archiv", False)
+        pipeline.davka(args.limit, nejstarsi=(args.prikaz == "backfill"),
+                       jen_novejsi=jen_novejsi)
         if args.prikaz != "all":
             return 0
 

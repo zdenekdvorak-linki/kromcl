@@ -4,24 +4,36 @@
 import sys
 import traceback
 from datetime import datetime, timezone
-from urllib.parse import urlparse
 
-from . import config, net, rewrite, sources, store
+from . import config, net, obrazky, rewrite, sources, store
 from .errors import NeresolvovanyClanek
 
 
-def nove_polozky(limit=None, nejstarsi=False):
-    """Položky ze všech zdrojů, které ještě nemají hotový přepis."""
+def nove_polozky(limit=None, nejstarsi=False, jen_novejsi=False):
+    """Položky ze všech zdrojů, které ještě nemají hotový přepis.
+
+    `jen_novejsi` zahodí všechno starší, než je nejnovější hotový článek.
+    Pro cron je to zásadní: bez toho by hodinový běh považoval za „nové" i
+    celý nezpracovaný archiv a projel by ho sám během pár dní.
+    """
     stav = store.nacti_stav()
     hotove = set(stav.get("zpracovane", []))
+    hranice = _nejnovejsi_hotovy() if jen_novejsi else ""
     cekaji = []
     for zdroj in sources.vsechny():
         for polozka in zdroj.fetch_items():
             if polozka["id"] in hotove or store.existuje(polozka["id"]):
                 continue
+            if hranice and polozka["published"] <= hranice:
+                continue
             cekaji.append(polozka)
     cekaji.sort(key=lambda p: p["published"], reverse=not nejstarsi)
     return cekaji[:limit] if limit else cekaji
+
+
+def _nejnovejsi_hotovy():
+    data = [c.get("published", "") for c in store.vsechny()]
+    return max(data) if data else ""
 
 
 def zpracuj(polozka, verbose=True):
@@ -48,7 +60,7 @@ def zpracuj(polozka, verbose=True):
     clanek = dict(polozka)
     clanek.update(data)
     clanek["sensitivity"] = citlivost
-    clanek["image_local"] = _stahni_obrazek(polozka)
+    clanek["image_local"], clanek["image_w"], clanek["image_h"] = _stahni_obrazek(polozka)
     clanek["rewritten_at"] = datetime.now(timezone.utc).isoformat()
     clanek["model"] = config.MODEL_REWRITE
     store.uloz(clanek)
@@ -58,9 +70,9 @@ def zpracuj(polozka, verbose=True):
     return clanek
 
 
-def davka(limit, nejstarsi=False):
+def davka(limit, nejstarsi=False, jen_novejsi=False):
     """Zpracuje až `limit` položek. Chyba jedné nezastaví zbytek."""
-    polozky = nove_polozky(limit=limit, nejstarsi=nejstarsi)
+    polozky = nove_polozky(limit=limit, nejstarsi=nejstarsi, jen_novejsi=jen_novejsi)
     if not polozky:
         print("Nic nového.")
         return []
@@ -80,23 +92,15 @@ def davka(limit, nejstarsi=False):
 
 
 def _stahni_obrazek(polozka):
+    """Stáhne fotku a uloží ji jako WebP. Vrací (soubor, šířka, výška)."""
     url = polozka.get("image_url")
     if not url:
-        return ""
-    pripona = (urlparse(url).path.rsplit(".", 1) + ["jpg"])[1].lower()
-    if pripona not in ("jpg", "jpeg", "png", "webp", "gif"):
-        pripona = "jpg"
-    nazev = "{0}.{1}".format(polozka["slug"], pripona)
-    cil = config.IMAGES / nazev
-    if cil.exists():
-        return nazev
+        return "", 0, 0
     try:
-        config.IMAGES.mkdir(parents=True, exist_ok=True)
-        cil.write_bytes(net.get(url, binary=True))
-        return nazev
+        return obrazky.uloz_webp(net.get(url, binary=True), polozka["slug"])
     except Exception as exc:  # noqa: BLE001 - článek bez fotky je pořád článek
         print("  fotka se nestáhla: {0}".format(exc), file=sys.stderr)
-        return ""
+        return "", 0, 0
 
 
 def _zapis_selhani(article_id, duvod):
