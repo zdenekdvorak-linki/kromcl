@@ -106,9 +106,9 @@ Datum: {datum}
 
 {text}"""
 
-TON_VOLNY = """Mluvený jazyk generace Alpha, jak se píše na telefonu. TL;DR
-odrážky mají anglický label a emoji na konci. Buď vtipný, ale vtip dělej ze
-situace a z úředního jazyka, nikdy z lidí."""
+TON_VOLNY = """Píšeš, jak se píše do skupinového chatu, ne jak se píše do
+novin. Vtip dělej ze situace a z úředního jazyka, nikdy z lidí. Když ti po
+dopsání zpráva zní jako běžné zpravodajství, přepiš ji."""
 
 TON_NEUTRALNI = """Krátké věty, žádný úřednický jazyk, oslovuj čtenáře. ŽÁDNÝ
 slang, ŽÁDNÉ emoji, ŽÁDNÉ anglické labely, ŽÁDNÉ vtipy. Tohle je citlivé téma a

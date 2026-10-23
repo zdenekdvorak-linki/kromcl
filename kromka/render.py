@@ -51,6 +51,14 @@ header.hlava { border-bottom: 4px solid var(--ram); background: var(--karta); po
 .logo { font-size: clamp(26px, 7vw, 44px); letter-spacing: -0.04em; text-decoration: none; }
 .logo span { color: var(--akcent); }
 .tagline { font-size: 13px; color: var(--slabe); text-transform: uppercase; letter-spacing: 0.08em; }
+.znacka { display: flex; flex-direction: column; }
+.menu { position: relative; }
+.menu .prepinac { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.menu .odkazy { display: flex; flex-wrap: wrap; gap: 4px 14px; list-style: none; margin: 0; padding: 0; }
+.menu .odkazy a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; text-decoration: none; border-bottom: 3px solid transparent; padding-bottom: 2px; }
+.menu .odkazy a:hover, .menu .odkazy a:focus-visible { border-bottom-color: var(--akcent); }
+.menu .hamburger { display: none; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; background: var(--karta); color: var(--inkoust); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 8px 12px; }
+.carky { width: 18px; height: 2px; background: currentColor; box-shadow: 0 6px 0 currentColor, 0 -6px 0 currentColor; display: block; }
 main { padding: 28px 0 56px; }
 .drobecky { font-size: 13px; color: var(--slabe); margin-bottom: 14px; }
 .drobecky a { text-decoration: none; border-bottom: 1px solid var(--slabe); }
@@ -93,6 +101,14 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   body { font-size: 16px; }
   .hlava .obal { flex-direction: column; align-items: flex-start; gap: 2px; }
   .tagline { font-size: 11px; }
+  .hlava .obal { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
+  .menu .hamburger { display: inline-flex; cursor: pointer; }
+  .menu .odkazy { display: none; position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; flex-direction: column; gap: 0; min-width: 200px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); }
+  .menu .prepinac:checked ~ .odkazy { display: flex; }
+  .menu .prepinac:focus-visible ~ .hamburger { outline: 3px solid var(--akcent); outline-offset: 2px; }
+  .menu .odkazy li + li { border-top: 2px solid var(--ram); }
+  .menu .odkazy a { display: block; padding: 12px 16px; border-bottom: 0; }
+  .menu .odkazy a:hover, .menu .odkazy a:focus-visible { background: var(--akcent); color: #000; border-bottom: 0; }
   .mrizka { grid-template-columns: 1fr; gap: 18px; }
   .karta, .tldr, article.clanek img.hero { box-shadow: 4px 4px 0 var(--ram); }
   .tldr { padding: 14px 16px; }
@@ -103,7 +119,8 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .karta:hover .piktogram, .karta:focus-within .piktogram { transform: rotate(3deg) scale(1.1); }
 .obrazek.hero .piktogram { animation: kyvani 5s ease-in-out infinite; }
 @keyframes kyvani { 0%, 100% { transform: rotate(-3deg) } 50% { transform: rotate(3deg) translateY(-3px) } }
-.hlavni .obrazek { aspect-ratio: 21/9; }
+.hlavni .znacka { display: flex; flex-direction: column; }
+.obrazek { aspect-ratio: 21/9; }
 .obrazek.hero { aspect-ratio: 2/1; border: 3px solid var(--ram); border-bottom-width: 3px; box-shadow: 6px 6px 0 var(--ram); }
 .obrazek.hero .piktogram { width: 26%; }
 @media (max-width: 640px) { .obrazek.hero { box-shadow: 4px 4px 0 var(--ram); } }
@@ -136,8 +153,17 @@ ZAKLAD = """<!doctype html>
 <body>
 <a class="preskocit" href="#obsah">Přeskočit na obsah</a>
 <header class="hlava"><div class="obal">
-  <a class="logo" href="/">{brand}<span>.</span></a>
-  <p class="tagline">{tagline}</p>
+  <div class="znacka">
+    <a class="logo" href="/">{brand}<span>.</span></a>
+    <p class="tagline">{tagline}</p>
+  </div>
+  <nav class="menu" aria-label="Témata">
+    <input class="prepinac" type="checkbox" id="menu-prepinac">
+    <label class="hamburger" for="menu-prepinac">
+      <span class="carky" aria-hidden="true"></span>Témata
+    </label>
+    <ul class="odkazy">{menu}</ul>
+  </nav>
 </div></header>
 <main id="obsah"><div class="obal">{obsah}</div></main>
 <footer><div class="obal">
@@ -198,6 +224,16 @@ def _jsonld(*bloky):
     return '<script type="application/ld+json">{0}</script>\n'.format(text)
 
 
+def _menu():
+    """Odkazy na stránky témat. Pořadí je pevné, aby menu neposkakovalo
+    podle toho, co zrovna vyšlo."""
+    poradi = ["radnice", "doprava", "stavba", "peníze", "školství",
+              "kultura", "sport", "akce", "volby", "příroda", "lidé"]
+    return "".join(
+        '<li><a href="{0}">{1}</a></li>'.format(_e(_tema_cesta(t)), _e(t))
+        for t in poradi)
+
+
 def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
              og_titulek=None, jsonld="", publikovano=""):
     og = ""
@@ -214,6 +250,7 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
         kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
+        menu=_menu(),
         tw_karta="summary_large_image" if obrazek else "summary",
     )
 

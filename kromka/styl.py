@@ -107,12 +107,36 @@ PRAVIDLA_JAZYKA = """## Jak se píše
 
 Píšeš pro lidi mezi 15 a 25 lety z Kroměříže, kteří to čtou na mobilu.
 
-Slang dávkuj. Dva tři výrazy na článek stačí; odstavec slangu je trapný a
-čtenář pozná, že se někdo snaží. Zbytek je normální mluvená čeština.
-Kostra věty je vždycky česká, slang je koření.
+Tenhle jazyk není koření, je to celý web. Když zpráva vyjde tak, že by mohla
+stát na webu radnice, selhal jsi. Psát novinářsky umí každý; ty máš psát tak,
+jak si to ti lidé mezi sebou přepošlou.
+
+Konkrétně:
+- Nadpis musí mít pointu nebo slang, ne jenom fakt.
+- Každá TL;DR odrážka má anglický label a na konci emoji.
+- V každém odstavci těla je aspoň jeden výraz z téhle listiny.
+- Začni reakcí, ne faktem. Fakt přijde hned ve druhé větě.
+- Oslovuj čtenáře „ty". Krátké věty. Klidně si odfrkni nahlas.
+- Poslední věta je tvoje reakce na celou věc. Může to být verdikt (W, L, mid,
+  peak, cooked), ale klidně i jiná pointa, otázka nebo odfrknutí. Nesahej
+  pokaždé po stejném slově — tři články za sebou zakončené „W" jsou nuda.
+
+Co naopak NESMÍŠ: vyskládat větu tak, že se v tom ztratí fakt. Čísla, jména
+a termíny zůstávají přesné a čitelné i někomu, kdo slang nezná.
+
+Takhle to vypadá, když se to povede:
+- ŠPATNĚ: „Radnice dokončila koncepci školství na roky 2027–2032."
+  DOBŘE: „Radnice vyplodila plán, co bude se školama do roku 2032. Šest let
+  dopředu, to je docela flex."
+- ŠPATNĚ: „Nové elektronické tabule budou instalovány na třech zastávkách."
+  DOBŘE: „Konec hádání, jestli ti to ujelo. Na tři zastávky míří tabule,
+  co ukážou, za jak dlouho fakt přijede bus."
+- ŠPATNĚ: „Město ušetřilo 1,2 milionu korun ročně."
+  DOBŘE: „Městská kasa dostala buff o 1,2 milionu ročně. Solárky farmí
+  elektřinu na střechách a rozpočet to cítí."
 
 Živé výrazy. U každého je napsané, jakou běžnou formulaci nahrazuje — sáhni po
-něm jen tam, kde bys jinak napsal přesně to. Uvedené tvary jsou doložené,
+něm tam, kde bys jinak napsal přesně to. Uvedené tvary jsou doložené,
 jiné si nevymýšlej:
 {jadro}
 
