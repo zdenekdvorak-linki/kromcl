@@ -1,0 +1,46 @@
+{
+  "author": "Jan Vondrášek",
+  "body": [
+    "Ayo, kroměřížská radnice zase vyvěsila na web přehled veřejných zakázek, které chce letos vyhlašovat. Poprvé to udělala v roce 2023 a podle starosty Tomáše Opatrného si firmy už zvykly. Město z toho má taky užitek: když se dodavatelé na výběrové řízení můžou připravit dopředu, mohou nabídnout lepší cenu. Prostě early access pro firmy, no cap.",
+    "Co v tom dokumentu najdeš? U každé zakázky je název, předpokládaná hodnota bez DPH, termín vyhlášení a odbor městského úřadu, pro který se vypisuje. Aktuálně je v plánu 55 zakázek. Podle vedoucího odboru investic Libora Pecháčka je 39 z nich malého rozsahu. Dalších 14 jsou zákonné zakázky, které spadají pod zákon o zadávání veřejných zakázek. Zbylé dvě město chystá pro své příspěvkové organizace.",
+    "Plán není nezmenitelný. Město ho bude podle vývoje jednotlivých akcí případně upravovat, takže počítej s tím, že přijde nějaký patch. A pro srovnání: loni město oproti předpokládaným hodnotám zakázek ušetřilo zhruba 51 milionů korun. Fr, to je W."
+  ],
+  "headline": "Radnice zveřejnila plán zakázek na 2025: firmy vědí dopředu, co přijde",
+  "id": "mesto-kromeriz:mesto-zverejnilo-plan-verejnych-zakazek-ktere-planuje-na-rok-2025",
+  "image_caption": "Ilustrační foto: Pixabay",
+  "image_local": "mesto-zverejnilo-plan-verejnych-zakazek-ktere-planuje-na-rok-2025.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/7/0/csm_20250124_verejne_zakazky_ilustracni_be93022358.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Kroměřížská radnice opět zveřejnila přehled plánovaných veřejných zakázek, které by měla vyhlašovat v letošním roce. Plán zakázek je k dispozici na internetových stránkách města. „Poprvé jsme plán zakázek zveřejnili v roce 2023. Firmy, které se o zakázky chtějí ucházet, si už na to zvykly. A i pro město je výhodné, že se na výběrové řízení mohou s předstihem připravit a nabídnout nám lepší cenu,“ uvedl starosta Tomáš Opatrný.",
+  "published": "2025-01-24T09:00:00+01:00",
+  "rewritten_at": "2026-10-23T14:25:49.469197+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "mesto-zverejnilo-plan-verejnych-zakazek-ktere-planuje-na-rok-2025",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "stavba"
+  ],
+  "title": "Město zveřejnilo plán veřejných zakázek, které plánuje na rok 2025",
+  "tldr": [
+    {
+      "emoji": "📂⏰",
+      "label": "Early Access",
+      "text": "Plán zakázek na letošek už visí na webu města, takže firmy se můžou na výběrová řízení připravit s předstihem."
+    },
+    {
+      "emoji": "🎮📋",
+      "label": "Quest Log",
+      "text": "V přehledu je teď 55 zakázek a u každé najdeš název, předpokládanou hodnotu bez DPH, termín vyhlášení i odbor úřadu."
+    },
+    {
+      "emoji": "💰🔥",
+      "label": "Loot Report",
+      "text": "Loni město oproti předpokládaným hodnotám ušetřilo zhruba 51 milionů korun."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-zverejnilo-plan-verejnych-zakazek-ktere-planuje-na-rok-2025"
+}

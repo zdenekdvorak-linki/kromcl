@@ -1,0 +1,47 @@
+{
+  "author": "Jan Vondrášek",
+  "body": [
+    "Ayo, Lutopecká možná dostane pořádný level-up. Radnice chystá stavbu bytových domů na ploše mezi stávajícími bytovými domy a budoucí stanicí profesionálních hasičů. Místostarosta Jan Hebnar to zdůvodnil tím, že jde prakticky o jediné ucelené městské pozemky, kde se dá postavit víc bytových domů najednou. Studie je hotová a počítá s tím, že by se tam vešlo devět domů. Tolik jich ale město naráz stavět určitě nebude, protože všechno se odvíjí od toho, jestli se na tuhle velkou investici povede získat dotace. Slotů je dost, jenže bez dotací se to hraje na hard.",
+    "Studie řeší celé území, ne jen samotné baráky. Kromě domů v ní najdeš zeleň, relaxační zónu, dětské i sportovní hřiště, komunikace, chodníky a parkovací místa. Domy by měly mít přízemí a tři až čtyři patra. V každém by pak bylo 13 až 17 bytových jednotek. V první etapě město zvažuje stavbu tří domů, takže tutorial nejspíš nepoběží na plný počet.",
+    "Proč zrovna bytovky? Starosta Tomáš Opatrný uvedl, že se teď objevují zajímavé dotační možnosti na nájemní bydlení, které by město chtělo využít. Zájem o městské byty podle něj momentálně převyšuje možnosti města. Poptávka mezi lidmi tedy existuje a radnice by na ni měla reagovat. Přemýšlelo se i o rodinných domech, hotelu nebo jiné občanské vybavenosti. Po zvážení potřeb města a jeho obyvatel ale jako nejvhodnější vyšly bytové domy.",
+    "Chceš do toho mluvit? Plány se budou představovat na veřejném projednání ve čtvrtek 20. března. Začíná v 16 hodin v rekonstruované zasedací místnosti radnice na Velkém náměstí. Zasedačka po rekonstrukci dostala vizuální patch, tak si ji můžeš rovnou omrknout."
+  ],
+  "headline": "Lutopecká: město plánuje bytové domy, 20. března bude veřejné projednání",
+  "id": "mesto-kromeriz:mesto-pripravuje-vystavbu-bytovych-domu-v-lokalite-lutopecka",
+  "image_caption": "Vizualizace možné budoucí podoby lokality.",
+  "image_local": "mesto-pripravuje-vystavbu-bytovych-domu-v-lokalite-lutopecka.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/c/0/csm_20250214_vizualizace_Lutopecka_78c28eccc8.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Kroměřížská radnice chystá stavbu bytových domů v lokalitě Lutopecká. Stát by mohly na ploše mezi stávajícími bytovými domy a budoucí stanicí profesionálních hasičů. „Jedná se prakticky o jediné ucelené městské pozemky, na kterých bychom mohli postavit více bytových domů. V tuto chvíli máme hotovou studii, podle které by se jich do tohoto prostoru mohlo vejít devět. Tolik domů ale město určitě naráz stavět nebude. Vše se bude odvíjet od možnosti získat na tuto velkou investiční akci dotace,“ uvedl místostarosta Jan Hebnar.",
+  "published": "2025-02-14T10:10:00+01:00",
+  "rewritten_at": "2026-10-23T14:36:09.378579+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "mesto-pripravuje-vystavbu-bytovych-domu-v-lokalite-lutopecka",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "peníze",
+    "radnice"
+  ],
+  "title": "Město připravuje výstavbu bytových domů v lokalitě Lutopecká",
+  "tldr": [
+    {
+      "emoji": "🏗️🏘️",
+      "label": "Big Plan",
+      "text": "Radnice chce na Lutopecké stavět bytové domy a studie jich tam vidí devět."
+    },
+    {
+      "emoji": "💸🎮",
+      "label": "Dotace Dependent",
+      "text": "Kolik domů nakonec vyroste, záleží na tom, jestli se podaří získat dotace."
+    },
+    {
+      "emoji": "📅🏛️",
+      "label": "Town Hall Quest",
+      "text": "Plány se budou veřejně projednávat ve čtvrtek 20. března na radnici na Velkém náměstí."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-pripravuje-vystavbu-bytovych-domu-v-lokalite-lutopecka"
+}

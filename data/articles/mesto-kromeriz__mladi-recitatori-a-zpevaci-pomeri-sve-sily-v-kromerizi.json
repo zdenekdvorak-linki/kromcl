@@ -1,0 +1,47 @@
+{
+  "author": "Šárka Kučerová",
+  "body": [
+    "Ayo, Kroměříž a okolí, únor a březen mají letos kulturní season pass. Mladí zpěváci a recitátoři si v oblastních kolech uměleckých soutěží ověří, na kolika procentech jejich skill tree momentálně je. Radniční odbor školství mládeže a tělovýchovy to chystá společně s dalšími pořadateli a na programu jsou tři eventy: Wolkrův Prostějov, O hanáckyho kohóta a Dětská scéna.",
+    "Jako první přijde na řadu Wolkrův Prostějov, tedy recitace pro mládež i dospělé. Hraje se 21. února v aule Základní umělecké školy Kroměříž v Jánské ulici. Přehlídka chce podpořit zájem studentů i širší veřejnosti o literaturu a její tvůrčí interpretaci. Prostě questy pro každého, kdo umí s textem pracovat nahlas.",
+    "Hudební větev má svůj den 13. března. V Klubu Starý pivovar se bude soutěžit v sólovém zpěvu a prezentovat hanácké lidové písně v soutěži O hanáckyho kohóta. Dětská scéna je pak závěrečný stage a probíhá 18. března. Dům kultury tehdy hostí recitaci žáků základních škol.",
+    "Místostarosta Pavel Motyčka se pochvalně vyjádřil o zájmu soutěžících i jejich pedagogů. Podle něj žáci a studenti touhle cestou drží při životě folklorní tradice regionu a zároveň si budují vztah k literatuře, mluvenému slovu i lidové hudbě. Achievement unlocked, a to rovnou ve třech kategoriích."
+  ],
+  "headline": "Recitace a hanácké songy: tři soutěže pro mladé talenty v Kroměříži",
+  "id": "mesto-kromeriz:mladi-recitatori-a-zpevaci-pomeri-sve-sily-v-kromerizi",
+  "image_caption": "Účastníci loňského oblastního kola soutěže Wolkrův Prostějov.",
+  "image_local": "mladi-recitatori-a-zpevaci-pomeri-sve-sily-v-kromerizi.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/e/e/csm_20250120_souteze_7cee609a4c.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Své schopnosti a um poměří v průběhu února a března mladí zpěváci a recitátoři z Kroměříže a okolí v oblastních kolech uměleckých soutěží. Radniční odbor školství mládeže a tělovýchovy ve spolupráci s dalšími pořadateli připravuje soutěže Wolkrův Prostějov, O hanáckyho kohóta a Dětská scéna. „Těší mě, že žáci a studenti mají zájem porovnávat své schopnosti v recitačních a pěveckých soutěžích. Podílejí se tak na udržování a rozvíjení folklorních tradic regionu a zároveň budují svůj vztah k literatuře a mluvenému slovu i k lidové hudbě,“ ocenil zájem ze strany soutěžících i jejich pedagogů místostarosta Pavel Motyčka.",
+  "published": "2025-01-20T13:28:53+01:00",
+  "rewritten_at": "2026-10-23T14:24:00.915141+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "mladi-recitatori-a-zpevaci-pomeri-sve-sily-v-kromerizi",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "školství",
+    "akce"
+  ],
+  "title": "Mladí recitátoři a zpěváci poměří své síly v Kroměříži",
+  "tldr": [
+    {
+      "emoji": "📜🎤",
+      "label": "Poetry Round",
+      "text": "Wolkrův Prostějov pro recitátory z řad mládeže i dospělých dorazí 21. února do auly Základní umělecké školy v Jánské ulici."
+    },
+    {
+      "emoji": "🎶🐓",
+      "label": "Folk Karaoke",
+      "text": "Sólový zpěv hanáckých lidových písní se řeší v soutěži O hanáckyho kohóta, která se koná 13. března v Klubu Starý pivovar."
+    },
+    {
+      "emoji": "🎭🏁",
+      "label": "Final Level",
+      "text": "Dětská scéna s recitací žáků základních škol zakončí sezónu 18. března v Domě kultury."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mladi-recitatori-a-zpevaci-pomeri-sve-sily-v-kromerizi"
+}

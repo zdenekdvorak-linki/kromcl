@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+site/
+
+# Interní, nepatří do veřejného repa — obsahuje osobní kontakty.
+dopis-tiskovemu-mluvcimu.md

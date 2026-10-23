@@ -1,0 +1,46 @@
+{
+  "author": "Šárka Kučerová",
+  "body": [
+    "Ayo, Slovanské náměstí dostává upgrade. Město v březnu zahájí práce na úpravě okolí Knihovny Kroměřížska a zhotovitelem bude společnost SMO z Otrokovic. Počítalo se s cenou 28,3 milionu korun, jenže SMO nabídla 22,25 milionu. Starosta Tomáš Opatrný uvedl, že se podařilo vysoutěžit cenu o šest milionů nižší, takže je to fr W pro rozpočet. Navíc je tu evropská dotace z výzvy Zelená infrastruktura v rámci IROP, která má pokrýt 85 procent uznatelných nákladů.",
+    "Co se bude dít? Nové parkovací plochy, přístupové chodníky a opěrné zídky, rekonstrukce veřejného osvětlení, sadové a terénní úpravy a nový odvod srážkových vod ze zpevněných ploch. Ten má natrvalo vyřešit, že se při vydatnějších deštích zaplavoval suterén knihovny, což byl pořádný cooked moment. Stávající parkovací místa zůstanou, takže žádný nerf pro řidiče. Přibude 36 stromů, 329 keřů a 980 cibulovin. Osm sloupů osvětlení projde rekonstrukcí a doplní se 11 laviček, pět odpadkových košů a sedm stojanů na kola.",
+    "Knihovna během stavby jede dál a provoz nemá být nijak omezený. Ředitelka Šárka Kašpárková uvedla, že služby i kulturní, společenské a vzdělávací akce poběží jako obvykle. Kdo nechce řešit stavbu, může případně sáhnout po online službách knihovny. Těší se na nové okolí a věří, že bude příjemné i pro klienty. Hotovo má být nejpozději na jaře roku 2026, takže tohle je side quest na delší lajnu."
+  ],
+  "headline": "Okolí Knihovny Kroměřížska dostane glow-up a vyšlo to o šest milionů levněji",
+  "id": "mesto-kromeriz:prace-na-uprave-predprostoru-knihovny-kromerizska-zacnou-na-jare",
+  "image_caption": "",
+  "image_local": "prace-na-uprave-predprostoru-knihovny-kromerizska-zacnou-na-jare.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/9/8/csm_20250305_knihovna_predprostor_zhotovitel_9d02b12ce7.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Město v březnu zahájí práce na úpravě okolí Knihovny Kroměřížska na Slovanském náměstí. Zhotovitelem zakázky bude společnost SMO z Otrokovic, která nabídla cenu 22,25 milionu korun. Předpokládaná hodnota zakázky přitom byla 28,3 milionu korun. „Podařilo se nám vysoutěžit cenu o šest milionů nižší. Navíc jsme na projekt úpravy předprostoru knihovny získali evropskou dotaci z výzvy Zelená infrastruktura v rámci Integrovaného regionálního operačního programu (IROP), která by měla pokrýt 85 procent uznatelných nákladů, tedy značnou část ze zmíněných 22,25 milionu Kč,“ uvedl starosta Tomáš Opatrný.",
+  "published": "2025-03-05T09:18:42+01:00",
+  "rewritten_at": "2026-10-23T14:37:48.420821+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "prace-na-uprave-predprostoru-knihovny-kromerizska-zacnou-na-jare",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "peníze",
+    "kultura"
+  ],
+  "title": "Práce na úpravě předprostoru Knihovny Kroměřížska začnou na jaře",
+  "tldr": [
+    {
+      "emoji": "💰📉",
+      "label": "Budget Buff",
+      "text": "Zakázka vyšla levněji, než se čekalo, a velkou část nákladů má pokrýt evropská dotace z IROP."
+    },
+    {
+      "emoji": "📚✅",
+      "label": "Zero Downtime",
+      "text": "Knihovna jede po celou dobu stavby bez omezení, akce i služby poběží dál."
+    },
+    {
+      "emoji": "🌧️🛠️",
+      "label": "Flood Patch",
+      "text": "Nový odvod dešťové vody má natrvalo vyřešit zaplavování suterénu knihovny."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/prace-na-uprave-predprostoru-knihovny-kromerizska-zacnou-na-jare"
+}

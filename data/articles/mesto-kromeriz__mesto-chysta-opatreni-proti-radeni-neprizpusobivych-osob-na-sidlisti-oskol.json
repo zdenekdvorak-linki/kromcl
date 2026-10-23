@@ -1,0 +1,46 @@
+{
+  "author": "Jan Vondrášek",
+  "body": [
+    "Ayo, sídliště Oskol možná dostane patch. Lidé z bytových domů si stěžují, že v parku před domy se konzumují návykové látky, znečišťuje se veřejné prostranství a dělá se hluk. Radní Jan Pšeja, předseda komise rady pro bezpečnost a prevenci kriminality, to označil za neutěšenou situaci, na kterou platná legislativa nestačí. Komise proto navrhla několik úprav, které mají obtěžování obyvatel odradit.",
+    "Questlog vypadá takhle: odbor služeb má prověřit, jestli lavičky z inkriminované lokality pryč (velký nerf), a zajistit revitalizaci přilehlého dětského hřiště přidáním oplocení. Městská policie má prověřit mobilní kameru. Strážníci tam zatím jezdí na oznámení. Ředitel městské policie Libor Kubiš uvedl, že obyvatelé na jednání komise potvrdili, že hlídka přijede vždy včas a jedná vstřícně a konstruktivně. To je W pro hlídky.",
+    "Boss fight je ale v pravomocích. Strážníci mohou zakročit, jen když někdo poruší zákon nebo městskou vyhlášku. Podle Kubiše je u osob bez přístřeší navíc těžké přestupek potrestat, protože pokuty se neplatí a při přestupcích předávaných správnímu orgánu často chybí důkazy. Starosta Tomáš Opatrný, který má městskou policii na starost, uvedl, že problematičtí lidé se ve městě budou pohybovat vždy a že jde o problém celé republiky. Všichni by prý uvítali změny v zákonech, které by městské policii daly víc pravomocí, tedy pořádný buff.",
+    "Město se mezitím snaží v rámci svých možností. Nedávno zprovoznilo novou digitální kameru, která monitoruje lokalitu pod kostelem Panny Marie ve spodní části Riegrova náměstí. Městská vyhláška konzumaci alkoholu na vymezených veřejných prostranstvích zakazuje a kamera má pomoct přestupky odhalit a prokázat."
+  ],
+  "headline": "Oskol: radnice zvažuje kameru, oplocené hřiště a konec laviček v parku",
+  "id": "mesto-kromeriz:mesto-chysta-opatreni-proti-radeni-neprizpusobivych-osob-na-sidlisti-oskol",
+  "image_caption": "",
+  "image_local": "mesto-chysta-opatreni-proti-radeni-neprizpusobivych-osob-na-sidlisti-oskol.jpeg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/c/6/csm_20250107_Oskol_09a838ee98.jpeg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Kroměřížská radnice připravuje opatření, která by vedla k uklidnění situace v parku před bytovými domy na sídlišti Oskol. „Obyvatelé této lokality si stěžují na nevhodné chování nepřizpůsobivých osob, které zde konzumují návykové látky, znečišťují veřejné prostranství a vytvářejí hluk. Přestože platná legislativa je pro vyřešení této neutěšené situace nedostatečná, komise rady pro bezpečnost a prevenci kriminality navrhla několik úprav, která by měla tyto osoby od obtěžování obyvatel sídliště odradit,“ uvedl radní Jan Pšeja, který je předsedou zmíněné komise.",
+  "published": "2025-01-08T09:23:02+01:00",
+  "rewritten_at": "2026-10-23T14:29:04.437432+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "mesto-chysta-opatreni-proti-radeni-neprizpusobivych-osob-na-sidlisti-oskol",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "title": "Město chystá opatření proti řádění nepřizpůsobivých osob na sídlišti Oskol",
+  "tldr": [
+    {
+      "emoji": "🪑",
+      "label": "Bench Nerf",
+      "text": "Odbor služeb má prověřit, jestli z parku na Oskolu zmizí lavičky."
+    },
+    {
+      "emoji": "📹",
+      "label": "Camera Mode",
+      "text": "Městská policie má prověřit mobilní kameru, která by v lokalitě dohlížela na pořádek."
+    },
+    {
+      "emoji": "🛝",
+      "label": "Playground Upgrade",
+      "text": "Přilehlé dětské hřiště by mělo při revitalizaci dostat oplocení."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-chysta-opatreni-proti-radeni-neprizpusobivych-osob-na-sidlisti-oskol"
+}

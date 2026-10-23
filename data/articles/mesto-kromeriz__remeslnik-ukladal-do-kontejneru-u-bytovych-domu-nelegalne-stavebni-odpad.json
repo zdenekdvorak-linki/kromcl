@@ -1,0 +1,45 @@
+{
+  "author": "Jan Vondrášek",
+  "body": [
+    "Ayo, kontejnery na tříděný odpad v ulici Slovenského národního povstání dostaly nečekaný loot: pytle se stavebním odpadem. Městská policie zadržela třiačtyřicetiletého muže, který je podezřelý z přestupku podle zákona o odpadech. Případ strážníci předali správnímu orgánu, takže další kolo se hraje tam. Celé to odstartoval strážník, který měl zrovna volno, a přesto to nahlásil veliteli směny. Respect, W aura.",
+    "Hlídka dorazila ve chvíli, kdy muž vyhazoval pytle ze zaparkované dodávky. Podle Libora Kubiše, ředitele městské policie, vysvětlil, že předělává kamarádovi koupelnu a chtěl se zbavit materiálu z opravy. Správný postup přitom byl odvézt odpad do soukromé firmy nebo na sběrný dvůr v ulici Nitranská na sídlišti Zachar. Jenže tam je tahle služba od 1. července loňského roku za peníze.",
+    "Místostarosta Karel Holík připomněl, proč se to změnilo. Nadstandardní služba byla zneužívána a město stála velké peníze. Stavebního odpadu se tam ročně sešlo přes 4000 tun a často ho vozili řemeslníci a firmy, které by jinde za uložení musely platit. Patch zafungoval. Od ledna do června 2024 přibylo 2086 tun, od července do konce loňského roku jen 495 tun. Město tak za druhou polovinu roku 2024 ušetřilo zhruba 1,8 milionu korun, což Holík označil za významnou úsporu. Nerf pro objem odpadu, buff pro rozpočet."
+  ],
+  "headline": "Stavební odpad v kontejnerech na tříděný odpad? Strážník off duty to nahlásil",
+  "id": "mesto-kromeriz:remeslnik-ukladal-do-kontejneru-u-bytovych-domu-nelegalne-stavebni-odpad",
+  "image_caption": "Foto: Městská policie",
+  "image_local": "remeslnik-ukladal-do-kontejneru-u-bytovych-domu-nelegalne-stavebni-odpad.jpeg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/user_upload/tiskove-zpravy/2025/20250207_stavebni_odpad.jpeg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Městská policie v těchto dnech zadržela třiačtyřicetiletého muže, jenž v ulici Slovenského národního povstání vhazoval do kontejnerů na tříděný odpad, které jsou určené pro obyvatele přilehlých domů, větší množství stavebního odpadu. „Muž je podezřelý z přestupku podle zákona o odpadech, za což se bude zpovídat správnímu orgánu, jemuž strážníci událost předali k vyřešení,“ uvedl ředitel městské policie Libor Kubiš.",
+  "published": "2025-02-07T09:07:31+01:00",
+  "rewritten_at": "2026-10-23T14:31:12.007495+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "remeslnik-ukladal-do-kontejneru-u-bytovych-domu-nelegalne-stavebni-odpad",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze"
+  ],
+  "title": "Řemeslník ukládal do kontejnerů u bytových domů nelegálně stavební odpad",
+  "tldr": [
+    {
+      "emoji": "🚮🚧",
+      "label": "Wrong Bin",
+      "text": "Městská policie zadržela třiačtyřicetiletého muže, který v ulici Slovenského národního povstání házel stavební odpad do kontejnerů na tříděný odpad."
+    },
+    {
+      "emoji": "💸🛠️",
+      "label": "Paywall Patch",
+      "text": "Sběrný dvůr v ulici Nitranská je od 1. července loňského roku na stavební odpad zpoplatněný."
+    },
+    {
+      "emoji": "📈💰",
+      "label": "Budget Buff",
+      "text": "Město díky zpoplatnění ušetřilo zhruba 1,8 milionu korun."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/remeslnik-ukladal-do-kontejneru-u-bytovych-domu-nelegalne-stavebni-odpad"
+}

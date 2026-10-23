@@ -1,0 +1,46 @@
+{
+  "author": "Šárka Kučerová",
+  "body": [
+    "Ayo, radnice otevřela peněženku a W si odnesly obě kroměřížské nemocnice. Kroměřížská nemocnice v Havlíčkově ulici i Nemocnice Milosrdných sester sv. Vincence de Paul na Malém valu dostaly od města každá sto tisíc korun, vždy ke konkrétnímu účelu. Žádný random loot, každá koruna má svůj quest. Místostarosta Pavel Motyčka uvedl, že město doufá, že díky podpoře se podaří zkvalitňovat péči pro obyvatele Kroměříže i širokého okolí a usnadnit práci pečujícímu personálu. Dodal, že s oběma dary se počítalo už při přípravě rozpočtu na rok 2025.",
+    "Kroměřížská nemocnice nasype peníze do figuríny Susie/Simon, k níž patří i trenažér pro nácvik měření krevního tlaku. Na figuríně se učí základní i pokročilé ošetřovatelské dovednosti, třeba bezpečné zacházení s pacientem, a také různé klinické procedury. Něco jako tutorial level pro ošetřovatelské skilly.",
+    "Nemocnice Milosrdných sester investuje do speciálního polohovacího lůžka pro pacienty. Hodí se v běžném nemocničním provozu i při specializované paliativní péči, tedy péči o nevyléčitelně nemocné a umírající pacienty. Tady je to čistě W upgrade."
+  ],
+  "headline": "Radnice dala nemocnicím po sto tisících: figurína na trénink a speciální lůžko",
+  "id": "mesto-kromeriz:radnice-poskytla-penezni-dary-dvema-kromerizskym-nemocnicim",
+  "image_caption": "",
+  "image_local": "radnice-poskytla-penezni-dary-dvema-kromerizskym-nemocnicim.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/e/1/csm_20250206_nemocnice_7858afbc41.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "Město Kroměříž poskytlo finanční dary zdravotnickým zařízením působícím v Kroměříži, a to Kroměřížské nemocnici sídlící v Havlíčkově ulici a Nemocnici Milosrdných sester sv. Vincence de Paul na Malém valu. „Každé z nemocnic jsme darovali sto tisíc korun ke konkrétnímu účelu. Budeme rádi, pokud se díky finanční podpoře města podaří zkvalitňovat péči, kterou obě zařízení poskytují obyvatelům Kroměříže i širokého okolí, a usnadňovat práci pečujícímu personálu,“ uvedl místostarosta Pavel Motyčka a dodal, že s oběma dary se počítalo již při přípravě rozpočtu města Kroměříže na rok 2025.",
+  "published": "2025-02-06T07:02:02+01:00",
+  "rewritten_at": "2026-10-23T14:30:32.909687+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "radnice-poskytla-penezni-dary-dvema-kromerizskym-nemocnicim",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "peníze",
+    "radnice",
+    "lidé"
+  ],
+  "title": "Radnice poskytla peněžní dary dvěma kroměřížským nemocnicím",
+  "tldr": [
+    {
+      "emoji": "💸🏥",
+      "label": "Budget Buff",
+      "text": "Každá ze dvou kroměřížských nemocnic dostala od města sto tisíc korun na konkrétní účel."
+    },
+    {
+      "emoji": "🩺🧑‍⚕️",
+      "label": "Training Dummy",
+      "text": "Kroměřížská nemocnice si koupí figurínu Susie/Simon s trenažérem na měření krevního tlaku."
+    },
+    {
+      "emoji": "🛏️💚",
+      "label": "Comfort Upgrade",
+      "text": "Nemocnice Milosrdných sester pořídí speciální polohovací lůžko pro pacienty."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-poskytla-penezni-dary-dvema-kromerizskym-nemocnicim"
+}

@@ -1,0 +1,46 @@
+{
+  "author": "Jan Vondrášek",
+  "body": [
+    "Ayo, radnice na Velkém náměstí dnes dostala side quest s hudebním doprovodem. Zazněla tu koleda a dovnitř vstoupili Kašpar, Melichar a Baltazar v doprovodu ředitelky Charity Kroměříž Anny Valachové. Sbírku organizuje Charita ČR a letos se koná už poosmnácté. Výtěžek poputuje seniorům, matkám s dětmi v tísni, rodinám v tíživé situaci a lidem bez domova. Starosta Jaroslav Němec králům popřál hodně zdaru a do kasičky přispěl i s dalšími kolegy z městského úřadu. Big W.",
+    "Achievement unlocked: dveře starostovy pracovny dostaly oficiální tříkrálový patch. Jeden z králů na ně křídou napsal iniciály K+M+B. Králové navíc přispěvatelům rozdali drobné upomínkové dárky, takže se z kasičky vracel i malý loot.",
+    "Dnes je svátek Tří králů, a tak jde i o to, kam peníze doputují. Výtěžek se dělí podle daných pravidel. Nejvíc, 65 procent, jde na pomoc ve městě či obci a okolí, kde dárci peníze věnovali. Dalších 15 procent míří na projekty v diecézi, pět procent na celostátní projekty a desetina na pomoc do zahraničí. Posledních pět procent pokryje náklady na pořádání sbírky, takže tam jsou server fees."
+  ],
+  "headline": "Tři králové dorazili na radnici v Kroměříži: koleda, křída a charitativní W",
+  "id": "mesto-kromeriz:trikralovi-kolednici-zavitali-na-kromerizskou-radnici",
+  "image_caption": "",
+  "image_local": "trikralovi-kolednici-zavitali-na-kromerizskou-radnici.jpg",
+  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/user_upload/tri_kralove_3.jpg",
+  "model": "claude-sonnet-5-5",
+  "perex": "My tři králové jdeme k vám, štěstí zdraví vinšujem vám… Známá koleda dnes zněla kroměřížskou radnicí, kam zavítali koledníci tříkrálové sbírky. Organizuje ji Charita ČR. Výtěžek sbírky, která se letos koná popětadvacáté, je určen nemocným, handicapovaným, seniorům, matkám s dětmi v tísni a dalším lidem v nouzi.",
+  "published": "2025-01-06T12:10:00+01:00",
+  "rewritten_at": "2026-10-23T14:20:50.821624+00:00",
+  "rubrika": "Tiskové zprávy",
+  "sensitivity": "volny",
+  "slug": "trikralovi-kolednici-zavitali-na-kromerizskou-radnici",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "radnice",
+    "akce"
+  ],
+  "title": "Tříkráloví koledníci zavítali na kroměřížskou radnici",
+  "tldr": [
+    {
+      "emoji": "👑🏛️",
+      "label": "Royal Visit",
+      "text": "Kašpar, Melichar a Baltazar zavítali na kroměřížskou radnici s tříkrálovou sbírkou."
+    },
+    {
+      "emoji": "💛🤝",
+      "label": "Good Cause",
+      "text": "Výtěžek je určen seniorům, matkám s dětmi v tísni, rodinám v tíživé situaci a lidem bez domova."
+    },
+    {
+      "emoji": "🏘️💰",
+      "label": "Local Loot",
+      "text": "Největší díl, 65 procent, zůstává ve městě či obci a okolí, kde dárci peníze věnovali."
+    }
+  ],
+  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/trikralovi-kolednici-zavitali-na-kromerizskou-radnici"
+}

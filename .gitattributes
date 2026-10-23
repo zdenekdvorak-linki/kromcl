@@ -1,0 +1,7 @@
+# Jeden stroj je Windows, druhý macOS. Bez tohohle se do repa dostanou CRLF
+# a skripty psané na Windows se na Macu chovají jinak.
+* text=auto eol=lf
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
