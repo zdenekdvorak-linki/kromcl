@@ -94,7 +94,7 @@ def davka(limit, nejstarsi=False, jen_novejsi=False):
 def _stahni_obrazek(polozka):
     """Stáhne fotku a uloží ji jako WebP. Vrací (soubor, šířka, výška)."""
     url = polozka.get("image_url")
-    if not url:
+    if not config.CIZI_FOTKY or not url:
         return "", 0, 0
     try:
         return obrazky.uloz_webp(net.get(url, binary=True), polozka["slug"])

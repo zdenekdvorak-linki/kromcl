@@ -81,13 +81,18 @@ SKIP_SENSITIVE = False
 # Kolik článků se vejde na úvodní stránku, než se stránkuje.
 PAGE_SIZE = 30
 
+# Web města má v patičce: „Všechna práva vyhrazena - použití obsahu nebo jeho
+# části je možné pouze se souhlasem města Kroměříž." Souhlas nemáme, takže se
+# cizí fotky nestahují ani nezobrazují. Nepřepínat bez písemného souhlasu.
+CIZI_FOTKY = False
+
 # Kolikrát se smí článek pokusit zpracovat napříč běhy, než se vzdáme.
 # Chrání před nekonečným placeným opakováním vadné položky v cronu.
 MAX_SELHANI = 3
 
 # --- Atribuce -------------------------------------------------------------
 DISCLAIMER = (
-    "Tenhle web přepisuje tiskové zprávy města Kroměříž do jazyka, kterým se "
-    "dá číst. Přepis dělá AI, originál má vždycky přednost — odkaz je u "
-    "každého článku."
+    "Sledujeme, co se děje v Kroměříži, a píšeme o tom vlastními slovy "
+    "jazykem, kterým se dá číst. Texty píše AI. Oficiální informace vydává "
+    "město Kroměříž — odkaz najdeš u každé zprávy."
 )

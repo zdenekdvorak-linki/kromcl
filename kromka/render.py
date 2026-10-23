@@ -215,7 +215,7 @@ def _obrazek_tag(clanek, trida="", lazy=True):
     Fotka nad ohybem se nesmí odkládat — je to skoro vždy ten prvek, podle
     kterého se měří LCP. Proto u ní eager a fetchpriority high.
     """
-    if not clanek.get("image_local"):
+    if not config.CIZI_FOTKY or not clanek.get("image_local"):
         return ""
     rozmery = ""
     if clanek.get("image_w") and clanek.get("image_h"):
@@ -273,7 +273,7 @@ def _clanek(clanek, souvisejici):
         _datum_cesky(clanek.get("published"))))
     casti.append("<h1>{0}</h1>".format(_e(clanek["headline"])))
 
-    if clanek.get("image_local"):
+    if config.CIZI_FOTKY and clanek.get("image_local"):
         casti.append("<figure>{img}<figcaption>{popis} Foto: {autor}</figcaption></figure>".format(
             img=_obrazek_tag(clanek, trida="hero", lazy=False),
             popis=_e(clanek.get("image_caption", "")),
@@ -291,9 +291,9 @@ def _clanek(clanek, souvisejici):
         casti.append("<p>{0}</p>".format(_e(odstavec)))
 
     casti.append(
-        '<div class="zdroj">Tohle je AI přepis tiskové zprávy města. '
-        'Originál se vším všudy: <a href="{url}" rel="nofollow">{titulek}</a> '
-        "({zdroj}, {datum}).</div>".format(
+        '<div class="zdroj">Oficiální informace k téhle zprávě vydalo '
+        '<a href="{url}" rel="nofollow">{zdroj}</a> '
+        "({titulek}, {datum}).</div>".format(
             url=_e(clanek["url"]), titulek=_e(clanek["title"]),
             zdroj=_e(clanek["source_name"]), datum=_datum_cesky(clanek.get("published"))))
 
@@ -373,13 +373,16 @@ def vykresli(clanky):
     for podslozka in ("clanek", "img", "tema"):
         shutil.rmtree(str(config.SITE / podslozka), ignore_errors=True)
         (config.SITE / podslozka).mkdir(parents=True, exist_ok=True)
-    for soubor in config.IMAGES.glob("*"):
-        shutil.copy2(soubor, config.SITE / "img" / soubor.name)
+    if config.CIZI_FOTKY:
+        for soubor in config.IMAGES.glob("*"):
+            shutil.copy2(soubor, config.SITE / "img" / soubor.name)
 
     zapsano = 0
     for clanek in clanky:
         cesta = "/clanek/{0}.html".format(clanek["slug"])
-        obrazek = _abs("/img/" + clanek["image_local"]) if clanek.get("image_local") else ""
+        obrazek = ""
+        if config.CIZI_FOTKY and clanek.get("image_local"):
+            obrazek = _abs("/img/" + clanek["image_local"])
         (config.SITE / "clanek" / (clanek["slug"] + ".html")).write_text(_stranka(
             "{0} – {1}".format(clanek["headline"], config.BRAND),
             " ".join(p.get("text", "") for p in clanek.get("tldr", [])),
@@ -469,11 +472,14 @@ def _o_webu():
     return (
         '<article class="clanek">{drobecky}<h1>O webu</h1>'
         "<p>{disclaimer}</p>"
-        "<p>Zdrojem je veřejný RSS kanál města Kroměříž. Každý článek odkazuje na "
-        "originál a nic z toho, co tady čteš, není oficiální stanovisko radnice.</p>"
-        "<p>Přepis dělá jazykový model. Čísla a data se strojově kontrolují proti "
-        "originálu, nikoho tu necitujeme v uvozovkách a kontaktní údaje sem nedáváme. "
-        "Chyba se ale stát může. Když nějakou najdeš, napiš.</p>"
+        "<p>O dění ve městě se dozvídáme z veřejného kanálu městských aktualit. "
+        "Zprávy pak píšeme vlastními slovy. Nic z toho, co tady čteš, není "
+        "oficiální stanovisko radnice — u každé zprávy je odkaz na místo, kde "
+        "město zveřejnilo oficiální informace.</p>"
+        "<p>Texty píše jazykový model. Čísla a data se strojově kontrolují, "
+        "nikoho tu necitujeme v uvozovkách a kontaktní údaje sem nedáváme. "
+        "Fotky města nepřebíráme. Chyba se ale stát může. Když nějakou "
+        "najdeš, napiš.</p>"
         "</article>"
     ).format(disclaimer=_e(config.DISCLAIMER),
              drobecky=_drobecky([("Domů", "/"), ("O webu", None)]))

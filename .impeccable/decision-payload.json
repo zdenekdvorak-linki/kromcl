@@ -1,0 +1,188 @@
+{
+  "title": "Vyber vizuální svět pro KROMCL",
+  "question": "Los přidělil Termopásku. Nech ji, vezmi alternativu, nebo losuj znovu.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Termopáska",
+      "kicker": "THE ROLL",
+      "lineage": "účtenka z termotiskárny, karbonová kopie, cenovková etiketa",
+      "thesis": "Zprávy z radnice vytištěné jako účtenka: položka, cena, celkem, razítko.",
+      "palette": ["#1A14FF", "#FFFFFF", "#FF2B2B", "#D6FF00", "#111013"],
+      "materials": ["termotisk", "perforace", "gumové razítko", "karbonová kopie", "cenovková etiketa"],
+      "viewport": "Úzký bílý pás papíru se odvíjí od horní hrany přes pole utopené v karbonové modři. V hlavičce KROMCL * KROMĚŘÍŽ * POKLADNA 1, pod ní datum a čas, pak dnešní hlavní zpráva vysázená jako účtovaný blok: nadpis dvojúderem, TL;DR jako tři položky s cenou, dole řádek CELKEM. Napříč patičkou nakřivo červené razítko AI PŘEPIS.",
+      "risk": "Účtenka je ze své podstaty úzká. Na desktopu se z ní snadno stane osamělý proužek uprostřed prázdna — pole kolem musí být utopené v barvě a přetisknuté, ne bílé.",
+      "raised": [
+        {
+          "from": "challenger-rail",
+          "raise": "Stav je vytištěná značka, ne barevný odznak: razítko, přeškrtnutí, proděrování."
+        },
+        {
+          "from": "challenger-miura",
+          "raise": "Jeden ovládací prvek se propíše přes celou roli — rozbalí TL;DR všech článků naráz."
+        },
+        {
+          "from": "challenger-ice",
+          "raise": "Stroj si tiskne vlastní poctivost do patičky: AI přepis, zdroj, čas pořízení."
+        },
+        {
+          "from": "challenger-cyc",
+          "raise": "Žádný stav nesmí být signalizovaný jen barvou."
+        }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 12,
+        "regions": [
+          {"label": "pole karbonové modři", "x": 0, "y": 0, "w": 12, "h": 12},
+          {"label": "role papíru", "x": 4, "y": 0, "w": 4, "h": 12, "accent": true},
+          {"label": "hlavička pokladny", "x": 4, "y": 0, "w": 4, "h": 1},
+          {"label": "datum a čas", "x": 4, "y": 1, "w": 4, "h": 1},
+          {"label": "nadpis dvojúderem", "x": 4, "y": 2, "w": 4, "h": 2},
+          {"label": "TL;DR jako položky", "x": 4, "y": 4, "w": 4, "h": 3},
+          {"label": "CELKEM", "x": 4, "y": 7, "w": 4, "h": 1},
+          {"label": "razítko AI PŘEPIS", "x": 5, "y": 8, "w": 3, "h": 1, "accent": true},
+          {"label": "perforace", "x": 4, "y": 9, "w": 4, "h": 1},
+          {"label": "další útržek", "x": 4, "y": 10, "w": 4, "h": 2}
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "Odjezdová tabule",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "elektronický označník na zastávce MHD",
+      "thesis": "Každá zpráva je odjezd: kdy, odkud, za jak dlouho.",
+      "palette": ["#0A0A0A", "#FFB000", "#00E0FF", "#F2F2F2"],
+      "materials": ["LED matrice", "jantarový fosfor", "řádkový rastr"],
+      "viewport": "Černá tabule přes celou plochu, jantarové řádky. Nejnovější zpráva je nejbližší odjezd s odpočtem, pod ní řádky dalších. Téma zastupuje číslo linky.",
+      "risk": "Jantar na černé je přesně tam, kde skončí většina pokusů o „odvážný mladý web\". A čte se to spíš jako dopravní appka než jako čtení.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          {"label": "hlavička tabule", "x": 0, "y": 0, "w": 12, "h": 1},
+          {"label": "nejbližší odjezd", "x": 0, "y": 1, "w": 12, "h": 3, "accent": true},
+          {"label": "řádek zprávy", "x": 0, "y": 4, "w": 12, "h": 1},
+          {"label": "řádek zprávy", "x": 0, "y": 5, "w": 12, "h": 1},
+          {"label": "řádek zprávy", "x": 0, "y": 6, "w": 12, "h": 1},
+          {"label": "řádek zprávy", "x": 0, "y": 7, "w": 12, "h": 1},
+          {"label": "běžící lišta", "x": 0, "y": 9, "w": 12, "h": 1}
+        ]
+      }
+    },
+    {
+      "id": "challenger-cracktro",
+      "label": "Cracktro",
+      "verdict": "competitive",
+      "lineage": "demoscéna, úvodní obrazovky cracků",
+      "thesis": "Archiv jako nekonečný scroller: pořadí je hloubka, nic není v rámečku.",
+      "palette": ["#000000", "#2A2A2A", "#8A8A8A", "#EDE6D8", "#FFAA00"],
+      "materials": ["bitmapové písmo", "prachové vrstvy", "emisivní čerň"],
+      "viewport": "Jedna slonovinová bitmapová linka stojí na černé prázdnotě, za ní tři pole šedých teček plují různou rychlostí, na začátku řádku bliká jantarový kurzor.",
+      "case": "Sedí na jazyk, který už web používá — buff, nerf, patch, side quest. Prohrává na srozumitelnosti: nic není ohraničené a pořadí nese hloubka, což se v archivu o stovkách článků špatně prohledává.",
+      "risk": "Hloubka místo rámečků znamená, že se v tom po dvacátém článku přestaneš orientovat.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          {"label": "prachová vrstva vzadu", "x": 0, "y": 0, "w": 12, "h": 10},
+          {"label": "přední rovina, titul", "x": 0, "y": 4, "w": 12, "h": 2, "accent": true},
+          {"label": "druhá rovina", "x": 0, "y": 6, "w": 12, "h": 1},
+          {"label": "třetí rovina", "x": 0, "y": 7, "w": 12, "h": 1}
+        ]
+      }
+    },
+    {
+      "id": "challenger-patent",
+      "label": "Patentový výkres",
+      "verdict": "competitive",
+      "lineage": "list patentové dokumentace s číslovanými figurami",
+      "thesis": "Každý přepsaný fakt visí na odkazové čáře u svého zdroje.",
+      "palette": ["#FFFFFF", "#101010", "#C8102E"],
+      "materials": ["tuš na kreslicím papíře", "šrafura", "odkazové čáry"],
+      "viewport": "Jeden orámovaný list, zpráva rozložená do číslovaných figur, referenční číslice visí na koncích zakřivených odkazových čar, karmínová tuš jen u toho, co je zrovna vybrané.",
+      "case": "Nejlépe ze všech kreslí hlavní slib produktu: fakt vede čárou ke zdroji, ze kterého pochází. Prohrává na identifikaci — šestnáctiletý čtenář v tom nevidí svůj svět.",
+      "risk": "Čte se to jako pracovní list do fyziky.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          {"label": "rámeček listu", "x": 0, "y": 0, "w": 12, "h": 10},
+          {"label": "hlavička listu", "x": 1, "y": 1, "w": 10, "h": 1},
+          {"label": "Fig. 1", "x": 1, "y": 2, "w": 5, "h": 4, "accent": true},
+          {"label": "Fig. 2", "x": 7, "y": 2, "w": 4, "h": 4},
+          {"label": "soupis číslic", "x": 1, "y": 7, "w": 10, "h": 2}
+        ]
+      }
+    },
+    {
+      "id": "challenger-rail",
+      "label": "Střihačský stůl",
+      "verdict": "declined",
+      "lineage": "perforovaná lišta a výběrové okénko střižny",
+      "thesis": "Zprávy navlečené jako políčka na perforované liště.",
+      "palette": ["#000000", "#FF6A00", "#FFFFFF"],
+      "materials": ["filmové zrno", "perforace", "lepicí páska"],
+      "viewport": "Perforovaná lišta přes celou plochu, sekce navlečené jako políčka, odložené kusy visí na špendlících pod lištou.",
+      "case": "Sedí na archiv, ale šestnáctiletý čtenář film nestříhá. Prohrává na identifikaci i na srozumitelnosti.",
+      "kept": "Stav je vytištěná značka, ne barevný odznak.",
+      "risk": "Metafora, kterou cílovka nikdy neviděla naživo."
+    },
+    {
+      "id": "challenger-miura",
+      "label": "Miura skládačka",
+      "verdict": "declined",
+      "lineage": "deployable Miura-ori sheet",
+      "thesis": "Jedno tažení rozvine celou plochu najednou.",
+      "palette": ["#FFFFFF", "#D4AF37", "#9AA0A6", "#C7D9F0"],
+      "materials": ["zlatá fólie", "ostré sklady", "matný papír"],
+      "viewport": "Složený balíček se dvěma tahy rozvine do tesselované plachty přes celou obrazovku.",
+      "case": "Geometrie je krásná, ale nenese zpravodajský obsah ani pořadí v čase.",
+      "kept": "Jeden ovládací prvek se propíše přes celou plochu.",
+      "risk": "Forma, která o obsahu neříká nic."
+    },
+    {
+      "id": "challenger-cyc",
+      "label": "Divadelní cyklorama",
+      "verdict": "declined",
+      "lineage": "světelný plán, přechod noci do dne",
+      "thesis": "Atmosféru nese světlo, ne tvar.",
+      "palette": ["#0A0A12", "#1B3A8F", "#E8859B", "#FFFFFF"],
+      "materials": ["světelný nástřik", "bezešvý horizont"],
+      "viewport": "Zakřivená stěna od černé přes kobalt a růžovou do bílého dne, obsah ve vodorovných pásech.",
+      "case": "Pro textový web bez fotografií nemá co osvětlovat. Prohrává na obou osách.",
+      "kept": "Žádný stav nesmí být signalizovaný jen barvou.",
+      "risk": "Nálada místo struktury."
+    },
+    {
+      "id": "challenger-ice",
+      "label": "Polární tiskárna",
+      "verdict": "declined",
+      "lineage": "noviny vysázené ručně v polární zimě",
+      "thesis": "Noviny, ve kterých zůstaly sazečovy chyby, protože druhý pokus nebyl.",
+      "palette": ["#1C1A17", "#E6E0D4", "#7A2E2E"],
+      "materials": ["litografický kámen", "ruční sazba"],
+      "viewport": "Jeden ručně vysázený list při světle lampy, s chybami ponechanými v textu.",
+      "case": "Jsou to zase noviny, tedy kategorie sama v kostýmu. Právě tomu se tenhle los má vyhnout.",
+      "kept": "Artefakt si tiskne vlastní poctivost přímo do sebe.",
+      "risk": "Kategorie převlečená za nápad."
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code"
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Co tahle kategorie dělá vždycky",
+    "thesis": "Zpravodajský web, jak ho zná každý, ale odvedený bezchybně.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["čistá mřížka", "systémový bezpatkový font", "fotografie"],
+    "viewport": "Masthead, mřížka karet, hlavní zpráva nahoře přes celou šířku.",
+    "risk": "Záměrně k nerozeznání od všech ostatních."
+  },
+  "steer": true
+}
