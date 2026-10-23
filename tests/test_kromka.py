@@ -6,11 +6,15 @@ Spuštění: python -m unittest discover -s tests
 
 import sys
 import unittest
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from kromka import config, htmlutil, piktogramy, pipeline, rewrite, styl  # noqa: E402
+from kromka import (akce, config, htmlutil, kino_dk, piktogramy,  # noqa: E402
+                    pipeline, render, rewrite, styl)
+
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
 class Slugify(unittest.TestCase):
     """Pravidla ověřená proti skutečným URL na webu města."""
 
@@ -268,6 +272,158 @@ class DruhPadu(unittest.TestCase):
         self.assertEqual(
             pipeline._druh_padu("Výstup obsahuje přímou citaci v uvozovkách."),
             "Výstup obsahuje přímou citaci v uvozovkách.")
+
+
+class AkceParsovani(unittest.TestCase):
+    """Vzorek je oříznutý skutečný export, ne vymyšlené XML."""
+
+    @classmethod
+    def setUpClass(cls):
+        xml = (FIXTURES / "akce-vzorek.xml").read_text(encoding="utf-8")
+        cls.data = akce.rozparsuj(xml)
+        cls.terminy = cls.data["terminy"]
+
+    def test_nacte_ciselniky(self):
+        self.assertEqual(len(self.data["typy"]), 8)
+        self.assertEqual(self.data["typy"][11], "Kino")
+
+    def test_kazdy_termin_ma_nazev_a_zacatek(self):
+        for t in self.terminy:
+            self.assertTrue(t["nazev"], t)
+            self.assertTrue(t["zacatek"], t)
+
+    def test_razeni_podle_zacatku(self):
+        zacatky = [t["zacatek"] for t in self.terminy]
+        self.assertEqual(zacatky, sorted(zacatky))
+
+    def test_vicedenni_se_pozna(self):
+        vicedenni = [t for t in self.terminy if t["vicedenni"]]
+        self.assertTrue(vicedenni)
+        for t in vicedenni:
+            self.assertNotEqual(t["zacatek"][:10], t["konec"][:10])
+
+    def test_misto_nula_je_prazdne(self):
+        # place=0 je v číselníku s prázdným názvem a znamená neuvedeno.
+        bez_mista = [t for t in self.terminy if not t["misto"]]
+        self.assertTrue(bez_mista, "vzorek měl obsahovat akci bez místa")
+
+    def test_perex_nema_znacky(self):
+        for t in self.terminy:
+            self.assertNotIn("<", t["perex"])
+
+    def test_kratka_pole_jsou_na_jeden_radek(self):
+        # Poznámka k ceně v exportu obsahuje odřádkování; v pruhu pod
+        # názvem by rozhodila kartu.
+        for t in self.terminy:
+            for pole in ("nazev", "poznamka", "cena_pozn"):
+                self.assertNotIn("\n", t[pole], (t["nazev"], pole))
+
+    def test_rozbity_cas_neshodi_parsovani(self):
+        self.assertEqual(akce._cas("nesmysl"), "")
+        self.assertEqual(akce._cas(""), "")
+
+
+class AkceOkna(unittest.TestCase):
+    """Okna „dnes" a „víkend" — podle nich lidé akce hledají."""
+
+    def test_dnes_je_jeden_den(self):
+        self.assertEqual(render._okno_dnes(date(2026, 10, 23)),
+                         {"2026-10-23"})
+
+    def test_vikend_z_patku_je_nadchazejici(self):
+        self.assertEqual(render._okno_vikend(date(2026, 10, 23)),
+                         {"2026-10-24", "2026-10-25"})
+
+    def test_vikend_v_sobotu_je_ten_probihajici(self):
+        self.assertEqual(render._okno_vikend(date(2026, 10, 24)),
+                         {"2026-10-24", "2026-10-25"})
+
+    def test_vikend_v_nedeli_se_vraci_na_sobotu(self):
+        # V neděli nesmí skočit na příští týden, zrovna probíhá.
+        self.assertEqual(render._okno_vikend(date(2026, 10, 25)),
+                         {"2026-10-24", "2026-10-25"})
+
+    def test_vikend_v_pondeli_je_pristi(self):
+        self.assertEqual(render._okno_vikend(date(2026, 10, 26)),
+                         {"2026-10-31", "2026-11-01"})
+
+    def test_vicedenni_akce_spada_do_okna(self):
+        vystava = {"zacatek": "2026-05-15T09:00:00",
+                   "konec": "2026-11-01T17:00:00", "vicedenni": True}
+        self.assertTrue(render._v_okne(vystava, {"2026-10-23"}))
+
+    def test_jednodenni_mimo_okno_nespada(self):
+        koncert = {"zacatek": "2026-10-30T19:00:00",
+                   "konec": "2026-10-30T21:00:00", "vicedenni": False}
+        self.assertFalse(render._v_okne(koncert, {"2026-10-23"}))
+
+
+class AkceVykresleni(unittest.TestCase):
+    def test_cena_nula_neni_zdarma(self):
+        # V datech znamená 0 „neuvedena", ne vstup zdarma.
+        self.assertEqual(render._cena_text({"cena": 0}), "")
+        self.assertEqual(render._cena_text({"cena": 0, "zdarma": True}), "zdarma")
+        self.assertEqual(render._cena_text({"cena": 80}), "80 Kč")
+
+    def test_cas_bez_nuly_na_zacatku(self):
+        self.assertEqual(render._cas_hm("2026-10-24T09:00:00"), "9.00")
+        self.assertEqual(render._cas_hm("2026-10-24T17:30:00"), "17.30")
+
+    def test_datum_kratce(self):
+        self.assertEqual(render._datum_kratce("2026-11-01"), "1. 11.")
+
+    def test_pristupnost_se_zkrati(self):
+        self.assertEqual(
+            render._pristupnost("nevhodné pro nezletilé osoby do 12 let"),
+            "nevhodné do 12 let")
+
+    def test_kazdy_typ_ma_vlastni_piktogram(self):
+        for typ in render.TYPY_AKCI:
+            self.assertNotEqual(piktogramy.pro_typ_akce(typ), "akce", typ)
+
+    def test_kazdy_typ_ma_vlastni_metadata(self):
+        # Stránky typů mají být samostatné, ne přefiltrovaný rodič.
+        for pole in ("titulek", "popis", "h1", "uvod"):
+            hodnoty = [u[pole] for u in render.TYPY_AKCI.values()]
+            self.assertEqual(len(hodnoty), len(set(hodnoty)), pole)
+
+    def test_karta_neopakuje_poznamku_a_format(self):
+        # Data města mají „titulky", DK „titulky | 2D"; vedle sebe to
+        # vypadá jako chyba.
+        karta = render._karta_akce({
+            "nazev": "Film", "zacatek": "2026-10-24T17:30:00",
+            "typ": "Kino", "poznamka": "titulky",
+            "kino": {"format": "titulky | 2D"}})
+        self.assertEqual(karta.count("titulky | 2D"), 1)
+        self.assertNotIn("titulky ·", karta)
+
+    def test_karta_uteche_html_v_nazvu(self):
+        karta = render._karta_akce({
+            "nazev": '<script>zle()</script>', "zacatek": "2026-10-24T10:00:00",
+            "typ": "Sport"})
+        self.assertNotIn("<script>", karta)
+
+    def test_atribuce_jmenuje_zdroj_i_licenci(self):
+        podpis = render._atribuce()
+        self.assertIn(config.AKCE_POSKYTOVATEL, podpis)
+        self.assertIn("creativecommons.org", podpis)
+
+
+class KinoDK(unittest.TestCase):
+    def test_rozebere_vzorek_stranky(self):
+        markup = (FIXTURES / "dk-film.html").read_text(encoding="utf-8")
+        udaje = kino_dk.rozeber(markup)
+        self.assertEqual(udaje["stopaz"], "asi 2 hodiny")
+        self.assertEqual(udaje["format"], "titulky | 2D")
+        self.assertIn("do 12 let", udaje["pristupnost"])
+        self.assertEqual(udaje["puvodni_nazev"],
+                         "National Theatre Live: Frankenstein")
+
+    def test_rozbite_html_vrati_prazdno(self):
+        # Scrape cizí stránky nesmí shodit build celého webu.
+        for vstup in ("", "<html>", '<div class="delka">(2 h',
+                      "<h1>bez mikrodat</h1>"):
+            self.assertEqual(kino_dk.rozeber(vstup), {})
 
 
 class PojistkaSlang(unittest.TestCase):

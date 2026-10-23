@@ -11,10 +11,11 @@ na žádném typu stránky nedaly zapomenout.
 
 import html
 import json
+import re
 import shutil
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
-from . import config, htmlutil, piktogramy
+from . import akce, config, htmlutil, piktogramy
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
 
@@ -125,6 +126,46 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .obrazek.hero .piktogram { width: 26%; }
 @media (max-width: 640px) { .obrazek.hero { box-shadow: 4px 4px 0 var(--ram); } }
 @media (prefers-reduced-motion: reduce) { *, .obrazek .piktogram { transition: none !important; animation: none !important; } }
+
+/* --- Program akcí. Nový blok patří na konec: výš v souboru se pravidla
+   přebíjejí (.obrazek má aspect-ratio dvakrát) a vkládat doprostřed se
+   nevyplácí. --- */
+.menu .je-sekce { font-weight: 700; color: var(--akcent); -webkit-text-stroke: .4px var(--ram); }
+.uvod { max-width: 62ch; font-size: 18px; margin: 0 0 26px; }
+.filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
+.filtr-odkaz { display: inline-block; padding: 6px 12px; border: 2px solid var(--ram); background: var(--karta); color: var(--inkoust); text-decoration: none; font-size: 14px; font-weight: 500; }
+.filtr-odkaz:hover { box-shadow: 3px 3px 0 var(--ram); }
+.filtr-odkaz.je-aktivni { background: var(--akcent); font-weight: 700; box-shadow: 3px 3px 0 var(--ram); }
+.den { margin: 0 0 34px; }
+.den h2 { font-size: 20px; text-transform: lowercase; border-bottom: 3px solid var(--ram); padding-bottom: 6px; margin: 0 0 16px; }
+.akce-seznam { display: grid; gap: 14px; }
+.akce { display: flex; gap: 14px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 14px; }
+.akce-kdy { flex: 0 0 74px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.akce-cas { font-family: Syne, sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1; text-align: center; }
+.akce-znak { width: 40px; color: var(--inkoust); }
+.akce-znak .piktogram { width: 100%; height: auto; }
+.akce-telo { min-width: 0; }
+.akce-telo h3 { font-size: 18px; margin: 0 0 4px; }
+.akce-puvodni { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 14px; color: var(--slabe); }
+.akce-kde, .akce-info, .akce-perex, .akce-odkazy { margin: 0 0 4px; font-size: 14px; }
+.akce-kde { color: var(--slabe); font-weight: 500; }
+.akce-perex { font-size: 15px; }
+.akce-info { font-weight: 500; }
+.akce-odkazy a { margin-right: 12px; }
+.akce-prazdno { font-size: 18px; }
+.atribuce { margin: 34px 0 0; padding-top: 14px; border-top: 2px dashed var(--ram); font-size: 13px; color: var(--slabe); max-width: 70ch; }
+/* Logo má spodní mez clamp() 26 px, pod 371 px šířky se tedy přestane
+   zmenšovat. Na 320 px pak logo 199 + mezera 10 + hamburger 109 + okraje 32
+   dá 350 px a hlavička vodorovně přetéká o 13 px. Týká se nejužších
+   telefonů (iPhone SE, mini). */
+@media (max-width: 360px) { .logo { font-size: 21px; } }
+@media (max-width: 640px) {
+  .akce { gap: 10px; padding: 11px; box-shadow: 3px 3px 0 var(--ram); }
+  .akce-kdy { flex-basis: 54px; }
+  .akce-cas { font-size: 17px; }
+  .akce-znak { width: 30px; }
+  .akce-telo h3 { font-size: 17px; }
+}
 """.replace("ACCENT", config.ACCENT)
 
 ZAKLAD = """<!doctype html>
@@ -229,9 +270,13 @@ def _menu():
     podle toho, co zrovna vyšlo."""
     poradi = ["radnice", "doprava", "stavba", "peníze", "školství",
               "kultura", "sport", "akce", "volby", "příroda", "lidé"]
-    return "".join(
-        '<li><a href="{0}">{1}</a></li>'.format(_e(_tema_cesta(t)), _e(t))
-        for t in poradi)
+    # Program není téma článků, ale vlastní sekce — proto stojí první
+    # a vede jinam než zbytek menu.
+    polozky = ['<li><a class="je-sekce" href="{0}">program</a></li>'.format(
+        _e(PROGRAM_CESTA))]
+    polozky += ['<li><a href="{0}">{1}</a></li>'.format(
+        _e(_tema_cesta(t)), _e(t)) for t in poradi]
+    return "".join(polozky)
 
 
 def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
@@ -392,7 +437,462 @@ def _souvisejici(clanek, vsechny, pocet=3):
     return vybrane
 
 
-def vykresli(clanky):
+# --- Program akcí ---------------------------------------------------------
+# Každý typ je samostatná vstupní stránka, ne přefiltrovaný rodič. Proto má
+# vlastní adresu, titulek, popis, H1 i úvodní odstavec — a ten se píše ručně,
+# protože odstavec vyrobený šablonou by byl zase jen jinak poskládaný rodič.
+# Klíč je název typu z číselníku města.
+TYPY_AKCI = {
+    "Kino": {
+        "slug": "kino",
+        "h1": "Kino Nadsklepí: program",
+        "titulek": "Program Kina Nadsklepí v Kroměříži",
+        "popis": "Co hraje Kino Nadsklepí v Kroměříži. Časy projekcí, ceny, "
+                 "délka filmu a od kolika let, na měsíc dopředu.",
+        "uvod": "Nadsklepí točí program každý den, takže tahle stránka je "
+                "nejhustší z celého programu. U každé projekce je čas, cena, "
+                "jestli jsou titulky nebo dabing, jak je film dlouhý a od "
+                "kolika let.",
+    },
+    "Divadlo": {
+        "slug": "divadlo",
+        "h1": "Divadlo v Kroměříži",
+        "titulek": "Divadelní představení v Kroměříži",
+        "popis": "Divadelní představení v Kroměříži na měsíc dopředu. "
+                 "Kde se hraje, kdy se začíná a co to stojí.",
+        "uvod": "Představení v Domě kultury i mimo něj. Divadlo se tu nehraje "
+                "každý den, takže když něco vyjde na termín, který ti sedí, "
+                "nemá smysl to odkládat.",
+    },
+    "Muzea, výstavy, galerie": {
+        "slug": "vystavy",
+        "h1": "Výstavy v Kroměříži",
+        "titulek": "Výstavy, muzea a galerie v Kroměříži",
+        "popis": "Výstavy v kroměřížských muzeích a galeriích. Dokdy jsou "
+                 "k vidění, kde a za kolik.",
+        "uvod": "Výstavy běží týdny až měsíce, takže je najdeš nahoře v sekci "
+                "Probíhá. U každé je, dokdy je otevřená — ten údaj je tu "
+                "důležitější než čas začátku.",
+    },
+    "Hudba a tanec": {
+        "slug": "hudba",
+        "h1": "Koncerty a tancovačky v Kroměříži",
+        "titulek": "Koncerty a hudební akce v Kroměříži",
+        "popis": "Koncerty, tancovačky a hudební akce v Kroměříži na měsíc "
+                 "dopředu, včetně cen a míst.",
+        "uvod": "Od klubů po zámecké sály. Ceny se tu liší nejvíc z celého "
+                "programu, tak koukej i na poznámku u vstupného — slevy pro "
+                "studenty bývají právě tam.",
+    },
+    "Přednášky a besedy": {
+        "slug": "besedy",
+        "h1": "Přednášky a besedy v Kroměříži",
+        "titulek": "Přednášky a besedy v Kroměříži",
+        "popis": "Přednášky, besedy a workshopy v Kroměříži. Kdy, kde a "
+                 "jestli se platí vstup.",
+        "uvod": "Druhá nejpočetnější kategorie programu. Hodně z nich je "
+                "v knihovně a hodně zadarmo — na to kouká štítek u ceny.",
+    },
+    "Sport": {
+        "slug": "sport",
+        "h1": "Sport v Kroměříži",
+        "titulek": "Sportovní akce a zápasy v Kroměříži",
+        "popis": "Zápasy, závody a sportovní akce v Kroměříži na měsíc "
+                 "dopředu.",
+        "uvod": "Zápasy i akce, na které se dá přijít bez klubové příslušnosti. "
+                "U domácích zápasů je místo konání tím, co potřebuješ vědět "
+                "nejdřív.",
+    },
+    "Zábava": {
+        "slug": "zabava",
+        "h1": "Zábava v Kroměříži",
+        "titulek": "Zábavné akce v Kroměříži",
+        "popis": "Zábavné akce, kvízy a společenské večery v Kroměříži.",
+        "uvod": "Všechno, co se nevešlo nikam jinam a stojí za večer venku. "
+                "Bývá to nepravidelné, takže se sem vyplatí koukat.",
+    },
+    "Jarmarky, trhy a gastro": {
+        "slug": "jarmarky",
+        "h1": "Trhy a jídlo v Kroměříži",
+        "titulek": "Jarmarky, trhy a gastro akce v Kroměříži",
+        "popis": "Farmářské trhy, jarmarky a gastro akce v Kroměříži. "
+                 "Termíny a místa na měsíc dopředu.",
+        "uvod": "Trhy na Velkém náměstí i jednorázové gastro akce. Většina "
+                "je venku a zadarmo, platí se až u stánku.",
+    },
+}
+
+PROGRAM_CESTA = "/program.html"
+
+# Výběry podle času. Vznikly z dat Ahrefs (cz, říjen 2026): lidé nehledají
+# typ akce, hledají okno. „akce kroměříž tento víkend" má 500 hledání
+# měsíčně při obtížnosti 2, „kroměříž akce dnes" 450 při 1 — zatímco
+# „divadlo kroměříž", „koncerty kroměříž", „výstavy kroměříž" i „kulturní
+# akce kroměříž" mají shodně nulu. Typy proto zůstávají jako navigace,
+# ale tyhle dvě stránky jsou to, co někdo opravdu hledá.
+#
+# Na rozdíl od typů se vykreslí i prázdné. Adresa musí být stabilní, aby
+# měla šanci se ve vyhledávání usadit, a „dnes se nekoná nic" je poctivá
+# odpověď na dotaz „akce dnes".
+VYBERY = {
+    "dnes": {
+        "h1": "Co se dnes děje v Kroměříži",
+        "titulek": "Akce v Kroměříži dnes",
+        "popis": "Co se v Kroměříži děje dnes. Kino, koncerty, výstavy "
+                 "a všechno ostatní s časem a místem, aktualizované každou hodinu.",
+        "uvod": "Všechno, co dneska v Kroměříži začíná, plus výstavy, které "
+                "zrovna běží. Seznam se přepisuje každou hodinu, takže co "
+                "už skončilo, tu nenajdeš.",
+        "prazdno": "Dneska v Kroměříži nic nezačíná. Mrkni na víkend nebo na "
+                   "celý program.",
+    },
+    "vikend": {
+        "h1": "Kam v Kroměříži tento víkend",
+        "titulek": "Akce v Kroměříži tento víkend",
+        "popis": "Kam v Kroměříži o víkendu. Sobotní a nedělní program — "
+                 "kino, koncerty, trhy i výstavy na jednom místě.",
+        "uvod": "Sobota a neděle, která přijde nejblíž. Když je zrovna "
+                "víkend, je tu ten právě probíhající. Výstavy, které běží "
+                "přes víkend, jsou nahoře.",
+        "prazdno": "Na nejbližší víkend tu zatím nic není. Zkus celý program, "
+                   "věci se doplňují průběžně.",
+    },
+}
+
+
+def _vyber_cesta(klic):
+    return "/program/{0}.html".format(klic)
+
+
+def _okno_dnes(dnes):
+    return {dnes.isoformat()}
+
+
+def _okno_vikend(dnes):
+    """Nejbližší sobota a neděle. Když je víkend, tak ten právě probíhající."""
+    do_soboty = (5 - dnes.weekday()) % 7
+    if dnes.weekday() == 6:          # v neděli se zpátky na sobotu
+        do_soboty = -1
+    sobota = dnes + timedelta(days=do_soboty)
+    return {sobota.isoformat(), (sobota + timedelta(days=1)).isoformat()}
+
+
+_OKNA = {"dnes": _okno_dnes, "vikend": _okno_vikend}
+
+
+def _v_okne(termin, dny):
+    """Termín patří do okna, když v něm začíná nebo přes něj běží."""
+    zacatek = (termin.get("zacatek") or "")[:10]
+    if zacatek in dny:
+        return True
+    if not termin.get("vicedenni"):
+        return False
+    konec = (termin.get("konec") or "")[:10]
+    return any(zacatek <= den <= konec for den in dny)
+
+
+def _typ_cesta(nazev_typu):
+    udaje = TYPY_AKCI.get(nazev_typu)
+    return "/program/{0}.html".format(udaje["slug"]) if udaje else PROGRAM_CESTA
+
+
+def _cas_hm(iso):
+    return "{0}.{1}".format(iso[11:13].lstrip("0") or "0", iso[14:16]) if iso else ""
+
+
+def _den_cesky(iso):
+    """`2026-10-24` na „pátek 24. října"."""
+    DNY = ("pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle")
+    try:
+        d = datetime.strptime(iso[:10], "%Y-%m-%d")
+    except (ValueError, TypeError):
+        return iso[:10]
+    return "{0} {1}. {2}".format(DNY[d.weekday()], d.day, MESICE[d.month])
+
+
+def _datum_kratce(iso):
+    """`2026-11-01` na „1. 11.". Do úzkého sloupce s časem se dlouhý tvar
+    nevejde a zalomí se do čtyř řádků."""
+    try:
+        d = datetime.strptime(iso[:10], "%Y-%m-%d")
+    except (ValueError, TypeError):
+        return iso[:10]
+    return "{0}. {1}.".format(d.day, d.month)
+
+
+def _pristupnost(text):
+    """„nevhodné pro nezletilé osoby do 12 let" na „nevhodné do 12 let".
+
+    Úřední tvar je v pruhu pod názvem nejdelší položkou ze všech a nic
+    navíc neříká.
+    """
+    return re.sub(r"nevhodné pro nezletilé osoby do", "nevhodné do", text or "")
+
+
+def _cena_text(termin):
+    """Cena tak, jak ji město uvádí. Nula znamená neuvedena, ne zdarma."""
+    if termin.get("zdarma"):
+        return "zdarma"
+    cena = termin.get("cena") or 0
+    if not cena:
+        return ""
+    text = "{0} Kč".format(cena)
+    if termin.get("cena_pozn"):
+        text += " ({0})".format(termin["cena_pozn"])
+    return text
+
+
+def _karta_akce(termin):
+    tvar = piktogramy.pro_typ_akce(termin.get("typ"))
+    if termin.get("vicedenni"):
+        kdy = "do {0}".format(_datum_kratce(termin.get("konec", "")))
+    else:
+        kdy = _cas_hm(termin.get("zacatek", ""))
+
+    kde = [termin.get("misto") or "místo neuvedeno"]
+    if termin.get("typ"):
+        kde.append(termin["typ"])
+    if termin.get("vicedenni"):
+        # V úzkém sloupci je jen „do 1. 11."; celý rozsah patří sem, kde je
+        # místo na to napsat ho čitelně.
+        kde.append("{0} – {1}".format(_den_cesky(termin.get("zacatek", "")),
+                                      _den_cesky(termin.get("konec", ""))))
+
+    # Údaje ze stránky Domu kultury, pokud se podařilo je stáhnout.
+    kino = termin.get("kino") or {}
+    # Poznámka z otevřených dat bývá „titulky" a formát z DK „titulky | 2D".
+    # Vypsat obojí vedle sebe vypadá jako chyba.
+    poznamka = termin.get("poznamka", "")
+    if poznamka and poznamka.lower() in kino.get("format", "").lower():
+        poznamka = ""
+    info = [_cena_text(termin), poznamka, kino.get("format", ""),
+            kino.get("stopaz", ""), _pristupnost(kino.get("pristupnost", ""))]
+    if termin.get("pro_deti"):
+        info.append("pro děti")
+    info = " · ".join(_e(x) for x in info if x)
+
+    odkazy = []
+    if termin.get("web"):
+        odkazy.append('<a href="{0}" rel="noopener">Víc o akci</a>'.format(
+            _e(termin["web"])))
+    if termin.get("youtube"):
+        odkazy.append('<a href="https://www.youtube.com/watch?v={0}" '
+                      'rel="noopener">Trailer</a>'.format(_e(termin["youtube"])))
+
+    nazev = _e(termin.get("nazev", ""))
+    if kino.get("puvodni_nazev"):
+        nazev += ' <span class="akce-puvodni">{0}</span>'.format(
+            _e(kino["puvodni_nazev"]))
+
+    return (
+        '<article class="akce">'
+        '<div class="akce-kdy"><span class="akce-cas">{kdy}</span>'
+        '<div class="akce-znak">{znak}</div></div>'
+        '<div class="akce-telo"><h3>{nazev}</h3>'
+        '<p class="akce-kde">{kde}</p>'
+        '{perex}{info}{odkazy}</div></article>'
+    ).format(
+        kdy=_e(kdy), znak=piktogramy.svg(tvar, trida="piktogram", popis=""),
+        nazev=nazev, kde=" · ".join(_e(k) for k in kde),
+        perex='<p class="akce-perex">{0}</p>'.format(
+            _e(_zkrat(termin["perex"], 180))) if termin.get("perex") else "",
+        info='<p class="akce-info">{0}</p>'.format(info) if info else "",
+        odkazy='<p class="akce-odkazy">{0}</p>'.format(
+            " ".join(odkazy)) if odkazy else "",
+    )
+
+
+def _filtr(aktivni, dostupne):
+    """Lišta filtru. Odkazy vykreslené na serveru, žádný JavaScript.
+
+    Nejdřív okna v čase, pak typy — v tom pořadí se podle dat i hledá.
+    """
+    def odkaz(cesta, popisek, je):
+        return '<a class="filtr-odkaz{0}" href="{1}">{2}</a>'.format(
+            " je-aktivni" if je else "", _e(cesta), _e(popisek))
+
+    kusy = [odkaz(PROGRAM_CESTA, "Vše", aktivni is None)]
+    for klic, udaje in VYBERY.items():
+        kusy.append(odkaz(_vyber_cesta(klic),
+                          "Dnes" if klic == "dnes" else "Víkend",
+                          aktivni == klic))
+    kusy.append('<span class="filtr-del" aria-hidden="true"></span>')
+    for typ in TYPY_AKCI:
+        if typ not in dostupne:
+            continue
+        kusy.append(odkaz(_typ_cesta(typ), TYPY_AKCI[typ]["h1"].split(":")[0],
+                          typ == aktivni))
+    return '<nav class="filtr" aria-label="Filtr programu">{0}</nav>'.format(
+        "".join(kusy))
+
+
+def _atribuce():
+    """Podpis pod programem. Licence ho vyžaduje na každé stránce s daty."""
+    return (
+        '<p class="atribuce">Data o akcích poskytuje '
+        '<a href="{spec}" rel="noopener">{kdo}</a> jako otevřená data pod '
+        'licencí <a href="{lic_url}" rel="license noopener">{lic}</a>. '
+        'Program přebíráme beze změny, včetně časů a cen; ověřit si je '
+        'u pořadatele se vždycky vyplatí.</p>'
+    ).format(spec=_e(config.AKCE_SPECIFIKACE), kdo=_e(config.AKCE_POSKYTOVATEL),
+             lic_url=_e(config.AKCE_LICENCE_URL), lic=_e(config.AKCE_LICENCE))
+
+
+def _program(terminy, aktivni, dostupne, prazdno=""):
+    """Tělo stránky programu: probíhající akce, pak dny."""
+    probiha = [t for t in terminy if t.get("vicedenni")]
+    jednodenni = [t for t in terminy if not t.get("vicedenni")]
+
+    casti = [_filtr(aktivni, dostupne)]
+    if probiha:
+        casti.append(
+            '<section class="den"><h2>Probíhá teď</h2><div class="akce-seznam">'
+            '{0}</div></section>'.format("".join(_karta_akce(t) for t in probiha)))
+
+    dny = {}
+    for t in jednodenni:
+        dny.setdefault(t["zacatek"][:10], []).append(t)
+    for den in sorted(dny):
+        casti.append(
+            '<section class="den"><h2 id="d{0}">{1}</h2>'
+            '<div class="akce-seznam">{2}</div></section>'.format(
+                _e(den), _e(_den_cesky(den)),
+                "".join(_karta_akce(t) for t in dny[den])))
+
+    if not terminy:
+        casti.append('<p class="akce-prazdno">{0} <a href="{1}">Celý program '
+                     'na měsíc dopředu.</a></p>'.format(
+                         _e(prazdno or "Na nejbližší měsíc tu zatím nic není."),
+                         PROGRAM_CESTA))
+    casti.append(_atribuce())
+    return "".join(casti)
+
+
+def _ld_akce(termin):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": termin.get("nazev", ""),
+        "startDate": termin.get("zacatek", ""),
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+    }
+    if termin.get("konec"):
+        data["endDate"] = termin["konec"]
+    if termin.get("perex"):
+        data["description"] = termin["perex"]
+    if termin.get("misto"):
+        data["location"] = {"@type": "Place", "name": termin["misto"],
+                            "address": {"@type": "PostalAddress",
+                                        "addressLocality": "Kroměříž",
+                                        "addressCountry": "CZ"}}
+    if termin.get("web"):
+        data["url"] = termin["web"]
+    if termin.get("zdarma"):
+        data["isAccessibleForFree"] = True
+    elif termin.get("cena"):
+        data["offers"] = {"@type": "Offer", "price": termin["cena"],
+                          "priceCurrency": "CZK"}
+    return data
+
+
+def _ld_seznam(terminy, cesta):
+    """ItemList s akcemi. Prvních 30, dál to pro vyhledávač nemá cenu."""
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "url": _abs(cesta),
+        "numberOfItems": len(terminy),
+        "itemListElement": [
+            {"@type": "ListItem", "position": i, "item": _ld_akce(t)}
+            for i, t in enumerate(terminy[:30], start=1)],
+    }
+
+
+def _ld_drobecky_program(nazev=None, cesta=None):
+    polozky = [("Domů", "/"), ("Program", PROGRAM_CESTA)]
+    if nazev:
+        polozky.append((nazev, cesta))
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i, "name": n, "item": _abs(c)}
+            for i, (n, c) in enumerate(polozky, start=1)],
+    }
+
+
+def _program_stranky(akce_data):
+    """Zapíše /program.html a stránku ke každému zastoupenému typu.
+
+    Typ bez jediného termínu v okně se nevykreslí a nikam se na něj
+    neodkazuje — prázdná indexovatelná stránka je horší než žádná.
+    """
+    terminy = akce_data.get("terminy") or []
+    dostupne = {t.get("typ") for t in terminy if t.get("typ") in TYPY_AKCI}
+    (config.SITE / "program").mkdir(parents=True, exist_ok=True)
+
+    uvod = ("Co se děje v Kroměříži příštích {0} dní. Divadlo, kino, koncerty, "
+            "výstavy, sport i trhy na jednom místě, seřazené podle dne. "
+            "Program bereme z otevřených dat města, takže časy a ceny jsou "
+            "takové, jaké je zveřejnil pořadatel.").format(
+        akce_data.get("dni") or config.AKCE_DNI)
+
+    (config.SITE / "program.html").write_text(_stranka(
+        "Program akcí v Kroměříži – " + config.BRAND,
+        "Co se děje v Kroměříži příštích {0} dní: divadlo, kino, koncerty, "
+        "výstavy, sport i trhy. Časy, místa a ceny na jednom místě.".format(
+            akce_data.get("dni") or config.AKCE_DNI),
+        '{0}<h1>Program akcí v Kroměříži</h1><p class="uvod">{1}</p>{2}'.format(
+            _drobecky([("Domů", "/"), ("Program", None)]), _e(uvod),
+            _program(terminy, None, dostupne)),
+        cesta=PROGRAM_CESTA,
+        jsonld=_jsonld(_ld_seznam(terminy, PROGRAM_CESTA),
+                       _ld_drobecky_program()),
+    ), encoding="utf-8")
+    zapsano = 1
+
+    dnes = date.today()
+    for klic, udaje in VYBERY.items():
+        dny = _OKNA[klic](dnes)
+        vybrane = [t for t in terminy if _v_okne(t, dny)]
+        cesta = _vyber_cesta(klic)
+        (config.SITE / "program" / (klic + ".html")).write_text(_stranka(
+            "{0} – {1}".format(udaje["titulek"], config.BRAND),
+            udaje["popis"],
+            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}'.format(
+                _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
+                           (udaje["h1"], None)]),
+                _e(udaje["h1"]), _e(udaje["uvod"]),
+                _program(vybrane, klic, dostupne, udaje["prazdno"])),
+            cesta=cesta, og_titulek=udaje["titulek"],
+            jsonld=_jsonld(_ld_seznam(vybrane, cesta),
+                           _ld_drobecky_program(udaje["h1"], cesta)),
+        ), encoding="utf-8")
+        zapsano += 1
+
+    for typ, udaje in TYPY_AKCI.items():
+        if typ not in dostupne:
+            continue
+        vybrane = [t for t in terminy if t.get("typ") == typ]
+        cesta = _typ_cesta(typ)
+        (config.SITE / "program" / (udaje["slug"] + ".html")).write_text(_stranka(
+            "{0} – {1}".format(udaje["titulek"], config.BRAND),
+            udaje["popis"],
+            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}'.format(
+                _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
+                           (udaje["h1"], None)]),
+                _e(udaje["h1"]), _e(udaje["uvod"]),
+                _program(vybrane, typ, dostupne)),
+            cesta=cesta, og_titulek=udaje["titulek"],
+            jsonld=_jsonld(_ld_seznam(vybrane, cesta),
+                           _ld_drobecky_program(udaje["h1"], cesta)),
+        ), encoding="utf-8")
+        zapsano += 1
+    return zapsano
+
+
+def vykresli(clanky, akce_data=None):
     """Vyrobí celý web do config.SITE. Vrací počet zapsaných souborů."""
     config.SITE.mkdir(parents=True, exist_ok=True)
     # Tyhle složky jsou celé generované. Bez úklidu v nich zůstávají soubory
@@ -402,7 +902,7 @@ def vykresli(clanky):
     # zůstal na webu soubor, na který už nic neodkazuje.
     for stary in config.SITE.glob("*.html"):
         stary.unlink()
-    for podslozka in ("clanek", "img", "tema"):
+    for podslozka in ("clanek", "img", "tema", "program"):
         shutil.rmtree(str(config.SITE / podslozka), ignore_errors=True)
         (config.SITE / podslozka).mkdir(parents=True, exist_ok=True)
     if config.CIZI_FOTKY:
@@ -427,6 +927,9 @@ def vykresli(clanky):
 
     zapsano += _rozcestniky(clanky)
     zapsano += _temata(clanky)
+    if akce_data is None:
+        akce_data = akce.nacti()
+    zapsano += _program_stranky(akce_data)
 
     (config.SITE / "o-webu.html").write_text(_stranka(
         "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu(),
@@ -439,7 +942,8 @@ def vykresli(clanky):
         '<a href="/">Zpátky na úvodku.</a></p></article>',
         cesta="/404.html"), encoding="utf-8")
     (config.SITE / "feed.xml").write_text(_rss(clanky), encoding="utf-8")
-    (config.SITE / "sitemap.xml").write_text(_sitemap(clanky), encoding="utf-8")
+    (config.SITE / "sitemap.xml").write_text(
+        _sitemap(clanky, akce_data), encoding="utf-8")
     (config.SITE / "robots.txt").write_text(
         "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
         encoding="utf-8")
@@ -546,10 +1050,24 @@ def _rfc822(iso):
         return iso
 
 
-def _sitemap(clanky):
+def _sitemap(clanky, akce_data=None):
     dnes = datetime.now(timezone.utc).date().isoformat()
     radky = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
         config.SITE_URL, dnes)]
+    terminy = (akce_data or {}).get("terminy") or []
+    if terminy:
+        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.9</priority></url>".format(
+            _abs(PROGRAM_CESTA), dnes))
+        # Okna v čase jsou to, co lidé hledají — priorita jako u úvodky.
+        # Typy jsou hlavně navigace, proto níž.
+        for klic in VYBERY:
+            radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.9</priority></url>".format(
+                _abs(_vyber_cesta(klic)), dnes))
+        for typ in TYPY_AKCI:
+            if any(t.get("typ") == typ for t in terminy):
+                priorita = "0.8" if typ == "Kino" else "0.5"
+                radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>{2}</priority></url>".format(
+                    _abs(_typ_cesta(typ)), dnes, priorita))
     temata = sorted({t for c in clanky for t in c.get("tags", [])})
     for tag in temata:
         radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.6</priority></url>".format(

@@ -15,3 +15,5 @@ site-cista/
 
 # Log běhu nese titulky zdrojových oznámení, do repa nepatří ani omylem.
 beh.log
+data-akce/
+site-akce/

@@ -5,7 +5,7 @@ import argparse
 import json
 import sys
 
-from . import config, pipeline, render, sources, store
+from . import akce, config, kino_dk, pipeline, render, sources, store
 
 
 def main(argv=None):
@@ -25,6 +25,13 @@ def main(argv=None):
 
     p = pod.add_parser("detail", help="stáhne a vypíše jeden článek bez volání API")
     p.add_argument("slug")
+
+    p = pod.add_parser("akce", help="stáhne program akcí z otevřených dat města")
+    p.add_argument("--dni", type=int, default=config.AKCE_DNI)
+    p.add_argument("--vynutit", action="store_true",
+                   help="stáhni, i když jsou uložená data ještě čerstvá")
+    p.add_argument("--bez-kina", action="store_true",
+                   help="nedoplňuj stopáž a přístupnost ze stránek Domu kultury")
 
     p = pod.add_parser("slovnik", help="vypíše nebo rozšíří slovník jazyka")
     p.add_argument("--pridej", metavar="VÝRAZ",
@@ -64,6 +71,11 @@ def main(argv=None):
     if args.prikaz == "doklad":
         return _doklad(args)
 
+    if args.prikaz in ("akce", "all"):
+        _akce(args)
+        if args.prikaz == "akce":
+            return 0
+
     if args.prikaz in ("run", "backfill", "all"):
         # `run` i `all` jedou v cronu, takže se archivu nedotknou, dokud se to
         # výslovně nepovolí. Jinak by hodinový běh archiv sežral sám.
@@ -77,6 +89,30 @@ def main(argv=None):
     pocet = render.vykresli(clanky)
     print("Vykresleno {0} souborů z {1} článků do {2}".format(pocet, len(clanky), config.SITE))
     return 0
+
+
+def _akce(args):
+    """Stáhne program a doplní k projekcím údaje z webu Domu kultury.
+
+    Volá se i z `all`, tedy z hodinového cronu. Stahování se tam přeskočí,
+    dokud jsou uložená data mladší než config.AKCE_MAX_STARI_HODIN — jinak
+    by se 574 kB tahalo čtyřiadvacetkrát denně.
+    """
+    try:
+        data = akce.aktualizuj(dni=getattr(args, "dni", None),
+                               vynutit=getattr(args, "vynutit", False))
+    except Exception as exc:                          # noqa: BLE001
+        # Výpadek otevřených dat nesmí shodit `all` — to by se v cronu
+        # nenasadily ani zprávy. Zůstane poslední uložený program.
+        print("Program se nepodařilo stáhnout ({0}), zůstává uložený.".format(exc),
+              file=sys.stderr)
+        return akce.nacti()
+    if not getattr(args, "bez_kina", False) and data.get("terminy"):
+        puvodni = sum(1 for t in data["terminy"] if t.get("kino"))
+        kino_dk.doplnit(data["terminy"])
+        if sum(1 for t in data["terminy"] if t.get("kino")) != puvodni:
+            akce.uloz(data)
+    return data
 
 
 def _doklad(args):

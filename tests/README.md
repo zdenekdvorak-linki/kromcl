@@ -86,6 +86,29 @@ archiv ji vyvrátil — deset vlastních vět pod ní spadlo.
 | `meta` na `og:image` | vrátí URL |
 | `meta` na chybějící klíč | prázdný řetězec |
 
+### Program akcí
+
+Vzorky ve `tests/fixtures/` jsou oříznuté skutečné soubory, ne ručně
+napsané:
+
+| Soubor | Co v něm je |
+|---|---|
+| `akce-vzorek.xml` | šest termínů z exportu 23. 10. 2026, vybraných tak, aby pokryly pasti: vícedenní výstava, akce bez místa (`place=0`), projekce s odkazem na DK, cena 0, poznámka k ceně s odřádkováním, sport |
+| `dk-film.html` | ořez stránky filmu z dk-kromeriz.cz na úseky, ze kterých se čte název, stopáž, přístupnost a formát |
+
+| Co | Očekávání |
+|---|---|
+| parsování vzorku | 8 typů, každý termín má název a začátek, řazení podle začátku |
+| `place=0` | prázdné místo, ne pád |
+| krátká pole | na jeden řádek, bez `\n` |
+| okno víkendu z pátku / soboty / neděle / pondělí | 24.+25. / 24.+25. / 24.+25. / 31.+1. |
+| vícedenní výstava | spadne do okna, přes které běží |
+| cena 0 | prázdný text, **ne** „zdarma" |
+| karta s `titulky` a `titulky \| 2D` | formát jen jednou |
+| HTML v názvu akce | utečené |
+| metadata typů | titulek, popis, H1 i úvod se mezi typy neopakují |
+| rozbité HTML stránky DK | prázdný dict, žádná výjimka |
+
 ## Co se netestuje
 
 Volání modelu, stahování z webu a render. Ty se ověřují ručně podle smoke

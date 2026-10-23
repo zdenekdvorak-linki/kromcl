@@ -122,6 +122,54 @@ TVARY = {
         _oci(24, 40, 38, 3),
         '<path d="M24 44q8 6 16 0"/>',
     ],
+    # --- Typy akcí z otevřených dat města -------------------------------
+    "kino": [  # klapka, spodní deska je obličej
+        '<path d="M8 26h48v26H8z"/>',
+        '<path d="M8 26 11 13l45 5-3 8z"/>',
+        '<path d="M22 15v10M34 17v9M46 19v8"/>',
+        _oci(26, 40, 36, 2.6),
+        '<path d="M26 42q7 5 14 0"/>',
+    ],
+    "divadlo": [  # maska, která se dívá zpátky
+        '<path d="M16 12h32v22c0 12-7 20-16 20s-16-8-16-20z"/>',
+        '<path d="M16 20h-6M48 20h6"/>',
+        _oci(25, 39, 30, 3),
+        '<path d="M24 40q8 7 16 0"/>',
+    ],
+    "vystava": [  # obraz v rámu nad lavičkou
+        '<rect x="8" y="10" width="48" height="36" rx="2"/>',
+        '<rect x="16" y="18" width="32" height="20"/>',
+        '<path d="M14 54h36"/>',
+        _oci(27, 37, 26, 2.4),
+        '<path d="M27 31q5 4 10 0"/>',
+    ],
+    "hudba": [  # nota s hlavou
+        '<path d="M26 44V12l22-6"/>',
+        '<path d="M26 20 48 14"/>',
+        '<ellipse cx="18" cy="45" rx="10" ry="8"/>',
+        _oci(14, 22, 44, 2.2),
+        '<path d="M14 49q4 3 8 0"/>',
+    ],
+    "beseda": [  # bublina, co mluví a kouká
+        '<path d="M8 12h48v32H34l-12 10V44H8z"/>',
+        _oci(26, 38, 26, 3),
+        '<path d="M26 32q6 5 12 0"/>',
+    ],
+    "zabava": [  # balonek
+        '<ellipse cx="32" cy="26" rx="18" ry="20"/>',
+        '<path d="M28 46h8l-4 6z"/>',
+        '<path d="M32 52v8"/>',
+        _oci(26, 38, 23, 3),
+        '<path d="M26 31q6 5 12 0"/>',
+    ],
+    "jarmark": [  # stánek s plachtou
+        '<path d="M8 24h48l-6-12H14z"/>',
+        '<path d="M8 24v30M56 24v30"/>',
+        '<path d="M4 54h56"/>',
+        '<rect x="18" y="34" width="28" height="20"/>',
+        _oci(27, 37, 42, 2.4),
+        '<path d="M27 47q5 4 10 0"/>',
+    ],
     # Výchozí značka: arcibiskupský zámek. Cibulová báň dělá účes.
     "_vychozi": [
         '<path d="M32 5c-11 6-12 11 0 15 12-4 11-9 0-15z"/>',
@@ -148,6 +196,26 @@ def pro_tema(tagy):
         if klic in TVARY:
             return klic
     return "_vychozi"
+
+
+# Typy akcí z číselníku otevřených dat. Klíčuje se názvem, ne číslem —
+# číslo je interní identifikátor cizího systému a může se změnit, kdežto
+# podle názvu je na první pohled vidět, co se kreslí.
+_TYPY_AKCI = {
+    "Divadlo": "divadlo",
+    "Muzea, výstavy, galerie": "vystava",
+    "Hudba a tanec": "hudba",
+    "Kino": "kino",
+    "Přednášky a besedy": "beseda",
+    "Sport": "sport",
+    "Zábava": "zabava",
+    "Jarmarky, trhy a gastro": "jarmark",
+}
+
+
+def pro_typ_akce(nazev_typu):
+    """Název tvaru pro typ akce. Neznámý typ dostane kalendář."""
+    return _TYPY_AKCI.get((nazev_typu or "").strip(), "akce")
 
 
 def svg(tema, trida="piktogram", popis=""):

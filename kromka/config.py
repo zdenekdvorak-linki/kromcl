@@ -40,7 +40,24 @@ DATA = Path(os.path.expanduser(os.environ.get("KROMKA_DATA", str(ROOT / "data"))
 ARTICLES = DATA / "articles"
 IMAGES = DATA / "images"
 STATE_FILE = DATA / "state.json"
+AKCE_FILE = DATA / "akce.json"
+KINO_CACHE = DATA / "kino-dk.json"
 SITE = Path(os.path.expanduser(os.environ.get("KROMKA_SITE", str(ROOT / "site"))))
+
+# --- Akce -----------------------------------------------------------------
+# Otevřená data města. Na rozdíl od zpráv je tahle sada pod licencí, která
+# doslovné převzetí dovoluje výměnou za uvedení zdroje — proto se fakta
+# nepřepisují a atribuce je povinná na každé stránce, která je zobrazuje.
+AKCE_EXPORT = "https://opendata.mesto-kromeriz.cz/akce/export/export-xml"
+AKCE_SPECIFIKACE = "https://opendata.mesto-kromeriz.cz/akce/specifikace/"
+AKCE_POSKYTOVATEL = "Město Kroměříž"
+AKCE_LICENCE = "CC BY 4.0"
+AKCE_LICENCE_URL = "https://creativecommons.org/licenses/by/4.0/deed.cs"
+AKCE_DNI = 30
+
+# Hodinový cron nesmí tahat 574 kB pokaždé. Bez --vynutit se stahování
+# přeskočí, dokud jsou uložená data mladší.
+AKCE_MAX_STARI_HODIN = 12
 
 # --- Modely ---------------------------------------------------------------
 # Klasifikace je jednoslovná odpověď, stačí nejlevnější model.

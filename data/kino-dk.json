@@ -1,0 +1,191 @@
+{
+  "https://www.dk-kromeriz.cz/audience": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "National Theatre Live: The Audience",
+    "stopaz": "asi 2 hodiny a 28 minut"
+  },
+  "https://www.dk-kromeriz.cz/call": {
+    "format": "česky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "stopaz": "asi 1 hodina a 1 minuta"
+  },
+  "https://www.dk-kromeriz.cz/clayface": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "stopaz": "asi 1 hodina a 48 minut"
+  },
+  "https://www.dk-kromeriz.cz/divoky-kun-devitka": {
+    "format": "titulky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Wild Horse Nine",
+    "stopaz": "asi 1 hodina a 58 minut"
+  },
+  "https://www.dk-kromeriz.cz/dovolena-v-ceskem-raji": {
+    "format": "česky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 30 minut"
+  },
+  "https://www.dk-kromeriz.cz/drevorubec": {
+    "format": "česky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 38 minut"
+  },
+  "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Ebenezer",
+    "stopaz": "asi 1 hodina a 57 minut"
+  },
+  "https://www.dk-kromeriz.cz/fantom-opery": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Le Fantôme de L'Opéra",
+    "stopaz": "asi 2 hodiny a 14 minut"
+  },
+  "https://www.dk-kromeriz.cz/frankenstein": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "National Theatre Live: Frankenstein",
+    "stopaz": "asi 2 hodiny"
+  },
+  "https://www.dk-kromeriz.cz/george-michael-the-faith-tour": {
+    "format": "titulky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 54 minut"
+  },
+  "https://www.dk-kromeriz.cz/halloweenska-noc-2": {
+    "puvodni_nazev": "Maraton hororových filmů"
+  },
+  "https://www.dk-kromeriz.cz/houpacky": {
+    "format": "česky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "stopaz": "asi 1 hodina a 50 minut"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "The Hunger Games",
+    "stopaz": "asi 2 hodiny a 17 minut"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games-balada-o-ptacich-a-hadech": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "The Hunger Games: The Ballad of Songbirds and Snakes",
+    "stopaz": "asi 2 hodiny a 37 minut"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games-maraton": {
+    "puvodni_nazev": "Znovuuvedení kompletní série"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games-pondeli": {},
+  "https://www.dk-kromeriz.cz/hunger-games-sila-vzdoru-1-cast": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "The Hunger Games: Mockingjay - Part 1",
+    "stopaz": "asi 2 hodiny a 5 minut"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games-sila-vzdoru-2-cast": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "The Hunger Games: Mockingjay - Part 2",
+    "stopaz": "asi 2 hodiny a 17 minut"
+  },
+  "https://www.dk-kromeriz.cz/hunger-games-utery": {},
+  "https://www.dk-kromeriz.cz/hunger-games-vrazedna-pomsta": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "The Hunger Games: Catching Fire",
+    "stopaz": "asi 2 hodiny a 26 minut"
+  },
+  "https://www.dk-kromeriz.cz/jak-dulezite-je-mit-filipa": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "National Theatre Live: The Importance of Being Earnest",
+    "stopaz": "asi 2 hodiny a 50 minut"
+  },
+  "https://www.dk-kromeriz.cz/jak-udelat-banku": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "How to Rob a Bank",
+    "stopaz": "asi 2 hodiny a 3 minuty"
+  },
+  "https://www.dk-kromeriz.cz/kluci-to-vidi-jinak-nez-holky": {
+    "format": "česky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 47 minut"
+  },
+  "https://www.dk-kromeriz.cz/milovnik-ne-bojovnik": {
+    "format": "slovensky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "stopaz": "asi 1 hodina a 48 minut"
+  },
+  "https://www.dk-kromeriz.cz/minotaur": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "puvodni_nazev": "Minotaure",
+    "stopaz": "asi 2 hodiny a 22 minut"
+  },
+  "https://www.dk-kromeriz.cz/neskutecna-mama": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "puvodni_nazev": "Other Mommy",
+    "stopaz": "asi 1 hodina a 33 minut"
+  },
+  "https://www.dk-kromeriz.cz/osamely-vlk-1": {
+    "format": "česky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "stopaz": "asi 1 hodina a 34 minut"
+  },
+  "https://www.dk-kromeriz.cz/ovecka-shaun-ve-filmu-prisera-z-mossy-bottom": {
+    "format": "dabing | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Shaun the Sheep: The Beast of Mossy Bottom",
+    "stopaz": "asi 1 hodina a 20 minut"
+  },
+  "https://www.dk-kromeriz.cz/pet-svestek": {
+    "format": "česky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 40 minut"
+  },
+  "https://www.dk-kromeriz.cz/planetarium": {},
+  "https://www.dk-kromeriz.cz/rammstein-live-in-mexico-city": {
+    "format": "2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "stopaz": "asi 1 hodina a 50 minut"
+  },
+  "https://www.dk-kromeriz.cz/rozum-a-cit": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Sense and Sensibility",
+    "stopaz": "asi 2 hodiny a 11 minut"
+  },
+  "https://www.dk-kromeriz.cz/uvidis-vsechno": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "You Can See Everything",
+    "stopaz": "asi 2 hodiny a 54 minut"
+  },
+  "https://www.dk-kromeriz.cz/verejny-prostor-frantiska-skaly": {
+    "format": "titulky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 30 minut"
+  },
+  "https://www.dk-kromeriz.cz/viktorianske-psycho": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "puvodni_nazev": "Victorian Psycho",
+    "stopaz": "asi 1 hodina a 35 minut"
+  },
+  "https://www.dk-kromeriz.cz/wildwood-tajemstvi-zakazaneho-lesa": {
+    "format": "dabing | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Wildwood",
+    "stopaz": "asi 2 hodiny a 12 minut"
+  },
+  "https://www.dk-kromeriz.cz/zapas-stoleti": {
+    "format": "titulky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "El partido",
+    "stopaz": "asi 1 hodina a 31 minut"
+  }
+}

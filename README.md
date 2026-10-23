@@ -115,6 +115,44 @@ falešných poplachů z 32 úryvků a záchyt 98 %, práh 5 nula poplachů a
 záchyt 95 %, práh 6 už jen záchyt 87 % bez dalšího zlepšení. Zbylých 5 %
 jsou krátké věty a výčty jmen; na ty je druhá pojistka, podobnost vět.
 
+### Program akcí
+
+Druhý typ obsahu vedle zpráv, s jiným právním režimem. Město publikuje
+akce jako otevřená data pod **CC BY 4.0**, a ta licence doslovné převzetí
+dovoluje výměnou za uvedení zdroje. Fakta se proto nepřepisují a na každé
+stránce programu je atribuce — u zpráv se na zdroj neodkazuje, protože
+k oznámením města žádnou licenci nemáme.
+
+`kromka/akce.py` je záměrně **mimo `sources/`**. `pipeline.nove_polozky`
+prochází všechny registrované zdroje a každou položku posílá do přepisu;
+akce v registru by se přepisovaly jako zprávy, 133 termínů měsíčně.
+
+Stránky: `/program.html`, okna `/program/dnes.html` a
+`/program/vikend.html`, a stránka ke každému typu, který v okně 30 dní
+má aspoň jeden termín. Každá má vlastní titulek, popis, H1 a ručně
+psaný úvod v `TYPY_AKCI` a `VYBERY`.
+
+Okna v čase jsou důležitější než typy a je to změřené. Ahrefs (cz,
+říjen 2026): „akce kroměříž tento víkend" 500 hledání měsíčně, obtížnost
+2; „kroměříž akce dnes" 450, obtížnost 1; „kino nadsklepí" 350. Naproti
+tomu „divadlo kroměříž", „koncerty kroměříž", „výstavy kroměříž" i
+„kulturní akce kroměříž" mají nulu. Typy proto zůstávají jako navigace
+se sitemap prioritou 0.5, kino 0.8, okna 0.9.
+
+Víkend je nejbližší sobota a neděle; v sobotu i v neděli je to ten
+právě probíhající (`_okno_vikend`). Vícedenní akce (výstavy) spadnou do
+okna, pokud přes něj běží. Prázdný typ se nevykreslí, prázdné okno ano —
+adresa musí být stabilní a „dnes se nic nekoná" je poctivá odpověď.
+
+Cron volá `akce` každou hodinu, ale stahuje nejvýš jednou za
+`AKCE_MAX_STARI_HODIN` (12 h). Výpadek endpointu `all` neshodí, zůstane
+poslední uložený program.
+
+**Odkaz na koupi lístku z webu Domu kultury získat nejde.** Tlačítko
+Koupit je POST formulář na `websale-dkk.colosseum.eu/hall`; GET se
+stejnými parametry vrátí obecnou stránku bez ohledu na projekci. U kina
+se proto odkazuje na stránku filmu, kde to tlačítko je.
+
 ### Pojistka na čísla
 
 Množina čísel ve výstupu musí být podmnožinou povolených. Povolené =
@@ -155,7 +193,10 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/pipeline.py:101` | `_zapis_selhani` — počítadlo pádů a vzdání se |
 | `kromka/render.py:204` | `vykresli` — celý statický web |
 | `kromka/render.py:17` | `CSS` — vizuál, tmavý režim, mobil |
-| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `build`, `all` |
+| `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
+| `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
+| `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
+| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all` |
 
 ## Vývojové poznámky
 
@@ -234,6 +275,10 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Důvod pádu se do `state.json` zapisuje bez textu, který ho vyvolal | Stav se commituje do veřejného repa a pojistky hlásí nález i s úryvkem oznámení. Ten úryvek je zdroj, a ten se po použití zahazuje |
 | 2026-10-23 | `zdroj_slug` se do článku neukládá | Nikdo ho nečetl a ukazoval na oznámení |
 | 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
+| 2026-10-23 | **Program akcí** z otevřených dat města, `/program.html` + okna dnes a víkend + 8 typů | Měřítko úspěchu jsou vracející se místní čtenáři a program je důvod k návratu, který zprávy nedají. Data jsou pod CC BY 4.0, takže fakta beze změny a s atribucí |
+| 2026-10-23 | Stránky oken dnes a víkend navíc proti plánu | Ahrefs: okna mají 950 hledání měsíčně, sedm z osmi typů nulu |
+| 2026-10-23 | Scrape Domu kultury jen na stopáž, přístupnost, formát a původní název | Odkaz na lístek tam není jako URL, jen jako POST formulář Colosseum |
+| 2026-10-23 | Logo pod 360 px na 21 px | Hlavička na 320 px přetékala o 13 px (logo 199 + hamburger 109 + okraje); chyba z doby před kalendářem |
 | 2026-10-23 | Výměna hlídá čerstvost archivu | `backfill` bere od nejstaršího, takže čistý běh z prázdné evidence vyrobil archiv končící 2025-03-21, zatímco živý sahal po dnešek. Z počtu článků to vidět není a na zpravodajském webu je to horší než chybějící článek |
 | 2026-10-23 | Identifikátor článku je otisk slugu, ne slug sám | Soubory v repu se jmenovaly `mesto-kromeriz__<slug oznámení>.json`, takže veřejné `data/` prozrazovalo adresu zdroje. Otisk je deterministický, evidence zpracovaných funguje dál |
 | 2026-10-23 | `bin/vymena_archivu.py` | Výměna archivu má jednu prověřenou cestu místo ručních kroků; bez `--potvrdit` jen hlásí, co by udělala |
