@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je W pro Kroměříž. Bývalá prodejna potravin v ulici U Sýpek se letos předělá na nové zázemí pro Sociálně terapeutickou dílnu Hanáček, kterou provozují Sociální služby města Kroměříže. Dílna se rozroste o 10 míst, a to je lowkey velká věc, protože zájem o ni je velký.",
+    "Stavbu má v průběhu letoška dělat firma JOPEK Servis. Ve výběrovém řízení nabídla bezmála 3,5 milionu korun. Radnice čekala dražší zakázku, rozdíl je skoro 1,4 milionu. Městská kasa k tomu dostala buff v podobě dotace, která zaplatí 85 procent nákladů. Zbytek jde z rozpočtu města. Starosta Tomáš Opatrný obojí označil za dobré zprávy.",
+    "Přestavba se týká prvního nadzemního podlaží domu s číslem popisným 3209. Dřív tam byla prodejna, pak sociální šatník a část sloužila jako sklad Kroměřížských technických služeb. Vznikne velký variabilní prostor s keramickou pecí v odděleném koutě. Přijdou nové rozvody, toalety, šatny, kuchyň, technická místnost i zázemí pro zaměstnance. U vchodu ze dvora bude rampa pro klienty s tělesným postižením, takže tahle budova odemkne achievement v přístupnosti.",
+    "Uvnitř bude keramická dílna s malým obchodem, kde se prodají hotové výrobky a káva s sebou. Klienti si tam budou zvykat na pracovní režim. Část z nich zůstane ve dvou objektech v areálu Domova Barborka v ulici Karla Čapka, kde dílna sídlí teď. Místostarosta Pavel Motyčka upřesnil, že v U Sýpek půjde hlavně o výrobu a prodej keramiky. Dílna je ambulantní služba pro dospělé s mentálním postižením v lehčí až střední podobě a SSKM ji provozuje od roku 2018. Z bývalého krámu bude dílna s pecí a kafem, to je peak využití budovy."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.591,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:45:50.631349+00:00"
+  },
+  "headline": "Bývalá prodejna potravin v U Sýpek dostane patch: keramika, káva a 10 míst",
+  "id": "mesto-kromeriz:eeedbd4a148f8c68",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-21T06:39:00+01:00",
+  "rewritten_at": "2026-10-23T18:45:50.631369+00:00",
+  "sensitivity": "volny",
+  "slug": "byvala-prodejna-potravin-v-u-sypek-dostane-patch-keramika-kava-a-10-mist",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "stavba",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏺🆙",
+      "label": "Capacity Buff",
+      "text": "Sociálně terapeutická dílna Hanáček získá 10 nových míst."
+    },
+    {
+      "emoji": "💸✅",
+      "label": "Money Talk",
+      "text": "Dotace pokryje 85 procent nákladů a zbytek doplatí město."
+    },
+    {
+      "emoji": "🧱🏗️",
+      "label": "Build Plan",
+      "text": "Stavět má letos firma JOPEK Servis za bezmála 3,5 milionu korun."
+    }
+  ]
+}

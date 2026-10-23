@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Šatny na fotbale byly lowkey cooked, tak přišel patch. Fotbalisté SK Hanácká Slavia Kroměříž mají na stadionu Jožky Silného v Obvodové ulici nové šatní soupravy, moduly a multifunkční stůl. Místostarosta Karel Holík uvedl, že na šatnách bylo vidět stáří a obnova byla nutná. Podle něj mají teď větší kapacitu a celkově lepší zázemí.",
+    "Teď peníze, ať víš, kdo za to platil. Celý projekt vyšel zhruba na 670 tisíc korun. Město přispělo 300 tisíci. Klub získal dotaci 330 tisíc z programu MaS07-23 Podpora sportovní infrastruktury na území Zlínského kraje, a to je W. Zbylých asi 40 tisíc doplatil klub ze svého.",
+    "Budovy v areálu patří městu a stadion spadá pod příspěvkovku Sportovní zařízení města Kroměříže. Side quest se šatnami je splněný, main quest se hraje na trávníku. Teď ať to na hřišti taky jede."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 11,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.538,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:48:40.682978+00:00"
+  },
+  "headline": "Šatny na stadionu Jožky Silného dostaly buff, přibyl i multifunkční stůl",
+  "id": "mesto-kromeriz:c5ce5acdc69f5626",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-28T13:31:54+01:00",
+  "rewritten_at": "2026-10-23T18:48:40.682995+00:00",
+  "sensitivity": "volny",
+  "slug": "satny-na-stadionu-jozky-silneho-dostaly-buff-pribyl-i-multifunkcni-stul",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "sport",
+    "peníze",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "👕🪑",
+      "label": "New Gear",
+      "text": "V šatnách v Obvodové ulici jsou nové šatní soupravy, moduly a multifunkční stůl."
+    },
+    {
+      "emoji": "💸",
+      "label": "Money Split",
+      "text": "Projekt vyšel zhruba na 670 tisíc korun a platilo ho město, Zlínský kraj i klub."
+    },
+    {
+      "emoji": "⚽📈",
+      "label": "More Space",
+      "text": "Šatny mají větší kapacitu a lepší zázemí pro fotbalisty Hanácké Slavie."
+    }
+  ]
+}

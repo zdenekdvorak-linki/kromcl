@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tohle je peak lednové nálady, žádná nuda na úřadě. Kašpar, Melichar a Baltazar vešli na kroměřížskou radnici na Velkém náměstí a doprovázela je ředitelka Charity Kroměříž Anna Valachová. Přišli jako koledníci Tříkrálové sbírky, kterou pořádá Charita ČR. Letos je to 18. ročník. Svátek Tří králů připadá na 6. ledna.",
+    "Starosta Jaroslav Němec králům popřál hodně zdaru. Spolu s kolegy z úřadu pak přispěl do kasičky. Jeden z králů křídou napsal na dveře starostovy pracovny K+M+B. Králové navíc rozdali přispěvatelům drobné dárky na památku. Dveře s křídovým podpisem jsou lowkey nejlepší achievement dne.",
+    "Chceš vědět, kam peníze půjdou? Výtěžek míří k seniorům, matkám s dětmi v tísni, rodinám v těžké situaci a lidem bez domova. Největší díl, 65 %, zůstane ve městě nebo obci a okolí, kde lidé přispěli. Do projektů v diecézi poputuje 15 %. Na celostátní projekty jde 5 %. Do zahraničí míří 10 %. Posledních 5 % pokryje náklady na pořádání sbírky, no cap. Křída na dveřích a peníze pro lidi v nouzi, za mě based."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.631,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:33:30.296963+00:00"
+  },
+  "headline": "Tři králové dorazili na radnici a starostovy dveře dostaly achievement",
+  "id": "mesto-kromeriz:a053e7493cb47a44",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-06T12:10:00+01:00",
+  "rewritten_at": "2026-10-23T18:33:30.296981+00:00",
+  "sensitivity": "volny",
+  "slug": "tri-kralove-dorazili-na-radnici-a-starostovy-dvere-dostaly-achievement",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "👑🎶",
+      "label": "Royal Visit",
+      "text": "Koledníci Tříkrálové sbírky zazpívali v budově radnice na Velkém náměstí."
+    },
+    {
+      "emoji": "🪙🏛️",
+      "label": "Mayor Donation",
+      "text": "Starosta Jaroslav Němec a další lidé z úřadu přispěli do kasičky."
+    },
+    {
+      "emoji": "💸📍",
+      "label": "Money Split",
+      "text": "Největší díl výtěžku, 65 %, zůstává v místě, kde lidé přispěli."
+    }
+  ]
+}

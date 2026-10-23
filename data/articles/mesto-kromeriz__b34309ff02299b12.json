@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je W, no cap. Sociální služby města Kroměříže (SSKM) rozjíždějí projekt Spolu a samostatně. Pomáhá lidem, kteří se z Domova pro osoby se zdravotním postižením Barborka osamostatnili, a taky pracovníkům, co je tím provázeli. Cíl je zapadnout do běžného života a do běžné společnosti.",
+    "Projekt poběží od července 2025. Skončit má v červenci 2027. Plánovaný rozpočet je 6,87 milionu korun. Dotace z Evropského sociálního fondu přes Program OP Zaměstnanost plus má pokrýt 90 % nákladů. Zbytek zaplatí SSKM z vlastního. Ten poměr je lowkey příjemný.",
+    "Zapojí se tři služby: Podpora samostatného bydlení, Chráněné bydlení Květná a Sociálně terapeutické dílny Hanáček. Přidají se i připravované bydlení v ulici Pavlákova a rozestavěné středisko dílen v ulici U Sýpek. Tým projde, co v nových službách skřípe, a patchne to. Nové postupy se budou zkoušet v praxi. Hlavní novinkou je individuální plánování podle toho, co potřebuje konkrétní člověk.",
+    "Vzdělávání dostanou pracovníci i klienti a do spolupráce se zapojí další organizace i veřejnost. Přibydou tři nové pracovní úvazky a stávající zaměstnanci si zvednou odborné kompetence, což je buff pro celý tým. Místostarosta Pavel Motyčka, který odpovídá za sociální oblast, vysvětlil, že název Spolu a samostatně vystihuje hlavní myšlenku. Ředitelka SSKM Dagmar Klučková dodala, že školení a spolupráce mají zvednout samostatnost klientů. Oficiální název by ti zabral půl displeje, takže zkratka je fakt záchrana."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 11,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.613,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:01:13.265639+00:00"
+  },
+  "headline": "Spolu a samostatně: 6,87 milionu na život po Barborce, to je W",
+  "id": "mesto-kromeriz:b34309ff02299b12",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:04:00+01:00",
+  "rewritten_at": "2026-10-23T19:01:13.265659+00:00",
+  "sensitivity": "volny",
+  "slug": "spolu-a-samostatne-687-milionu-na-zivot-po-barborce-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "peníze",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🇪🇺",
+      "label": "Money Talk",
+      "text": "Rozpočet projektu je 6,87 milionu korun a většinu z toho zaplatí evropská dotace."
+    },
+    {
+      "emoji": "🤝🏡",
+      "label": "Who Benefits",
+      "text": "Podporu dostanou klienti, kteří se osamostatnili po odchodu z Barborky, i pracovníci sociálních služeb."
+    },
+    {
+      "emoji": "📅🚀",
+      "label": "Start Date",
+      "text": "Projekt se rozjede v červenci 2025."
+    }
+  ]
+}

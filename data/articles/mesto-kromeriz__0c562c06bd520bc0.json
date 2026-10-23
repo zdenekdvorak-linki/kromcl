@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Konečně nějaký W pro mladé v Kroměříži. Komunitní centrum Arkáda je od čtvrtka 8. října k dispozici a středoškoláci tam mají vyhrazené čtvrteční odpoledne od 14 do 19 hodin. Přijdeš na posezení s lidmi nebo na nějakou aktivitu a nic nerezervuješ. Poprvé to jde už tento čtvrtek 15. října.",
+    "Chceš-li, můžeš se do chodu centra zapojit. Main quest je prostě přijít, side quest je pomáhat s propagací nebo s přípravou programu. Radní Vladimíra Vondráčková řekla, že mladým a hlavně studentům tu dlouho chybělo místo k setkávání, a Arkáda ji těší. Vznik centra inicioval místostarosta Pavel Motyčka. Najdeš ho na Riegrově náměstí v domě číslo 142, kde fungují i některé kroužky Střediska volného času dětí a mládeže Šipka.",
+    "Prostory v přízemí si můžou pronajmout spolky i jednotlivci, třeba na rodinnou oslavu. Je to peak vybavení. V klubovně jsou sedací vaky, police s knihami a stolní hry. Kuchyně je plně vybavená na společné vaření, pečení i workshopy. V jídelně jsou stoly, židle a televizor na schůze, prezentace nebo herní akce. K tomu patří velká zahrada s trávníkem na sport a akce venku.",
+    "Rezervuješ online na kcarkada.cz. V kalendáři zkontroluješ, jestli je termín volný, a odešleš formulář. Pak rezervaci schvaluje koordinátorka Lucie Vašulínová a ozve se ti kvůli detailům a předání klíčů. Pokud akce není komerční, zaplatíš nula korun, no cap. Zbývá otázka, kdo si první zabere kuchyni."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.623,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:31:08.967687+00:00"
+  },
+  "headline": "Kroměříž má nové místo pro mladé a lowkey je to peak",
+  "id": "mesto-kromeriz:0c562c06bd520bc0",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-14T13:10:50+02:00",
+  "rewritten_at": "2026-10-23T19:31:08.967712+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-ma-nove-misto-pro-mlade-a-lowkey-je-to-peak",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "akce",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🛋️📅",
+      "label": "Open Thursdays",
+      "text": "Středoškoláci můžou chodit každý čtvrtek od 14 do 19 hodin bez rezervace, poprvé 15. října."
+    },
+    {
+      "emoji": "🆓🏡",
+      "label": "Free Rental",
+      "text": "Když akce není komerční, pronájem prostor je zdarma."
+    },
+    {
+      "emoji": "💻🔑",
+      "label": "Book Online",
+      "text": "Termín si ověříš v kalendáři na kcarkada.cz a rezervaci schvaluje koordinátorka."
+    }
+  ]
+}

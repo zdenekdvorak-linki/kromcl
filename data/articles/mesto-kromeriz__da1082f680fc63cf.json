@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Než se začne stavět main quest, přichází side quest s pilou. Brněnská firma Geokey – středisko Malostroje v těchto dnech kácí náletové stromy a keře na trase cyklostezky z Kroměříže do Postoupek – Miňůvek. Hotovo musí být do 1. března, aby tam ptáci nestihli zahnízdit. Se stavbou samotnou se počká na vítěze výběrového řízení, smlouvu radnice podepíše nejdřív koncem března. Vedoucí odboru investic Libor Pecháček to označil za důvod, proč kácení vyčlenili zvlášť.",
+    "Účtenka za kácení vyšla na 644 tisíc korun, no cap. Místostarosta Karel Holík připomněl, že v ceně jsou i pařezy a práce v těžkém terénu mezi silnicí a tratí, a to bez omezení dopravy.",
+    "Stezka bude mít skoro 1,4 km. Začne na křižovatce, kde se potkávají Kojetínská, Žerotínova a Za Zámeckou zahradou, a povede souběžně se silnicí II/367 do Miňůvek. Rozpočet dostal buff: Státní fond dopravní infrastruktury schválil dotaci 22,9 milionu korun. Celá akce má přijít zhruba na 30 milionů. Zlínský kraj je ještě ve hře, město u něj žádá o dotaci přes milion.",
+    "Starosta Tomáš Opatrný stavbu označil za výhodnou investici, protože většinu zaplatí dotace. Lidé z Postoupek a Miňůvek dostanou spojení do města, které chtěli dlouho. Ostatní si odemknou achievement: vyjet na kole až na stezky v sousedním Olomouckém kraji. Pilky už řvou, takže to vypadá, že se to fr rozjíždí."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.6,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:53:45.063826+00:00"
+  },
+  "headline": "Než přijde cyklostezka do Postoupek, padnou keře: side quest za 644 tisíc",
+  "id": "mesto-kromeriz:da1082f680fc63cf",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-07T09:04:30+01:00",
+  "rewritten_at": "2026-10-23T18:53:45.063852+00:00",
+  "sensitivity": "volny",
+  "slug": "nez-prijde-cyklostezka-do-postoupek-padnou-kere-side-quest-za-644-tisic",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🪓🌳",
+      "label": "Chainsaw Season",
+      "text": "Brněnská firma Geokey – středisko Malostroje kácí náletové dřeviny na trase budoucí stezky a musí skončit do 1. března."
+    },
+    {
+      "emoji": "💸📈",
+      "label": "Money Talk",
+      "text": "Stezka přijde skoro na 30 milionů korun, 22,9 milionu je schválená dotace a Zlínský kraj město teprve žádá o další."
+    },
+    {
+      "emoji": "🚲🛣️",
+      "label": "Route Check",
+      "text": "Stezka měří skoro 1,4 km a spojí Kroměříž s Postoupkami a Miňůvkami podél silnice II/367."
+    }
+  ]
+}

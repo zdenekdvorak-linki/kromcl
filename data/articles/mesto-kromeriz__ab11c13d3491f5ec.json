@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Kroměříž loni rozhodně nebyla mid. V roce 2024 sem dorazilo 255 146 návštěvníků. Ze zahraničí jich bylo 26 365. Radnice si nechala udělat analýzu z geolokačních dat mobilního operátora. Podle radního pro kulturu a cestovní ruch Jiřího Kašíka z ní jde vyčíst, jak dlouho tu lidi zůstávají, jaké akce je táhnou a odkud jezdí.",
+    "No cap, přes noc tu loni zůstalo 48 636 turistů. Cizinců mezi nimi bylo 7562, nejvíc ze Slovenska, Polska a Německa. Ukrajinci jsou v číslech taky, jenže turisty nejsou, utíkají před válkou. Z tuzemska jezdí nejvíc lidí z Jihomoravského, Olomouckého a Zlínského kraje a z Prahy.",
+    "Květen byl peak, přijelo 43 525 lidí. Srpen mu dýchal na záda s 42 922 návštěvníky. Nejvíc přespání ale vyšlo na srpen, přesně 8780. Jednodenních výletníků bylo 206 510. Ve městě nespí, jenže se vrací a v průměru tu stráví dva dny.",
+    "Podle vedoucího odboru kultury, cestovního ruchu a památkové péče Pavla Zrny vychází na přespávajícího turistu tři noci. Vrací se průměrně jednou za rok. Celý den zůstane jen každý čtvrtý nocující, takže jsou to hlavně krátké pobytovky. Čísla zvedají svátky, dny volna a velké akce jako Floria jaro, Floria léto a koncerty v Podzámecké zahradě. Předcovidní hodnoty pořád chybí, takže ten achievement zůstává zamčený."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.66,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:02:07.431017+00:00"
+  },
+  "headline": "Kroměříž loni přivítala 255 146 lidí, ale před covidem to bylo lowkey víc",
+  "id": "mesto-kromeriz:ab11c13d3491f5ec",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:05:00+01:00",
+  "rewritten_at": "2026-10-23T19:02:07.431034+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-loni-privitala-255-146-lidi-ale-pred-covidem-to-bylo-lowkey-vic",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏰📈",
+      "label": "Visitor Count",
+      "text": "Do Kroměříže loni přijelo 255 146 návštěvníků."
+    },
+    {
+      "emoji": "🛏️🌙",
+      "label": "Overnight Stay",
+      "text": "Přes noc tu zůstalo 48 636 turistů a nejvíc jich spalo v srpnu."
+    },
+    {
+      "emoji": "😷📉",
+      "label": "Pre-Covid Level",
+      "text": "Návštěvnost pořád nedosahuje hodnot před pandemií."
+    }
+  ]
+}

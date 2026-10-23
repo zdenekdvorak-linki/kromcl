@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Radnice odemkla achievement, který by tam nikdo nehledal. Od listopadu si v ní na Velkém náměstí 115 necháš zdarma změřit základní zdravotní údaje. Postarají se o to studenti kroměřížské zdravotnické školy, střední i vyšší odborné, kteří tam mají praxi. Praxi tam dělají třeťáci z oboru Praktická sestra.",
+    "Změří ti krevní tlak, puls a dech. K tomu přidají váhu, výšku a obvody těla. Studenti ti taky řeknou základy o péči o zdraví, což je lowkey víc, než čekáš od úřadu. Rada na to poskytla volnou kancelář v přízemí, v křídle u odboru kultury. Místostarosta Pavel Motyčka to shrnul tak, že ty se dozvíš, jak na tom jsi, a studenti nasbírají zkušenosti.",
+    "Měří se v pondělí od 13 do 15 hodin. Termínů je dohromady 12: 2., 9., 16., 23. a 30. listopadu a 7. prosince 2026, potom 1., 15. a 22. března a 12., 19. a 26. dubna 2027. Mezi prosincem a březnem je pauza, takže si to dej do kalendáře hned, fr. Zdarma tlak a puls v pondělí odpoledne na náměstí, tomu se říká peak úřední péče."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.612,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:45:40.021768+00:00"
+  },
+  "headline": "Radnice odemkla zdravotní buff: v pondělí ti zdarma změří tlak i puls",
+  "id": "mesto-kromeriz:74caaa625a7c5c36",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-07T05:46:48+02:00",
+  "rewritten_at": "2026-10-23T19:45:40.021785+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-odemkla-zdravotni-buff-v-pondeli-ti-zdarma-zmeri-tlak-i-puls",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "školství",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🩺💓",
+      "label": "Free Checkup",
+      "text": "Od listopadu ti na radnici na Velkém náměstí 115 zdarma změří tlak, puls i dech."
+    },
+    {
+      "emoji": "📅🕐",
+      "label": "Monday Slots",
+      "text": "Měří se v pondělí odpoledne a první termín vychází na 2. listopadu."
+    },
+    {
+      "emoji": "🧑‍⚕️✅",
+      "label": "Student Crew",
+      "text": "Měřit budou studenti 3. ročníku oboru Praktická sestra, kteří tam mají praxi."
+    }
+  ]
+}

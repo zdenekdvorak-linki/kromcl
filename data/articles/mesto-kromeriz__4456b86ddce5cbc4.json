@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je peak kariéra. Čtyři dobrovolní hasiči ze SDH Kroměříž letos odcházejí z výjezdové jednotky a radní jim udělili pamětní medaile, které město vydalo k 760. výročí. Dostanou je Zdeněk Janásek, Antonín Františ, Vojtěch Lukeš a Jan Kubíček.",
+    "Medaile jim předají v sobotu 21. listopadu v Domě kultury na slavnostní schůzi sboru, která patří k 120. výročí jeho založení. Starosta Tomáš Opatrný jim poděkoval za službu městu a popřál jim zdraví a radost ze života. To je W.",
+    "Zdeněk Janásek je lowkey postava jak z příběhu o původu hrdiny. Narodil se na hasičské zbrojnici na Oskole, kde dnes sídlí profesionální hasiči, a jeho táta tam dělal zbrojmistra. K dobrovolným hasičům vstoupil v roce 1962 a velel výjezdové jednotce od roku 1994 do roku 2019. Jan Kubíček je u sboru od roku 1963, dlouho byl i profík a jeho dva synové dnes jezdí jako strojníci. Rodinný main quest, který možná převezme vnuk.",
+    "Antonín Františ je v dobrovolných řadách od roku 1972 a od roku 1995 vede sbor jako starosta. Vojtěch Lukeš nastoupil o rok později, působil jako zástupce velitele a celý život píše kroniku sboru. Velitel jednotky Adam Fuksa k tomu dodal, že všichni čtyři dali dobrovolné požární ochraně celý život a byli oporou i vzorem pro další hasiče. Tolik let u jedné věci, to je aura, kterou si nekoupíš."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.743,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:42:32.015102+00:00"
+  },
+  "headline": "4 hasiči z Kroměříže končí ve výjezdu a odemykají achievement v podobě medaile",
+  "id": "mesto-kromeriz:4456b86ddce5cbc4",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-08T09:01:00+02:00",
+  "rewritten_at": "2026-10-23T19:42:32.015123+00:00",
+  "sensitivity": "volny",
+  "slug": "4-hasici-z-kromerize-konci-ve-vyjezdu-a-odemykaji-achievement-v-podobe-medaile",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "akce",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏅🚒",
+      "label": "Medal Drop",
+      "text": "Radní dali 4 dobrovolným hasičům ze SDH Kroměříž pamětní medaile k 760 letům města."
+    },
+    {
+      "emoji": "📅🎖️",
+      "label": "Save The Date",
+      "text": "Předání proběhne v sobotu 21. listopadu v kulturáku na schůzi k 120. výročí sboru."
+    },
+    {
+      "emoji": "👨‍👦‍👦🔥",
+      "label": "Family Business",
+      "text": "Oba synové Jana Kubíčka jezdí u městské jednotky jako strojníci a vnuk možná brzy přijde taky."
+    }
+  ]
+}

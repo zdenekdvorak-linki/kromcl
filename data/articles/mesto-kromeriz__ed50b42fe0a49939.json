@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Chropyňská je pro řidiče částečně cooked. Od 10. března tam stavbaři budují novou splaškovou a dešťovou kanalizaci. Po úsecích dlouhých pár desítek metrů budou zavírat celou silnici. Důvod jsou přípojky: kanalizaci vyvedou od středu vozovky až za její okraj, takže se na ni majitelé domů napojí a silnici znovu rozkopávat nebudou.",
+    "Tvoje nová main quest se jmenuje Kaplanova. Tudy se do Chropyňské dostaneš z obou stran po celou dobu uzavírek. Kroměřížské technické služby tam zřídí provizorní zastávky. K domům v uzavřených úsecích se podle Petra Vedry, ředitele Vodovodů a kanalizací Kroměříž (VaK), dá dojet po domluvě se stavbou, pokud to technicky půjde.",
+    "Na novou kanalizaci se lidé většinou napojí až po dokončení stavby, spuštění čerpací stanice a kolaudaci. Vedra to označil za komfortní řešení, protože se pak nebude znovu kopat do vozovky. Stavba bude stát přes 25 milionů korun, no cap. VaK začal už loni, když budoval objekt čerpací stanice, a to se obešlo bez omezení dopravy.",
+    "Starosta Tomáš Opatrný, předseda představenstva VaK, bere tuhle stavbu jako odemčený achievement nového vedení města. Chtějí, aby VaK víc investoval a kanalizaci postupně stavěl i v dalších částech města, kde zatím chybí. Úsek vede od dálničního mostu D1 k železniční trati na jihu. Dešťovka poteče k mostu a vyústí do Moravy, se zpětným uzávěrem. Bagry mají do srpna peak sezonu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.622,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:12:34.786039+00:00"
+  },
+  "headline": "Chropyňská je do konce srpna cooked, jezdi přes Kaplanovu",
+  "id": "mesto-kromeriz:ed50b42fe0a49939",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-07T09:00:00+01:00",
+  "rewritten_at": "2026-10-23T19:12:34.786062+00:00",
+  "sensitivity": "volny",
+  "slug": "chropynska-je-do-konce-srpna-cooked-jezdi-pres-kaplanovu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚧🚗",
+      "label": "Road Closed",
+      "text": "Uzavírky v Chropyňské začínají 10. března a trvají do konce srpna."
+    },
+    {
+      "emoji": "🚌↪️",
+      "label": "Detour Mode",
+      "text": "Do ulice i z ní pojedeš oběma směry přes Kaplanovu, kde budou provizorní zastávky MHD."
+    },
+    {
+      "emoji": "💸🕳️",
+      "label": "Big Budget",
+      "text": "Nová kanalizace vyjde přes 25 milionů korun."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Kroměřížské firmy, máte šanci na slušný aura farming. Město vyhlásilo soutěž Firma přátelská rodině 2026 a přihlášky bere do 30. října. Vyhrát může zaměstnavatel, který lidem pomáhá zvládat práci i rodinu najednou. Soutěž je jedno ze tří opatření z projektu Audit familyfriendlycommunity, do kterého je Kroměříž zapojená.",
+    "Přihlásit se může každý, kdo v Kroměříži zaměstnává lidi: malé, střední i velké firmy, veřejné instituce, příspěvkovky i neziskovky. Porota se skládá ze zástupců veřejnosti, personalistů a organizátora soutěže. Dívat se budou na pružnou pracovní dobu, práci z domu, zkrácené a sdílené úvazky pro lidi se zdravotním postižením a návrat z rodičovské. Počítá se i kontakt se zaměstnanci během rodičovské, péče o děti, prorodinné benefity a rovné šance pro ženy i muže. Lowkey dlouhý checklist.",
+    "Přihláška je formulář na webu města, kde stručně popíšeš, co firma pro své lidi dělá. Výsledky a certifikáty přijdou v prosinci. Místostarosta Pavel Motyčka k tomu dodal, že soutěž firmám zviditelní společenskou odpovědnost, buffne značku zaměstnavatele a dá zpětnou vazbu k personální politice. Ocenění prý může zvednout prestiž firmy na trhu práce. Takový achievement by chtěl mít v profilu každý šéf."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.641,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T20:00:56.196053+00:00"
+  },
+  "headline": "Kroměřížské firmy, čas na aura farming: soutěž Firma přátelská rodině 2026",
+  "id": "mesto-kromeriz:550a036cc0ac95a3",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-21T09:07:49+02:00",
+  "rewritten_at": "2026-10-23T20:00:56.196073+00:00",
+  "sensitivity": "volny",
+  "slug": "kromerizske-firmy-cas-na-aura-farming-soutez-firma-pratelska-rodine-2026",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "⏰📝",
+      "label": "Deadline Alert",
+      "text": "Přihlášky do soutěže přijímají do 30. října 2026."
+    },
+    {
+      "emoji": "🏢🤝",
+      "label": "Who Can Join",
+      "text": "Malé, střední i velké firmy, veřejné instituce, příspěvkovky a neziskovky působící v Kroměříži."
+    },
+    {
+      "emoji": "🏆🎉",
+      "label": "Prize Drop",
+      "text": "Vybrané organizace dostanou certifikát, výsledky vyhlásí v prosinci."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Igelitky s firemním odpadem v koších v centru jsou lowkey cringe moment pro celé město. Podnikatelé mají ze zákona povinnost vyřešit odpad ze své práce. Mnozí o tom nevědí a někteří ho do veřejných nádob nosí naschvál. Turisty i místní to ruší.",
+    "Radnice proto firmám nabízí smlouvu, se kterou smějí veřejné kontejnery a popelnice používat legálně. Menší producenty do systému pouští od července 2024. Místostarosta Karel Holík upřesnil, že je to dobrovolné a odpad si firma může zařídit i jinak. Pavla Moravcová z odboru služeb vysvětlila, že kategorie jsou tři a ceník dostal buff pro ty nejmenší, třeba kadeřnice, advokáty nebo finanční poradce.",
+    "Teď to, co potřebuješ vědět, pokud máš firmu. Úplní drobci mohou mít smlouvu jen na tříděný odpad, když směsný řeší přes svozovou firmu nebo pronajímatele. Jinak platí vyšší sazba i se směsným. Nádoby město dodávat nebude. Kdo vyprodukuje přes 200 kg ročně, má víc než 2 zaměstnance nebo provozovnu nad 100 m², dostane smlouvu jen na tříděný odpad. Největší hráči, tedy nad 600 kg ročně, s víc než 8 zaměstnanci a nad 300 m², smlouvu od města nedostanou. Ti to řeší sami, no cap.",
+    "Kontroly budou dělat lidé z živnostenského úřadu a z odboru, který má na starosti stavby a životní prostředí. V Kroměříži podniká zhruba 5000 lidí a firem, takže je co hlídat. Cizí koš v centru jako firemní popelnice? To je highkey L."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.557,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:14:20.731127+00:00"
+  },
+  "headline": "Od 1. dubna patch na firemní odpad: koše v centru nejsou free buffet",
+  "id": "mesto-kromeriz:23d8af3fabdff5ca",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-10T11:27:50+01:00",
+  "rewritten_at": "2026-10-23T19:14:20.731144+00:00",
+  "sensitivity": "volny",
+  "slug": "od-1-dubna-patch-na-firemni-odpad-kose-v-centru-nejsou-free-buffet",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "📜🗑️",
+      "label": "Patch Notes",
+      "text": "Od 1. dubna 2025 platí nová vyhláška o tom, jak se firmy zapojí do městského odpadového systému."
+    },
+    {
+      "emoji": "📊🏢",
+      "label": "Three Tiers",
+      "text": "Podnikatele město rozdělilo do tří kategorií podle množství odpadu, počtu zaměstnanců a velikosti provozovny."
+    },
+    {
+      "emoji": "🔎🚮",
+      "label": "Trash Patrol",
+      "text": "Odpad ve veřejných nádobách budou úředníci kontrolovat víc než dřív."
+    }
+  ]
+}

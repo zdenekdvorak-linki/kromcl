@@ -10,3 +10,8 @@ dopis-tiskovemu-mluvcimu.md
 nahled/
 data-nove/
 site-nove/
+data-cista/
+site-cista/
+
+# Log běhu nese titulky zdrojových oznámení, do repa nepatří ani omylem.
+beh.log

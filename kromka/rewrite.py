@@ -305,9 +305,17 @@ def _cisla(text):
     nalezena = set()
     for kus in _CISLO.findall(text):
         kus = re.sub(r"[\s ]", "", kus).replace(",", ".").rstrip(".")
-        if kus:
-            nalezena.add(kus)
-            nalezena.add(kus.lstrip("0") or "0")
+        if not kus:
+            continue
+        nalezena.add(kus)
+        nalezena.add(kus.lstrip("0") or "0")
+        # Čeština odděluje tisíce tečkou: „2.360 g" je 2360, ne 2,36.
+        # Skupina přesně tří číslic za tečkou je oddělovač; kratší je
+        # desetinná část a ta se nechává být.
+        bez_tisicu = re.sub(r"\.(?=\d{3}(?:\D|$))", "", kus)
+        if bez_tisicu != kus:
+            nalezena.add(bez_tisicu)
+            nalezena.add(bez_tisicu.lstrip("0") or "0")
     return nalezena
 
 
@@ -321,6 +329,13 @@ def _povolena(zdroj, datum=""):
     for kus in re.findall(r"\d+", datum):
         povolena.add(kus)
         povolena.add(kus.lstrip("0") or "0")
+    # Zpráva běžně říká „loni" nebo „příští rok". Rok o jedna vedle data
+    # vydání je doložené odvození, ne vymyšlené číslo. Širší okolí
+    # povolené není, tam už by se chyba schovala.
+    rok = re.match(r"(\d{4})", datum or "")
+    if rok:
+        povolena.add(str(int(rok.group(1)) - 1))
+        povolena.add(str(int(rok.group(1)) + 1))
     return povolena
 
 
@@ -335,7 +350,9 @@ _EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 _TELEFON = re.compile(r"(?:\+420[\s ]?)?(?:\d{3}[\s ]){2}\d{3}\b")
 
 
-_SLOVO = re.compile(r"[0-9a-záčďéěíňóřšťúůýž]+", re.IGNORECASE | re.UNICODE)
+# Slovo je jakákoli posloupnost písmen a číslic, včetně cizí diakritiky.
+# Ta se na webu města objevuje u partnerských měst a jmen hostů.
+_SLOVO = re.compile(r"[^\W_]+", re.UNICODE)
 
 # Ustálené úřední a právní termíny. Nejsou to autorské formulace, jsou to
 # názvy věcí, které se jinak pojmenovat nedají, a jejich shoda tedy neznamená
@@ -347,17 +364,34 @@ USTALENE = [
     "integrovaná doprava zlínského kraje", "zlínského kraje",
     "odbor školství mládeže a tělovýchovy", "svč šipka",
     "kroměřížské technické služby", "komise rady pro bezpečnost",
+    "odboru kultury cestovního ruchu a památkové péče",
+    "odbor kultury cestovního ruchu a památkové péče",
+    "kultury cestovního ruchu a památkové péče",
+    "zákona o odpadech", "zákon o odpadech",
 ]
+
+# Měsíce a dny. Datum má jediný správný tvar, takže shoda na něm
+# nedokazuje opisování o nic víc než shoda na číslu.
+_KALENDAR = {
+    "leden", "ledna", "únor", "února", "březen", "března", "duben",
+    "dubna", "květen", "května", "červen", "června", "červenec",
+    "července", "srpen", "srpna", "září", "říjen", "října", "listopad",
+    "listopadu", "prosinec", "prosince",
+    "pondělí", "úterý", "středa", "středu", "čtvrtek", "pátek",
+    "sobota", "sobotu", "neděle", "neděli",
+}
 
 # Prázdná slova, která také nic nedokazují.
 _SPONY = {"a", "i", "o", "u", "v", "ve", "s", "se", "z", "ze", "na", "do", "od",
           "po", "za", "k", "ke", "pro", "při", "že", "je", "jsou", "byl",
           "byla", "bylo", "budou", "bude", "to", "ten", "ta", "tak", "jako",
-          "jeho", "jejich", "který", "která", "které", "si", "už", "také"}
+          "jeho", "jejich", "který", "která", "které", "si", "už", "také",
+          "nebo", "ale", "však", "než", "proto", "jen", "už", "má", "mají",
+          "ní", "něj", "ně", "nich", "ním", "jí", "ho", "mu", "jsme", "byly"}
 
 
 # Zvyš při každé změně pojistek, ať je u staršího článku poznat, čím prošel.
-VERZE_POJISTEK = "1.0"
+VERZE_POJISTEK = "1.1"
 
 
 def nejdelsi_shoda(zdroj, vystup, strop=20):
@@ -401,22 +435,32 @@ def doklad(zdroj, vystup):
 _VETA = re.compile(r"[^.!?]+[.!?]?")
 
 
-def zkontroluj_podobne_vety(zdroj, vystup, prah=0.55):
+def zkontroluj_podobne_vety(zdroj, vystup, prah=0.65):
     """Věty, které jsou se zdrojem skoro totožné.
 
     Kontrola na osm slov v řadě má slepé místo: když se záměny rozsypou po
     celé větě, řetěz se nikde nenaváže, přestože věta zůstala cizí. Tohle
     měří podobnost celé věty, takže projde jen věta napsaná opravdu znovu.
 
-    Práh je změřený, ne odhadnutý. Na vzorcích vyšlo:
+    Práh 0.55 vycházel ze čtyř ručně vyrobených vzorků a z toho, že mezi
+    0.13 a 0.68 žádný nepadl. Archiv to vyvrátil: v běhu 23. 10. 2026
+    spadlo na tuhle pojistku 13 článků a deset z nich mělo shodu mezi
+    0.55 a 0.62 na větách, které jsou vlastní a jen nesou stejná fakta —
+    „odhad zakázky byl přitom o 5,4 milionu vyšší", „odchyt poběží od
+    února do března". Mezera, o které mluvil starý komentář, neexistuje;
+    vzorek byl příliš malý.
 
+    Dnešní práh 0.65 je měřený na archivu a na obě strany:
+
+        doslova opsaná věta                    1.000
         maskovaná kopie se šesti záměnami      0.714
         maskovaná kopie, stejná stavba věty    0.683
-        vlastní věta se stejnými fakty         0.000
-        vlastní věta s nadsázkou               0.111
+        vlastní věta se stejnými fakty         0.55 až 0.62
 
-    Mezi 0.13 a 0.68 nepadlo nic, takže 0.55 leží uprostřed mezery a má
-    rezervu na obě strany.
+    Obě měřené maskované kopie tedy projdou pojistkou dál a deset
+    falešných poplachů zmizí. Mezi 0.62 a 0.68 je to těsné a žádný práh
+    ty dvě skupiny nerozdělí čistě — proto je tahle pojistka až druhá
+    v řadě za kontrolou na osm slov v řadě, která drží záchyt 95 %.
 
     Krátké věty se přeskakují — „Instalace začne v listopadu." se dvěma
     způsoby říct nedá a shoda na ní nic nedokazuje.
@@ -440,6 +484,22 @@ def zkontroluj_podobne_vety(zdroj, vystup, prah=0.55):
     return nalezy
 
 
+def _jmena(zdroj):
+    """Slova, která zdroj aspoň jednou píše s velkým písmenem uvnitř věty.
+
+    Jména lidí, obcí, institucí a akcí: „Pavel Motyčka", „Těšnovicích",
+    „Guláš festival". Mají jediný správný tvar, takže jejich shoda
+    neznamená opisování. První slovo věty se nepočítá, tam je velké
+    písmeno jen pravopis.
+    """
+    jmena = set()
+    for veta in _VETA.findall(zdroj):
+        for slovo in _SLOVO.findall(veta)[1:]:
+            if slovo[:1].isupper():
+                jmena.add(slovo.lower())
+    return jmena
+
+
 def zkontroluj_opisovani(zdroj, vystup, delka=8):
     """Souvislé sekvence slov doslova převzaté z oznámení.
 
@@ -447,22 +507,31 @@ def zkontroluj_opisovani(zdroj, vystup, delka=8):
     hlídá strojově — prompt sám o sobě model od opisování neodradí.
 
     Osm slov je zvolené tak, aby propadly názvy institucí a akcí, ale neprošla
-    převzatá věta. Nález navíc musí po odečtení ustálených termínů a spojek
-    obsahovat aspoň čtyři vlastní slova; jinak by stačilo, aby se potkaly dva
-    úřední názvy, a hlásili bychom opisování tam, kde žádné není.
+    převzatá věta. Nález navíc musí obsahovat aspoň pět vlastních slov, a za
+    vlastní se nepočítá nic, co má jediný správný tvar: ustálené termíny,
+    spojky, jména ze zdroje, čísla, měsíce a dny.
+
+    Práh pět a výjimka na jména jsou měřené na archivu. Z 34 běhů, které
+    spadly 23. 10. 2026, jich 15 hlásilo opisování a šlo přitom o jména
+    obcí („z Břeclavi, Tábora, Znojma"), funkce s jménem, data („od 6.
+    prosince 2024 do 2. března 2025") a výčty akcí. Souvislá převzatá věta
+    z osmi běžných slov pojistkou projít pořád nemůže.
     """
     def ngramy(text):
         slova = [s.lower() for s in _SLOVO.findall(text)]
         return {" ".join(slova[i:i + delka])
                 for i in range(len(slova) - delka + 1)}
 
+    jmena = _jmena(zdroj)
     nalezy = []
     for kus in sorted(ngramy(zdroj) & ngramy(vystup)):
         zbytek = kus
         for termin in USTALENE:
             zbytek = zbytek.replace(termin, " ")
-        vlastni = [s for s in zbytek.split() if s not in _SPONY]
-        if len(vlastni) >= 4:
+        vlastni = [s for s in zbytek.split()
+                   if s not in _SPONY and s not in jmena
+                   and s not in _KALENDAR and not s.isdigit()]
+        if len(vlastni) >= 5:
             nalezy.append(kus)
     return nalezy
 

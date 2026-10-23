@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Radnice zase buffuje pořadatele akcí. Zdravé město Kroměříž rozdělí 50 tisíc korun a peníze poteče přes projekt Podpora občanské aktivity pro komunitu. Žádat může kdokoliv z Kroměříže i z místních částí, takže lowkey i ty a tvoje parta.",
+    "Podmínky jsou tři. Program musí být pro obyvatele města, musí proběhnout letos a vstup musí být zdarma. Druh akce je volný: kultura, sport, společenská věc nebo osvěta. Místostarosta Karel Holík, který má Zdravé město na starosti, tohle připomněl jako základ. Vstupné za pět stovek tu no cap neprojde.",
+    "Na jednu akci jde nejvíc 10 tisíc korun a ty můžou pokrýt úplně všechny náklady. Zaplatíš z nich pronájem prostoru, výhry do soutěží, knížky, vybavení, tisk, kancelářské drobnosti, propagaci i některé služby. Je to dost na menší akci, která se obejde bez velkého rozpočtu.",
+    "Žádost pošli do konce září na Velké náměstí 115 k Michaele Jiříkové, koordinátorce projektu. Z minulých ročníků se platilo třeba lampiónové průvody v Trávníku, Guláš festival ve Vážanech, Vážan games nebo Přechod Chřibů. Podporu dostal i folklor. Nápad na akci máš a deadline je daleko, tak ho nenech zhnít v poznámkách."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.565,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:50:35.754081+00:00"
+  },
+  "headline": "Chceš dělat akci? Radnice hodí až 10 tisíc, to je W",
+  "id": "mesto-kromeriz:1704e117703c31f6",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-31T06:23:00+01:00",
+  "rewritten_at": "2026-10-23T18:50:35.754100+00:00",
+  "sensitivity": "volny",
+  "slug": "chces-delat-akci-radnice-hodi-az-10-tisic-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "peníze",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "💰🎪",
+      "label": "Total Pot",
+      "text": "Mezi pořadatele se letos rozdělí 50 tisíc korun."
+    },
+    {
+      "emoji": "🎟️✅",
+      "label": "Free Entry",
+      "text": "Akce musí být pro lidi z města, uskutečnit se letos a vstup na ni musí být zdarma."
+    },
+    {
+      "emoji": "⏰📬",
+      "label": "Hard Deadline",
+      "text": "Žádosti se podávají do konce září."
+    }
+  ]
+}

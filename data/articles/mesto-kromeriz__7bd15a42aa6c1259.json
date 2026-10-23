@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Kojetínská, tvůj chodník jde konečně na patch. Radnice v říjnu zahájí jeho rekonstrukci a staví firma Rovina stavební. Místostarosta Karel Holík to zdůvodnil tím, že tudy chodí hodně lidí a stav chodníku je bídný.",
+    "Úsek začíná u křižovatky s náměstím Míru, kde stojí bytovka s číslem popisným 1551, a končí u křižovatky s ulicí Třebízského. Podle Miloslava Gerly z odboru služeb stavbaři vybourají staré vrstvy, položí nové a předělají obruby i navazující zpevněné plochy. Chodník z toho vyleze s pořádným buffem. Termín je konec roku.",
+    "Teď peníze. Cena od stavební firmy je zhruba 3,8 milionu korun. Státní fond dopravní infrastruktury přihodí městu dotaci kolem 2,7 milionu. To je W pro městskou kasu.",
+    "Kojetínská není jediná, kde se dláždí. Už teď se dělají chodníky v ulicích Čs. Armády a Kazimíra Rudého, dohromady za téměř 11 milionů korun. Opravuje se i spojka mezi Havlíčkovou a Sadovou a nový chodník vzniká u parkoviště v Nitranské. Letos si radnice odemkla i první achievementy: hotové jsou chodníky ve Skopalíkově a v Kotojedské a nová cesta od parkoviště u Kauflandu k železniční stanici Oskol. Teď ať Kojetínská stihne termín, jinak chytí L."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.558,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:56:34.506147+00:00"
+  },
+  "headline": "Chodník v Kojetínské byl cooked, od října ho dělají znova",
+  "id": "mesto-kromeriz:7bd15a42aa6c1259",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-29T07:43:03+02:00",
+  "rewritten_at": "2026-10-23T19:56:34.506165+00:00",
+  "sensitivity": "volny",
+  "slug": "chodnik-v-kojetinske-byl-cooked-od-rijna-ho-delaji-znova",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚧🗓️",
+      "label": "Start Date",
+      "text": "Firma Rovina stavební se do práce pustí v říjnu."
+    },
+    {
+      "emoji": "💸📉",
+      "label": "Money Talk",
+      "text": "Zakázka stojí zhruba 3,8 milionu korun a většinu z toho pokryje dotace od Státního fondu dopravní infrastruktury."
+    },
+    {
+      "emoji": "⏰🚶",
+      "label": "Deadline Mode",
+      "text": "Hotovo má být do konce roku."
+    }
+  ]
+}

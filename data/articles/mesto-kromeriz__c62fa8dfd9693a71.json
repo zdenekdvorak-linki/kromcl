@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Areál KTS v Kaplanově ulici čeká pořádný buff. Rekonstrukci za zhruba 22,4 milionu korun udělá firma IMJ stavby z Přerova. Kroměřížské technické služby patří celé městu a chtějí mít hotovo do konce letošního roku.",
+    "Peníze vypadají dobře, no cap. Karel Holík, místostarosta a jednatel KTS, uvedl, že odhad ceny byl o 5,4 milionu vyšší než vítězná nabídka. Na účet přispěje i Státní fond životního prostředí a KTS od něj čekají asi 9 milionů. To je pro městskou kasu W.",
+    "Dvě budovy dostanou patch skoro od základů. První je autodílna spolu s dílnami pro zámečníky, stolaře a veřejné osvětlení. Druhá je autoumývárna s dílnou na opravy vozidel MHD. Vymění se okna, vrata a dveře, zateplí se fasáda i stropy a přibudou fotovoltaické panely. Jan Hebnar, místostarosta a další jednatel KTS, slibuje, že budovy sníží spotřebu energií.",
+    "KTS myslí i dopředu. Chtějí postavit zastřešené stanoviště s dobíjením pro elektrobusy, které by pro MHD koupili s dotacemi. Počítají s rokem 2026 nebo 2027. Elektrododávky už mají, 3 jich koupili předloni a dobíjecí stanici mají v areálu i na Hanáckém náměstí. Loni přidali 2 hybridní autobusy na naftu a proud, to je odemčený achievement. Hebnar to zdůvodnil tím, že elektromobilita je trend, který šetří přírodu i peníze. Jestli to do konce roku stihnou, to se ještě ukáže."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.602,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:58:35.379487+00:00"
+  },
+  "headline": "Dílny KTS v Kaplanově ulici čeká buff za 22,4 milionu",
+  "id": "mesto-kromeriz:c62fa8dfd9693a71",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:01:00+01:00",
+  "rewritten_at": "2026-10-23T18:58:35.379504+00:00",
+  "sensitivity": "volny",
+  "slug": "dilny-kts-v-kaplanove-ulici-ceka-buff-za-224-milionu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "doprava",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🏗️",
+      "label": "Price Tag",
+      "text": "Přerovská firma IMJ stavby vzala rekonstrukci areálu za zhruba 22,4 milionu korun."
+    },
+    {
+      "emoji": "⏰",
+      "label": "Deadline Mode",
+      "text": "Hotovo má být do konce letošního roku."
+    },
+    {
+      "emoji": "☀️🔧",
+      "label": "Solar Upgrade",
+      "text": "Budovy dostanou nová okna, zateplení i fotovoltaické panely."
+    }
+  ]
+}

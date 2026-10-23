@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Holubi v centru jsou lowkey cooked. Radnice na ně i letos posílá odchytáře: rada schválila smlouvu s Radkem Stískalem z Kyselovic, který bude chytat zdivočelé holuby a sbírat jejich vajíčka a mláďata. Starosta Jaroslav Němec to zdůvodnil tím, že trus je pro fasády a střechy chemicky agresivní a že ptáci šíří nákazy a parazity. Majitelé památek a dalších budov z přibývajících holubů radost nemají, tak chce radnice jejich počet stáhnout dolů.",
+    "Kalendář je jasný. Odchyt zdivočelých holubů poběží v únoru a v březnu, sběr vajíček a mláďat pak od května do srpna. Pasti budou minimálně na 4 místech: Velké náměstí, Masarykovo náměstí, Milíčovo náměstí a Erbenovo nábřeží. Kdo tam chodí na kafe, ať s tím počítá, centrum dostává patch.",
+    "Papírování je na Stískalovi, no cap, balík je kompletní. Vyřídí povolení i dohody s vlastníky budov, kde pasti stanou, ulovené ptáky a vajíčka odveze, utratí a zlikviduje, a nakonec vydesinfikuje místa i zařízení. Radnice bude dostávat písemné zprávy s počty zlikvidovaných zvířat a vajíček, to hlídá Lubomír Alexa z odboru služeb. Účet na letošek vychází na zhruba 170 tisíc korun. Holubi chytili pořádné L."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.573,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:49:40.541759+00:00"
+  },
+  "headline": "Holubi v centru Kroměříže jsou cooked, radnice jde zase na odchyt",
+  "id": "mesto-kromeriz:bbdf91da5409375b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-30T08:33:21+01:00",
+  "rewritten_at": "2026-10-23T18:49:40.541776+00:00",
+  "sensitivity": "volny",
+  "slug": "holubi-v-centru-kromerize-jsou-cooked-radnice-jde-zase-na-odchyt",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "příroda"
+  ],
+  "tldr": [
+    {
+      "emoji": "🕊️🪤",
+      "label": "Trap Spots",
+      "text": "Aspoň 4 pasti stanou na Velkém náměstí, Masarykově náměstí, Milíčově náměstí a Erbenově nábřeží."
+    },
+    {
+      "emoji": "📅🥚",
+      "label": "Season Schedule",
+      "text": "Holuby se chytají v únoru a v březnu, vajíčka a mláďata se sbírají od května do srpna."
+    },
+    {
+      "emoji": "💸🧾",
+      "label": "Final Bill",
+      "text": "Radnici to letos vyjde přibližně na 170 tisíc korun."
+    }
+  ]
+}

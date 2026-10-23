@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Svatební main quest na rok 2027 se právě odemkl. Od pondělí 2. listopadu matrika přijímá rezervace obřadů, při nichž se uzavírá manželství nebo partnerství. Na výběr je 33 sobot, které předem prošly schválením vedení města. Některé tam nenajdeš: třeba velikonoční Bílou sobotu nebo dny, kdy se ve městě koná Vybarvený běh či dožínky, protože by to obřad rušilo.",
+    "Zamluvit si termín můžeš osobně na matrice v prvním patře radnice na Velkém náměstí 115, nebo po telefonu. V obou případech ti matrikářky vysvětlí další postup i to, jaké doklady donést, a s formuláři ti pomůžou. Tak to popsala vedoucí oddělení matriky Kateřina Lučanová. Papírování tě tedy cooked neudělá.",
+    "Nejlepší je cena, to je peak. Obřad včetně živé hudby vyjde zdarma, pokud je sobota ze seznamu, koná se v obřadní síni na radnici a oba z páru mají trvalé bydliště v Česku. Radniční věž je zrovna v rekonstrukci a patří k ní i venkovní schodiště. Uvnitř budovy se ale funguje dál, i v síni, a stavbaři mají skončit v létě příštího roku.",
+    "Teď čísla, no cap. Od ledna do září se v matričním obvodu Kroměříž vzalo 139 párů a 123 svateb proběhlo přímo ve městě. Aspoň jeden ze snoubenců byl z Kroměříže ve 45 případech, oba z Kroměříže jen v 25. Zhruba dvě třetiny oddávaných tedy přijely odjinud. Kroměříž jako svatební destinace, to je aura farming."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.684,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:53:22.956608+00:00"
+  },
+  "headline": "Svatba 2027 se dá zamluvit od 2. listopadu a ve správnou sobotu vyjde na nulu",
+  "id": "mesto-kromeriz:5af2ba6b4f785379",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-02T06:01:00+02:00",
+  "rewritten_at": "2026-10-23T19:53:22.956636+00:00",
+  "sensitivity": "volny",
+  "slug": "svatba-2027-se-da-zamluvit-od-2-listopadu-a-ve-spravnou-sobotu-vyjde-na-nulu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅💍",
+      "label": "Booking Opens",
+      "text": "Od pondělí 2. listopadu matrika bere rezervace obřadů na rok 2027 a na výběr je 33 sobot."
+    },
+    {
+      "emoji": "🎻🆓",
+      "label": "Free Wedding",
+      "text": "Obřad s živou hudbou stojí nula korun, když sedí sobota ze seznamu, místem je radniční síň a oba z páru bydlí natrvalo v Česku."
+    },
+    {
+      "emoji": "🏛️📞",
+      "label": "How To",
+      "text": "Rezervovat jde osobně v prvním patře radnice na Velkém náměstí 115, nebo po telefonu."
+    }
+  ]
+}

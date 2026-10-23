@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Konečně nějaký W pro lidi, co nemají kam zajít. Radnice chystá pro mladé a studenty kreativní centrum Garáž a studii na něj už má hotovou. Radní Vladimíra Vondráčková, která s nápadem přišla, tvrdí, že mladým v Kroměříži chybí místo na učení, hraní her, malé akce a výstavy.",
+    "Co tam najdeš? Kavárnu, coworking, klubovnu a prostor na výstavy. Vedle budovy zůstane krytý kout u hlavního vstupu s kavárenským nábytkem a výhledem na kostel sv. Mořice i arcibiskupské gymnázium. V patře bude víceúčelový sál s terasou. Přibudou záchody, kancelář a technická místnost. Terasa s pohledem na kostel je lowkey peak.",
+    "Jméno Garáž má svůj důvod. Objekt dřív sloužil jako stáje a kočárovna a v roce 1927 ho předělali na garáže. Studie zachová uliční fasádu, nejcennější dochovanou část. Druhé podlaží fasády chybí, čas mu dal pořádný nerf.",
+    "Kousek odsud jsou obě gymnázia, konzervatoř, zuška i střední pedagogická škola. Vondráčková věří, že studenty to zaujme. Program chce stavět s nimi, třeba přes školní parlament nebo žákovské zastupitelstvo. Teď se ale teprve dělají podklady pro projektovou dokumentaci. Kdo čeká, že tam příští měsíc popíjí kafe, je delulu. Studii si na kafe nedáš, tak vydržíš do příštího období?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.551,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:54:54.261901+00:00"
+  },
+  "headline": "Garáž v Pilařově ulici má kavárnu a terasu, ty si ale ještě počkáš",
+  "id": "mesto-kromeriz:b0a6b871aed22ec2",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-01T06:27:06+02:00",
+  "rewritten_at": "2026-10-23T19:54:54.261921+00:00",
+  "sensitivity": "volny",
+  "slug": "garaz-v-pilarove-ulici-ma-kavarnu-a-terasu-ty-si-ale-jeste-pockas",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "lidé",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏚️🔧",
+      "label": "Spot Reveal",
+      "text": "Kreativní centrum Garáž vznikne ve dvoře zchátralého hospodářského traktu domu čp. 34 v Pilařově ulici."
+    },
+    {
+      "emoji": "☕💻",
+      "label": "Inside Loot",
+      "text": "Čeká tě kavárna, coworking, klubovna a víceúčelový sál s terasou."
+    },
+    {
+      "emoji": "⏳💸",
+      "label": "Release Window",
+      "text": "Starosta Tomáš Opatrný chce projekt uskutečnit v příštím volebním období, ideálně z dotací."
+    }
+  ]
+}

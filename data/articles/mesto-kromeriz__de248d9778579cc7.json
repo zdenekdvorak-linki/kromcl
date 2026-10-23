@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Sklep knihovny se při větším dešti pravidelně topí a radnice na to konečně chystá patch. Stavbaři se v březnu pustí do prostoru před Knihovnou Kroměřížska na Slovanském náměstí. Hotovo mají mít nejpozději na jaře 2026. Voda z deště poteče jinak a suterén by se už neměl zaplavovat.",
+    "Stavbu vyhrála firma SMO z Otrokovic s nabídkou 22,25 milionu korun. Radnice původně čekala 28,3 milionu, takže městská kasa dostala buff. Starosta Tomáš Opatrný zmínil, že soutěž vyšla o šest milionů levněji. K tomu přijde dotace z IROP z výzvy Zelená infrastruktura, která má pokrýt 85 procent uznatelných nákladů.",
+    "Parkovací místa zůstanou, jen dostanou nový povrch. Stejně tak chodníky, opěrné zídky a veřejné osvětlení. Celá plocha měří zhruba 3900 metrů čtverečních. Přibude 36 stromů, 329 keřů a 980 cibulovin, což je lowkey docela zelený upgrade. Na lavičky, koše a stojany na kola taky dojde.",
+    "Knihovna se kvůli stavbě zavírat nebude. Ředitelka Šárka Kašpárková slíbila, že služby i akce poběží jako dřív. Kdo nechce kolem bagrů, může sáhnout po online službách. Půjčovat knížky vedle staveniště je trochu Ohio, ale funguje to."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.476,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:10:34.178731+00:00"
+  },
+  "headline": "Sklep knihovny přestane plavat, bagry na Slovanském náměstí jedou v březnu",
+  "id": "mesto-kromeriz:de248d9778579cc7",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-05T09:18:42+01:00",
+  "rewritten_at": "2026-10-23T19:10:34.178751+00:00",
+  "sensitivity": "volny",
+  "slug": "sklep-knihovny-prestane-plavat-bagry-na-slovanskem-namesti-jedou-v-breznu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🏗️",
+      "label": "Money Talk",
+      "text": "Firma SMO z Otrokovic to postaví za 22,25 milionu korun a radnice čekala 28,3 milionu."
+    },
+    {
+      "emoji": "🌧️📚",
+      "label": "Dry Basement",
+      "text": "Nový odvod dešťové vody má trvale zastavit zaplavování suterénu knihovny."
+    },
+    {
+      "emoji": "🚪✅",
+      "label": "Open Doors",
+      "text": "Knihovna jede po celou dobu stavby normálně dál."
+    }
+  ]
+}

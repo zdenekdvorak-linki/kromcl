@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Noční klid přistál na stole zastupitelů a tohle není side quest. Ve čtvrtek 13. února mají na programu vyhlášku města o nočním klidu a o tom, za jakých podmínek se v Kroměříži smějí pořádat sportovní a kulturní akce. Hned vedle leží i vyhláška o odpadech.",
+    "Lowkey nejvíc na očích je most přes Moravu. Zastupitelé budou řešit, jaké jméno dostane ten silniční. Pojmenovávat budou i novou ulici. A ještě je tu žádost o peníze na Czech Tour 2025.",
+    "Pozemková část programu je pro většinu lidí mid, samá parcelní čísla. Město pozemky prodává v Kroměříži, ve Vážanech u Kroměříže a v Postoupkách. Jiné získává, třeba v ulici Kostnická. Řeší se i místní koeficient u daně z nemovitých věcí a rozpočtové úpravy na letošek. Do toho přijdou personální změny v osadním výboru Těšnovice a v kontrolním výboru.",
+    "Sraz je ve čtvrtek v 16:00 v sále kulturáku. Jednání je otevřené pro veřejnost, takže hlasování můžeš sledovat naživo. Highkey tip pro každého, koho zajímá, co se v Kroměříži schválí. Kdo se tam ukáže?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.479,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:57:23.656435+00:00"
+  },
+  "headline": "Noční klid, jméno pro most a Czech Tour: zastupitelé mají ve čtvrtek main quest",
+  "id": "mesto-kromeriz:65914f7782203c1b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-10T12:16:01+01:00",
+  "rewritten_at": "2026-10-23T18:57:23.656453+00:00",
+  "sensitivity": "volny",
+  "slug": "nocni-klid-jmeno-pro-most-a-czech-tour-zastupitele-maji-ve-ctvrtek-main-quest",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "akce",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏛️📅",
+      "label": "Main Quest",
+      "text": "Zastupitelé se sejdou ve čtvrtek 13. února v kulturáku."
+    },
+    {
+      "emoji": "🌙🎶",
+      "label": "Night Rules",
+      "text": "Na stole je vyhláška o nočním klidu a o podmínkách pro sportovní a kulturní akce."
+    },
+    {
+      "emoji": "👀🚪",
+      "label": "Open Entry",
+      "text": "Jednání je veřejné, takže můžeš dorazit i ty."
+    }
+  ]
+}

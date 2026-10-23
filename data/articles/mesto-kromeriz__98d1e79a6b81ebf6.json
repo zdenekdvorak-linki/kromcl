@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tohle je lowkey užitečnější než půlka věcí, co ti dnes vyskočí v mobilu. Radnice vydala brožuru Na koho se obrátit v obtížných situacích a je určená na chvíle, kdy se něco sype. Může jít o zdraví, o sociální potíže, o poruchu doma nebo o trable někoho z tvých blízkých.",
+    "Uvnitř jsou kontakty na havarijní služby, když ti vypadne voda nebo proud, nebo když nesvítí veřejné osvětlení. Tísňové linky tam jsou taky, no cap všechny podstatné: hasiči, záchranka, policie, strážníci a evropská 112. K tomu přehled lékařských pohotovostí s info, kde a kdy fungují. Dál ordinace, úřady, poradny a sociální služby, které v regionu provozují Sociální služby města Kroměříže i další organizace.",
+    "Brožura míří na seniory, lidi se zdravotním postižením, rodiny s dětmi i na ty, kdo pečují o někoho blízkého. Místostarosta Pavel Motyčka k ní uvedl, že má pomáhat v běžných situacích i v těch mimořádných. Pro lidi, co řeší hodně věcí najednou, je to pořádný buff.",
+    "Vytištěnou verzi seženeš na odboru sociálních věcí a zdravotnictví na radnici (1. máje 3191). Další místo je ředitelství Sociálních služeb města Kroměříže na Riegrově náměstí 159. Dát ti ji mohou také v Charitě Kroměříž a v Knihovně Kroměřížska, některé sociální služby ji rozdávají svým uživatelům. Na webu města bude ke stažení, takže si ji hodíš do mobilu a odemkneš achievement: mám čísla po ruce. Doufáme, že ji nikdy nepoužiješ, ale hledat telefony ve stresu je horší, takže tohle je fr fr rozumný tah."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.521,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:55:56.412522+00:00"
+  },
+  "headline": "Radnice vydala brožuru pro chvíle, kdy jsi cooked, a zná všechna čísla",
+  "id": "mesto-kromeriz:98d1e79a6b81ebf6",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-29T08:07:35+02:00",
+  "rewritten_at": "2026-10-23T19:55:56.412541+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-vydala-brozuru-pro-chvile-kdy-jsi-cooked-a-zna-vsechna-cisla",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "📖🆘",
+      "label": "Survival Guide",
+      "text": "Kroměříž vydala brožuru Na koho se obrátit v obtížných situacích, kde je přehled, komu zavolat při zdravotních, sociálních i domácích průšvizích."
+    },
+    {
+      "emoji": "🚒🚑",
+      "label": "Emergency Numbers",
+      "text": "Najdeš v ní kontakty na hasiče, záchranku, policii, strážníky i evropskou linku 112."
+    },
+    {
+      "emoji": "📍💻",
+      "label": "Where To Get",
+      "text": "Seženeš ji na sociálním odboru radnice, v Charitě, v knihovně a na webu města bude ke stažení."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Sídliště Oskol čeká patch, fr. Lidé z bytovek u parku si stěžují na hluk, nepořádek a konzumaci návykových látek, takže se do toho pustila radnice. Komise pro bezpečnost a prevenci kriminality, které předsedá radní Jan Pšeja, přišla s několika úpravami. Podle Pšeji současné zákony na tuhle situaci nestačí.",
+    "Co je konkrétně na stole? Rada uložila odboru služeb, aby prověřil, jestli z parku odstranit lavičky. Dětské hřiště vedle parku má projít revitalizací a dostat plot. Městská policie zase zkoumá, jestli tam dá mobilní kameru. Strážníci tam zatím jezdí jen na zavolání. Podle ředitele městské policie Libora Kubiše obyvatelé na komisi říkali, že hlídka dorazí vždy včas a chová se vstřícně. To je W pro strážníky.",
+    "Háček je v pravomocích. Strážníci smějí zasáhnout, jen když někdo porušuje zákon nebo městskou vyhlášku. Podle Kubiše je navíc těžké potrestat lidi bez přístřeší, protože pokuty neplatí a u přestupků řešených správním orgánem strážníkům často chybí důkazy. Starosta Tomáš Opatrný, který má městskou policii na starost, by uvítal změny zákonů a větší pravomoci pro strážníky. Zatím to pro ně vypadá jako nerf.",
+    "Podobnou věc město už zkouší jinde. Pod kostelem Panny Marie na Riegrově náměstí nedávno zprovoznilo novou digitální kameru. Zdržují se tam i lidé bez domova, kteří prý někdy znečišťují prostranství, dělají hluk a po alkoholu či jiných látkách se chovají agresivně k místním i kolemjdoucím. Vyhláška města pití alkoholu na vymezených místech zakazuje a kamera má pomoct přestupky odhalit a dokázat. Odemkne tohle achievement i na Oskolu?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.547,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:37:33.964376+00:00"
+  },
+  "headline": "Oskol dostane patch: mobilní kamera, plot u hřiště a možná konec laviček",
+  "id": "mesto-kromeriz:2fdc1af9d9ab65da",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-08T09:23:02+01:00",
+  "rewritten_at": "2026-10-23T18:37:33.964397+00:00",
+  "sensitivity": "volny",
+  "slug": "oskol-dostane-patch-mobilni-kamera-plot-u-hriste-a-mozna-konec-lavicek",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🪑🚧",
+      "label": "Bench Check",
+      "text": "Radnice prověřuje, jestli z parku na Oskolu odstranit lavičky, a hřiště vedle má dostat plot."
+    },
+    {
+      "emoji": "📹👀",
+      "label": "Camera Plan",
+      "text": "Městská policie zkoumá, jestli na sídliště dá mobilní kameru."
+    },
+    {
+      "emoji": "⚖️🚓",
+      "label": "Law Limits",
+      "text": "Strážníci smějí zasáhnout jen při porušení zákona nebo vyhlášky a starosta by chtěl pro ně víc pravomocí."
+    }
+  ]
+}

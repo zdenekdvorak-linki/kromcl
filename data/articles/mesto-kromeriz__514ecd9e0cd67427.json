@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je W pro kroměřížské domovy. Firmy DC4 CZ, Biopas a pražský ČEPS pošlou Sociálním službám města Kroměříže peníze s pevně daným účelem. Každý sponzor platí něco jiného, tak se mrkni, kam co poteče.",
+    "DC4 CZ dává 90 tisíc na canisterapii. To je terapie, při které klient tráví čas se psem a zlepšuje si tím psychiku i fyzičku. Psí návštěvy poběží celý rok 2025. Zamíří do domovů U Kašny, Strom života, Vážany, U Moravy a Barborka. Lowkey nejmilejší část celé věci.",
+    "Biopas dává 200 tisíc na dřevěnou pergolu v zahradě Domova pro seniory U Kašny v centru města. Klienti si tam budou moct příjemně posedět venku. ČEPS přidává 250 tisíc a ty půjdou do Vážan, do rehabilitační místnosti v prostorách, které loni v září zasáhla povodeň. Koupí se lehátko se dvěma motory, trenažer na ruce a nohy a čtyřkolové hydraulické chodítko s oporou horní půlky těla. Pro vážanský domov je to pořádný buff.",
+    "Místostarosta Pavel Motyčka se pochvalně vyjádřil, že firmy podporují sociální služby. Podle něj díky tomu mají klienti nadstandardní péči, pomoc při zdravotních potížích i smysluplné trávení volného času. V roce 2024 dostaly sociální služby dary za skoro 950 tisíc. Téměř dvě třetiny z nich měly předem určený účel. Ředitelka Dagmar Klučková uvedla, že peníze chodí hlavně od firem a zhruba 12 procent dávají lidé. Takhle vypadá sponzoring, který ti nepřijde cringe, no cap."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.579,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:17:05.805132+00:00"
+  },
+  "headline": "Firmy hodily peníze domovům seniorů: pejsci, pergola a rehabilka, to je W",
+  "id": "mesto-kromeriz:514ecd9e0cd67427",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-12T07:34:14+01:00",
+  "rewritten_at": "2026-10-23T19:17:05.805158+00:00",
+  "sensitivity": "volny",
+  "slug": "firmy-hodily-penize-domovum-senioru-pejsci-pergola-a-rehabilka-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "peníze",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🐶💛",
+      "label": "Dog Squad",
+      "text": "DC4 CZ dává 90 tisíc na canisterapii, psi budou chodit za klienty celý letošní rok."
+    },
+    {
+      "emoji": "🌿🪑",
+      "label": "Garden Upgrade",
+      "text": "Biopas platí 200 tisíc za dřevěnou pergolu v zahradě Domova pro seniory U Kašny."
+    },
+    {
+      "emoji": "🦽💪",
+      "label": "Rehab Room",
+      "text": "ČEPS dává 250 tisíc na vybavení rehabilitační místnosti ve Vážanech po zářijové povodni."
+    }
+  ]
+}

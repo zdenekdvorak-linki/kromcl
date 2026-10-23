@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je lowkey peak. Žákovské zastupitelstvo města Kroměříže dotáhlo do konce projekt Digitální parťáci, v němž žáci pomáhali seniorům s mobilem a internetem. Nápad vzešel ze sociálního výboru a v soutěži čtyř výborů sebral nejvíc hlasů. Město k tomu přidalo 40 tisíc korun.",
+    "Žáci natočili video o tom, jak se podvodníci snaží z lidí vytáhnout údaje a peníze. Pustili ho v Kroměřížském centru pro seniory a zdravotně postižené a přidali prezentaci. Pak si sedli k telefonům jednotlivých seniorů a nastavili jim Záchranku, Můj vlak, Mapy i Duolingo. Ukázali jim screenshot, blokování otravných čísel a bezpečné heslo. Telefony z toho vyšly s pořádným buffem.",
+    "Emma Staňková, studentka Gymnázia Kroměříž, si dopoledne se seniory užila. Atmosféra byla příjemná a pomoc se hodila. Highkey ji překvapilo, jak moc se senioři liší. Znáš to: jeden se v telefonu vyzná, druhý potřebuje pomoct se základním nastavením nebo s posíláním fotek.",
+    "Druhý nápad žáků je takový side quest: zazelenat cyklostezku Vážany – Kotojedy. Vedení radnice se rozhodlo ho zrealizovat a sázet se má 23. října. Zapojit se mají členové žákovského zastupitelstva, hlavně ti z výboru pro životní prostředí, kteří to navrhli. Stromů má být 18 a cyklostezku zastíní. Dvě budou lípy u posezení, zbytek sloupovité topoly nebo oskeruše. Radní Vladimíra Vondráčková, která žákovské zastupitelstvo rozjela, uvedla, že ji těší, že dojde i na tenhle projekt. Ten ročník žákovského zastupitelstva ate that."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.645,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:40:05.549268+00:00"
+  },
+  "headline": "Školáci z žákovského zastupitelstva učili seniory mobil, +1000 aura",
+  "id": "mesto-kromeriz:d376347fdd938843",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-09T05:47:00+02:00",
+  "rewritten_at": "2026-10-23T19:40:05.549288+00:00",
+  "sensitivity": "volny",
+  "slug": "skolaci-z-zakovskeho-zastupitelstva-ucili-seniory-mobil-1000-aura",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "školství",
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "📱🧓",
+      "label": "Senior Tech",
+      "text": "Žáci z žákovského zastupitelstva nastavovali seniorům v Kroměřížském centru pro seniory a zdravotně postižené telefony."
+    },
+    {
+      "emoji": "🚨💸",
+      "label": "Scam Alert",
+      "text": "Natočili video o tom, jak se podvodníci snaží z lidí vytáhnout údaje a peníze."
+    },
+    {
+      "emoji": "🌳🚲",
+      "label": "Tree Drop",
+      "text": "Sázení stromů na cyklostezce Vážany – Kotojedy je naplánované na 23. října."
+    }
+  ]
+}

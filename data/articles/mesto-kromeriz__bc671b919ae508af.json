@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je W pro Vážany. Město dnes předalo staveniště a začíná se stavět volnočasový park. Předělá se tamní hřiště, které sousedí s bývalou cihelnou. Starosta Tomáš Opatrný uvedl, že velká trávník bude sloužit pro týmové sporty a hry, bude se tam dát odpočívat a přibude zeleň.",
+    "Cena je lowkey příjemná. Park postaví firma Krajinná zeleň z Králova Dvora a chce za to zhruba 4 miliony korun. Město přitom počítalo s částkou asi o 1,6 milionu vyšší. Studii areálu vypracovala zahradní architektka Helena Smrčková.",
+    "Fotbal ve Vážanech nekončí, branky zůstanou stát. Cooked je jen povrch jižního hřiště s příměsí sutě: pryč s ním, přijde zemina a nový trávník. Uprostřed bude kruhové posezení s ohništěm a lavicemi, vedle něj dřevěné sezení v několika úrovních, které se hodí i na výuku venku. Děti si nechají většinu herních prvků a přibude bludiště z keřů, domeček, houpačky a dřevěná zvířátka.",
+    "Radní Richard Kreml má z toho radost. Podle něj obyvatelé Vážan usilovali o obnovu zanedbaného areálu asi 15 let, ale dřívější vedení města to nepodpořilo. Kreml projekt tlačí od začátku a splácí tím dluh největší místní části Kroměříže. Stavební povolení nebude potřeba, protože park leží v dobývacím prostoru zaniklé cihelny. Jednání s majitelem sousední cihelny byla tvrdá a město ustoupilo jen v tom, že postaví plot na hranici pozemku. Dlouhý main quest, ale Vážany ho konečně dotahují."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.628,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:15:35.840344+00:00"
+  },
+  "headline": "Vážany po 15 letech odemkly achievement: park s ohništěm už se staví",
+  "id": "mesto-kromeriz:bc671b919ae508af",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-11T10:04:58+01:00",
+  "rewritten_at": "2026-10-23T19:15:35.840367+00:00",
+  "sensitivity": "volny",
+  "slug": "vazany-po-15-letech-odemkly-achievement-park-s-ohnistem-uz-se-stavi",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏗️🌳",
+      "label": "Build Started",
+      "text": "Město dnes předalo staveniště a ve Vážanech začala stavba volnočasového parku."
+    },
+    {
+      "emoji": "💸",
+      "label": "Price Check",
+      "text": "Krajinná zeleň z Králova Dvora park postaví zhruba za 4 miliony korun, což vyšlo levněji, než město odhadovalo."
+    },
+    {
+      "emoji": "🔥🛝",
+      "label": "Park Loadout",
+      "text": "Park bude mít ohniště, houpačky a keřové bludiště a fotbalové hřiště tam zůstane."
+    }
+  ]
+}

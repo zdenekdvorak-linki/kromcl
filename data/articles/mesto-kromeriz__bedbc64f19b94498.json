@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Zlámanka dostává buff pro tvoje svaly. Workoutové hřiště vyroste hned vedle stávajícího sportoviště a dětského hřiště a cvičit na něm budeš s vlastní vahou, žádné činky.",
+    "Hlavní částí bude velká sestava s hrazdami, žebřinami, věcmi na šplhání a dalšími místy na dřinu. K ní přibudou bradla. Všechno je z kovu, takže se to snadno udržuje, no cap. Radnice k tomu nechá upravit terén a pod hrazdy a spol. položí gumový povrch na dopadovou plochu, dohromady 85 m².",
+    "Stavět se začne v listopadu. Dělá to firma Hřiště v CAJKU a město za to zaplatí cca 390 tisíc korun. Místostarosta Karel Holík říká, že chtějí, aby měli lidé z Kroměříže i z místních částí víc možností, jak trávit volno aktivně, a hřiště u sportoviště bude snadno po ruce. Starosta Tomáš Opatrný dodává, že radnice do sportovišť investuje průběžně a navazuje na věci, které už fungují.",
+    "A ty fungují. Loni radnice postavila hřiště v ulici Štítného, které vymysleli lidé přes participativní rozpočet Vaše Kroměříž. Nedávno dokončila i to v Těšnovicích, taky z Vaší Kroměříže. Workoutové prvky máš také na Hanáckém náměstí vedle Včely. Zlámanka je další zastávka na workoutové mapě a výmluvy ti pomalu docházejí."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.547,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:41:28.993342+00:00"
+  },
+  "headline": "Zlámanka odemyká achievement: workoutové hřiště přijde už v listopadu",
+  "id": "mesto-kromeriz:bedbc64f19b94498",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-08T09:59:00+02:00",
+  "rewritten_at": "2026-10-23T19:41:28.993361+00:00",
+  "sensitivity": "volny",
+  "slug": "zlamanka-odemyka-achievement-workoutove-hriste-prijde-uz-v-listopadu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "sport",
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏗️💪",
+      "label": "Build Time",
+      "text": "Hřiště na Zlámance se bude stavět v listopadu tohoto roku."
+    },
+    {
+      "emoji": "💸🧾",
+      "label": "Price Tag",
+      "text": "Zakázka vyjde zhruba na 390 tisíc korun a staví ji firma Hřiště v CAJKU."
+    },
+    {
+      "emoji": "🤸🔩",
+      "label": "Gym Gear",
+      "text": "Cvičit budeš na sestavě s hrazdami a žebřinami a na bradlech."
+    }
+  ]
+}

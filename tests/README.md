@@ -33,12 +33,33 @@ města, ne z náhodných produkčních dat.
 | `přepraví zhruba jeden milion cestujících` | `sveze 1000000 lidí` | projde |
 | `Rada rozhodla` + datum článku | `Rada rozhodla 23. října` | projde (datum je povolené) |
 | `vynesla 53 245 korun` | `vynesla 53245 korun` | projde (mezera v čísle) |
+| `vážila 2.360 g` | `vážila 2360 g` | projde (česká tisícová tečka) |
+| `v 13.46 hodin` | `ve 1346 hodin` | **zachytí** (dvě číslice za tečkou jsou desetinná část) |
+| `Loni se narodilo 398 dětí` + datum 2025 | `V roce 2024…` | projde (rok o jedna vedle vydání) |
+| totéž | `V roce 2019…` | **zachytí `2019`** |
+
+### Co se nepočítá jako vlastní slovo
+
+Nález na osm slov v řadě musí obsahovat pět vlastních slov. Jména ze
+zdroje, data, čísla, spojky a ustálené termíny se nepočítají — mají jediný
+správný tvar. Poslední test hlídá, že pojistka po těch výjimkách pořád
+funguje.
+
+| Výstup proti oznámení | Očekávání |
+|---|---|
+| výčet `z Břeclavi, Tábora, Znojma, Chebu, Pelhřimova…` | projde |
+| `od 6. prosince 2024 do 2. března 2025` | projde |
+| `místostarosta Pavel Motyčka, který má sociální oblast na starost` | projde |
+| `partnerské město Râmnicu Vâlcea` | projde (cizí diakritika) |
+| `Radnice chce v příštím roce opravit chodníky v celé čtvrti` | **zachytí** |
 
 ### Pojistka na skoro totožné věty
 
 Díra, kterou kontrola na osm slov v řadě sama neuhlídá: když se záměny rozsypou
-po celé větě, řetěz se nikde nenaváže. Práh 0,55 je změřený, ne odhadnutý —
-maskované kopie vycházely 0,68 až 0,71, vlastní věty 0,00 až 0,13.
+po celé větě, řetěz se nikde nenaváže. Práh je **0,65** a je měřený na
+archivu: maskované kopie vycházejí 0,68 až 0,71, vlastní věty s týmiž fakty
+0,55 až 0,62. Starší hodnota 0,55 stála na čtyřech ručních vzorcích a
+archiv ji vyvrátil — deset vlastních vět pod ní spadlo.
 
 | Výstup proti stejnému oznámení | Očekávání |
 |---|---|

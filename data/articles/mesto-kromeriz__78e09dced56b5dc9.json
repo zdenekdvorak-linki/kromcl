@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tak jo, parkovací patch pro Zachar je na cestě. Radnice na kroměřížském sídlišti plánuje nová místa pro auta a teď to chystá.",
+    "Zatím je to fáze příprav, takže zítra tam nové místo nenajdeš. Jakmile ale přibudou, bude to lowkey pořádný buff pro každého, kdo tam kroužil kolem bloků a hledal díru. Kdy se začne stavět, zatím nevíme.",
+    "Parkování je na sídlištích věčné téma, tak uvidíme, jestli z toho bude achievement, nebo jen další plán na papíře."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 1,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.096,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:18:50.995583+00:00"
+  },
+  "headline": "Na Zacharu se chystá parkovací patch pro všechna auta",
+  "id": "mesto-kromeriz:78e09dced56b5dc9",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-12T15:54:42+01:00",
+  "rewritten_at": "2026-10-23T19:18:50.995595+00:00",
+  "sensitivity": "volny",
+  "slug": "na-zacharu-se-chysta-parkovaci-patch-pro-vsechna-auta",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚗🅿️",
+      "label": "Main Quest",
+      "text": "Radnice chce na Zacharu přidat nová místa pro auta."
+    },
+    {
+      "emoji": "🏗️⏳",
+      "label": "Current Status",
+      "text": "Zatím jde o přípravu, takže hotovo to ještě není."
+    },
+    {
+      "emoji": "🏛️👀",
+      "label": "Who Decides",
+      "text": "Za plánem stojí radnice, stavět se tedy bude z její iniciativy."
+    }
+  ]
+}

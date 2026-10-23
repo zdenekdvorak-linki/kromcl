@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Chropyňská má před sebou main quest s bagrem. Kroměřížský VaK tam od pondělí 13. ledna, nebo o něco později podle počasí, začne kopat novou kanalizaci, dešťovou i splaškovou, v úseku, kde žádná zatím není. Kope se přímo v silnici, takže počítej s omezením. Projet půjde pořád, ale jen jedním pruhem.",
+    "Zavřený bude vždycky jen kousek, zhruba 40 metrů v jednom pruhu, a jen dokud ho stavbaři potřebují. Lowkey šetrné řešení. K domům kolem se majitelé dostanou, ředitel VaK Petr Vedra slíbil, že to firma domluví se zástupcem zhotovitele. Majitelé dostanou podrobnosti písemně od stavební firmy.",
+    "Do ulice VaK zavítal už loni, to byl takový side quest. Stavbaři tam začali stavět čerpací stanici odpadních vod a dopravu to nijak nezasáhlo. Celá investice stojí přes 25 milionů korun.",
+    "Trasa vede od mostu dálnice D1 k železniční trati na jihu, kde dnešní městská kanalizace VaK končí. Na ni se napojí nové splašky, poputují do jímky čerpací stanice a odtud je čerpadla pošlou do koncové šachty stoky. Dešťovka jde opačně k dálničnímu mostu a se zpětným uzávěrem vyústí rovnou do Moravy. Každá voda jinudy, no cap rozumný plán. Dokud se kope, je to mid, ale kanalizace tam, kde dosud chyběla, je peak."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.519,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:39:05.514125+00:00"
+  },
+  "headline": "Chropyňská dostane patch pod asfalt: VaK kope, projedeš jedním pruhem",
+  "id": "mesto-kromeriz:c4c0feeecf3986b5",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-09T11:25:11+01:00",
+  "rewritten_at": "2026-10-23T18:39:05.514144+00:00",
+  "sensitivity": "volny",
+  "slug": "chropynska-dostane-patch-pod-asfalt-vak-kope-projedes-jednim-pruhem",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚧🌦️",
+      "label": "Start Date",
+      "text": "Bagry vyjedou kolem pondělí 13. ledna, přesný den ale určí počasí."
+    },
+    {
+      "emoji": "🚗⚠️",
+      "label": "Road Status",
+      "text": "Chropyňskou projedeš jedním pruhem a zavřený bude vždy asi 40 metrů silnice."
+    },
+    {
+      "emoji": "🏠📩",
+      "label": "Home Access",
+      "text": "K domům se dostanou i majitelé, které stavební firma bude informovat písemně."
+    }
+  ]
+}

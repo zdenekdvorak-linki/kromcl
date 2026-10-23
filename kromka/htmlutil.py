@@ -5,6 +5,7 @@ Regulární výraz na vyříznutí <div> s vnořenými <div> nestačí, proto pa
 """
 
 import html
+import hashlib
 import re
 import unicodedata
 from html.parser import HTMLParser
@@ -16,6 +17,21 @@ VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input",
 def _bez_diakritiky(text):
     text = unicodedata.normalize("NFKD", text)
     return "".join(ch for ch in text if not unicodedata.combining(ch))
+
+
+def klic(zdroj_id, slug):
+    """Identifikátor článku, ze kterého se nedá složit adresa zdroje.
+
+    Dřív to byl `mesto-kromeriz:<slug oznámení>` a stejně se jmenoval
+    i soubor v repu, takže veřejné `data/` prozrazovalo přesně to, co
+    má zůstat schované. Otisk je deterministický, takže rozpoznávání
+    už zpracovaných článků funguje dál bez jakékoli evidence navíc.
+
+    Šestnáct znaků je přes 10^19 možností; na archiv o stovkách článků
+    je šance na kolizi zanedbatelná a krátký název souboru se čte líp.
+    """
+    otisk = hashlib.sha256(slug.encode("utf-8")).hexdigest()[:16]
+    return "{0}:{1}".format(zdroj_id, otisk)
 
 
 def slugify(text):

@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Semafory dostanou patch a žárovky jdou do důchodu. V pondělí 17. března se na křižovatce Tovačovského a Kotojedská místo nich objeví LED světla, takže jestli tam jezdíš, počítej s dělníky.",
+    "Ve středu 19. března je na řadě křižovatka Kaplanova a Hulínská. Starší zařízení je na obou místech ve špatném stavu, no cap. Výměnu udělají Kroměřížské technické služby, firma, kterou vlastní město.",
+    "Účet vyjde zhruba na 1,2 milionu korun, fr fr. Místostarosta Karel Holík to zdůvodnil tím, že LED světla se kazí méně, berou míň elektřiny a celkově vyjdou levněji.",
+    "Sbohem, žárovky, v semaforové lize jste byly unc."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.6,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:19:14.155574+00:00"
+  },
+  "headline": "Semafory na dvou křižovatkách dostanou LED patch, žárovky končí",
+  "id": "mesto-kromeriz:07358e83c32c090d",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-14T11:38:47+01:00",
+  "rewritten_at": "2026-10-23T19:19:14.155590+00:00",
+  "sensitivity": "volny",
+  "slug": "semafory-na-dvou-krizovatkach-dostanou-led-patch-zarovky-konci",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "peníze",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚦🔧",
+      "label": "Patch Day",
+      "text": "V pondělí 17. března dostanou LED světla semafory na křižovatce Tovačovského a Kotojedská."
+    },
+    {
+      "emoji": "🚦📅",
+      "label": "Second Round",
+      "text": "Ve středu 19. března přijde na řadu křižovatka Kaplanova a Hulínská."
+    },
+    {
+      "emoji": "💸🧾",
+      "label": "Price Tag",
+      "text": "Celá výměna vyjde zhruba na 1,2 milionu korun."
+    }
+  ]
+}

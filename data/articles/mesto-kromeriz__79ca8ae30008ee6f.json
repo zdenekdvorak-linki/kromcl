@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Jo, radnice zase hledá nejlepší mladé sportovce a letos už po dvacáté. Sportovní komise Rady města chce návrhy podle výsledků z roku 2024. Lowkey slušná tradice na to, že se o ní moc nemluví.",
+    "Ocenění se rozdělují do kategorií: nejúspěšnější mladý sportovec, mládežnický tým, trenér nebo cvičitel s výjimečnými výsledky a trenér nebo cvičitel, který s dětmi pracuje dlouhá léta. Místostarosta Karel Holík k tomu přidal ještě Cenu fair play za rok 2024. Prostě pár achievementů k odemknutí.",
+    "Navrhnout jde členy oddílů a klubů nebo žáky kroměřížských základek a středních škol, kteří se narodili v roce 2006 nebo později. Stejně to platí pro týmy. Trenéři a cvičitelé musí působit v organizacích ve městě. Výjimečně projde i sportovec z klubu mimo Kroměříž, no cap.",
+    "Sám sebe nepřihlásíš, návrh musí poslat škola nebo sportovní organizace z Kroměříže. Formulář a pokyny najdeš na webu města. Vyplněný ho doručíš písemně na odbor školství, mládeže a tělovýchovy na Riegrově náměstí 149, nebo ho pošleš elektronicky. Termín je 21. března 2025, tak si ho dej do kalendáře, ať tvůj oddíl není cooked."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.593,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:39:55.489321+00:00"
+  },
+  "headline": "Mladí kroměřížští sportovci můžou chytit W od radnice, návrhy chtějí do 21. března",
+  "id": "mesto-kromeriz:79ca8ae30008ee6f",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-15T07:19:36+01:00",
+  "rewritten_at": "2026-10-23T18:39:55.489341+00:00",
+  "sensitivity": "volny",
+  "slug": "mladi-kromerizsti-sportovci-muzou-chytit-w-od-radnice-navrhy-chteji-do-21-brezna",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "sport",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "⏰🏅",
+      "label": "Deadline Alert",
+      "text": "Návrhy na ocenění musí být na radnici nejpozději 21. března 2025."
+    },
+    {
+      "emoji": "👟📋",
+      "label": "Who Qualifies",
+      "text": "Sportovci a týmy z Kroměříže narození v roce 2006 nebo později, trenéři musí působit v kroměřížských organizacích."
+    },
+    {
+      "emoji": "🤝✨",
+      "label": "Bonus Category",
+      "text": "Navrhnout jde i Cenu fair play za rok 2024."
+    }
+  ]
+}

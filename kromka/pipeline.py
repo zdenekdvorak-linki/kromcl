@@ -65,7 +65,6 @@ def zpracuj(polozka, verbose=True):
 
     clanek = dict(polozka)
     clanek.update(data)
-    clanek["zdroj_slug"] = polozka["slug"]
     clanek["slug"] = _volny_slug(htmlutil.slugify(data["headline"])[:80],
                                  clanek["id"])
     vystup = " ".join([data["headline"]]
@@ -106,7 +105,7 @@ def davka(limit, nejstarsi=False, jen_novejsi=False):
 
 # Pole, která pocházejí od zdroje a v hotovém článku nemají co dělat.
 CIZI_POLE = ("title", "perex", "url", "author", "rubrika",
-             "image_url", "image_caption", "zdroj_snimek")
+             "image_url", "image_caption", "zdroj_snimek", "zdroj_slug")
 
 
 def _bez_cizich_poli(clanek):
@@ -140,6 +139,21 @@ def _stahni_obrazek(polozka):
         return "", 0, 0
 
 
+def _druh_padu(duvod):
+    """Druh pádu bez textu, který ho vyvolal.
+
+    Pojistky hlásí nález spolu s úryvkem, na kterém spadl — a ten úryvek
+    je text oznámení. Stav se commituje do veřejného repa, takže tam
+    doslovný zdroj nesmí; zahazuje se stejně jako celý zdroj po přepisu.
+    Totéž platí pro systémové chyby, které za dvojtečkou nesou místní
+    cestu k souboru. Celý důvod zůstává na chybovém výstupu běhu.
+
+    Číslo shody nebo názvu pojistky se drží, aby šlo poznat, co opravit:
+    „Věty skoro totožné s oznámením (shoda 0.67)".
+    """
+    return duvod.split(":", 1)[0].strip()[:150]
+
+
 def _zapis_selhani(article_id, duvod):
     """Spočítá, kolikrát článek spadl. Po MAX_SELHANI se přestane zkoušet.
 
@@ -150,7 +164,7 @@ def _zapis_selhani(article_id, duvod):
     selhani = stav.get("selhani", {})
     zaznam = selhani.get(article_id, {"pocet": 0})
     zaznam["pocet"] += 1
-    zaznam["duvod"] = duvod[:300]
+    zaznam["duvod"] = _druh_padu(duvod)
     selhani[article_id] = zaznam
     stav["selhani"] = selhani
     if zaznam["pocet"] >= config.MAX_SELHANI:

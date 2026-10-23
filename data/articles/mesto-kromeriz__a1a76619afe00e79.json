@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Radnice patchla oceňování školáků a lowkey to vypadá na W. Poprvé totiž ocenila žáky základek, které zřizuje město. Šlo o studijní výsledky, úspěchy v koníčcích a o přístup, který přináší něco spolužákům i okolí.",
+    "Ceny dostalo 17 žáků a navrhli je učitelé. ZŠ Slovan dělá aura farming, má 5 oceněných. Po 3 mají ZŠ Komenského náměstí, ZŠ Oskol a ZŠ S-MYSL. ZŠ U Sýpek má 2 oceněné. ZŠ Zámoraví jednoho. Main quest měli starosta Tomáš Opatrný, místostarosta Pavel Motyčka a Eliška Pifková, vedoucí odboru školství, mládeže a tělovýchovy. Ti ceny předávali. Přišli i rodiče, další příbuzní, učitelé a vedení škol.",
+    "V nominacích se nejčastěji opakuje, že dítě pomáhá, maká, bere věci zodpovědně, je skromné a dobře působí na třídu. Pár oceněných sedí ve školních žákovských parlamentech nebo v Žákovském zastupitelstvu města Kroměříže. Takhle vypadá aura farming ve škole.",
+    "Motyčka, který nápad s oceněním rozjel, to zdůvodnil tím, že ochotu pomoct a podobné vlastnosti nezměříš jako výsledky v soutěžích. Chtěl ocenit děti, které jsou pro okolí přínosem a inspirací. Hodnotit tohle je lowkey based. Starosta Opatrný oceněným poblahopřál a popřál jim, aby si ty vlastnosti podrželi i do dalšího života. Tak kdo by to dostal u vás ve třídě?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.543,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:50:59.457144+00:00"
+  },
+  "headline": "Radnice poprvé oceňuje žáky základek, 17 dětí odemklo achievement",
+  "id": "mesto-kromeriz:a1a76619afe00e79",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-05T07:58:00+02:00",
+  "rewritten_at": "2026-10-23T19:50:59.457163+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-poprve-ocenuje-zaky-zakladek-17-deti-odemklo-achievement",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "školství",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏆🎓",
+      "label": "First Time",
+      "text": "Radnice poprvé ocenila žáky městských základek za studijní výsledky, koníčky i přístup ke spolužákům."
+    },
+    {
+      "emoji": "📋👏",
+      "label": "Seventeen Kids",
+      "text": "Ocenění dostalo 17 žáků a na seznam je dali učitelé z jejich škol."
+    },
+    {
+      "emoji": "🤝✨",
+      "label": "Soft Skills",
+      "text": "V nominacích se nejčastěji objevuje ochota pomáhat, pracovitost a skromnost."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Hádání na zastávce, jestli ti bus už ujel, dostane patch. Na 3 kroměřížských zastávkách se objeví elektronické tabule s aktuálními odjezdy autobusů. Celkem jich bude 5. Přípravné práce na místě už běží a samotná instalace se chystá v příštích týdnech.",
+    "Lowkey pohodlná věc: nebudeš tipovat, který bus kdy jede. Místostarosta Jan Hebnar, který je zároveň jednatelem Kroměřížských technických služeb (KTS) provozujících MHD, popsal, že tabule ukážou i spoje meziměstské dopravy. Chystají se ve spolupráci s Integrovanou dopravou Zlínského kraje (IDZK). Tabule dostane Bezručův park ve směru na Kotojedy a Milíčovo náměstí i Lindovka v obou směrech.",
+    "Na Milíčově náměstí tabule vystřídá inteligentní označník, který tam stojí dva roky a ukazuje jen odjezdy MHD. Ten ale nekončí. Po technických úpravách dostane side quest na jinou zastávku, kde staví jen autobusy MHD. Vedoucí provozu MHD Jaroslav Černý upozornil, že označník jede na solární panel, takže u nového místa se bude řešit hlavně dostatek slunce. Zatím je to W, ať jen tabule opravdu naskočí."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.564,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:28:44.141030+00:00"
+  },
+  "headline": "Kroměřížské zastávky dostanou buff: přibude 5 odjezdových tabulí",
+  "id": "mesto-kromeriz:e129ea0d1b2549a0",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-23T08:15:00+02:00",
+  "rewritten_at": "2026-10-23T19:28:44.141050+00:00",
+  "sensitivity": "volny",
+  "slug": "kromerizske-zastavky-dostanou-buff-pribude-5-odjezdovych-tabuli",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚏📺",
+      "label": "Stop Upgrade",
+      "text": "Tabule přibudou na zastávkách Bezručův park, Milíčovo náměstí a Lindovka."
+    },
+    {
+      "emoji": "🚌🔄",
+      "label": "Double Info",
+      "text": "Na displeji uvidíš odjezdy MHD i meziměstských autobusů."
+    },
+    {
+      "emoji": "☀️🚏",
+      "label": "Solar Move",
+      "text": "Inteligentní označník z Milíčova náměstí se po úpravách přestěhuje na zastávku, kde staví jen MHD."
+    }
+  ]
+}

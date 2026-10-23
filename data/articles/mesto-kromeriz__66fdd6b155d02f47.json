@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Nula drama, tohle je W. Zastupitelé na únorovém jednání schválili jméno Větrná pro novou ulici a hlasovali jednohlasně.",
+    "Ulice leží na okraji města a navazuje na Havlíčkovu, naproti areálu Zemědělského výzkumného ústavu Kroměříž. Lokalita se pořád rozjíždí a rostou tam nové rodinné domy. Lowkey nová adresa na mapě Kroměříže.",
+    "Starosta Tomáš Opatrný to zdůvodnil takhle: ulice je na samém kraji města na vyvýšeném místě, takže název Větrná podle něj sedí k tamním podmínkám. Based přístup, žádné jméno vycucané z prstu.",
+    "Radnice dává novým ulicím jména podle tří věcí. První je původní území, třeba Oskol nebo Štěchovice. Druhá jsou místní osobnosti, třeba Spáčilova, Vrobelova, Peřinkova a nejnověji Kozánkova. Třetí je poloha a příroda, sem patří Obvodová, Na Kopečku a teď Větrná. Až se tam nastěhují první lidé, uvidí, jestli je ten název no cap."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.557,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:09:22.924568+00:00"
+  },
+  "headline": "Kroměříž má ulici Větrná a zastupitelé ji klepli jednohlasně, W",
+  "id": "mesto-kromeriz:66fdd6b155d02f47",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-28T05:57:07+01:00",
+  "rewritten_at": "2026-10-23T19:09:22.924585+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-ma-ulici-vetrna-a-zastupitele-ji-klepli-jednohlasne-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "stavba",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🌬️🏡",
+      "label": "Street Name",
+      "text": "Nová ulice v Kroměříži se jmenuje Větrná."
+    },
+    {
+      "emoji": "🗳️✅",
+      "label": "Council Vote",
+      "text": "Zastupitelé název schválili na únorovém jednání a hlasovali jednohlasně."
+    },
+    {
+      "emoji": "📍🏗️",
+      "label": "Location Check",
+      "text": "Ulice navazuje na Havlíčkovu naproti Zemědělskému výzkumnému ústavu Kroměříž a staví se tam rodinné domy."
+    }
+  ]
+}

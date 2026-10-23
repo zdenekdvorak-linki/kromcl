@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from kromka import config, htmlutil, piktogramy, rewrite, styl  # noqa: E402
+from kromka import config, htmlutil, piktogramy, pipeline, rewrite, styl  # noqa: E402
 class Slugify(unittest.TestCase):
     """Pravidla ověřená proti skutečným URL na webu města."""
 
@@ -69,6 +69,27 @@ class PojistkaCisla(unittest.TestCase):
     def test_mezera_v_cisle_nevadi(self):
         self.assertEqual(rewrite.zkontroluj_cisla("vynesla 53 245 korun", "vynesla 53245 korun"), [])
 
+    def test_ceska_tisicova_tecka(self):
+        # Zdroj píše váhu jako "2.360 g", přepis jako "2360 g". Je to
+        # totéž číslo, tečka odděluje tisíce.
+        self.assertEqual(rewrite.zkontroluj_cisla("vážila 2.360 g", "vážila 2360 g"), [])
+
+    def test_desetinna_tecka_zustava_desetinna(self):
+        # Dvě číslice za tečkou je desetinná část, ne oddělovač tisíců.
+        self.assertEqual(rewrite.zkontroluj_cisla("v 13.46 hodin", "ve 1346 hodin"), ["1346"])
+
+    def test_loni_se_smi_dopocitat(self):
+        # Zpráva z ledna 2025 běžně mluví o loňsku. Rok o jedna vedle
+        # data vydání je odvození, ne vymyšlené číslo.
+        self.assertEqual(rewrite.zkontroluj_cisla("Loni se narodilo 398 dětí",
+                                                  "V roce 2024 se narodilo 398 dětí",
+                                                  datum="2025-01-02T10:00:00+01:00"), [])
+
+    def test_vzdalenejsi_rok_neprojde(self):
+        self.assertEqual(rewrite.zkontroluj_cisla("Loni se narodilo 398 dětí",
+                                                  "V roce 2019 se narodilo 398 dětí",
+                                                  datum="2025-01-02T10:00:00+01:00"), ["2019"])
+
 
 class PojistkaCitace(unittest.TestCase):
     def test_ceske_uvozovky_zachytí(self):
@@ -121,6 +142,47 @@ class PojistkaOpisovani(unittest.TestCase):
                   "a tabule budou na třech zastávkách.")
         self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
 
+    def test_vycet_obci_projde(self):
+        # Výčet jmen měst má jediný správný tvar. Shoda na něm neznamená
+        # opisování o nic víc než shoda na datu.
+        zdroj = ("Na závod dorazili jezdci z Břeclavi, Tábora, Znojma, Chebu, "
+                 "Pelhřimova, Písku a Mělníku a bylo jich přes dvě stě.")
+        vystup = ("Sjeli se jezdci z Břeclavi, Tábora, Znojma, Chebu, "
+                  "Pelhřimova, Písku a Mělníku, dohromady přes dvě stě lidí.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
+
+    def test_rozsah_datumu_projde(self):
+        zdroj = ("Přihlášky se podávají od 6. prosince 2024 do 2. března 2025 "
+                 "na podatelně úřadu.")
+        vystup = ("Přihlásit se dá od 6. prosince 2024 do 2. března 2025, "
+                  "papír hodíš na podatelnu.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
+
+    def test_funkce_se_jmenem_projde(self):
+        zdroj = ("Novinku představil místostarosta Pavel Motyčka, který má "
+                 "sociální oblast na starost už druhé volební období.")
+        vystup = ("Přišel s tím místostarosta Pavel Motyčka, který má sociální "
+                  "oblast na starost, a popsal to takhle.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
+
+    def test_cizi_jmeno_s_diakritikou_projde(self):
+        # "Râmnicu Vâlcea" se starým regexem rozpadlo na "r" a "mnicu",
+        # přestalo se poznávat jako jméno a dělalo falešný poplach.
+        zdroj = ("Rumunská ambasáda a partnerské město Râmnicu Vâlcea "
+                 "podepsaly memorandum o spolupráci na radnici.")
+        vystup = ("Rumunská ambasáda a partnerské město Râmnicu Vâlcea "
+                  "si plácly na memorandu.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
+
+    def test_bezna_veta_se_porad_zachyti(self):
+        # Pojistka dostala hodně výjimek. Tohle hlídá, že pořád funguje:
+        # osm běžných slov v řadě bez jmen a dat musí spadnout.
+        zdroj = ("Radnice chce v příštím roce opravit chodníky v celé "
+                 "čtvrti a přidat k nim nové lavičky.")
+        vystup = ("Radnice chce v příštím roce opravit chodníky v celé "
+                  "čtvrti, to je plán.")
+        self.assertTrue(rewrite.zkontroluj_opisovani(zdroj, vystup))
+
 
 class PojistkaPodobneVety(unittest.TestCase):
     """Díra, kterou kontrola na osm slov v řadě sama neuhlídá."""
@@ -158,6 +220,54 @@ class PojistkaPodobneVety(unittest.TestCase):
         zdroj = "Samotná instalace je plánována v následujících týdnech."
         self.assertEqual(rewrite.zkontroluj_podobne_vety(
             zdroj, "Instalace je plánována v následujících týdnech."), [])
+
+
+class KlicClanku(unittest.TestCase):
+    """Identifikátor nesmí prozradit adresu oznámení."""
+
+    SLUG = "trikralovi-kolednici-zavitali-na-kromerizskou-radnici"
+
+    def test_neobsahuje_slug(self):
+        self.assertNotIn(self.SLUG, htmlutil.klic("mesto-kromeriz", self.SLUG))
+
+    def test_je_stabilni(self):
+        # Na stabilitě stojí rozpoznávání už zpracovaných článků. Kdyby
+        # se klíč měnil, cron by platil celý archiv znovu.
+        self.assertEqual(htmlutil.klic("mesto-kromeriz", self.SLUG),
+                         htmlutil.klic("mesto-kromeriz", self.SLUG))
+
+    def test_ruzne_slugy_ruzne_klice(self):
+        self.assertNotEqual(htmlutil.klic("mesto-kromeriz", "aaa"),
+                            htmlutil.klic("mesto-kromeriz", "bbb"))
+
+    def test_zdroj_zustava_citelny(self):
+        self.assertTrue(htmlutil.klic("mesto-kromeriz", self.SLUG)
+                        .startswith("mesto-kromeriz:"))
+
+
+class DruhPadu(unittest.TestCase):
+    """Stav se commituje do veřejného repa, nesmí v něm být zdroj."""
+
+    def test_uryvek_zdroje_se_zahodi(self):
+        self.assertEqual(
+            pipeline._druh_padu(
+                'Doslova převzaté formulace z oznámení: „od 6 prosince 2024"'),
+            "Doslova převzaté formulace z oznámení")
+
+    def test_cislo_shody_zustane(self):
+        self.assertEqual(
+            pipeline._druh_padu('Věty skoro totožné s oznámením (shoda 0.67): „ab"'),
+            "Věty skoro totožné s oznámením (shoda 0.67)")
+
+    def test_mistni_cesta_se_zahodi(self):
+        self.assertEqual(
+            pipeline._druh_padu("[Errno 2] No such file: 'C:/Users/kdosi/x.json'"),
+            "[Errno 2] No such file")
+
+    def test_duvod_bez_dvojtecky_zustane_cely(self):
+        self.assertEqual(
+            pipeline._druh_padu("Výstup obsahuje přímou citaci v uvozovkách."),
+            "Výstup obsahuje přímou citaci v uvozovkách.")
 
 
 class PojistkaSlang(unittest.TestCase):

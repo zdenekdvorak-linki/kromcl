@@ -1,66 +1,227 @@
 {
   "neresolvovane": [
-    "mesto-kromeriz:podivejte-se-jak-probiha-obnova-vazanskeho-domova-po-povodni",
-    "mesto-kromeriz:pradelna-ve-vazanskem-domove-jede-naplno-opravuji-se-i-dalsi-zaplavene-prostory"
+    "mesto-kromeriz:2065a096866d5a9c",
+    "mesto-kromeriz:31c901cb0fce3663",
+    "mesto-kromeriz:42d404c2c53a2cc6",
+    "mesto-kromeriz:870cc805d28d8367",
+    "mesto-kromeriz:98145fe18f07109e",
+    "mesto-kromeriz:adc0ff1f789560aa",
+    "mesto-kromeriz:bbb473dda88d5cfb",
+    "mesto-kromeriz:de4984e52c5f6e99"
   ],
-  "selhani": {},
+  "selhani": {
+    "mesto-kromeriz:0c6ddfbec347bebf": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
+    "mesto-kromeriz:124dc47924e8d978": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:243127d469dc1588": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:2e8c72f9d2fbcad5": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.75)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:3a2f68011fec4b6d": {
+      "duvod": "Výstup obsahuje přímou citaci v uvozovkách.",
+      "pocet": 1
+    },
+    "mesto-kromeriz:4116c5e8a9e159a8": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.84)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:51d5b9d1940b2b8f": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.76)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:5337761ed12895b8": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:627a5fe1917ee3a5": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
+    "mesto-kromeriz:63bdb8fdf40b9082": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:72dda50e9ac42414": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:8c471c94fa1b3972": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
+    "mesto-kromeriz:8d67c63849d3cc72": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:92ac9f4d27c2ae38": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.75)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:92c9306cfc8297ca": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.85)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:9755655924d68652": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:9e45462297bf213d": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:a053e7493cb47a44": {
+      "duvod": "[Errno 2] No such file or directory",
+      "pocet": 1
+    },
+    "mesto-kromeriz:a2c509724c6c1bd5": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
+    "mesto-kromeriz:a8d17077fed0779c": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:b484e90adba584a3": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:b8356b44b5603f91": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:bb5be1a17dc799d0": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.72)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:c09ab1969b8010ff": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.69)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:c72949e07236aa30": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:ce5f3f91be985ec2": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
+    "mesto-kromeriz:d523740de05c33f3": {
+      "duvod": "Doslova převzaté formulace z oznámení",
+      "pocet": 1
+    },
+    "mesto-kromeriz:dec2db5716d462c8": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.69)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:e74aefa125d91b6a": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.7)",
+      "pocet": 1
+    },
+    "mesto-kromeriz:e91153b7145cfc3b": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
+      "pocet": 1
+    }
+  },
   "zpracovane": [
-    "mesto-kromeriz:anicka-je-prvnim-kromerizskym-miminkem-roku-2025",
-    "mesto-kromeriz:cast-ulice-brezinova-bude-kvuli-oprave-plynovodu-uzavrena",
-    "mesto-kromeriz:cekani-na-svateho-martina-zprijemni-svatomartinske-hodovani",
-    "mesto-kromeriz:fotbalistum-sk-hanacka-slavia-kromeriz-uz-slouzi-nove-vybaveni-saten",
-    "mesto-kromeriz:ivana-uherkova-pokracuje-dale-na-pozici-reditelky-skoly-zamoravi",
-    "mesto-kromeriz:kromeriz-chce-zatizit-vyssi-dani-nevyuzivane-nemovitosti-ktere-hyzdi-mesto",
-    "mesto-kromeriz:kromeriz-ma-druhy-nejlepsi-facebookovy-ucet-z-mest-nad-10-tisic-obyvatel-v-cr",
-    "mesto-kromeriz:kromeriz-v-minulem-roce-privitala-vice-nez-ctvrt-milionu-navstevniku",
-    "mesto-kromeriz:kromerizske-technicke-sluzby-chystaji-rekonstrukci-arealu-v-kaplanove-ulici",
-    "mesto-kromeriz:masopustni-program-prinese-do-mesta-vzruch-zabavu-veseli-i-dobre-jidlo",
-    "mesto-kromeriz:mesto-chysta-opatreni-proti-radeni-neprizpusobivych-osob-na-sidlisti-oskol",
-    "mesto-kromeriz:mesto-chysta-projekt-na-zlepseni-kyberneticke-bezpecnosti",
-    "mesto-kromeriz:mesto-diky-fotovoltaickym-elektrarnam-rocne-uspori-zhruba-12-milionu-korun",
-    "mesto-kromeriz:mesto-podpori-cyklisticky-zavod-czech-tour-2025",
-    "mesto-kromeriz:mesto-pripravuje-vystavbu-bytovych-domu-v-lokalite-lutopecka",
-    "mesto-kromeriz:mesto-rozdelilo-neziskovym-organizacim-vice-nez-25-milionu-korun",
-    "mesto-kromeriz:mesto-rozdelilo-neziskovym-organizacim-zhruba-26-milionu-korun",
-    "mesto-kromeriz:mesto-zada-posouzeni-zameru-na-zavazeni-cihelny-z-hlediska-vlivu-na-zivotni-prostredi",
-    "mesto-kromeriz:mesto-zahajuje-pripravne-prace-na-stavbu-cyklostezky-do-postoupek",
-    "mesto-kromeriz:mesto-zverejnilo-plan-verejnych-zakazek-ktere-planuje-na-rok-2025",
-    "mesto-kromeriz:mladi-recitatori-a-zpevaci-pomeri-sve-sily-v-kromerizi",
-    "mesto-kromeriz:most-pres-reku-moravu-ponese-nove-jmeno-karla-kryla",
-    "mesto-kromeriz:navstevnici-vanocnich-trhu-se-mohou-tesit-na-koncert-michala-hruzy-i-straseni-krampusu",
-    "mesto-kromeriz:nove-prostory-pro-socialne-terapeuticke-dilny-hanacek-vzniknou-letos-v-ulici-u-sypek",
-    "mesto-kromeriz:petice-stran-a-hnuti-podepsala-v-kromerizi-koalicni-smlouvu",
-    "mesto-kromeriz:podivejte-se-jak-by-mohly-vypadat-nove-bytove-domy-v-lutopecke-ulici",
-    "mesto-kromeriz:podivejte-se-jak-probiha-obnova-vazanskeho-domova-po-povodni",
-    "mesto-kromeriz:podnikatele-se-mohou-zapojit-do-obecniho-systemu-odpadoveho-hospodarstvi",
-    "mesto-kromeriz:poradatele-akci-pro-verejnost-mohou-vyuzit-financni-podporu-mesta",
-    "mesto-kromeriz:pozvanka-na-15-zasedani-zastupitelstva-mesta-kromerize",
-    "mesto-kromeriz:prace-na-uprave-predprostoru-knihovny-kromerizska-zacnou-na-jare",
-    "mesto-kromeriz:pradelna-ve-vazanskem-domove-jede-naplno-opravuji-se-i-dalsi-zaplavene-prostory",
-    "mesto-kromeriz:program-stravenka-pro-bezdomovce-muze-verejnost-podporit-prostrednictvim-verejne-sbirky",
-    "mesto-kromeriz:projekt-socialnich-sluzeb-podpori-samostatnost-a-zaclenovani-klientu",
-    "mesto-kromeriz:radni-rozdelili-neziskovym-organizacim-dalsich-454-tisic-korun",
-    "mesto-kromeriz:radni-rozdelili-neziskovym-organizacim-dalsich-temer-400-tisic-korun",
-    "mesto-kromeriz:radnice-bude-letos-pokracovat-v-odchytu-holubu-na-uzemi-mesta",
-    "mesto-kromeriz:radnice-dokoncila-opravu-socialniho-zarizeni-azyloveho-domu-pro-muze",
-    "mesto-kromeriz:radnice-opet-oceni-nejlepsi-mlade-kromerizske-sportovce-i-jejich-trenery",
-    "mesto-kromeriz:radnice-poskytla-penezni-dary-dvema-kromerizskym-nemocnicim",
-    "mesto-kromeriz:radnice-pripravuje-stavbu-noveho-parkoviste-na-sidlisti-zachar",
-    "mesto-kromeriz:radnice-zahajuje-stavbu-noveho-volnocasoveho-parku-ve-vazanech",
-    "mesto-kromeriz:radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let",
-    "mesto-kromeriz:remeslnik-ukladal-do-kontejneru-u-bytovych-domu-nelegalne-stavebni-odpad",
-    "mesto-kromeriz:ridicum-uz-slouzi-nove-nabijecky-pro-elektromobily-na-hanackem-namesti",
-    "mesto-kromeriz:setkani-mest-zrizujicich-socialni-sluzby-prinese-vymenu-zkusenosti-a-poznatku",
-    "mesto-kromeriz:setkani-s-obcany-k-uzemnimu-planu-se-pro-nemoc-presouva-na-13-brezna",
-    "mesto-kromeriz:stavba-kanalizace-v-chropynske-ulici-si-vyzada-dilci-uzavirky-komunikace",
-    "mesto-kromeriz:stavba-kanalizace-v-chropynske-ulici-si-vyzada-omezeni-dopravy",
-    "mesto-kromeriz:stavbari-narazili-v-budove-bazenu-na-azbest-skolaci-i-sportovci-si-na-otevreni-pockaji",
-    "mesto-kromeriz:trikralovi-kolednici-zavitali-na-kromerizskou-radnici",
-    "mesto-kromeriz:v-chropynske-ulici-mohou-misto-autobusu-parkovat-osobni-vozy",
-    "mesto-kromeriz:v-kromerizi-je-nove-ulice-vetrna",
-    "mesto-kromeriz:v-kromerizi-se-loni-narodilo-nejvice-elisek-a-matyasu",
-    "mesto-kromeriz:vedeni-mesta-zvazuje-revitalizaci-velkeho-namesti",
-    "mesto-kromeriz:video-proc-chce-mesto-vyssi-dan-za-nemovitosti-ktere-hyzdi-kromeriz",
-    "mesto-kromeriz:zapisy-deti-do-skolskych-zarizeni-probehnou-v-tradicnich-terminech"
+    "mesto-kromeriz:07358e83c32c090d",
+    "mesto-kromeriz:0c562c06bd520bc0",
+    "mesto-kromeriz:111a5d76b24ff7a2",
+    "mesto-kromeriz:14ef9dd06e2a2f39",
+    "mesto-kromeriz:1704e117703c31f6",
+    "mesto-kromeriz:1857f7e5f721c06c",
+    "mesto-kromeriz:193e527249487e6d",
+    "mesto-kromeriz:1a68a476fe018c56",
+    "mesto-kromeriz:2065a096866d5a9c",
+    "mesto-kromeriz:23bb15ff995d8ae0",
+    "mesto-kromeriz:23d8af3fabdff5ca",
+    "mesto-kromeriz:24e7c92399c3b1f9",
+    "mesto-kromeriz:2ac97647ec248d0b",
+    "mesto-kromeriz:2bbb0fc58e26389d",
+    "mesto-kromeriz:2e8c72f9d2fbcad5",
+    "mesto-kromeriz:2fdc1af9d9ab65da",
+    "mesto-kromeriz:3097cd1b95e16ce6",
+    "mesto-kromeriz:31c901cb0fce3663",
+    "mesto-kromeriz:33a50814b1dd7ef7",
+    "mesto-kromeriz:3ab80badca7b41ee",
+    "mesto-kromeriz:3bfcce3a2b8a61a4",
+    "mesto-kromeriz:3c434d25b12ec520",
+    "mesto-kromeriz:42d404c2c53a2cc6",
+    "mesto-kromeriz:4456b86ddce5cbc4",
+    "mesto-kromeriz:446b07ee3fa7158c",
+    "mesto-kromeriz:4f911be3ada0a256",
+    "mesto-kromeriz:4fc4c30f8c715124",
+    "mesto-kromeriz:514ecd9e0cd67427",
+    "mesto-kromeriz:51cca848bd7c0b4b",
+    "mesto-kromeriz:51d5b9d1940b2b8f",
+    "mesto-kromeriz:5337761ed12895b8",
+    "mesto-kromeriz:550a036cc0ac95a3",
+    "mesto-kromeriz:5af2ba6b4f785379",
+    "mesto-kromeriz:627a5fe1917ee3a5",
+    "mesto-kromeriz:63bdb8fdf40b9082",
+    "mesto-kromeriz:6443252092694aad",
+    "mesto-kromeriz:65914f7782203c1b",
+    "mesto-kromeriz:66fdd6b155d02f47",
+    "mesto-kromeriz:6ae64df3cd3a5e4c",
+    "mesto-kromeriz:7253cbc0436e31ba",
+    "mesto-kromeriz:72dda50e9ac42414",
+    "mesto-kromeriz:74caaa625a7c5c36",
+    "mesto-kromeriz:78e09dced56b5dc9",
+    "mesto-kromeriz:79ca8ae30008ee6f",
+    "mesto-kromeriz:7a300644d209ad65",
+    "mesto-kromeriz:7ae17f362941f410",
+    "mesto-kromeriz:7bd15a42aa6c1259",
+    "mesto-kromeriz:7bdd2c42383d0415",
+    "mesto-kromeriz:7f58946b0d2f5ad1",
+    "mesto-kromeriz:8603c8d226b6f72e",
+    "mesto-kromeriz:870cc805d28d8367",
+    "mesto-kromeriz:8e354f53ba5b7c4e",
+    "mesto-kromeriz:8e8e849adffe5f09",
+    "mesto-kromeriz:92c9306cfc8297ca",
+    "mesto-kromeriz:98145fe18f07109e",
+    "mesto-kromeriz:98d1e79a6b81ebf6",
+    "mesto-kromeriz:9a8675d9a12d1a9d",
+    "mesto-kromeriz:9aebd8cde9fd21b0",
+    "mesto-kromeriz:9f98746212fd3207",
+    "mesto-kromeriz:a053e7493cb47a44",
+    "mesto-kromeriz:a1a76619afe00e79",
+    "mesto-kromeriz:ab11c13d3491f5ec",
+    "mesto-kromeriz:adc0ff1f789560aa",
+    "mesto-kromeriz:b0a6b871aed22ec2",
+    "mesto-kromeriz:b34309ff02299b12",
+    "mesto-kromeriz:b854ba79e9c30b66",
+    "mesto-kromeriz:bb5be1a17dc799d0",
+    "mesto-kromeriz:bbb473dda88d5cfb",
+    "mesto-kromeriz:bbdf91da5409375b",
+    "mesto-kromeriz:bc671b919ae508af",
+    "mesto-kromeriz:bedbc64f19b94498",
+    "mesto-kromeriz:c4c0feeecf3986b5",
+    "mesto-kromeriz:c5ce5acdc69f5626",
+    "mesto-kromeriz:c62eee9565728ebd",
+    "mesto-kromeriz:c62fa8dfd9693a71",
+    "mesto-kromeriz:c72949e07236aa30",
+    "mesto-kromeriz:d376347fdd938843",
+    "mesto-kromeriz:d523740de05c33f3",
+    "mesto-kromeriz:d9c860e6ba8eee56",
+    "mesto-kromeriz:da1082f680fc63cf",
+    "mesto-kromeriz:de248d9778579cc7",
+    "mesto-kromeriz:de4984e52c5f6e99",
+    "mesto-kromeriz:e129ea0d1b2549a0",
+    "mesto-kromeriz:e91153b7145cfc3b",
+    "mesto-kromeriz:ea692d8497b64e9c",
+    "mesto-kromeriz:ed50b42fe0a49939",
+    "mesto-kromeriz:eeedbd4a148f8c68",
+    "mesto-kromeriz:f9053b7a2562a575",
+    "mesto-kromeriz:fba5fc75a55c1f3b",
+    "mesto-kromeriz:fd78e20d04caafef",
+    "mesto-kromeriz:ffe9bf77c8a364d7"
   ]
 }

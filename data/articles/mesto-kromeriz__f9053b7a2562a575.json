@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Parkování na Zacharu je pořád main quest. Radnice teď chce v Albertově ulici, u bytového domu číslo 3883/27 přezdívaného Děvín, postavit parkoviště pro 84 aut. Vznikne na městských pozemcích a pět míst dostanou řidiči s kartou ZTP. Studie je hotová, rada schválila záměr i další stupeň projektové dokumentace.",
+    "Cenovka je zhruba 10 milionů korun, což je lowkey pořádný kus rozpočtu. Starosta Tomáš Opatrný říká, že město bude zkoušet sehnat na stavbu dotaci. Pokud se povede vyřídit všechna povolení, počítá se se startem v roce 2026. Podle něj se na sídlištích a hlavně na Zacharu místa pro parkování hledají fakt těžko, takže radnice bere každé nové stání. No cap, to chápe každý, kdo tam někdy kroužil kolem bloku.",
+    "Druhý patch míří do Francouzské ulice. Na přelomu loňska a letoška tam radnice zbourala starou kotelnu a na jejím místě chce parkovací plochu pro dvě desítky aut. Minulé vedení tam plánovalo park s osmi stáními, to současné ale vyhovělo žádostem lidí z okolí. Stavba je v plánu na rok 2026. Ve Francouzské už od roku 2023 stojí téměř dvě desítky nových míst. Uvidíme, jestli Zachar v roce 2026 odemkne achievement."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.62,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:05:17.704183+00:00"
+  },
+  "headline": "Zachar: 84 nových stání v Albertově ulici, konečně buff pro řidiče",
+  "id": "mesto-kromeriz:f9053b7a2562a575",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:09:00+01:00",
+  "rewritten_at": "2026-10-23T19:05:17.704201+00:00",
+  "sensitivity": "volny",
+  "slug": "zachar-84-novych-stani-v-albertove-ulici-konecne-buff-pro-ridice",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "doprava"
+  ],
+  "tldr": [
+    {
+      "emoji": "🅿️🚗",
+      "label": "Big Number",
+      "text": "V Albertově ulici na Zacharu má vzniknout 84 míst, pět z nich pro držitele karty ZTP."
+    },
+    {
+      "emoji": "💸🧾",
+      "label": "Price Tag",
+      "text": "Stavba vyjde zhruba na 10 milionů korun a město se poohlíží po dotaci."
+    },
+    {
+      "emoji": "📅🚧",
+      "label": "Release Date",
+      "text": "Když vyjdou povolení, začne se stavět v roce 2026."
+    }
+  ]
+}

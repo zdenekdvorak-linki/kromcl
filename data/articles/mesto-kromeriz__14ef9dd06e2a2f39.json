@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Papírové žádosti o dotace jsou pomalu cooked. Radnice pořídila od Nadace Partnerství elektronický systém GRANTYS a městská rada to schválila. Starosta Tomáš Opatrný to vysvětlil tím, že žádosti dosud chodily jen na papíře nebo přes datovku. Systém má podle něj usnadnit práci spolkům i úředníkům a zpřehlednit ji.",
+    "Jak to bude fungovat? Spolek se v systému zaregistruje, sepíše žádost a rovnou ji odešle. Tam pak uvidí, jestli peníze dostal a v jaké výši. Přes GRANTYS půjde poslat i vyúčtování. Radnice v něm vyhlásí výzvu, bude spravovat došlé žádosti a psát si s žadateli. Lowkey buff pro celý dotační kolotoč.",
+    "První test přijde u druhé dotační výzvy letošního roku. Žádat se v ní dá od 26. května do 6. června a jen o dotace na akce. Povinné to ještě nebude, radnice vezme i žádosti postaru. Adriana Skálová z odboru investic, která dotace řeší, to nazvala pilotním zkoušením. Zatím je to takový side quest, nikdo tě do něj nenutí.",
+    "Kolik se rozdělí? Program na dotace počítá letos se 3 miliony korun. Loni město rozdělilo 2,88 milionu. No cap, celková podpora neziskovek bude výrazně vyšší, protože některé organizace dostávají peníze rovnou z rozpočtu. Letos je to zhruba 9 milionů. Uvidíme v červnu, jestli z GRANTYS bude W, nebo mid."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.631,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:22:19.597405+00:00"
+  },
+  "headline": "Dotace pro spolky jedou online: radnice patchnula papíry systémem GRANTYS",
+  "id": "mesto-kromeriz:14ef9dd06e2a2f39",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-20T13:52:24+01:00",
+  "rewritten_at": "2026-10-23T19:22:19.597424+00:00",
+  "sensitivity": "volny",
+  "slug": "dotace-pro-spolky-jedou-online-radnice-patchnula-papiry-systemem-grantys",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "💻💸",
+      "label": "New System",
+      "text": "Radnice koupila systém GRANTYS na podávání dotací a roční licence vyjde zhruba na 90 tisíc korun."
+    },
+    {
+      "emoji": "🗓️🧪",
+      "label": "Test Run",
+      "text": "První zkouška poběží ve výzvě na akce od 26. května do 6. června a papírové žádosti i datovky radnice vezme taky."
+    },
+    {
+      "emoji": "💰🎪",
+      "label": "Money Pool",
+      "text": "V dotačním programu je letos připraveno 3 miliony korun."
+    }
+  ]
+}

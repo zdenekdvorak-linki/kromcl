@@ -1,0 +1,48 @@
+{
+  "body": [
+    "Vodárny, to zní jako mid téma, ale vydrž chvilku. Město posílilo svůj vliv ve vodárnách, takže radnice tam má větší slovo než předtím. Pro město je to pěkný buff.",
+    "Vodárny v Kroměříži navíc víc investují. Co přesně do toho posílají a kolik, zatím nevíme, takže si žádná čísla nevymýšlej, jinak budeš delulu. Lowkey tě to ale zajímat může, protože jde o věc, kterou v Kroměříži používá každý. Zatím to vypadá jako W pro město."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.282,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:40:28.743459+00:00"
+  },
+  "headline": "Radnice buffnula svůj vliv ve vodárnách a ty víc investují",
+  "id": "mesto-kromeriz:7f58946b0d2f5ad1",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-08T10:00:00+02:00",
+  "rewritten_at": "2026-10-23T19:40:28.743474+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-buffnula-svuj-vliv-ve-vodarnach-a-ty-vic-investuji",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "💪🏛️",
+      "label": "City Power",
+      "text": "Město posílilo svůj vliv ve vodárnách."
+    },
+    {
+      "emoji": "💧💸",
+      "label": "More Investments",
+      "text": "Vodárny v Kroměříži teď víc investují."
+    },
+    {
+      "emoji": "📍😎",
+      "label": "Home Turf",
+      "text": "Celé se to děje tady v Kroměříži."
+    }
+  ]
+}

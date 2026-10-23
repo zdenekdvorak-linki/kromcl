@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Úřad dostane patch proti hackerům. Radnice letos rozjede projekt kybernetické bezpečnosti městského úřadu za 11,76 milionu korun. Zastupitelé ve čtvrtek schválili rozpočtové opatření ve stejné výši, takže se může začít ještě letos. Peníze jdou na nové servery, silnější aktivní síťové prvky a opatření podle současných standardů. Místostarosta Karel Holík to označil za absolutní prioritu, protože podle něj hackeři míří i na městské úřady.",
+    "Tady je lowkey W pro městskou kasu. Z Národního plánu obnovy přijde zhruba 9,8 milionu korun. Z rozpočtu města půjde méně než dva miliony. Radní Jan Pšeja uvedl, že za tu cenu město zajistí nutná opatření proti čím dál častějším útokům zvenčí.",
+    "Radnice má ještě side quest, a ten zahouká. Letos začne modernizovat varovný a vyrozumívací systém města, celkem za zhruba 20,8 milionu korun. Evropská dotace je přislíbená zhruba na 8,3 milionu. Zbytek, asi 12,5 milionu, zaplatí město z vlastního. Nový systém pokryje celé město. Zvykej si na sirény, přibude jich sedm. K tomu dorazí bezdrátové hlásiče, rádiový převaděč a nová řídicí i podružná vysílací pracoviště. Dvojitý buff pro město, jen u sirén zaplatí radnice většinu sama."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.567,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:00:19.376628+00:00"
+  },
+  "headline": "Radnice patchuje úřad: kyberochrana za 11,76 milionu, většinu zaplatí EU",
+  "id": "mesto-kromeriz:446b07ee3fa7158c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:03:00+01:00",
+  "rewritten_at": "2026-10-23T19:00:19.376647+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-patchuje-urad-kyberochrana-za-1176-milionu-vetsinu-zaplati-eu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🛡️💻",
+      "label": "Cyber Patch",
+      "text": "Městský úřad dostane lepší ochranu proti hackerům, nové servery a silnější síť."
+    },
+    {
+      "emoji": "💸🇪🇺",
+      "label": "Money Split",
+      "text": "Z Národního plánu obnovy přijde zhruba 9,8 milionu, zbytek doplatí město."
+    },
+    {
+      "emoji": "🚨📡",
+      "label": "Siren Upgrade",
+      "text": "Město chystá nový varovný systém, přibude v něm sedm elektronických sirén."
+    }
+  ]
+}

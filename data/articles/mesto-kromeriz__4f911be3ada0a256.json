@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tak tohle je lowkey W. Facebook kroměřížské radnice vyhrál krajské kolo ve Zlínském kraji a v celostátním finále soutěže Zlatý lajk 2024 skončil druhý mezi městy nad 10 tisíc obyvatel. Soutěž pořádá spolek Kvalikom. Z 62 přihlášených měst ho předběhl jen Most.",
+    "Porota si pochvalovala hlavně to, že příspěvky nezní úředně. Líbily se jí výstižné a čtivé texty, emotikony, prolinky a kvalitní fotky. K tomu videa a praktické rady s důležitými upozorněními. Radnice navíc točí Reels, na které většina jiných radnic nesáhla. To je highkey flex.",
+    "Starosta Tomáš Opatrný k tomu uvedl, že komunikace s lidmi je pro radnici důležitá. Práci na tom odvádějí tiskový mluvčí, redaktorka zpravodaje a fotograf. Podle starosty hrál facebook main quest i při nedávných povodních: radnice přes něj rychle posílala aktuální informace a stíhala odpovídat na dotazy.",
+    "Profil běží od dubna 2013 a sleduje ho téměř 16 tisíc lidí. Do Zlatého lajku se radnice hlásila už v roce 2022 a tehdy skončila v kraji třetí. Od té doby je to pořádný buff. Příště zlato?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.659,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:38:08.091440+00:00"
+  },
+  "headline": "Facebook kroměřížské radnice je druhý v republice, +1000 aura",
+  "id": "mesto-kromeriz:4f911be3ada0a256",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-09T09:26:12+01:00",
+  "rewritten_at": "2026-10-23T18:38:08.091460+00:00",
+  "sensitivity": "volny",
+  "slug": "facebook-kromerizske-radnice-je-druhy-v-republice-1000-aura",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "🥈📱",
+      "label": "Silver Medal",
+      "text": "Facebook radnice skončil druhý mezi městy nad 10 tisíc obyvatel v celé ČR."
+    },
+    {
+      "emoji": "🏁👀",
+      "label": "One Rival",
+      "text": "Z 62 přihlášených měst ho předběhl jen profil města Most."
+    },
+    {
+      "emoji": "🎬😎",
+      "label": "Reels Flex",
+      "text": "Porota chválila texty, co nezní úředně, kvalitní fotky a videa i Reels, které většina radnic nepoužívá."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Konečně zpráva, po které se nemusíš zlobit, no cap. Z Městského útulku pro psy a kočky Kroměříž se po adopci vrací zhruba 3 psi ročně. Nejčastěji za tím stojí změna rodinných a sociálních podmínek, někdy se problémy ukážou až v novém prostředí. Spousta lidí s útulkem dál drží kontakt: posílají fotky a videa, volají nebo se staví u dveří. Některé rodiny si přišly pro dalšího psa. Místostarosta Karel Holík to bere jako nejlepší zpětnou vazbu, takže tohle je W.",
+    "V útulku, který provozují Kroměřížské technické služby, bydlí 32 psů. Koček je tam 26. Na nový domov čeká 10 psů. Někteří potřebují na hledání rodiny víc času. Ředitel KTS Marian Vítek to vysvětluje problémovým chováním, věkem, povahou nebo dlouhým pobytem v útulku. Main quest je pro ně nová rodina a pomáhají jim s ním desítky dobrovolníků. Berou je na dlouhé procházky, kde psi poznávají okolní svět a učí se zvládat situace, které jim dřív dělaly problém.",
+    "Chceš se přidat? Psy můžeš venčit v návštěvních hodinách a pracovníci útulku vyberou ty, kterým to jde. Útulek taky vezme krmivo, pamlsky, deky, hračky, obojky a vodítka, stačí je donést přímo k nim. Procházka s cizím psem je lowkey achievement, na který stačí chuť."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.653,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:58:36.770337+00:00"
+  },
+  "headline": "Z adopcí se vrací jen 3 psi ročně, útulek v Kroměříži má W",
+  "id": "mesto-kromeriz:1857f7e5f721c06c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-24T05:43:31+02:00",
+  "rewritten_at": "2026-10-23T19:58:36.770360+00:00",
+  "sensitivity": "volny",
+  "slug": "z-adopci-se-vraci-jen-3-psi-rocne-utulek-v-kromerizi-ma-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "akce",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🐶✅",
+      "label": "Return Rate",
+      "text": "Zpátky do útulku se po adopci vrací zhruba 3 psi ročně."
+    },
+    {
+      "emoji": "🏠🐕",
+      "label": "Waiting List",
+      "text": "Na nový domov teď čeká 10 psů."
+    },
+    {
+      "emoji": "🦮🧸",
+      "label": "Help Out",
+      "text": "Můžeš venčit psy v návštěvních hodinách nebo donést krmivo, deky a hračky."
+    }
+  ]
+}

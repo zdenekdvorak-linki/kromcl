@@ -100,6 +100,21 @@ pády v `state.json` a po `MAX_SELHANI` se položka označí za vyřízenou.
 Bez toho by se vadný článek vracel do fronty při každém spuštění cronu a platilo
 by se za něj donekonečna.
 
+### Co se nepočítá jako opsané slovo
+
+Pojistka na osm slov v řadě hlásí nález, jen když v něm po odečtení
+výjimek zbude aspoň **pět vlastních slov**. Nepočítá se nic, co má jediný
+správný tvar: spojky a zájmena, ustálené úřední termíny, **jména ze
+zdroje** (slovo, které zdroj aspoň jednou píše s velkým písmenem uvnitř
+věty), čísla, měsíce a dny.
+
+Bez té výjimky pojistka hlásila opisování na větách typu „z Břeclavi,
+Tábora, Znojma, Chebu" nebo „od 6. prosince 2024 do 2. března 2025", kde
+se nic opsat nedá. Měřeno na archivu z 23. 10. 2026: práh 4 dával 11
+falešných poplachů z 32 úryvků a záchyt 98 %, práh 5 nula poplachů a
+záchyt 95 %, práh 6 už jen záchyt 87 % bez dalšího zlepšení. Zbylých 5 %
+jsou krátké věty a výčty jmen; na ty je druhá pojistka, podobnost vět.
+
 ### Pojistka na čísla
 
 Množina čísel ve výstupu musí být podmnožinou povolených. Povolené =
@@ -212,6 +227,39 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Adresy témat přes `slugify` | `/tema/školství.html` je křehká URL |
 | 2026-10-23 | `jen_novejsi` pro `run` a `all` | Hodinový cron s limitem 10 by projel 649 článků archivu sám za tři dny |
 | 2026-10-23 | Nasazeno na GitHub Pages, doména `kromcl.cz` | Actions-based Pages si doménu z artefaktu nevezme, musí se nastavit v repu |
+| 2026-10-23 | Pojistky **1.1**: jména, data a výčty se nepočítají jako vlastní slova, práh zvednut na pět | Z 34 pádů archivu jich 15 hlásilo opisování na jménech obcí, funkcích s jménem a datech. Měřeno na archivu: falešné poplachy 11/32 → 0/32, záchyt doslovné věty zůstal 95 % |
+| 2026-10-23 | `_SLOVO` bere jakékoli písmeno, ne jen české | „Râmnicu Vâlcea" se rozpadlo na „r" a „mnicu", přestalo se poznávat jako jméno a dělalo falešný poplach |
+| 2026-10-23 | Pojistka na čísla umí českou tisícovou tečku | Zdroj píše „2.360 g", přepis „2360 g"; pojistka to brala jako vymyšlené číslo |
+| 2026-10-23 | Rok o jedna vedle data vydání je povolený | Zpráva z ledna 2025 běžně říká „loni"; 2024 ve zdroji doslova není |
+| 2026-10-23 | Důvod pádu se do `state.json` zapisuje bez textu, který ho vyvolal | Stav se commituje do veřejného repa a pojistky hlásí nález i s úryvkem oznámení. Ten úryvek je zdroj, a ten se po použití zahazuje |
+| 2026-10-23 | `zdroj_slug` se do článku neukládá | Nikdo ho nečetl a ukazoval na oznámení |
+| 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
+| 2026-10-23 | Výměna hlídá čerstvost archivu | `backfill` bere od nejstaršího, takže čistý běh z prázdné evidence vyrobil archiv končící 2025-03-21, zatímco živý sahal po dnešek. Z počtu článků to vidět není a na zpravodajském webu je to horší než chybějící článek |
+| 2026-10-23 | Identifikátor článku je otisk slugu, ne slug sám | Soubory v repu se jmenovaly `mesto-kromeriz__<slug oznámení>.json`, takže veřejné `data/` prozrazovalo adresu zdroje. Otisk je deterministický, evidence zpracovaných funguje dál |
+| 2026-10-23 | `bin/vymena_archivu.py` | Výměna archivu má jednu prověřenou cestu místo ručních kroků; bez `--potvrdit` jen hlásí, co by udělala |
+| 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
+
+## Výměna archivu
+
+Přegenerovaný archiv se do živé složky nepřelévá ručně. `bin/vymena_archivu.py`
+bez parametru projde kontroly a vypíše, co by se stalo; s `--potvrdit` výměnu
+provede a živý archiv před tím zazálohuje mimo repo.
+
+Co kontroluje:
+
+- **neběží žádný `kromka` proces** — jinak by se v jedné složce potkaly
+  články ze dvou verzí kódu, což se už jednou stalo
+- každý článek má povinná pole a žádné cizí pole ze zdroje (ta odstraní)
+- slugy nekolidují, titulek nekončí tečkou
+- u článku se shodou 8+ slov dohledá zdroj a **vypíše ten úryvek**, aby
+  šlo posoudit, co pojistka propustila kvůli výjimce na jména a data
+- důvody pádu ve `state.json` zkrátí na druh pádu bez textu zdroje
+- `beh.log` odloží k záloze, mimo repo
+- **překlíčuje identifikátory** na otisk a sloučí evidenci zpracovaných
+  se živou, aby cron nepovažoval starý archiv za nový a neplatil ho znovu
+- **čerstvost**: odmítne výměnu, pokud nový archiv končí dřív než živý
+
+Po výměně se pustí `python -m kromka build`.
 
 ## Nasazení
 

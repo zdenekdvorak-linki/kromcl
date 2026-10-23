@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Tohle je lowkey odvážný tah. Radnice chce vybírat vyšší daň z nemovitostí u budov, které kazí vzhled města. Kdo vlastní dům, na který se v Kroměříži špatně kouká, může čekat větší účet.",
+    "Je to takový patch na ulice, které nikdo nechce mít za rohem. Jestli z toho bude W, nebo jen mid úřední gesto, se ukáže až v praxi. Dočkáme se fasád bez omítky, nebo jen dalších papírů?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 2,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.11,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:08:04.092133+00:00"
+  },
+  "headline": "Radnice chce nakopnout majitele ošklivých baráků vyšší daní",
+  "id": "mesto-kromeriz:4fc4c30f8c715124",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-19T09:00:00+01:00",
+  "rewritten_at": "2026-10-23T19:08:04.092147+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-chce-nakopnout-majitele-osklivych-baraku-vyssi-dani",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🏚️",
+      "label": "Tax Patch",
+      "text": "Radnice chce zvýšit daň z nemovitostí u budov, které městu kazí vzhled."
+    },
+    {
+      "emoji": "🎯🏠",
+      "label": "Main Target",
+      "text": "Zásah míří na majitele těch nemovitostí, které v Kroměříži vypadají nejhůř."
+    },
+    {
+      "emoji": "🤔⏳",
+      "label": "Open Question",
+      "text": "Jestli to tu hrůzu opravdu zlepší, ukážou až další měsíce."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Trailer dřív než premiéra, no cap. Radnice vydala video, které ukazuje, jak bude vypadat interiér plaveckého bazénu, takže si to můžeš pustit rovnou z mobilu.",
+    "Video je venku od 6. října 2026. Lowkey příjemná změna: místo čtení o bazénu se na něj prostě podíváš. Jak moc se výsledek bude podobat videu, ukáže až realita. Do té doby stay delulu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.24,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:46:00.484281+00:00"
+  },
+  "headline": "Plavecký bazén má trailer: video ukazuje, jak bude vypadat uvnitř",
+  "id": "mesto-kromeriz:1a68a476fe018c56",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-06T11:47:57+02:00",
+  "rewritten_at": "2026-10-23T19:46:00.484293+00:00",
+  "sensitivity": "volny",
+  "slug": "plavecky-bazen-ma-trailer-video-ukazuje-jak-bude-vypadat-uvnitr",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "sport"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎬🏊",
+      "label": "Fresh Drop",
+      "text": "Radnice zveřejnila video o tom, jak bude vypadat interiér plaveckého bazénu."
+    },
+    {
+      "emoji": "👀💦",
+      "label": "Inside Look",
+      "text": "Na videu se podíváš dovnitř, ještě než tam uděláš první rozplavbu."
+    },
+    {
+      "emoji": "📅📱",
+      "label": "Release Date",
+      "text": "Video vyšlo 6. října 2026."
+    }
+  ]
+}

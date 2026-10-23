@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Řidiči, tohle je W. Radní vyřadili parkoviště v Chropyňské ulici ze zpoplatněných zón a zaparkuješ tam zadarmo. Až doteď tam smělo stát jen busové plechy, teď tam pro osobáky přibylo 17 míst.",
+    "Autobusy dostaly nerf, zbyla jim dvě stání. Dřív jich tam měly deset. Místostarosta Karel Holík to vysvětlil tím, že parkoviště pro autobusy skoro nikdo nevyužíval. Podle něj tak řidiči dostali možnost parkovat zdarma nedaleko centra.",
+    "Autobusy se ale zpoplatněnému stání nevyhnou, no cap. Mají dál místa na Hanáckém náměstí, kde hodina stojí 100 korun. Za celý den zaplatí maximálně 300 korun. Celkem má Kroměříž přes 900 placených míst a stará se o ně městská firma Kroměřížské technické služby.",
+    "Od října navíc běží patch na pravidla parkování. V sobotu se platí až do 18 hodin, na Velkém náměstí i v neděli a platit musí i elektromobily. Parkovací karta se kupuje jen na konkrétní značku auta a změnily se i ceny karet. Tak co, zkusíš to hned, nebo počkáš, až to objeví všichni ostatní?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.586,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:11:57.769545+00:00"
+  },
+  "headline": "Chropyňská: parkování zdarma u centra, autobusy dostaly nerf",
+  "id": "mesto-kromeriz:3097cd1b95e16ce6",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-06T12:20:35+01:00",
+  "rewritten_at": "2026-10-23T19:11:57.769563+00:00",
+  "sensitivity": "volny",
+  "slug": "chropynska-parkovani-zdarma-u-centra-autobusy-dostaly-nerf",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🅿️🚗",
+      "label": "Free Parking",
+      "text": "Parkoviště v Chropyňské ulici je venku ze zpoplatněných zón, osobní auta tam stojí zdarma."
+    },
+    {
+      "emoji": "🚌📉",
+      "label": "Bus Nerf",
+      "text": "Autobusy tam mají dvě stání, dřív jich měly deset."
+    },
+    {
+      "emoji": "💸🏛️",
+      "label": "Paid Spots",
+      "text": "Autobusy dál parkují za poplatek na Hanáckém náměstí."
+    }
+  ]
+}

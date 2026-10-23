@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Hlávkova ulice je lowkey cooked, ale radnice s tím něco dělá. Příští týden tam nastoupí stavbaři z Kroměřížských technických služeb, což je firma města. Vezmou obě strany ulice, dohromady skoro 180 metrů chodníků. Účet vyjde zhruba na 1,8 milionu korun. Místostarosta Karel Holík to zasadil do série po Bílanské, kterou město předělávalo v minulých dvou letech.",
+    "Staré dlaždice 30 x 30 centimetrů jsou ve špatném stavu a letí pryč. Nahradí je betonová zámková dlažba, jejíž kousky mají 20 x 20 centimetrů. Chodníky mají být hotové v květnu. Potom dostane nový asfalt i silnice, kterou loni rozkopali Vodovody a kanalizace Kroměříž kvůli opravě vodovodu. Takový patch na dvě etapy.",
+    "Hlávkova je jen první na seznamu. Letos město opraví chodníky i v ulicích Hulínská, Karla Čapka, Karoliny Světlé, Švabinského nábřeží a Dolnozahradská. Do toho vznikne nový úsek chodníku v ulici Kazimíra Rudého a úplně nový chodník v ulici U Rejdiště. Pro pěší v Kroměříži je to letos main quest.",
+    "Dopravní rozpočet dostal pořádný buff, počítá zhruba s 80 miliony korun. Z toho půjde i na stezku pro pěší a cyklisty do Postoupek, opravy vozovek, nová parkoviště a nové čekárny MHD. Tak jo, květnová zámková dlažbo, čekáme na tebe."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.608,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:19:51.762368+00:00"
+  },
+  "headline": "Hlávkova ulice dostává patch na chodníky, v květnu má být hotovo",
+  "id": "mesto-kromeriz:8e354f53ba5b7c4e",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-14T11:40:39+01:00",
+  "rewritten_at": "2026-10-23T19:19:51.762387+00:00",
+  "sensitivity": "volny",
+  "slug": "hlavkova-ulice-dostava-patch-na-chodniky-v-kvetnu-ma-byt-hotovo",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚧🗓️",
+      "label": "Start Date",
+      "text": "Stavbaři z Kroměřížských technických služeb nastoupí do Hlávkovy příští týden a v květnu mají skončit."
+    },
+    {
+      "emoji": "💸🧱",
+      "label": "Price Tag",
+      "text": "Oprava chodníků v Hlávkově vyjde zhruba na 1,8 milionu korun."
+    },
+    {
+      "emoji": "🛣️👟",
+      "label": "Next Streets",
+      "text": "Letos přijdou na řadu i další ulice, třeba Hulínská nebo Dolnozahradská."
+    }
+  ]
+}

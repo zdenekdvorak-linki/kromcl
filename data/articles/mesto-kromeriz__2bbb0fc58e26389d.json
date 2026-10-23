@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je W pro kroměřížské spolky. Radní rozdělili 2,63 milionu korun neziskovkám a dalším, kdo ve městě působí nebo tu pořádá akce. Starosta Tomáš Opatrný k tomu uvedl, že radnice chtěla dotace schválit rychle, aby měli žadatelé peníze na účtech co nejdřív. Neziskovky podle něj hrají na dění ve městě zásadní roli. Rychlost je tady lowkey to nejlepší.",
+    "Peníze jdou skoro všude, no cap. Na kulturu, sport, školství, přírodu, cestovní ruch i sociální a zdravotní aktivity. Taky na volný čas dětí, mládeže a seniorů. Dotace jde na provoz, činnost i akce a pokryje maximálně 70 % výdajů žadatele. Malé akce mají vlastní pravidlo. Když dotace nepřesáhne 10 000 korun, může pokrýt všechny výdaje.",
+    "Žádat mohou neziskovky, které v Kroměříži sídlí, působí, nebo mají s městem něco společného. Na akce se hlásí i jednotlivci, podnikatelé, firmy a střední školy. Žádosti do 250 000 korun schvalují radní, výš rozhodují zastupitelé. Nad touhle hranicí letos nikdo nic nepodal, takže zastupitelé mají lowkey klid.",
+    "Druhá výzva je jen na akce a podávat se bude od 26. května do 6. června 2025. Město letos do programu dalo 3 miliony korun. Loni v něm rozdělilo 2,88 milionu. Kromě toho posílá některým organizacím peníze přímo z rozpočtu, letos zhruba 9 milionů. Termín si zapiš hned, ať nejsi za týden cooked."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.597,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:51:09.163376+00:00"
+  },
+  "headline": "Spolky v Kroměříži chytily W: radnice jim rozdala 2,63 milionu",
+  "id": "mesto-kromeriz:2bbb0fc58e26389d",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-03T14:53:21+01:00",
+  "rewritten_at": "2026-10-23T18:51:09.163396+00:00",
+  "sensitivity": "volny",
+  "slug": "spolky-v-kromerizi-chytily-w-radnice-jim-rozdala-263-milionu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "peníze",
+    "radnice",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🎉",
+      "label": "Money Drop",
+      "text": "Radní rozdělili neziskovkám, spolkům a dalším pořadatelům akcí 2,63 milionu korun."
+    },
+    {
+      "emoji": "📅⏰",
+      "label": "Second Round",
+      "text": "Druhá výzva běží od 26. května do 6. června 2025 a je jen na akce."
+    },
+    {
+      "emoji": "🏦👀",
+      "label": "Bigger Picture",
+      "text": "Kromě dotací jde vybraným organizacím přímo z rozpočtu zhruba 9 milionů."
+    }
+  ]
+}

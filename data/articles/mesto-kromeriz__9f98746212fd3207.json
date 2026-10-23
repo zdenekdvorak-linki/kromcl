@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Kroměříž odhlasovala, že chce footgolf, a k tomu ještě stánky a hřiště. Radní vybrali tři projekty z letošního čtvrtého ročníku Vaší Kroměříže. Nejvíc hlasů, přesně 616, dostaly nové stánky pro tržiště, takže to je W pro tržnici. Obnova dětského hřiště v Trávníku skončila druhá s 554 hlasy. Multigolfové hřiště Šlajza vzalo třetí místo s 526 hlasy.",
+    "Hlasovat šlo na veřejné prezentaci a pak online. Koordinátorka Lucia Dusíková shrnula, že se zapojilo 1386 lidí. Každý mohl dát dva hlasy pro a jeden proti. Starosta Tomáš Opatrný poděkoval všem, kdo se do toho pustili, i těm, kdo hlasem podpořili nápady sousedů. Lowkey docela civilizované.",
+    "Stánky budou mobilní a postaví se na tržnici ve Vejvanovského ulici, kde mají vylepšit nevzhledné prostranství. Hřiště v Trávníku je zastaralé, dětí tam přibývá a poblíž je školka, která ho taky využije. Šlajza dostane disc golf, kde házíš speciálním diskem do ocelového koše. Přidá se footgolf, kde kopeš fotbalový balón do jamky pod košem. Na všechno radnice počítá s 2 miliony korun.",
+    "Radnice letos odemkla achievement i u projektů z roku 2024: zastřešené pergoly v Trávníku a ve Vážanech a nová pítka. Hotové je taky workoutové hřiště v Těšnovicích. Rozpracovaný je ještě Holubník pro Kroměříž a zázemí volnočasového areálu v Bílanech. Molo na Bágráku, Kuličkodráha a disk golf Třešňovka skončily za trojkou. Footgolf ve městě je trochu Ohio-coded, ale beru."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.709,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:59:45.024269+00:00"
+  },
+  "headline": "Footgolf, stánky a nové hřiště: Kroměříž odhlasovala tři projekty a je to W",
+  "id": "mesto-kromeriz:9f98746212fd3207",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-23T06:33:46+02:00",
+  "rewritten_at": "2026-10-23T19:59:45.024289+00:00",
+  "sensitivity": "volny",
+  "slug": "footgolf-stanky-a-nove-hriste-kromeriz-odhlasovala-tri-projekty-a-je-to-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "stavba",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏆🛒",
+      "label": "Top Three",
+      "text": "Vyhrály nové stánky na tržiště, hřiště v Trávníku a multigolf na Šlajze."
+    },
+    {
+      "emoji": "🗳️📊",
+      "label": "Vote Count",
+      "text": "Hlasovalo 1386 lidí a každý měl dva hlasy pro a jeden proti."
+    },
+    {
+      "emoji": "🏗️💸",
+      "label": "Build Time",
+      "text": "Stavba je plánovaná na rok 2027 a radnice na ni počítá s 2 miliony korun."
+    }
+  ]
+}

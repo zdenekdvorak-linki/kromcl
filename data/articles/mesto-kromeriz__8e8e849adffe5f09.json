@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Velké náměstí dostane patch, aspoň na papíře. Rada města schválila zpracování architektonické studie, která má navrhnout, jak centrum předělat. Studie má vyřešit dopravu, parkovací plochy a napojení na historické jádro. Dále má řešit městskou zeleň a zapojení restaurací do prostoru. Starosta Tomáš Opatrný chce příjemné místo na setkávání se zelení a s rozvody elektřiny a vody pro akce.",
+    "Parkování už dostalo nerf. Od loňského října se na náměstí platí v sobotu i v neděli do 18 hodin. Předplacené karty mají jen lidé s trvalým pobytem v centru a podnikatelé, kteří sídlí v Kroměříži a mají na náměstí provozovnu. Místostarosta Jan Hebnar říká, že tyhle změny míří k tomu, aby tam auta nestála dlouhodobě.",
+    "Seznam věcí, co radnici na náměstí vadí, je dlouhý. Silnice přerušuje pěší trasy, nemáš si kam sednout, chybí zeleň, vybavení nesedí a pro kulturní akce chybí jasný plán. Hebnar chce náměstí otevřít lidem, aby z něj nebyla rozpálená placka. Radní Jiří Kašík míří na turisty a chce s restauratéry natáhnout sezonu od března do listopadu, no cap.",
+    "Studie k náměstí už existuje z roku 2015, ale tehdejší vedení města podle Opatrného nic předělávat nezačalo. Tentokrát starosta říká, že se to nestihne za pár měsíců. K případným změnám se mají moct vyjádřit i lidé z Kroměříže. Achievement s názvem nové náměstí si zatím nech odemčený na později."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.646,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:04:12.974951+00:00"
+  },
+  "headline": "Radnice chce patchnout Velké náměstí, zatím jen na papíře",
+  "id": "mesto-kromeriz:8e8e849adffe5f09",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:08:00+01:00",
+  "rewritten_at": "2026-10-23T19:04:12.974972+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-chce-patchnout-velke-namesti-zatim-jen-na-papire",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "stavba",
+    "doprava"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏛️🗺️",
+      "label": "Main Quest",
+      "text": "Rada města schválila architektonickou studii, která navrhne proměnu Velkého náměstí."
+    },
+    {
+      "emoji": "🅿️💸",
+      "label": "Parking Nerf",
+      "text": "Od loňského října se na Velkém náměstí platí za parkování i o víkendu, až do 18 hodin."
+    },
+    {
+      "emoji": "⏳🗣️",
+      "label": "Slow Burn",
+      "text": "V řádu měsíců to hotové nebude a k plánům se mají moct vyjádřit lidé z Kroměříže."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Ředitelka ZŠ Zámoraví Ivana Uherková odemkla achievement. Rada města Kroměříže jí prodloužila funkční období. To současné, šestileté, jí končí letos v červenci. Konkurz se vyhlašovat nebude, školský zákon to takhle povoluje.",
+    "Za rozhodnutím stojí hlavně školní inspekce. Místostarosta Karel Holík ho zdůvodnil zprávou České školní inspekce, která školu hodnotí jako zařízení na velmi dobré úrovni. Zámoraví v ní prostě ate that.",
+    "Škola za šest let dostala pořádný buff. Kapacita vyrostla až na 250 žáků. Na začátku toho období tam chodilo 190 dětí. Zámoraví prošlo modernizací, pořídilo nové digitální pomůcky a má edukativní zahradu na venkovní výuku. Chytá i dotace. Je to prvostupňová škola, dnes do ní chodí 213 žáků. Kdo čekal drama, má smůlu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.588,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:51:54.225336+00:00"
+  },
+  "headline": "Zámoraví dál vede Uherková, škola má od inspekce W",
+  "id": "mesto-kromeriz:ea692d8497b64e9c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-04T06:48:48+01:00",
+  "rewritten_at": "2026-10-23T18:51:54.225353+00:00",
+  "sensitivity": "volny",
+  "slug": "zamoravi-dal-vede-uherkova-skola-ma-od-inspekce-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "školství",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "📝🏫",
+      "label": "Contract Extended",
+      "text": "Rada města prodloužila Ivaně Uherkové funkci ředitelky ZŠ Zámoraví, současné období jí končí letos v červenci."
+    },
+    {
+      "emoji": "🚫📋",
+      "label": "No Contest",
+      "text": "Konkurz se vyhlašovat nebude, školský zákon to u prodloužení povoluje."
+    },
+    {
+      "emoji": "✅🔍",
+      "label": "Inspection Approved",
+      "text": "Česká školní inspekce hodnotí školu jako zařízení s velmi dobrou úrovní."
+    }
+  ]
+}

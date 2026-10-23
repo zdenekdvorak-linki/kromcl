@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Kalendář ven, tohle je lowkey důležitý. Veletrh práce a vzdělávání Kroměříž 2026 se koná ve čtvrtek 1. října v Domě kultury a otevřeno je od 9 do 17 hodin. Míří na osmáky a deváťáky ze základek, ale přijít můžou i jejich rodiče, učitelé a další lidi z města.",
+    "Na jednom místě se potkají firmy, školy a lidi, co hledají práci. Na stole budou studijní i učební obory ze Zlínského kraje. Technické a řemeslné obory dostanou buff, protože právě ty chtějí pořadatelé z Okresní hospodářské komory Kroměříž podpořit. Firmy z regionu se tu taky ukážou.",
+    "Starosta Tomáš Opatrný k tomu řekl, že se veletrh v Kroměříži dělá každý podzim. Deváťákům má usnadnit výběr školy, orientaci na trhu práce i plány do budoucna. V programu jsou kariéroví a výchovní poradci, firmy ukážou, co umějí, a studenti předvedou své dovednosti. Exkurze do průmyslových podniků regionu jsou pak pěkný side quest. Zapiš si to, ať pak nemusíš ghostnout vlastní budoucnost."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.587,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:59:07.271412+00:00"
+  },
+  "headline": "Osmáci a deváťáci: main quest je ve čtvrtek 1. října v kulturáku",
+  "id": "mesto-kromeriz:3bfcce3a2b8a61a4",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-23T09:09:52+02:00",
+  "rewritten_at": "2026-10-23T19:59:07.271430+00:00",
+  "sensitivity": "volny",
+  "slug": "osmaci-a-devataci-main-quest-je-ve-ctvrtek-1-rijna-v-kulturaku",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "školství",
+    "akce",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅🏫",
+      "label": "Date Drop",
+      "text": "Veletrh práce a vzdělávání Kroměříž 2026 se koná ve čtvrtek 1. října od 9 do 17 hodin v Domě kultury."
+    },
+    {
+      "emoji": "🎒👀",
+      "label": "Who Invited",
+      "text": "Zvou osmáky a deváťáky ze základek, jejich rodiče, učitele i veřejnost."
+    },
+    {
+      "emoji": "🏭🧭",
+      "label": "Side Quest",
+      "text": "Poradci jsou v programu a dá se domluvit exkurze do průmyslových podniků v regionu."
+    }
+  ]
+}

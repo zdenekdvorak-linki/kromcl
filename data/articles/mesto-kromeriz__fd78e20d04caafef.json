@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Potkani, máte L. Firma DERATEX ze Zlína vyrazí v říjnu do Kroměříže a bude pokládat návnady na veřejných prostranstvích a v kanalizaci, kterou vlastní město. Termíny jsou 19. října, 26. října a 3. listopadu 2026. Do soukromých objektů se nechodí.",
+    "Seznam lokalit je lowkey dlouhý. Na řadě jsou sídliště Slovan, Bělidla, Oskol, Zachar a Barbořina, k tomu střed města, Pekelce, Plačkov a obě Zahrady. Z místních částí dojde třeba na Bílany, Kotojedy, Vážany a Zlámanku. Bydlíš tam někde? Pak se tě to týká.",
+    "Pracovníci firmy obejdou místa, kde čekají nory a díry. Každou ošetřenou noru patchnou zeminou a označí ji, zapíšou si ji a pak se k ní vracejí na další kontroly. Navíc projdou 224 šachet městské kanalizace. Návnady mají být nastražené tak, aby ublížily jen hlodavcům.",
+    "Místostarosta Karel Holík to zdůvodnil prevencí: hlodavci se mohou přemnožit a dělat škody na zdraví a majetku. Petr Krybus z odboru služeb zase žádá lidi o pomoc, tak jako každý rok. Když na veřejném místě uvidíš potkana, dej radnici vědět, nejlíp s fotkou místa, no cap. Potkani, tohle je L v přímém přenosu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.529,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T20:00:27.923360+00:00"
+  },
+  "headline": "Potkani jsou cooked: Kroměříž od 19. října spouští deratizaci",
+  "id": "mesto-kromeriz:fd78e20d04caafef",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-23T06:31:31+02:00",
+  "rewritten_at": "2026-10-23T20:00:27.923378+00:00",
+  "sensitivity": "volny",
+  "slug": "potkani-jsou-cooked-kromeriz-od-19-rijna-spousti-deratizaci",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "příroda"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅🐀",
+      "label": "Bait Dates",
+      "text": "Návnady se budou kladit 19. října, 26. října a 3. listopadu 2026."
+    },
+    {
+      "emoji": "🗺️🪤",
+      "label": "Rat Zones",
+      "text": "Na řadě jsou sídliště, střed města, místní části a městská kanalizace, soukromé objekty ne."
+    },
+    {
+      "emoji": "💸🐀",
+      "label": "Price Tag",
+      "text": "Celá akce vyjde město na 232 tisíc korun."
+    }
+  ]
+}

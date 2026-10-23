@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Konečně můžeš radnici říct, kdo to v Kroměříži táhne. Město zase shání nominace na Cenu města Kroměříže, tedy na největší ocenění, které uděluje. Návrhy přijímá do 20. listopadu 2026, tak to neodkládej na poslední večer, jinak jsi cooked.",
+    "Lowkey demokratická věc. Navrhnout může kdokoliv, kdo v Kroměříži působí: lidé z města, firmy, spolky, zastupitelé i orgány města. Vítěze pak vybírají zastupitelé. Cena míří na lidi s přínosem třeba v kultuře, zdravotnictví nebo školství, za rozvoj a propagaci města i za skutky, kterých si všimlo okolí.",
+    "Do nominace patří zdůvodnění, proč zrovna tenhle člověk, a kontakt na tebe jako navrhovatele. Posílá se písemně na odbor kultury, cestovního ruchu a památkové péče na radnici, Velké náměstí 115. Papírování je trochu side quest, ale s dobrým cílem. Radní pro kulturu Jiří Kašík k tomu doplnil, že oceněný musí být starší 18 let a žít nebo působit v Kroměříži, případně ji významně zviditelnit. Cena je poděkování za dlouholetou práci a zapojení do veřejného dění.",
+    "Za minulý rok cenu dostal pianista Boris Krajný, o rok dřív dirigent Tomáš Netopil. Je to aura farming na úrovni. Kdo z tvého okolí by si tu aura zasloužil?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.579,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:55:26.610488+00:00"
+  },
+  "headline": "Znáš někoho, kdo v Kroměříži ate? Navrhni ho na Cenu města do 20. listopadu",
+  "id": "mesto-kromeriz:7253cbc0436e31ba",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-09-30T05:32:12+02:00",
+  "rewritten_at": "2026-10-23T19:55:26.610507+00:00",
+  "sensitivity": "volny",
+  "slug": "znas-nekoho-kdo-v-kromerizi-ate-navrhni-ho-na-cenu-mesta-do-20-listopadu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "⏰",
+      "label": "Deadline Alert",
+      "text": "Návrhy na Cenu města Kroměříže radnice přijímá do 20. listopadu 2026."
+    },
+    {
+      "emoji": "🙋🗳️",
+      "label": "Open Nominations",
+      "text": "Navrhnout může kdokoliv, kdo v Kroměříži působí, a rozhodnou o tom zastupitelé."
+    },
+    {
+      "emoji": "🎟️",
+      "label": "Age Check",
+      "text": "Oceněný musí mít přes 18 let a žít nebo působit v Kroměříži, případně ji výrazně zviditelnit."
+    }
+  ]
+}

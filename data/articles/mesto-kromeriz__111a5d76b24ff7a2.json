@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Řidiči, chyťte L: Březinova se zavírá a nejede se tudy do 30. června. Důvodem je rekonstrukce plynovodu. Nejdřív se od 10. do 14. března zavře křižovatka Březinovy a Máchovy. Od 17. března pak padne celý úsek mezi Máchovou a Kollárovou.",
+    "Objížďka je takový side quest přes Vrobelovu, Sokolovskou a Kollárovu a bude označená dopravními značkami. Pěšky projdeš dál. Radniční referent dopravy Pavel Zavadil ale žádá lidi, ať si na místě dávají větší pozor, protože se tam bude pracovat.",
+    "Plynovod předělává společnost Plynosystém. Letos jede druhá etapa, ta první proběhla loni. Po dokončení má Březinova od kruháče po křižovatku s Kollárovou dostat nový asfalt, což je highkey buff.",
+    "Do června vydrž a pak odemkneš achievement jménem hladká silnice."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.522,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:12:56.772345+00:00"
+  },
+  "headline": "Březinova je do června cooked: kvůli plynu zavřou kus ulice",
+  "id": "mesto-kromeriz:111a5d76b24ff7a2",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-07T09:13:37+01:00",
+  "rewritten_at": "2026-10-23T19:12:56.772361+00:00",
+  "sensitivity": "volny",
+  "slug": "brezinova-je-do-cervna-cooked-kvuli-plynu-zavrou-kus-ulice",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚧🚗",
+      "label": "Road Closed",
+      "text": "Od 17. března do 30. června je zavřený úsek Březinovy mezi Máchovou a Kollárovou."
+    },
+    {
+      "emoji": "🔀🛣️",
+      "label": "Detour Route",
+      "text": "Objíždět se bude přes Vrobelovu, Sokolovskou a Kollárovu."
+    },
+    {
+      "emoji": "✨🛣️",
+      "label": "Fresh Asphalt",
+      "text": "Po dokončení prací má úsek od kruháče po Kollárovu dostat nový asfalt."
+    }
+  ]
+}

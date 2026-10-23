@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Eliška s Matyášem loni ate. Matrikářky je v Kroměříži zapsaly do rodných listů 18krát, víc než kohokoli jiného. Dominik, Sofie a Štěpán dostali 16 zápisů. Za Eliškou a Sofií držely krok Julie s Emou, obě po 13. Mezi kluky měl Jakub 15 zápisů a Adam 14.",
+    "V kroměřížské porodnici se loni narodilo 812 dětí, jedno další přišlo na svět doma. Předloni jich bylo o 71 víc, takže porodnost dostala nerf. Rodiče navíc v posledních letech sahají po méně obvyklých jménech, i Češi. Loni se do rodných listů dostaly třeba Abigail, Kyle Anthony, Lilith Luna, Diego Gabriel nebo Violet. Lowkey based.",
+    "V obvodu kroměřížské radnice se loni konalo 151 svateb. Církevních bylo 25. Radnice je highkey nejoblíbenější kulisa, vybralo si ji 79 párů. Kaple sv. Kříže v Octárně pojala 15 obřadů. Po šesti jich měly arcibiskupský zámek, Dvůr u bílého stromu v Horních zahradách a La Futerra ve Zlámance. Předloni se svateb konalo 154, takže loni jich mírně ubylo.",
+    "Od loňska se dá v Kroměříži uzavřít registrované partnerství osob stejného pohlaví. Nikdo si ho loni neuzavřel. Od ledna 2025 přišel patch občanského zákoníku. Registrované partnerství se už neuzavírá a zůstává prostě partnerství, trvalý svazek dvou lidí stejného pohlaví. Práva a povinnosti z něj jsou podobné jako u manželství. Kolik Elišek a Matyášů znáš ty?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.626,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:40:47.719484+00:00"
+  },
+  "headline": "Eliška a Matyáš ate: kroměřížský žebříček jmen má jasné vítěze",
+  "id": "mesto-kromeriz:7ae17f362941f410",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-16T12:32:21+01:00",
+  "rewritten_at": "2026-10-23T18:40:47.719506+00:00",
+  "sensitivity": "volny",
+  "slug": "eliska-a-matyas-ate-kromerizsky-zebricek-jmen-ma-jasne-viteze",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "👶🏆",
+      "label": "Name Meta",
+      "text": "Eliška a Matyáš vedou žebříček jmen, každé jméno matrikářky zapsaly 18krát."
+    },
+    {
+      "emoji": "🍼📉",
+      "label": "Baby Count",
+      "text": "V kroměřížské porodnici se narodilo 812 dětí, předloni jich bylo víc."
+    },
+    {
+      "emoji": "💍🏛️",
+      "label": "Wedding Stats",
+      "text": "Nejvíc párů, celkem 79, si na svatbu vybralo radnici."
+    }
+  ]
+}

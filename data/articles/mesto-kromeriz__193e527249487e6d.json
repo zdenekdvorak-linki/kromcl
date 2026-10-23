@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Lutopecká možná dostane patch. Od 18. února 2025 je venku video, které ukazuje, co by tam mohlo vyrůst: nové bytové domy.",
+    "Je to pohled na možnou podobu té zástavby, takže zatím lowkey jen obrázek v pohybu. Nic víc k tomu nemáme, a nebudeme si vymýšlet.",
+    "Pusť si to a udělej si názor sám, no cap, je to rychlejší než se o tom dohadovat v komentářích. Teď už jen zjistit, jestli to bude peak, nebo mid."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 3,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.145,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:07:11.273716+00:00"
+  },
+  "headline": "Lutopecká dostává patch: video ukazuje, jak by tam mohly vypadat bytovky",
+  "id": "mesto-kromeriz:193e527249487e6d",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-18T12:15:05+01:00",
+  "rewritten_at": "2026-10-23T19:07:11.273730+00:00",
+  "sensitivity": "volny",
+  "slug": "lutopecka-dostava-patch-video-ukazuje-jak-by-tam-mohly-vypadat-bytovky",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎬🏢",
+      "label": "Video Drop",
+      "text": "Od 18. února 2025 si můžeš pustit video s možnou podobou nových bytovek v Lutopecké."
+    },
+    {
+      "emoji": "🤔🏗️",
+      "label": "Just Maybe",
+      "text": "Video ukazuje, jak by domy mohly vypadat, takže jde zatím o představu."
+    },
+    {
+      "emoji": "📱👀",
+      "label": "Your Take",
+      "text": "Nemusíš nic číst, stačí video zkouknout a udělat si vlastní názor."
+    }
+  ]
+}

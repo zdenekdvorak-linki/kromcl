@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Bytovky na Lutopecké, tohle je main quest radnice. Chce stavět na pozemcích mezi domy, co tam už stojí, a místem, kde vyroste stanice profesionálních hasičů. Místostarosta Jan Hebnar říká, že jde skoro o jediné souvislé městské pozemky na víc bytovek. Studie ukazuje, že by se tam vešlo 9 domů. Všechny najednou ale stavět nebudou, rozhodnou dotace.",
+    "Každý dům by měl přízemí a 3 až 4 patra, uvnitř 13 až 17 bytů. Okolo plánují zeleň, relaxační zónu, dětské i sportovní hřiště, cesty, chodníky a parkování. Do první etapy se vejdou 3 domy, tohle je lowkey docela buff pro celou čtvrť.",
+    "Starosta Tomáš Opatrný vysvětluje, že o městské byty je větší zájem, než město zvládne nabídnout. Právě teď se navíc objevují dotace na nájemní bydlení. Radnice prý zvažovala i rodinné domy, hotel nebo jinou občanskou vybavenost, ale bytovky vyhrály. Město má dnes 521 bytů a spravují je Kroměřížské technické služby.",
+    "Plány chce radnice ukázat lidem na veřejném projednání. Sejdete se ve čtvrtek 20. března v 16:00 v zrekonstruované zasedačce radnice na Velkém náměstí. Kdo chce vidět plány dřív než bagry, ví, kam jít."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.577,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:06:31.521382+00:00"
+  },
+  "headline": "Radnice chce na Lutopecké bytovky: až 9 domů, ale bez dotací jsme cooked",
+  "id": "mesto-kromeriz:ffe9bf77c8a364d7",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:10:00+01:00",
+  "rewritten_at": "2026-10-23T19:06:31.521401+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-chce-na-lutopecke-bytovky-az-9-domu-ale-bez-dotaci-jsme-cooked",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏗️🏢",
+      "label": "Big Plan",
+      "text": "Na Lutopecké by podle studie vyrostlo až 9 bytových domů, první etapa jsou 3."
+    },
+    {
+      "emoji": "💸📉",
+      "label": "Dotace Dependent",
+      "text": "Kolik se toho postaví naráz, rozhodnou dotace na nájemní bydlení."
+    },
+    {
+      "emoji": "🗓️🏛️",
+      "label": "Public Meeting",
+      "text": "Veřejné projednání je ve čtvrtek 20. března v 16:00 na radnici na Velkém náměstí."
+    }
+  ]
+}

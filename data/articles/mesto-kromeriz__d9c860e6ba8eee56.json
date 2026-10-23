@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Pódium zase volá a pro každého, kdo umí zpívat nebo recitovat, je to docela peak sezóna. V únoru a březnu se v Kroměříži konají oblastní kola tří soutěží pro mladé z města i okolí. Radnice je chystá přes odbor školství, mládeže a tělovýchovy a s dalšími pořadateli.",
+    "Recitátoři jsou na řadě jako první, tohle je jejich main quest února. Wolkrův Prostějov se koná 21. února v aule ZUŠ v Jánské ulici. Soutěží tu mládež i dospělí a přehlídka má podpořit zájem o literaturu a o to, jak se dá číst a podat na jevišti.",
+    "Zpěváci přijdou na řadu 13. března v Klubu Starý pivovar. Jmenuje se to O hanáckyho kohóta, zpívá se sólo a repertoár tvoří hanácké lidové písně. Dětská scéna je poslední a koná se 18. března. Recitují na ní žáci základek a hostit je bude kulturák.",
+    "Místostarosta Pavel Motyčka se těší, že mají žáci, studenti i jejich učitelé o soutěže zájem. Podle něj tak soutěžící drží při životě folklorní tradice regionu a budují si vztah k literatuře, mluvenému slovu i lidové hudbě. Vylézt na pódium s básní nebo hanáckou písničkou je fakt based. Kdo z vás to zkusí?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.633,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:43:10.415595+00:00"
+  },
+  "headline": "Aura farming na pódiu: Kroměříž hostí tři soutěže v recitaci a zpěvu",
+  "id": "mesto-kromeriz:d9c860e6ba8eee56",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-20T13:28:53+01:00",
+  "rewritten_at": "2026-10-23T18:43:10.415616+00:00",
+  "sensitivity": "volny",
+  "slug": "aura-farming-na-podiu-kromeriz-hosti-tri-souteze-v-recitaci-a-zpevu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "školství",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "📖🎤",
+      "label": "Recitation Round",
+      "text": "Wolkrův Prostějov se koná 21. února v aule ZUŠ v Jánské ulici a míří na něj mládež i dospělí recitátoři."
+    },
+    {
+      "emoji": "🎶🐓",
+      "label": "Singing Showdown",
+      "text": "O hanáckyho kohóta, soutěž v sólovém zpěvu hanáckých písní, proběhne 13. března v Klubu Starý pivovar."
+    },
+    {
+      "emoji": "🎭🏫",
+      "label": "Kids Stage",
+      "text": "Dětská scéna s recitací žáků základek zakončí sérii 18. března v Domě kultury."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Kroměříž si tentokrát střihla roli hostitele a lowkey je to flex. Do města míří zástupci měst, která stejně jako my zřizují vlastní sociální služby. V Česku není moc měst naší velikosti, která to dělají, takže výměna zkušeností má smysl. Akci zařizuje SSKM, příspěvkovka města, kterou radnice pověřila organizací.",
+    "Program je rozdělený na dva dny. Ve středu 19. března se hosté sejdou v Klubu Starý pivovar. Dopoledne se budou představovat města i organizace, které sociální služby poskytují. Odpoledne přijde workshop, kde každé město ukáže, co v sociální oblasti plánuje rozvíjet. Ve čtvrtek 20. března se chodí po vybraných službách SSKM, to je no cap nejkonkrétnější část. Na řadu přijde i schůzka s vedením města a neformální posezení.",
+    "Pozvánky nevznikly z ničeho. Místostarosta Pavel Motyčka, ředitelka SSKM Dagmar Klučková a vedoucí odboru sociálních věcí a zdravotnictví Radovan Klabal loni osobně objeli 19 měst s vlastními sociálními službami. Chtěli porovnat zkušenosti i praxi, tak teď ty hosty zvou zpátky. Tour po 19 městech je pořádný achievement. Ředitelka SSKM potvrdila, že přesný seznam účastníků zatím neexistuje.",
+    "Jestli se z toho opravdu přenese dobrá praxe do kroměřížských služeb, bude to W."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.525,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:57:58.625963+00:00"
+  },
+  "headline": "Kroměříž hostí sociální summit měst, po 19 návštěvách teď jezdí hosté k nám",
+  "id": "mesto-kromeriz:2ac97647ec248d0b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:00:00+01:00",
+  "rewritten_at": "2026-10-23T18:57:58.625980+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-hosti-socialni-summit-mest-po-19-navstevach-ted-jezdi-hoste-k-nam",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "akce",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🤝🏛️",
+      "label": "Big Meetup",
+      "text": "Dvoudenní sraz měst s vlastními sociálními službami začíná ve středu 19. března."
+    },
+    {
+      "emoji": "🧳📋",
+      "label": "Guest List",
+      "text": "Delegace čekají třeba z Orlové, Chebu, Písku nebo Břeclavi, přesný seznam hostů zatím není."
+    },
+    {
+      "emoji": "🚶‍♂️🏢",
+      "label": "Field Trip",
+      "text": "Ve čtvrtek 20. března se hosté projdou po vybraných službách SSKM."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tak tohle je L pro všechny, co sis už poznačil čtvrtek. Setkání s občany o novém územním plánu Kroměříže se o týden odkládá, protože onemocněli projektanti i kolegové z oddělení územního plánování. Místostarosta Pavel Motyčka to zdůvodnil tím, že právě oni mají odpovídat na dotazy lidí, a bez nich by se tam nebylo koho ptát.",
+    "Nový termín je čtvrtek 13. března. Původně měla padnout řeč hlavně na změny ve Vážanech, teď se k nim přidá i doprava. Sejde se to ve společenském sále kulturáku, který pobere víc lidí než původně plánovaný hudební sál. Lowkey buff kapacity.",
+    "Územní plán je pro město main quest: určuje, kde se smí stavět byty, kde průmyslové objekty a kde zůstane zeleň. Schvalovat ho budou zastupitelé a zatím o něm jednají neveřejně. Pokud tě zajímá konkrétní pozemek nebo dům, můžeš se ptát už teď přímo na oddělení územního plánování. Řeknou ti, jak se k tomu staví ministerstva, krajský úřad, hygienici a odbor životního prostředí a zemědělství.",
+    "Zdraví jede first, plán počká ten týden. Fair play."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.592,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:11:04.190966+00:00"
+  },
+  "headline": "Setkání o územním plánu chytilo L, nemoc ho posunula na 13. března",
+  "id": "mesto-kromeriz:8603c8d226b6f72e",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-05T11:32:02+01:00",
+  "rewritten_at": "2026-10-23T19:11:04.190985+00:00",
+  "sensitivity": "volny",
+  "slug": "setkani-o-uzemnim-planu-chytilo-l-nemoc-ho-posunula-na-13-brezna",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "stavba",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅🗓️",
+      "label": "New Date",
+      "text": "Setkání k územnímu plánu se o týden odkládá na čtvrtek 13. března."
+    },
+    {
+      "emoji": "🤒",
+      "label": "Sick Team",
+      "text": "Onemocněli projektanti i lidé z oddělení územního plánování, kteří mají odpovídat na dotazy."
+    },
+    {
+      "emoji": "🏛️",
+      "label": "New Venue",
+      "text": "Sejde se to ve společenském sále Domu kultury, kam se vejde víc lidí než do hudebního sálu."
+    }
+  ]
+}

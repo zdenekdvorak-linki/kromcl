@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Školské rady na kroměřížských základkách dostaly patch. Radní v únoru schválili, kdo za město usedne do rad na všech školách, které Kroměříž zřizuje, a mandát běží od 1. března 2025 do 28. února 2028. Každá rada má šest míst a radnice na ně posílá vždy dvojici zastupitelů.",
+    "Tady je celý roster, no cap. Na ZŠ Komenského usedli starosta Tomáš Opatrný a Blanka Šimůnková. U Sýpek to budou radní Martin Bsonek a Jarmila Slováková. Slovan má místostarostu Pavla Motyčku a radního Jiřího Kašíka. Do Zámoraví míří radní Jan Pšeja a Petr Stoklasa.",
+    "Na Oskolu proběhl side quest. Zájem o místo původně projevil zastupitel Petr Komínek a dostal ho, jenže pak odstoupil. Radní na jeho místo jmenovali Danielu Hebnarovou, takže teď tam s ní zasedá místostarosta Karel Holík. Hebnarová má navíc místo i v ZŠ S-MYSL, kde s ní sedí radní Richard Kreml. Holík k tomu uvedl, že nominovat se mohl každý zastupitel a jmenovaný byl každý, kdo měl zájem.",
+    "Co taková rada dělá? Má tři stejně velké party: lidi za město, učitele a rodiče (případně zletilé žáky). Pomáhá škole růst spolu s ředitelem, některé školní dokumenty schvaluje, no cap, a jiné spoluvytváří nebo k nim dává připomínky. Škola ji musí mít podle školského zákona a členové za to nedostanou ani korunu. Víš ty vůbec, kdo sedí v radě tvojí bývalé základky?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.558,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:23:03.082741+00:00"
+  },
+  "headline": "Školské rady dostaly patch: kdo za radnici zasedl v základkách do 2028",
+  "id": "mesto-kromeriz:6443252092694aad",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-21T09:32:51+01:00",
+  "rewritten_at": "2026-10-23T19:23:03.082760+00:00",
+  "sensitivity": "volny",
+  "slug": "skolske-rady-dostaly-patch-kdo-za-radnici-zasedl-v-zakladkach-do-2028",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "školství",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏫🛠️",
+      "label": "Fresh Patch",
+      "text": "Radní v únoru schválili, kdo za město zasedne v radách na základkách, které Kroměříž zřizuje."
+    },
+    {
+      "emoji": "📅⏳",
+      "label": "Term Length",
+      "text": "Mandát běží od 1. března 2025 do 28. února 2028."
+    },
+    {
+      "emoji": "💸🤝",
+      "label": "Zero Pay",
+      "text": "Členové školských rad za svou práci nedostanou žádnou odměnu."
+    }
+  ]
+}

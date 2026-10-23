@@ -38,7 +38,7 @@ def fetch_items():
             "source": SOURCE_ID,
             "source_name": SOURCE_NAME,
             "slug": slug,
-            "id": "{0}:{1}".format(SOURCE_ID, slug),
+            "id": htmlutil.klic(SOURCE_ID, slug),
             "title": titulek,
             "perex": (item.findtext("description") or "").strip(),
             "published": _datum(item.findtext("pubDate")),

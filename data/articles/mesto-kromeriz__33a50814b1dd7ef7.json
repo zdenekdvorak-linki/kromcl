@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle je lowkey ultimátum pro majitele baráků, které roky jen stojí a chátrají. Zastupitelé ve čtvrtek poslali právníky radnice chystat opatření, podle kterého by majitelé 8 budov od roku 2026 platili daň z nemovitosti s koeficientem 5. Výš už zákon nepustí.",
+    "Na seznamu je bývalý hotel Haná na Velkém náměstí a bývalý biskupský pivovar se sodovkárnou v ulici Na Kopečku. Přidej někdejší sídlo firmy Elma-Therm v Tovačovského ulici, bývalou restauraci na Slovanském náměstí a pekárnu na sídlišti Barbořina. K tomu tři zanedbané budovy na Riegrově náměstí. Hotel Haná na takovém seznamu, to je fr smutný pohled.",
+    "Místostarosta Jan Hebnar to zdůvodnil tím, že zanedbané budovy kazí vzhled města místním i turistům. Některé z nich navíc nejsou dobře zajištěné a nepořádek kolem zvyšuje náklady na údržbu veřejných prostor. Kroměříž má památky zapsané v UNESCO a cestovní ruch je pro ni důležitý, takže rozpadlý barák znamená minus aura. Právnička radnice Andrea Nevřalová doplnila, že zákon takové zvýšení umožňuje a vlastník má povinnost držet svou věc v řádném stavu.",
+    "Zatím je to jen návrh, takže žádný W ani L. Radnice ho zveřejní veřejnou vyhláškou, majitelé mohou poslat námitky a připomínky a o nich by znovu hlasovali zastupitelé. Letos město zavedlo koeficient 1,5 pro rekreační budovy, garáže a zpevněné plochy. Pro stavby k podnikání platí koeficient 2. Bydlení koeficient nemá, lidé platí jen sazbu ze zákona. Daň vybírají finančáci, ale celá končí v kase města. Bude z toho patch pro chátrající baráky, nebo jen další kolo papírování?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.602,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:02:50.159653+00:00"
+  },
+  "headline": "Chátrající budovy v Kroměříži chytají L: u 8 z nich radnice chce nejvyšší daň",
+  "id": "mesto-kromeriz:33a50814b1dd7ef7",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:06:00+01:00",
+  "rewritten_at": "2026-10-23T19:02:50.159674+00:00",
+  "sensitivity": "volny",
+  "slug": "chatrajici-budovy-v-kromerizi-chytaji-l-u-8-z-nich-radnice-chce-nejvyssi-dan",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "💸🏚️",
+      "label": "Max Tax",
+      "text": "Radnice navrhuje pro 8 budov nejvyšší možný koeficient daně z nemovitosti, tedy 5."
+    },
+    {
+      "emoji": "📋🏢",
+      "label": "Target List",
+      "text": "Na seznamu je bývalý hotel Haná, pivovar se sodovkárnou, Elma-Therm, restaurace, pekárna a tři budovy na Riegrově náměstí."
+    },
+    {
+      "emoji": "📝⚖️",
+      "label": "Next Step",
+      "text": "Návrh vyjde veřejnou vyhláškou, majitelé mohou podat námitky a rozhodnou o nich zastupitelé."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Konečně zima, která měla pro bruslaře plus. Mobilní kluziště na Hanáckém náměstí v uplynulé sezoně přivítalo 12 317 platících bruslařů a je to největší návštěvnost od doby, co ho město koupilo. Loni jich přišlo zhruba 7300. Místostarosta Karel Holík to připisuje počasí, které tentokrát vyšlo líp než minulou zimu. Tohle je W pro celé město.",
+    "Led fungoval od 6. prosince 2024. Skončil 2. března 2025. Vstup stál 10 korun a mohl jsi na něm zůstat, jak dlouho jsi chtěl. Cena zůstala stejná jako loni. Brusle šly půjčit přímo na místě a využilo to 2320 lidí, no cap rekord. Meziročně je to plus 589. Na místě byly i zamykatelné skříňky na boty a věci a bufet.",
+    "Město kluziště koupilo v roce 2020. Premiéru v zimě 2020/2021 ale vyřídil koronavirus a kluziště bylo cooked dřív, než začalo. Běžet se mu začalo až o rok později. Nákup má řešit i to, že na zimním stadionu je pro veřejnost málo hodin bruslení. Odemčený achievement: z covidového nulového startu rekord."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.538,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:16:04.576968+00:00"
+  },
+  "headline": "Kluziště na Hanáckém náměstí ate: rekordních 12 317 bruslařů",
+  "id": "mesto-kromeriz:9aebd8cde9fd21b0",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-03-12T07:24:00+01:00",
+  "rewritten_at": "2026-10-23T19:16:04.576984+00:00",
+  "sensitivity": "volny",
+  "slug": "kluziste-na-hanackem-namesti-ate-rekordnich-12-317-bruslaru",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "sport",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "⛸️🔥",
+      "label": "Record Crowd",
+      "text": "Na led přišlo 12 317 platících bruslařů, nejvíc, co kluziště od nákupu městem zažilo."
+    },
+    {
+      "emoji": "🧊👟",
+      "label": "Rental Boom",
+      "text": "Brusle si na místě půjčilo 2320 lidí, taky rekord."
+    },
+    {
+      "emoji": "💸🕒",
+      "label": "Ticket Price",
+      "text": "Vstup stál 10 korun a bruslit jsi mohl bez časového limitu, stejně jako loni."
+    }
+  ]
+}

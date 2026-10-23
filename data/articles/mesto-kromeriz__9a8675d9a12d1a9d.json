@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tenhle most konečně dostane jméno, to je W. Silniční most přes Moravu, kterému se dosud oficiálně říkalo jen 36733-1, ponese jméno Karla Kryla. Deska s nápisem Most Karla Kryla a letopočtem přibude na zábradlí, na levý sloupek při pohledu od centra města.",
+    "Radní pro kulturu a cestovní ruch Jiří Kašík vysvětlil, že nápad vznikl loni. Kryl tehdy měl kulatá výročí hned dvě: 80 let od narození a 30 let od úmrtí. Vdova Marlene Krylová a bratr Jan Kryl s pojmenováním souhlasí a berou ho jako poctu. Souhlas rodiny je odemčený achievement.",
+    "Zapiš si čtvrtek 3. dubna, tenhle program je peak. Je to měsíc, kdy se Kryl narodil. Odpoledne se u mostu sejde vzpomínkové setkání, zazní pár jeho písní a odhalí se deska. Večer pokračuje recitál z Krylovy tvorby v Klubu Starý pivovar.",
+    "Lowkey zajímavá je i historie. Most stojí od 50. let a původně nesl jméno komunistického funkcionáře Karla Rajnocha, který se v Kroměříži narodil a žil. Jméno padlo v roce 1992, ale část starších Kroměřížanů ho používá dál. V evidenci kraje se nic nemění, zůstává tam 36733-1 a řeka Morava. Číslo si kraj nechá, jméno dostane Kryl a mně to fr fr přijde v pohodě."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.655,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:03:38.026496+00:00"
+  },
+  "headline": "Most přes Moravu dostane jméno po Krylovi. To je W pro Kroměříž",
+  "id": "mesto-kromeriz:9a8675d9a12d1a9d",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-02-14T10:07:00+01:00",
+  "rewritten_at": "2026-10-23T19:03:38.026514+00:00",
+  "sensitivity": "volny",
+  "slug": "most-pres-moravu-dostane-jmeno-po-krylovi-to-je-w-pro-kromeriz",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "stavba",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🌉🎸",
+      "label": "New Name",
+      "text": "Silniční most přes Moravu ponese jméno Karla Kryla, rodáka z Kroměříže."
+    },
+    {
+      "emoji": "🗓️🎤",
+      "label": "Big Day",
+      "text": "Odhalení desky je ve čtvrtek 3. dubna odpoledne u mostu, večer pak následuje recitál v Klubu Starý pivovar."
+    },
+    {
+      "emoji": "📄🏷️",
+      "label": "Paper Trail",
+      "text": "Zlínský kraj, kterému most patří, ho dál eviduje pod číslem 36733-1 a názvem řeky Moravy."
+    }
+  ]
+}

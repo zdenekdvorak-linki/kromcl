@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Dva podzimní termíny si klidně zapiš, tohle je lowkey main quest měsíce. První je úterý 27. října v 10 hodin. U památníku T. G. Masaryka se budou pokládat věnce k 108. výročí vzniku Československa, které vzniklo 28. října 1918. Přijdou lidé z vedení města, členové T. J. Sokol Kroměříž a zástupci kroměřížských bojovníků za svobodu. K tomu veteráni ze Zlínského kraje a legionáři z kroměřížské jednoty.",
+    "Druhá akce je ve středu 11. listopadu od 9 hodin na městském hřbitově. U Památníku obětem I. a II. světové války se pokládají věnce na Den válečných veteránů. Datum je no cap historické: 11. listopadu 1918 podepsali Spojenci s Německem příměří a na západní frontě tím skončily boje první světové války. Dorazí radnice, zástupci Armády České republiky a regionální pobočky svazu bojovníků, veteránů a legionářů.",
+    "Starosta Tomáš Opatrný to zdůvodnil tak, že tyhle svátky by si lidé měli připomínat. Den veteránů podle něj míří na vojáky, kteří bojovali za svobodu a mír v konfliktech dávných i současných. Takže budeš tam, nebo si to necháš na příští kolo?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.687,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:47:58.119618+00:00"
+  },
+  "headline": "Dva podzimní termíny na věnce v Kroměříži: 27. října a 11. listopadu",
+  "id": "mesto-kromeriz:fba5fc75a55c1f3b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-06T08:51:54+02:00",
+  "rewritten_at": "2026-10-23T19:47:58.119635+00:00",
+  "sensitivity": "volny",
+  "slug": "dva-podzimni-terminy-na-vence-v-kromerizi-27-rijna-a-11-listopadu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🇨🇿🌿",
+      "label": "Masaryk Memorial",
+      "text": "V úterý 27. října v 10 hodin se u památníku T. G. Masaryka pokládají věnce k výročí vzniku Československa."
+    },
+    {
+      "emoji": "🎖️🕊️",
+      "label": "Veterans Day",
+      "text": "Ve středu 11. listopadu od 9 hodin je na městském hřbitově pieta za Den válečných veteránů."
+    },
+    {
+      "emoji": "🪖👥",
+      "label": "Who Shows",
+      "text": "Dorazí radnice, armáda, sokolové, bojovníci za svobodu, veteráni i legionáři."
+    }
+  ]
+}

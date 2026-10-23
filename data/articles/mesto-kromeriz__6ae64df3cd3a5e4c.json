@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Radnice zase ukázala karty dřív, než se začne hrát. Na webu města najdeš přehled zakázek, které chce vypsat v roce 2025, a zatím jich je 55. U každé stojí název, odhadovaná hodnota bez DPH, termín vyhlášení a odbor úřadu, který ji zadává. Lowkey docela přehledná tabulka.",
+    "Většinu tvoří zakázky malého rozsahu, těch je 39. Dalších 14 spadá pod zákon o zadávání veřejných zakázek, tedy pod zákon č. 134/2016 Sb. Poslední 2 chystá město pro své příspěvkovky. Vedoucí odboru investic Libor Pecháček k tomu dodal, že radnice může seznam podle vývoje jednotlivých akcí patchnout.",
+    "Starosta Tomáš Opatrný připomněl, že plán zveřejnili poprvé v roce 2023 a firmy si na to už zvykly. Podle něj to pomáhá i městu, protože firmy se na výběrové řízení nachystají předem a mohou nabídnout lepší cenu. Loni radnice vyhlásila 29 zakázek malého rozsahu a 11 zákonných. Oproti odhadům na nich ušetřila zhruba 51 milionů korun, a to je no cap pořádný flex.",
+    "Kdy ti naposledy úřad ukázal rozpis dopředu?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.63,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T18:48:13.746480+00:00"
+  },
+  "headline": "Radnice vyklopila 55 zakázek na 2025 dopředu, firmy dostaly buff",
+  "id": "mesto-kromeriz:6ae64df3cd3a5e4c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2025-01-24T09:00:00+01:00",
+  "rewritten_at": "2026-10-23T18:48:13.746498+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-vyklopila-55-zakazek-na-2025-dopredu-firmy-dostaly-buff",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅🏛️",
+      "label": "Early Access",
+      "text": "Plán zakázek na rok 2025 je na webu města a firmy ho vidí s předstihem."
+    },
+    {
+      "emoji": "📋💼",
+      "label": "Contract Count",
+      "text": "V plánu je teď 55 zakázek a většina z nich je malého rozsahu."
+    },
+    {
+      "emoji": "💰📉",
+      "label": "Last Year",
+      "text": "Loni město oproti odhadům ušetřilo zhruba 51 milionů korun."
+    }
+  ]
+}

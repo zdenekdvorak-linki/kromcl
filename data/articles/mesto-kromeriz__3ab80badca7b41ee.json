@@ -1,0 +1,48 @@
+{
+  "body": [
+    "Hasiči si vzali celou scénu pro sebe, no cap. Den uniformovaných sborů patřil jim a ostatní uniformy mohly jen přihlížet. To je W pro celý hasičský tým.",
+    "Z dne je video, tak si ho pusť a mrkni, jak to vypadalo. Lowkey je to lepší než další scrollování brainrotu. Hasiči ate that, bez diskuze."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.169,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-23T19:48:32.085911+00:00"
+  },
+  "headline": "Den uniformovaných sborů vyhráli hasiči, aura jede nahoru",
+  "id": "mesto-kromeriz:3ab80badca7b41ee",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-sonnet-5-5",
+  "published": "2026-10-05T09:47:01+02:00",
+  "rewritten_at": "2026-10-23T19:48:32.085924+00:00",
+  "sensitivity": "volny",
+  "slug": "den-uniformovanych-sboru-vyhrali-hasici-aura-jede-nahoru",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚒🔥",
+      "label": "Main Character",
+      "text": "Den uniformovaných sborů patřil hasičům."
+    },
+    {
+      "emoji": "🎥📱",
+      "label": "Video Drop",
+      "text": "Z celého dne je video, takže si to můžeš pustit v mobilu."
+    },
+    {
+      "emoji": "👨‍🚒✨",
+      "label": "Uniform Squad",
+      "text": "Uniformované sbory měly svůj den a hasiči z něj udělali svůj."
+    }
+  ]
+}
