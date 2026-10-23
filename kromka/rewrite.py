@@ -255,6 +255,11 @@ def _jeden_pokus(item, zprava):
     if opsane:
         raise ValueError("Doslova převzaté formulace z oznámení: {0}".format(
             " | ".join('„{0}"'.format(o) for o in opsane[:3])))
+    podobne = zkontroluj_podobne_vety(zdroj, vystup)
+    if podobne:
+        raise ValueError(
+            "Věty skoro totožné s oznámením (shoda {0}): „{1}\"".format(
+                podobne[0][0], podobne[0][1][:110]))
     slang = styl.zkontroluj_zakazany_slang(vystup)
     if slang:
         raise ValueError("Zakázané výrazy shazující lidi: {0}".format(", ".join(slang)))
@@ -392,6 +397,48 @@ def doklad(zdroj, vystup):
         "verze_pojistek": VERZE_POJISTEK,
         "zmereno": datetime.now(timezone.utc).isoformat(),
     }
+
+
+_VETA = re.compile(r"[^.!?]+[.!?]?")
+
+
+def zkontroluj_podobne_vety(zdroj, vystup, prah=0.55):
+    """Věty, které jsou se zdrojem skoro totožné.
+
+    Kontrola na osm slov v řadě má slepé místo: když se záměny rozsypou po
+    celé větě, řetěz se nikde nenaváže, přestože věta zůstala cizí. Tohle
+    měří podobnost celé věty, takže projde jen věta napsaná opravdu znovu.
+
+    Práh je změřený, ne odhadnutý. Na vzorcích vyšlo:
+
+        maskovaná kopie se šesti záměnami      0.714
+        maskovaná kopie, stejná stavba věty    0.683
+        vlastní věta se stejnými fakty         0.000
+        vlastní věta s nadsázkou               0.111
+
+    Mezi 0.13 a 0.68 nepadlo nic, takže 0.55 leží uprostřed mezery a má
+    rezervu na obě strany.
+
+    Krátké věty se přeskakují — „Instalace začne v listopadu." se dvěma
+    způsoby říct nedá a shoda na ní nic nedokazuje.
+    """
+    from difflib import SequenceMatcher
+
+    def vety(text):
+        for kus in _VETA.findall(text):
+            slova = [s.lower() for s in _SLOVO.findall(kus)]
+            if len(slova) >= 8:
+                yield " ".join(slova), slova
+
+    zdrojove = list(vety(zdroj))
+    nalezy = []
+    for text, slova in vety(vystup):
+        for _, slova_zdroj in zdrojove:
+            pomer = SequenceMatcher(None, slova, slova_zdroj).ratio()
+            if pomer >= prah:
+                nalezy.append((round(pomer, 2), text))
+                break
+    return nalezy
 
 
 def zkontroluj_opisovani(zdroj, vystup, delka=8):

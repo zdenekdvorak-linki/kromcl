@@ -122,6 +122,44 @@ class PojistkaOpisovani(unittest.TestCase):
         self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
 
 
+class PojistkaPodobneVety(unittest.TestCase):
+    """Díra, kterou kontrola na osm slov v řadě sama neuhlídá."""
+
+    ZDROJ = ("Na třech zastávkách autobusové dopravy v Kroměříži budou "
+             "instalovány nové elektronické tabule, na kterých cestující "
+             "najdou aktuální informace o odjezdech autobusů.")
+
+    def test_maskovana_kopie_se_zachyti(self):
+        # Záměny rozsypané po celé větě: osm slov v řadě se nikde nenaváže.
+        mazane = ("Na třech zastávkách autobusové přepravy v Kroměříži budou "
+                  "umístěny nové digitální tabule, na nichž cestující najdou "
+                  "čerstvé informace o odjezdech spojů.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(self.ZDROJ, mazane), [],
+                         "tenhle případ má stará pojistka propustit")
+        self.assertTrue(rewrite.zkontroluj_podobne_vety(self.ZDROJ, mazane))
+
+    def test_stejna_stavba_jina_slova_se_zachyti(self):
+        kopie = ("Na třech zastávkách městské dopravy v Kroměříži vzniknou "
+                 "nové elektronické panely, na kterých lidé uvidí aktuální "
+                 "údaje o odjezdech autobusů.")
+        self.assertTrue(rewrite.zkontroluj_podobne_vety(self.ZDROJ, kopie))
+
+    def test_vlastni_veta_projde(self):
+        vlastni = ("Tři kroměřížské zastávky dostanou obrazovky, co ukážou, "
+                   "za jak dlouho přijede autobus.")
+        self.assertEqual(rewrite.zkontroluj_podobne_vety(self.ZDROJ, vlastni), [])
+
+    def test_nadsazka_projde(self):
+        vlastni = ("Konec hádání, jestli ti ujel bus, protože na tři zastávky "
+                   "míří tabule s živými odjezdy.")
+        self.assertEqual(rewrite.zkontroluj_podobne_vety(self.ZDROJ, vlastni), [])
+
+    def test_kratka_veta_se_nepocita(self):
+        zdroj = "Samotná instalace je plánována v následujících týdnech."
+        self.assertEqual(rewrite.zkontroluj_podobne_vety(
+            zdroj, "Instalace je plánována v následujících týdnech."), [])
+
+
 class PojistkaSlang(unittest.TestCase):
     def test_zakazany_vyraz_se_zachyti(self):
         self.assertEqual(styl.zkontroluj_zakazany_slang("Ten gyatt je mid."),

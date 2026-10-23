@@ -34,6 +34,20 @@ města, ne z náhodných produkčních dat.
 | `Rada rozhodla` + datum článku | `Rada rozhodla 23. října` | projde (datum je povolené) |
 | `vynesla 53 245 korun` | `vynesla 53245 korun` | projde (mezera v čísle) |
 
+### Pojistka na skoro totožné věty
+
+Díra, kterou kontrola na osm slov v řadě sama neuhlídá: když se záměny rozsypou
+po celé větě, řetěz se nikde nenaváže. Práh 0,55 je změřený, ne odhadnutý —
+maskované kopie vycházely 0,68 až 0,71, vlastní věty 0,00 až 0,13.
+
+| Výstup proti stejnému oznámení | Očekávání |
+|---|---|
+| `…autobusové **přepravy**… budou **umístěny** nové **digitální** tabule…` | zachytí (osm slov v řadě to propustí) |
+| `…**městské** dopravy… **vzniknou** nové elektronické **panely**…` | zachytí |
+| `Tři kroměřížské zastávky dostanou obrazovky, co ukážou, za jak dlouho přijede autobus.` | projde |
+| `Konec hádání, jestli ti ujel bus, protože na tři zastávky míří tabule…` | projde |
+| krátká faktická věta (pod 8 slov) | nepočítá se |
+
 ### Pojistka na citace
 
 | Vstup | Očekávání |
