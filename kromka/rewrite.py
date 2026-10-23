@@ -389,7 +389,6 @@ def doklad(zdroj, vystup):
                float(len(slova_vystup))) if slova_vystup else 0.0
     return {
         "nejdelsi_shoda_slov": delka,
-        "nejdelsi_shoda_ukazka": ukazka,
         "prah_shody": 8,
         "prekryv_slovniku": round(prekryv, 3),
         "primych_citaci": len(zkontroluj_citace(vystup) and [1] or []),
