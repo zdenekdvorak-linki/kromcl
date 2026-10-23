@@ -5,3 +5,8 @@ site/
 
 # Interní, nepatří do veřejného repa — obsahuje osobní kontakty.
 dopis-tiskovemu-mluvcimu.md
+
+# Pracovní složky, nepatří do repa
+nahled/
+data-nove/
+site-nove/

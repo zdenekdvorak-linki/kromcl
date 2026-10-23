@@ -8,6 +8,16 @@ pevný poměr stran, stránka při načítání nepohne layoutem.
 
 Kreslí se jedním perem: viewBox 64×64, tah 5, hranaté konce. Stejná logika
 jako zbytek webu — tlustá čára a žádné výplně.
+
+Pět témat nese skutečné kroměřížské stavby: označník MHD, Květnou zahradu
+shora, radniční věž na Velkém náměstí, kostel svatého Jana Křtitele a
+arcibiskupský zámek jako výchozí značku. Kreslené jsou ty stavby, ne konkrétní
+fotografie — stavby trvale umístěné na veřejném prostranství smí kdokoli
+zobrazit (§ 33 autorského zákona), kdežto obkreslená cizí fotka by byla
+odvozené dílo té fotky. Proto se nikdy nekreslí podle jediné předlohy.
+
+Zbylá témata zůstávají abstraktní. Vymýšlet ke „sportu" kroměřížskou budovu
+na sílu by dopadlo hůř než poctivé stopky.
 """
 
 import html
@@ -16,16 +26,22 @@ VIEWBOX = "0 0 64 64"
 
 # Každý tvar je seznam SVG elementů bez atributů tahu; ty doplní _svg().
 TVARY = {
-    "doprava": [  # čelo autobusu
-        '<rect x="12" y="9" width="40" height="36" rx="4"/>',
-        '<path d="M12 28h40"/>',
-        '<circle cx="22" cy="52" r="5"/>',
-        '<circle cx="42" cy="52" r="5"/>',
+    "doprava": [  # kulatý označník zastávky a autobus za ním
+        '<path d="M14 56V20"/>',
+        '<circle cx="14" cy="12" r="8"/>',
+        '<rect x="26" y="24" width="30" height="24" rx="3"/>',
+        '<path d="M26 36h30"/>',
+        '<circle cx="34" cy="52" r="4"/>',
+        '<circle cx="48" cy="52" r="4"/>',
     ],
-    "kultura": [  # dvě trámcem spojené noty
-        '<path d="M26 44V14l20-4v30"/>',
-        '<circle cx="20" cy="46" r="6"/>',
-        '<circle cx="40" cy="42" r="6"/>',
+    "kultura": [  # kostel svatého Jana Křtitele: kupole mezi dvěma věžemi
+        '<path d="M20 36a12 12 0 0 1 24 0"/>',
+        '<rect x="29" y="14" width="6" height="8"/>',
+        '<path d="M32 14V8"/>',
+        '<path d="M12 54V30l5-6 5 6v24"/>',
+        '<path d="M42 54V30l5-6 5 6v24"/>',
+        '<path d="M20 36v18M44 36v18"/>',
+        '<path d="M6 54h52"/>',
     ],
     "sport": [  # stopky
         '<circle cx="32" cy="38" r="18"/>',
@@ -49,19 +65,24 @@ TVARY = {
         '<path d="M44 14v14"/>',
         '<rect x="37" y="28" width="14" height="11"/>',
     ],
-    "radnice": [  # radnice s hodinami
-        '<path d="M10 53V26L32 12l22 14v27z"/>',
-        '<path d="M5 53h54"/>',
-        '<circle cx="32" cy="31" r="6"/>',
+    "radnice": [  # radniční věž na Velkém náměstí
+        '<path d="M32 2 23 13h18z"/>',
+        '<rect x="24" y="13" width="16" height="43"/>',
+        '<circle cx="32" cy="26" r="5"/>',
+        '<path d="M24 42h16"/>',
+        '<path d="M12 56h40"/>',
     ],
-    "volby": [  # volební urna s lístkem
-        '<rect x="10" y="28" width="44" height="26" rx="2"/>',
-        '<path d="M24 28v-4h16v4"/>',
-        '<rect x="26" y="6" width="12" height="16"/>',
+    "volby": [  # urna se štěrbinou a lístkem, který do ní padá
+        '<rect x="8" y="30" width="48" height="24" rx="2"/>',
+        '<path d="M23 30h18"/>',
+        '<path d="m28 31 5-22 13 3-4 19z"/>',
     ],
-    "priroda": [  # strom
-        '<circle cx="32" cy="24" r="16"/>',
-        '<path d="M32 40v16"/>',
+    "priroda": [  # Květná zahrada shora: rotunda uprostřed radiálního parteru
+        '<rect x="6" y="6" width="52" height="52"/>',
+        '<circle cx="32" cy="32" r="9"/>',
+        '<path d="M32 23v-4"/>',
+        '<path d="m25 25-8-8M39 25l8-8M25 39l-8 8M39 39l8 8"/>',
+        '<path d="M32 6v8M32 50v8M6 32h8M50 32h8"/>',
     ],
     "lide": [  # dvě postavy
         '<circle cx="22" cy="22" r="8"/>',
@@ -75,12 +96,15 @@ TVARY = {
         '<path d="M22 10v10M42 10v10"/>',
         '<path d="m32 34 3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>',
     ],
-    # Když téma nesedí na nic z výše uvedeného: značka města zjednodušená na
-    # věž s makovicí, aby to pořád bylo Kroměříž a ne obecný otazník.
+    # Když téma nesedí na nic z výše uvedeného: arcibiskupský zámek, tedy
+    # cibulová báň nad věží a dlouhé křídlo. Pořád Kroměříž, ne obecný otazník.
     "_vychozi": [
-        '<path d="M20 56V24l12-12 12 12v32z"/>',
-        '<path d="M14 56h36"/>',
-        '<circle cx="32" cy="34" r="5"/>',
+        '<path d="M32 2c-7 8-8 13 0 17 8-4 7-9 0-17z"/>',
+        '<path d="M29 19h6v5h-6z"/>',
+        '<rect x="24" y="24" width="16" height="22"/>',
+        '<circle cx="32" cy="33" r="4"/>',
+        '<path d="M6 46h52v10H6z"/>',
+        '<path d="M18 46v10M46 46v10"/>',
     ],
 }
 
