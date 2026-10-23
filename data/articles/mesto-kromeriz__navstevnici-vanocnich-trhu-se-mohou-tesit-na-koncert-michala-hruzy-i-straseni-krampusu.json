@@ -1,22 +1,22 @@
 {
   "author": "Šárka Kučerová",
   "body": [
-    "Ayo, advent se blíží a Kroměříž loadne sváteční režim. První adventní neděle 29. 11. spustí předvánoční čas a zároveň trhy s tradičním názvem Šťastné a veselé. Ve stejný den se na Velkém náměstí rozsvítí vánoční strom a v centru i kolem hlavních silničních tahů naběhne světelná výzdoba. Starosta Tomáš Opatrný to shrnul tak, že světla, vůně a chutě vytvoří na náměstí ostrůvek klidu a pohody. Dospělí si podle něj odpočinou od předvánočního shonu a děti jim zkrátí čekání na Vánoce a dárky.",
-    "Food quest běží od 29. listopadu do 23. prosince: svařák, punč, čaj, káva a něco dobrého k jídlu pod světýlky. Stánky s občerstvením budou k dispozici 25 předvánočních dní, tedy celý advent, a dokonce i v mezisvátečním období od 25. do 31. prosince. Stánky s drobnými dárky, ozdobami, svíčkami, jmelím a dekoracemi mají mnohem složitější rozvrh. Otevřou v neděli 29. listopadu, pak od pátku 4. do neděle 6. prosince a od pátku 11. prosince nepřetržitě do 23. prosince. Prodejní doba je od pondělí do čtvrtka od 14 do 19 hodin a od pátků do nedělí od 10 do 20 hodin.",
-    "Na pódiu se objeví Petr Bende (29. 11.), skupina Turbo (12. 12.), Neřež Trio (13. 12.), Michal Hrůza (19. 12.) a Heidi Janků (20. 12.). Za místní scénu to jsou kapely a sbory Stinga, Tabásek Partyja, Moravan a Jamtour. Čekají tě i kovářská a sklářská dílna, vystoupení žáků základních a uměleckých škol a opékání špekáčků. Sobota 5. prosince patří mikulášskému programu: zpívání s herci a herečkami ze Slováckého divadla Divadelní koleDivy a ohňová a Krampus show. Program má podle organizátorů oslovit různé věkové skupiny.",
-    "Letos přibyly dva nové světelné fotopointy, takže vánoční fotky mají nový spawn point. Prvním je přibližně tři metry vysoká světelná baňka, druhým světelná křídla. Atmosféru dotvoří betlém, chlév a Ježíškova pošta, jejíž odeslání doprovodí průvod s betlémským světlem. Trhy i program jako každý rok připravuje Dům kultury v Kroměříži."
+    "Advent v Kroměříži odstartuje v neděli 29. listopadu. Ten den začnou na Velkém náměstí trhy Šťastné a veselé, zapne se světelná výzdoba v centru i kolem hlavních tahů a rozsvítí se vánoční strom. Svařák, punč, čaj, kávu i něco k snědku seženeš u stánků do 23. prosince. Občerstvení funguje i mezi svátky, od 25. do 31. prosince.",
+    "Se zbožím to jde jinak. Prodejci dárků, svíček, jmelí a ozdob přijdou 29. listopadu, potom o víkendu 4.–6. prosince a od pátku 11. prosince budou na místě bez přestávky až do 23. prosince. Stánky mají otevřeno od pondělí do čtvrtka 14–19 hodin, od pátku do neděle 10–20 hodin.",
+    "Na pódiu se vystřídají Petr Bende (29. 11.), Turbo (12. 12.), Neřež Trio (13. 12.), Michal Hrůza (19. 12.) a Heidi Janků (20. 12.). Domácí scénu zastoupí Jamtour, Moravan, Tabásek Partyja a Stinga. Dál program obsahuje kovářskou a sklářskou dílnu, vystoupení školáků a opékání špekáčků.",
+    "V sobotu 5. prosince běží mikulášský program. Herci Slováckého divadla budou s lidmi zpívat v pořadu Divadelní koleDivy a uvidíš ohňovou show i Krampus show. Přibyly také dva světelné fotopointy, baňka vysoká přibližně 3 metry a světelná křídla, takže profilovka na zimu je vyřešená. Stojí tu i betlém s chlévem a Ježíškova pošta se odesílá s průvodem a betlémským světlem. Celé to pořádá Dům kultury v Kroměříži."
   ],
-  "headline": "Kroměřížské vánoční trhy startují 29. 11. s Hrůzou, krampusy a světelnou baňkou",
+  "headline": "Kroměříž od 29. 11. zapíná advent: Hrůza, Krampus show a svařák na Velkém náměstí",
   "id": "mesto-kromeriz:navstevnici-vanocnich-trhu-se-mohou-tesit-na-koncert-michala-hruzy-i-straseni-krampusu",
   "image_caption": "",
-  "image_h": 819,
-  "image_local": "navstevnici-vanocnich-trhu-se-mohou-tesit-na-koncert-michala-hruzy-i-straseni-krampusu.webp",
+  "image_h": 0,
+  "image_local": "",
   "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/5/1/csm_20261022_vantrhy1_3dab0f0e3a.jpg",
-  "image_w": 1200,
+  "image_w": 0,
   "model": "claude-sonnet-5-5",
   "perex": "Poslední listopadová neděle 29. 11. - první adventní – zahájí sváteční předvánoční čas v Kroměříži. Zároveň bude také zahajovacím dnem trhů s tradičním názvem Šťastné a veselé. V ten den se na Velkém náměstí rozsvítí vánoční strom a v centru města a kolem hlavních silničních tahů světelná výzdoba. „Sváteční atmosféra, kterou zdůrazní světla, vůně i chutě, vytvoří na Velkém náměstí ostrůvek klidu a pohody a přinese dospělým možnost oddychu v předvánočním shonu a dětem zkrátí čekání na Vánoce a dárky. Užijme si společně tento kouzelný čas,“ řekl starosta Tomáš Opatrný.",
   "published": "2026-10-22T06:20:00+02:00",
-  "rewritten_at": "2026-10-23T14:11:20.178484+00:00",
+  "rewritten_at": "2026-10-23T16:22:27.096027+00:00",
   "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "navstevnici-vanocnich-trhu-se-mohou-tesit-na-koncert-michala-hruzy-i-straseni-krampusu",
@@ -30,19 +30,19 @@
   "title": "Návštěvníci vánočních trhů se mohou těšit na koncert Michala Hrůzy i strašení krampusů",
   "tldr": [
     {
-      "emoji": "🎄✨",
-      "label": "Season Start",
-      "text": "Trhy Šťastné a veselé začnou v neděli 29. 11. a ve stejný den se na Velkém náměstí rozsvítí strom."
+      "emoji": "🎄🍷",
+      "label": "Start Date",
+      "text": "Trhy Šťastné a veselé začínají v neděli 29. listopadu a stánky s občerstvením stojí až do Štědrého týdne."
     },
     {
       "emoji": "🎤🔥",
-      "label": "Lineup Drop",
-      "text": "Na pódiu zahrají mimo jiné Petr Bende, Turbo, Neřež Trio, Heidi Janků a Michal Hrůza."
+      "label": "Live Lineup",
+      "text": "Michal Hrůza zahraje 19. prosince a to je peak, vedle něj vystoupí Petr Bende, Turbo, Neřež Trio a Heidi Janků."
     },
     {
-      "emoji": "⏰🍷",
+      "emoji": "⏰🛍️",
       "label": "Opening Hours",
-      "text": "Stánky mají otevřeno od pondělí do čtvrtka 14 až 19 hodin a od pátku do neděle 10 až 20 hodin."
+      "text": "Pondělí až čtvrtek je otevřeno 14–19 hodin, od pátku do neděle 10–20 hodin."
     }
   ],
   "url": "https://www.mesto-kromeriz.cz/aktuality/detail/navstevnici-vanocnich-trhu-se-mohou-tesit-na-koncert-michala-hruzy-i-straseni-krampusu"

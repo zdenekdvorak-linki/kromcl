@@ -13,8 +13,7 @@ Pojistky proti vymýšlení jsou dvě a obě jsou strojové, ne jen prosba v pro
 import json
 import re
 
-from . import config
-
+from . import config, styl
 CITLIVOST_PROMPT = """Jsi klasifikátor zpravodajských článků z webu českého města.
 
 Odpověz JEDNÍM slovem, nic dalšího:
@@ -32,35 +31,55 @@ Titulek: {titulek}
 Text:
 {text}"""
 
-PREPIS_PROMPT = """Přepisuješ tiskové zprávy města Kroměříž pro web {brand} tak,
-aby je četli lidé mezi 15 a 25 lety. Píšeš česky.
+ZPRAVA_PROMPT = """Jsi redaktor webu {brand}, který píše o dění v Kroměříži.
+
+Právě sis přečetl oznámení radnice. Teď o té věci napíšeš VLASTNÍ zprávu.
+Nepřepisuješ cizí text, informuješ o události.
+
+Rozdíl je zásadní a právní. Město má na svém webu „Všechna práva vyhrazena —
+použití obsahu nebo jeho části je možné pouze se souhlasem města Kroměříž."
+Souhlas nemáme. Fakta jsou volná a smíš je použít; formulace města nikoliv.
+
+## Jak z oznámení udělat vlastní zprávu
+
+1. Přečti si oznámení a vypiš si holá fakta: co, kdo, kdy, kde, za kolik.
+2. Zavři ho a napiš zprávu z těch faktů. Vlastní stavbou, vlastním pořadím.
+3. Začni tím, co je pro čtenáře v Kroměříži nejdůležitější, i kdyby to
+   v oznámení bylo až ve třetím odstavci.
+4. ŽÁDNÁ souvislá sekvence delší než šest slov se nesmí shodovat s oznámením.
+   Výjimka jsou vlastní jména, názvy institucí a ustálené názvy akcí.
+5. Nepřebírej pořadí odstavců ani stavbu vět z oznámení.
+6. Výčty a seznamy přeformuluj taky. Právě u nich se nejčastěji stane, že je
+   přepíšeš slovo od slova. Pojmenuj věci po svém a čísla piš číslicemi:
+   „osmi mateřských škol s třinácti pracovišti, šesti základních škol"
+   → „8 školek na 13 adresách a 6 základek".
 
 ## Tón
 
 {ton}
 
+{jazyk}
+
+{proti_slopu}
+
 ## Pravidla, která se neporušují
 
-1. Nesmíš přidat JEDINÝ fakt, který není ve zdroji. Žádná čísla, data, jména,
-   částky, místa ani důvody navíc. Když zdroj neříká proč, ty taky ne.
-2. Všechna čísla, data a částky opiš přesně tak, jak jsou ve zdroji.
+1. Nesmíš přidat JEDINÝ fakt, který ti oznámení nedalo. Žádná čísla, data,
+   jména, částky, místa ani důvody navíc. Když zdroj neříká proč, ty taky ne.
+2. Čísla, data a částky musí sedět přesně.
 3. Nepoužívej uvozovky a necituj nikoho přímo. Co někdo řekl, parafrázuj:
-   "Hebnar to zdůvodnil tím, že..." Ne "Hebnar řekl: ...".
+   „Hebnar to zdůvodnil tím, že…" Ne „Hebnar řekl: …".
 4. Jména a funkce veřejných osob zachovej správně. Nikomu se neposmívej.
-   Vtip patří situaci, nikdy konkrétnímu člověku.
-5. Nehodnoť politicky. Výsledek voleb je fakt, ne příležitost k názoru.
+   Vtip patří situaci a úřednímu jazyku, nikdy konkrétnímu člověku.
+5. Nehodnoť politicky. Výsledek voleb je fakt, ze kterého se nedělá názor.
 6. Nadpis nesmí končit tečkou.
-7. Nikdy nemluv o zdroji, o tiskové zprávě ani o tom, že něco přepisuješ.
-   Čtenář originál nevidí. Píšeš zprávu, ne komentář ke zprávě.
-   ŠPATNĚ: "Ve zdroji se tomu říká první ovoce." SPRÁVNĚ: vlastní formulace.
+7. Nikdy nemluv o oznámení, o tiskové zprávě ani o tom, odkud to víš.
+   Čtenář žádný jiný text nevidí. Píšeš zprávu, ne komentář k cizí zprávě.
 8. Číslo nikdy nepoužívej jako vtip vedle jiného čísla. Dvě různá čísla
    v jedné větě čtenáře zmatou.
-   ŠPATNĚ: "Podepsalo se 16 zastupitelů, takže je to pětičlenný squad."
-9. Žádné e-maily, telefonní čísla ani čísla účtů. Kontakty patří do originálu,
-   ne sem. Když je ve zdroji kontakt, napiš "kontakt najdeš v originále".
-10. Vybírej, nepřevyprávěj. Zdroj má odstavců víc, než se ti vejde — vezmi to,
-   co má pro čtenáře cenu, a zbytek vynech. Odstavec má do 80 slov.
-   Nepřepisuj zdroj větu po větě, hlavně ne historické odbočky na konci.
+9. Žádné e-maily, telefonní čísla ani čísla účtů.
+10. Vybírej, nepřevyprávěj. Vezmi, co má pro čtenáře cenu, zbytek vynech.
+   Odstavec má do 80 slov. Historické odbočky a výčty institucí vypusť.
 
 ## Výstup
 
@@ -79,7 +98,7 @@ tldr má přesně 3 položky. body má 2 až 4 odstavce. tags jsou 1 až 3 krát
 česká slova malými písmeny z okruhu: doprava, kultura, sport, školství, peníze,
 stavba, radnice, volby, příroda, lidé, akce.
 
-## Zdroj
+## Oznámení radnice, ze kterého si bereš fakta
 
 Titulek: {titulek}
 Rubrika: {rubrika}
@@ -87,11 +106,9 @@ Datum: {datum}
 
 {text}"""
 
-TON_VOLNY = """Plný internetový slang, jak ho píše generace Z. Anglicismy, "ayo",
-"no cap", "fr", "W" a "L", "aura", "cooked", "mid", "based", herní metafory
-(buff, nerf, patch, side quest, achievement). TL;DR odrážky mají anglický label
-a emoji na konci. Buď vtipný, ale vtip dělej ze situace a z úřednického jazyka
-originálu, ne z lidí."""
+TON_VOLNY = """Mluvený jazyk generace Alpha, jak se píše na telefonu. TL;DR
+odrážky mají anglický label a emoji na konci. Buď vtipný, ale vtip dělej ze
+situace a z úředního jazyka, nikdy z lidí."""
 
 TON_NEUTRALNI = """Krátké věty, žádný úřednický jazyk, oslovuj čtenáře. ŽÁDNÝ
 slang, ŽÁDNÉ emoji, ŽÁDNÉ anglické labely, ŽÁDNÉ vtipy. Tohle je citlivé téma a
@@ -189,9 +206,11 @@ def prepis(item, citlivost, pokusy=2):
     Jeden opravný pokus, protože rozbitý JSON nebo vymyšlené číslo bývá
     náhoda, ne systematická chyba. Víc pokusů už jen platí za totéž.
     """
-    zprava = PREPIS_PROMPT.format(
+    zprava = ZPRAVA_PROMPT.format(
         brand=config.BRAND,
         ton=TON_VOLNY if citlivost == "volny" else TON_NEUTRALNI,
+        jazyk=styl.pravidla_jazyka() if citlivost == "volny" else "",
+        proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
         titulek=item["title"],
         rubrika=item.get("rubrika") or "—",
         datum=(item.get("published") or "")[:10],
@@ -204,7 +223,12 @@ def prepis(item, citlivost, pokusy=2):
         except (ValueError, KeyError, TypeError) as exc:
             posledni = exc
             if pokus < pokusy - 1:
-                zprava += "\n\n## Předchozí pokus neprošel\n{0}\nOprav to.".format(exc)
+                zprava += (
+                    "\n\n## Předchozí pokus neprošel\n{0}\n"
+                    "Oprav přesně tohle a zbytek nech být. Jde-li o převzaté "
+                    "formulace, přepiš ty pasáže vlastními slovy; fakta v nich "
+                    "zůstávají, mění se jen pojmenování a stavba věty."
+                ).format(exc)
     raise ValueError(str(posledni))
 
 
@@ -226,6 +250,16 @@ def _jeden_pokus(item, zprava):
     kontakty = zkontroluj_kontakty(vystup)
     if kontakty:
         raise ValueError("Výstup obsahuje kontaktní údaje: {0}".format(", ".join(kontakty)))
+    opsane = zkontroluj_opisovani(zdroj, vystup)
+    if opsane:
+        raise ValueError("Doslova převzaté formulace z oznámení: {0}".format(
+            " | ".join('„{0}"'.format(o) for o in opsane[:3])))
+    slang = styl.zkontroluj_zakazany_slang(vystup)
+    if slang:
+        raise ValueError("Zakázané výrazy shazující lidi: {0}".format(", ".join(slang)))
+    antiteze = styl.zkontroluj_antitezi(vystup)
+    if antiteze:
+        raise ValueError("Antiteze „A, ne B\": {0}".format(antiteze[0]))
     if data["headline"].rstrip().endswith("."):
         data["headline"] = data["headline"].rstrip().rstrip(".")
     return data
@@ -293,6 +327,54 @@ def zkontroluj_cisla(zdroj, vystup, datum=""):
 _EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 # České telefonní číslo: 9 číslic, volitelně s předvolbou a mezerami.
 _TELEFON = re.compile(r"(?:\+420[\s ]?)?(?:\d{3}[\s ]){2}\d{3}\b")
+
+
+_SLOVO = re.compile(r"[0-9a-záčďéěíňóřšťúůýž]+", re.IGNORECASE | re.UNICODE)
+
+# Ustálené úřední a právní termíny. Nejsou to autorské formulace, jsou to
+# názvy věcí, které se jinak pojmenovat nedají, a jejich shoda tedy neznamená
+# opisování. Fungují jako lepidlo: samy o sobě nesmí vyrobit nález.
+# Jen vlastní jména a názvy, které opravdu nemají jinou podobu. Všechno
+# ostatní, co zní úředně, má lidský tvar ve slovníku (příspěvková organizace →
+# příspěvkovka) a model ho má použít, ne spoléhat na výjimku.
+USTALENE = [
+    "integrovaná doprava zlínského kraje", "zlínského kraje",
+    "odbor školství mládeže a tělovýchovy", "svč šipka",
+    "kroměřížské technické služby", "komise rady pro bezpečnost",
+]
+
+# Prázdná slova, která také nic nedokazují.
+_SPONY = {"a", "i", "o", "u", "v", "ve", "s", "se", "z", "ze", "na", "do", "od",
+          "po", "za", "k", "ke", "pro", "při", "že", "je", "jsou", "byl",
+          "byla", "bylo", "budou", "bude", "to", "ten", "ta", "tak", "jako",
+          "jeho", "jejich", "který", "která", "které", "si", "už", "také"}
+
+
+def zkontroluj_opisovani(zdroj, vystup, delka=8):
+    """Souvislé sekvence slov doslova převzaté z oznámení.
+
+    Fakta jsou volná, formulace města ne. Tohle je jediná pojistka, která to
+    hlídá strojově — prompt sám o sobě model od opisování neodradí.
+
+    Osm slov je zvolené tak, aby propadly názvy institucí a akcí, ale neprošla
+    převzatá věta. Nález navíc musí po odečtení ustálených termínů a spojek
+    obsahovat aspoň čtyři vlastní slova; jinak by stačilo, aby se potkaly dva
+    úřední názvy, a hlásili bychom opisování tam, kde žádné není.
+    """
+    def ngramy(text):
+        slova = [s.lower() for s in _SLOVO.findall(text)]
+        return {" ".join(slova[i:i + delka])
+                for i in range(len(slova) - delka + 1)}
+
+    nalezy = []
+    for kus in sorted(ngramy(zdroj) & ngramy(vystup)):
+        zbytek = kus
+        for termin in USTALENE:
+            zbytek = zbytek.replace(termin, " ")
+        vlastni = [s for s in zbytek.split() if s not in _SPONY]
+        if len(vlastni) >= 4:
+            nalezy.append(kus)
+    return nalezy
 
 
 def zkontroluj_kontakty(vystup):

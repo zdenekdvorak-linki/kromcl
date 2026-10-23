@@ -10,9 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from kromka import config, htmlutil, rewrite  # noqa: E402
-
-
+from kromka import config, htmlutil, piktogramy, rewrite, styl  # noqa: E402
 class Slugify(unittest.TestCase):
     """Pravidla ověřená proti skutečným URL na webu města."""
 
@@ -100,6 +98,82 @@ class PojistkaKontakty(unittest.TestCase):
 
     def test_datum_a_castka_nejsou_telefon(self):
         self.assertEqual(rewrite.zkontroluj_kontakty("Ušetří 1,2 milionu korun do 23. prosince"), [])
+
+
+class PojistkaOpisovani(unittest.TestCase):
+    ZDROJ = ("Kroměřížská radnice šetří díky fotovoltaickým elektrárnám "
+             "instalovaným na budovách města a jeho příspěvkových organizací "
+             "ročně částku zhruba 1,2 milionu korun.")
+
+    def test_opsana_veta_se_zachyti(self):
+        opsane = ("Kroměřížská radnice šetří díky fotovoltaickým elektrárnám "
+                  "instalovaným na budovách zhruba 1,2 milionu.")
+        self.assertTrue(rewrite.zkontroluj_opisovani(self.ZDROJ, opsane))
+
+    def test_vlastni_slova_projdou(self):
+        self.assertEqual(rewrite.zkontroluj_opisovani(
+            self.ZDROJ, "Solárky ušetří městu 1,2 milionu ročně."), [])
+
+    def test_nazev_instituce_projde(self):
+        zdroj = ("Tabule instalujeme ve spolupráci s Integrovanou dopravou "
+                 "Zlínského kraje na třech zastávkách v Kroměříži.")
+        vystup = ("Dělá to město spolu s Integrovanou dopravou Zlínského kraje "
+                  "a tabule budou na třech zastávkách.")
+        self.assertEqual(rewrite.zkontroluj_opisovani(zdroj, vystup), [])
+
+
+class PojistkaSlang(unittest.TestCase):
+    def test_zakazany_vyraz_se_zachyti(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Ten gyatt je mid."),
+                         ["gyatt"])
+
+    def test_delsi_tvar_vyhraje(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Klasické mogging."),
+                         ["mogging"])
+
+    def test_povoleny_slang_projde(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang(
+            "Radnice to posunula, W rozhodnutí, aura +100."), [])
+
+    def test_uvnitr_jineho_slova_neplati(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Rozbopovaný nesmysl"), [])
+
+
+class PojistkaAntiteze(unittest.TestCase):
+    def test_carka_ne(self):
+        self.assertTrue(styl.zkontroluj_antitezi("Je to volba, ne podmínka."))
+
+    def test_neslo_ale(self):
+        self.assertTrue(styl.zkontroluj_antitezi("Nešlo o výměnu, ale o srovnání."))
+
+    def test_nejde_o_jde_o(self):
+        self.assertTrue(styl.zkontroluj_antitezi("Nejde o peníze, jde o princip."))
+
+    def test_bezna_veta_projde(self):
+        self.assertEqual(styl.zkontroluj_antitezi(
+            "Strom se rozsvítí v neděli a trhy běží do 23. prosince."), [])
+
+
+class Piktogramy(unittest.TestCase):
+    def test_tema_podle_prvniho_znameho_tagu(self):
+        self.assertEqual(piktogramy.pro_tema(["neznámé", "doprava"]), "doprava")
+
+    def test_diakritika_v_tagu(self):
+        self.assertEqual(piktogramy.pro_tema(["školství"]), "skolstvi")
+
+    def test_vychozi_kdyz_nic_nesedi(self):
+        self.assertEqual(piktogramy.pro_tema(["cosi"]), "_vychozi")
+        self.assertEqual(piktogramy.pro_tema([]), "_vychozi")
+
+    def test_svg_je_dekorativni_bez_popisu(self):
+        self.assertIn('aria-hidden="true"', piktogramy.svg("doprava"))
+
+    def test_svg_s_popisem_ma_roli(self):
+        self.assertIn('role="img"', piktogramy.svg("doprava", popis="Téma: doprava"))
+
+    def test_vsechna_temata_maji_tvar(self):
+        for tema in piktogramy.dostupna_temata():
+            self.assertTrue(piktogramy.svg(tema).count("<") > 2, tema)
 
 
 class ExtrakceHtml(unittest.TestCase):

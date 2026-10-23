@@ -1,6 +1,10 @@
 name: Přepis a nasazení
 
 on:
+  push:
+    branches: [main]
+    # Commit od bota mění jen data/; bez tohohle by se spouštěl sám dokola.
+    paths-ignore: ["data/**"]
   schedule:
     # Město publikuje zhruba jeden článek denně, hodina stačí s rezervou.
     - cron: "17 * * * *"

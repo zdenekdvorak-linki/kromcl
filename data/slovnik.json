@@ -1,0 +1,641 @@
+{
+  "_comment": "Slovník jazyka KROMCL. Doplňuj příkazem `python -m kromka slovnik --pridej`, ne ruční editací. Klíč `misto` říká, jakou běžnou nebo úřední formulaci výraz nahrazuje — podle toho ho prompt nabízí. `kategorie`: slang (výrazy generace Alpha) nebo uredni (lidový tvar úředního termínu). `stav`: zive | ironicke | zastarale | zakazane.",
+  "_overeno": "2026-10-23",
+  "vyrazy": [
+    {
+      "vyraz": "aura",
+      "misto": [
+        "respekt",
+        "jak někdo působí",
+        "image"
+      ],
+      "vyznam": "neviditelné skóre cool, dá se získat i ztratit",
+      "tvary": [
+        "aura farming",
+        "+1000 aura",
+        "minus aura"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz, aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "W",
+      "misto": [
+        "výhra",
+        "dobrý tah",
+        "povedlo se"
+      ],
+      "vyznam": "win, výhra; funguje i jako přídavné jméno",
+      "tvary": [
+        "W rozhodnutí",
+        "to je W"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "L",
+      "misto": [
+        "prohra",
+        "průšvih",
+        "nepovedlo se"
+      ],
+      "vyznam": "loss, prohra",
+      "tvary": [
+        "chytit L",
+        "to je L"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "cooked",
+      "misto": [
+        "v háji",
+        "hotový",
+        "bez šance"
+      ],
+      "vyznam": "vyřízený, nemá to šanci dopadnout",
+      "tvary": [
+        "jsme cooked"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "crash out",
+      "misto": [
+        "vybouchnout",
+        "ztratit nervy"
+      ],
+      "vyznam": "zhroucení nebo výbuch vzteku",
+      "tvary": [
+        "crashnout out"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "mid",
+      "misto": [
+        "průměrné",
+        "nic moc",
+        "nuda"
+      ],
+      "vyznam": "podprůměrné až nijaké",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "atlaso.cz, genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "no cap",
+      "misto": [
+        "fakt",
+        "bez kecu",
+        "vážně"
+      ],
+      "vyznam": "nekecám",
+      "tvary": [
+        "cap = lež"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "peak",
+      "misto": [
+        "skvělé",
+        "špička",
+        "nejlepší"
+      ],
+      "vyznam": "vrchol, to nejlepší; nahradilo starší „hustý\"",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "based",
+      "misto": [
+        "odvážné",
+        "upřímné",
+        "respekt za to"
+      ],
+      "vyznam": "odvážné a autentické, myšleno obdivně",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "NPC",
+      "misto": [
+        "bez vlastního názoru",
+        "jede na autopilota"
+      ],
+      "vyznam": "kdo se chová předvídatelně a bez vlastního názoru",
+      "tvary": [
+        "NPC chování"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "delulu",
+      "misto": [
+        "naivní",
+        "mimo realitu",
+        "něco si namlouvá"
+      ],
+      "vyznam": "kdo si něco namlouvá, většinou vtipně a o sobě",
+      "tvary": [
+        "stay delulu"
+      ],
+      "stav": "zive",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "rage bait",
+      "misto": [
+        "provokace",
+        "naschvál vyrobené, aby to naštvalo"
+      ],
+      "vyznam": "obsah vyrobený pro vyvolání vzteku",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "larp",
+      "misto": [
+        "předstírat",
+        "hrát si na"
+      ],
+      "vyznam": "předstírat roli nebo identitu",
+      "tvary": [
+        "larpovat"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "side quest",
+      "misto": [
+        "vedlejší věc",
+        "něco bokem"
+      ],
+      "vyznam": "vedlejší úkol; main quest je ten hlavní",
+      "tvary": [
+        "main quest"
+      ],
+      "stav": "zive",
+      "zdroj": "herní slovník",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "patch",
+      "misto": [
+        "úprava",
+        "oprava",
+        "změna"
+      ],
+      "vyznam": "zásah, který něco opraví nebo změní",
+      "tvary": [
+        "patchnout"
+      ],
+      "stav": "zive",
+      "zdroj": "herní slovník",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "buff",
+      "misto": [
+        "vylepšení",
+        "posílení"
+      ],
+      "vyznam": "zlepšení; opak je nerf",
+      "tvary": [
+        "nerf",
+        "buffnout"
+      ],
+      "stav": "zive",
+      "zdroj": "herní slovník",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "achievement",
+      "misto": [
+        "úspěch",
+        "splněno"
+      ],
+      "vyznam": "odemčený úspěch",
+      "tvary": [
+        "odemknout achievement"
+      ],
+      "stav": "zive",
+      "zdroj": "herní slovník",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "unc",
+      "misto": [
+        "zastaralé",
+        "mimo",
+        "strejcovské"
+      ],
+      "vyznam": "out of touch, mimo dobu",
+      "tvary": [
+        "unc behavior"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "Ohio",
+      "misto": [
+        "divné",
+        "mimo mísu",
+        "podivnost"
+      ],
+      "vyznam": "divné až prokleté, z memu „only in Ohio\"",
+      "tvary": [
+        "Ohio-coded"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz, genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "lowkey",
+      "misto": [
+        "tak trochu",
+        "po pravdě"
+      ],
+      "vyznam": "mírně, potichu; opak je highkey",
+      "tvary": [
+        "highkey"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "fr",
+      "misto": [
+        "fakt",
+        "vážně"
+      ],
+      "vyznam": "for real",
+      "tvary": [
+        "fr fr"
+      ],
+      "stav": "zive",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "ate",
+      "misto": [
+        "zvládl to perfektně",
+        "parádní výkon"
+      ],
+      "vyznam": "odvedl to dokonale a se stylem",
+      "tvary": [
+        "ate that"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "rizz",
+      "misto": [
+        "charisma",
+        "umí to s lidmi"
+      ],
+      "vyznam": "charisma, hlavně při balení",
+      "tvary": [
+        "rizzovat",
+        "W rizz",
+        "L rizz"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz, aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "flexit",
+      "misto": [
+        "machrovat",
+        "předvádět se"
+      ],
+      "vyznam": "předvádět status nebo výhodu",
+      "tvary": [
+        "flexnout"
+      ],
+      "stav": "zive",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "ghostnout",
+      "misto": [
+        "přestat odpovídat",
+        "zmizet"
+      ],
+      "vyznam": "bez vysvětlení přestat komunikovat",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "cringe",
+      "misto": [
+        "trapné",
+        "nepříjemné"
+      ],
+      "vyznam": "trapnost, stud za někoho jiného",
+      "tvary": [
+        "cringe moment"
+      ],
+      "stav": "zive",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "brainrot",
+      "misto": [
+        "nesmyslný obsah",
+        "digitální únava"
+      ],
+      "vyznam": "obsah tak nesmyslný, až z něj měkne mozek",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "sigma",
+      "misto": [
+        "samotář",
+        "nezávislý typ"
+      ],
+      "vyznam": "úspěšný samotář; dnes skoro vždy ironicky",
+      "tvary": [],
+      "stav": "ironicke",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "GigaChad",
+      "misto": [
+        "ideál",
+        "borec"
+      ],
+      "vyznam": "přehnaný ideál mužnosti, ironicky",
+      "tvary": [],
+      "stav": "ironicke",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "skibidi",
+      "misto": [
+        "divné",
+        "cool",
+        "nic konkrétního"
+      ],
+      "vyznam": "záměrný nesmysl; zdroje čekají, že odejde",
+      "tvary": [],
+      "stav": "ironicke",
+      "zdroj": "atlaso.cz, genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "6-7",
+      "misto": [
+        "tak nějak",
+        "nic moc"
+      ],
+      "vyznam": "meme bez pevného významu; mimo svůj kontext působí trapně",
+      "tvary": [
+        "six-seven"
+      ],
+      "stav": "ironicke",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "swag",
+      "misto": [
+        "styl"
+      ],
+      "vyznam": "starší slang, dnes jen ironicky",
+      "tvary": [
+        "yolo"
+      ],
+      "stav": "zastarale",
+      "zdroj": "aktualnibod.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "gyatt",
+      "misto": [],
+      "vyznam": "údiv nad něčí postavou",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi kvůli vzhledu",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "huzz",
+      "misto": [],
+      "vyznam": "hanlivé označení žen",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "bop",
+      "misto": [],
+      "vyznam": "v novějším významu urážka ženy",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "foid",
+      "misto": [],
+      "vyznam": "odlidšťující označení žen",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "chud",
+      "misto": [],
+      "vyznam": "urážka odporného člověka",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "mogging",
+      "misto": [],
+      "vyznam": "přetrumfnout někoho vzhledem",
+      "tvary": [
+        "mog"
+      ],
+      "stav": "zakazane",
+      "duvod": "staví lidi proti sobě podle vzhledu",
+      "zdroj": "genppt.com",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "mewing",
+      "misto": [],
+      "vyznam": "cvičení na tvar čelisti",
+      "tvary": [
+        "looksmaxxing"
+      ],
+      "stav": "zakazane",
+      "duvod": "svět, kde se cena člověka měří obličejem",
+      "zdroj": "atlaso.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "příspěvkovka",
+      "misto": [
+        "příspěvková organizace",
+        "příspěvkové organizace"
+      ],
+      "vyznam": "lidový tvar pro organizaci zřízenou městem",
+      "tvary": [
+        "příspěvkovky"
+      ],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "základka",
+      "misto": [
+        "základní škola",
+        "základní školy"
+      ],
+      "vyznam": "základní škola",
+      "tvary": [
+        "základky"
+      ],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "školka",
+      "misto": [
+        "mateřská škola",
+        "mateřské školy"
+      ],
+      "vyznam": "mateřská škola",
+      "tvary": [
+        "školky"
+      ],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "kulturák",
+      "misto": [
+        "dům kultury"
+      ],
+      "vyznam": "Dům kultury",
+      "tvary": [],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "vyhláška města",
+      "misto": [
+        "obecně závazná vyhláška"
+      ],
+      "vyznam": "obecně závazná vyhláška",
+      "tvary": [],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "radnice",
+      "misto": [
+        "městský úřad",
+        "magistrát"
+      ],
+      "vyznam": "městský úřad jako instituce",
+      "tvary": [],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "zastupitelé",
+      "misto": [
+        "zastupitelstvo města"
+      ],
+      "vyznam": "lidé v zastupitelstvu; často se dá psát o lidech místo o orgánu",
+      "tvary": [],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "strážníci",
+      "misto": [
+        "městská policie"
+      ],
+      "vyznam": "městská policie",
+      "tvary": [],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "umělecká škola",
+      "misto": [
+        "základní umělecká škola",
+        "ZUŠ"
+      ],
+      "vyznam": "ZUŠ",
+      "tvary": [
+        "zuška"
+      ],
+      "stav": "zive",
+      "kategorie": "uredni",
+      "zdroj": "Zdeněk"
+    }
+  ]
+}

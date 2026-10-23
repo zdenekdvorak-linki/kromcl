@@ -14,8 +14,7 @@ import json
 import shutil
 from datetime import datetime, timezone
 
-from . import config, htmlutil
-
+from . import config, htmlutil, piktogramy
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
 
@@ -98,6 +97,12 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .karta, .tldr, article.clanek img.hero { box-shadow: 4px 4px 0 var(--ram); }
   .tldr { padding: 14px 16px; }
 }
+.obrazek { aspect-ratio: 3/2; display: grid; place-items: center; background: var(--akcent); border-bottom: 3px solid var(--ram); color: var(--inkoust); }
+.obrazek .piktogram { width: 38%; height: auto; }
+.hlavni .obrazek { aspect-ratio: 21/9; }
+.obrazek.hero { aspect-ratio: 2/1; border: 3px solid var(--ram); border-bottom-width: 3px; box-shadow: 6px 6px 0 var(--ram); }
+.obrazek.hero .piktogram { width: 26%; }
+@media (max-width: 640px) { .obrazek.hero { box-shadow: 4px 4px 0 var(--ram); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 """.replace("ACCENT", config.ACCENT)
 
@@ -210,22 +215,15 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
 
 
 def _obrazek_tag(clanek, trida="", lazy=True):
-    """<img> i s rozměry. Bez nich stránka při načítání poskakuje (CLS).
+    """Místo fotky kreslený piktogram tématu.
 
-    Fotka nad ohybem se nesmí odkládat — je to skoro vždy ten prvek, podle
-    kterého se měří LCP. Proto u ní eager a fetchpriority high.
+    Fotky města přebírat nesmíme. Piktogram drží stejný poměr stran jako
+    dřív fotka, takže se layout nezměnil a stránka nepohne obsahem.
     """
-    if not config.CIZI_FOTKY or not clanek.get("image_local"):
-        return ""
-    rozmery = ""
-    if clanek.get("image_w") and clanek.get("image_h"):
-        rozmery = ' width="{0}" height="{1}"'.format(clanek["image_w"], clanek["image_h"])
-    nacitani = ' loading="lazy"' if lazy else ' fetchpriority="high"'
-    return '<img{trida} src="/img/{soubor}" alt="{alt}"{rozmery}{nacitani} decoding="async">'.format(
-        trida=' class="{0}"'.format(trida) if trida else "",
-        soubor=_e(clanek["image_local"]),
-        alt=_e(clanek.get("image_caption") or clanek.get("headline", "")),
-        rozmery=rozmery, nacitani=nacitani)
+    tema = piktogramy.pro_tema(clanek.get("tags"))
+    popis = "Téma: {0}".format((clanek.get("tags") or ["zpráva"])[0])
+    return '<div class="obrazek {0}" data-tema="{1}">{2}</div>'.format(
+        trida, _e(tema), piktogramy.svg(tema, trida="piktogram", popis=popis))
 
 
 def _karta(clanek, hlavni=False, uroven="h2"):

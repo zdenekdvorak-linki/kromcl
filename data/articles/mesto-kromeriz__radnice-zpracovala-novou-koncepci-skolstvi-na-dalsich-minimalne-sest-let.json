@@ -1,22 +1,22 @@
 {
   "author": "Šárka Kučerová",
   "body": [
-    "Ayo, školství v Kroměříži dostalo velký patch. Radnice má novou koncepci na období let 2027–2032, případně i déle. Takže tohle není season pass na jednu sezónu, spíš dlouhý game plan na minimálně šest let. Zpracoval ji radniční odbor školství, mládeže a tělovýchovy, a to ve spolupráci s vedeními místních mateřských a základních škol a SVČ Šipka. Město je jejich zřizovatelem, takže se to týká celé party.",
-    "Místostarosta Pavel Motyčka to vysvětlil tak, že chtěli dokument, který odráží vzájemnou spolupráci, sdílené zkušenosti, odborné poznatky i praktické potřeby jednotlivých zařízení. Podle něj je to taková dohoda o směřování školství v Kroměříži a zároveň rámec pro rozvoj kvalitního, dostupného a moderního vzdělávání. Zkrátka co-op mód místo solo runu, fr.",
-    "Do přípravy se přidaly i další organizace, kterých se obsah dotýká, třeba Vyšší odborná škola pedagogická a sociální, Střední pedagogická škola a Základní umělecká škola Kroměříž. Skill tree je dost široký: financování a rozvoj infrastruktury pro vzdělávání a volný čas, podpora řízení jednotlivých školských zařízení, rozvoj nejen pedagogů, ale i dalších zaměstnanců, podpora žáka a jeho vzdělávacího procesu, mezioborová spolupráce, podpora rodiny a celoživotní učení.",
-    "Výstupy z koncepce se dotknou činnosti osmi mateřských škol s třinácti pracovišti, šesti základních škol a SVČ Šipka. Město je zřizovatelem všech. No cap, tohle je dokument, který bude ovlivňovat hodně lidí, takže je fajn, že vznikl společně a ne jako patch notes, o kterých nikdo nevěděl."
+    "Kroměřížské školství dostalo vlastní main quest. Radnice dokončila koncepci, která platí pro roky 2027–2032, případně i déle. Dokument vytyčuje směr, kterým se mají místní školy a školky ubírat.",
+    "Psal ho odbor školství, mládeže a tělovýchovy spolu s vedeními školek, základek a SVČ Šipka. Do přípravy se přidaly i pedagogické školy, střední i vyšší odborná, a kroměřížská ZUŠ. Místostarosta Pavel Motyčka to popsal jako společnou domluvu postavenou na sdílených zkušenostech a praktických potřebách jednotlivých zařízení.",
+    "Koncepce se věnuje penězům a budovám pro školy i volný čas, vedení škol a rozvoji učitelů i ostatních zaměstnanců. Řeší také podporu žáků, spolupráci mezi obory, pomoc rodinám a celoživotní učení.",
+    "Dotkne se všech zařízení, která město zřizuje. Školek je 8 a fungují na 13 adresách. Základek je 6 a k nim patří ještě SVČ Šipka."
   ],
-  "headline": "Kroměříž má novou koncepci školství na roky 2027–2032, případně i déle",
+  "headline": "Kroměříž má novou koncepci školství na roky 2027–2032",
   "id": "mesto-kromeriz:radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let",
   "image_caption": "",
-  "image_h": 774,
-  "image_local": "radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let.webp",
+  "image_h": 0,
+  "image_local": "",
   "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/f/9/csm_20261023_koncepce_skolstvi_6a8e42b644.jpg",
-  "image_w": 1200,
+  "image_w": 0,
   "model": "claude-sonnet-5-5",
   "perex": "Město Kroměříž má novou koncepci školství, a to na období let 2027–2032, případně i déle. Zpracoval ji radniční odbor školství, mládeže a tělovýchovy ve spolupráci s vedeními místních mateřských a základních škol a Střediska volného času dětí a mládeže (SVČ) Šipka, jichž je město zřizovatelem.",
   "published": "2026-10-23T08:17:30+02:00",
-  "rewritten_at": "2026-10-23T14:08:47.602254+00:00",
+  "rewritten_at": "2026-10-23T16:21:14.674241+00:00",
   "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let",
@@ -24,25 +24,24 @@
   "source_name": "Město Kroměříž",
   "tags": [
     "školství",
-    "radnice",
-    "lidé"
+    "radnice"
   ],
   "title": "Radnice zpracovala novou koncepci školství na dalších minimálně šest let",
   "tldr": [
     {
-      "emoji": "🗺️📚",
-      "label": "New Roadmap",
-      "text": "Město má novou koncepci školství na období let 2027–2032, případně i déle."
+      "emoji": "🎒📚",
+      "label": "Main Quest",
+      "text": "Město má nový plán pro školství na roky 2027–2032, případně i na delší dobu."
     },
     {
-      "emoji": "🤝🏫",
-      "label": "Team Effort",
-      "text": "Zpracoval ji radniční odbor školství, mládeže a tělovýchovy spolu s vedeními místních mateřských a základních škol a SVČ Šipka."
+      "emoji": "✍️🏫",
+      "label": "Who Wrote",
+      "text": "Plán sepsal radniční odbor školství, mládeže a tělovýchovy spolu s vedeními škol a SVČ Šipka."
     },
     {
-      "emoji": "🎒💸",
-      "label": "Big Scope",
-      "text": "Dokument řeší peníze, infrastrukturu, podporu žáků i rodin a celoživotní učení."
+      "emoji": "💸🧑‍🏫",
+      "label": "Big Topics",
+      "text": "Řeší se peníze, budovy, učitelé, podpora žáků i rodin."
     }
   ],
   "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-vypracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let"

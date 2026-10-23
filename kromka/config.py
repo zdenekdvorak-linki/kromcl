@@ -92,7 +92,7 @@ MAX_SELHANI = 3
 
 # --- Atribuce -------------------------------------------------------------
 DISCLAIMER = (
-    "Sledujeme, co se děje v Kroměříži, a píšeme o tom vlastními slovy "
-    "jazykem, kterým se dá číst. Texty píše AI. Oficiální informace vydává "
-    "město Kroměříž — odkaz najdeš u každé zprávy."
+    "Zpravodajství o Kroměříži pro mladé duchem i jazykem. Co se ve městě "
+    "děje, si přečteme, ověříme a převyprávíme po svém. Oficiální verzi "
+    "vydává radnice — odkaz máš u každé zprávy."
 )

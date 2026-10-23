@@ -26,6 +26,12 @@ def main(argv=None):
     p = pod.add_parser("detail", help="stáhne a vypíše jeden článek bez volání API")
     p.add_argument("slug")
 
+    p = pod.add_parser("slovnik", help="vypíše nebo rozšíří slovník jazyka")
+    p.add_argument("--pridej", metavar="VÝRAZ",
+                   help="nový výraz; doptá se na zbytek")
+    p.add_argument("--stav", default="zive",
+                   choices=["zive", "ironicke", "zastarale", "zakazane"])
+
     pod.add_parser("build", help="vykreslí statický web ze uložených JSONů")
     p = pod.add_parser("all", help="run + build")
     p.add_argument("--limit", type=int, default=10)
@@ -49,6 +55,9 @@ def main(argv=None):
         print(json.dumps(polozka, ensure_ascii=False, indent=2))
         return 0
 
+    if args.prikaz == "slovnik":
+        return _slovnik(args)
+
     if args.prikaz in ("run", "backfill", "all"):
         # `run` i `all` jedou v cronu, takže se archivu nedotknou, dokud se to
         # výslovně nepovolí. Jinak by hodinový běh archiv sežral sám.
@@ -61,6 +70,51 @@ def main(argv=None):
     clanky = store.vsechny()
     pocet = render.vykresli(clanky)
     print("Vykresleno {0} souborů z {1} článků do {2}".format(pocet, len(clanky), config.SITE))
+    return 0
+
+
+def _slovnik(args):
+    """Výpis nebo doplnění slovníku. Doptá se jen na to, co nelze uhodnout."""
+    from . import styl
+
+    if not args.pridej:
+        for stav in ("zive", "ironicke", "zastarale", "zakazane"):
+            polozky = styl.vyrazy(stav)
+            if not polozky:
+                continue
+            print("\n== {0} ({1}) ==".format(stav, len(polozky)))
+            for v in polozky:
+                misto = ", ".join(v.get("misto") or []) or "—"
+                print("  {0:14s} místo: {1}".format(v["vyraz"], misto))
+        print("\nPřidání: python -m kromka slovnik --pridej <výraz>")
+        return 0
+
+    data = styl.nacti_slovnik()
+    if any(v["vyraz"].lower() == args.pridej.lower() for v in data["vyrazy"]):
+        print("Výraz {0!r} už ve slovníku je.".format(args.pridej))
+        return 1
+
+    print("Přidávám {0!r} jako {1}.".format(args.pridej, args.stav))
+    vyznam = input("Co to znamená? ").strip()
+    misto = input("Místo jakých běžných slov se to říká? (oddělenÉ čárkou) ").strip()
+    tvary = input("Další tvary, pokud nějaké jsou? (čárkou) ").strip()
+    duvod = ""
+    if args.stav == "zakazane":
+        duvod = input("Proč je zakázané? ").strip()
+
+    novy = {
+        "vyraz": args.pridej,
+        "misto": [m.strip() for m in misto.split(",") if m.strip()],
+        "vyznam": vyznam,
+        "tvary": [t.strip() for t in tvary.split(",") if t.strip()],
+        "stav": args.stav,
+        "zdroj": "doma ověřeno",
+    }
+    if duvod:
+        novy["duvod"] = duvod
+    data["vyrazy"].append(novy)
+    styl.zapis_slovnik(data)
+    print("Uloženo. Slovník má teď {0} výrazů.".format(len(data["vyrazy"])))
     return 0
 
 
