@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, Kroměříž dává mostu level up. Silniční most přes řeku Moravu, který dosud oficiálně nesl jen označení 36733-1 (vibe hesla k wifi), se bude jmenovat po Karlu Krylovi, jednom z nejvýznamnějších kroměřížských rodáků. Fr, to je už skin, který sedí.",
     "Radní pro kulturu a cestovní ruch Jiří Kašík vysvětlil, že nápad vznikl loni, když si město připomínalo dvě kulatá výročí: 80 let od Krylova narození a 30 let od jeho úmrtí. Vdova Marlene Krylová a bratr Jan Kryl s pojmenováním souhlasí a berou ho jako poctu Krylovi. Velké W.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Most přes Moravu dostane jméno Karla Kryla, 3. dubna se odhalí deska",
   "id": "mesto-kromeriz:most-pres-reku-moravu-ponese-nove-jmeno-karla-kryla",
-  "image_caption": "Silniční most přes řeku Moravu. Na kamenné části sloupku vlevo bude umístěno nové označení.",
   "image_h": 801,
   "image_local": "most-pres-reku-moravu-ponese-nove-jmeno-karla-kryla.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/6/d/csm_20250214_most_kryla-1_1844fae03a.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Silniční most přes řeku Moravu dosud oficiálně označovaný číslem 36733-1 bude pojmenovaný po jednom z nejvýznamnějších kroměřížských rodáků Karlu Krylovi. „Myšlenka pojmenovat most po Karlu Krylovi vznikla v loňském roce, kdy jsme si připomínali dvě kulatá výročí této osobnosti spjaté s Kroměříží, 80 let od jeho narození a 30 let od úmrtí,“ uvedl radní pro kulturu a cestovní ruch Jiří Kašík.",
   "published": "2025-02-14T10:07:00+01:00",
   "rewritten_at": "2026-10-23T14:34:57.059836+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "most-pres-reku-moravu-ponese-nove-jmeno-karla-kryla",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "radnice",
     "akce"
   ],
-  "title": "Most přes řeku Moravu ponese nově jméno Karla Kryla",
   "tldr": [
     {
       "emoji": "🌉🎸",
@@ -44,6 +38,5 @@
       "label": "Family Approved",
       "text": "S pojmenováním souhlasí vdova Marlene Krylová i bratr Jan Kryl, kteří to berou jako poctu."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/most-pres-reku-moravu-ponese-nove-jmeno-karla-kryla"
+  ]
 }

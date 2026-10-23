@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, elektroauta v Kroměříži mají nový checkpoint. Kroměřížské technické služby zprovoznily na Hanáckém náměstí nové nabíječky a dobíjet tu mohou čtyři řidiči zároveň. Místostarosta a jednatel KTS Jan Hebnar to zdůvodnil tím, že aut na elektřinu přibývá a Kroměříž v tom není výjimkou. Město se proto snaží reagovat a stanice umisťovat i na veřejná parkoviště. Prostě W za přípravu na budoucnost.",
     "Nabíječky jsou dvě a každá má dvě nabíjecí zařízení. Jde o typ AC o výkonu až 2 x 22 kW. Provoz běží nonstop, takže si dobíjení můžeš naplánovat klidně i o půlnoci. Energetický manažer radnice Luděk Tesařík popsal, kde je najdeš. První stojí na parkovišti před budovou, kterou teď opravuje Národní památkový ústav. Druhá je na opačné straně náměstí směrem k supermarketu Lidl.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Na Hanáckém náměstí přibyly nabíječky pro elektroauta, level up pro řidiče",
   "id": "mesto-kromeriz:ridicum-uz-slouzi-nove-nabijecky-pro-elektromobily-na-hanackem-namesti",
-  "image_caption": "",
   "image_h": 675,
   "image_local": "ridicum-uz-slouzi-nove-nabijecky-pro-elektromobily-na-hanackem-namesti.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/5/8/csm_20250225_nabijecky_auta_1_e3c6050865.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížské technické služby (KTS) zprovoznily na Hanáckém náměstí nové nabíječky pro vozidla s pohonem na elektřinu. Na dvou místech mohou svá vozidla zároveň nabíjet čtyři řidiči. „Počet automobilů s pohonem na elektřinu stoupá, Kroměříž v tomto není výjimkou. Snažíme se na to reagovat a umisťovat tyto nabíjecí stanice i na veřejných parkovištích,“ uvedl místostarosta Kroměříže a jednatel KTS Jan Hebnar.",
   "published": "2025-02-25T11:04:31+01:00",
   "rewritten_at": "2026-10-23T14:37:01.890419+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "ridicum-uz-slouzi-nove-nabijecky-pro-elektromobily-na-hanackem-namesti",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "doprava",
     "radnice"
   ],
-  "title": "Řidičům už slouží nové nabíječky pro elektromobily na Hanáckém náměstí",
   "tldr": [
     {
       "emoji": "🔌🚗",
@@ -43,6 +37,5 @@
       "label": "Parking Rules",
       "text": "U nabíječky se stojí bez poplatku za parkování až dvě hodiny, pak se zapne drahý cooldown."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/ridicum-uz-slouzi-nove-nabijecky-pro-elektromobily-na-hanackem-namesti"
+  ]
 }

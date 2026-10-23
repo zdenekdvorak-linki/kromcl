@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, mapa Kroměříže dostala nový patch. Ulice Větrná je oficiálně na světě, protože její název na únorovém jednání schválilo Zastupitelstvo města Kroměříže, a to jednohlasně. Žádný L, čistá W. Ulice leží v okrajové části města, kde navazuje na ulici Havlíčkova naproti areálu Zemědělského výzkumného ústavu Kroměříž.",
     "Lokalita se aktuálně rozvíjí a staví se tam nové rodinné domy, takže ulice bude mít brzy kompletní lobby sousedů. Starosta Tomáš Opatrný název zdůvodnil tím, že ulice je na samém okraji města na vyvýšeném místě. Dá se podle něj očekávat, že Větrná bude odpovídat místním podmínkám. Fr, tohle jméno není random, je to nápověda přímo z terénu.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Ayo, Kroměříž má novou ulici Větrná a zastupitelé ji klepli jednohlasně",
   "id": "mesto-kromeriz:v-kromerizi-je-nove-ulice-vetrna",
-  "image_caption": "",
   "image_h": 731,
   "image_local": "v-kromerizi-je-nove-ulice-vetrna.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/user_upload/tiskove-zpravy/2025/20250228_nova_ulice_vetrna.jpg",
   "image_w": 1094,
   "model": "claude-sonnet-5-5",
-  "perex": "Název nové ulice v Kroměříži Větrná schválili na svém únorovém jednání jednohlasně členové Zastupitelstva města Kroměříže. Jedná se o ulici, která v okrajové části města navazuje na ulici Havlíčkova naproti areálu Zemědělského výzkumného ústavu Kroměříž. Jde o lokalitu, která se aktuálně rozvíjí a v níž se staví nové rodinné domy.",
   "published": "2025-02-28T05:57:07+01:00",
   "rewritten_at": "2026-10-23T14:37:19.070439+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "v-kromerizi-je-nove-ulice-vetrna",
   "source": "mesto-kromeriz",
@@ -25,7 +20,6 @@
     "radnice",
     "stavba"
   ],
-  "title": "V Kroměříži je nově ulice Větrná",
   "tldr": [
     {
       "emoji": "🗺️🏡",
@@ -42,6 +36,5 @@
       "label": "Name Lore",
       "text": "Starosta Tomáš Opatrný vysvětlil, že název má sedět na místní podmínky na vyvýšeném okraji města."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/v-kromerizi-je-nove-ulice-vetrna"
+  ]
 }

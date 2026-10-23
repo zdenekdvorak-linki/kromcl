@@ -57,30 +57,21 @@ def zpracuj(polozka, verbose=True):
 
     data = rewrite.prepis(polozka, citlivost)
 
-    # Snímek oznámení se ukládá dřív, než ho přepis přepíše. Bez něj by
-    # nešlo později doložit, z čeho zpráva vznikla, a doklad by byl tvrzení
-    # proti tvrzení.
-    zdroj_text = "\n\n".join(polozka.get("body") or [])
-    zdroj_cely = polozka["title"] + "\n\n" + zdroj_text
+    # Zdroj se po použití zahazuje. Z oznámení si vezmeme fakta, napíšeme
+    # vlastní zprávu a dál si po něm nenecháváme nic — ani text, ani titulek,
+    # ani perex. V článku zůstane jen to, co jsme napsali sami.
+    odstavce = [polozka["title"]] + (polozka.get("body") or [])
+    zdroj_cely = "\n\n".join(odstavce)
 
     clanek = dict(polozka)
     clanek.update(data)
-    # Adresa článku se odvozuje z NAŠEHO titulku, ne z toho, odkud informace
-    # přišla. Jinak by adresy obou webů seděly jedna ku jedné.
     clanek["zdroj_slug"] = polozka["slug"]
     clanek["slug"] = _volny_slug(htmlutil.slugify(data["headline"])[:80],
                                  clanek["id"])
     vystup = " ".join([data["headline"]]
                       + [o["text"] for o in data["tldr"]] + data["body"])
-    clanek["zdroj_snimek"] = {
-        "titulek": polozka["title"],
-        "url": polozka["url"],
-        "vydavatel": polozka["source_name"],
-        "publikovano": polozka.get("published", ""),
-        "text": zdroj_text,
-        "stazeno": datetime.now(timezone.utc).isoformat(),
-    }
     clanek["doklad"] = rewrite.doklad(zdroj_cely, vystup)
+    clanek = _bez_cizich_poli(clanek)
     clanek["sensitivity"] = citlivost
     clanek["image_local"], clanek["image_w"], clanek["image_h"] = _stahni_obrazek(polozka)
     clanek["rewritten_at"] = datetime.now(timezone.utc).isoformat()
@@ -111,6 +102,17 @@ def davka(limit, nejstarsi=False, jen_novejsi=False):
             traceback.print_exc(limit=1, file=sys.stderr)
             _zapis_selhani(polozka["id"], str(exc))
     return hotove
+
+
+# Pole, která pocházejí od zdroje a v hotovém článku nemají co dělat.
+CIZI_POLE = ("title", "perex", "url", "author", "rubrika",
+             "image_url", "image_caption", "zdroj_snimek")
+
+
+def _bez_cizich_poli(clanek):
+    for klic in CIZI_POLE:
+        clanek.pop(klic, None)
+    return clanek
 
 
 def _volny_slug(zaklad, vlastni_id):

@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, kroměřížská radnice letos nainstaluje městskému úřadu pořádný bezpečnostní patch. Projekt na zlepšení kybernetické bezpečnosti vyjde na 11,76 milionu korun. Zastupitelé ve čtvrtek schválili rozpočtové opatření v té samé výši, takže se může začít ještě letos.",
     "Teď to hlavní: finance jsou W. Zhruba 9,8 milionu korun město získá z evropských fondů, konkrétně z Národního plánu obnovy. Radní Jan Pšeja připomněl, že z městského rozpočtu tak půjde méně než dva miliony korun. Za ně se dají udělat nezbytná opatření, díky kterým bude úřad líp odolávat kybernetickým útokům zvenčí, které jsou v dnešní době čím dál častější.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Radnice dostane cyber buff: 11,76 milionu korun a většina z evropských fondů",
   "id": "mesto-kromeriz:mesto-chysta-projekt-na-zlepseni-kyberneticke-bezpecnosti",
-  "image_caption": "",
   "image_h": 845,
   "image_local": "mesto-chysta-projekt-na-zlepseni-kyberneticke-bezpecnosti.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/b/3/csm_20250214_kyberbezpecnost_e0bfd3cbf3.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížská radnice bude v letošním roce realizovat projekt, který povede ke zlepšení kybernetické bezpečnosti městského úřadu. Náklady na projekt činí 11,76 milionu korun. „Většinu těchto peněz, zhruba 9,8 milionu korun, ale město získá z evropských fondů, konkrétně z Národního plánu obnovy. Za méně než dva miliony korun z rozpočtu města tak budeme moci realizovat nezbytná opatření, která posílí možnosti městského úřadu odolávat v dnešní době stále častějším kybernetickým útokům zvenčí,“ uvedl radní Jan Pšeja.",
   "published": "2025-02-14T10:03:00+01:00",
   "rewritten_at": "2026-10-23T14:33:26.004415+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "mesto-chysta-projekt-na-zlepseni-kyberneticke-bezpecnosti",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "radnice",
     "peníze"
   ],
-  "title": "Město chystá projekt na zlepšení kybernetické bezpečnosti",
   "tldr": [
     {
       "emoji": "🛡️💻",
@@ -43,6 +37,5 @@
       "label": "Siren Squad",
       "text": "Město chystá nový varovný systém, jehož součástí je sedm nových elektronických sirén."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-chysta-projekt-na-zlepseni-kyberneticke-bezpecnosti"
+  ]
 }

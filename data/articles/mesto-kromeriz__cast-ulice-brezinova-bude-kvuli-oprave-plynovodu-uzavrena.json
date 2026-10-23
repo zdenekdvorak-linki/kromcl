@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, řidiči, v ulici Březinova se až do konce června hraje na hard módu. Nejdřív přijde krátký tutoriál: od 10. března do 14. března bude zavřená křižovatka ulic Březinova a Máchova. Pak začne hlavní quest a od 17. března do 30. června bude uzavřená celá komunikace v Březinově mezi ulicemi Máchova a Kollárova. Důvod je prostý, rekonstrukce plynovodu.",
     "Objížďka vede přes ulice Vrobelova, Sokolovská a Kollárova a bude řádně vyznačená dopravním značením, takže se nemusíte spoléhat jen na svoji aura navigaci. Pěší projdou dál, přístup zůstává zachovaný. Radniční referent dopravy Pavel Zavadil ale požádal obyvatele o zvýšenou opatrnost, protože se kolem pracuje. Berte to jako stealth level: koukejte kolem sebe.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Březinova od 17. března zavřená do konce června, jede se objížďkou",
   "id": "mesto-kromeriz:cast-ulice-brezinova-bude-kvuli-oprave-plynovodu-uzavrena",
-  "image_caption": "",
   "image_h": 800,
   "image_local": "cast-ulice-brezinova-bude-kvuli-oprave-plynovodu-uzavrena.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/7/9/csm_20240410_plyn_ilustracni_75aec9daa4.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Řidiči musejí až do konce června počítat s omezením dopravy v ulici Březinova. Od 10. března do 14. března bude uzavřena křižovatka ulic Březinova a Máchova a od 17. března do 30. června bude uzavřena komunikace v ulici Březinova v části mezi ulicemi Máchova a Kollárova. Důvodem je rekonstrukce plynovodu.",
   "published": "2025-03-07T09:13:37+01:00",
   "rewritten_at": "2026-10-23T14:39:04.332647+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "cast-ulice-brezinova-bude-kvuli-oprave-plynovodu-uzavrena",
   "source": "mesto-kromeriz",
@@ -25,7 +20,6 @@
     "doprava",
     "stavba"
   ],
-  "title": "Část ulice Březinova bude kvůli opravě plynovodu uzavřená",
   "tldr": [
     {
       "emoji": "🚧🚗",
@@ -42,6 +36,5 @@
       "label": "Fresh Asphalt",
       "text": "Po dokončení prací přijde na Březinovu nový asfalt, takže se to nakonec vyplatí."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/cast-ulice-brezinova-bude-kvuli-oprave-plynovodu-uzavrena"
+  ]
 }

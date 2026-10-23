@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, Kroměříž dostává side quest v nejvyšší kategorii. V neděli 17. srpna se tu totiž uskuteční start závěrečné čtvrté etapy závodu Czech Tour 2025. Zastupitelé se rozhodli závod podpořit částkou 100 tisíc korun. Radní pro kulturu a cestovní ruch Jiří Kašík to zdůvodnil tím, že jde o cyklistický závod nejvyšší kategorie v České republice, který sledují celostátní i mezinárodní média. Pro Kroměříž je to podle něj prestižní záležitost. Město navíc zajistí úklid a odsouhlasí bezplatný zábor veřejných ploch.",
     "Program předběžně začne v 10 hodin a rozhodně to nebude jen čekání na výstřel. Čeká tu kulturní program, rozhovory, představení etapy, shrnutí nejzajímavějších momentů z předchozích závodních dnů a představení týmů. Samotný start přijde v 11:30. Vstup je pro fanoušky zdarma, takže ten nejlepší loot je tentokrát bez poplatku, fr.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Czech Tour startuje v Kroměříži: město přidalo 100 tisíc a vstup je free",
   "id": "mesto-kromeriz:mesto-podpori-cyklisticky-zavod-czech-tour-2025",
-  "image_caption": "Ilustrační foto: www.czechtour.com",
   "image_h": 800,
   "image_local": "mesto-podpori-cyklisticky-zavod-czech-tour-2025.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/8/e/csm_20250214_Czech_Tour_0432b51b54.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížané budou moci v srpnu vidět na vlastní oči špičkové závodníky předních světových cyklistických týmů. Ve městě se totiž v neděli 17. srpna uskuteční start závěrečné čtvrté etapy závodu Czech Tour 2025. Zastupitelé města se rozhodli závod podpořit částkou 100 tisíc korun. „Jedná se o cyklistický závod nejvyšší kategorie, který se koná na území České republiky. Je sledovaný celostátními i mezinárodními médii. Pro Kroměříž je to prestižní záležitost, proto jsme se rozhodli Czech Tour podpořit,“ uvedl radní pro kulturu a cestovní ruch Jiří Kašík.",
   "published": "2025-02-14T10:02:00+01:00",
   "rewritten_at": "2026-10-23T14:33:03.291327+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "mesto-podpori-cyklisticky-zavod-czech-tour-2025",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "akce",
     "peníze"
   ],
-  "title": "Město podpoří cyklistický závod Czech Tour 2025",
   "tldr": [
     {
       "emoji": "🚴🏁",
@@ -44,6 +38,5 @@
       "label": "Free Entry",
       "text": "Fanoušci se na start mohou přijít podívat zdarma, samotný start je naplánovaný na 11:30."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-podpori-cyklisticky-zavod-czech-tour-2025"
+  ]
 }

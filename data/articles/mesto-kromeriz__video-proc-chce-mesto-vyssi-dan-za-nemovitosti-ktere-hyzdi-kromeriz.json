@@ -1,21 +1,16 @@
 {
-  "author": "",
   "body": [
     "Ayo, Kroměříž si vzala na mušku nemovitosti, které hyzdí město, a chce za ně vyšší daň. Takže ne každý barák má v téhle hře stejný startovní level. Jestli se tvoje oko při procházce centrem zastavilo na budově, co vizuálně nezvládla, tohle je přesně ta side quest.",
     "Otázka, kterou si klade snad každý, je proč město tenhle krok chce. Odpověď najdeš ve videu. Je to rychlejší než číst úřední vyhlášky a no cap, i tak je to lepší tutoriál než ty, co známe z úřadů."
   ],
   "headline": "Proč chce Kroměříž vyšší daň pro nemovitosti, které hyzdí město",
   "id": "mesto-kromeriz:video-proc-chce-mesto-vyssi-dan-za-nemovitosti-ktere-hyzdi-kromeriz",
-  "image_caption": "",
   "image_h": 838,
   "image_local": "video-proc-chce-mesto-vyssi-dan-za-nemovitosti-ktere-hyzdi-kromeriz.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/6/2/csm_20250214_dan_hotel_Hana_6182194a4a.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "",
   "published": "2025-02-19T09:00:00+01:00",
   "rewritten_at": "2026-10-23T14:36:38.078561+00:00",
-  "rubrika": "VIDEO",
   "sensitivity": "volny",
   "slug": "video-proc-chce-mesto-vyssi-dan-za-nemovitosti-ktere-hyzdi-kromeriz",
   "source": "mesto-kromeriz",
@@ -25,7 +20,6 @@
     "radnice",
     "stavba"
   ],
-  "title": "Video: Proč chce město vyšší daň za nemovitosti, které hyzdí Kroměříž?",
   "tldr": [
     {
       "emoji": "🏚️💸",
@@ -42,6 +36,5 @@
       "label": "Watch Time",
       "text": "Odpověď řeší video, takže stačí zmáčknout play."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/video-proc-chce-mesto-vyssi-dan-za-nemovitosti-ktere-hyzdi-kromeriz"
+  ]
 }

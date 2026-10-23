@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, azylový dům Astras v Purkyňově ulici dostal pořádný glow-up. Město dokončilo rekonstrukci toalet a koupelen, které byly podle místostarosty Pavla Motyčky ve velmi špatném stavu, takže oprava byla nezbytná. Celá akce stála zhruba 4,1 milionu korun a postarala se o ni společnost KERAMO D – Dohorák z Kvasic.",
     "Byl to full system upgrade. Sprchy, WC, kuchyňky, umývárny i šatny ve všech podlažích prošly kompletní modernizací. Nové jsou povrchy stěn a podlah a také rozvody elektřiny, topení, vody i kanalizace. Ve druhém nadzemním podlaží přibylo WC a sprcha pro klienty s handicapem a ti s omezenou pohyblivostí teď mohou mezi podlažími využít schodolez.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Azylový dům Astras má nové toalety a sprchy, upgrade za 4,1 milionu",
   "id": "mesto-kromeriz:radnice-dokoncila-opravu-socialniho-zarizeni-azyloveho-domu-pro-muze",
-  "image_caption": "",
   "image_h": 785,
   "image_local": "radnice-dokoncila-opravu-socialniho-zarizeni-azyloveho-domu-pro-muze.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/1/d/csm_20250117_Astras_1_1280dec414.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Město dokončilo rekonstrukci sociálního zařízení v objektu Azylového domu pro muže Astras v Purkyňově ulici. „Toalety a koupelny v této městské budově byly ve velmi špatném stavu a jejich oprava tak byla nezbytná,&quot; uvedl místostarosta Pavel Motyčka. Náklady na akci činily zhruba 4,1 milionu korun. O opravu se postarala společnost KERAMO D – Dohorák z Kvasic.",
   "published": "2025-01-17T09:18:46+01:00",
   "rewritten_at": "2026-10-23T14:23:41.284036+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radnice-dokoncila-opravu-socialniho-zarizeni-azyloveho-domu-pro-muze",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "lidé",
     "radnice"
   ],
-  "title": "Radnice dokončila opravu sociálního zařízení azylového domu pro muže",
   "tldr": [
     {
       "emoji": "🚿🛠️",
@@ -44,6 +38,5 @@
       "label": "Lunch Quest",
       "text": "Od ledna dostane oběd ten, kdo se zapojí do programu Stravenka a odvede práci pro město."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-dokoncila-opravu-socialniho-zarizeni-azyloveho-domu-pro-muze"
+  ]
 }

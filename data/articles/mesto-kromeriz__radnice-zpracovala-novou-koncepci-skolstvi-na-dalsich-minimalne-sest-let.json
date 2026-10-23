@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Kroměřížské školství dostalo vlastní main quest. Radnice dokončila koncepci, která platí pro roky 2027–2032, případně i déle. Dokument vytyčuje směr, kterým se mají místní školy a školky ubírat.",
     "Psal ho odbor školství, mládeže a tělovýchovy spolu s vedeními školek, základek a SVČ Šipka. Do přípravy se přidaly i pedagogické školy, střední i vyšší odborná, a kroměřížská ZUŠ. Místostarosta Pavel Motyčka to popsal jako společnou domluvu postavenou na sdílených zkušenostech a praktických potřebách jednotlivých zařízení.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Kroměříž má novou koncepci školství na roky 2027–2032",
   "id": "mesto-kromeriz:radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let",
-  "image_caption": "",
   "image_h": 0,
   "image_local": "",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/f/9/csm_20261023_koncepce_skolstvi_6a8e42b644.jpg",
   "image_w": 0,
   "model": "claude-sonnet-5-5",
-  "perex": "Město Kroměříž má novou koncepci školství, a to na období let 2027–2032, případně i déle. Zpracoval ji radniční odbor školství, mládeže a tělovýchovy ve spolupráci s vedeními místních mateřských a základních škol a Střediska volného času dětí a mládeže (SVČ) Šipka, jichž je město zřizovatelem.",
   "published": "2026-10-23T08:17:30+02:00",
   "rewritten_at": "2026-10-23T16:21:14.674241+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radnice-zpracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "školství",
     "radnice"
   ],
-  "title": "Radnice zpracovala novou koncepci školství na dalších minimálně šest let",
   "tldr": [
     {
       "emoji": "🎒📚",
@@ -43,6 +37,5 @@
       "label": "Big Topics",
       "text": "Řeší se peníze, budovy, učitelé, podpora žáků i rodin."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-vypracovala-novou-koncepci-skolstvi-na-dalsich-minimalne-sest-let"
+  ]
 }

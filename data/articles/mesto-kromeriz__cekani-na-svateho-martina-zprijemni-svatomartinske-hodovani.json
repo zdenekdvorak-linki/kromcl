@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, jedenáctý listopad je v Kroměříži zase svatý Martin a Hanácké náměstí se mění na jarmark. Čekají tě stánky s více či méně tradičním sortimentem, zabijačkové a husí speciality a hlavně nová letošní vína, takže loot je zajištěný. Stánky budou otevřené od 10 do 18 hodin.",
     "Začátek má svůj lore: 11 minut po 11. hodině se otevře a požehná první svatomartinské víno za účasti zástupců vedení města. Pak přijde ochutnávka mladých vín. Nalévá je sám svatý Martin ve stylové zbroji, který na náměstí dorazí na koni, takže tentokrát nepůjde o NPC za pultem. Na hudbu jsou tu dvě cimbálovky: dopoledne hraje Cimbálová muzika kroměřížské konzervatoře a od 14.30 Cimbálová muzika Rováš. Děti a školní družiny mají ve 13.30 divadelní představení Když se naštve chameleon.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Svatomartinské hodování na Hanáckém náměstí: nová vína, husy a Martin na koni",
   "id": "mesto-kromeriz:cekani-na-svateho-martina-zprijemni-svatomartinske-hodovani",
-  "image_caption": "",
   "image_h": 801,
   "image_local": "cekani-na-svateho-martina-zprijemni-svatomartinske-hodovani.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/2/f/csm_20261020_svatomartinske1_60b3cacc00.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Již tradičně je jedenáctý listopadový den termínem Svatomartinského hodování. Slavnost doprovázená jarmarkem plným stánků s více či méně tradičním sortimentem, v němž nechybí zabijačkové a husí speciality, a především nová letošní vína, se uskuteční na Hanáckém náměstí v termínu 11. 11. Součástí programu bude 11 minut po 11. hodině otevření a žehnání prvního svatomartinského vína za účasti zástupců vedení města a ochutnávka mladých vín nalévaných samotným svatým Martinem ve stylové zbroji, který na Hanácké náměstí dorazí na koni.",
   "published": "2026-10-20T05:03:31+02:00",
   "rewritten_at": "2026-10-23T14:16:25.282703+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "cekani-na-svateho-martina-zprijemni-svatomartinske-hodovani",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "kultura",
     "radnice"
   ],
-  "title": "Čekání na svatého Martina zpříjemní Svatomartinské hodování",
   "tldr": [
     {
       "emoji": "🍷🪿",
@@ -43,6 +37,5 @@
       "label": "Night Walk",
       "text": "Po 18. hodině vyrazí z Hanáckého náměstí průvod s Martinem na koni."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/cekani-na-svateho-martina-zprijemni-svatomartinske-hodovani"
+  ]
 }

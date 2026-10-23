@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, Zachar možná brzy dostane parkovací buff. Radnice chystá nové parkoviště na městských pozemcích v Albertově ulici kolem bytového domu číslo 3883/27, kterému se říká Děvín. Studie je hotová a počítá s 84 místy. Pět z nich je vyhrazeno pro držitele karty ZTP. Starosta Tomáš Opatrný k tomu uvedl, že parkovací místa na Zacharu pořád chybí, a proto se jimi vedení města vážně zabývá.",
     "Teď k rozpočtu: odhad nákladů je kolem deseti milionů korun. Radní schválili záměr a zpracování dalšího stupně projektové dokumentace, což je v úředním jazyce něco jako postup na další level. Město chce taky zkoumat, jestli by šlo sehnat dotaci. Pokud se podaří vyřídit všechna nezbytná povolení, s realizací se počítá v roce 2026.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Zachar: v Albertově ulici má vzniknout parkoviště s 84 místy",
   "id": "mesto-kromeriz:radnice-pripravuje-stavbu-noveho-parkoviste-na-sidlisti-zachar",
-  "image_caption": "Nové parkoviště vznikne na městských pozemcích v Albertově ulici.",
   "image_h": 801,
   "image_local": "radnice-pripravuje-stavbu-noveho-parkoviste-na-sidlisti-zachar.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/2/8/csm_20250214_parkovani_za_Devinem_ca26fe89be.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Více než osm desítek míst by mělo vzniknout na novém parkovišti, které se na sídlišti Zachar chystá vybudovat kroměřížská radnice. Umístěno bude na městských pozemcích v Albertově ulici v okolí bytového domu číslo 3883/27, který je nazýván Děvín. „Parkovací místa na Zacharu stále chybějí, proto se vedení města tímto problémem vážně zabývá. Kromě toho, že chystáme parkoviště na místě bývalé kotelny ve Francouzské ulici, rada rozhodla i o vybudování parkoviště v ulici Albertova,“ uvedl starosta Tomáš Opatrný.",
   "published": "2025-02-14T10:09:00+01:00",
   "rewritten_at": "2026-10-23T14:35:41.866199+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radnice-pripravuje-stavbu-noveho-parkoviste-na-sidlisti-zachar",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "stavba",
     "radnice"
   ],
-  "title": "Radnice připravuje stavbu nového parkoviště na sídlišti Zachar",
   "tldr": [
     {
       "emoji": "🅿️🚗",
@@ -43,6 +37,5 @@
       "label": "Side Quest",
       "text": "Ve Francouzské ulici na místě bývalé kotelny má vzniknout další parkovací plocha."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-pripravuje-stavbu-noveho-parkoviste-na-sidlisti-zachar"
+  ]
 }

@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, plán pustit do bazénu dřív školáky a plavecké sporty je oficiálně cancelled. Stavbaři totiž v části konstrukce pláště budovy objevili azbest, který se musí odborně odstranit. K tomu narazili na části konstrukce, které chlor tak zdegradoval, že je nutné je staticky zabezpečit. Starosta Tomáš Opatrný vysvětlil, že by školáky i sportovce pustili dřív rádi, ale z bezpečnostních důvodů to nejde. Celá budova včetně sauny a posilovny se tak otevře až po dokončení stavby, tedy v květnu letošního roku.",
     "Azbest zdaleka nebyl jediný side quest. Loni v září do budovy kvůli dešťům a větru zateklo a vysoká hladina spodní vody znemožnila betonování. Budova vznikla téměř před 40 lety v takzvané akci Z, takže projektanti nemohli předvídat třeba ošizené zdivo nebo chybějící funkční detaily ve vnitřních konstrukcích. Azbest se schovával i ve stěně při zateplování a při demontáži staré nefunkční vzduchotechniky. Ta se celá vymění za novou.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Bazén v Kroměříži zůstane zavřený i pro školy: stavbaři našli azbest",
   "id": "mesto-kromeriz:stavbari-narazili-v-budove-bazenu-na-azbest-skolaci-i-sportovci-si-na-otevreni-pockaji",
-  "image_caption": "Azbest byl nalezen v jedné ze stěn při zateplování objektu.",
   "image_h": 801,
   "image_local": "stavbari-narazili-v-budove-bazenu-na-azbest-skolaci-i-sportovci-si-na-otevreni-pockaji.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/8/f/csm_20250120_bazen_1_b16ba3319f.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Město muselo zrušit plánované dřívější otevření krytého plaveckého bazénu pro školy a plavecké sporty. V části konstrukce pláště budovy totiž stavbaři objevili azbest, který je nutné odborně odstranit. Dělníci také při práci narazili na části konstrukce, které je potřeba kvůli degradaci způsobené chlorem staticky zabezpečit. „Chtěli jsme do bazénu dříve pustit školáky i sportovce, bohužel to z bezpečnostních důvodů nejde. Celá budova včetně sauny a posilovny tak bude otevřena až po dokončení stavby, což by mělo být v květnu letošního roku,“ uvedl starosta Tomáš Opatrný.",
   "published": "2025-01-20T13:50:00+01:00",
   "rewritten_at": "2026-10-23T14:24:32.165721+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "stavbari-narazili-v-budove-bazenu-na-azbest-skolaci-i-sportovci-si-na-otevreni-pockaji",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "sport",
     "peníze"
   ],
-  "title": "Stavbaři narazili v budově bazénu na azbest, školáci i sportovci si na otevření počkají",
   "tldr": [
     {
       "emoji": "🏊⏳",
@@ -44,6 +38,5 @@
       "label": "Price Check",
       "text": "Rekonstrukce přijde zhruba na 75 milionů korun a část pokryje dotace z fondů EU."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/stavbari-narazili-v-budove-bazenu-na-azbest-skolaci-i-sportovci-si-na-otevreni-pockaji"
+  ]
 }

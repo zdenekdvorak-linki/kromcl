@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, cyklostezka z Kroměříže do Postoupek – Miňůvek má za sebou loading screen a začíná první side quest: kácení náletových dřevin. Dostala ho firma Geokey – středisko Malostroje z Brna a chce za to 644 tisíc korun. Místostarosta Karel Holík upozornil, že částka může někomu přijít vysoká. Zahrnuje ale likvidaci všech pařezů a práci ve špatně přístupném terénu mezi důležitou silnicí a železniční tratí, a to bez omezení provozu. Prostě hard mode.",
     "Tenhle quest má přísný časový limit. Práce musí být hotové mimo vegetační období, tedy do 1. března, aby ve stromech a keřích nestihli zahnízdit ptáci. Zároveň teď běží výběrové řízení na zhotovitele samotné stezky. Podpis smlouvy s vybranou firmou se čeká nejdříve na konci března. Proto kácení oddělili od hlavní zakázky, jak vysvětlil vedoucí odboru investic Libor Pecháček.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Cyklostezka do Postoupek startuje tutoriálem: nejdřív padnou náletové křoviny",
   "id": "mesto-kromeriz:mesto-zahajuje-pripravne-prace-na-stavbu-cyklostezky-do-postoupek",
-  "image_caption": "Ilustrační foto: Pixabay",
   "image_h": 800,
   "image_local": "mesto-zahajuje-pripravne-prace-na-stavbu-cyklostezky-do-postoupek.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/6/9/csm_20250207_kaceni_ilustracni_ea46d9d092.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kácením náletových dřevin začínají v těchto dnech přípravné práce na stavbě cyklostezky z Kroměříže do místní části Postoupky – Miňůvky. Postará se o to společnost Geokey – středisko Malostroje z Brna, která nabídla cenu 644 tisíc korun. „Tyto stromy a keře je nutné kvůli stavbě odstranit. Částka se může někomu zdát vysoká, ale zahrnuje i likvidaci všech pařezů, a především práci ve špatně přístupném terénu mezi důležitou silnicí a železniční tratí, aniž by došlo k omezení provozu,“ vysvětlil místostarosta Karel Holík.",
   "published": "2025-02-07T09:04:30+01:00",
   "rewritten_at": "2026-10-23T14:30:51.250242+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "mesto-zahajuje-pripravne-prace-na-stavbu-cyklostezky-do-postoupek",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "stavba",
     "peníze"
   ],
-  "title": "Město zahajuje přípravné práce na stavbu cyklostezky do Postoupek",
   "tldr": [
     {
       "emoji": "🪓🌳",
@@ -44,6 +38,5 @@
       "label": "Loot Drop",
       "text": "Většinu nákladů na stezku pokryjí dotace, takže město nemusí farmit celou částku samo."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/mesto-zahajuje-pripravne-prace-na-stavbu-cyklostezky-do-postoupek"
+  ]
 }

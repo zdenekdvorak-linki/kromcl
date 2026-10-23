@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, Kroměříž má za sebou rok 2024 a radnice k němu nechala udělat analýzu. Do města přijelo 255 146 návštěvníků a zahraničních z nich bylo 26 365. Data pochází od mobilního operátora, přesněji jde o geolokační signalizační data, takže žádné hádání z křišťálové koule, fr. Radní pro kulturu a cestovní ruch Jiří Kašík vysvětlil, že díky nim radnice ví nejen kolik lidí přijelo, ale i jak dlouho se tu zdrží, jaké akce je nejvíc lákají a odkud jezdí.",
     "Ve městě přenocovalo 48 636 turistů. Cizinců bylo 7562, nejčastěji ze Slovenska, Ukrajiny, Polska a Německa. U Ukrajinců ale nejde o turistiku, nýbrž o útěk před válkou v jejich zemi. Z domácích vedou lidé z Jihomoravského, Olomouckého a Zlínského kraje a z Prahy. Nejnavštěvovanější byl květen s 43 525 návštěvníky, těsně za ním srpen. Právě v srpnu se přitom nejvíc spalo, přesně 8780 turistů. Výletníci sice ve městě nespí, ale vracejí se opakovaně a podle statistik tu stráví průměrně dva dny.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Kroměříž loni přivítala 255 146 návštěvníků a mobilní data to potvrdila",
   "id": "mesto-kromeriz:kromeriz-v-minulem-roce-privitala-vice-nez-ctvrt-milionu-navstevniku",
-  "image_caption": "",
   "image_h": 1104,
   "image_local": "kromeriz-v-minulem-roce-privitala-vice-nez-ctvrt-milionu-navstevniku.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/1/a/csm_20250214_turistika_ilustracni_d706aa42e0.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Do Kroměříže v roce 2024 přijelo 255 146 návštěvníků, z toho 26 365 zahraničních. Vyplývá to z analýzy, kterou si nechala zpracovat kroměřížská radnice. Studie využívá metody vysoce přesných statistických dat mobilního operátora, tzv. geolokačních signalizačních dat. „Díky ní máme přesné informace nejen o návštěvnosti, ale i o tom, jak dlouho se tu lidé zdržují, jaké akce je nejvíce lákají a odkud nejčastěji jezdí,“ popsal radní pro kulturu a cestovní ruch Jiří Kašík.",
   "published": "2025-02-14T10:05:00+01:00",
   "rewritten_at": "2026-10-23T14:34:11.277450+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "kromeriz-v-minulem-roce-privitala-vice-nez-ctvrt-milionu-navstevniku",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "peníze",
     "radnice"
   ],
-  "title": "Kroměříž v minulém roce přivítala více než čtvrt milionu návštěvníků",
   "tldr": [
     {
       "emoji": "🏰📈",
@@ -43,6 +37,5 @@
       "label": "Pre-Covid Level",
       "text": "Návštěvnost pořád nedosahuje hodnot před pandemií koronaviru, takže comeback ještě není dokončený."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/kromeriz-v-minulem-roce-privitala-vice-nez-ctvrt-milionu-navstevniku"
+  ]
 }

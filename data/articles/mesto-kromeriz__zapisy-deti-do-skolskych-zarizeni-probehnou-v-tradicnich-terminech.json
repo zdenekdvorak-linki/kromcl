@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, další tutoriál života se blíží, a to zápis dětí na školní rok 2025-2026 ve školách, které zřizuje město Kroměříž. Základky se zapisují v úterý 8. a ve středu 9. dubna, školky v úterý 6. a ve středu 7. května 2025. Do první třídy míří děti narozené od 1. září 2018 do 31. srpna 2019 a taky ty, které loni dostaly odklad. Odklad může povolit ředitel školy, když dítě není přiměřeně vyspělé. Žádost podává zákonný zástupce písemně přímo u zápisu a musí k ní doložit další náležitosti a doporučení.",
     "Na zápis do první třídy je potřeba občanský průkaz zákonného zástupce, rodný list dítěte a vyplněná přihláška. Tohle prý nesmí chybět v inventáři, zdůraznil vedoucí odboru školství, mládeže a tělovýchovy Jiří Pánek. Na výběr je šest základních škol: ZŠ Komenského náměstí, ZŠ Oskol, ZŠ Slovan, ZŠ S-MYSL, ZŠ U Sýpek a ZŠ Zámoraví. Žádný class lock tu není, rodiče mohou dítě zapsat do kterékoli z nich.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Zápis do škol a školek v Kroměříži: ZŠ v dubnu, MŠ v květnu",
   "id": "mesto-kromeriz:zapisy-deti-do-skolskych-zarizeni-probehnou-v-tradicnich-terminech",
-  "image_caption": "",
   "image_h": 883,
   "image_local": "zapisy-deti-do-skolskych-zarizeni-probehnou-v-tradicnich-terminech.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/6/3/csm_20250207_zapiy_zs_ms_67645ecf53.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Zápis dětí pro školní rok 2025-2026 se ve školách, jejichž zřizovatelem je město Kroměříž, uskuteční v dubnu a květnu. Zápisy do prvních tříd základních škol proběhnou v úterý 8. a ve středu 9. dubna, do škol mateřských mohou rodiče zapsat své děti v úterý 6. a ve středu 7. května 2025.",
   "published": "2025-02-07T09:45:00+01:00",
   "rewritten_at": "2026-10-23T14:31:31.518615+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "zapisy-deti-do-skolskych-zarizeni-probehnou-v-tradicnich-terminech",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "akce",
     "radnice"
   ],
-  "title": "Zápisy dětí do školských zařízení proběhnou v tradičních termínech",
   "tldr": [
     {
       "emoji": "📅🎒",
@@ -44,6 +38,5 @@
       "label": "Free Choice",
       "text": "Rodiče mohou dítě zapsat do libovolné základní školy a totéž platí i pro školky."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/zapisy-deti-do-skolskych-zarizeni-probehnou-v-tradicnich-terminech"
+  ]
 }

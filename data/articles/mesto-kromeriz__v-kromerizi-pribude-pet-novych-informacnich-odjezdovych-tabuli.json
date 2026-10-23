@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo chat, jestli jsi někdy stál na Lindovce a hádal, jestli ten autobus vůbec existuje, tak tohle je W. Na tři kroměřížské zastávky míří nové elektronické odjezdové tabule, celkem jich bude pět.",
     "Hlavní upgrade je v tom, že ukážou i meziměstské autobusy, ne jenom MHD. Potvrdil to místostarosta Jan Hebnar, který zároveň šéfuje Kroměřížským technickým službám, a dělá se to ve spolupráci s Integrovanou dopravou Zlínského kraje.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Na zastávkách přibudou tabule, konečně uvidíš, jestli to vůbec pojede",
   "id": "mesto-kromeriz:v-kromerizi-pribude-pet-novych-informacnich-odjezdovych-tabuli",
-  "image_caption": "Stávající inteligentní označník bude z Milíčova náměstí po nezbytných technických úpravách přemístěn na jinou zastávku.",
   "image_h": 818,
   "image_local": "v-kromerizi-pribude-pet-novych-informacnich-odjezdovych-tabuli.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/0/2/csm_20261023_oznacnik_Milicovo_namesti_02894048ef.jpeg",
   "image_w": 1200,
   "model": "ručně v session (ukázka)",
-  "perex": "Na třech zastávkách autobusové dopravy v Kroměříži budou instalovány nové elektronické tabule, na kterých cestující najdou aktuální informace o odjezdech autobusů. „Kromě informací o odjezdech městské hromadné dopravy zde lidé najdou i informace o spojích meziměstské autobusové dopravy,“ uvedl místostarosta Jan Hebnar, který je jednatelem společnosti Kroměřížské technické služby (KTS), která MHD ve městě provozuje.",
   "published": "2026-10-23T08:15:00+02:00",
   "rewritten_at": "2026-10-23T13:06:32.564171+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "v-kromerizi-pribude-pet-novych-informacnich-odjezdovych-tabuli",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "doprava",
     "radnice"
   ],
-  "title": "V Kroměříži přibude pět nových informačních odjezdových tabulí",
   "tldr": [
     {
       "emoji": "🚌📺",
@@ -43,6 +37,5 @@
       "label": "Solar Relocation",
       "text": "Starý inteligentní označník z Milíčova náměstí se po úpravách přestěhuje jinam, ale musí na místo s dostatkem slunce, protože ho napájí solární panel."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/v-kromerizi-pribude-pet-novych-informacnich-odjezdovych-tabuli"
+  ]
 }

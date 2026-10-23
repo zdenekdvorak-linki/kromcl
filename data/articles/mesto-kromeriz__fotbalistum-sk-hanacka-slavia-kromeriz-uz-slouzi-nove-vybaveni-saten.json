@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, fotbalisté SK Hanácká Slavia Kroměříž mají v šatnách na stadionu Jožky Silného v Obvodové ulici nový gear. Podle místostarosty Karla Holíka byl na starých šatnách už dost znát zub času, takže obnova byla fakt nezbytná. Díky ní se navýšila kapacita a celkově se zlepšilo zázemí pro sportovce. W.",
     "Co přesně padlo do inventáře? Šatní soupravy, moduly a multifunkční stůl. Žádný mid nábytek, čistý buff pro celý tým.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Šatny Hanácké Slavie dostaly patch: víc místa a nový multifunkční stůl",
   "id": "mesto-kromeriz:fotbalistum-sk-hanacka-slavia-kromeriz-uz-slouzi-nove-vybaveni-saten",
-  "image_caption": "",
   "image_h": 675,
   "image_local": "fotbalistum-sk-hanacka-slavia-kromeriz-uz-slouzi-nove-vybaveni-saten.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/b/b/csm_20250128_satny_fotbalovy_stadion_3415d307b8.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Nové vybavení bylo instalováno do šaten na fotbalovém stadionu Jožky Silného v Obvodové ulici. „Na šatnách byl již velice znát zub času a jejich obnova byla nezbytná. Díky ní se podařilo navýšit kapacitu šaten a celkově zázemí pro sportovce zkvalitnit,“ poznamenal místostarosta Karel Holík.",
   "published": "2025-01-28T13:31:54+01:00",
   "rewritten_at": "2026-10-23T14:26:23.379539+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "fotbalistum-sk-hanacka-slavia-kromeriz-uz-slouzi-nove-vybaveni-saten",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "peníze",
     "stavba"
   ],
-  "title": "Fotbalistům SK Hanácká Slavia Kroměříž už slouží nové vybavení šaten",
   "tldr": [
     {
       "emoji": "⚽🚪",
@@ -43,6 +37,5 @@
       "label": "Squad Funding",
       "text": "Na účtu se složilo město, Zlínský kraj a samotný spolek."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/fotbalistum-sk-hanacka-slavia-kromeriz-uz-slouzi-nove-vybaveni-saten"
+  ]
 }

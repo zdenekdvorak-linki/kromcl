@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, kroměřížská radnice dropla solidní W: její Facebook je druhý nejlepší mezi městy s více než deseti tisíci obyvateli v celé ČR. Zlatý lajk 2024 pořádá spolek Kvalikom, který se zabývá komunikací veřejných institucí s klienty. Kroměříž nejdřív vyhrála krajské kolo ve Zlínském kraji. V celostátním kole mezi 62 přihlášenými městy ji pak předčil jen profil statutárního města Most.",
     "Co porotu dostalo? Příspěvky mají dobré fotky a videa a text je výstižný, čtivý a neúřední, k tomu emotikony a prolinky. Nechybí praktické info, rady a důležitá upozornění, ale ani odlehčené příspěvky a fotky z akcí. Bonus aura body: město pracuje s Reels, tedy s formátem, který většina radnic nevyužívá. Úřad prostě hraje v casual módu a funguje to.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Facebook radnice v Kroměříži je druhý nejlepší mezi městy nad 10 tisíc obyvatel",
   "id": "mesto-kromeriz:kromeriz-ma-druhy-nejlepsi-facebookovy-ucet-z-mest-nad-10-tisic-obyvatel-v-cr",
-  "image_caption": "",
   "image_h": 1012,
   "image_local": "kromeriz-ma-druhy-nejlepsi-facebookovy-ucet-z-mest-nad-10-tisic-obyvatel-v-cr.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/5/a/csm_20241219_Zlaty_lajk_FB_dd965da9b0.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížská radnice má druhý nejlepší účet na sociální síti Facebook mezi městy s více než deseti tisíci obyvateli v České republice. Uspěl v klání Zlatý lajk 2024 pořádaném spolkem Kvalikom, který se zabývá komunikací veřejných institucí s jejich klienty. „Komunikace s občany je pro nás velmi důležitá, proto se snažíme neustále servis pro obyvatele i návštěvníky města zlepšovat. Těší nás, že tuto práci, kterou na městském úřadě obstarávají tiskový mluvčí, redaktorka zpravodaje, a fotograf, ocenila nezávislá porota,“ uvedl starosta Tomáš Opatrný.",
   "published": "2025-01-09T09:26:12+01:00",
   "rewritten_at": "2026-10-23T14:21:52.756505+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "kromeriz-ma-druhy-nejlepsi-facebookovy-ucet-z-mest-nad-10-tisic-obyvatel-v-cr",
   "source": "mesto-kromeriz",
@@ -25,7 +20,6 @@
     "radnice",
     "lidé"
   ],
-  "title": "Kroměříž má druhý nejlepší facebookový účet z měst nad 10 tisíc obyvatel v ČR",
   "tldr": [
     {
       "emoji": "🥈📱",
@@ -42,6 +36,5 @@
       "label": "Reels Buff",
       "text": "Porota pochválila, že město točí Reels, které většina radnic nevyužívá."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/kromeriz-ma-druhy-nejlepsi-facebookovy-ucet-z-mest-nad-10-tisic-obyvatel-v-cr"
+  ]
 }

@@ -312,11 +312,8 @@ def _clanek(clanek, souvisejici):
         _datum_cesky(clanek.get("published"))))
     casti.append("<h1>{0}</h1>".format(_e(clanek["headline"])))
 
-    if config.CIZI_FOTKY and clanek.get("image_local"):
-        casti.append("<figure>{img}<figcaption>{popis} Foto: {autor}</figcaption></figure>".format(
-            img=_obrazek_tag(clanek, trida="hero", lazy=False),
-            popis=_e(clanek.get("image_caption", "")),
-            autor=_e(clanek.get("author") or clanek["source_name"])))
+    # Hlavní obrázek článku je kreslený piktogram tématu; fotky nepřebíráme.
+    casti.append(_obrazek_tag(clanek, trida="hero", lazy=False))
 
     polozky = "".join(
         "<li>{emoji}<b>{label}</b> {text}</li>".format(

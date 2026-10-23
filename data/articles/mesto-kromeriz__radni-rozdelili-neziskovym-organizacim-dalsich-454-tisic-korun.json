@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, v Kroměříži padl další loot pro lidi, kteří dělají věci pro ostatní. Radní ve druhé dotační výzvě rozdělili 454 tisíc korun neziskovým organizacím, spolkům i dalším subjektům, které ve městě působí nebo tu pořádají akce. Starosta Tomáš Opatrný k tomu uvedl, že si město váží každého, kdo ve volném čase nezištně pomáhá druhým, a že podpora aktivních lidí patří mezi jasné priority.",
     "Na co se dalo peníze farmit? Na akce z oblasti kultury, cestovního ruchu, prezentace města a partnerských měst, sportu, volnočasových aktivit dětí, mládeže a seniorů, školství, výchovy a vzdělávání, sociální a zdravotní oblasti i životního prostředí. Prostě skoro celý skill tree městského života.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Druhý dotační drop: radní rozdělili spolkům 454 tisíc korun",
   "id": "mesto-kromeriz:radni-rozdelili-neziskovym-organizacim-dalsich-454-tisic-korun",
-  "image_caption": "",
   "image_h": 801,
   "image_local": "radni-rozdelili-neziskovym-organizacim-dalsich-454-tisic-korun.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/a/e/csm_20240603_penize_ilustracni_e04e745cb9.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížští radní rozdělili ve druhé dotační výzvě neziskovým organizacím, spolkům i dalším subjektům, které působí či pořádají akce na území města, 454 tisíc korun. „Velmi si vážíme práce každého člověka, který ve svém volném čase dělá nezištně něco pro druhé. Podpora aktivních lidí, kteří vytvářejí nabídku akcí pro občany Kroměříže, patří mezi naše jednoznačné priority,“ uvedl starosta Tomáš Opatrný.",
   "published": "2026-08-18T11:01:08+02:00",
   "rewritten_at": "2026-10-23T14:53:44.605037+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radni-rozdelili-neziskovym-organizacim-dalsich-454-tisic-korun",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "radnice",
     "akce"
   ],
-  "title": "Radní rozdělili neziskovým organizacím dalších 454 tisíc korun",
   "tldr": [
     {
       "emoji": "💸🎁",
@@ -44,6 +38,5 @@
       "label": "Budget Check",
       "text": "Už v únoru město v dotačním programu rozdělilo více než 2,5 milionu korun."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radni-rozdelili-neziskovym-organizacim-dalsich-454-tisic-korun"
+  ]
 }

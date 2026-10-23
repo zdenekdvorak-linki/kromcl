@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, Velké náměstí možná dostane velký update. Rada města schválila zpracování architektonické studie, ze které mají vzejít návrhy možných změn. Starosta Tomáš Opatrný k tomu uvedl, že náměstí nemá být odstavným parkovištěm, ale reprezentativním prostorem, který žije. Chtějí z něj příjemné místo pro setkávání se zelení a zázemím pro akce, třeba s odpovídajícími rozvody elektřiny a vody. Fr, základní vybavení.",
     "Studie má řešit dopravu včetně návaznosti na historické jádro a parkovací plochy, městskou zeleň a zapojení restaurací do prostoru náměstí. Seznam současných bugů je dlouhý: pěší trasy přerušené silnicí, málo míst k sezení, chybějící zeleň, nevhodný mobiliář a žádná koncepce, jak organizovat náměstí při kulturních a společenských akcích. Místostarosta Jan Hebnar to shrnul tak, že nechtějí prázdnou rozpálenou plochu. Ta vibe je opravdu mid.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Radnice chce z Velkého náměstí víc než parkoviště, nejdřív přijde studie",
   "id": "mesto-kromeriz:vedeni-mesta-zvazuje-revitalizaci-velkeho-namesti",
-  "image_caption": "",
   "image_h": 883,
   "image_local": "vedeni-mesta-zvazuje-revitalizaci-velkeho-namesti.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/f/a/csm_20250214_Velke_namesti_ilustracni_166457b4a8.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Kroměřížská radnice se vrací k myšlence na proměnu Velkého náměstí. Rada města schválila zpracování architektonické studie, ze které by měly vzejít návrhy na možné změny. „Velké náměstí by nemělo být odstavným parkovištěm, ale reprezentativním prostorem, který žije. Rádi bychom z něj měli příjemné místo pro setkávání, kde by nechyběla zeleň ani zázemí pro pořádání akcí, například odpovídající rozvody elektřiny a vody,“ uvedl starosta Tomáš Opatrný.<br />",
   "published": "2025-02-14T10:08:00+01:00",
   "rewritten_at": "2026-10-23T14:35:19.695471+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "vedeni-mesta-zvazuje-revitalizaci-velkeho-namesti",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "stavba",
     "doprava"
   ],
-  "title": "Vedení města zvažuje revitalizaci Velkého náměstí",
   "tldr": [
     {
       "emoji": "🗺️🏛️",
@@ -44,6 +38,5 @@
       "label": "Chill Timeline",
       "text": "Žádný rychlý patch se nechystá a k případným změnám se budou moct vyjádřit i lidé z Kroměříže."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/vedeni-mesta-zvazuje-revitalizaci-velkeho-namesti"
+  ]
 }

@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, radnice přehodila rozsvícení vánočního stromu ze čtvrtka na neděli a popravdě to dává smysl. Letos to padne na 29. listopadu, tedy první adventní neděli. Starosta Tomáš Opatrný to zdůvodnil tím, že v neděli dorazí víc lidí a stihnou si to v klidu užít.",
     "Ten samý den se rozjedou i vánoční trhy Šťastné a veselé a rozsvítí se výzdoba po celém městě. Jarmark jede od 10 do 20 hodin, ve stáncích jsou ozdoby, svíčky, věnce, chvojí, jmelí, punč, svařák, medovina, cukroví a perníčky. Klasika, ale funguje.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Rozsvícení stromu se přesouvá na neděli, Velké náměstí jede do adventu 29. listopadu",
   "id": "mesto-kromeriz:vanocni-strom-se-letos-rozsviti-posledni-listopadovou-nedeli",
-  "image_caption": "",
   "image_h": 705,
   "image_local": "vanocni-strom-se-letos-rozsviti-posledni-listopadovou-nedeli.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/2/b/csm_20261021_rozsviceni_stromu1_8ed564fc6a.jpg",
   "image_w": 1200,
   "model": "ručně v session (ukázka)",
-  "perex": "Kroměřížský vánoční strom na Velkém náměstí se letos rozsvítí první adventní neděli, tedy 29. listopadu. Poslední listopadová neděle tak bude dnem, kdy budou zahájeny vánoční trhy Šťastné a veselé, rozsvítí se světelná výzdoba po celém městě a zároveň začne advent coby kouzelné předsváteční období plné chutí, vůní a vánočních příprav. „Doposud tradiční čtvrteční termín rozsvícení vánočního stromu jsme změnili na neděli, aby si Kroměřížané i návštěvníci města mohli tento výjimečný okamžik užít a přijít v hojném počtu na náměstí, které bude vánoční dominanta až do ledna příštího roku zdobit,“ uvedl starosta Tomáš Opatrný.",
   "published": "2026-10-21T05:07:00+02:00",
   "rewritten_at": "2026-10-23T13:06:32.687823+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "vanocni-strom-se-letos-rozsviti-posledni-listopadovou-nedeli",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "akce",
     "kultura"
   ],
-  "title": "Vánoční strom se letos rozsvítí poslední listopadovou neděli",
   "tldr": [
     {
       "emoji": "🎄📅",
@@ -43,6 +37,5 @@
       "label": "Headliner Energy",
       "text": "Po 18. hodině zahraje Petr Bende s kapelou, před ním je na programu Mikulášská show s Bárou Ladrovou."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/vanocni-strom-se-letos-rozsviti-posledni-listopadovou-nedeli"
+  ]
 }

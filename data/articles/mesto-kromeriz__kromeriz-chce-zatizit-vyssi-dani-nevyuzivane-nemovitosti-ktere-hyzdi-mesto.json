@@ -1,5 +1,4 @@
 {
-  "author": "Jan Vondrášek",
   "body": [
     "Ayo, Kroměříž má na seznamu UNESCO světové památky a turismus je pro ni fakt důležitý, takže vzhled města není jen vibe. Místostarosta Jan Hebnar to zdůvodnil tím, že nevyužité a zanedbané objekty kazí estetický dojem místním i turistům. Některé budovy navíc nejsou dostatečně zajištěné, v okolí je nepořádek a veřejné prostory kvůli tomu stojí víc na údržbu.",
     "Právnička radnice Andrea Nevřalová připomněla, že zákon dovoluje obcím nastavit vyšší daň konkrétním nemovitostem. Vlastnictví podle ní není jen právo, ale i povinnost držet věc v řádném stavu. Zanedbané objekty prý navíc zasahují do krajinného rázu lokality, který zákon také chrání. Úřednický achievement: vlastnictví má i vedlejší questy.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Kroměříž chce nejvyšší koeficient daně pro osm zanedbaných budov",
   "id": "mesto-kromeriz:kromeriz-chce-zatizit-vyssi-dani-nevyuzivane-nemovitosti-ktere-hyzdi-mesto",
-  "image_caption": "Budova bývalé restaurace na Slovanském náměstí.",
   "image_h": 660,
   "image_local": "kromeriz-chce-zatizit-vyssi-dani-nevyuzivane-nemovitosti-ktere-hyzdi-mesto.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/9/5/csm_20250214_dan_Slovanske_namesti_994bfd55e1.jpeg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Vyšší daň z nemovitosti by mohli od roku 2026 platit majitelé osmi budov, na které by se nově vztahoval nejvyšší možný koeficient 5. „Jedná se o nevyužívané a zanedbané objekty, které negativně zasahují do estetického vnímání města, což má vliv na naše občany i na turisty. Kroměříž je přitom vyhledávanou destinací se světovými památkami zapsanými na seznam UNESCO a cestovní ruch je pro město velmi důležitý. Některé z těchto budov navíc nejsou dostatečně zajištěné. V jejich okolí je nepořádek a pohybují se tam osoby bez domova, což přináší například zvýšené náklady na údržbu veřejných prostor,“ uvedl místostarosta Jan Hebnar.",
   "published": "2025-02-14T10:06:00+01:00",
   "rewritten_at": "2026-10-23T14:34:34.094348+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "kromeriz-chce-zatizit-vyssi-dani-nevyuzivane-nemovitosti-ktere-hyzdi-mesto",
   "source": "mesto-kromeriz",
@@ -27,7 +22,6 @@
     "peníze",
     "stavba"
   ],
-  "title": "Kroměříž chce zatížit vyšší daní nevyužívané nemovitosti, které hyzdí město",
   "tldr": [
     {
       "emoji": "🏚️💸",
@@ -44,6 +38,5 @@
       "label": "Home Safe",
       "text": "Pro nemovitosti k bydlení město místní koeficient nemá, lidé platí jen sazbu ze zákona."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/kromeriz-chce-zatizit-vyssi-dani-nevyuzivane-nemovitosti-ktere-hyzdi-mesto"
+  ]
 }

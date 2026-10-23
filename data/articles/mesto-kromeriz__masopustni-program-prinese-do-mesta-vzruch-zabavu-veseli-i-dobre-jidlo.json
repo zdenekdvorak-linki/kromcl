@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, Kroměříž, v sobotu 22. února se Hanácké náměstí mění v hlavní lokaci masopustu. Čeká tu stylový jarmark a poté, co dorazí průvod maškar v čele s medvědem, rozjede se celodenní program. Radní pro kulturu a cestovní ruch Jiří Kašík připomněl, že masopust býval hlavně šancí pořádně se nacpat před čtyřicetidenním půstem, kdežto dnes je spíš o zábavě a společném setkávání. Jak ho kdo prožívá, je na něm, a na náměstí se rád potká se všemi.",
     "Průvod je tradiční hlavní quest celého masopustu. Vede ho medvěd a po boku má další nepostradatelné postavy, třeba medvědáře, bábu s nůší, koně nebo řezníka. Vyráží od Klubíčka na Zacharu v 9 hodin a připojit se může kdokoliv v masce, žádný extra skin navíc není potřeba. Když maškary dorazí na náměstí po desáté hodině, masopust se oficiálně spouští.",
@@ -8,16 +7,12 @@
   ],
   "headline": "Masopust v Kroměříži: 22. února maškary, medvěd a koblihy na Hanáckém náměstí",
   "id": "mesto-kromeriz:masopustni-program-prinese-do-mesta-vzruch-zabavu-veseli-i-dobre-jidlo",
-  "image_caption": "",
   "image_h": 769,
   "image_local": "masopustni-program-prinese-do-mesta-vzruch-zabavu-veseli-i-dobre-jidlo.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/d/8/csm_20250123_masopust_22c45d6431.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Rozpustilé maškary, rázná muzika, průvod městem, zábavný program a masopustní dobroty – takový bude letošní masopust v Kroměříži. Centrem dění bude v sobotu 22. února Hanácké náměstí. Konat se tu bude stylový masopustní jarmark a poté, co sem dorazí průvod maškar v čele s medvědem, tu proběhne celodenní program. „Historicky byl masopust příležitostí pořádně se najíst před obdobím čtyřicetidenního půstu, dnes je spíše o zábavě a společném setkávání. Ať už tento svátek lidé chápou a prožívají jakkoliv, rád se se všemi potkám na Hanáckém náměstí,“ řekl radní pro kulturu a cestovní ruch Jiří Kašík.",
   "published": "2025-01-23T09:10:57+01:00",
   "rewritten_at": "2026-10-23T14:25:31.151308+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "masopustni-program-prinese-do-mesta-vzruch-zabavu-veseli-i-dobre-jidlo",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "akce",
     "kultura"
   ],
-  "title": "Masopustní program přinese do města vzruch, zábavu, veselí i dobré jídlo",
   "tldr": [
     {
       "emoji": "📅🎉",
@@ -43,6 +37,5 @@
       "label": "Food Buffs",
       "text": "Stánky nabídnou zabijačkové výrobky, klobásy, koblihy, koláče, perníky i nápoje k zahřátí."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/masopustni-program-prinese-do-mesta-vzruch-zabavu-veseli-i-dobre-jidlo"
+  ]
 }

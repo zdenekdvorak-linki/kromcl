@@ -1,5 +1,4 @@
 {
-  "author": "Šárka Kučerová",
   "body": [
     "Ayo, Kroměříž spouští další kolo ankety o nejúspěšnější mladé sportovce a už je to podvacáté, takže tahle tradice má solidní aura. Sportovní komise Rady města vyzývá k posílání návrhů podle sportovních výsledků v roce 2024. Místostarosta Karel Holík upřesnil, že se vyhlašují čtyři kategorie: nejúspěšnější mladý sportovec, nejúspěšnější mládežnický sportovní kolektiv, trenér či cvičitel za výjimečné sportovní výsledky a trenér či cvičitel za dlouholetou práci s mládeží. Navíc jde navrhnout i kandidáta na Cenu fair play za rok 2024, což je takový bonus achievement za férovku, no cap.",
     "Pravidla pro výběr postavy jsou jasná. Navrhnout jde členy tělovýchovných jednot a sportovních klubů i sportující žáky základních nebo středních škol z Kroměříže, kteří mají datum narození 2006 nebo mladší. Stejně to platí pro kolektivy. Trenéři a cvičitelé musí působit v organizacích na území města. Ve výjimečných případech se dá nominovat i sportovec, který působí mimo Kroměříž, takže existuje i malý side quest pro výjimky.",
@@ -7,16 +6,12 @@
   ],
   "headline": "Kroměříž hledá nejlepší mladé sportovce roku 2024, návrhy do 21. března",
   "id": "mesto-kromeriz:radnice-opet-oceni-nejlepsi-mlade-kromerizske-sportovce-i-jejich-trenery",
-  "image_caption": "",
   "image_h": 729,
   "image_local": "radnice-opet-oceni-nejlepsi-mlade-kromerizske-sportovce-i-jejich-trenery.webp",
-  "image_url": "https://www.mesto-kromeriz.cz/fileadmin/_processed_/a/8/csm_20240115_mladi_sportovci_anketa_1738f16729.jpg",
   "image_w": 1200,
   "model": "claude-sonnet-5-5",
-  "perex": "Město Kroměříž letos již podvacáté vyhlásí a ocení nejúspěšnější mladé sportovce i mládežnické sportovní kolektivy, jejich trenéry, cvičitele či učitele. Sportovní komise Rady města Kroměříže proto vyzývá k předkládání návrhů na ocenění s ohledem na sportovní výsledky v roce 2024. „V rámci ankety Nejúspěšnější mladý sportovec, kolektiv a trenér/cvičitel města Kroměříže jsou vyhlášeny kategorie: nejúspěšnější mladý sportovec, nejúspěšnější mládežnický sportovní kolektiv, trenér či cvičitel za výjimečné sportovní výsledky a trenér či cvičitel za dlouholetou práci s mládeží. Zároveň je možné navrhnout kandidáta na Cenu fair play za rok 2024,“ upřesnil místostarosta Karel Holík.",
   "published": "2025-01-15T07:19:36+01:00",
   "rewritten_at": "2026-10-23T14:55:02.833200+00:00",
-  "rubrika": "Tiskové zprávy",
   "sensitivity": "volny",
   "slug": "radnice-opet-oceni-nejlepsi-mlade-kromerizske-sportovce-i-jejich-trenery",
   "source": "mesto-kromeriz",
@@ -26,7 +21,6 @@
     "školství",
     "radnice"
   ],
-  "title": "Radnice opět ocení nejlepší mladé kroměřížské sportovce i jejich trenéry",
   "tldr": [
     {
       "emoji": "⏰🏆",
@@ -43,6 +37,5 @@
       "label": "Who Nominates",
       "text": "Nominaci může podat jakákoliv škola nebo sportovní organizace z Kroměříže."
     }
-  ],
-  "url": "https://www.mesto-kromeriz.cz/aktuality/detail/radnice-opet-oceni-nejlepsi-mlade-kromerizske-sportovce-i-jejich-trenery"
+  ]
 }
