@@ -98,10 +98,12 @@ footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 26
 footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
 .strankovani { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 .strankovani a { border: 3px solid var(--ram); padding: 8px 16px; text-decoration: none; font-weight: 700; background: var(--karta); box-shadow: 4px 4px 0 var(--ram); }
-@media (max-width: 640px) {
-  body { font-size: 16px; }
-  .hlava .obal { flex-direction: column; align-items: flex-start; gap: 2px; }
-  .tagline { font-size: 11px; }
+/* Hamburger až do 900 px, ne jen na mobilu. Logo nad 629 px nezmenšuje
+   (336 px) a menu potřebuje 469 px, takže pod šířkou okna zhruba 870 px se
+   láme do dvou řádků — změřeno, na 861 px dva, od 870 px jeden. Hranice 900
+   nechává rezervu na jiné vykreslení písma na Macu. Při změně položek menu
+   nebo stylu štítku „program" je potřeba změřit znovu. */
+@media (max-width: 900px) {
   .hlava .obal { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
   .menu .hamburger { display: inline-flex; cursor: pointer; }
   .menu .odkazy { display: none; position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; flex-direction: column; gap: 0; min-width: 200px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); }
@@ -110,6 +112,10 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .menu .odkazy li + li { border-top: 2px solid var(--ram); }
   .menu .odkazy a { display: block; padding: 12px 16px; border-bottom: 0; }
   .menu .odkazy a:hover, .menu .odkazy a:focus-visible { background: var(--akcent); color: #000; border-bottom: 0; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .tagline { font-size: 11px; }
   .mrizka { grid-template-columns: 1fr; gap: 18px; }
   .karta, .tldr, article.clanek img.hero { box-shadow: 4px 4px 0 var(--ram); }
   .tldr { padding: 14px 16px; }
@@ -130,7 +136,41 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 /* --- Program akcí. Nový blok patří na konec: výš v souboru se pravidla
    přebíjejí (.obrazek má aspect-ratio dvakrát) a vkládat doprostřed se
    nevyplácí. --- */
-.menu .je-sekce { font-weight: 700; color: var(--akcent); -webkit-text-stroke: .4px var(--ram); }
+/* Program jako štítek, ne zelený text. Zelená #39E67A na bílé má kontrast
+   1,6 : 1 a WCAG chce u malého textu 4,5. Černá na zelené dá 11,9 : 1 a
+   sedí to k aktivnímu filtru i ke štítkům témat. Selektor s `a` kvůli
+   specifičnosti — `.menu .odkazy a` by jinak přebil rámeček i odsazení. */
+.menu .odkazy a.je-sekce { background: var(--akcent); color: #000; padding: 3px 8px; border: 2px solid var(--ram); }
+.menu .odkazy a.je-sekce:hover, .menu .odkazy a.je-sekce:focus-visible { border-color: var(--ram); box-shadow: 3px 3px 0 var(--ram); }
+
+/* Rozbalovačka „další" v menu. Třída .dalsi je obsazená sekcí pod článkem,
+   proto .menu-vic. Na desktopu panel pod tlačítkem, v hamburgeru se
+   rozloží do běžného seznamu — tam by druhé rozbalování bylo navíc. */
+.menu .odkazy { align-items: center; }
+.menu-vic { position: relative; }
+.menu-vic-prepinac { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.menu-vic-tlacitko { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; cursor: pointer; border-bottom: 3px solid transparent; padding-bottom: 2px; user-select: none; }
+.menu-vic-tlacitko::after { content: "▾"; display: inline-block; margin-left: 4px; transition: transform .15s ease; }
+.menu-vic-tlacitko:hover { border-bottom-color: var(--akcent); }
+.menu-vic-prepinac:checked ~ .menu-vic-tlacitko::after { transform: rotate(180deg); }
+.menu-vic-prepinac:focus-visible ~ .menu-vic-tlacitko { outline: 3px solid var(--akcent); outline-offset: 3px; }
+.menu-vic-seznam { display: none; position: absolute; right: 0; top: calc(100% + 14px); z-index: 20; list-style: none; margin: 0; padding: 0; min-width: 180px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); }
+.menu-vic-prepinac:checked ~ .menu-vic-seznam { display: block; }
+.menu-vic-seznam li + li { border-top: 2px solid var(--ram); }
+.menu .menu-vic-seznam a { display: block; padding: 10px 14px; border-bottom: 0; }
+.menu .menu-vic-seznam a:hover, .menu .menu-vic-seznam a:focus-visible { background: var(--akcent); color: #000; border-bottom: 0; }
+@media (max-width: 900px) {
+  .menu .odkazy { align-items: stretch; }
+  .menu-vic-tlacitko { display: none; }
+  .menu-vic-seznam { display: block; position: static; min-width: 0; border: 0; box-shadow: none; }
+  .menu-vic-seznam li { border-top: 2px solid var(--ram); }
+  /* Jinak by nad první položkou byly dvě čáry: řádku „další" i jejího
+     prvního potomka. */
+  .menu .odkazy li.menu-vic { border-top: 0; }
+  .menu .menu-vic-seznam a { padding: 12px 16px; }
+  /* V hamburgeru zůstane program zeleným řádkem, ne malým štítkem. */
+  .menu .odkazy a.je-sekce { padding: 12px 16px; border: 0; box-shadow: none; }
+}
 .uvod { max-width: 62ch; font-size: 18px; margin: 0 0 26px; }
 .filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
 .filtr-odkaz { display: inline-block; padding: 6px 12px; border: 2px solid var(--ram); background: var(--karta); color: var(--inkoust); text-decoration: none; font-size: 14px; font-weight: 500; }
@@ -166,6 +206,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .akce-znak { width: 30px; }
   .akce-telo h3 { font-size: 17px; }
 }
+
 /* Obrázky v textu článku (kromka/ilustrace.py). Ikona visí na desktopu na
    levém okraji vedle 720px sloupce; pod 1000 px na okraj nevyjde, tak ji
    text obtéká zprava. Karta peněz nese akcent, aby blok neměl tři stejné. */
@@ -301,17 +342,48 @@ def _jsonld(*bloky):
     return '<script type="application/ld+json">{0}</script>\n'.format(text)
 
 
+# Témata přímo v menu; ostatní jsou pod „další". Dvanáct položek se na
+# desktop nevešlo ani na 1440 px: menu tam má 716 px, položky s mezerami
+# chtěly 766. Pět vybraných podle počtu článků k 23. 10. 2026 (radnice 54,
+# lidé 30, stavba 26, peníze 21, doprava 13) a drží se napevno, aby menu
+# mezi buildy neposkakovalo. „akce" je schválně pod „další" — vedle
+# „program" se pletla s kalendářem, přitom jsou to zprávy.
+HLAVNI_TEMATA = ("radnice", "doprava", "stavba", "peníze", "lidé")
+
+# Témata, ke kterým existuje stránka. Nastavuje vykresli() před zápisem;
+# bez ní by menu odkazovalo na téma bez článků a tím na 404 (tak dopadly
+# „volby"). None znamená „nevím", a pak se ukazuje všechno.
+_EXISTUJICI_TEMATA = None
+
+
 def _menu():
     """Odkazy na stránky témat. Pořadí je pevné, aby menu neposkakovalo
     podle toho, co zrovna vyšlo."""
     poradi = ["radnice", "doprava", "stavba", "peníze", "školství",
               "kultura", "sport", "akce", "volby", "příroda", "lidé"]
+
+    def existuje(tema):
+        return _EXISTUJICI_TEMATA is None or tema in _EXISTUJICI_TEMATA
+
+    def polozka(tema):
+        return '<li><a href="{0}">{1}</a></li>'.format(
+            _e(_tema_cesta(tema)), _e(tema))
+
     # Program není téma článků, ale vlastní sekce — proto stojí první
     # a vede jinam než zbytek menu.
     polozky = ['<li><a class="je-sekce" href="{0}">program</a></li>'.format(
         _e(PROGRAM_CESTA))]
-    polozky += ['<li><a href="{0}">{1}</a></li>'.format(
-        _e(_tema_cesta(t)), _e(t)) for t in poradi]
+    polozky += [polozka(t) for t in poradi if t in HLAVNI_TEMATA and existuje(t)]
+    ostatni = [t for t in poradi if t not in HLAVNI_TEMATA and existuje(t)]
+    if ostatni:
+        # Rozbalení checkboxem jako hamburger: funguje bez JavaScriptu i na
+        # dotykovém notebooku, kde rozbalování na hover selže.
+        polozky.append(
+            '<li class="menu-vic">'
+            '<input type="checkbox" id="menu-vic" class="menu-vic-prepinac">'
+            '<label for="menu-vic" class="menu-vic-tlacitko">další</label>'
+            '<ul class="menu-vic-seznam">{0}</ul></li>'.format(
+                "".join(polozka(t) for t in ostatni)))
     return "".join(polozky)
 
 
@@ -936,6 +1008,8 @@ def _program_stranky(akce_data):
 
 def vykresli(clanky, akce_data=None):
     """Vyrobí celý web do config.SITE. Vrací počet zapsaných souborů."""
+    global _EXISTUJICI_TEMATA
+    _EXISTUJICI_TEMATA = {t for c in clanky for t in c.get("tags", [])}
     config.SITE.mkdir(parents=True, exist_ok=True)
     # Tyhle složky jsou celé generované. Bez úklidu v nich zůstávají soubory
     # ze starších běhů (po převodu na WebP třeba původní JPEGy) a vyvezou se

@@ -276,6 +276,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Důvod pádu se do `state.json` zapisuje bez textu, který ho vyvolal | Stav se commituje do veřejného repa a pojistky hlásí nález i s úryvkem oznámení. Ten úryvek je zdroj, a ten se po použití zahazuje |
 | 2026-10-23 | `zdroj_slug` se do článku neukládá | Nikdo ho nečetl a ukazoval na oznámení |
 | 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
+| 2026-10-23 | Menu na desktopu: program + 5 témat + „další ▾", hamburger až do 900 px | Dvanáct položek se nevešlo ani na 1440 px (menu 716 px, položky 766). Zkrácené menu potřebuje 469 px a láme se pod ~870 px okna; 900 je s rezervou na písmo na Macu. Pět témat podle počtu článků, napevno. Téma bez článků se neodkazuje — „volby" vedly na 404. Program je štítek, ne zelený text: ten měl kontrast 1,6 : 1 |
 | 2026-10-23 | **Program akcí** z otevřených dat města, `/program.html` + okna dnes a víkend + 8 typů | Měřítko úspěchu jsou vracející se místní čtenáři a program je důvod k návratu, který zprávy nedají. Data jsou pod CC BY 4.0, takže fakta beze změny a s atribucí |
 | 2026-10-23 | Stránky oken dnes a víkend navíc proti plánu | Ahrefs: okna mají 950 hledání měsíčně, sedm z osmi typů nulu |
 | 2026-10-23 | Scrape Domu kultury jen na stopáž, přístupnost, formát a původní název | Odkaz na lístek tam není jako URL, jen jako POST formulář Colosseum |
