@@ -168,7 +168,7 @@ ZAKLAD = """<!doctype html>
 <main id="obsah"><div class="obal">{obsah}</div></main>
 <footer><div class="obal">
   <p style="max-width:620px;margin:0">{disclaimer}</p>
-  <p style="margin:0"><a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></p>
+  <p style="margin:0"><a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a> &middot; <a href="/jak-to-delame.html">Jak to děláme</a></p>
 </div></footer>
 </body>
 </html>
@@ -435,6 +435,10 @@ def vykresli(clanky):
     zapsano += _rozcestniky(clanky)
     zapsano += _temata(clanky)
 
+    (config.SITE / "jak-to-delame.html").write_text(_stranka(
+        "Jak to děláme – " + config.BRAND,
+        "Odkud bereme zprávy, jak je píšeme a čím si hlídáme, že nejsou opsané.",
+        _jak_to_delame(), cesta="/jak-to-delame.html"), encoding="utf-8")
     (config.SITE / "o-webu.html").write_text(_stranka(
         "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu(),
         cesta="/o-webu.html"), encoding="utf-8")
@@ -451,7 +455,7 @@ def vykresli(clanky):
         "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
         encoding="utf-8")
     (config.SITE / "CNAME").write_text(_domena() + "\n", encoding="utf-8")
-    return zapsano + 6
+    return zapsano + 7
 
 
 def _rozcestniky(clanky):
@@ -507,6 +511,63 @@ def _strankovani(cislo, celkem):
     return '<nav class="strankovani">{0}</nav>'.format("".join(odkazy))
 
 
+def _jak_to_delame():
+    kontakt = ""
+    if config.KONTAKT:
+        kontakt = (
+            "<h2>Když je něco špatně</h2>"
+            "<p>Napiš na <a href=\"mailto:{0}\">{0}</a>. Chybu opravíme, a pokud "
+            "bude mít město nebo kdokoli jiný námitku k nějaké zprávě, stáhneme "
+            "ji a teprve potom se budeme bavit o tom, kdo měl pravdu.</p>"
+        ).format(_e(config.KONTAKT))
+    return (
+        '<article class="clanek">{drobecky}<h1>Jak to děláme</h1>'
+        "<p>Tahle stránka je tu proto, aby se nikdo nemusel ptát, odkud bereme "
+        "zprávy a jak s nimi nakládáme.</p>"
+
+        "<h2>Odkud to víme</h2>"
+        "<p>Z veřejného kanálu aktualit města Kroměříž. Nikam se nevloupáváme "
+        "a nic neodemykáme — je to stejný zdroj, který si může načíst kdokoli.</p>"
+
+        "<h2>Co s tím děláme</h2>"
+        "<p>Z oznámení si vezmeme fakta a napíšeme o nich vlastní zprávu. Fakta "
+        "jsou volná, formulace města ne, takže nepřebíráme ani věty, ani pořadí "
+        "odstavců. Každá zpráva odkazuje na místo, kde město zveřejnilo oficiální "
+        "informace.</p>"
+
+        "<h2>Čím si to hlídáme</h2>"
+        "<p>Nestačí nám to slíbit, tak to měříme. Než zpráva vyjde, stroj ověří, "
+        "že:</p><ul>"
+        "<li>se s oznámením neshoduje <strong>žádná souvislá sekvence delší než "
+        "sedm slov</strong> (výjimkou jsou jména a názvy institucí),</li>"
+        "<li>text neobsahuje <strong>jedinou přímou citaci</strong> — co kdo "
+        "řekl, parafrázujeme, aby se nikomu nedala vložit do úst věta, kterou "
+        "neřekl,</li>"
+        "<li>v textu nejsou <strong>e-maily ani telefonní čísla</strong>,</li>"
+        "<li>každé <strong>číslo, datum a částka</strong> má oporu v oznámení.</li>"
+        "</ul>"
+        "<p>Co těmi kontrolami neprojde, nevyjde. Ke každé zprávě se navíc ukládá "
+        "snímek oznámení, ze kterého vznikla, a naměřené hodnoty, takže se to dá "
+        "kdykoli přepočítat.</p>"
+
+        "<h2>Fotky nepřebíráme</h2>"
+        "<p>Web města má vyhrazená práva a souhlas s převzetím nemáme, takže "
+        "tady žádné jeho fotky nenajdeš. Obrázky u zpráv jsou kreslené "
+        "piktogramy.</p>"
+
+        "<h2>Ověř si to</h2>"
+        "<p>Kód i naměřené hodnoty jsou veřejné na "
+        '<a href="{repo}" rel="noopener">GitHubu</a>. Nemusíš nám věřit, můžeš '
+        "si to spočítat.</p>"
+
+        "{kontakt}"
+        "<p>Nejsme oficiální web města a nic z toho, co tady čteš, není "
+        "stanovisko radnice.</p>"
+        "</article>"
+    ).format(drobecky=_drobecky([("Domů", "/"), ("Jak to děláme", None)]),
+             repo=_e(config.REPOZITAR), kontakt=kontakt)
+
+
 def _o_webu():
     return (
         '<article class="clanek">{drobecky}<h1>O webu</h1>'
@@ -557,7 +618,9 @@ def _rfc822(iso):
 
 def _sitemap(clanky):
     dnes = datetime.now(timezone.utc).date().isoformat()
-    radky = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
+    radky = ['<url><loc>{0}/jak-to-delame.html</loc><lastmod>{1}</lastmod><priority>0.5</priority></url>'.format(
+        config.SITE_URL, dnes),
+        '<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
         config.SITE_URL, dnes)]
     temata = sorted({t for c in clanky for t in c.get("tags", [])})
     for tag in temata:

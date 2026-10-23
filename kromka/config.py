@@ -86,6 +86,15 @@ PAGE_SIZE = 30
 # cizí fotky nestahují ani nezobrazují. Nepřepínat bez písemného souhlasu.
 CIZI_FOTKY = False
 
+# Veřejná kontaktní adresa pro opravy a stížnosti. Dokud je prázdná,
+# stránka „Jak to děláme" kontakt nenabízí — a tím web přichází o nejlevnější
+# pojistku vůbec: možnost vyřešit spor mailem místo právníkem.
+KONTAKT = os.environ.get("KROMKA_KONTAKT", "")
+
+# Veřejný repozitář. Kód pojistek i naměřené hodnoty si může kdokoli ověřit,
+# což je silnější doklad než jakékoli prohlášení na webu.
+REPOZITAR = "https://github.com/zdenekdvorak-linki/kromcl"
+
 # Kolikrát se smí článek pokusit zpracovat napříč běhy, než se vzdáme.
 # Chrání před nekonečným placeným opakováním vadné položky v cronu.
 MAX_SELHANI = 3

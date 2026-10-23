@@ -57,8 +57,25 @@ def zpracuj(polozka, verbose=True):
 
     data = rewrite.prepis(polozka, citlivost)
 
+    # Snímek oznámení se ukládá dřív, než ho přepis přepíše. Bez něj by
+    # nešlo později doložit, z čeho zpráva vznikla, a doklad by byl tvrzení
+    # proti tvrzení.
+    zdroj_text = "\n\n".join(polozka.get("body") or [])
+    zdroj_cely = polozka["title"] + "\n\n" + zdroj_text
+
     clanek = dict(polozka)
     clanek.update(data)
+    vystup = " ".join([data["headline"]]
+                      + [o["text"] for o in data["tldr"]] + data["body"])
+    clanek["zdroj_snimek"] = {
+        "titulek": polozka["title"],
+        "url": polozka["url"],
+        "vydavatel": polozka["source_name"],
+        "publikovano": polozka.get("published", ""),
+        "text": zdroj_text,
+        "stazeno": datetime.now(timezone.utc).isoformat(),
+    }
+    clanek["doklad"] = rewrite.doklad(zdroj_cely, vystup)
     clanek["sensitivity"] = citlivost
     clanek["image_local"], clanek["image_w"], clanek["image_h"] = _stahni_obrazek(polozka)
     clanek["rewritten_at"] = datetime.now(timezone.utc).isoformat()

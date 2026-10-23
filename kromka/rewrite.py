@@ -350,6 +350,49 @@ _SPONY = {"a", "i", "o", "u", "v", "ve", "s", "se", "z", "ze", "na", "do", "od",
           "jeho", "jejich", "který", "která", "které", "si", "už", "také"}
 
 
+# Zvyš při každé změně pojistek, ať je u staršího článku poznat, čím prošel.
+VERZE_POJISTEK = "1.0"
+
+
+def nejdelsi_shoda(zdroj, vystup, strop=20):
+    """Nejdelší souvislá sekvence slov, kterou mají zdroj a výstup společnou."""
+    def ngramy(text, n):
+        slova = [s.lower() for s in _SLOVO.findall(text)]
+        return {" ".join(slova[i:i + n]) for i in range(len(slova) - n + 1)}
+
+    for n in range(strop, 0, -1):
+        spolecne = ngramy(zdroj, n) & ngramy(vystup, n)
+        if spolecne:
+            return n, sorted(spolecne)[0]
+    return 0, ""
+
+
+def doklad(zdroj, vystup):
+    """Měřitelný doklad, že text není opsaný.
+
+    Ukládá se ke každému článku. Tvrzení „nekopírujeme" je k ničemu, pokud
+    ho nejde ověřit; tohle jsou čísla, která si kdokoli přepočítá ze zdroje
+    uloženého vedle.
+    """
+    from datetime import datetime, timezone
+
+    delka, ukazka = nejdelsi_shoda(zdroj, vystup)
+    slova_zdroj = {s.lower() for s in _SLOVO.findall(zdroj)}
+    slova_vystup = [s.lower() for s in _SLOVO.findall(vystup)]
+    prekryv = (sum(1 for s in slova_vystup if s in slova_zdroj) /
+               float(len(slova_vystup))) if slova_vystup else 0.0
+    return {
+        "nejdelsi_shoda_slov": delka,
+        "nejdelsi_shoda_ukazka": ukazka,
+        "prah_shody": 8,
+        "prekryv_slovniku": round(prekryv, 3),
+        "primych_citaci": len(zkontroluj_citace(vystup) and [1] or []),
+        "kontaktnich_udaju": len(zkontroluj_kontakty(vystup)),
+        "verze_pojistek": VERZE_POJISTEK,
+        "zmereno": datetime.now(timezone.utc).isoformat(),
+    }
+
+
 def zkontroluj_opisovani(zdroj, vystup, delka=8):
     """Souvislé sekvence slov doslova převzaté z oznámení.
 
