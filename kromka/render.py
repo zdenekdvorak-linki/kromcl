@@ -98,12 +98,16 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .tldr { padding: 14px 16px; }
 }
 .obrazek { aspect-ratio: 3/2; display: grid; place-items: center; background: var(--akcent); border-bottom: 3px solid var(--ram); color: var(--inkoust); }
-.obrazek .piktogram { width: 38%; height: auto; }
+.obrazek .piktogram { width: 38%; height: auto; transform: rotate(-3deg); transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+.piktogram .oko { fill: currentColor; stroke: none; }
+.karta:hover .piktogram, .karta:focus-within .piktogram { transform: rotate(3deg) scale(1.1); }
+.obrazek.hero .piktogram { animation: kyvani 5s ease-in-out infinite; }
+@keyframes kyvani { 0%, 100% { transform: rotate(-3deg) } 50% { transform: rotate(3deg) translateY(-3px) } }
 .hlavni .obrazek { aspect-ratio: 21/9; }
 .obrazek.hero { aspect-ratio: 2/1; border: 3px solid var(--ram); border-bottom-width: 3px; box-shadow: 6px 6px 0 var(--ram); }
 .obrazek.hero .piktogram { width: 26%; }
 @media (max-width: 640px) { .obrazek.hero { box-shadow: 4px 4px 0 var(--ram); } }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { *, .obrazek .piktogram { transition: none !important; animation: none !important; } }
 """.replace("ACCENT", config.ACCENT)
 
 ZAKLAD = """<!doctype html>
