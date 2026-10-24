@@ -200,7 +200,10 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all` |
 | `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
 | `bin/ikony.py` | vyrobí ikony do `static/`; pouští se ručně po změně značky, výsledek se commituje |
-| `static/` | kopíruje se do kořene webu: ikony, `sw.js` (service worker), `app.js` (výzva k instalaci) |
+| `static/` | kopíruje se do kořene webu i s podsložkami: ikony, `fonts/`, `sw.js` (service worker), `app.js` (výzva k instalaci) |
+| `bin/fonty.py` | stáhne Syne a Space Grotesk do `static/fonts/` (woff2) a `kromka/pisma/` (TTF pro kartu) i s licencí OFL; pouští se ručně jednou |
+| `kromka/pisma/` | TTF pro víkendovou kartu a `fonty.css` s pravidly `@font-face`, který si render přidá před ostatní styly |
+| `kromka/karta.py` | víkendová karta 1080 × 1920 do instagramového příběhu: výběr akcí, zalamování textu, kreslení v Pillow |
 
 ## Vývojové poznámky
 
@@ -279,6 +282,11 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Důvod pádu se do `state.json` zapisuje bez textu, který ho vyvolal | Stav se commituje do veřejného repa a pojistky hlásí nález i s úryvkem oznámení. Ten úryvek je zdroj, a ten se po použití zahazuje |
 | 2026-10-23 | `zdroj_slug` se do článku neukládá | Nikdo ho nečetl a ukazoval na oznámení |
 | 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
+| 2026-10-24 | **Fonty u sebe** místo Google Fonts | Google by dostal IP adresu každého čtenáře, web čekal na dvě cizí spojení a appka offline padala na náhradní písmo. Čtyři soubory woff2, dohromady 90 kB, licence OFL jde s nimi |
+| 2026-10-24 | **Víkendová karta** na `/program/vikend-pribeh.png` + odkaz na stránce víkendu | Důvod vracet se každý týden a obsah tam, kde publikum je. Pestrý výběr: jednodenní akce, nejvýš 2 kina, bez výstav, nejdřív až 3 na den |
+| 2026-10-24 | Karta nebere akce, které už začaly | Přestavuje se každou hodinu; v sobotu odpoledne by nabízela dopolední program |
+| 2026-10-24 | Okna dnes a víkend podle pražského času (`akce.ted()`) | GitHub Actions běží v UTC; po půlnoci by „dnes" ukazovalo včerejšek, jednu až dvě hodiny denně |
+| 2026-10-24 | Odkazy akcí vždy s protokolem | 22 ze 115 odkazů v exportu bylo „www.…" bez https a vedlo na kromcl.cz/program/www.…, tedy na 404 |
 | 2026-10-24 | Favicona **K na dlaždici**, web jde nainstalovat jako appka | Z pěti návrhů jediná čistá i v 16 px na skutečném rastru. Výzva k instalaci od druhé zobrazené stránky, po „Teď ne" 30 dní klid; na iPhonu návod přes Sdílet, protože Safari instalační dialog nemá |
 | 2026-10-24 | **První spustitelný JavaScript** na webu (`static/app.js`, `static/sw.js`) | Instalace bez JS nejde. Lištu vkládá až skript, takže bez JS nic nechybí ani se nic nerozbije |
 | 2026-10-24 | Service worker vždy nejdřív ze sítě | Web se přestavuje každou hodinu; obráceně by appka ukazovala staré zprávy a neplatný program. Z mezipaměti jen při výpadku signálu |
@@ -324,6 +332,43 @@ nezaregistruje („unknown error when fetching the script"), přestože
 zaregistruje a aktivuje. Edge bez okna na Windows zase nedovolí okno užší
 než asi 500 px, takže mobilní snímek z něj vypadá přetékající; poctivý snímek
 je ze stránky vložené do `<iframe width="390">`.
+
+## Fonty
+
+Syne a Space Grotesk jsou na webu, ne na Google Fonts. Stáhl je
+`bin/fonty.py` (pouští se ručně jednou) do dvou míst:
+
+- `static/fonts/` — čtyři proměnné woff2 pro web, po latince a latince
+  rozšířené o češtinu, dohromady 90 kB; prohlížeč si je přednačte
+- `kromka/pisma/` — statické TTF pro víkendovou kartu; Pillow woff2 neumí
+
+K oběma patří `OFL-*.txt`, licence to při šíření vyžaduje. Service worker
+má seznam fontů natvrdo a ukládá je při instalaci — test hlídá, že sedí se
+soubory ve `static/fonts/`, a další test, že šablona nevolá Google.
+
+## Víkendová karta
+
+`kromka/karta.py` při každém buildu nakreslí obrázek 1080 × 1920 s
+nejvýš šesti akcemi nejbližšího víkendu na `/program/vikend-pribeh.png`.
+Na stránce víkendu na něj vede odkaz se stažením.
+
+Výběr: jen jednodenní akce v sobotu a neděli, nejvýš dvě projekce kina,
+žádné výstavy, nejdřív až tři akce na den a pak doplnit podle času,
+stejná akce jen jednou, akce, které už začaly, vynechat. Výsledek se
+řadí podle času.
+
+Instagram v příběhu zakrývá horních a spodních asi 250 px, takže
+všechno podstatné je mezi 250 a 1670. Hlavička i pata se počítají z
+obrysu textu, ne z odhadu — odhad vedl k překryvu podtitulu s nadpisem.
+Text se zalamuje česky: jednopísmenná předložka ani řadová číslovka
+nezůstane na konci řádku.
+
+Bez Pillow se karta i odkaz vynechají a zbytek webu se postaví.
+
+**Ověřování:** Edge bez okna se „virtuálním časem" (`--virtual-time-budget`)
+nečeká na síť a úložiště service workeru, takže test ukládání fontů v
+něm zamrzne. Logika `sw.js` se proto ověřovala v Node s napodobeným
+prostředím; registraci samotnou v Edge ověřila už první verze.
 
 ## Výměna archivu
 

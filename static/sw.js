@@ -3,15 +3,33 @@
  * Dělá dvě věci: bez něj si Chrome nemusí web nabídnout k instalaci, a s ním
  * se dají naposledy otevřené stránky číst i bez signálu.
  *
- * Vždy nejdřív síť, mezipaměť jen při výpadku. Web se přestavuje každou
- * hodinu; obráceně by appka ukazovala staré zprávy a program, který už neplatí.
- * Ukládají se jen celé stránky (navigace), ne obrázky ani cizí fonty.
+ * Stránky vždy nejdřív ze sítě, mezipaměť jen při výpadku. Web se
+ * přestavuje každou hodinu; obráceně by appka ukazovala staré zprávy
+ * a program, který už neplatí.
  *
- * Při změně chování zvyš VERZE — prohlížeč pak staré úložiště smaže.
+ * Fonty naopak nejdřív z mezipaměti: nemění se a bez nich by offline
+ * stránka spadla na náhradní písmo. Ukládají se rovnou při instalaci,
+ * aby byly k dispozici i dřív, než si je stránka sama vyžádá.
+ *
+ * Při změně chování nebo seznamu fontů zvyš VERZE — prohlížeč pak staré
+ * úložiště smaže.
  */
-const VERZE = 'kromka-v1';
+const VERZE = 'kromka-v2';
+const FONTY = [
+  '/fonts/space-grotesk-latin.woff2',
+  '/fonts/space-grotesk-latin-ext.woff2',
+  '/fonts/syne-latin.woff2',
+  '/fonts/syne-latin-ext.woff2',
+];
 
-self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('install', (udalost) => {
+  udalost.waitUntil((async () => {
+    // Chybějící font nesmí shodit instalaci celého workeru.
+    const uloziste = await caches.open(VERZE);
+    await Promise.all(FONTY.map((url) => uloziste.add(url).catch(() => {})));
+    await self.skipWaiting();
+  })());
+});
 
 self.addEventListener('activate', (udalost) => {
   udalost.waitUntil((async () => {
@@ -24,7 +42,24 @@ self.addEventListener('activate', (udalost) => {
 
 self.addEventListener('fetch', (udalost) => {
   const pozadavek = udalost.request;
-  if (pozadavek.mode !== 'navigate' || pozadavek.method !== 'GET') return;
+  if (pozadavek.method !== 'GET') return;
+  const url = new URL(pozadavek.url);
+
+  if (url.origin === self.location.origin && url.pathname.startsWith('/fonts/')) {
+    udalost.respondWith((async () => {
+      const ulozeny = await caches.match(pozadavek);
+      if (ulozeny) return ulozeny;
+      const odpoved = await fetch(pozadavek);
+      if (odpoved.ok) {
+        const kopie = odpoved.clone();
+        caches.open(VERZE).then((uloziste) => uloziste.put(pozadavek, kopie));
+      }
+      return odpoved;
+    })());
+    return;
+  }
+
+  if (pozadavek.mode !== 'navigate') return;
 
   udalost.respondWith((async () => {
     try {

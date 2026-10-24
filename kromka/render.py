@@ -14,6 +14,7 @@ import json
 import re
 import shutil
 from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
 
 from . import akce, config, htmlutil, ilustrace, piktogramy
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
@@ -172,6 +173,9 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .menu .odkazy a.je-sekce { padding: 12px 16px; border: 0; box-shadow: none; }
 }
 .uvod { max-width: 62ch; font-size: 18px; margin: 0 0 26px; }
+.pribeh-odkaz { margin: -12px 0 26px; font-size: 15px; }
+.pribeh-odkaz a { font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.pribeh-odkaz a::before { content: "↓ "; }
 .filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
 .filtr-odkaz { display: inline-block; padding: 6px 12px; border: 2px solid var(--ram); background: var(--karta); color: var(--inkoust); text-decoration: none; font-size: 14px; font-weight: 500; }
 .filtr-odkaz:hover { box-shadow: 3px 3px 0 var(--ram); }
@@ -265,6 +269,22 @@ body.s-instalaci { padding-bottom: 110px; }
 }
 """.replace("ACCENT", config.ACCENT)
 
+# Fonty u sebe místo Google Fonts; proč, to vysvětluje bin/fonty.py, který
+# je stáhl a vygeneroval pravidla @font-face s rozsahy znaků. Bez nich web
+# pořád funguje, jen na náhradním písmu.
+_PISMA = Path(__file__).resolve().parent / "pisma"
+if (_PISMA / "fonty.css").exists():
+    CSS = (_PISMA / "fonty.css").read_text(encoding="utf-8") + CSS
+
+# Přednačtení všech čtyř souborů: každá stránka má Syne i Space Grotesk a
+# v obou češtinu, takže se stáhnou stejně. Dohromady asi 90 kB. `crossorigin`
+# je nutné i pro vlastní doménu — fonty se stahují v režimu CORS a bez něj
+# by prohlížeč přednačtený soubor zahodil a stáhl znovu.
+FONTY_PRELOAD = "".join(
+    '<link rel="preload" href="/fonts/{0}" as="font" type="font/woff2" crossorigin>\n'.format(
+        soubor.name)
+    for soubor in sorted((config.STATIC / "fonts").glob("*.woff2")))
+
 ZAKLAD = """<!doctype html>
 <html lang="cs">
 <head>
@@ -292,9 +312,7 @@ ZAKLAD = """<!doctype html>
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">
 <script src="/app.js" defer></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+{fonty_preload}
 <style>{css}</style>
 {jsonld}</head>
 <body>
@@ -432,7 +450,7 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
         kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
-        menu=_menu(),
+        menu=_menu(), fonty_preload=FONTY_PRELOAD,
         tw_karta="summary_large_image" if obrazek else "summary",
     )
 
@@ -969,6 +987,28 @@ def _ld_drobecky_program(nazev=None, cesta=None):
     }
 
 
+PRIBEH_CESTA = "/program/vikend-pribeh.png"
+
+
+def _pribeh_odkaz(terminy, dny, ted):
+    """Nakreslí víkendovou kartu a vrátí odkaz na ni, nebo prázdno.
+
+    Karta je na stálé adrese, aby si ji šlo otevřít v telefonu a uložit.
+    Odkaz nese verzi podle hodiny buildu, jinak by prohlížeč mohl držet
+    obrázek z minulého víkendu. Bez Pillow nebo bez akcí odkaz nevznikne.
+    """
+    from . import karta
+    vybrane = karta.vytvor(terminy, dny, config.SITE / PRIBEH_CESTA.lstrip("/"), ted=ted)
+    if not vybrane:
+        return ""
+    prvni, posledni = sorted(dny)[0], sorted(dny)[-1]
+    soubor = "kromcl-vikend-{0}-{1}-{2}.png".format(
+        int(prvni[8:10]), int(posledni[8:10]), int(posledni[5:7]))
+    return ('<p class="pribeh-odkaz"><a href="{0}?v={1}" download="{2}">'
+            'Stáhnout víkend jako obrázek do příběhu</a></p>').format(
+                PRIBEH_CESTA, ted.strftime("%Y%m%d%H"), soubor)
+
+
 def _program_stranky(akce_data):
     """Zapíše /program.html a stránku ke každému zastoupenému typu.
 
@@ -999,18 +1039,24 @@ def _program_stranky(akce_data):
     ), encoding="utf-8")
     zapsano = 1
 
-    dnes = date.today()
+    # Pražský čas, ne date.today(): build v GitHub Actions běží v UTC a po
+    # půlnoci by „dnes" ukazovalo ještě včerejšek.
+    ted = akce.ted()
+    dnes = ted.date()
     for klic, udaje in VYBERY.items():
         dny = _OKNA[klic](dnes)
         vybrane = [t for t in terminy if _v_okne(t, dny)]
         cesta = _vyber_cesta(klic)
+        pribeh = ""
+        if klic == "vikend":
+            pribeh = _pribeh_odkaz(terminy, dny, ted)
         (config.SITE / "program" / (klic + ".html")).write_text(_stranka(
             "{0} – {1}".format(udaje["titulek"], config.BRAND),
             udaje["popis"],
-            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}'.format(
+            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}{4}'.format(
                 _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
                            (udaje["h1"], None)]),
-                _e(udaje["h1"]), _e(udaje["uvod"]),
+                _e(udaje["h1"]), _e(udaje["uvod"]), pribeh,
                 _program(vybrane, klic, dostupne, udaje["prazdno"])),
             cesta=cesta, og_titulek=udaje["titulek"],
             jsonld=_jsonld(_ld_seznam(vybrane, cesta),
@@ -1083,10 +1129,13 @@ def _staticke_soubory():
     if not config.STATIC.is_dir():
         return 0
     pocet = 0
-    for soubor in sorted(config.STATIC.iterdir()):
-        if soubor.is_file():
-            shutil.copy2(str(soubor), str(config.SITE / soubor.name))
-            pocet += 1
+    for soubor in sorted(config.STATIC.rglob("*")):
+        if not soubor.is_file():
+            continue
+        cil = config.SITE / soubor.relative_to(config.STATIC)
+        cil.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(str(soubor), str(cil))
+        pocet += 1
     return pocet
 
 
@@ -1102,7 +1151,7 @@ def vykresli(clanky, akce_data=None):
     # zůstal na webu soubor, na který už nic neodkazuje.
     for stary in config.SITE.glob("*.html"):
         stary.unlink()
-    for podslozka in ("clanek", "img", "tema", "program"):
+    for podslozka in ("clanek", "img", "tema", "program", "fonts"):
         shutil.rmtree(str(config.SITE / podslozka), ignore_errors=True)
         (config.SITE / podslozka).mkdir(parents=True, exist_ok=True)
     if config.CIZI_FOTKY:

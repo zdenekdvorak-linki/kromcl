@@ -35,7 +35,7 @@
     },
     "12": {
       "nazev": "Stará masna",
-      "web": "www.stara-masna.cz/"
+      "web": "https://www.stara-masna.cz/"
     },
     "14": {
       "nazev": "Zimní stadion",
@@ -43,7 +43,7 @@
     },
     "15": {
       "nazev": "Koupaliště Bajda - sportovní areál",
-      "web": "www.szmk.cz/sportoviste/koupaliste-bajda-kromeriz/page3.html"
+      "web": "https://www.szmk.cz/sportoviste/koupaliste-bajda-kromeriz/page3.html"
     },
     "16": {
       "nazev": "Fotbalový stadion Kroměříž",
@@ -79,7 +79,7 @@
     },
     "24": {
       "nazev": "Krytý plavecký bazén",
-      "web": "www.szmk.cz/sportoviste/kryty-plavecky-bazen-kromeriz/page2.html"
+      "web": "https://www.szmk.cz/sportoviste/kryty-plavecky-bazen-kromeriz/page2.html"
     },
     "25": {
       "nazev": "Květná zahrada",
@@ -127,7 +127,7 @@
     },
     "36": {
       "nazev": "Konzervatoř P. J. Vejvanovského",
-      "web": "www.konzkm.cz"
+      "web": "https://www.konzkm.cz"
     },
     "37": {
       "nazev": "Café Bistro Matiné",
@@ -135,7 +135,7 @@
     },
     "38": {
       "nazev": "Galerie Orlovna",
-      "web": "www.galerie-orlovna.cz"
+      "web": "https://www.galerie-orlovna.cz"
     },
     "39": {
       "nazev": "Černý Orel",
@@ -147,7 +147,7 @@
     },
     "42": {
       "nazev": "Beer & Bowl",
-      "web": "www.bowlingkm.cz"
+      "web": "https://www.bowlingkm.cz"
     },
     "43": {
       "nazev": "Tam Tam Oskol Club",
@@ -219,7 +219,7 @@
     },
     "60": {
       "nazev": "Piano club",
-      "web": "www.pianoclub.cz"
+      "web": "https://www.pianoclub.cz"
     },
     "61": {
       "nazev": "Oblastní charita Kroměříž",
@@ -259,11 +259,11 @@
     },
     "70": {
       "nazev": "Protiatomový kryt",
-      "web": "www.kromeriz.eu"
+      "web": "https://www.kromeriz.eu"
     },
     "71": {
       "nazev": "Hvězdárna Kroměříž",
-      "web": "www.dk-kromeriz.cz/hvezdarna-kromeriz"
+      "web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz"
     },
     "72": {
       "nazev": "Areál lokomotivního depa a točna na vlakovém nádraží",
@@ -271,11 +271,11 @@
     },
     "73": {
       "nazev": "Rotunda",
-      "web": "www.zamek-kromeriz.cz"
+      "web": "https://www.zamek-kromeriz.cz"
     },
     "74": {
       "nazev": "Arcibiskupská vodárna",
-      "web": "www.zamek-kromeriz.cz"
+      "web": "https://www.zamek-kromeriz.cz"
     },
     "75": {
       "nazev": "Střední pedagogická škola Kroměříž",
@@ -283,7 +283,7 @@
     },
     "76": {
       "nazev": "Centrum odborné přípravy technické Kroměříž",
-      "web": "www.coptkm.cz"
+      "web": "https://www.coptkm.cz"
     },
     "77": {
       "nazev": "Vodní elektrárna na Strži",
@@ -471,7 +471,7 @@
     },
     "123": {
       "nazev": "Kavárna Sezóna",
-      "web": "www.kavarna-sezona.cz"
+      "web": "https://www.kavarna-sezona.cz"
     },
     "124": {
       "nazev": "Hotel Purkmistr",
@@ -531,7 +531,7 @@
     },
     "141": {
       "nazev": "Expozice Karla Kryla",
-      "web": "www.dk-kromeriz.cz/expozice-karla-kryla"
+      "web": "https://www.dk-kromeriz.cz/expozice-karla-kryla"
     },
     "142": {
       "nazev": "Charitní pečovatelská služba",
@@ -547,7 +547,7 @@
     },
     "145": {
       "nazev": "Fotbalový stadion  TJ Těšnovice",
-      "web": "tjtesnovice.webnode.cz"
+      "web": "https://tjtesnovice.webnode.cz"
     },
     "146": {
       "nazev": "Sídliště Zachar",
@@ -567,19 +567,19 @@
     },
     "153": {
       "nazev": "Základní škola Slovan",
-      "web": "www.zsslovan.cz"
+      "web": "https://www.zsslovan.cz"
     },
     "154": {
       "nazev": "Čajovna Aleeza - ZRUŠENO",
-      "web": "www.cajovnaaleeza.cz/"
+      "web": "https://www.cajovnaaleeza.cz/"
     },
     "155": {
       "nazev": "Čajovna Na radosti",
-      "web": "www.cajovnakromeriz.cz"
+      "web": "https://www.cajovnakromeriz.cz"
     },
     "156": {
       "nazev": "Sokolský dům Kroměříž",
-      "web": "tj-sokol-kromeriz.webnode.cz/"
+      "web": "https://tj-sokol-kromeriz.webnode.cz/"
     },
     "157": {
       "nazev": "Klub seniorů na Hanáckém náměstí",
@@ -711,7 +711,7 @@
     },
     "189": {
       "nazev": "Hospůdka Riegrovka",
-      "web": "www.hospudkariegrovka.cz"
+      "web": "https://www.hospudkariegrovka.cz"
     },
     "190": {
       "nazev": "Tudam - cafe & bar",
@@ -751,7 +751,7 @@
     },
     "199": {
       "nazev": "Vinotéka Kroměříž",
-      "web": "www.vinoteka-kromeriz.cz"
+      "web": "https://www.vinoteka-kromeriz.cz"
     },
     "200": {
       "nazev": "Lunety Maxe Švabinského",
@@ -1063,7 +1063,7 @@
     },
     "279": {
       "nazev": "Paintball city u Holešova",
-      "web": "www.paintball-city.cz"
+      "web": "https://www.paintball-city.cz"
     },
     "280": {
       "nazev": "Zámek Tovačov",
@@ -1111,7 +1111,7 @@
     },
     "293": {
       "nazev": "Buchlovice",
-      "web": "www.buc.cz"
+      "web": "https://www.buc.cz"
     },
     "294": {
       "nazev": "Kvasice",
@@ -1171,7 +1171,7 @@
     },
     "308": {
       "nazev": "Flow yoga studio",
-      "web": "www.flow-yoga.cz"
+      "web": "https://www.flow-yoga.cz"
     },
     "309": {
       "nazev": "Církevní základní škola",
@@ -1223,15 +1223,15 @@
     },
     "322": {
       "nazev": "Soukromá základní umělecká škola D-MUSIC",
-      "web": "www.d-music.cz"
+      "web": "https://www.d-music.cz"
     },
     "323": {
       "nazev": "Centrum jógy a umění Slon",
-      "web": "www.jogakromeriz.cz"
+      "web": "https://www.jogakromeriz.cz"
     },
     "324": {
       "nazev": "Nohejbalový klub Bajda Kroměříž",
-      "web": "www.nkbajda.cz"
+      "web": "https://www.nkbajda.cz"
     },
     "325": {
       "nazev": "Pražírna kávy Kroměříž",
@@ -1255,7 +1255,7 @@
     },
     "330": {
       "nazev": "Restaurace Myslivna",
-      "web": "www.restauracemyslivna.cz"
+      "web": "https://www.restauracemyslivna.cz"
     },
     "331": {
       "nazev": "Rally Safari",
@@ -1275,7 +1275,7 @@
     },
     "336": {
       "nazev": "ilSapore Caffe Restaurant",
-      "web": "www.ilsapore.cz"
+      "web": "https://www.ilsapore.cz"
     },
     "337": {
       "nazev": "Café La Micina",
@@ -1283,7 +1283,7 @@
     },
     "338": {
       "nazev": "Čokoládové Království",
-      "web": "cokoladovekralovstvi.cz"
+      "web": "https://cokoladovekralovstvi.cz"
     },
     "339": {
       "nazev": "Apartmán s garáží a terasou v Kroměříži",
@@ -1314,7 +1314,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-23T21:09:46.685029+00:00",
+  "stazeno": "2026-10-24T08:21:17.002590+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -1374,7 +1374,7 @@
       "typ_id": 9,
       "upraveno": "2026-10-12T15:04:12",
       "vicedenni": true,
-      "web": "www.kvetnazahrada-kromeriz.cz",
+      "web": "https://www.kvetnazahrada-kromeriz.cz",
       "youtube": "",
       "zacatek": "2026-09-25T00:00:00",
       "zdarma": false
@@ -1395,7 +1395,7 @@
       "typ_id": 9,
       "upraveno": "2026-10-12T15:54:38",
       "vicedenni": true,
-      "web": "www.kvetnazahrada-kromeriz.cz",
+      "web": "https://www.kvetnazahrada-kromeriz.cz",
       "youtube": "",
       "zacatek": "2026-09-25T00:00:00",
       "zdarma": false
@@ -1590,96 +1590,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11768,
-      "cena": 100,
-      "cena_pozn": "",
-      "id": 21603,
-      "konec": "2026-10-23T12:00:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Workshop: Hranice nejen ve výchově: Pevně a láskyplně",
-      "perex": "Beseda vhodná pro každého rodiče na téma jak nastavovat hranice.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-09-16T13:06:03",
-      "vicedenni": false,
-      "web": "https://www.klubickokm.cz/vzdelavani-pro-rodice/",
-      "youtube": "",
-      "zacatek": "2026-10-23T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11795,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21647,
-      "konec": "2026-10-23T18:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Beseda s Lenkou Chalupovou",
-      "perex": "Kroměřížské literární dny.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-09-15T12:30:25",
-      "vicedenni": false,
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-10-23T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11771,
-      "cena": 190,
-      "cena_pozn": "zahájení předprodeje 10. 9. 2026",
-      "id": 21608,
-      "konec": "2026-10-23T21:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "F-dur Jazz band",
-      "perex": "F-dur Jazz band je třináctičlenná jazzová formace ze Zlína, která svou hudbou oslovuje publikum již od roku 1994. Kapela vznikla z nadšení pro moderní jazzové aranžmá a od počátku staví na energickém projevu dechové sekce, precizní rytmice a výrazných vokálech.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-09-14T09:27:32",
-      "vicedenni": false,
-      "web": "https://www.dk-kromeriz.cz/f-dur-jazz-band",
-      "youtube": "mlWozTa2gRA",
-      "zacatek": "2026-10-23T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11871,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21742,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Sense and Sensibility",
-        "stopaz": "asi 2 hodiny a 11 minut"
-      },
-      "konec": "2026-10-23T22:11:00",
-      "misto": "Kino Nadsklepí",
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Rozum a cit (USA/UK 2026)",
-      "perex": "Drama / Romantický Režie: Georgia Oakley Hrají: Daisy Edgar-Jones, Esme Creed-Miles, Caitríona Balfe, George MacKay a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:58",
-      "vicedenni": false,
-      "web": "https://www.dk-kromeriz.cz/rozum-a-cit",
-      "youtube": "w1x3pN2vtzc",
-      "zacatek": "2026-10-23T20:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11644,
       "cena": 100,
       "cena_pozn": "Dospělí: 100,-Kč Důchodci nad 65 let, ZTP: 80,- Kč Děti do 150 cm, ZTP/P + doprovod: ZDARMA",
@@ -1695,7 +1605,7 @@
       "typ_id": 15,
       "upraveno": "2026-09-16T13:06:55",
       "vicedenni": true,
-      "web": "www.hobbyvystaviste.cz",
+      "web": "https://www.hobbyvystaviste.cz",
       "youtube": "",
       "zacatek": "2026-10-24T09:00:00",
       "zdarma": false
@@ -1785,7 +1695,7 @@
       "typ_id": 13,
       "upraveno": "2026-09-21T09:37:32",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-10-24T18:00:00",
       "zdarma": false
@@ -1859,7 +1769,7 @@
       "typ_id": 13,
       "upraveno": "2026-09-21T09:37:09",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-10-25T16:00:00",
       "zdarma": false
@@ -2143,7 +2053,7 @@
       "id": 21713,
       "konec": "2026-10-28T23:00:00",
       "misto": "Hvězdárna Kroměříž",
-      "misto_web": "www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
       "nazev": "Pravidelná pozorování hvězd",
       "perex": "Pravidelná pozorování podzim 2026",
       "poznamka": "",
@@ -2316,7 +2226,7 @@
       "typ_id": 13,
       "upraveno": "2026-09-21T09:36:16",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-10-31T17:00:00",
       "zdarma": false
@@ -2478,7 +2388,7 @@
       "typ_id": 12,
       "upraveno": "2026-10-23T10:47:56",
       "vicedenni": false,
-      "web": "www.klubickokm.cz",
+      "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-02T16:30:00",
       "zdarma": false
@@ -2526,7 +2436,7 @@
       "typ_id": 12,
       "upraveno": "2026-10-23T10:49:31",
       "vicedenni": false,
-      "web": "www.klubickokm.cz",
+      "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-03T09:30:00",
       "zdarma": false
@@ -2627,7 +2537,7 @@
       "id": 21714,
       "konec": "2026-11-04T23:00:00",
       "misto": "Hvězdárna Kroměříž",
-      "misto_web": "www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
       "nazev": "Pravidelná pozorování hvězd",
       "perex": "Pravidelná pozorování podzim 2026",
       "poznamka": "",
@@ -2725,7 +2635,7 @@
       "typ_id": 12,
       "upraveno": "2026-10-12T15:05:47",
       "vicedenni": false,
-      "web": "www.muzeum-km.cz",
+      "web": "https://www.muzeum-km.cz",
       "youtube": "",
       "zacatek": "2026-11-05T17:00:00",
       "zdarma": false
@@ -2947,7 +2857,7 @@
       "typ_id": 15,
       "upraveno": "2026-09-16T13:10:05",
       "vicedenni": true,
-      "web": "www.hobbyvystaviste.cz",
+      "web": "https://www.hobbyvystaviste.cz",
       "youtube": "",
       "zacatek": "2026-11-07T09:00:00",
       "zdarma": false
@@ -2989,7 +2899,7 @@
       "typ_id": 13,
       "upraveno": "2026-10-19T07:36:58",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-07T17:00:00",
       "zdarma": false
@@ -3084,7 +2994,7 @@
       "typ_id": 13,
       "upraveno": "2026-10-19T07:36:39",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-08T16:00:00",
       "zdarma": false
@@ -3179,7 +3089,7 @@
       "typ_id": 12,
       "upraveno": "2026-07-05T16:27:07",
       "vicedenni": false,
-      "web": "www.klubickokm.cz",
+      "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-09T16:30:00",
       "zdarma": false
@@ -3269,7 +3179,7 @@
       "typ_id": 12,
       "upraveno": "2026-10-23T10:52:57",
       "vicedenni": false,
-      "web": "www.klubickokm.cz",
+      "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-10T09:30:00",
       "zdarma": false
@@ -3311,7 +3221,7 @@
       "typ_id": 10,
       "upraveno": "2026-10-06T08:07:21",
       "vicedenni": false,
-      "web": "www.konzkm.cz",
+      "web": "https://www.konzkm.cz",
       "youtube": "",
       "zacatek": "2026-11-10T19:00:00",
       "zdarma": false
@@ -3400,7 +3310,7 @@
       "typ_id": 13,
       "upraveno": "2026-10-19T07:36:21",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-11T18:00:00",
       "zdarma": false
@@ -3460,7 +3370,7 @@
       "id": 21715,
       "konec": "2026-11-11T23:00:00",
       "misto": "Hvězdárna Kroměříž",
-      "misto_web": "www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
       "nazev": "Pravidelná pozorování hvězd",
       "perex": "Pravidelná pozorování podzim 2026",
       "poznamka": "",
@@ -3658,7 +3568,7 @@
       "typ_id": 10,
       "upraveno": "2026-10-01T13:29:46",
       "vicedenni": true,
-      "web": "www.kdkk.cz",
+      "web": "https://www.kdkk.cz",
       "youtube": "",
       "zacatek": "2026-11-14T00:00:00",
       "zdarma": false
@@ -3679,7 +3589,7 @@
       "typ_id": 12,
       "upraveno": "2026-10-23T10:48:25",
       "vicedenni": false,
-      "web": "www.dub.cz",
+      "web": "https://www.dub.cz",
       "youtube": "lzY2qZpVB3w",
       "zacatek": "2026-11-14T09:30:00",
       "zdarma": false
@@ -3997,7 +3907,7 @@
       "typ_id": 13,
       "upraveno": "2026-10-19T07:36:03",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-17T17:00:00",
       "zdarma": false
@@ -4084,7 +3994,7 @@
       "id": 21716,
       "konec": "2026-11-18T23:00:00",
       "misto": "Hvězdárna Kroměříž",
-      "misto_web": "www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
       "nazev": "Pravidelná pozorování hvězd",
       "perex": "Pravidelná pozorování podzim 2026",
       "poznamka": "",
@@ -4245,7 +4155,7 @@
       "typ_id": 15,
       "upraveno": "2026-09-16T13:10:55",
       "vicedenni": false,
-      "web": "www.hobbyvystaviste.cz",
+      "web": "https://www.hobbyvystaviste.cz",
       "youtube": "",
       "zacatek": "2026-11-21T09:00:00",
       "zdarma": false
@@ -4257,7 +4167,7 @@
       "id": 21723,
       "konec": "2026-11-21T22:00:00",
       "misto": "Sokolský dům Kroměříž",
-      "misto_web": "tj-sokol-kromeriz.webnode.cz/",
+      "misto_web": "https://tj-sokol-kromeriz.webnode.cz/",
       "nazev": "Mini design market",
       "perex": "Totál lokál! Market s lokální rukodělnou tvorbou a doprovodným programem. Poprvé v Sokolském domě.",
       "poznamka": "",
@@ -4314,7 +4224,7 @@
       "typ_id": 13,
       "upraveno": "2026-10-19T07:35:28",
       "vicedenni": false,
-      "web": "www.hkkm.cz",
+      "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-21T17:00:00",
       "zdarma": false
@@ -4356,7 +4266,7 @@
       "typ_id": 9,
       "upraveno": "2026-09-16T13:11:47",
       "vicedenni": false,
-      "web": "www.hobbyvystaviste.cz",
+      "web": "https://www.hobbyvystaviste.cz",
       "youtube": "",
       "zacatek": "2026-11-22T08:00:00",
       "zdarma": false
@@ -4385,6 +4295,48 @@
       "web": "https://www.dk-kromeriz.cz/call",
       "youtube": "mf_JGVlt6QM",
       "zacatek": "2026-11-22T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11890,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21773,
+      "konec": "2026-11-23T18:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Beseda: Za oponou podvodu",
+      "perex": "Za oponou podvodu je osvětová beseda zaměřená na kybernetickou bezpečnost.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-23T10:54:50",
+      "vicedenni": false,
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-11-23T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11694,
+      "cena": 150,
+      "cena_pozn": "zahájení předprodeje 17. 8. 2026",
+      "id": 21523,
+      "konec": "2026-11-23T19:30:00",
+      "misto": "Klub Starý pivovar",
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Jana Javorská a Robert Javorský",
+      "perex": "Jana Javorská, profesí krajinář a stráž přírody CHKO Beskydy spolu s manželem Róbertem Javorským, profesí vedoucí strážců v TANAPu, propojují práci v ochraně přírody s ostatními kolegy strážci, rangery, napříč světem.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-08-17T08:20:22",
+      "vicedenni": false,
+      "web": "https://www.dk-kromeriz.cz/jana-javorska-a-robert-javorsky",
+      "youtube": "",
+      "zacatek": "2026-11-23T18:00:00",
       "zdarma": false
     }
   ],

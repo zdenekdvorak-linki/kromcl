@@ -6,16 +6,22 @@ Spuštění: python -m unittest discover -s tests
 
 import sys
 import unittest
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
-                    znacka,
+                    karta, znacka,
                     pipeline, render, rewrite, styl)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
+
+try:
+    import PIL  # noqa: F401
+    _MA_PIL = True
+except ImportError:
+    _MA_PIL = False
 class Slugify(unittest.TestCase):
     """Pravidla ověřená proti skutečným URL na webu města."""
 
@@ -308,11 +314,146 @@ class Appka(unittest.TestCase):
                       "sw.js", "app.js"):
             self.assertTrue((config.STATIC / nazev).exists(), nazev)
 
-    def test_service_worker_nejdriv_sit(self):
+    def test_service_worker_stranky_nejdriv_ze_site(self):
         # Web se přestavuje každou hodinu. Mezipaměť napřed by v appce
-        # ukazovala staré zprávy a program, který už neplatí.
+        # ukazovala staré zprávy a program, který už neplatí. Fonty mají
+        # pořadí opačné záměrně, proto se kontroluje jen větev stránek.
         sw = (config.STATIC / "sw.js").read_text(encoding="utf-8")
-        self.assertLess(sw.index("await fetch("), sw.index("caches.match("))
+        stranky = sw[sw.index("pozadavek.mode !== 'navigate'"):]
+        self.assertLess(stranky.index("await fetch("), stranky.index("caches.match("))
+
+    def test_service_worker_zna_vsechny_fonty(self):
+        # Seznam v sw.js je druhé místo, kde fonty žijí. Po změně ve
+        # static/fonts by offline appka jinak tiše přišla o písmo.
+        import re
+        sw = (config.STATIC / "sw.js").read_text(encoding="utf-8")
+        v_sw = set(re.findall(r"'/fonts/([^']+)'", sw))
+        na_disku = {f.name for f in (config.STATIC / "fonts").glob("*.woff2")}
+        self.assertEqual(v_sw, na_disku)
+
+    def test_sablona_nevola_google(self):
+        # Fonty jsou u sebe kvůli soukromí čtenářů; návrat odkazu na
+        # Google Fonts by to tiše zrušil.
+        self.assertNotIn("fonts.googleapis.com", render.ZAKLAD)
+        self.assertNotIn("fonts.gstatic.com", render.ZAKLAD)
+        self.assertNotIn("fonts.googleapis.com", render.CSS)
+        self.assertIn("@font-face", render.CSS)
+
+
+class VikendovaKarta(unittest.TestCase):
+    """Výběr akcí na kartu do příběhu („pestrý výběr", 24. 10. 2026)."""
+
+    DNY = {"2026-10-24", "2026-10-25"}
+
+    @staticmethod
+    def akce(den, cas, typ="Sport", akce_id=None, vicedenni=False, nazev=None):
+        return {"zacatek": "2026-10-{0}T{1}:00".format(den, cas), "typ": typ,
+                "akce_id": akce_id or den + cas + typ, "vicedenni": vicedenni,
+                "nazev": nazev or "{0} {1} {2}".format(typ, den, cas),
+                "misto": "Zimní stadion"}
+
+    def test_nejvys_sest(self):
+        terminy = [self.akce("24", "1{0}:00".format(i)) for i in range(5)]
+        terminy += [self.akce("25", "1{0}:00".format(i)) for i in range(5)]
+        self.assertEqual(len(karta.vyber(terminy, self.DNY)), karta.MAX_AKCI)
+
+    def test_nejvys_dve_kina(self):
+        terminy = [self.akce("24", "1{0}:00".format(i), "Kino") for i in range(6)]
+        terminy.append(self.akce("25", "18:00"))
+        kina = [t for t in karta.vyber(terminy, self.DNY) if t["typ"] == "Kino"]
+        self.assertEqual(len(kina), karta.MAX_KINO)
+
+    def test_bez_vystav(self):
+        # Výstava běží týdny a „na víkend" není.
+        terminy = [self.akce("24", "10:00", vicedenni=True), self.akce("24", "18:00")]
+        vybrane = karta.vyber(terminy, self.DNY)
+        self.assertEqual([t["zacatek"][11:16] for t in vybrane], ["18:00"])
+
+    def test_nedele_nezmizi(self):
+        # Čistě podle času by šest sobotních akcí vytlačilo celou neděli.
+        terminy = [self.akce("24", "1{0}:00".format(i)) for i in range(8)]
+        terminy.append(self.akce("25", "15:00"))
+        dny = {t["zacatek"][:10] for t in karta.vyber(terminy, self.DNY)}
+        self.assertIn("2026-10-25", dny)
+
+    def test_stejna_akce_jen_jednou(self):
+        terminy = [self.akce("24", "17:00", "Kino", akce_id=7),
+                   self.akce("25", "17:00", "Kino", akce_id=7)]
+        self.assertEqual(len(karta.vyber(terminy, self.DNY)), 1)
+
+    def test_serazeno_podle_casu(self):
+        terminy = [self.akce("25", "10:00"), self.akce("24", "20:00"),
+                   self.akce("24", "09:00")]
+        zacatky = [t["zacatek"] for t in karta.vyber(terminy, self.DNY)]
+        self.assertEqual(zacatky, sorted(zacatky))
+
+    def test_mimo_vikend_nic(self):
+        self.assertEqual(karta.vyber([self.akce("26", "18:00")], self.DNY), [])
+
+    def test_rozsah_v_jednom_mesici(self):
+        self.assertEqual(karta.rozsah_dnu(self.DNY), "24.–25. října")
+
+    def test_rozsah_pres_mesic(self):
+        self.assertEqual(karta.rozsah_dnu({"2026-10-31", "2026-11-01"}),
+                         "31. října – 1. listopadu")
+
+    def test_zalom_drzi_sirku_a_pocet_radku(self):
+        sirka = len                      # jeden znak = jeden pixel
+        radky = karta.zalom("jedna dva tri ctyri pet sest sedm osm devet", sirka, 12, 2)
+        self.assertEqual(len(radky), 2)
+        self.assertTrue(radky[-1].endswith("…"))
+        for radek in radky:
+            self.assertLessEqual(len(radek), 12)
+
+    def test_predlozka_nezustane_na_konci_radku(self):
+        radky = karta.zalom("Koncert v Domě kultury", len, 11, 3)
+        self.assertFalse(any(r.endswith(" v") for r in radky), radky)
+
+    def test_radova_cislovka_drzi_se_slovem(self):
+        radky = karta.zalom("Meziříčí / 2. hokejová liga", len, 14, 3)
+        self.assertFalse(any(r.endswith(" 2.") for r in radky), radky)
+
+    @unittest.skipUnless(_MA_PIL, "Pillow není nainstalovaný")
+    def test_karta_ma_rozmer_pribehu(self):
+        import tempfile
+        from PIL import Image
+        terminy = [self.akce("24", "18:00"), self.akce("25", "15:00")]
+        with tempfile.TemporaryDirectory() as slozka:
+            cil = Path(slozka) / "karta.png"
+            karta.vytvor(terminy, self.DNY, cil)
+            self.assertEqual(Image.open(cil).size, karta.ROZMER)
+
+    @unittest.skipUnless(_MA_PIL, "Pillow není nainstalovaný")
+    def test_zacate_akce_na_karte_nejsou(self):
+        # Karta se přestavuje každou hodinu; v sobotu odpoledne nesmí
+        # nabízet dopolední program.
+        import tempfile
+        terminy = [self.akce("24", "10:00"), self.akce("24", "18:00")]
+        with tempfile.TemporaryDirectory() as slozka:
+            vybrane = karta.vytvor(terminy, self.DNY, Path(slozka) / "k.png",
+                                   ted=datetime(2026, 10, 24, 15, 0))
+        self.assertEqual([t["zacatek"][11:16] for t in vybrane], ["18:00"])
+
+    def test_bez_akci_karta_nevznikne(self):
+        self.assertIsNone(karta.vytvor([], self.DNY, "nikam.png"))
+
+
+class OdkazyProgramu(unittest.TestCase):
+    def test_doplni_protokol(self):
+        # 22 ze 115 odkazů v exportu nemělo https a vedlo na 404.
+        self.assertEqual(akce._odkaz("www.hkkm.cz"), "https://www.hkkm.cz")
+
+    def test_necha_plnou_adresu(self):
+        self.assertEqual(akce._odkaz("http://www.dub.cz/x"), "http://www.dub.cz/x")
+        self.assertEqual(akce._odkaz("https://a.cz"), "https://a.cz")
+
+    def test_prazdny_zustane_prazdny(self):
+        self.assertEqual(akce._odkaz(""), "")
+        self.assertEqual(akce._odkaz("  "), "")
+
+    def test_ted_je_bez_zony(self):
+        # Časy akcí v datech zónu nemají; porovnání se zónou by spadlo.
+        self.assertIsNone(akce.ted().tzinfo)
 
 
 class DruhPadu(unittest.TestCase):

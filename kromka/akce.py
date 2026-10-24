@@ -60,6 +60,21 @@ def _cas(hodnota):
         return ""
 
 
+def ted():
+    """Teď v Praze, bez časové zóny — stejně jako časy akcí v datech.
+
+    GitHub Actions běží v UTC. S `date.today()` by build těsně po půlnoci
+    ukazoval na stránce „dnes" ještě včerejšek a karta by za „už začalo"
+    brala čas o hodinu nebo dvě posunutý. Windows bez balíčku tzdata zónu
+    nezná; tam se bere místní čas stroje, který je pražský.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("Europe/Prague")).replace(tzinfo=None, microsecond=0)
+    except Exception:                                 # noqa: BLE001
+        return datetime.now().replace(microsecond=0)
+
+
 def adresa(od, do):
     return "{0}?export_type=event_date&from={1}&to={2}&place_id=0&type=0".format(
         config.AKCE_EXPORT, od.strftime(_PARAM), do.strftime(_PARAM))
@@ -68,7 +83,7 @@ def adresa(od, do):
 def stahni(dni=None):
     """Stáhne XML export na následujících `dni` dní včetně dneška."""
     dni = dni or config.AKCE_DNI
-    dnes = datetime.now()
+    dnes = ted()
     return net.get(adresa(dnes, dnes + timedelta(days=dni)))
 
 
@@ -92,7 +107,7 @@ def rozparsuj(xml_text):
     mista = {}
     for m in _deti(koren, "places"):
         mista[_cislo(m, "id")] = {"nazev": _text(m, "label"),
-                                  "web": _text(m, "web")}
+                                  "web": _odkaz(_text(m, "web"))}
     typy = {}
     for t in _deti(koren, "event_types"):
         typy[_cislo(t, "id")] = _text(t, "label")
@@ -125,10 +140,23 @@ def _termin(el, mista, typy):
         "cena_pozn": _radek(el, "price_note"),
         "zdarma": _bool(el, "free_entrance"),
         "pro_deti": _bool(el, "for_kids"),
-        "web": _text(el, "web"),
+        "web": _odkaz(_text(el, "web")),
         "youtube": _text(el, "youtube"),
         "upraveno": _cas(_text(el, "last_edit")),
     }
+
+
+def _odkaz(text):
+    """Adresa vždy s protokolem.
+
+    Pořadatelé do exportu píšou i „www.hkkm.cz" bez https. Takový odkaz
+    bere prohlížeč jako relativní a vede na kromcl.cz/program/www.hkkm.cz,
+    tedy na 404 — 23. 10. 2026 to bylo 22 ze 115 odkazů.
+    """
+    text = (text or "").strip()
+    if not text or re.match(r"^[a-z][a-z0-9+.-]*://", text, re.I):
+        return text
+    return "https://" + text.lstrip("/")
 
 
 def _perex(text):
