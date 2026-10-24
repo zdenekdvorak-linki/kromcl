@@ -339,6 +339,19 @@ class Appka(unittest.TestCase):
         self.assertNotIn("fonts.googleapis.com", render.CSS)
         self.assertIn("@font-face", render.CSS)
 
+    def test_mereni_jen_na_ostre_domene(self):
+        # Náhled na localhostu by jinak plnil GA4 vlastními návštěvami.
+        kod = render._mereni()
+        self.assertIn("gtag/js?id=" + config.GA4_ID, kod)
+        self.assertIn("location.hostname === 'kromcl.cz'", kod)
+        self.assertNotIn("__", kod)
+        self.assertIn("{mereni}", render.ZAKLAD)
+
+    def test_prazdne_ga4_id_mereni_vypne(self):
+        from unittest import mock
+        with mock.patch.object(config, "GA4_ID", ""):
+            self.assertEqual(render._mereni(), "")
+
 
 class VikendovaKarta(unittest.TestCase):
     """Výběr akcí na kartu do příběhu („pestrý výběr", 24. 10. 2026)."""

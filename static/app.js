@@ -1,6 +1,7 @@
 /* KROMCL jako appka: registrace service workeru a výzva k instalaci.
  *
- * Jediný JavaScript na webu. Bez něj nic nechybí — lišta se vkládá až
+ * Jediný vlastní JavaScript na webu (vedle měření GA4 v hlavičce, viz
+ * render.MERENI). Bez něj nic nechybí — lišta se vkládá až
  * odsud, takže kdo JS nemá, neuvidí rozbité tlačítko.
  *
  * Kdy se lišta ukáže:

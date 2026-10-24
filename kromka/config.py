@@ -33,6 +33,10 @@ SITE_URL = os.environ.get("KROMKA_SITE_URL", "https://kromcl.cz")
 LOCALE = "cs_CZ"
 ACCENT = "#39E67A"  # signální zelená, používá se jen na akcenty
 
+# --- Měření ---------------------------------------------------------------
+# GA4, služba KROMCL v účtu gyd.name. Prázdná hodnota měření vypne.
+GA4_ID = os.environ.get("KROMKA_GA4_ID", "G-M0MPCR8ZW7")
+
 # --- Cesty ----------------------------------------------------------------
 # KROMKA_DATA a KROMKA_SITE se dají přesměrovat jinam, aby zkušební běh
 # (BACKEND=stub) nesahal na ostrý archiv.

@@ -176,7 +176,8 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 
 | Soubor | Co v něm je |
 |---|---|
-| `kromka/config.py` | značka, cesty, modely, backend, disclaimer — jediné místo na změnu názvu webu |
+| `kromka/config.py` | značka, cesty, modely, backend, disclaimer, `GA4_ID` — jediné místo na změnu názvu webu |
+| `kromka/render.py` | `MERENI`, `_mereni` — gtag GA4 v `<head>`, jen na ostré doméně |
 | `kromka/net.py` | stahování přes `urllib`, 4xx se neopakuje |
 | `kromka/htmlutil.py:21` | `slugify` — pravidlo TYPO3 |
 | `kromka/htmlutil.py:41` | `_DivGrabber` — vyříznutí `<div>` s vnořenými divy |
@@ -284,6 +285,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
 | 2026-10-24 | **Fonty u sebe** místo Google Fonts | Google by dostal IP adresu každého čtenáře, web čekal na dvě cizí spojení a appka offline padala na náhradní písmo. Čtyři soubory woff2, dohromady 90 kB, licence OFL jde s nimi |
 | 2026-10-24 | **Víkendová karta** na `/program/vikend-pribeh.png` + odkaz na stránce víkendu | Důvod vracet se každý týden a obsah tam, kde publikum je. Pestrý výběr: jednodenní akce, nejvýš 2 kina, bez výstav, nejdřív až 3 na den |
+| 2026-10-24 | **Měření GA4** (`G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name), gtag přímo, bez GTM a **bez lišty se souhlasem** | Měřítko úspěchu jsou vracející se čtenáři a bez měření ho nikdo nevidí. GTM by byl jen kontejner navíc pro jediný tag. Lišta zamítnuta vědomě (Zdeněk), přestože opt-in v ČR platí od 2022 a GA4 posílá Googlu IP adresu, kterou kvůli tomu fonty z Googlu nenačítají. Fonty zůstávají u sebe kvůli rychlosti a offline appce. Skript se načte jen na `kromcl.cz`, náhled na localhostu data neplní; vypíná se prázdným `KROMKA_GA4_ID` |
 | 2026-10-24 | Karta nebere akce, které už začaly | Přestavuje se každou hodinu; v sobotu odpoledne by nabízela dopolední program |
 | 2026-10-24 | Okna dnes a víkend podle pražského času (`akce.ted()`) | GitHub Actions běží v UTC; po půlnoci by „dnes" ukazovalo včerejšek, jednu až dvě hodiny denně |
 | 2026-10-24 | Odkazy akcí vždy s protokolem | 22 ze 115 odkazů v exportu bylo „www.…" bez https a vedlo na kromcl.cz/program/www.…, tedy na 404 |

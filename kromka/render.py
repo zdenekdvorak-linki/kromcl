@@ -14,6 +14,7 @@ import json
 import re
 import shutil
 from datetime import date, datetime, timedelta, timezone
+from urllib.parse import urlparse
 from pathlib import Path
 
 from . import akce, config, htmlutil, ilustrace, piktogramy
@@ -285,11 +286,35 @@ FONTY_PRELOAD = "".join(
         soubor.name)
     for soubor in sorted((config.STATIC / "fonts").glob("*.woff2")))
 
+# GA4 bez lišty se souhlasem, rozhodnutí z 24. 10. 2026. Skript se načte jen
+# na ostré doméně, aby náhled na localhostu a zkušební běhy neplnily data.
+MERENI = """<script>
+if (location.hostname === '__HOST__') {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=__GA4_ID__';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', '__GA4_ID__');
+}
+</script>"""
+
+
+def _mereni():
+    if not config.GA4_ID:
+        return ""
+    return (MERENI.replace("__GA4_ID__", config.GA4_ID)
+            .replace("__HOST__", urlparse(config.SITE_URL).hostname))
+
+
 ZAKLAD = """<!doctype html>
 <html lang="cs">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{mereni}
 <title>{titulek}</title>
 <meta name="description" content="{popis}">
 <link rel="canonical" href="{kanonicka}">
@@ -450,7 +475,7 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
         kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
-        menu=_menu(), fonty_preload=FONTY_PRELOAD,
+        menu=_menu(), fonty_preload=FONTY_PRELOAD, mereni=_mereni(),
         tw_karta="summary_large_image" if obrazek else "summary",
     )
 
