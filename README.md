@@ -198,6 +198,9 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
 | `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all` |
+| `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
+| `bin/ikony.py` | vyrobí ikony do `static/`; pouští se ručně po změně značky, výsledek se commituje |
+| `static/` | kopíruje se do kořene webu: ikony, `sw.js` (service worker), `app.js` (výzva k instalaci) |
 
 ## Vývojové poznámky
 
@@ -276,6 +279,11 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Důvod pádu se do `state.json` zapisuje bez textu, který ho vyvolal | Stav se commituje do veřejného repa a pojistky hlásí nález i s úryvkem oznámení. Ten úryvek je zdroj, a ten se po použití zahazuje |
 | 2026-10-23 | `zdroj_slug` se do článku neukládá | Nikdo ho nečetl a ukazoval na oznámení |
 | 2026-10-23 | `beh.log` do `.gitignore` | Log nese titulky zdrojových oznámení a ležel uvnitř datové složky, odkud by se commitnul |
+| 2026-10-24 | Favicona **K na dlaždici**, web jde nainstalovat jako appka | Z pěti návrhů jediná čistá i v 16 px na skutečném rastru. Výzva k instalaci od druhé zobrazené stránky, po „Teď ne" 30 dní klid; na iPhonu návod přes Sdílet, protože Safari instalační dialog nemá |
+| 2026-10-24 | **První spustitelný JavaScript** na webu (`static/app.js`, `static/sw.js`) | Instalace bez JS nejde. Lištu vkládá až skript, takže bez JS nic nechybí ani se nic nerozbije |
+| 2026-10-24 | Service worker vždy nejdřív ze sítě | Web se přestavuje každou hodinu; obráceně by appka ukazovala staré zprávy a neplatný program. Z mezipaměti jen při výpadku signálu |
+| 2026-10-24 | Ikony se commitují, build je jen kopíruje | Kdyby je kreslil build, potřeboval by Pillow na každém stroji, kde se staví |
+| 2026-10-24 | Datum „1. 11." s nezlomitelnou mezerou | „do 30. 11." se ve sloupci programu lámalo na tři řádky |
 | 2026-10-23 | Menu na desktopu: program + 5 témat + „další ▾", hamburger až do 900 px | Dvanáct položek se nevešlo ani na 1440 px (menu 716 px, položky 766). Zkrácené menu potřebuje 469 px a láme se pod ~870 px okna; 900 je s rezervou na písmo na Macu. Pět témat podle počtu článků, napevno. Téma bez článků se neodkazuje — „volby" vedly na 404. Program je štítek, ne zelený text: ten měl kontrast 1,6 : 1 |
 | 2026-10-23 | **Program akcí** z otevřených dat města, `/program.html` + okna dnes a víkend + 8 typů | Měřítko úspěchu jsou vracející se místní čtenáři a program je důvod k návratu, který zprávy nedají. Data jsou pod CC BY 4.0, takže fakta beze změny a s atribucí |
 | 2026-10-23 | Stránky oken dnes a víkend navíc proti plánu | Ahrefs: okna mají 950 hledání měsíčně, sedm z osmi typů nulu |
@@ -286,6 +294,36 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | `bin/vymena_archivu.py` | Výměna archivu má jednu prověřenou cestu místo ručních kroků; bez `--potvrdit` jen hlásí, co by udělala |
 | 2026-10-23 | **Obrázky v těle článku**: karty s čísly pod prvním odstavcem a ikona u odstavce, obojí z piktogramů webu | Holý text pod TL;DR působil chudě. Skládá se z hotového přepisu regexem a slovníkem, takže platí pro celý archiv a nepřidává fakt. Pravidlo „aspoň dvě karty" dávalo karty 7 článkům z 64; s jednou kartou a daty 48 |
 | 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
+
+## Appka a favicona
+
+Značka je jedna geometrie v `kromka/znacka.py`. Z ní `bin/ikony.py` vyrobí
+`favicon.svg`, `favicon.ico` (16, 32, 48 px), `apple-touch-icon.png` a ikony
+aplikace 192 a 512 px včetně maskovatelné. Ta má písmeno zmenšené na 75 %,
+protože Android ikonu ořízne do kruhu a zaručeně ukáže jen 40 % od středu.
+
+`_manifest()` v `render.py` skládá manifest z `config`, takže změna značky
+zůstává na pěti řádcích. Zkratky na dlouhý stisk vedou na program — víkend,
+dnes a celý program.
+
+**Service worker** (`static/sw.js`) bere stránky vždy nejdřív ze sítě a
+z mezipaměti jen při výpadku. Ukládá jen celé stránky, ne obrázky ani cizí
+fonty. Při změně chování zvyš `VERZE`, prohlížeč pak staré úložiště smaže.
+
+**Výzva k instalaci** (`static/app.js`):
+
+- ukáže se nejdřív na druhé zobrazené stránce a nikdy v nainstalované appce
+- „Teď ne" ji schová na 30 dní, stav je v `localStorage` pod `kromka-instalace`
+- Chrome, Edge a Android: vlastní tlačítko přes `beforeinstallprompt`
+- iPhone: Safari instalační dialog nemá, lišta jen poradí cestu přes Sdílet
+- Firefox na desktopu instalaci neumí, nic se neukáže
+
+**Ověřování:** vestavěný prohlížeč Claude aplikace service worker
+nezaregistruje („unknown error when fetching the script"), přestože
+`/sw.js` vrací 200 — je to omezení prostředí. Ve skutečném Edge se
+zaregistruje a aktivuje. Edge bez okna na Windows zase nedovolí okno užší
+než asi 500 px, takže mobilní snímek z něj vypadá přetékající; poctivý snímek
+je ze stránky vložené do `<iframe width="390">`.
 
 ## Výměna archivu
 

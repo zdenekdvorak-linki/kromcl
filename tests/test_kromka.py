@@ -12,6 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
+                    znacka,
                     pipeline, render, rewrite, styl)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -249,6 +250,71 @@ class KlicClanku(unittest.TestCase):
                         .startswith("mesto-kromeriz:"))
 
 
+class Znacka(unittest.TestCase):
+    """Favicona a ikony appky jdou z jedné geometrie v kromka/znacka.py."""
+
+    def test_svg_ma_dlazdici_a_tri_tahy(self):
+        svg = znacka.svg()
+        self.assertIn(znacka.ZELENA, svg)
+        self.assertEqual(svg.count("<path"), 3)
+
+    def test_pismeno_se_vejde_na_dlazdici(self):
+        for tvar in znacka.mnohouhelniky():
+            for x, y in tvar:
+                self.assertTrue(0 <= x <= znacka.MRIZKA and 0 <= y <= znacka.MRIZKA)
+
+    def test_maskovatelna_ikona_je_v_bezpecnem_kruhu(self):
+        # Android ořízne ikonu do kruhu a zaručeně ukáže jen 40 % od středu.
+        stred = znacka.MRIZKA / 2
+        polomer = znacka.MRIZKA * znacka.BEZPECNY_POLOMER
+        for tvar in znacka.mnohouhelniky(znacka.MERITKO_MASKY):
+            for x, y in tvar:
+                self.assertLessEqual(((x - stred) ** 2 + (y - stred) ** 2) ** .5,
+                                     polomer)
+
+
+class Appka(unittest.TestCase):
+    """Instalace jako appka: manifest, šablona a statické soubory."""
+
+    def test_manifest_je_platny(self):
+        import json
+        m = json.loads(render._manifest())
+        self.assertEqual(m["short_name"], config.BRAND)
+        self.assertEqual(m["display"], "standalone")
+        ucely = {i.get("purpose") for i in m["icons"]}
+        self.assertIn("maskable", ucely)
+        self.assertIn("any", ucely)
+
+    def test_ikony_z_manifestu_existuji(self):
+        import json
+        for ikona in json.loads(render._manifest())["icons"]:
+            self.assertTrue((config.STATIC / ikona["src"].lstrip("/")).exists(),
+                            ikona["src"])
+
+    def test_zkratky_vedou_na_program(self):
+        import json
+        cesty = [z["url"] for z in json.loads(render._manifest())["shortcuts"]]
+        self.assertIn(render.PROGRAM_CESTA, cesty)
+        self.assertIn("/program/vikend.html", cesty)
+
+    def test_sablona_odkazuje_manifest_a_skript(self):
+        for kus in ('rel="manifest"', 'href="/favicon.svg"',
+                    'rel="apple-touch-icon"', 'src="/app.js" defer'):
+            self.assertIn(kus, render.ZAKLAD)
+
+    def test_staticke_soubory_jsou_v_repu(self):
+        for nazev in ("favicon.svg", "favicon.ico", "apple-touch-icon.png",
+                      "icon-192.png", "icon-512.png", "icon-maskable-512.png",
+                      "sw.js", "app.js"):
+            self.assertTrue((config.STATIC / nazev).exists(), nazev)
+
+    def test_service_worker_nejdriv_sit(self):
+        # Web se přestavuje každou hodinu. Mezipaměť napřed by v appce
+        # ukazovala staré zprávy a program, který už neplatí.
+        sw = (config.STATIC / "sw.js").read_text(encoding="utf-8")
+        self.assertLess(sw.index("await fetch("), sw.index("caches.match("))
+
+
 class DruhPadu(unittest.TestCase):
     """Stav se commituje do veřejného repa, nesmí v něm být zdroj."""
 
@@ -370,7 +436,8 @@ class AkceVykresleni(unittest.TestCase):
         self.assertEqual(render._cas_hm("2026-10-24T17:30:00"), "17.30")
 
     def test_datum_kratce(self):
-        self.assertEqual(render._datum_kratce("2026-11-01"), "1. 11.")
+        # Nezlomitelná mezera: datum se v úzkém sloupci nesmí rozdělit.
+        self.assertEqual(render._datum_kratce("2026-11-01"), "1.\u00a011.")
 
     def test_pristupnost_se_zkrati(self):
         self.assertEqual(

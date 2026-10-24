@@ -43,6 +43,9 @@ STATE_FILE = DATA / "state.json"
 AKCE_FILE = DATA / "akce.json"
 KINO_CACHE = DATA / "kino-dk.json"
 SITE = Path(os.path.expanduser(os.environ.get("KROMKA_SITE", str(ROOT / "site"))))
+# Soubory, které se do webu jen kopírují: ikony (vyrábí je bin/ikony.py),
+# service worker a skript s výzvou k instalaci.
+STATIC = ROOT / "static"
 
 # --- Akce -----------------------------------------------------------------
 # Otevřená data města. Na rozdíl od zpráv je tahle sada pod licencí, která

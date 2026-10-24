@@ -243,6 +243,26 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .ilu-cislo { box-shadow: 4px 4px 0 var(--ram); padding: 12px; }
   .ilu-cislo .piktogram { width: 46px; height: 46px; }
 }
+
+/* Lišta s výzvou k instalaci. Vkládá ji static/app.js, bez JS neexistuje.
+   Body dostane spodní odsazení, aby lišta nepřekryla konec stránky. */
+.instalace { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 30; max-width: 620px; margin: 0 auto; display: flex; align-items: center; gap: 14px; background: var(--karta); color: var(--inkoust); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); padding: 12px 14px; }
+.instalace img { flex: none; display: block; border: 2px solid var(--ram); }
+.instalace p { margin: 0; font-size: 15px; line-height: 1.4; flex: 1; min-width: 0; }
+.instalace-akce { display: flex; gap: 8px; flex: none; }
+.instalace button { font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; padding: 8px 12px; border: 2px solid var(--ram); color: #000; }
+.instalace-hlavni { background: var(--akcent); }
+.instalace-vedlejsi { background: var(--karta); color: var(--inkoust) !important; }
+.instalace button:hover, .instalace button:focus-visible { box-shadow: 3px 3px 0 var(--ram); }
+.instalace button:focus-visible { outline: 3px solid var(--akcent); outline-offset: 2px; }
+body.s-instalaci { padding-bottom: 110px; }
+@media (max-width: 640px) {
+  .instalace { left: 10px; right: 10px; bottom: 10px; flex-wrap: wrap; box-shadow: 4px 4px 0 var(--ram); }
+  .instalace p { flex-basis: calc(100% - 54px); }
+  .instalace-akce { width: 100%; }
+  .instalace-akce button { flex: 1; }
+  body.s-instalaci { padding-bottom: 170px; }
+}
 """.replace("ACCENT", config.ACCENT)
 
 ZAKLAD = """<!doctype html>
@@ -263,6 +283,15 @@ ZAKLAD = """<!doctype html>
 <meta name="twitter:card" content="{tw_karta}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="alternate" type="application/rss+xml" title="{brand}" href="/feed.xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="application-name" content="{brand}">
+<meta name="apple-mobile-web-app-title" content="{brand}">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">
+<script src="/app.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -726,12 +755,16 @@ def _den_cesky(iso):
 
 def _datum_kratce(iso):
     """`2026-11-01` na „1. 11.". Do úzkého sloupce s časem se dlouhý tvar
-    nevejde a zalomí se do čtyř řádků."""
+    nevejde a zalomí se do čtyř řádků.
+
+    Mezi dnem a měsícem je nezlomitelná mezera — česká typografie datum
+    nerozděluje a „do 30. 11." by se jinak ve sloupci rozpadlo na tři řádky.
+    """
     try:
         d = datetime.strptime(iso[:10], "%Y-%m-%d")
     except (ValueError, TypeError):
         return iso[:10]
-    return "{0}. {1}.".format(d.day, d.month)
+    return "{0}. {1}.".format(d.day, d.month)
 
 
 def _pristupnost(text):
@@ -1006,6 +1039,57 @@ def _program_stranky(akce_data):
     return zapsano
 
 
+def _manifest():
+    """Web app manifest. Bez něj se web nedá nainstalovat jako appka.
+
+    Název a popis jdou z config, aby změna značky zůstala na pěti řádcích.
+    Barva lišty odpovídá bílé hlavičce; tmavou verzi řeší meta theme-color
+    v šabloně, manifest umí jen jednu.
+    """
+    return json.dumps({
+        "name": "{0} — {1}".format(config.BRAND, config.TAGLINE),
+        "short_name": config.BRAND,
+        "description": config.DISCLAIMER,
+        "lang": "cs",
+        "start_url": "/",
+        "scope": "/",
+        "display": "standalone",
+        "background_color": "#f5f3ee",
+        "theme_color": "#ffffff",
+        "icons": [
+            {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png",
+             "purpose": "any"},
+            {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png",
+             "purpose": "any"},
+            {"src": "/icon-maskable-512.png", "sizes": "512x512",
+             "type": "image/png", "purpose": "maskable"},
+            {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"},
+        ],
+        # Dlouhý stisk ikony na Androidu nabídne rovnou program. Okna dnes
+        # a víkend jsou to, co lidé u akcí hledají nejvíc.
+        "shortcuts": [
+            {"name": "Tento víkend", "url": _vyber_cesta("vikend")},
+            {"name": "Dnes", "url": _vyber_cesta("dnes")},
+            {"name": "Celý program", "url": PROGRAM_CESTA},
+        ],
+    }, ensure_ascii=False, indent=2) + "\n"
+
+
+def _staticke_soubory():
+    """Zkopíruje `static/` do kořene webu. Vrací počet souborů.
+
+    Chybějící složka nevadí — web se postaví i bez ikon, jen bez nich.
+    """
+    if not config.STATIC.is_dir():
+        return 0
+    pocet = 0
+    for soubor in sorted(config.STATIC.iterdir()):
+        if soubor.is_file():
+            shutil.copy2(str(soubor), str(config.SITE / soubor.name))
+            pocet += 1
+    return pocet
+
+
 def vykresli(clanky, akce_data=None):
     """Vyrobí celý web do config.SITE. Vrací počet zapsaných souborů."""
     global _EXISTUJICI_TEMATA
@@ -1064,7 +1148,9 @@ def vykresli(clanky, akce_data=None):
         "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
         encoding="utf-8")
     (config.SITE / "CNAME").write_text(_domena() + "\n", encoding="utf-8")
-    return zapsano + 6
+    (config.SITE / "manifest.webmanifest").write_text(_manifest(), encoding="utf-8")
+    zapsano += _staticke_soubory()
+    return zapsano + 7
 
 
 def _rozcestniky(clanky):
