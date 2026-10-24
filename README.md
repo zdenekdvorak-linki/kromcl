@@ -308,6 +308,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | **Obrázky v těle článku**: karty s čísly pod prvním odstavcem a ikona u odstavce, obojí z piktogramů webu | Holý text pod TL;DR působil chudě. Skládá se z hotového přepisu regexem a slovníkem, takže platí pro celý archiv a nepřidává fakt. Pravidlo „aspoň dvě karty" dávalo karty 7 článkům z 64; s jednou kartou a daty 48 |
 | 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
 | 2026-10-24 | **Kroměříž v kostce** z Wikipedie, plný průvodce, odkaz v patičce a na O webu | Obsah, který nestárne a odpovídá na hledání o městě samotném. Heslo je pod CC BY-SA 4.0, takže atribuce na revizi 26310890, označení úpravy a stejná licence pro náš text. Psáno jednou ručně, ne modelem v buildu |
+| 2026-10-24 | **Tlačítko Sdílet** u článků, Kroměříže v kostce a víkendové karty | Nainstalovaná appka nemá adresní řádek ani menu, odkaz se z ní nedal poslat. Sdílí se kanonická adresa bez parametrů, UTM se nepřidává (duplicity, ošklivé odkazy); dosah měří událost GA4 `share`. Záloha kopírováním přes skryté pole, protože vestavěné prohlížeče sociálních sítí schránku často nepustí |
 
 ## Appka a favicona
 
@@ -331,6 +332,23 @@ fonty. Při změně chování zvyš `VERZE`, prohlížeč pak staré úložišt�
 - Chrome, Edge a Android: vlastní tlačítko přes `beforeinstallprompt`
 - iPhone: Safari instalační dialog nemá, lišta jen poradí cestu přes Sdílet
 - Firefox na desktopu instalaci neumí, nic se neukáže
+
+**Tlačítko Sdílet** (`_sdilet` v `render.py`, obsluha v `app.js`). Appka
+nemá adresní řádek ani menu prohlížeče, bez tlačítka se z ní odkaz poslat
+nedá. Je pod titulkem článku, pod úvodem Kroměříže v kostce a vedle
+víkendové karty.
+
+- telefon otevře systémovou sdílecí nabídku (`navigator.share`)
+- u víkendové karty posílá rovnou obrázek, pokud to systém dovolí — cesta
+  do instagramového příběhu; obrázek se stahuje předem, protože Safari
+  povolí sdílení jen hned po klepnutí
+- bez sdílecí nabídky zkopíruje odkaz, a když nepustí schránku (vestavěné
+  prohlížeče Instagramu a Messengeru), zkopíruje ho přes skryté pole
+- bez JS zůstane skryté, v HTML má `hidden`
+- sdílí se vždy kanonická adresa z `data-url`, ne adresa v okně, takže se
+  s odkazem nešíří parametry; každá stránka má navíc self-canonical
+- měří se událost GA4 `share` (`method` nabidka / obrazek / kopie,
+  `content_type`, `item_id` = cesta); zavřená nabídka se nepočítá
 
 **Ověřování:** vestavěný prohlížeč Claude aplikace service worker
 nezaregistruje („unknown error when fetching the script"), přestože

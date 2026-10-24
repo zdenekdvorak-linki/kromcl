@@ -179,6 +179,17 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .pribeh-odkaz a::before { content: "↓ "; }
 /* Kroměříž v kostce: dlouhá stránka, proto obsah s kotvami. Hlavička je
    přilepená (až 128 px), bez scroll-margin by nadpis po skoku zajel pod ni. */
+/* Tlačítko Sdílet. V HTML je skryté, odkrývá ho app.js jen tam, kde umí
+   sdílet nebo kopírovat — bez JS by bylo mrtvé. [hidden] musí přebít flex. */
+.sdilet { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--inkoust); background: var(--karta); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 8px 14px; cursor: pointer; }
+.sdilet[hidden] { display: none; }
+.sdilet:hover { background: var(--akcent); color: #000; }
+.sdilet:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ram); }
+.sdilet:focus-visible { outline: 3px solid var(--akcent); outline-offset: 3px; }
+.sdilet svg { width: 16px; height: 16px; flex: none; }
+.sdileni { margin: 0 0 24px; }
+.pribeh-odkaz .sdilet { margin-left: 14px; vertical-align: middle; }
+@media (max-width: 640px) { .pribeh-odkaz .sdilet { margin: 12px 0 0; display: flex; } .pribeh-odkaz .sdilet[hidden] { display: none; } }
 .obsah-kostky { border: 3px solid var(--ram); background: var(--karta); box-shadow: 4px 4px 0 var(--ram); padding: 14px 18px; margin: 0 0 32px; }
 .obsah-kostky h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 8px; }
 .obsah-kostky ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 32px; }
@@ -515,6 +526,30 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
     )
 
 
+_IKONA_SDILET = (
+    '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" '
+    'stroke-width="2.5" stroke-linecap="square"><path d="M12 3v12M7 8l5-5 5 5"/>'
+    '<path d="M5 12v9h14v-9"/></svg>')
+
+
+def _sdilet(titulek, cesta, druh, popisek="Sdílet", soubor="", nazev_souboru=""):
+    """Tlačítko Sdílet pro app.js.
+
+    Sdílí se vždy kanonická adresa stránky, ne ta, na které čtenář zrovna
+    je — jinak by se s odkazem šířily parametry z kampaní a verzí.
+    S `soubor` se na telefonu posílá rovnou obrázek (víkendová karta do
+    příběhu), adresa je záloha pro prohlížeče, které soubory sdílet neumí.
+    """
+    navic = ""
+    if soubor:
+        navic = ' data-soubor="{0}" data-nazev="{1}"'.format(_e(soubor), _e(nazev_souboru))
+    return ('<button type="button" class="sdilet" hidden aria-live="polite" '
+            'data-titulek="{t}" data-url="{u}" data-druh="{d}"{n}>{i}'
+            '<span>{p}</span></button>').format(
+                t=_e(titulek), u=_e(_abs(cesta)), d=_e(druh), n=navic,
+                i=_IKONA_SDILET, p=_e(popisek))
+
+
 def _obrazek_tag(clanek, trida="", lazy=True):
     """Místo fotky kreslený piktogram tématu.
 
@@ -571,6 +606,8 @@ def _clanek(clanek, souvisejici):
         stitky, _e((clanek.get("published") or "")[:10]),
         _datum_cesky(clanek.get("published"))))
     casti.append("<h1>{0}</h1>".format(_e(clanek["headline"])))
+    casti.append('<div class="sdileni">{0}</div>'.format(_sdilet(
+        clanek["headline"], "/clanek/{0}.html".format(clanek["slug"]), "clanek")))
 
     # Hlavní obrázek článku je kreslený piktogram tématu; fotky nepřebíráme.
     casti.append(_obrazek_tag(clanek, trida="hero", lazy=False))
@@ -1064,9 +1101,12 @@ def _pribeh_odkaz(terminy, dny, ted):
     prvni, posledni = sorted(dny)[0], sorted(dny)[-1]
     soubor = "kromcl-vikend-{0}-{1}-{2}.png".format(
         int(prvni[8:10]), int(posledni[8:10]), int(posledni[5:7]))
-    return ('<p class="pribeh-odkaz"><a href="{0}?v={1}" download="{2}">'
-            'Stáhnout víkend jako obrázek do příběhu</a></p>').format(
-                PRIBEH_CESTA, ted.strftime("%Y%m%d%H"), soubor)
+    obrazek = "{0}?v={1}".format(PRIBEH_CESTA, ted.strftime("%Y%m%d%H"))
+    return ('<p class="pribeh-odkaz"><a href="{0}" download="{1}">'
+            'Stáhnout víkend jako obrázek do příběhu</a>{2}</p>').format(
+                obrazek, soubor, _sdilet(
+                    "Víkend v Kroměříži", "/program/vikend.html", "vikend",
+                    popisek="Sdílet víkend", soubor=obrazek, nazev_souboru=soubor))
 
 
 def _program_stranky(akce_data):
@@ -1388,11 +1428,12 @@ def _kostka(data):
              lic_url=_e(zdroj["licence_url"]), lic=_e(zdroj["licence"]))
     return (
         '<article class="clanek kostka">{drobecky}<h1>{nadpis}</h1>'
-        '<p class="uvod">{uvod}</p>'
+        '<p class="uvod">{uvod}</p><div class="sdileni">{sdilet}</div>'
         '<nav class="obsah-kostky" aria-label="Obsah"><h2>Obsah</h2><ol>{obsah}</ol></nav>'
         '{casti}{atribuce}</article>'
     ).format(drobecky=_drobecky([("Domů", "/"), (data["nadpis"], None)]),
              nadpis=_e(data["nadpis"]), uvod=_e(data["uvod"]), obsah=obsah,
+             sdilet=_sdilet(data["titulek"], KOSTKA_CESTA, "kostka"),
              casti="".join(casti), atribuce=atribuce)
 
 

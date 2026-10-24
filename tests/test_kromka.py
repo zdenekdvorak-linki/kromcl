@@ -553,6 +553,44 @@ class Kostka(unittest.TestCase):
             self.assertTrue(s["nadpis"] and s["odstavce"], s["id"])
 
 
+class Sdileni(unittest.TestCase):
+    """Tlačítko Sdílet: jediná cesta, jak z nainstalované appky poslat odkaz."""
+
+    def test_tlacitko_je_bez_js_skryte(self):
+        # Bez app.js by bylo mrtvé; odkrývá ho až skript.
+        self.assertIn(" hidden ", render._sdilet("T", "/clanek/x.html", "clanek"))
+
+    def test_sdili_kanonickou_adresu(self):
+        tl = render._sdilet("T", "/clanek/x.html", "clanek")
+        self.assertIn('data-url="{0}/clanek/x.html"'.format(config.SITE_URL), tl)
+
+    def test_titulek_se_utece(self):
+        tl = render._sdilet('"><script>', "/x.html", "clanek")
+        self.assertNotIn("<script>", tl)
+
+    def test_obrazek_jen_kdyz_je_soubor(self):
+        self.assertNotIn("data-soubor", render._sdilet("T", "/x.html", "clanek"))
+        tl = render._sdilet("T", "/x.html", "vikend", soubor="/a.png?v=1",
+                            nazev_souboru="a.png")
+        self.assertIn('data-soubor="/a.png?v=1"', tl)
+        self.assertIn('data-nazev="a.png"', tl)
+
+    def test_je_v_clanku_a_v_kostce(self):
+        clanek = render._clanek({"slug": "x", "headline": "Titulek", "tags": [],
+                                 "published": "2026-10-24", "tldr": [],
+                                 "body": ["Odstavec."]}, [])
+        self.assertIn('class="sdilet"', clanek)
+        self.assertIn('/clanek/x.html"', clanek)
+        self.assertIn('class="sdilet"', render._kostka(Kostka.VZOREK))
+
+    def test_app_js_zna_tridu_a_udalost(self):
+        app = (config.STATIC / "app.js").read_text(encoding="utf-8")
+        self.assertIn("'.sdilet'", app)
+        self.assertIn("'share'", app)
+        # Zavřená nabídka sdílení se nesmí počítat ani hlásit jako chyba.
+        self.assertIn("AbortError", app)
+
+
 class DruhPadu(unittest.TestCase):
     """Stav se commituje do veřejného repa, nesmí v něm být zdroj."""
 

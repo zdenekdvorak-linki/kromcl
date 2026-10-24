@@ -1,5 +1,5 @@
-/* KROMCL jako appka: registrace service workeru, výzva k instalaci
- * a události GA4.
+/* KROMCL jako appka: registrace service workeru, výzva k instalaci,
+ * tlačítko Sdílet a události GA4.
  *
  * Jediný vlastní JavaScript na webu (vedle měření GA4 v hlavičce, viz
  * render.MERENI). Bez něj nic nechybí — lišta se vkládá až
@@ -49,6 +49,102 @@
 
   // Mimo lištu: instalaci z menu prohlížeče lišta nevidí.
   window.addEventListener('appinstalled', function () { zmer('appka_instalace'); });
+
+  /* Sdílení. Nainstalovaná appka nemá adresní řádek ani menu prohlížeče,
+   * takže bez tohohle tlačítka se z ní nedá poslat odkaz vůbec.
+   *
+   * Telefon otevře vlastní sdílecí nabídku (navigator.share). Kde ji
+   * prohlížeč nemá, tlačítko odkaz zkopíruje. Kde neumí ani to, zůstane
+   * skryté. U víkendové karty se posílá rovnou obrázek, pokud to systém
+   * dovolí; jinak adresa stránky víkendu.
+   *
+   * Obrázek se stahuje předem, ne až po klepnutí: Safari povolí sdílení
+   * jen bezprostředně po klepnutí a čekání na síť by ho shodilo.
+   */
+  var umiSdilet = typeof navigator.share === 'function';
+  var umiSchranku = !!(navigator.clipboard && window.isSecureContext);
+  var umiKopirovat = umiSchranku || !!(document.queryCommandSupported
+    && document.queryCommandSupported('copy'));
+
+  // GA4 doporučená událost share; zmer() je nahoře u ostatních událostí.
+  function zmerSdileni(tl, zpusob) {
+    zmer('share', {
+      method: zpusob,
+      content_type: tl.dataset.druh,
+      item_id: new URL(tl.dataset.url).pathname
+    });
+  }
+
+  function napis(tl, text) {
+    var popisek = tl.querySelector('span');
+    var puvodni = popisek.textContent;
+    popisek.textContent = text;
+    setTimeout(function () { popisek.textContent = puvodni; }, 2500);
+  }
+
+  // Starý způsob přes skryté pole. Vestavěné prohlížeče aplikací (Instagram,
+  // Messenger) schránku často nepustí, tohle ano.
+  function kopirujPolem(text) {
+    var pole = document.createElement('textarea');
+    pole.value = text;
+    pole.setAttribute('readonly', '');
+    pole.style.position = 'fixed';
+    pole.style.opacity = '0';
+    document.body.appendChild(pole);
+    pole.select();
+    var vyslo = false;
+    try { vyslo = document.execCommand('copy'); } catch (e) {}
+    pole.remove();
+    return vyslo;
+  }
+
+  function kopiruj(tl) {
+    function hotovo() {
+      napis(tl, 'Odkaz zkopírován');
+      zmerSdileni(tl, 'kopie');
+    }
+    function zaloha() {
+      if (kopirujPolem(tl.dataset.url)) hotovo();
+      else napis(tl, 'Kopírování nevyšlo');
+    }
+    if (umiSchranku) navigator.clipboard.writeText(tl.dataset.url).then(hotovo, zaloha);
+    else zaloha();
+  }
+
+  if (umiSdilet || umiKopirovat) {
+    Array.prototype.forEach.call(document.querySelectorAll('.sdilet'), function (tl) {
+      var obrazek = null;
+      if (umiSdilet && tl.dataset.soubor && typeof navigator.canShare === 'function'
+          && typeof File === 'function') {
+        fetch(tl.dataset.soubor).then(function (r) {
+          return r.ok ? r.blob() : null;
+        }).then(function (data) {
+          if (!data) return;
+          var soubor = new File([data], tl.dataset.nazev || 'kromcl.png',
+            { type: data.type || 'image/png' });
+          if (navigator.canShare({ files: [soubor] })) {
+            obrazek = soubor;
+            tl.querySelector('span').textContent = 'Sdílet obrázek';
+          }
+        }).catch(function () {});
+      }
+
+      tl.addEventListener('click', function () {
+        if (!umiSdilet) { kopiruj(tl); return; }
+        var co = obrazek
+          ? { files: [obrazek], title: tl.dataset.titulek }
+          : { title: tl.dataset.titulek, url: tl.dataset.url };
+        navigator.share(co).then(function () {
+          zmerSdileni(tl, obrazek ? 'obrazek' : 'nabidka');
+        }, function (chyba) {
+          // Zavřená nabídka není chyba. Jiné selhání (třeba Windows bez
+          // cílů sdílení) dorovná kopie odkazu.
+          if (chyba && chyba.name !== 'AbortError' && umiKopirovat) kopiruj(tl);
+        });
+      });
+      tl.hidden = false;
+    });
+  }
 
   var jeAppka = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;
