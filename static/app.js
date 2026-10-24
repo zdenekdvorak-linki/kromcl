@@ -100,12 +100,12 @@
 
   function kopiruj(tl) {
     function hotovo() {
-      napis(tl, 'Odkaz zkopírován');
+      napis(tl, 'Link máš zkopírovaný');
       zmerSdileni(tl, 'kopie');
     }
     function zaloha() {
       if (kopirujPolem(tl.dataset.url)) hotovo();
-      else napis(tl, 'Kopírování nevyšlo');
+      else napis(tl, 'Nezkopírovalo se');
     }
     if (umiSchranku) navigator.clipboard.writeText(tl.dataset.url).then(hotovo, zaloha);
     else zaloha();
@@ -124,7 +124,7 @@
             { type: data.type || 'image/png' });
           if (navigator.canShare({ files: [soubor] })) {
             obrazek = soubor;
-            tl.querySelector('span').textContent = 'Sdílet obrázek';
+            tl.querySelector('span').textContent = 'Šérni do storíčka';
           }
         }).catch(function () {});
       }

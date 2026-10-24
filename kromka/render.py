@@ -188,6 +188,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .sdilet:focus-visible { outline: 3px solid var(--akcent); outline-offset: 3px; }
 .sdilet svg { width: 16px; height: 16px; flex: none; }
 .sdileni { margin: 0 0 24px; }
+.sdileni.na-konci { margin: 32px 0 8px; }
 .pribeh-odkaz .sdilet { margin-left: 14px; vertical-align: middle; }
 @media (max-width: 640px) { .pribeh-odkaz .sdilet { margin: 12px 0 0; display: flex; } .pribeh-odkaz .sdilet[hidden] { display: none; } }
 .obsah-kostky { border: 3px solid var(--ram); background: var(--karta); box-shadow: 4px 4px 0 var(--ram); padding: 14px 18px; margin: 0 0 32px; }
@@ -532,7 +533,7 @@ _IKONA_SDILET = (
     '<path d="M5 12v9h14v-9"/></svg>')
 
 
-def _sdilet(titulek, cesta, druh, popisek="Sdílet", soubor="", nazev_souboru=""):
+def _sdilet(titulek, cesta, druh, popisek="Šérni to", soubor="", nazev_souboru=""):
     """Tlačítko Sdílet pro app.js.
 
     Sdílí se vždy kanonická adresa stránky, ne ta, na které čtenář zrovna
@@ -606,8 +607,6 @@ def _clanek(clanek, souvisejici):
         stitky, _e((clanek.get("published") or "")[:10]),
         _datum_cesky(clanek.get("published"))))
     casti.append("<h1>{0}</h1>".format(_e(clanek["headline"])))
-    casti.append('<div class="sdileni">{0}</div>'.format(_sdilet(
-        clanek["headline"], "/clanek/{0}.html".format(clanek["slug"]), "clanek")))
 
     # Hlavní obrázek článku je kreslený piktogram tématu; fotky nepřebíráme.
     casti.append(_obrazek_tag(clanek, trida="hero", lazy=False))
@@ -628,6 +627,10 @@ def _clanek(clanek, souvisejici):
             ' class="s-ikonou"' if ikona else "", ilustrace.ikona_html(ikona), _e(odstavec)))
         if i == 0:
             casti.append(ilustrace.karty_html(odstavce))
+
+    # Sdílet až pod textem: kdo článek nedočetl, neví, jestli ho chce poslat dál.
+    casti.append('<div class="sdileni na-konci">{0}</div>'.format(_sdilet(
+        clanek["headline"], "/clanek/{0}.html".format(clanek["slug"]), "clanek")))
 
     telo = '<article class="clanek">{0}</article>'.format("".join(casti))
 
@@ -1106,7 +1109,7 @@ def _pribeh_odkaz(terminy, dny, ted):
             'Stáhnout víkend jako obrázek do příběhu</a>{2}</p>').format(
                 obrazek, soubor, _sdilet(
                     "Víkend v Kroměříži", "/program/vikend.html", "vikend",
-                    popisek="Sdílet víkend", soubor=obrazek, nazev_souboru=soubor))
+                    popisek="Šérni víkend", soubor=obrazek, nazev_souboru=soubor))
 
 
 def _program_stranky(akce_data):

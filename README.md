@@ -336,7 +336,8 @@ fonty. Při změně chování zvyš `VERZE`, prohlížeč pak staré úložišt�
 **Tlačítko Sdílet** (`_sdilet` v `render.py`, obsluha v `app.js`). Appka
 nemá adresní řádek ani menu prohlížeče, bez tlačítka se z ní odkaz poslat
 nedá. Je pod titulkem článku, pod úvodem Kroměříže v kostce a vedle
-víkendové karty.
+víkendové karty. Text „Šérni to“, u karty „Šérni víkend“ a s připraveným
+obrázkem „Šérni do storíčka“.
 
 - telefon otevře systémovou sdílecí nabídku (`navigator.share`)
 - u víkendové karty posílá rovnou obrázek, pokud to systém dovolí — cesta
