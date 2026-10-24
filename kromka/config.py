@@ -37,6 +37,18 @@ ACCENT = "#39E67A"  # signální zelená, používá se jen na akcenty
 # GA4, služba KROMCL v účtu gyd.name. Prázdná hodnota měření vypne.
 GA4_ID = os.environ.get("KROMKA_GA4_ID", "G-M0MPCR8ZW7")
 
+# --- Sociální sítě --------------------------------------------------------
+# Adresy profilů KROMCL (Instagram, TikTok…). Jdou do JSON-LD jako `sameAs`.
+# K 24. 10. 2026 žádný profil není; prázdný seznam se do stránek nepíše.
+PROFILY = []
+
+# --- IndexNow -------------------------------------------------------------
+# Klíč je veřejný: leží v kořeni webu jako <klíč>.txt a vyhledávač podle
+# něj ověří, že hlášení přišlo z tohohle webu. Změna klíče = nový soubor
+# na webu, starý přestane platit.
+INDEXNOW_KLIC = "368741b8ded8ab250c70a60c3eae1f8b"
+INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
+
 # --- Cesty ----------------------------------------------------------------
 # KROMKA_DATA a KROMKA_SITE se dají přesměrovat jinam, aby zkušební běh
 # (BACKEND=stub) nesahal na ostrý archiv.

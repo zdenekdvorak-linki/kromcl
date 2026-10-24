@@ -46,7 +46,9 @@ RSS feed města                  (708 položek, leden 2025 → dnes, jen perex)
    ├─ pojistky                      čísla + uvozovky
    │
    ├─ data/articles/<id>.json       trvalý archiv v gitu
-   └─ render → site/                HTML + RSS + sitemap + robots
+   ├─ render → site/                HTML + RSS + sitemap + robots + karty og:image
+   │
+   └─ po nasazení: IndexNow         nové články → Bing, Seznam
 ```
 
 Stav mimo soubory projektu žádný není. `data/state.json`:
@@ -225,7 +227,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
-| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all` |
+| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow` |
 | `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
 | `bin/ikony.py` | vyrobí ikony do `static/`; pouští se ručně po změně značky, výsledek se commituje |
 | `static/` | kopíruje se do kořene webu i s podsložkami: ikony, `fonts/`, `sw.js` (service worker), `app.js` (výzva k instalaci) |
@@ -234,6 +236,9 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/karta.py` | víkendová karta 1080 × 1920 do instagramového příběhu: výběr akcí, zalamování textu, kreslení v Pillow |
 | `data/kromeriz-v-kostce.json` | text průvodce Kroměříž v kostce: úvod, 15 sekcí, zdroj s číslem revize hesla; opravuje se tady, ne v kódu |
 | `kromka/render.py` | `KOSTKA_CESTA`, `_kostka`, `_ld_kostka`, `_kostka_stranka` — stránka průvodce, atribuce CC BY-SA, JSON-LD `Article` s `isBasedOn` |
+| `kromka/og.py` | karta 1200 × 630 pro `og:image`: `vytvor`, `rozloz_titulek`; `cesta`, `tvary`, `piktogram` — převod SVG piktogramů na čáry pro Pillow |
+| `kromka/render.py` | `_og` (adresa karty z adresy stránky), `_ld_vydavatel` (logo, `sameAs`), `_zmeneno` a `_sitemap` (`lastmod` podle obsahu), parametr `indexovat` v `_stranka` |
+| `kromka/indexnow.py` | fronta adres z `all` vedle složky webu a odeslání na `api.indexnow.org`; příkaz `python -m kromka indexnow` |
 
 ## Vývojové poznámky
 
@@ -337,6 +342,10 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | **Kroměříž v kostce** z Wikipedie, plný průvodce, odkaz v patičce a na O webu | Obsah, který nestárne a odpovídá na hledání o městě samotném. Heslo je pod CC BY-SA 4.0, takže atribuce na revizi 26310890, označení úpravy a stejná licence pro náš text. Psáno jednou ručně, ne modelem v buildu |
 | 2026-10-24 | **Tlačítko Sdílet** u článků, Kroměříže v kostce a víkendové karty | Nainstalovaná appka nemá adresní řádek ani menu, odkaz se z ní nedal poslat. Sdílí se kanonická adresa bez parametrů, UTM se nepřidává (duplicity, ošklivé odkazy); dosah měří událost GA4 `share`. Záloha kopírováním přes skryté pole, protože vestavěné prohlížeče sociálních sítí schránku často nepustí |
 | 2026-10-24 | **Přidání akce** odsouhlasené, stavba odložená, dopis městu v `dopis-sprave-akci.md` | Městský formulář nepřijme diakritiku a odpověď bez CORS nejde přečíst. Formulář, který by hlásil úspěch naslepo, by lhal pořadatelům |
+| 2026-10-24 | **Karta og:image** ke každé stránce (`kromka/og.py`), varianta A z mockupu tří | Žádná stránka obrázek neměla, protože fotky města nesmíme: odkazy na sítích šly bez náhledu a články nemohly do Discoveru. Karta ke každému článku místo jedné na téma, aby feed na sítích nebyl pořád stejný |
+| 2026-10-24 | Piktogramy kreslí na kartu vlastní převod SVG v Pythonu | Pillow SVG neumí. Předkreslení prohlížečem by po každé změně piktogramu chtělo ruční krok a jinou cestu k prohlížeči na Windows a na Macu |
+| 2026-10-24 | 404 `noindex` bez kanonické, `lastmod` podle obsahu, logo vydavatele, `article:*` meta | Technické SEO: 404 byla indexovatelná, `lastmod` měl u výpisů každou hodinu dnešek, Google bez loga a obrázku nebere článek do bohatých výsledků |
+| 2026-10-24 | **IndexNow** po nasazení, jen nové články, úvodka a jejich témata | Seznam a Bing se o zprávě dozví hned, ne až při příštím procházení. Program se nehlásí, hodinové hlášení by bylo spam |
 
 ## Appka a favicona
 
@@ -442,6 +451,62 @@ mor, Kroměřížská selicha, rok 1945) jsou bez slangu a politici bez
 hodnocení. Při aktualizaci: stáhnout novou revizi, přepsat dotčené sekce,
 přepsat `revize` a `datum` v `zdroj`.
 
+## Náhled odkazu a technické SEO
+
+**Karta pro náhled odkazu.** Fotky města nesmíme, takže bez vlastního
+obrázku by odkaz na Facebooku, v Messengeru, WhatsAppu a na Discordu vyšel
+bez obrázku a Google by článek nevzal do Discoveru (chce obrázek široký
+aspoň 1200 px a `max-image-preview:large`). `kromka/og.py` proto při každém
+buildu nakreslí ke každé stránce kartu 1200 × 630 do `/og/` — cesta karty je
+cesta stránky s `.png`, úvodka má `/og/uvod.png` a sdílí ji i se `strana-N`.
+Karta je i v JSON-LD `NewsArticle.image`. Jen 404 kartu nemá.
+
+Podoba (varianta A z mockupu 24. 10. 2026): zelený pás se značkou a tématem,
+titulek Syne, piktogram tématu v bílém rámu s tvrdým stínem, dole doména a
+u článku datum. Titulek se zmenšuje od 64 px po 40 px, dokud se nevejde, a
+zalamuje se česky jako víkendová karta. Okna dnes a víkend nemají na kartě
+datum: Facebook si náhled drží týdny a „24.–25. října" by tam viselo i další
+víkend.
+
+Piktogramy jsou SVG a Pillow SVG neumí. `og.cesta` převádí podmnožinu, kterou
+piktogramy používají (M L H V C S Q A Z, circle, ellipse, rect), na lomené
+čáry a `og.piktogram` je kreslí s hranatým koncem a kulatým spojem. Ověřeno
+proti prohlížeči na všech dvaceti tvarech. Test hlídá, že se převede každý
+tvar v `piktogramy.TVARY` — nový příkaz SVG by jinak shodil build.
+
+PNG je v paletě o 64 barvách (MEDIANCUT): 20 kB místo 59 kB a značková
+zelená zůstává přesně `#39E67A`. FASTOCTREE je dvakrát rychlejší, ale barvy
+posouvá o jedničku. Karta trvá asi 45 ms, u 64 článků a 26 dalších stránek
+přidá build asi čtyři sekundy.
+
+**Meta na stránce.** U karty `og:image:width`, `height` a `type` (Facebook
+bez nich náhled při prvním sdílení nevykreslí) a `twitter:card`
+`summary_large_image`. U článku navíc `article:modified_time` (z
+`rewritten_at`), `article:section` (první štítek) a `article:tag`.
+`404.html` má `noindex, follow` a žádnou kanonickou adresu.
+
+**JSON-LD vydavatele** (`_ld_vydavatel`) nese logo, ikonu 512 px. `sameAs` se
+plní z `config.PROFILY`; k 24. 10. 2026 KROMCL žádný profil nemá a prázdný
+seznam se nepíše.
+
+**Sitemap** má `lastmod` podle obsahu, ne dnešek: článek podle data vydání u
+nás (`rewritten_at`, u archivu pozdější než vydání u města), téma a úvodka
+podle nejnovějšího článku, program podle `stazeno`, okna dnes a víkend podle
+dnešního data, kostka podle revize hesla. Když `lastmod` lže, Google mu
+přestane věřit u celé sitemapy.
+
+**robots.txt** pouští všechny, i AI crawlery (rozhodnuto 24. 10. 2026): web
+chce dosah a AI vyhledávání je pro mladé publikum další vstup.
+
+**IndexNow.** `all` po zpracování zařadí do `indexnow-fronta.txt` (vedle
+složky webu, v `.gitignore`) adresy nových článků, úvodku a stránky jejich
+témat. Workflow je po nasazení odešle krokem `python -m kromka indexnow`,
+s `continue-on-error`, protože výpadek služby nasazení nezpochybní.
+Hodinové přestavby programu se nehlásí, vypadalo by to jako spam. Klíč je
+v `config.INDEXNOW_KLIC` a v kořeni webu jako `<klíč>.txt`. Celý web jde
+nahlásit jednou ručně: `python -m kromka indexnow --vse`, nanečisto
+s `--nanecisto`. Google IndexNow nepodporuje, ten má sitemapu v GSC.
+
 ## Měření
 
 GA4 `G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name, uchovávání dat
@@ -524,3 +589,10 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Text jako karty, chat s botem, čtverečkovaný panel, šikmá páska, slovníček slangu s bublinami | Zamítnuto v mockupu 23. 10. 2026 ze stejného důvodu |
 | Časová osa (vydání → měsíc z textu) | Bez nového pole má jen dva body, třetí by byl vymyšlený (princip 2); ukáže se jen u článků s měsícem |
 | Scéna se štítky článku jako postavami | Opakuje hero piktogram o kus výš |
+| og:image varianta B (zelený sloupec) a C (tmavá) | Mockup 24. 10. 2026: B nechává titulku málo místa, C působí jako jiná značka než světlý web |
+| Jedna og:image karta na téma nebo na celý web | Všechny články o dopravě by se na sítích tvářily stejně; karta ke článku stojí 45 ms |
+| Blokovat AI crawlery v robots.txt | Rozhodnuto 24. 10. 2026: web chce dosah a AI odpovědi jsou pro mladé čtenáře další vstup |
+| Hlásit přes IndexNow i program | Přestavuje se každou hodinu, vyhledávače by hlášení braly jako spam |
+| Google News sitemap | Při jednom článku denně a hodinové sitemapě nic nepřidá; až kdyby se KROMCL hlásil do Google News |
+| `twitter:site` | KROMCL nemá účet na X; doplní se s `config.PROFILY` |
+| Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |

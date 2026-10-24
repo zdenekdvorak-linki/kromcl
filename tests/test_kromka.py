@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
-                    karta, znacka,
+                    karta, znacka, og, indexnow,
                     pipeline, render, rewrite, styl)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -969,6 +969,167 @@ class Ilustrace(unittest.TestCase):
         self.assertLess(stranka.index("Hřiště bude."), stranka.index("ilu-cisla"))
         self.assertLess(stranka.index("ilu-cisla"), stranka.index("Stojí 390"))
         self.assertIn('class="s-ikonou"', stranka)
+
+
+class OgKarta(unittest.TestCase):
+    """Karta pro náhled odkazu. Bez ní by sdílený odkaz neměl obrázek."""
+
+    def test_cesta_ctverec_je_uzavreny(self):
+        (body, uzavrena), = og.cesta("M0 0h10v10H0z")
+        self.assertTrue(uzavrena)
+        self.assertEqual(body, [(0, 0), (10, 0), (10, 10), (0, 10)])
+
+    def test_relativni_cesta_a_implicitni_l(self):
+        # Dvojice čísel po m jsou podle SVG relativní l.
+        (body, _), = og.cesta("m10 10 5 0 0 5")
+        self.assertEqual(body, [(10, 10), (15, 10), (15, 15)])
+
+    def test_oblouk_konci_v_cili(self):
+        (body, _), = og.cesta("M27 36a5 5 0 0 0 10 0")
+        x, y = body[-1]
+        self.assertAlmostEqual(x, 37, places=6)
+        self.assertAlmostEqual(y, 36, places=6)
+        # Oblouk se vyklene dolů (kladné y je v SVG dolů), ne zůstane úsečkou.
+        self.assertGreater(max(b[1] for b in body), 40)
+
+    def test_kazdy_piktogram_se_prevede(self):
+        # Nový piktogram se na kartě má objevit sám; neznámý příkaz SVG by
+        # build shodil, tak ať to spadne tady.
+        for tema in piktogramy.TVARY:
+            tvary = og.tvary(tema)
+            self.assertTrue(tvary, tema)
+            for _, body, _ in tvary:
+                for x, y in body:
+                    self.assertTrue(-4 <= x <= 68 and -4 <= y <= 68, (tema, x, y))
+
+    def test_titulek_se_zmensi_jen_kdyz_musi(self):
+        sirka = lambda velikost: (lambda text: len(text) * velikost * 0.62)  # noqa: E731
+        velka, radky = og.rozloz_titulek("Krátký titulek", sirka)
+        self.assertEqual(velka, max(og.TITULEK_PISMO))
+        dlouhy = " ".join(["slovo"] * 30)
+        mala, radky = og.rozloz_titulek(dlouhy, sirka)
+        self.assertLess(mala, velka)
+        self.assertLessEqual(len(radky) * mala * 1.05, og.TITULEK_VYSKA)
+
+    @unittest.skipUnless(_MA_PIL, "Pillow není nainstalovaný")
+    def test_karta_ma_rozmer_a_znackovou_zelenou(self):
+        import tempfile
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as tmp:
+            cil = Path(tmp) / "k.png"
+            self.assertTrue(og.vytvor(cil, "Titulek článku", "doprava", "doprava", "kromcl.cz"))
+            with Image.open(cil) as soubor:
+                obraz = soubor.convert("RGB")
+            self.assertEqual(obraz.size, og.ROZMER)
+            # Paleta nesmí posunout barvu značky.
+            self.assertEqual("#{0:02X}{1:02X}{2:02X}".format(*obraz.getpixel((5, 5))), og.ZELENA)
+
+    @unittest.skipUnless(_MA_PIL, "Pillow není nainstalovaný")
+    def test_adresa_karty_z_adresy_stranky(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(config, "SITE", Path(tmp)):
+            self.assertEqual(render._og("/", "T", "", "_vychozi"), render._abs("/og/uvod.png"))
+            self.assertEqual(render._og("/clanek/x.html", "T", "", "_vychozi"),
+                             render._abs("/og/clanek/x.png"))
+            self.assertTrue((Path(tmp) / "og" / "clanek" / "x.png").exists())
+
+
+class TechSeo(unittest.TestCase):
+    def setUp(self):
+        self.karta = render._abs("/og/clanek/x.png")
+
+    def test_karta_ma_rozmery_a_velkou_twitter_kartu(self):
+        s = render._stranka("T", "P", "", cesta="/clanek/x.html", obrazek=self.karta)
+        self.assertIn('og:image:width" content="1200"', s)
+        self.assertIn('og:image:height" content="630"', s)
+        self.assertIn('twitter:card" content="summary_large_image"', s)
+
+    def test_bez_obrazku_mala_twitter_karta(self):
+        s = render._stranka("T", "P", "", cesta="/x.html")
+        self.assertNotIn("og:image", s)
+        self.assertIn('twitter:card" content="summary"', s)
+
+    def test_404_se_neindexuje_a_nema_kanonickou(self):
+        s = render._stranka("T", "P", "", cesta="/404.html", indexovat=False)
+        self.assertIn('name="robots" content="noindex, follow"', s)
+        self.assertNotIn('rel="canonical"', s)
+        bezna = render._stranka("T", "P", "", cesta="/x.html")
+        self.assertIn('rel="canonical"', bezna)
+        self.assertIn("max-image-preview:large", bezna)
+
+    def test_clanek_ma_cas_upravy_sekci_a_stitky(self):
+        s = render._stranka("T", "P", "", og_typ="article", publikovano="2026-10-08",
+                            upraveno="2026-10-23", stitky=["lidé", "akce"])
+        self.assertIn('article:modified_time" content="2026-10-23"', s)
+        self.assertIn('article:section" content="lidé"', s)
+        self.assertEqual(s.count('property="article:tag"'), 2)
+
+    def test_vydavatel_ma_logo_a_sameas_jen_s_profily(self):
+        from unittest import mock
+        vydavatel = render._ld_vydavatel()
+        self.assertTrue(vydavatel["logo"]["url"].endswith("/icon-512.png"))
+        self.assertNotIn("sameAs", vydavatel)
+        with mock.patch.object(config, "PROFILY", ["https://instagram.com/kromcl"]):
+            self.assertEqual(render._ld_vydavatel()["sameAs"], ["https://instagram.com/kromcl"])
+
+    def test_jsonld_clanku_nese_kartu(self):
+        clanek = {"slug": "x", "headline": "T", "tags": ["sport"], "tldr": [],
+                  "published": "2026-10-08T09:00:00+02:00"}
+        self.assertEqual(render._ld_clanek(clanek, self.karta)["image"], [self.karta])
+        self.assertNotIn("image", render._ld_clanek(clanek))
+
+    def test_lastmod_podle_obsahu_ne_podle_dneska(self):
+        clanky = [
+            {"slug": "stary", "tags": ["sport"], "published": "2025-01-15T10:00:00+01:00",
+             "rewritten_at": "2026-10-23T19:00:00+00:00"},
+            {"slug": "novy", "tags": ["radnice"], "published": "2026-10-20T10:00:00+02:00",
+             "rewritten_at": "2026-10-20T11:00:00+00:00"},
+        ]
+        mapa = render._sitemap(clanky, {})
+        # Článek z archivu vyšel u nás až přepisem.
+        self.assertIn("/clanek/stary.html</loc><lastmod>2026-10-23<", mapa)
+        self.assertIn("/clanek/novy.html</loc><lastmod>2026-10-20<", mapa)
+        self.assertIn("/tema/radnice.html</loc><lastmod>2026-10-20<", mapa)
+        self.assertIn(config.SITE_URL + "/</loc><lastmod>2026-10-23<", mapa)
+
+
+class IndexNow(unittest.TestCase):
+    def test_adresy_clanku_uvodky_a_temat_bez_opakovani(self):
+        adresy = indexnow.adresy([{"slug": "a", "tags": ["sport", "lidé"]},
+                                  {"slug": "b", "tags": ["sport"]}])
+        self.assertEqual(adresy[0], config.SITE_URL + "/")
+        self.assertIn(config.SITE_URL + "/clanek/a.html", adresy)
+        self.assertIn(config.SITE_URL + "/tema/lide.html", adresy)
+        self.assertEqual(len(adresy), len(set(adresy)))
+
+    def test_telo_jen_vlastni_adresy_a_klic(self):
+        telo = indexnow.telo([config.SITE_URL + "/a.html", "https://jinde.cz/b"])
+        self.assertEqual(telo["urlList"], [config.SITE_URL + "/a.html"])
+        self.assertTrue(telo["keyLocation"].endswith(config.INDEXNOW_KLIC + ".txt"))
+
+    def test_klic_je_platny(self):
+        # Protokol chce 8 až 128 znaků z a-z, A-Z, 0-9 a pomlčky.
+        self.assertRegex(config.INDEXNOW_KLIC, r"^[A-Za-z0-9-]{8,128}$")
+
+    def test_fronta_bez_opakovani(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(config, "SITE", Path(tmp) / "site"):
+            indexnow.zarad(["https://kromcl.cz/a", "https://kromcl.cz/b"])
+            indexnow.zarad(["https://kromcl.cz/b", "https://kromcl.cz/c"])
+            self.assertEqual(indexnow.ve_fronte(),
+                             ["https://kromcl.cz/a", "https://kromcl.cz/b", "https://kromcl.cz/c"])
+            indexnow.vyprazdni_frontu()
+            self.assertEqual(indexnow.ve_fronte(), [])
+
+    def test_z_localhostu_se_nic_neposila(self):
+        from unittest import mock
+        with mock.patch.object(config, "SITE_URL", "http://localhost:4173"):
+            ok, _ = indexnow.odesli(["http://localhost:4173/a.html"])
+        self.assertFalse(ok)
 
 
 if __name__ == "__main__":

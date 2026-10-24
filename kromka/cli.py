@@ -5,7 +5,7 @@ import argparse
 import json
 import sys
 
-from . import akce, config, kino_dk, pipeline, render, sources, store
+from . import akce, config, indexnow, kino_dk, pipeline, render, sources, store
 
 
 def main(argv=None):
@@ -46,6 +46,12 @@ def main(argv=None):
     p = pod.add_parser("all", help="run + build")
     p.add_argument("--limit", type=int, default=10)
 
+    p = pod.add_parser("indexnow", help="nahlásí Bingu a Seznamu adresy z fronty (po nasazení)")
+    p.add_argument("--vse", action="store_true",
+                   help="nahlas celý web ze sitemapy, ne jen frontu")
+    p.add_argument("--nanecisto", action="store_true",
+                   help="jen vypiš, co by se poslalo")
+
     args = parser.parse_args(argv)
 
     if args.prikaz == "nove":
@@ -71,6 +77,9 @@ def main(argv=None):
     if args.prikaz == "doklad":
         return _doklad(args)
 
+    if args.prikaz == "indexnow":
+        return _indexnow(args)
+
     if args.prikaz in ("akce", "all"):
         _akce(args)
         if args.prikaz == "akce":
@@ -80,15 +89,35 @@ def main(argv=None):
         # `run` i `all` jedou v cronu, takže se archivu nedotknou, dokud se to
         # výslovně nepovolí. Jinak by hodinový běh archiv sežral sám.
         jen_novejsi = args.prikaz in ("run", "all") and not getattr(args, "i_archiv", False)
-        pipeline.davka(args.limit, nejstarsi=(args.prikaz == "backfill"),
-                       jen_novejsi=jen_novejsi)
+        hotove = pipeline.davka(args.limit, nejstarsi=(args.prikaz == "backfill"),
+                                jen_novejsi=jen_novejsi)
         if args.prikaz != "all":
             return 0
+        # Jen `all` končí nasazením; odešle se až po něm (příkaz indexnow).
+        if hotove:
+            indexnow.zarad(indexnow.adresy(hotove))
 
     clanky = store.vsechny()
     pocet = render.vykresli(clanky)
     print("Vykresleno {0} souborů z {1} článků do {2}".format(pocet, len(clanky), config.SITE))
     return 0
+
+
+def _indexnow(args):
+    """Odešle frontu z posledního `all`, nebo s --vse celou sitemapu.
+
+    Ve workflow běží až po nasazení, aby vyhledávač na nahlášené adrese
+    našel novou verzi. Fronta se maže jen po úspěchu.
+    """
+    adresy = indexnow.z_sitemapy() if args.vse else indexnow.ve_fronte()
+    if args.nanecisto:
+        print("\n".join(indexnow.telo(adresy)["urlList"]) or "Fronta je prázdná.")
+        return 0
+    ok, zprava = indexnow.odesli(adresy)
+    print(zprava)
+    if ok and not args.vse:
+        indexnow.vyprazdni_frontu()
+    return 0 if ok else 1
 
 
 def _akce(args):

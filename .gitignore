@@ -17,3 +17,6 @@ site-cista/
 beh.log
 data-akce/
 site-akce/
+
+# Fronta IndexNow mezi buildem a nasazením, viz kromka/indexnow.py.
+indexnow-fronta.txt

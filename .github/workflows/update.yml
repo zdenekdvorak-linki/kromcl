@@ -60,3 +60,9 @@ jobs:
           path: site
       - id: nasazeni
         uses: actions/deploy-pages@v4
+
+      # Až po nasazení, aby Bing a Seznam na adrese našly novou verzi.
+      # Výpadek IndexNow nasazení nezpochybní, proto continue-on-error.
+      - name: Nahlásit nové adresy přes IndexNow
+        continue-on-error: true
+        run: python -m kromka indexnow

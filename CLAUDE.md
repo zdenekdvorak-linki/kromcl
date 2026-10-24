@@ -28,6 +28,9 @@
 - **Slovník ikon v `ilustrace._IKONY` chytá i podobná slova.** „postava" není stavba,
   „dopravy" obsahuje „opravy". Při rozšiřování přidej test na falešnou shodu
   (`test_stavba_se_nechyta_na_podobnych_slovech`).
+- **Piktogram musí jít nakreslit i na kartu og:image.** `og.cesta` umí jen
+  podmnožinu SVG (M L H V C S Q A Z, circle, ellipse, rect). Nový tvar
+  s jiným prvkem nebo příkazem shodí `test_kazdy_piktogram_se_prevede`.
 - **`data/articles/*.json` se nepřepisují.** Když se mění prompt, starý článek
   zůstává takový, jaký je; přegenerování je vědomý krok (smazat JSON).
 

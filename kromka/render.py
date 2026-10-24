@@ -18,6 +18,7 @@ from urllib.parse import urlparse
 from pathlib import Path
 
 from . import akce, config, htmlutil, ilustrace, piktogramy
+from . import og as ogkarta
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
 
@@ -364,8 +365,7 @@ ZAKLAD = """<!doctype html>
 {mereni}
 <title>{titulek}</title>
 <meta name="description" content="{popis}">
-<link rel="canonical" href="{kanonicka}">
-<meta property="og:title" content="{og_titulek}">
+{kanonicka_tag}<meta property="og:title" content="{og_titulek}">
 <meta property="og:description" content="{popis}">
 <meta property="og:type" content="{og_typ}">
 <meta property="og:url" content="{kanonicka}">
@@ -373,7 +373,7 @@ ZAKLAD = """<!doctype html>
 <meta property="og:locale" content="{locale}">
 {og_obrazek}{og_cas}
 <meta name="twitter:card" content="{tw_karta}">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="{robots}">
 <link rel="alternate" type="application/rss+xml" title="{brand}" href="/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -507,24 +507,71 @@ def _menu():
 
 
 def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
-             og_titulek=None, jsonld="", publikovano="", tema=""):
+             og_titulek=None, jsonld="", publikovano="", tema="",
+             upraveno="", stitky=(), indexovat=True):
     og = ""
     if obrazek:
         og = ('<meta property="og:image" content="{0}">\n'
               '<meta property="og:image:alt" content="{1}">\n').format(
             _e(obrazek), _e(og_titulek or titulek))
+        # Rozměry u vlastní karty: Facebook bez nich náhled při prvním
+        # sdílení nevykreslí, protože obrázek teprve stahuje.
+        if obrazek.startswith(_abs(OG_CESTA)):
+            og += ('<meta property="og:image:type" content="image/png">\n'
+                   '<meta property="og:image:width" content="{0}">\n'
+                   '<meta property="og:image:height" content="{1}">\n').format(
+                       *ogkarta.ROZMER)
     cas = ""
     if publikovano:
         cas = '<meta property="article:published_time" content="{0}">\n'.format(_e(publikovano))
+    if upraveno:
+        cas += '<meta property="article:modified_time" content="{0}">\n'.format(_e(upraveno))
+    if stitky:
+        # Sekce je první štítek, stejně jako v drobečkové navigaci.
+        cas += '<meta property="article:section" content="{0}">\n'.format(_e(stitky[0]))
+        cas += "".join('<meta property="article:tag" content="{0}">\n'.format(_e(s))
+                       for s in stitky)
+    if indexovat:
+        kanonicka_tag = '<link rel="canonical" href="{0}">\n'.format(_e(_abs(cesta)))
+        robots = "index, follow, max-image-preview:large, max-snippet:-1"
+    else:
+        # Stránka, která do výsledků nepatří (404), nemá kanonickou adresu:
+        # ta by Googlu tvrdila, že tohle je správná verze nějakého obsahu.
+        kanonicka_tag = ""
+        robots = "noindex, follow"
     return ZAKLAD.format(
         titulek=_e(titulek), popis=_e(_zkrat(popis)), og_typ=og_typ,
         og_titulek=_e(og_titulek or titulek), og_obrazek=og, og_cas=cas,
-        kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
+        kanonicka=_e(_abs(cesta)), kanonicka_tag=kanonicka_tag, robots=robots,
+        locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
         menu=_menu(), fonty_preload=FONTY_PRELOAD, mereni=_mereni(cesta, tema),
         tw_karta="summary_large_image" if obrazek else "summary",
     )
+
+
+# Karty pro náhled odkazu. Složka je celá generovaná, maže se před buildem.
+OG_CESTA = "/og/"
+
+# Karty vyrobené v tomhle buildu: úvodka a její další strany sdílejí jednu.
+_OG_HOTOVE = {}
+
+
+def _og(cesta, nadpis, stitek, tema, pata=""):
+    """Nakreslí kartu ke stránce a vrátí její absolutní adresu.
+
+    Adresa karty se odvodí z adresy stránky (`/clanek/x.html` →
+    `/og/clanek/x.png`), takže se dvě stránky nikdy nepřepíšou. Bez Pillow
+    vrací "" a stránka zůstane bez obrázku.
+    """
+    nazev = cesta.strip("/").rsplit(".", 1)[0] or "uvod"
+    adresa = OG_CESTA + nazev + ".png"
+    cil = config.SITE / adresa.lstrip("/")
+    if cil not in _OG_HOTOVE:
+        _OG_HOTOVE[cil] = ogkarta.vytvor(cil, nadpis, stitek, tema,
+                                         pata or _domena())
+    return _abs(adresa) if _OG_HOTOVE[cil] else ""
 
 
 _IKONA_SDILET = (
@@ -641,7 +688,7 @@ def _clanek(clanek, souvisejici):
     return telo
 
 
-def _ld_clanek(clanek):
+def _ld_clanek(clanek, obrazek=""):
     cesta = "/clanek/{0}.html".format(clanek["slug"])
     data = {
         "@context": "https://schema.org",
@@ -654,12 +701,28 @@ def _ld_clanek(clanek):
         "mainEntityOfPage": {"@type": "WebPage", "@id": _abs(cesta)},
         "url": _abs(cesta),
         "author": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
-        "publisher": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
+        "publisher": _ld_vydavatel(),
         # Poctivé přiznání, že jde o přepis cizí zprávy.
         "keywords": ", ".join(clanek.get("tags", [])),
     }
-    if clanek.get("image_local"):
-        data["image"] = [_abs("/img/" + clanek["image_local"])]
+    if obrazek:
+        # Bez obrázku Google článek nevezme do Discoveru ani do velkých
+        # výsledků; karta má 1200 px na šířku, jak Discover chce.
+        data["image"] = [obrazek]
+    return data
+
+
+def _ld_vydavatel():
+    """Organizace KROMCL. Logo je ikona aplikace, čtvercová 512 px.
+
+    `sameAs` jen s vyplněným `config.PROFILY`: prázdný seznam by byl
+    tvrzení, že profily neexistují, a odkaz na neexistující profil lež.
+    """
+    data = {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL,
+            "logo": {"@type": "ImageObject", "url": _abs("/icon-512.png"),
+                     "width": 512, "height": 512}}
+    if config.PROFILY:
+        data["sameAs"] = list(config.PROFILY)
     return data
 
 
@@ -680,7 +743,7 @@ def _ld_web():
         "@context": "https://schema.org", "@type": "WebSite",
         "name": config.BRAND, "url": config.SITE_URL,
         "description": config.TAGLINE, "inLanguage": "cs-CZ",
-        "publisher": {"@type": "Organization", "name": config.BRAND, "url": config.SITE_URL},
+        "publisher": _ld_vydavatel(),
     }
 
 
@@ -1137,6 +1200,7 @@ def _program_stranky(akce_data):
             _drobecky([("Domů", "/"), ("Program", None)]), _e(uvod),
             _program(terminy, None, dostupne)),
         cesta=PROGRAM_CESTA,
+        obrazek=_og(PROGRAM_CESTA, "Program akcí v Kroměříži", "program", "akce"),
         jsonld=_jsonld(_ld_seznam(terminy, PROGRAM_CESTA),
                        _ld_drobecky_program()),
     ), encoding="utf-8")
@@ -1162,6 +1226,9 @@ def _program_stranky(akce_data):
                 _e(udaje["h1"]), _e(udaje["uvod"]), pribeh,
                 _program(vybrane, klic, dostupne, udaje["prazdno"])),
             cesta=cesta, og_titulek=udaje["titulek"],
+            # Bez data: Facebook si náhled drží týdny, „24.–25. října"
+            # by tam zůstalo i další víkend.
+            obrazek=_og(cesta, udaje["h1"], "program", "akce"),
             jsonld=_jsonld(_ld_seznam(vybrane, cesta),
                            _ld_drobecky_program(udaje["h1"], cesta)),
         ), encoding="utf-8")
@@ -1181,6 +1248,7 @@ def _program_stranky(akce_data):
                 _e(udaje["h1"]), _e(udaje["uvod"]),
                 _program(vybrane, typ, dostupne)),
             cesta=cesta, og_titulek=udaje["titulek"],
+            obrazek=_og(cesta, udaje["h1"], "program", piktogramy.pro_typ_akce(typ)),
             jsonld=_jsonld(_ld_seznam(vybrane, cesta),
                            _ld_drobecky_program(udaje["h1"], cesta)),
         ), encoding="utf-8")
@@ -1254,9 +1322,10 @@ def vykresli(clanky, akce_data=None):
     # zůstal na webu soubor, na který už nic neodkazuje.
     for stary in config.SITE.glob("*.html"):
         stary.unlink()
-    for podslozka in ("clanek", "img", "tema", "program", "fonts"):
+    for podslozka in ("clanek", "img", "tema", "program", "fonts", "og"):
         shutil.rmtree(str(config.SITE / podslozka), ignore_errors=True)
         (config.SITE / podslozka).mkdir(parents=True, exist_ok=True)
+    _OG_HOTOVE.clear()
     if config.CIZI_FOTKY:
         for soubor in config.IMAGES.glob("*"):
             shutil.copy2(soubor, config.SITE / "img" / soubor.name)
@@ -1264,17 +1333,22 @@ def vykresli(clanky, akce_data=None):
     zapsano = 0
     for clanek in clanky:
         cesta = "/clanek/{0}.html".format(clanek["slug"])
-        obrazek = ""
+        stitky = clanek.get("tags") or []
         if config.CIZI_FOTKY and clanek.get("image_local"):
             obrazek = _abs("/img/" + clanek["image_local"])
+        else:
+            obrazek = _og(cesta, clanek["headline"], stitky[0] if stitky else "",
+                          piktogramy.pro_tema(stitky), "{0} · {1}".format(
+                              _domena(), _datum_cesky(clanek.get("published"))))
         (config.SITE / "clanek" / (clanek["slug"] + ".html")).write_text(_stranka(
             "{0} – {1}".format(clanek["headline"], config.BRAND),
             " ".join(p.get("text", "") for p in clanek.get("tldr", [])),
             _clanek(clanek, _souvisejici(clanek, clanky)),
             cesta=cesta, og_typ="article", obrazek=obrazek,
             og_titulek=clanek["headline"], publikovano=clanek.get("published", ""),
-            jsonld=_jsonld(_ld_clanek(clanek), _ld_drobecky(clanek)),
-            tema=(clanek.get("tags") or [""])[0],
+            upraveno=clanek.get("rewritten_at", ""), stitky=stitky,
+            jsonld=_jsonld(_ld_clanek(clanek, obrazek), _ld_drobecky(clanek)),
+            tema=stitky[0] if stitky else "",
         ), encoding="utf-8")
         zapsano += 1
 
@@ -1290,14 +1364,16 @@ def vykresli(clanky, akce_data=None):
 
     (config.SITE / "o-webu.html").write_text(_stranka(
         "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu(),
-        cesta="/o-webu.html"), encoding="utf-8")
+        cesta="/o-webu.html",
+        obrazek=_og("/o-webu.html", "O webu", "", "_vychozi")),
+        encoding="utf-8")
     (config.SITE / "404.html").write_text(_stranka(
         "Stránka nenalezena – " + config.BRAND,
         "Tahle stránka tu není. Zkus úvodku.",
         '<article class="clanek"><h1>404, tady nic není</h1>'
         '<p>Odkaz je rozbitý nebo článek zmizel. '
         '<a href="/">Zpátky na úvodku.</a></p></article>',
-        cesta="/404.html"), encoding="utf-8")
+        cesta="/404.html", indexovat=False), encoding="utf-8")
     (config.SITE / "feed.xml").write_text(_rss(clanky), encoding="utf-8")
     (config.SITE / "sitemap.xml").write_text(
         _sitemap(clanky, akce_data), encoding="utf-8")
@@ -1305,9 +1381,12 @@ def vykresli(clanky, akce_data=None):
         "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
         encoding="utf-8")
     (config.SITE / "CNAME").write_text(_domena() + "\n", encoding="utf-8")
+    # Ověřovací soubor IndexNow, viz kromka/indexnow.py.
+    (config.SITE / (config.INDEXNOW_KLIC + ".txt")).write_text(
+        config.INDEXNOW_KLIC, encoding="utf-8")
     (config.SITE / "manifest.webmanifest").write_text(_manifest(), encoding="utf-8")
     zapsano += _staticke_soubory()
-    return zapsano + 7
+    return zapsano + 8
 
 
 def _rozcestniky(clanky):
@@ -1323,8 +1402,10 @@ def _rozcestniky(clanky):
         titulek = "{0} — {1}".format(config.BRAND, config.TAGLINE)
         if cislo > 1:
             titulek = "{0} — strana {1}".format(config.BRAND, cislo)
+        # Všechny strany výpisu sdílejí kartu úvodky.
         (config.SITE / nazev).write_text(_stranka(
             titulek, config.DISCLAIMER, obsah, cesta=cesta,
+            obrazek=_og("/", config.TAGLINE, "zprávy", "_vychozi"),
             jsonld=_jsonld(_ld_web()) if cislo == 1 else "",
         ), encoding="utf-8")
     return len(stranky)
@@ -1347,6 +1428,8 @@ def _temata(clanky):
             "Všechno, co {0} napsal na téma {1}. Celkem {2} článků.".format(
                 config.BRAND, tag, len(seznam)),
             obsah, cesta=_tema_cesta(tag), tema=tag,
+            obrazek=_og(_tema_cesta(tag), "Téma: {0}".format(tag), tag,
+                        piktogramy.pro_tema([tag])),
         ), encoding="utf-8")
     return len(podle_tematu)
 
@@ -1454,8 +1537,7 @@ def _ld_kostka(data):
         "license": data["zdroj"]["licence_url"],
         "about": {"@type": "City", "name": "Kroměříž",
                   "sameAs": data["zdroj"]["url"]},
-        "publisher": {"@type": "Organization", "name": config.BRAND,
-                      "url": config.SITE_URL},
+        "publisher": _ld_vydavatel(),
     }
 
 
@@ -1464,6 +1546,7 @@ def _kostka_stranka(data):
         "{0} – {1}".format(data["titulek"], config.BRAND), data["popis"],
         _kostka(data), cesta=KOSTKA_CESTA, og_typ="article",
         og_titulek=data["titulek"],
+        obrazek=_og(KOSTKA_CESTA, data["nadpis"], "průvodce", "_vychozi"),
         jsonld=_jsonld(_ld_kostka(data), {
             "@context": "https://schema.org", "@type": "BreadcrumbList",
             "itemListElement": [
@@ -1505,35 +1588,53 @@ def _rfc822(iso):
         return iso
 
 
+def _zmeneno(clanek):
+    """Kdy se obsah článku naposledy změnil: vydání u nás, ne u města.
+
+    Článek z archivu vyšel u města v roce 2025, ale u nás až přepisem.
+    """
+    return max(clanek.get("published") or "", clanek.get("rewritten_at") or "")[:10]
+
+
 def _sitemap(clanky, akce_data=None):
+    """Sitemap s `lastmod`, který odpovídá skutečné změně obsahu.
+
+    Dřív měly výpisy pokaždé dnešek. Google pak `lastmod` celé sitemapy
+    přestane věřit, a tím by přišly vniveč i správná data u článků.
+    Výpis má datum nejnovějšího článku v něm, program datum stažení dat.
+    """
     dnes = datetime.now(timezone.utc).date().isoformat()
-    radky = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
-        config.SITE_URL, dnes)]
-    if _nacti_kostku():
-        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.6</priority></url>".format(
-            _abs(KOSTKA_CESTA), dnes))
+    nejnovejsi = max((_zmeneno(c) for c in clanky), default=dnes)
+
+    def url(cesta, lastmod, priorita):
+        return "<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>{2}</priority></url>".format(
+            _abs(cesta), lastmod, priorita)
+
+    radky = [url("/", nejnovejsi, "1.0")]
+    kostka = _nacti_kostku()
+    if kostka:
+        radky.append(url(KOSTKA_CESTA, kostka.get("zdroj", {}).get("datum") or dnes, "0.6"))
     terminy = (akce_data or {}).get("terminy") or []
     if terminy:
-        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.9</priority></url>".format(
-            _abs(PROGRAM_CESTA), dnes))
+        stazeno = ((akce_data or {}).get("stazeno") or dnes)[:10]
+        radky.append(url(PROGRAM_CESTA, stazeno, "0.9"))
         # Okna v čase jsou to, co lidé hledají — priorita jako u úvodky.
-        # Typy jsou hlavně navigace, proto níž.
+        # Typy jsou hlavně navigace, proto níž. Okna se navíc mění s dnem
+        # samotným, i když se data nestáhla znovu.
         for klic in VYBERY:
-            radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.9</priority></url>".format(
-                _abs(_vyber_cesta(klic)), dnes))
+            radky.append(url(_vyber_cesta(klic), max(stazeno, akce.ted().date().isoformat()), "0.9"))
         for typ in TYPY_AKCI:
             if any(t.get("typ") == typ for t in terminy):
-                priorita = "0.8" if typ == "Kino" else "0.5"
-                radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>{2}</priority></url>".format(
-                    _abs(_typ_cesta(typ)), dnes, priorita))
-    temata = sorted({t for c in clanky for t in c.get("tags", [])})
-    for tag in temata:
-        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.6</priority></url>".format(
-            _abs(_tema_cesta(tag)), dnes))
+                radky.append(url(_typ_cesta(typ), stazeno, "0.8" if typ == "Kino" else "0.5"))
+    temata = {}
     for clanek in clanky:
-        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.8</priority></url>".format(
-            _abs("/clanek/{0}.html".format(clanek["slug"])),
-            (clanek.get("published") or dnes)[:10]))
+        for tag in clanek.get("tags", []):
+            temata[tag] = max(temata.get(tag, ""), _zmeneno(clanek))
+    for tag in sorted(temata):
+        radky.append(url(_tema_cesta(tag), temata[tag] or dnes, "0.6"))
+    for clanek in clanky:
+        radky.append(url("/clanek/{0}.html".format(clanek["slug"]),
+                         _zmeneno(clanek) or dnes, "0.8"))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{0}</urlset>'
             ).format("".join(radky))
