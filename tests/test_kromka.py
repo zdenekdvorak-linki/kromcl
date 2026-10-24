@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
                     karta, znacka, og, indexnow,
-                    pipeline, render, rewrite, styl)
+                    pipeline, pozvanka, render, rewrite, styl)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 
@@ -1130,6 +1130,93 @@ class IndexNow(unittest.TestCase):
         with mock.patch.object(config, "SITE_URL", "http://localhost:4173"):
             ok, _ = indexnow.odesli(["http://localhost:4173/a.html"])
         self.assertFalse(ok)
+
+
+class Pozvanka(unittest.TestCase):
+    """Týdenní pozvánka: okno, kdy vzniká, rozdělení akcí a render."""
+
+    TERMINY = [
+        {"id": 1, "akce_id": 1, "nazev": "Koncert v Podzámčí", "zacatek": "2026-10-27T19:30:00",
+         "konec": "2026-10-27T21:00:00", "vicedenni": False, "typ": "Hudba", "misto": "Dům kultury",
+         "cena": 250},
+        {"id": 2, "akce_id": 2, "nazev": "Ranní běh", "zacatek": "2026-10-27T08:00:00",
+         "konec": "2026-10-27T09:00:00", "vicedenni": False, "typ": "Sport", "misto": "Park"},
+        {"id": 3, "akce_id": 3, "nazev": "Výstava hraček", "zacatek": "2026-10-01T09:00:00",
+         "konec": "2026-11-30T17:00:00", "vicedenni": True, "typ": "Muzea, výstavy, galerie",
+         "misto": "Muzeum"},
+        {"id": 4, "akce_id": 4, "nazev": "Minulý týden", "zacatek": "2026-10-20T18:00:00",
+         "konec": "2026-10-20T20:00:00", "vicedenni": False},
+        # Přes půlnoc, v datech vícedenní, ale patří k sobotě.
+        {"id": 5, "akce_id": 5, "nazev": "Halloweenská noc", "zacatek": "2026-10-31T19:00:00",
+         "konec": "2026-11-01T02:00:00", "vicedenni": True, "typ": "Kino"},
+    ]
+
+    def test_tyden_od_pondeli_do_nedele(self):
+        for den in (date(2026, 10, 26), date(2026, 10, 29), date(2026, 11, 1)):
+            dny = pozvanka.tyden(den)
+            self.assertEqual(dny[0], "2026-10-26")
+            self.assertEqual(dny[-1], "2026-11-01")
+            self.assertEqual(len(dny), 7)
+
+    def test_kdy_vznika(self):
+        self.assertFalse(pozvanka.ma_vzniknout(datetime(2026, 10, 26, 5, 59), False))
+        self.assertTrue(pozvanka.ma_vzniknout(datetime(2026, 10, 26, 6, 0), False))
+        self.assertTrue(pozvanka.ma_vzniknout(datetime(2026, 10, 27, 23, 0), False))
+        self.assertFalse(pozvanka.ma_vzniknout(datetime(2026, 10, 28, 9, 0), False))
+        self.assertFalse(pozvanka.ma_vzniknout(datetime(2026, 10, 26, 9, 0), True))
+
+    def test_rozdeleni_po_dnech(self):
+        po_dnech, vystavy = pozvanka.rozdel(self.TERMINY, pozvanka.tyden(date(2026, 10, 26)))
+        self.assertEqual([t["id"] for t in po_dnech["2026-10-27"]], [2, 1])
+        self.assertEqual([t["id"] for t in vystavy], [3])
+        self.assertEqual([t["id"] for t in po_dnech["2026-10-31"]], [5])
+        self.assertFalse(any(t["id"] == 4 for den in po_dnech.values() for t in den))
+
+    def test_slug_s_rozsahem(self):
+        self.assertEqual(pozvanka.slug_pro(pozvanka.tyden(date(2026, 10, 26))),
+                         "akce-v-kromerizi-26-rijna-1-listopadu-2026")
+
+    def _data(self, **zmeny):
+        data = {"headline": "Týden", "tldr": [{"text": "x"}] * 3, "body": ["Úvod."],
+                "dny": {"2026-10-27": "Večer koncert."}, "vystavy": "", "zaver": ""}
+        data.update(zmeny)
+        return data
+
+    def test_pojistka_shodi_vymysleny_cas(self):
+        po_dnech, vystavy = pozvanka.rozdel(self.TERMINY, pozvanka.tyden(date(2026, 10, 26)))
+        zdroj = pozvanka._zdroj_pojistek(pozvanka.program_text(po_dnech, vystavy),
+                                         pozvanka.tyden(date(2026, 10, 26)))
+        pozvanka.zkontroluj(self._data(dny={"2026-10-27": "Koncert v 19:30 za 250."}), zdroj)
+        with self.assertRaises(ValueError):
+            pozvanka.zkontroluj(self._data(dny={"2026-10-27": "Koncert ve 21:45."}), zdroj)
+        with self.assertRaises(ValueError):
+            pozvanka.zkontroluj(self._data(dny={"2026-10-27": "Přijď na „Koncert“."}), zdroj)
+
+    def test_stub_napise_a_render_vykresli(self):
+        import tempfile
+        from unittest import mock
+        import json as _json
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            (data / "akce.json").write_text(_json.dumps({"terminy": self.TERMINY}), encoding="utf-8")
+            puvodni = config.BACKEND
+            config.BACKEND = "stub"
+            try:
+                with mock.patch.object(config, "AKCE_FILE", data / "akce.json"), \
+                        mock.patch.object(config, "ARTICLES", data / "articles"):
+                    clanek = pozvanka.napis(date(2026, 10, 26))
+                    self.assertTrue((data / "articles" / "pozvanka__2026-10-26.json").exists())
+            finally:
+                config.BACKEND = puvodni
+        self.assertEqual(len(clanek["dny"]), 7)
+        self.assertEqual(clanek["zaver"], pozvanka.ZAVER_ZALOHA)
+        self.assertGreaterEqual(clanek["published"], "2026-10-26T06:00")
+        html = render._clanek(clanek, [])
+        self.assertIn('href="{0}"'.format(render.PROGRAM_CESTA), html)
+        self.assertIn(config.AKCE_LICENCE, html)
+        self.assertIn("Koncert v Podzámčí", html)
+        self.assertIn("Celý týden běží", html)
+        self.assertIn("nic nekoná", html)
 
 
 if __name__ == "__main__":

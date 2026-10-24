@@ -12,6 +12,9 @@ logu změn, ne vedlejší efekt refaktoru.
 
 1. **Originál má vždycky přednost a vždycky je na něj odkaz.** Článek bez
    funkčního odkazu na zdroj se nepublikuje. Proto `NeresolvovanyClanek`.
+   Jediná výjimka je týdenní pozvánka: oznámení za ní žádné není, zdrojem je
+   program z otevřených dat. Má proto atribuci CC BY jako stránky programu,
+   odkaz na `/program.html` a u každé akce její vlastní odkaz.
 2. **Přepis nesmí přidat fakt.** Pojistky jsou strojové, ne jen prosba
    v promptu — `zkontroluj_cisla` a `zkontroluj_citace`. Když neprojdou,
    článek se zahodí a nezkouší se znovu se slabším pravidlem.
@@ -182,6 +185,33 @@ Odsouhlasené zadání, které se staví po odpovědi města:
   nebo jen odkaz. „Odesláno" naslepo se hlásit nebude
 - GA4 událost `akce_odeslani` s `typ_akce`, označená jako klíčová
 
+### Týdenní pozvánka
+
+Jediný vlastní článek webu (`kromka/pozvanka.py`). V hodinovém cronu vznikne
+v pondělí od 6:00 pražského času, a když pondělí vypadne, ještě v úterý. Od
+středy by zvala na půlku proběhlých akcí, takže se týden vynechá. Pády se
+počítají ve `state.json` jako u zpráv a po `MAX_SELHANI` se týden vzdá.
+
+Obsahuje všechno, den po dni. Model píše jen komentář: nadpis, TL;DR, úvod,
+1 až 3 věty ke každému dni, větu k výstavám a závěr. Pod každým dnem se
+vykreslí karty akcí přímo z dat, stejné jako v programu. K dni patří
+všechno, co ten den začíná, i vícedenní akce (Halloweenská noc ze soboty na
+neděli je v datech vícedenní, ale hledá se v sobotě). Co začalo už před
+pondělím a přes týden běží, je jednou v bloku „Celý týden běží". Za závěrem je pevný odkaz
+na `/program.html`. Prázdný den řekne, že se nic nekoná, a pozvánka vychází
+i v chudém týdnu.
+
+Seznam akcí je v JSONu jako **snímek**. `akce.json` drží jen měsíc dopředu,
+takže stará pozvánka by z živých dat o seznamy přišla.
+
+Pojistky na komentář jsou stejné jako u zpráv (čísla, uvozovky, kontakty,
+zakázaný slang, antiteze), kromě opisování. Data jsou pod CC BY a názvy akcí
+mají běžně osm a víc slov, takže pojistka by hlásila jen falešné poplachy.
+Prompt navíc zakazuje psát do komentáře časy a ceny, protože jsou hned pod ním.
+
+Adresa má pevný vzor `akce-v-kromerizi-26-rijna-1-listopadu-2026`, nevzniká
+z nadpisu. Ručně: `python -m kromka pozvanka [--tyden YYYY-MM-DD] [--vynutit]`.
+
 ### Pojistka na čísla
 
 Množina čísel ve výstupu musí být podmnožinou povolených. Povolené =
@@ -225,6 +255,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/render.py:17` | `CSS` — vizuál, tmavý režim, mobil |
 | `kromka/ilustrace.py` | obrázky v těle článku: `karty` (peníze, plocha, kdy) a `ikony` u odstavců podle slovníku `_IKONY` |
 | `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
+| `kromka/pozvanka.py` | týdenní pozvánka: `tyden`, `ma_vzniknout`, `rozdel`, prompt, pojistky, `napis`, `v_cronu`; render v `render._pozvanka_telo` |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
 | `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow` |
@@ -346,6 +377,7 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | Piktogramy kreslí na kartu vlastní převod SVG v Pythonu | Pillow SVG neumí. Předkreslení prohlížečem by po každé změně piktogramu chtělo ruční krok a jinou cestu k prohlížeči na Windows a na Macu |
 | 2026-10-24 | 404 `noindex` bez kanonické, `lastmod` podle obsahu, logo vydavatele, `article:*` meta | Technické SEO: 404 byla indexovatelná, `lastmod` měl u výpisů každou hodinu dnešek, Google bez loga a obrázku nebere článek do bohatých výsledků |
 | 2026-10-24 | **IndexNow** po nasazení, jen nové články, úvodka a jejich témata | Seznam a Bing se o zprávě dozví hned, ne až při příštím procházení. Program se nehlásí, hodinové hlášení by bylo spam |
+| 2026-10-24 | **Týdenní pozvánka** na akce Po–Ne, v cronu v pondělí od 6:00, dohání se v úterý | Program je důvod k návratu, ale sám čtenáře neosloví. Model píše komentář ke dnům, fakta jsou karty ze snímku dat. Výjimka z principu 1, atribuce CC BY místo odkazu na oznámení |
 
 ## Appka a favicona
 
@@ -589,6 +621,8 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Text jako karty, chat s botem, čtverečkovaný panel, šikmá páska, slovníček slangu s bublinami | Zamítnuto v mockupu 23. 10. 2026 ze stejného důvodu |
 | Časová osa (vydání → měsíc z textu) | Bez nového pole má jen dva body, třetí by byl vymyšlený (princip 2); ukáže se jen u článků s měsícem |
 | Scéna se štítky článku jako postavami | Opakuje hero piktogram o kus výš |
+| Pozvánka napsaná celá modelem, včetně časů a názvů | Faktům věří víc data; sedm kin za týden by z textu udělalo výčet a každý čas napsaný dvakrát je šance se splést |
+| Pozvánka s výběrem 5–7 akcí | Zdeněk chce v pozvánce všechno, den po dni; výběr dělá komentář, ne vynechání |
 | og:image varianta B (zelený sloupec) a C (tmavá) | Mockup 24. 10. 2026: B nechává titulku málo místa, C působí jako jiná značka než světlý web |
 | Jedna og:image karta na téma nebo na celý web | Všechny články o dopravě by se na sítích tvářily stejně; karta ke článku stojí 45 ms |
 | Blokovat AI crawlery v robots.txt | Rozhodnuto 24. 10. 2026: web chce dosah a AI odpovědi jsou pro mladé čtenáře další vstup |

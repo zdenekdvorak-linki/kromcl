@@ -222,6 +222,9 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .akce-info { font-weight: 500; }
 .akce-odkazy a { margin-right: 12px; }
 .akce-prazdno { font-size: 18px; }
+.pozvanka-zaver { margin: 30px 0 0; font-family: Syne, sans-serif; font-weight: 800; font-size: 20px; }
+.pozvanka-zaver a { display: inline-block; padding: 12px 16px; background: var(--akcent); color: var(--inkoust); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); text-decoration: none; }
+.pozvanka-zaver a::after { content: " →"; }
 .atribuce { margin: 34px 0 0; padding-top: 14px; border-top: 2px dashed var(--ram); font-size: 13px; color: var(--slabe); max-width: 70ch; }
 /* Logo má spodní mez clamp() 26 px, pod 371 px šířky se tedy přestane
    zmenšovat. Na 320 px pak logo 199 + mezera 10 + hamburger 109 + okraje 32
@@ -666,14 +669,21 @@ def _clanek(clanek, souvisejici):
     if polozky:
         casti.append('<div class="tldr"><h2>TL;DR</h2><ul>{0}</ul></div>'.format(polozky))
 
-    # Obrázky v textu skládá ilustrace.py z hotového přepisu; proč ne nové
-    # pole od modelu, stojí v hlavičce toho modulu.
     odstavce = clanek.get("body", [])
-    for i, (odstavec, ikona) in enumerate(zip(odstavce, ilustrace.ikony(odstavce))):
-        casti.append("<p{0}>{1}{2}</p>".format(
-            ' class="s-ikonou"' if ikona else "", ilustrace.ikona_html(ikona), _e(odstavec)))
-        if i == 0:
-            casti.append(ilustrace.karty_html(odstavce))
+    if clanek.get("typ") == "pozvanka":
+        # Pozvánka nemá ilustrace: karty s čísly by vytahovaly čísla
+        # z komentáře, a ten je schválně bez nich.
+        casti.extend("<p>{0}</p>".format(_e(o)) for o in odstavce)
+        casti.append(_pozvanka_telo(clanek))
+    else:
+        # Obrázky v textu skládá ilustrace.py z hotového přepisu; proč ne nové
+        # pole od modelu, stojí v hlavičce toho modulu.
+        for i, (odstavec, ikona) in enumerate(zip(odstavce, ilustrace.ikony(odstavce))):
+            casti.append("<p{0}>{1}{2}</p>".format(
+                ' class="s-ikonou"' if ikona else "", ilustrace.ikona_html(ikona),
+                _e(odstavec)))
+            if i == 0:
+                casti.append(ilustrace.karty_html(odstavce))
 
     # Sdílet až pod textem: kdo článek nedočetl, neví, jestli ho chce poslat dál.
     casti.append('<div class="sdileni na-konci">{0}</div>'.format(_sdilet(
@@ -686,6 +696,36 @@ def _clanek(clanek, souvisejici):
         telo += ('<section class="dalsi"><h2>Další z Kroměříže</h2>'
                  '<div class="mrizka">{0}</div></section>'.format(karty))
     return telo
+
+
+def _pozvanka_telo(clanek):
+    """Dny pozvánky: komentář modelu a pod ním akce ze snímku dat.
+
+    Fakta se berou ze snímku uloženého v článku, ne z `akce.json`. Ten drží
+    jen měsíc dopředu a stará pozvánka by o seznamy přišla.
+    """
+    casti = []
+    for den in clanek.get("dny", []):
+        terminy = den.get("terminy") or []
+        seznam = ('<div class="akce-seznam">{0}</div>'.format(
+            "".join(_karta_akce(t, cas_zacatku=True) for t in terminy)) if terminy
+            else '<p class="akce-prazdno">Tenhle den se v programu nic nekoná.</p>')
+        casti.append(
+            '<section class="den"><h2 id="d{0}">{1}</h2>{2}{3}</section>'.format(
+                _e(den["den"]), _e(_den_cesky(den["den"])),
+                '<p>{0}</p>'.format(_e(den["text"])) if den.get("text") else "",
+                seznam))
+    if clanek.get("vystavy"):
+        casti.append(
+            '<section class="den"><h2>Celý týden běží</h2>{0}'
+            '<div class="akce-seznam">{1}</div></section>'.format(
+                '<p>{0}</p>'.format(_e(clanek["vystavy_text"]))
+                if clanek.get("vystavy_text") else "",
+                "".join(_karta_akce(t) for t in clanek["vystavy"])))
+    casti.append('<p class="pozvanka-zaver"><a href="{0}">{1}</a></p>'.format(
+        PROGRAM_CESTA, _e(clanek.get("zaver") or "Celý program")))
+    casti.append(_atribuce())
+    return "".join(casti)
 
 
 def _ld_clanek(clanek, obrazek=""):
@@ -970,9 +1010,11 @@ def _cena_text(termin):
     return text
 
 
-def _karta_akce(termin):
+def _karta_akce(termin, cas_zacatku=False):
+    """`cas_zacatku`: vícedenní akce ukáže ve sloupci začátek, ne konec. Pro
+    seznam dne v pozvánce, kde Halloweenská noc patří k sobotnímu večeru."""
     tvar = piktogramy.pro_typ_akce(termin.get("typ"))
-    if termin.get("vicedenni"):
+    if termin.get("vicedenni") and not cas_zacatku:
         kdy = "do {0}".format(_datum_kratce(termin.get("konec", "")))
     else:
         kdy = _cas_hm(termin.get("zacatek", ""))

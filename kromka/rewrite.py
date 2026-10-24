@@ -176,6 +176,8 @@ def _stub(prompt):
     parafráze v ostrém promptu."""
     if prompt.startswith("Jsi klasifikátor"):
         return "volny"
+    if "píše pozvánku na akce" in prompt.split("\n", 1)[0]:
+        return _stub_pozvanka(prompt)
     zdroj = prompt.split("## Zdroj", 1)[-1]
     radky = [r.strip() for r in zdroj.split("\n") if r.strip()]
     titulek = next((r[8:].strip() for r in radky if r.startswith("Titulek:")), "Zpráva")
@@ -187,6 +189,20 @@ def _stub(prompt):
                  for i, o in enumerate((odstavce + odstavce + odstavce)[:3])],
         "body": odstavce[:3],
         "tags": ["radnice"],
+    }
+    return json.dumps(data, ensure_ascii=False)
+
+
+def _stub_pozvanka(prompt):
+    """Pozvánka bez modelu: komentář bez čísel, ať projde pojistkami."""
+    dny = re.findall(r'"(\d{4}-\d{2}-\d{2})": "1 až 3 věty', prompt)
+    data = {
+        "headline": "Co se v Kroměříži děje tenhle týden",
+        "tldr": [{"label": "Bod", "text": "Zkušební pozvánka bez modelu.", "emoji": ""}] * 3,
+        "body": ["Zkušební úvod. Seznam akcí je pod každým dnem."],
+        "dny": {d: "Zkušební komentář ke dni." for d in dny},
+        "vystavy": "Výstavy běží celý týden.",
+        "zaver": "",
     }
     return json.dumps(data, ensure_ascii=False)
 

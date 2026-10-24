@@ -5,7 +5,7 @@ import argparse
 import json
 import sys
 
-from . import akce, config, indexnow, kino_dk, pipeline, render, sources, store
+from . import akce, config, indexnow, kino_dk, pipeline, pozvanka, render, sources, store
 
 
 def main(argv=None):
@@ -41,6 +41,12 @@ def main(argv=None):
 
     p = pod.add_parser("doklad", help="doloží u článků, že nevznikly opsáním")
     p.add_argument("slug", nargs="?", help="jeden článek; bez něj souhrn za všechny")
+
+    p = pod.add_parser("pozvanka", help="napíše týdenní pozvánku na akce")
+    p.add_argument("--tyden", metavar="YYYY-MM-DD",
+                   help="kterýkoli den týdne; bez něj tenhle týden")
+    p.add_argument("--vynutit", action="store_true",
+                   help="napiš ji znovu, i když už pro ten týden existuje")
 
     pod.add_parser("build", help="vykreslí statický web ze uložených JSONů")
     p = pod.add_parser("all", help="run + build")
@@ -80,6 +86,9 @@ def main(argv=None):
     if args.prikaz == "indexnow":
         return _indexnow(args)
 
+    if args.prikaz == "pozvanka":
+        return _pozvanka(args)
+
     if args.prikaz in ("akce", "all"):
         _akce(args)
         if args.prikaz == "akce":
@@ -94,6 +103,9 @@ def main(argv=None):
         if args.prikaz != "all":
             return 0
         # Jen `all` končí nasazením; odešle se až po něm (příkaz indexnow).
+        nova = _pozvanka_v_cronu()
+        if nova:
+            hotove = list(hotove or []) + [nova]
         if hotove:
             indexnow.zarad(indexnow.adresy(hotove))
 
@@ -118,6 +130,31 @@ def _indexnow(args):
     if ok and not args.vse:
         indexnow.vyprazdni_frontu()
     return 0 if ok else 1
+
+
+def _pozvanka(args):
+    """Ruční běh pozvánky. Hotový JSON se jinak nepřepisuje (princip 5)."""
+    from datetime import date
+
+    den = date.fromisoformat(args.tyden) if args.tyden else akce.ted().date()
+    clanek_id = pozvanka.id_pro(pozvanka.tyden(den)[0])
+    if store.existuje(clanek_id) and not args.vynutit:
+        print("Pozvánka {0} už existuje; přepsat jde jen s --vynutit.".format(clanek_id))
+        return 1
+    clanek = pozvanka.napis(den)
+    akci = sum(len(d["terminy"]) for d in clanek["dny"])
+    print("Napsáno: {0}\n  /clanek/{1}.html\n  {2} akcí po dnech, {3} výstav".format(
+        clanek["headline"], clanek["slug"], akci, len(clanek["vystavy"])))
+    return 0
+
+
+def _pozvanka_v_cronu():
+    """V pondělí a úterý pozvánka, jinak nic. Chyba nesmí shodit zprávy."""
+    try:
+        return pozvanka.v_cronu()
+    except Exception as exc:                          # noqa: BLE001
+        print("Pozvánka nevznikla ({0}).".format(exc), file=sys.stderr)
+        return None
 
 
 def _akce(args):
