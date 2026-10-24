@@ -299,6 +299,8 @@ FONTY_PRELOAD = "".join(
 
 # GA4 bez lišty se souhlasem, rozhodnutí z 24. 10. 2026. Skript se načte jen
 # na ostré doméně, aby náhled na localhostu a zkušební běhy neplnily data.
+# Parametry stránky jdou s každou událostí; `rezim` pozná až prohlížeč.
+# Kliknutí měří static/app.js.
 MERENI = """<script>
 if (location.hostname === '__HOST__') {
   var s = document.createElement('script');
@@ -307,17 +309,39 @@ if (location.hostname === '__HOST__') {
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); };
+  var p = __PARAMETRY__;
+  p.rezim = (window.matchMedia('(display-mode: standalone)').matches
+    || navigator.standalone === true) ? 'appka' : 'web';
   gtag('js', new Date());
-  gtag('config', '__GA4_ID__');
+  gtag('config', '__GA4_ID__', p);
 }
 </script>"""
 
 
-def _mereni():
+def _typ_stranky(cesta):
+    """Hodnota `typ_stranky` pro GA4 podle adresy stránky."""
+    if cesta == "/" or cesta.startswith("/strana-"):
+        return "uvod"
+    if cesta.startswith("/clanek/"):
+        return "clanek"
+    if cesta.startswith("/tema/"):
+        return "tema"
+    if cesta in {_vyber_cesta(k) for k in VYBERY}:
+        return "okno"
+    if cesta == PROGRAM_CESTA or cesta.startswith("/program/"):
+        return "program"
+    return cesta.strip("/").rsplit(".", 1)[0] or "uvod"
+
+
+def _mereni(cesta="/", tema=""):
     if not config.GA4_ID:
         return ""
+    parametry = {"typ_stranky": _typ_stranky(cesta)}
+    if tema:
+        parametry["tema"] = tema
     return (MERENI.replace("__GA4_ID__", config.GA4_ID)
-            .replace("__HOST__", urlparse(config.SITE_URL).hostname))
+            .replace("__HOST__", urlparse(config.SITE_URL).hostname)
+            .replace("__PARAMETRY__", json.dumps(parametry)))
 
 
 ZAKLAD = """<!doctype html>
@@ -471,7 +495,7 @@ def _menu():
 
 
 def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
-             og_titulek=None, jsonld="", publikovano=""):
+             og_titulek=None, jsonld="", publikovano="", tema=""):
     og = ""
     if obrazek:
         og = ('<meta property="og:image" content="{0}">\n'
@@ -486,7 +510,7 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
         kanonicka=_e(_abs(cesta)), locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
-        menu=_menu(), fonty_preload=FONTY_PRELOAD, mereni=_mereni(),
+        menu=_menu(), fonty_preload=FONTY_PRELOAD, mereni=_mereni(cesta, tema),
         tw_karta="summary_large_image" if obrazek else "summary",
     )
 
@@ -1207,6 +1231,7 @@ def vykresli(clanky, akce_data=None):
             cesta=cesta, og_typ="article", obrazek=obrazek,
             og_titulek=clanek["headline"], publikovano=clanek.get("published", ""),
             jsonld=_jsonld(_ld_clanek(clanek), _ld_drobecky(clanek)),
+            tema=(clanek.get("tags") or [""])[0],
         ), encoding="utf-8")
         zapsano += 1
 
@@ -1278,7 +1303,7 @@ def _temata(clanky):
             "{0} v Kroměříži – {1}".format(tag.capitalize(), config.BRAND),
             "Všechno, co {0} napsal na téma {1}. Celkem {2} článků.".format(
                 config.BRAND, tag, len(seznam)),
-            obsah, cesta=_tema_cesta(tag),
+            obsah, cesta=_tema_cesta(tag), tema=tag,
         ), encoding="utf-8")
     return len(podle_tematu)
 

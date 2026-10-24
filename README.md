@@ -177,7 +177,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | Soubor | Co v něm je |
 |---|---|
 | `kromka/config.py` | značka, cesty, modely, backend, disclaimer, `GA4_ID` — jediné místo na změnu názvu webu |
-| `kromka/render.py` | `MERENI`, `_mereni` — gtag GA4 v `<head>`, jen na ostré doméně |
+| `kromka/render.py` | `MERENI`, `_mereni`, `_typ_stranky` — gtag GA4 v `<head>` s parametry stránky, jen na ostré doméně |
 | `kromka/net.py` | stahování přes `urllib`, 4xx se neopakuje |
 | `kromka/htmlutil.py:21` | `slugify` — pravidlo TYPO3 |
 | `kromka/htmlutil.py:41` | `_DivGrabber` — vyříznutí `<div>` s vnořenými divy |
@@ -288,6 +288,7 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | **Fonty u sebe** místo Google Fonts | Google by dostal IP adresu každého čtenáře, web čekal na dvě cizí spojení a appka offline padala na náhradní písmo. Čtyři soubory woff2, dohromady 90 kB, licence OFL jde s nimi |
 | 2026-10-24 | **Víkendová karta** na `/program/vikend-pribeh.png` + odkaz na stránce víkendu | Důvod vracet se každý týden a obsah tam, kde publikum je. Pestrý výběr: jednodenní akce, nejvýš 2 kina, bez výstav, nejdřív až 3 na den |
 | 2026-10-24 | **Měření GA4** (`G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name), gtag přímo, bez GTM a **bez lišty se souhlasem** | Měřítko úspěchu jsou vracející se čtenáři a bez měření ho nikdo nevidí. GTM by byl jen kontejner navíc pro jediný tag. Lišta zamítnuta vědomě (Zdeněk), přestože opt-in v ČR platí od 2022 a GA4 posílá Googlu IP adresu, kterou kvůli tomu fonty z Googlu nenačítají. Fonty zůstávají u sebe kvůli rychlosti a offline appce. Skript se načte jen na `kromcl.cz`, náhled na localhostu data neplní; vypíná se prázdným `KROMKA_GA4_ID` |
+| 2026-10-24 | **Události GA4**: parametry stránky + šest událostí, popis v sekci Měření | Ukázat, co přivádí čtenáře zpátky. Kliknutí se poznají podle tříd ze šablony místo atributů `data-mereni`, takže mapování je na jednom místě v `app.js`; test hlídá, že třídy v šabloně zůstaly |
 | 2026-10-24 | Karta nebere akce, které už začaly | Přestavuje se každou hodinu; v sobotu odpoledne by nabízela dopolední program |
 | 2026-10-24 | Okna dnes a víkend podle pražského času (`akce.ted()`) | GitHub Actions běží v UTC; po půlnoci by „dnes" ukazovalo včerejšek, jednu až dvě hodiny denně |
 | 2026-10-24 | Odkazy akcí vždy s protokolem | 22 ze 115 odkazů v exportu bylo „www.…" bez https a vedlo na kromcl.cz/program/www.…, tedy na 404 |
@@ -393,6 +394,38 @@ Text se nepíše při buildu, je hotový v `data/kromeriz-v-kostce.json`.
 mor, Kroměřížská selicha, rok 1945) jsou bez slangu a politici bez
 hodnocení. Při aktualizaci: stáhnout novou revizi, přepsat dotčené sekce,
 přepsat `revize` a `datum` v `zdroj`.
+
+## Měření
+
+GA4 `G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name, uchovávání dat
+14 měsíců. Skript vkládá `render.MERENI` a načte se jen na `kromcl.cz`.
+
+**Parametry ke každé stránce** (jdou s `page_view` i s každou událostí):
+
+| Parametr | Hodnoty |
+|---|---|
+| `typ_stranky` | `uvod`, `clanek`, `tema`, `program`, `okno` (dnes a víkend), jinak název souboru (`o-webu`, `404`, `kromeriz-v-kostce`) |
+| `tema` | první štítek článku, u stránky tématu to téma |
+| `rezim` | `appka` v nainstalované appce, jinak `web` |
+
+**Události** (`static/app.js`). Klíčové jsou první tři:
+
+| Událost | Kdy | Parametr |
+|---|---|---|
+| `appka_instalace` | prohlížeč ohlásí instalaci, i z vlastního menu | — |
+| `pribeh_stazeni` | klik na stažení víkendové karty | — |
+| `rss_klik` | klik na odkaz na `/feed.xml` | — |
+| `instalace_nabidka` | lišta s instalací | `vysledek`: `zobrazeno`, `prijato`, `odmitnuto`, `ted_ne`, `ios_navod` |
+| `navigace` | klik v `.dalsi`, `.drobecky`, `.menu`, na `.stitek` (v tomhle pořadí) | `misto`: `dalsi`, `drobecky`, `menu`, `stitek` |
+| `program_filtr` | klik na `.filtr-odkaz` | `typ_akce`: slug typu nebo okna, `vse` |
+
+Všech šest parametrů je v GA4 zaregistrovaných jako vlastní dimenze
+s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
+jako `click` v rozšířeném měření.
+
+**Ověření bez ostré domény:** na localhostu `gtag` neexistuje. Do stránky
+ve vloženém `<iframe>` se dá podstrčit `w.gtag = (...a) => log.push(a)` a
+klikat přes `element.click()` s `preventDefault` v zachytávací fázi.
 
 ## Výměna archivu
 

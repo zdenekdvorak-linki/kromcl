@@ -1,4 +1,5 @@
-/* KROMCL jako appka: registrace service workeru a výzva k instalaci.
+/* KROMCL jako appka: registrace service workeru, výzva k instalaci
+ * a události GA4.
  *
  * Jediný vlastní JavaScript na webu (vedle měření GA4 v hlavičce, viz
  * render.MERENI). Bez něj nic nechybí — lišta se vkládá až
@@ -18,6 +19,36 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function () {});
   }
+
+  // Události GA4. Funkce gtag existuje jen na ostré doméně (render.MERENI),
+  // jinde se nic neměří. Kliknutí se poznají podle tříd ze šablony, test
+  // v tests/test_kromka.py hlídá, že tam pořád jsou.
+  function zmer(nazev, parametry) {
+    if (window.gtag) window.gtag('event', nazev, parametry || {});
+  }
+
+  // Pořadí rozhoduje: štítek uvnitř „Další z Kroměříže" se počítá jako dalsi.
+  var NAVIGACE = [['.dalsi', 'dalsi'], ['.drobecky', 'drobecky'],
+    ['.menu', 'menu'], ['.stitek', 'stitek']];
+
+  document.addEventListener('click', function (udalost) {
+    var a = udalost.target.closest && udalost.target.closest('a[href]');
+    if (!a) return;
+    if (a.closest('.pribeh-odkaz')) return zmer('pribeh_stazeni');
+    if (/\/feed\.xml$/.test(a.pathname)) return zmer('rss_klik');
+    if (a.classList.contains('filtr-odkaz')) {
+      // /program.html → vse, /program/kino.html → kino
+      var typ = a.pathname.indexOf('/program/') === 0
+        ? a.pathname.slice(9).replace(/\.html$/, '') : 'vse';
+      return zmer('program_filtr', { typ_akce: typ });
+    }
+    for (var i = 0; i < NAVIGACE.length; i++) {
+      if (a.closest(NAVIGACE[i][0])) return zmer('navigace', { misto: NAVIGACE[i][1] });
+    }
+  });
+
+  // Mimo lištu: instalaci z menu prohlížeče lišta nevidí.
+  window.addEventListener('appinstalled', function () { zmer('appka_instalace'); });
 
   var jeAppka = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;
@@ -95,6 +126,7 @@
       + 'Bez storu, bez reklam.', [
       tlacitko('Jasně', true, function () { zavri(iosLista, true); })
     ]);
+    zmer('instalace_nabidka', { vysledek: 'ios_navod' });
     return;
   }
 
@@ -106,10 +138,17 @@
       tlacitko('Přidat na plochu', true, function () {
         udalost.prompt();
         udalost.userChoice.then(function (volba) {
+          zmer('instalace_nabidka', {
+            vysledek: volba.outcome === 'accepted' ? 'prijato' : 'odmitnuto'
+          });
           zavri(el, volba.outcome !== 'accepted');
         });
       }),
-      tlacitko('Teď ne', false, function () { zavri(el, true); })
+      tlacitko('Teď ne', false, function () {
+        zmer('instalace_nabidka', { vysledek: 'ted_ne' });
+        zavri(el, true);
+      })
     ]);
+    zmer('instalace_nabidka', { vysledek: 'zobrazeno' });
   });
 })();

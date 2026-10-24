@@ -352,6 +352,32 @@ class Appka(unittest.TestCase):
         with mock.patch.object(config, "GA4_ID", ""):
             self.assertEqual(render._mereni(), "")
 
+    def test_typ_stranky_podle_adresy(self):
+        for cesta, typ in [("/", "uvod"), ("/strana-2.html", "uvod"),
+                           ("/clanek/x.html", "clanek"), ("/tema/doprava.html", "tema"),
+                           ("/program/dnes.html", "okno"), ("/program/vikend.html", "okno"),
+                           (render.PROGRAM_CESTA, "program"), ("/program/kino.html", "program"),
+                           ("/o-webu.html", "o-webu")]:
+            self.assertEqual(render._typ_stranky(cesta), typ, cesta)
+
+    def test_mereni_nese_tema_stranky(self):
+        kod = render._mereni("/clanek/x.html", "školství")
+        self.assertIn('"typ_stranky": "clanek"', kod)
+        self.assertIn('"tema": "\\u0161kolstv\\u00ed"', kod)
+
+    def test_udalosti_najdou_tridy_ze_sablony(self):
+        # app.js pozná kliknutí podle tříd z render.py. Přejmenování třídy
+        # by měření tiše vypnulo, proto se hlídají obě strany.
+        import inspect
+        app = (config.STATIC / "app.js").read_text(encoding="utf-8")
+        sablona = inspect.getsource(render)
+        for trida in ("dalsi", "drobecky", "menu", "stitek", "filtr-odkaz", "pribeh-odkaz"):
+            self.assertRegex(app, r"'\.?" + trida + "'", trida)
+            self.assertIn('class="' + trida, sablona, trida)
+        for nazev in ("appka_instalace", "pribeh_stazeni", "rss_klik",
+                      "instalace_nabidka", "navigace", "program_filtr"):
+            self.assertIn("'" + nazev + "'", app, nazev)
+
 
 class VikendovaKarta(unittest.TestCase):
     """Výběr akcí na kartu do příběhu („pestrý výběr", 24. 10. 2026)."""
