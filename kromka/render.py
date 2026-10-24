@@ -1431,9 +1431,9 @@ def _kostka(data):
              lic_url=_e(zdroj["licence_url"]), lic=_e(zdroj["licence"]))
     return (
         '<article class="clanek kostka">{drobecky}<h1>{nadpis}</h1>'
-        '<p class="uvod">{uvod}</p><div class="sdileni">{sdilet}</div>'
+        '<p class="uvod">{uvod}</p>'
         '<nav class="obsah-kostky" aria-label="Obsah"><h2>Obsah</h2><ol>{obsah}</ol></nav>'
-        '{casti}{atribuce}</article>'
+        '{casti}<div class="sdileni na-konci">{sdilet}</div>{atribuce}</article>'
     ).format(drobecky=_drobecky([("Domů", "/"), (data["nadpis"], None)]),
              nadpis=_e(data["nadpis"]), uvod=_e(data["uvod"]), obsah=obsah,
              sdilet=_sdilet(data["titulek"], KOSTKA_CESTA, "kostka"),
