@@ -378,6 +378,7 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | 404 `noindex` bez kanonické, `lastmod` podle obsahu, logo vydavatele, `article:*` meta | Technické SEO: 404 byla indexovatelná, `lastmod` měl u výpisů každou hodinu dnešek, Google bez loga a obrázku nebere článek do bohatých výsledků |
 | 2026-10-24 | **IndexNow** po nasazení, jen nové články, úvodka a jejich témata | Seznam a Bing se o zprávě dozví hned, ne až při příštím procházení. Program se nehlásí, hodinové hlášení by bylo spam |
 | 2026-10-24 | **Týdenní pozvánka** na akce Po–Ne, v cronu v pondělí od 6:00, dohání se v úterý | Program je důvod k návratu, ale sám čtenáře neosloví. Model píše komentář ke dnům, fakta jsou karty ze snímku dat. Výjimka z principu 1, atribuce CC BY místo odkazu na oznámení |
+| 2026-10-24 | **Core Web Vitals do GA4** (web-vitals 6.2.3 ve `static/vendor/`), oprava CLS víkendu, obrázek ke sdílení až 3 s po načtení | Google o malém webu vlastní data nemá, laboratoř je odhad. Víkend posouvalo odkrývané tlačítko Sdílet (CLS 0,16 → 0) a předem stahovaný obrázek zdržoval LCP (2,5 → 2,0 s). Ořezání přednačtení písem změřeno a zamítnuto: LCP beze změny, FCP horší |
 
 ## Appka a favicona
 
@@ -411,10 +412,13 @@ obrázkem „Šérni do storíčka“.
 - telefon otevře systémovou sdílecí nabídku (`navigator.share`)
 - u víkendové karty posílá rovnou obrázek, pokud to systém dovolí — cesta
   do instagramového příběhu; obrázek se stahuje předem, protože Safari
-  povolí sdílení jen hned po klepnutí
+  povolí sdílení jen hned po klepnutí, ale až 3 s po načtení stránky —
+  dřív zdržoval vykreslení (LCP víkendu 2,0 → 2,5 s); kdo klepne dřív,
+  pošle odkaz
 - bez sdílecí nabídky zkopíruje odkaz, a když nepustí schránku (vestavěné
   prohlížeče Instagramu a Messengeru), zkopíruje ho přes skryté pole
-- bez JS zůstane skryté, v HTML má `hidden`
+- bez JS zůstane skryté, v HTML má `hidden`; skrývá se `visibility`, ne
+  `display`, aby odkrytí neposunulo obsah (na víkendu to dělalo CLS 0,16)
 - sdílí se vždy kanonická adresa z `data-url`, ne adresa v okně, takže se
   s odkazem nešíří parametry; každá stránka má navíc self-canonical
 - měří se událost GA4 `share` (`method` nabidka / obrazek / kopie,
@@ -568,6 +572,26 @@ protože rozhraní GA4 dovolí označit jen událost, která už má zpracovaná
 Všech šest parametrů je v GA4 zaregistrovaných jako vlastní dimenze
 s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
 jako `click` v rozšířeném měření.
+
+**Core Web Vitals návštěvníků.** Google vlastní data (CrUX) o malém webu
+mít nemusí, chybí mu návštěvy. `app.js` proto po načtení stránky stáhne
+`static/vendor/web-vitals.js` (web-vitals 6.2.3, sestavení attribution,
+Apache-2.0, licence vedle) a pošle události `LCP`, `CLS` a `INP` s parametry
+`metric_id`, `metric_value`, `metric_rating` (`good`, `needs-improvement`,
+`poor`) a `debug_target` (selektor prvku, který hodnotu způsobil). `value`
+je přírůstek, takže se dá sčítat. Jen tam, kde existuje `gtag`, tedy na
+ostré doméně. Aby šly `metric_rating` a `debug_target` filtrovat v
+přehledech, musí být v GA4 zaregistrované jako vlastní dimenze (Událost).
+
+Laboratorní výchozí stav 24. 10. 2026 (Lighthouse 13.4.1, Edge, mobil,
+simulovaná pomalá 4G): úvod, program a průvodce LCP 1,4–1,6 s, článek
+2,7–2,8 s, CLS všude 0, TBT do 70 ms. Článek bez GA4 má LCP 1,8 s: rozdíl
+dělá `gtag.js` (177 kB, 62 % váhy stránky). Přednačtení písem je správně —
+bez něj FCP 1,0 → 1,7 s a posun písma, latin-ext je potřeba kvůli ě š č ř ž.
+
+**Ověření Core Web Vitals:** vestavěný prohlížeč Claude aplikace nezapisuje
+paint záznamy, LCP v něm nevznikne. Ověřuje se v Edge přes DevTools protokol
+s podvrženým `gtag`, který události posílá beaconem na lokální server.
 
 **Ověření bez ostré domény:** na localhostu `gtag` neexistuje. Do stránky
 ve vloženém `<iframe>` se dá podstrčit `w.gtag = (...a) => log.push(a)` a

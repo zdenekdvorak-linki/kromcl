@@ -583,12 +583,35 @@ class Sdileni(unittest.TestCase):
         self.assertIn('/clanek/x.html"', clanek)
         self.assertIn('class="sdilet"', render._kostka(Kostka.VZOREK))
 
+    def test_skryte_tlacitko_drzi_misto(self):
+        # display:none by po odkrytí posunulo obsah (CLS 0,16 na víkendu).
+        self.assertIn(".sdilet[hidden] { visibility: hidden; }", render.CSS)
+        self.assertNotIn("sdilet[hidden] { display: none", render.CSS)
+
     def test_app_js_zna_tridu_a_udalost(self):
         app = (config.STATIC / "app.js").read_text(encoding="utf-8")
         self.assertIn("'.sdilet'", app)
         self.assertIn("'share'", app)
         # Zavřená nabídka sdílení se nesmí počítat ani hlásit jako chyba.
         self.assertIn("AbortError", app)
+
+
+class WebVitals(unittest.TestCase):
+    """Core Web Vitals návštěvníků do GA4 přes web-vitals ze static/vendor/."""
+
+    def test_knihovna_i_licence_jsou_v_repu(self):
+        knihovna = config.STATIC / "vendor" / "web-vitals.js"
+        self.assertTrue(knihovna.exists())
+        self.assertTrue((config.STATIC / "vendor" / "LICENSE-web-vitals.txt").exists())
+        self.assertIn("var webVitals=", knihovna.read_text(encoding="utf-8"))
+
+    def test_app_js_knihovnu_nacita_a_posila_metriky(self):
+        app = (config.STATIC / "app.js").read_text(encoding="utf-8")
+        self.assertIn("'/vendor/web-vitals.js'", app)
+        for metrika in ("onLCP", "onCLS", "onINP"):
+            self.assertIn(metrika, app)
+        for parametr in ("metric_id", "metric_value", "metric_rating", "debug_target"):
+            self.assertIn(parametr, app)
 
 
 class DruhPadu(unittest.TestCase):

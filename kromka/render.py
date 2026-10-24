@@ -181,9 +181,11 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 /* Kroměříž v kostce: dlouhá stránka, proto obsah s kotvami. Hlavička je
    přilepená (až 128 px), bez scroll-margin by nadpis po skoku zajel pod ni. */
 /* Tlačítko Sdílet. V HTML je skryté, odkrývá ho app.js jen tam, kde umí
-   sdílet nebo kopírovat — bez JS by bylo mrtvé. [hidden] musí přebít flex. */
+   sdílet nebo kopírovat — bez JS by bylo mrtvé. Skrývá se viditelností,
+   ne display: místo zůstává od začátku, takže odkrytí obsah neposune.
+   S display:none posouvalo program víkendu na mobilu (CLS 0,16). */
 .sdilet { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--inkoust); background: var(--karta); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 8px 14px; cursor: pointer; }
-.sdilet[hidden] { display: none; }
+.sdilet[hidden] { visibility: hidden; }
 .sdilet:hover { background: var(--akcent); color: #000; }
 .sdilet:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ram); }
 .sdilet:focus-visible { outline: 3px solid var(--akcent); outline-offset: 3px; }
@@ -191,7 +193,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .sdileni { margin: 0 0 24px; }
 .sdileni.na-konci { margin: 32px 0 8px; }
 .pribeh-odkaz .sdilet { margin-left: 14px; vertical-align: middle; }
-@media (max-width: 640px) { .pribeh-odkaz .sdilet { margin: 12px 0 0; display: flex; } .pribeh-odkaz .sdilet[hidden] { display: none; } }
+@media (max-width: 640px) { .pribeh-odkaz .sdilet { margin: 12px 0 0; display: flex; } }
 .obsah-kostky { border: 3px solid var(--ram); background: var(--karta); box-shadow: 4px 4px 0 var(--ram); padding: 14px 18px; margin: 0 0 32px; }
 .obsah-kostky h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 8px; }
 .obsah-kostky ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 32px; }

@@ -1,5 +1,5 @@
 /* KROMCL jako appka: registrace service workeru, výzva k instalaci,
- * tlačítko Sdílet a události GA4.
+ * tlačítko Sdílet, události GA4 a Core Web Vitals.
  *
  * Jediný vlastní JavaScript na webu (vedle měření GA4 v hlavičce, viz
  * render.MERENI). Bez něj nic nechybí — lišta se vkládá až
@@ -114,8 +114,10 @@
   if (umiSdilet || umiKopirovat) {
     Array.prototype.forEach.call(document.querySelectorAll('.sdilet'), function (tl) {
       var obrazek = null;
-      if (umiSdilet && tl.dataset.soubor && typeof navigator.canShare === 'function'
-          && typeof File === 'function') {
+      // Tři sekundy po načtení stránky: 120 kB obrázku jinak na pomalé síti
+      // zdrží vykreslení obsahu (Lighthouse: LCP víkendu 2,0 → 2,5 s, a to
+      // i se stahováním hned po load). Kdo klepne dřív, pošle odkaz.
+      function pripravObrazek() {
         fetch(tl.dataset.soubor).then(function (r) {
           return r.ok ? r.blob() : null;
         }).then(function (data) {
@@ -127,6 +129,12 @@
             tl.querySelector('span').textContent = 'Šérni do storíčka';
           }
         }).catch(function () {});
+      }
+      if (umiSdilet && tl.dataset.soubor && typeof navigator.canShare === 'function'
+          && typeof File === 'function') {
+        var pozdeji = function () { setTimeout(pripravObrazek, 3000); };
+        if (document.readyState === 'complete') pozdeji();
+        else window.addEventListener('load', pozdeji);
       }
 
       tl.addEventListener('click', function () {
@@ -144,6 +152,43 @@
       });
       tl.hidden = false;
     });
+  }
+
+  /* Core Web Vitals skutečných návštěvníků do GA4. Laboratorní měření
+   * (Lighthouse) je odhad; Google vlastní data o malém webu nemusí mít
+   * nikdy, protože potřebuje dost návštěv.
+   *
+   * Knihovna web-vitals (static/vendor/, Apache-2.0) se stáhne jen tam, kde
+   * měří gtag, a až po načtení stránky, ať nesoupeří o síť s obsahem.
+   * Co se stalo dřív, si dočte z vyrovnávací paměti prohlížeče.
+   * debug_target je selektor prvku, který hodnotu způsobil (největší prvek,
+   * posunutý prvek, prvek interakce), aby šlo z dat poznat, co opravit.
+   */
+  function posliVitals(m) {
+    var a = m.attribution || {};
+    zmer(m.name, {
+      value: m.delta,
+      metric_id: m.id,
+      metric_value: m.value,
+      metric_rating: m.rating,
+      debug_target: (a.target || a.largestShiftTarget || a.interactionTarget || '').slice(0, 100)
+    });
+  }
+
+  function nactiVitals() {
+    var s = document.createElement('script');
+    s.src = '/vendor/web-vitals.js';
+    s.onload = function () {
+      window.webVitals.onLCP(posliVitals);
+      window.webVitals.onCLS(posliVitals);
+      window.webVitals.onINP(posliVitals);
+    };
+    document.head.appendChild(s);
+  }
+
+  if (window.gtag) {
+    if (document.readyState === 'complete') nactiVitals();
+    else window.addEventListener('load', nactiVitals);
   }
 
   var jeAppka = window.matchMedia('(display-mode: standalone)').matches
