@@ -426,7 +426,9 @@ GA4 `G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name, uchovávání dat
 | `tema` | první štítek článku, u stránky tématu to téma |
 | `rezim` | `appka` v nainstalované appce, jinak `web` |
 
-**Události** (`static/app.js`). Klíčové jsou první tři:
+**Události** (`static/app.js`). První tři jsou v GA4 klíčové události
+s počítáním jednou za událost. Založené přes Admin API (`keyEvents.create`),
+protože rozhraní GA4 dovolí označit jen událost, která už má zpracovaná data:
 
 | Událost | Kdy | Parametr |
 |---|---|---|
