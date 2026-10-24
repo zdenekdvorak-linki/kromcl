@@ -153,6 +153,33 @@ Koupit je POST formulář na `websale-dkk.colosseum.eu/hall`; GET se
 stejnými parametry vrátí obecnou stránku bez ohledu na projekci. U kina
 se proto odkazuje na stránku filmu, kde to tlačítko je.
 
+**Přidání akce: čeká na město.** Akce do otevřených dat přidává kdokoli
+veřejným formulářem `opendata.mesto-kromeriz.cz/akce/formular/`, bez
+přihlášení, a schvaluje je správkyně. Formulář posílá `multipart/form-data`
+AJAXem na `/formular` a dostává zpátky JSON (`error`, `error_items`,
+`infomessage`). Session ani token server nechce. Odpověď ale nemá CORS
+hlavičku, takže ji cizí web nepřečte.
+
+Test z 24. 10. 2026: **každý text s diakritikou spadne** na
+`Incorrect string value: '\xEDm sma...' for column events.label`. Stejně
+dopadl i pokus s cookie a hlavičkami vlastní stránky města, takže
+formulář je rozbitý pro všechny, nejen pro nás. Nic se neuložilo. Chybu
+i prosbu o `Access-Control-Allow-Origin: https://kromcl.cz` nese
+`dopis-sprave-akci.md`.
+
+Odsouhlasené zadání, které se staví po odpovědi města:
+
+- stránka `/program/pridat-akci.html`, odkaz v hlavním menu (po změně
+  znovu změřit hranici hamburgeru 900 px) a na všech stránkách programu
+- vlastní formulář posílá rovnou do městské databáze; povinná pole
+  nahoře, zbytek (vstupné, plakát, odkazy, věk, telefon) sbalený
+- místo jedním polem s našeptávačem z číselníku v `data/akce.json`
+  (bez „ZRUŠENO"); shoda pošle `place_id`, jiný text `place_note`
+- výsledek se ukáže podle skutečné odpovědi města, což jde jen s CORS.
+  Když ji město nepovolí, rozhoduje se znovu: přechod na holý JSON,
+  nebo jen odkaz. „Odesláno" naslepo se hlásit nebude
+- GA4 událost `akce_odeslani` s `typ_akce`, označená jako klíčová
+
 ### Pojistka na čísla
 
 Množina čísel ve výstupu musí být podmnožinou povolených. Povolené =
@@ -309,6 +336,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
 | 2026-10-24 | **Kroměříž v kostce** z Wikipedie, plný průvodce, odkaz v patičce a na O webu | Obsah, který nestárne a odpovídá na hledání o městě samotném. Heslo je pod CC BY-SA 4.0, takže atribuce na revizi 26310890, označení úpravy a stejná licence pro náš text. Psáno jednou ručně, ne modelem v buildu |
 | 2026-10-24 | **Tlačítko Sdílet** u článků, Kroměříže v kostce a víkendové karty | Nainstalovaná appka nemá adresní řádek ani menu, odkaz se z ní nedal poslat. Sdílí se kanonická adresa bez parametrů, UTM se nepřidává (duplicity, ošklivé odkazy); dosah měří událost GA4 `share`. Záloha kopírováním přes skryté pole, protože vestavěné prohlížeče sociálních sítí schránku často nepustí |
+| 2026-10-24 | **Přidání akce** odsouhlasené, stavba odložená, dopis městu v `dopis-sprave-akci.md` | Městský formulář nepřijme diakritiku a odpověď bez CORS nejde přečíst. Formulář, který by hlásil úspěch naslepo, by lhal pořadatelům |
 
 ## Appka a favicona
 
