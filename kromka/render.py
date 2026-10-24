@@ -177,6 +177,17 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .pribeh-odkaz { margin: -12px 0 26px; font-size: 15px; }
 .pribeh-odkaz a { font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .pribeh-odkaz a::before { content: "↓ "; }
+/* Kroměříž v kostce: dlouhá stránka, proto obsah s kotvami. Hlavička je
+   přilepená (až 128 px), bez scroll-margin by nadpis po skoku zajel pod ni. */
+.obsah-kostky { border: 3px solid var(--ram); background: var(--karta); box-shadow: 4px 4px 0 var(--ram); padding: 14px 18px; margin: 0 0 32px; }
+.obsah-kostky h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 8px; }
+.obsah-kostky ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 32px; }
+.obsah-kostky li { break-inside: avoid; margin-bottom: 3px; }
+.kostka section { scroll-margin-top: 150px; }
+.kostka section h2 { margin-top: 34px; }
+.kostka h3 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; margin: 20px 0 6px; }
+.kostka ul { padding-left: 22px; }
+@media (max-width: 640px) { .obsah-kostky ol { columns: 1; } .kostka section { scroll-margin-top: 110px; } }
 .filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
 .filtr-odkaz { display: inline-block; padding: 6px 12px; border: 2px solid var(--ram); background: var(--karta); color: var(--inkoust); text-decoration: none; font-size: 14px; font-weight: 500; }
 .filtr-odkaz:hover { box-shadow: 3px 3px 0 var(--ram); }
@@ -358,7 +369,7 @@ ZAKLAD = """<!doctype html>
 <main id="obsah"><div class="obal">{obsah}</div></main>
 <footer><div class="obal">
   <p style="max-width:620px;margin:0">{disclaimer}</p>
-  <p style="margin:0"><a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></p>
+  <p style="margin:0"><a href="/kromeriz-v-kostce.html">Kroměříž v kostce</a> &middot; <a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></p>
 </div></footer>
 </body>
 </html>
@@ -1205,6 +1216,10 @@ def vykresli(clanky, akce_data=None):
         akce_data = akce.nacti()
     zapsano += _program_stranky(akce_data)
 
+    kostka = _nacti_kostku()
+    if kostka:
+        zapsano += _kostka_stranka(kostka)
+
     (config.SITE / "o-webu.html").write_text(_stranka(
         "O webu – " + config.BRAND, config.DISCLAIMER, _o_webu(),
         cesta="/o-webu.html"), encoding="utf-8")
@@ -1291,9 +1306,104 @@ def _o_webu():
         "<p>Texty píše jazykový model. Čísla a data si hlídáme strojově, "
         "nikoho tu necitujeme v uvozovkách a kontaktní údaje sem nedáváme. "
         "Chyba se ale stát může. Když nějakou najdeš, napiš.</p>"
+        '<p>Nový ve městě, nebo jen chceš vědět, co je zač? Mrkni na '
+        '<a href="{kostka}">Kroměříž v kostce</a>, celé město v jednom '
+        "scrollu.</p>"
         "</article>"
-    ).format(disclaimer=_e(config.DISCLAIMER),
+    ).format(disclaimer=_e(config.DISCLAIMER), kostka=KOSTKA_CESTA,
              drobecky=_drobecky([("Domů", "/"), ("O webu", None)]))
+
+
+# --- Kroměříž v kostce -----------------------------------------------------
+# Průvodce městem převyprávěný z hesla na české Wikipedii. Na rozdíl od zpráv
+# tu zdroj schovat nejde ani nesmí: Wikipedie je pod CC BY-SA 4.0, a to
+# chce uvést heslo a autory, označit úpravu a pustit upravený text ven pod
+# stejnou licencí. Text je v data/kromeriz-v-kostce.json, aby šel opravit
+# bez sahání do kódu.
+KOSTKA_CESTA = "/kromeriz-v-kostce.html"
+
+
+def _nacti_kostku():
+    soubor = config.DATA / "kromeriz-v-kostce.json"
+    if not soubor.exists():
+        return None
+    return json.loads(soubor.read_text(encoding="utf-8"))
+
+
+def _kostka_zdroj_url(zdroj):
+    """Odkaz na konkrétní verzi hesla, ze které text vznikl, ne na živé
+    heslo — to se mění a atribuce by časem ukazovala jinam."""
+    return "https://cs.wikipedia.org/w/index.php?title={0}&oldid={1}".format(
+        zdroj["url"].rsplit("/", 1)[-1], zdroj["revize"])
+
+
+def _kostka(data):
+    sekce = data["sekce"]
+    obsah = "".join('<li><a href="#{0}">{1}</a></li>'.format(
+        _e(s["id"]), _e(s["nadpis"])) for s in sekce)
+    casti = []
+    for s in sekce:
+        telo = "".join("<p>{0}</p>".format(_e(o)) for o in s.get("odstavce", []))
+        for seznam in s.get("seznamy", []):
+            telo += "<h3>{0}</h3><ul>{1}</ul>".format(
+                _e(seznam["nadpis"]),
+                "".join("<li>{0}</li>".format(_e(p)) for p in seznam["polozky"]))
+        casti.append('<section id="{0}"><h2>{1}</h2>{2}</section>'.format(
+            _e(s["id"]), _e(s["nadpis"]), telo))
+    zdroj = data["zdroj"]
+    atribuce = (
+        '<p class="atribuce">Průvodce vychází z hesla '
+        '<a href="{url}" rel="noopener">{heslo}</a> na české Wikipedii ve verzi '
+        'z {datum} (<a href="{historie}" rel="noopener">autoři v historii hesla</a>). '
+        'Převyprávěli jsme ho po svém. Původní heslo i tenhle průvodce jsou pod '
+        'licencí <a href="{lic_url}" rel="license noopener">{lic}</a>, takže ho '
+        'můžeš dál sdílet a upravovat za stejných podmínek.</p>'
+    ).format(url=_e(_kostka_zdroj_url(zdroj)), heslo=_e(zdroj["heslo"]),
+             datum=_e(_datum_cesky(zdroj["datum"])), historie=_e(zdroj["historie"]),
+             lic_url=_e(zdroj["licence_url"]), lic=_e(zdroj["licence"]))
+    return (
+        '<article class="clanek kostka">{drobecky}<h1>{nadpis}</h1>'
+        '<p class="uvod">{uvod}</p>'
+        '<nav class="obsah-kostky" aria-label="Obsah"><h2>Obsah</h2><ol>{obsah}</ol></nav>'
+        '{casti}{atribuce}</article>'
+    ).format(drobecky=_drobecky([("Domů", "/"), (data["nadpis"], None)]),
+             nadpis=_e(data["nadpis"]), uvod=_e(data["uvod"]), obsah=obsah,
+             casti="".join(casti), atribuce=atribuce)
+
+
+def _ld_kostka(data):
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": data["titulek"],
+        "description": data["popis"],
+        "inLanguage": "cs",
+        "url": _abs(KOSTKA_CESTA),
+        "isBasedOn": {"@type": "CreativeWork",
+                      "name": "{0} – Wikipedie".format(data["zdroj"]["heslo"]),
+                      "url": _kostka_zdroj_url(data["zdroj"])},
+        "license": data["zdroj"]["licence_url"],
+        "about": {"@type": "City", "name": "Kroměříž",
+                  "sameAs": data["zdroj"]["url"]},
+        "publisher": {"@type": "Organization", "name": config.BRAND,
+                      "url": config.SITE_URL},
+    }
+
+
+def _kostka_stranka(data):
+    (config.SITE / KOSTKA_CESTA.lstrip("/")).write_text(_stranka(
+        "{0} – {1}".format(data["titulek"], config.BRAND), data["popis"],
+        _kostka(data), cesta=KOSTKA_CESTA, og_typ="article",
+        og_titulek=data["titulek"],
+        jsonld=_jsonld(_ld_kostka(data), {
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Domů", "item": _abs("/")},
+                {"@type": "ListItem", "position": 2, "name": data["nadpis"],
+                 "item": _abs(KOSTKA_CESTA)}]}),
+    ), encoding="utf-8")
+    return 1
+
 
 def _rss(clanky):
     polozky = []
@@ -1330,6 +1440,9 @@ def _sitemap(clanky, akce_data=None):
     dnes = datetime.now(timezone.utc).date().isoformat()
     radky = ['<url><loc>{0}/</loc><lastmod>{1}</lastmod><priority>1.0</priority></url>'.format(
         config.SITE_URL, dnes)]
+    if _nacti_kostku():
+        radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.6</priority></url>".format(
+            _abs(KOSTKA_CESTA), dnes))
     terminy = (akce_data or {}).get("terminy") or []
     if terminy:
         radky.append("<url><loc>{0}</loc><lastmod>{1}</lastmod><priority>0.9</priority></url>".format(

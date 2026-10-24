@@ -469,6 +469,64 @@ class OdkazyProgramu(unittest.TestCase):
         self.assertIsNone(akce.ted().tzinfo)
 
 
+class Kostka(unittest.TestCase):
+    """Kroměříž v kostce: přepis hesla z Wikipedie pod CC BY-SA."""
+
+    VZOREK = {
+        "nadpis": "Kroměříž v kostce", "titulek": "T", "popis": "P", "uvod": "U",
+        "zdroj": {"heslo": "Kroměříž",
+                  "url": "https://cs.wikipedia.org/wiki/Krom%C4%9B%C5%99%C3%AD%C5%BE",
+                  "revize": 123, "datum": "2026-10-19",
+                  "historie": "https://cs.wikipedia.org/w/index.php?title=x&action=history",
+                  "licence": "CC BY-SA 4.0",
+                  "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.cs"},
+        "sekce": [
+            {"id": "a", "nadpis": "První", "odstavce": ["<b>x</b>"]},
+            {"id": "b", "nadpis": "Druhá", "odstavce": ["y"],
+             "seznamy": [{"nadpis": "Seznam", "polozky": ["jedna", "dvě"]}]},
+        ],
+    }
+
+    def test_zdroj_ukazuje_na_konkretni_verzi(self):
+        # Živé heslo se mění; atribuce musí vést na text, ze kterého jsme psali.
+        url = render._kostka_zdroj_url(self.VZOREK["zdroj"])
+        self.assertIn("oldid=123", url)
+        self.assertIn("title=Krom%C4%9B%C5%99%C3%AD%C5%BE", url)
+
+    def test_atribuce_splnuje_licenci(self):
+        html = render._kostka(self.VZOREK)
+        self.assertIn("oldid=123", html)
+        self.assertIn("action=history", html)
+        self.assertIn('rel="license noopener"', html)
+        self.assertIn("CC BY-SA 4.0", html)
+        self.assertIn("po svém", html)  # označení úpravy
+
+    def test_obsah_vede_na_kazdou_sekci(self):
+        html = render._kostka(self.VZOREK)
+        for s in self.VZOREK["sekce"]:
+            self.assertIn('href="#{0}"'.format(s["id"]), html)
+            self.assertIn('<section id="{0}">'.format(s["id"]), html)
+        self.assertIn("<h3>Seznam</h3><ul><li>jedna</li>", html)
+
+    def test_text_se_utece(self):
+        self.assertNotIn("<b>x</b>", render._kostka(self.VZOREK))
+
+    def test_jsonld_nese_zdroj_a_licenci(self):
+        ld = render._ld_kostka(self.VZOREK)
+        self.assertIn("oldid=123", ld["isBasedOn"]["url"])
+        self.assertEqual(ld["license"], self.VZOREK["zdroj"]["licence_url"])
+
+    def test_ostra_data_jsou_uplna(self):
+        data = render._nacti_kostku()
+        self.assertIsNotNone(data)
+        self.assertTrue(data["zdroj"]["licence"].startswith("CC BY-SA"))
+        self.assertTrue(str(data["zdroj"]["revize"]).isdigit())
+        idcka = [s["id"] for s in data["sekce"]]
+        self.assertEqual(len(idcka), len(set(idcka)))
+        for s in data["sekce"]:
+            self.assertTrue(s["nadpis"] and s["odstavce"], s["id"])
+
+
 class DruhPadu(unittest.TestCase):
     """Stav se commituje do veřejného repa, nesmí v něm být zdroj."""
 

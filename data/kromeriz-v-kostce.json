@@ -1,0 +1,223 @@
+{
+  "nadpis": "Kroměříž v kostce",
+  "titulek": "Kroměříž v kostce: průvodce městem bez filtru",
+  "popis": "Celá Kroměříž na jednom místě: zámek a zahrady v UNESCO, Amadeus, hanáčtina, historie, školy, sport, památky i partnerská města. Převyprávěné po našem.",
+  "uvod": "Město na Hané, kde se točil oscarový Amadeus, zámek je v UNESCO a místní mu říkají Kromcl. Tady máš celou Kroměříž v jednom scrollu, no cap.",
+  "zdroj": {
+    "heslo": "Kroměříž",
+    "url": "https://cs.wikipedia.org/wiki/Krom%C4%9B%C5%99%C3%AD%C5%BE",
+    "revize": 26310890,
+    "datum": "2026-10-19",
+    "historie": "https://cs.wikipedia.org/w/index.php?title=Krom%C4%9B%C5%99%C3%AD%C5%BE&action=history",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.cs"
+  },
+  "sekce": [
+    {
+      "id": "zaklad",
+      "nadpis": "Co je to za město",
+      "odstavce": [
+        "Začneme flexem. Kroměříž leží na řece Moravě v jižním cípu úrodné Hané a žije tu přibližně 28 tisíc lidí. Po Zlíně je to druhé největší město Zlínského kraje. Kvůli spoustě škol a kultury jí lidi říkají Hanácké Athény, no cap.",
+        "Titul nejkrásnějšího historického města České republiky dostala Kroměříž v roce 1997. O rok později zapsalo UNESCO Arcibiskupský zámek s Květnou a Podzámeckou zahradou na seznam světového kulturního dědictví. Dva achievementy po sobě, peak run.",
+        "Město drží i tradice: pořádá mezinárodní festival vojenských dechových hudeb a festival duchovní hudby FORFEST. Sídlí tu prestižní Arcibiskupské vinné sklepy a na kraji města Zemědělský výzkumný ústav, založený v roce 1951, který zkoumá a šlechtí obilniny. Main quest kultura, side quest obilí.",
+        "A lore tohohle webu: v místním nářečí se městu říká Kromjeřiž, nebo prostě Kromcl. Odtud KROMCL, fr."
+      ]
+    },
+    {
+      "id": "nareci",
+      "nadpis": "Jak se tu mluví",
+      "odstavce": [
+        "Kroměříž mluví hanácky, přesněji východohanácky. Tři poznávačky: místní říkají „on“ a „okno“ bez v na začátku, „Iřik“ a „idu“ bez j a skupinu mě vyslovují jako mje, takže „mjesto“ a „v zimje“. Kdo to dá plynně, má +1000 aura.",
+        "Pár kilometrů na jih, od obce Trávník, už začíná východomoravské nářečí. Starší čeština navíc brala Kroměříž v mužském rodě, tedy „ten Kroměříž“, a v nářečí to vydrželo dodnes, fr."
+      ]
+    },
+    {
+      "id": "jmeno",
+      "nadpis": "Odkud se vzalo jméno",
+      "odstavce": [
+        "Osada se původně jmenovala Kroměžir, podle člověka jménem Kroměžir, a jméno tedy znamenalo „Kroměžirův majetek“. Od 14. století je doložený přesmyk koncových hlásek a z Kroměžiru byla Kroměříž. Patch na úrovni písmenek.",
+        "Němčina si jméno vzala ještě před tím přesmykem, takže až do 20. století platilo Kremsier. Latinsky a anglicky se psalo Cremsir nebo Kremsir, taková lowkey unc verze."
+      ]
+    },
+    {
+      "id": "historie",
+      "nadpis": "Historie v rychlíku",
+      "odstavce": [
+        "Ve středověku tu byl brod přes Moravu a křižovala se tu Jantarová a Solná stezka. Solná byla v podstatě pokračováním slavné Hedvábné stezky. Lokace? W už tehdy.",
+        "První písemná zmínka o Kroměříži je z roku 1110 a na arabské mapě Tabula Rogeriana se město objevuje jako Agra, fr. V roce 1207 potvrdil Přemysl Otakar I. olomouckému biskupovi Robertovi, že mu ves patří. Koupil ji jeho předchůdce Jan II. od knížete Oty Černého za 300 hřiven.",
+        "Město kolem roku 1263 založil olomoucký biskup Bruno ze Schauenburku. Biskupové si tu postavili reprezentativní letní sídlo a přesunuli sem část správy diecéze. Ten biskupský main quest je vidět dodnes, zámek se pořád jmenuje arcibiskupský.",
+        "Pak přišla těžká léta. V červnu 1423 porazili husité u Kroměříže katolické vojsko biskupa Jana XII. Železného a město po bitvě hodně utrpělo. Za třicetileté války ho dvakrát zasáhly nájezdy švédských vojsk, v letech 1643 a 1645, a po nich mor.",
+        "Těžký osud kroměřížských Židů v době třicetileté války popisuje žalozpěv Kroměřížská selicha, který se dochoval v rukopise z roku 1702.",
+        "Biskup Stanislav I. Thurzo začal na přelomu 15. a 16. století přestavovat gotický hrad na zámek. V 60. letech 17. století rozjel rozsáhlou obnovu města biskup Karel II. z Lichtensteinu-Castelcorna a Kroměříž dostala pořádný buff.",
+        "Roku 1848 tu zasedal říšský sněm. Ve dnech 24.–26. srpna 1885 se tu potkal ruský car Alexandr III. s rakouským císařem Františkem Josefem I. a celá Evropa koukala na Kroměříž. O čem tehdy jednali, se dodnes neví. Side quest pro historiky.",
+        "Tomáš Garrigue Masaryk tu 15. a 16. dubna 1905 přednášel o problému malého národa a 27. srpna 1929 přijel oficiálně jako prezident. Masaryk dvakrát, to má aura.",
+        "Od 4. do 6. května 1945 osvobozovaly Kroměříž jednotky 1. rumunské armády.",
+        "Ve 20. století byla Kroměříž město vojáků, studentů a důchodců. Vojáci měli dvoje kasárny: na místě Žižkových je dnes Hanácké náměstí a na místě Rybalkových Tesco. Z kasáren hypermarket, lowkey Ohio."
+      ]
+    },
+    {
+      "id": "unesco",
+      "nadpis": "Zámek a zahrady v UNESCO",
+      "odstavce": [
+        "Hlavní boss města je Arcibiskupský zámek v historickém centru. Spolu s Květnou a Podzámeckou zahradou a s Arcibiskupskými vinnými sklepy je od roku 1998 na seznamu světového kulturního dědictví UNESCO. Tohle je peak, bez debaty.",
+        "V zámecké knihovně leží Kroměřížský sakramentář, jedna z nejstarších liturgických knih v českých zemích. A Biskupská mincovna má údajně největší sbírku mincí ve střední Evropě. Středověk na peak úrovni."
+      ]
+    },
+    {
+      "id": "film",
+      "nadpis": "Kroměříž ve filmu",
+      "odstavce": [
+        "Zámek má víc rolí než leckterý herec. V Kroměříži se aspoň zčásti natáčelo přes 30 filmů a seriálů. Miloš Forman tu točil Amadea (1984), takže zámek má v CV oscarový film, no cap.",
+        "Hudební film Třicet panen a Pythagoras (1973) s Jiřím Menzlem ukazuje Justiční akademii a Květnou zahradu. Slovenský dětský seriál Jedno malé sídlisko (1978) natáčel na Oskole a u školy Slovan, Oskol v hlavní roli, ate. Na zámku se točily epizody jugoslávsko-francouzského historického filmu Seobe (1988) i film Trenck – Ve jménu lásky a povinnosti (2003).",
+        "Objevila se i ve filmech Requiem pro panenku (1991), Královská aféra (2012) a Dědictví aneb Kurvaseneříká (2013), v seriálu Já, Mattoni a v pohádce Miloslava Šmídmajera Peklo s princeznou. Ve městě a v Podzámecké zahradě vznikly scény Četnických humoresek. Marie Terezie se na zámku točila v roce 2017 a její pokračování v roce 2021. Město ukázal i seriál Šumná města. Filmografie lowkey delší než tvoje."
+      ]
+    },
+    {
+      "id": "mapa",
+      "nadpis": "Mapa města",
+      "odstavce": [
+        "Nejvyšší bod Kroměříže je v oboře na jihu města a má 322 metrů. Jediný kopec u centra je zalesněná Barbořina (265 metrů), pojmenovaná po kapli svaté Barbory, která tu kdysi stála. Výškově mid, na procházku s výhledem tak akorát.",
+        "Město má 10 částí na 11 katastrálních územích: Kroměříž, Bílany, Drahlov, Hradisko, Kotojedy, Postoupky, Těšnovice, Trávník, Vážany a Zlámanka. Lowkey největší z připojených jsou Vážany, kde podle údajů z roku 2011 žilo 1 177 lidí.",
+        "Sídliště znáš: rodinné domy na Barbořině, převážně panelový Slovan, Zachar a Oskol, k tomu Horní a Dolní Zahrady a Zámoraví. Slovan, Zachar a Oskol mají i svoje základky, jen ta na Zacharu se dnes jmenuje S-MYSL, fr.",
+        "V roce 1851 se k městu připojilo Židovské město, které od něj oddělovala zeď a leželo mezi dnešní Tylovou a Moravcovou ulicí. V Moravcově ulici dodnes stojí budova židovské radnice, jediná významná dochovaná památka někdejšího židovského města. Roku 1853 přibyly k městu dědiny Bělidla, Novosady, Štěchovice a Oskol."
+      ]
+    },
+    {
+      "id": "sprava",
+      "nadpis": "Kdo tu rozhoduje",
+      "odstavce": [
+        "V zastupitelstvu sedí 27 lidí. Po volbách v roce 2022 zvolili zastupitelé 20. října starostou Tomáše Opatrného z hnutí ANO. Koalici se 17 mandáty tvoří KDU-ČSL, ČSSD, ODS, Zdravé Kroměřížsko a OK Občané Kroměříže. Radnice v jednom odstavci, main quest splněn.",
+        "Předtím vedl město Jaroslav Němec, zvolený v roce 2014 a znovu v roce 2018. Znak města je historický a vlajka si achievement odemkla 1. února 1994.",
+        "Kroměříž bývala okresním městem, dnes je obcí s rozšířenou působností. Okres Kroměříž ale pořád existuje a má 79 obcí, správní obvod města 46. Úřední mapa, lowkey složitější než MHD."
+      ]
+    },
+    {
+      "id": "doprava",
+      "nadpis": "Jak se sem dostaneš",
+      "odstavce": [
+        "Územím města vede dálnice D1, sjedeš na exitu 258 Kroměříž-západ nebo 260 Kroměříž-východ. Městem prochází i silnice I/47 od Vyškova dál na Hulín. Autem tedy W.",
+        "Po městě tě vozí MHD Kroměřížských technických služeb na 8 linkách. Vlakem jezdí České dráhy po trati Kojetín–Kroměříž–Hulín–Valašské Meziříčí a po trati Kroměříž–Zdounky–Zborovice. Kromě hlavního nádraží staví vlaky na zastávce Kroměříž-Oskol, v Kotojedech a v Postoupkách, fr.",
+        "Na nádraží je půjčovna kol a na tratích Kojetín–Valašské Meziříčí a Kroměříž–Zborovice vezeš vypůjčené kolo zdarma. W pro lidi, co nechtějí šlapat do kopce.",
+        "U Hrubého rybníka, kterému se říká Bagrák, je sportovní letiště. Kousek od něj se do Moravy vlévá říčka Kotojedka. Letiště u Bagráku, lowkey peak."
+      ]
+    },
+    {
+      "id": "skoly",
+      "nadpis": "Školy, proč Hanácké Athény",
+      "odstavce": [
+        "Kroměříž je školní město, fr. Je tu 9 středních škol, z nich tři jsou zároveň vyšší odborné, a dvě gymnázia. Od roku 2005 tu sídlí Justiční akademie, celostátní vzdělávací instituce justice, navazující na Justiční školu založenou v Kroměříži v roce 1995.",
+        "Výběr jak v menu, no cap. Tady je celý:"
+      ],
+      "seznamy": [
+        {
+          "nadpis": "Gymnázia a konzervatoř",
+          "polozky": [
+            "Arcibiskupské gymnázium v Kroměříži, s internátem přímo v budově",
+            "Gymnázium Kroměříž",
+            "Konzervatoř P. J. Vejvanovského Kroměříž"
+          ]
+        },
+        {
+          "nadpis": "Střední a vyšší odborné školy",
+          "polozky": [
+            "Obchodní akademie Kroměříž",
+            "Střední škola hotelová a služeb",
+            "Tauferova střední odborná škola veterinární",
+            "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+            "Vyšší odborná škola pedagogická a sociální a Střední pedagogická škola",
+            "Vyšší odborná škola potravinářská a Střední průmyslová škola mlékárenská",
+            "Střední podnikatelská škola a Vyšší podnikatelská škola",
+            "Střední škola – Centrum odborné přípravy technické",
+            "Střední odborná škola sv. Jana Boska",
+            "Odborné učiliště a Praktická škola"
+          ]
+        },
+        {
+          "nadpis": "Základky",
+          "polozky": [
+            "ZŠ S-MYSL (dříve ZŠ Zachar)",
+            "ZŠ Sýpky",
+            "ZŠ Slovan",
+            "ZŠ Oskol",
+            "ZŠ Komenského",
+            "ZŠ Zámoraví",
+            "ZŠ KSOR (soukromá)",
+            "ZŠ Církevní"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sport",
+      "nadpis": "Sport",
+      "odstavce": [
+        "HK Kroměříž hraje hokej, SK Hanácká Slavia fotbal na Stadionu Jožky Silného a Atletický klub Kroměříž atletiku. TJ Slavia sdružuje 8 oddílů, od basketbalu přes judo, karate a stolní tenis po šachy, a šachisti hrají od sezony 2019/2020 Extraligu ČR. Šachy, +1000 aura.",
+        "Legenda je volejbal Sokola Kroměříž: muži byli za první republiky třikrát mistři Československa, v letech 1929, 1932 a 1936, ate. Dnešní Sokolský dům stojí v ulici 1. máje. Tanečnímu sportu tu velí KST Swing Kroměříž.",
+        "Kdysi měla Kroměříž i velodrom, cyklistickou dráhu na Rejdišti, a fotbalové kluby MSV Kremsier a VTJ Kroměříž. Dnes jsou jen v historii, lowkey škoda velodromu."
+      ]
+    },
+    {
+      "id": "pamatky",
+      "nadpis": "Muzea, galerie a památky",
+      "odstavce": [
+        "Na umění máš Muzeum Kroměřížska a galerie Artuš, Pekelné sáně a Orlovna. Na deštivý den ideální side quest.",
+        "V Záhlinických rybnících žijí kormoráni a bobři. Vodní elektrárna Strž z roku 1923 možná jako první v Česku použila Kaplanovy turbíny. Bobři a turbíny, Kroměříž ate."
+      ],
+      "seznamy": [
+        {
+          "nadpis": "Kostely",
+          "polozky": [
+            "kostel svatého Mořice",
+            "kostel svatého Jana Křtitele",
+            "kostel Nanebevzetí Panny Marie",
+            "pravoslavný chrám svatého Cyrila a Metoděje",
+            "kostel svatého Cyrila a Metoděje v areálu Psychiatrické nemocnice"
+          ]
+        },
+        {
+          "nadpis": "Na procházku centrem",
+          "polozky": [
+            "radnice",
+            "Mlýnská brána",
+            "Maxmiliánův vodovod",
+            "Měšťanský pivovar, známý jako Starý pivovar",
+            "Nadsklepí",
+            "rodný dům Maxe Švabinského",
+            "Knížecí dům",
+            "Lichtenštejnský seminář",
+            "Mariánský sloup a kašna na Velkém náměstí",
+            "sloup Nejsvětější Trojice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuriozity",
+      "nadpis": "Kuriozity",
+      "odstavce": [
+        "Kroměříž byla i lázeňská. Lázně fungovaly v Lázeňské ulici od 17. století, kolem roku 1900 nabízely železité lázně v části Hráza „massáže a užívání elektrických koupelí“ a v roce 1920 vyrostly sluneční lázně Solarium. Ve Ztracené ulici byly kdysi lázně a nevěstinec. Elektrické koupele zní hodně Ohio.",
+        "Františkánský klášter z počátku 17. století měl kolem sebe příkop a padací most. Roku 1788 ho zrušili, pak sloužil jako octárna a od roku 2002 je v něm hotel s restaurací Octárna. Klášter, octárna, hotel. Pořádný patch.",
+        "Těžba v místní cihelně skončila v roce 1996. Později se kolem ní rozjel spor, když se mluvilo o zavážení místa teplárenským popílkem, a obyvatelé protestovali. Lowkey drama.",
+        "V Kroměříži vycházel německy psaný odborný časopis Staroslovan o staroslovanských starožitnostech. A jedna planetka nese jméno (31238) Kroměříž. Město s vlastní planetkou je W."
+      ]
+    },
+    {
+      "id": "osobnosti",
+      "nadpis": "Kdo tu studoval a učil",
+      "odstavce": [
+        "Na kroměřížských školách studoval fyzik a filozof Ernst Mach, klarinetista a saxofonista Felix Slováček, předseda vlády Jan Šrámek, polárník a cestovatel Ota Kříž nebo překladatel Aloys Skoumal, který přeložil Joyceova Odyssea a Alenku v říši divů. Seznam absolventů je peak.",
+        "Studoval tu i spisovatel Čeněk Slepánek (1878–1944), kandidát Nobelovy ceny míru z roku 1929, a kněz a sběratel lidové slovesnosti František Sušil, fr.",
+        "Studentem tu byl i Matěj Pavlík, pravoslavný biskup svatý Gorazd II., kterého popravili nacisté.",
+        "Učil tu historik Gelasius Dobner (1719–1790), který latinsky vydal opravenou verzi Hájkovy Kroniky české, a historik František Adolf Moravec, po kterém je pojmenovaná ulice v centru. A narodil se tu Max Švabinský, jeho rodný dům je mezi památkami. Hanácké Athény, fr."
+      ]
+    },
+    {
+      "id": "partneri",
+      "nadpis": "Partnerská města",
+      "odstavce": [
+        "Kroměříž má šest partnerských měst v pěti zemích: Châteaudun ve Francii, Kremže v Rakousku, Nitru a Ružomberok na Slovensku, Piekary Śląskie v Polsku a Râmnicu Vâlcea v Rumunsku. Solidní rizz.",
+        "Takže tak: barokní zámek v UNESCO, oscarový film v CV, hanáčtina a vlastní planetka. Kromcl je lowkey peak."
+      ]
+    }
+  ]
+}

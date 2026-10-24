@@ -205,6 +205,8 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `bin/fonty.py` | stáhne Syne a Space Grotesk do `static/fonts/` (woff2) a `kromka/pisma/` (TTF pro kartu) i s licencí OFL; pouští se ručně jednou |
 | `kromka/pisma/` | TTF pro víkendovou kartu a `fonty.css` s pravidly `@font-face`, který si render přidá před ostatní styly |
 | `kromka/karta.py` | víkendová karta 1080 × 1920 do instagramového příběhu: výběr akcí, zalamování textu, kreslení v Pillow |
+| `data/kromeriz-v-kostce.json` | text průvodce Kroměříž v kostce: úvod, 15 sekcí, zdroj s číslem revize hesla; opravuje se tady, ne v kódu |
+| `kromka/render.py` | `KOSTKA_CESTA`, `_kostka`, `_ld_kostka`, `_kostka_stranka` — stránka průvodce, atribuce CC BY-SA, JSON-LD `Article` s `isBasedOn` |
 
 ## Vývojové poznámky
 
@@ -304,6 +306,7 @@ Smoke checklist po refaktoru:
 | 2026-10-23 | `bin/vymena_archivu.py` | Výměna archivu má jednu prověřenou cestu místo ručních kroků; bez `--potvrdit` jen hlásí, co by udělala |
 | 2026-10-23 | **Obrázky v těle článku**: karty s čísly pod prvním odstavcem a ikona u odstavce, obojí z piktogramů webu | Holý text pod TL;DR působil chudě. Skládá se z hotového přepisu regexem a slovníkem, takže platí pro celý archiv a nepřidává fakt. Pravidlo „aspoň dvě karty" dávalo karty 7 článkům z 64; s jednou kartou a daty 48 |
 | 2026-10-23 | Práh podobnosti vět 0.55 → **0.65** | Starý práh stál na čtyřech ručních vzorcích a na tvrzení o mezeře mezi 0.13 a 0.68. Archiv ji vyvrátil: deset vlastních vět s týmiž fakty leželo mezi 0.55 a 0.62 |
+| 2026-10-24 | **Kroměříž v kostce** z Wikipedie, plný průvodce, odkaz v patičce a na O webu | Obsah, který nestárne a odpovídá na hledání o městě samotném. Heslo je pod CC BY-SA 4.0, takže atribuce na revizi 26310890, označení úpravy a stejná licence pro náš text. Psáno jednou ručně, ne modelem v buildu |
 
 ## Appka a favicona
 
@@ -371,6 +374,25 @@ Bez Pillow se karta i odkaz vynechají a zbytek webu se postaví.
 nečeká na síť a úložiště service workeru, takže test ukládání fontů v
 něm zamrzne. Logika `sw.js` se proto ověřovala v Node s napodobeným
 prostředím; registraci samotnou v Edge ověřila už první verze.
+
+## Kroměříž v kostce
+
+`/kromeriz-v-kostce.html` je převyprávěné heslo
+[Kroměříž](https://cs.wikipedia.org/wiki/Krom%C4%9B%C5%99%C3%AD%C5%BE) z české
+Wikipedie: patnáct sekcí od základních čísel po partnerská města, obsah
+s kotvami nahoře. Vede na něj patička a stránka O webu.
+
+Heslo je pod **CC BY-SA 4.0**, jiný režim než zprávy i program. Licence chce
+uvést zdroj a autory, označit, že jde o úpravu, a pustit upravený text dál
+pod stejnou licencí. Atribuce na konci stránky proto odkazuje na **konkrétní
+revizi** (`oldid`), ze které text vznikl, ne na živé heslo, a na historii
+hesla jako seznam autorů. Licence je u odkazu i v JSON-LD.
+
+Text se nepíše při buildu, je hotový v `data/kromeriz-v-kostce.json`.
+Čísla v něm jsou podmnožinou čísel ze zdroje. Tragické pasáže (požáry,
+mor, Kroměřížská selicha, rok 1945) jsou bez slangu a politici bez
+hodnocení. Při aktualizaci: stáhnout novou revizi, přepsat dotčené sekce,
+přepsat `revize` a `datum` v `zdroj`.
 
 ## Výměna archivu
 
