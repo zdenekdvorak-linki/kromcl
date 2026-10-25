@@ -613,6 +613,13 @@ class WebVitals(unittest.TestCase):
         for parametr in ("metric_id", "metric_value", "metric_rating", "debug_target"):
             self.assertIn(parametr, app)
 
+    def test_knihovna_se_nacita_hned(self):
+        # Čekání na load ztrácelo návštěvy, které odešly dřív — load čeká
+        # i na 177 kB gtag.js, takže šlo o ty nejpomalejší.
+        app = (config.STATIC / "app.js").read_text(encoding="utf-8")
+        self.assertIn("fetchPriority = 'low'", app)
+        self.assertNotIn("addEventListener('load', nactiVitals)", app)
+
 
 class DruhPadu(unittest.TestCase):
     """Stav se commituje do veřejného repa, nesmí v něm být zdroj."""

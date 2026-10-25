@@ -159,8 +159,10 @@
    * nikdy, protože potřebuje dost návštěv.
    *
    * Knihovna web-vitals (static/vendor/, Apache-2.0) se stáhne jen tam, kde
-   * měří gtag, a až po načtení stránky, ať nesoupeří o síť s obsahem.
-   * Co se stalo dřív, si dočte z vyrovnávací paměti prohlížeče.
+   * měří gtag, hned a s nízkou prioritou. Čekání na load tu bylo dřív, jenže
+   * load čeká i na 177 kB gtag.js a kdo odešel mezitím, neposlal nic — tedy
+   * právě nejpomalejší návštěvy. Co se stalo před načtením knihovny, si
+   * dočte z vyrovnávací paměti prohlížeče.
    * debug_target je selektor prvku, který hodnotu způsobil (největší prvek,
    * posunutý prvek, prvek interakce), aby šlo z dat poznat, co opravit.
    */
@@ -178,6 +180,8 @@
   function nactiVitals() {
     var s = document.createElement('script');
     s.src = '/vendor/web-vitals.js';
+    s.async = true;
+    s.fetchPriority = 'low';
     s.onload = function () {
       window.webVitals.onLCP(posliVitals);
       window.webVitals.onCLS(posliVitals);
@@ -186,10 +190,7 @@
     document.head.appendChild(s);
   }
 
-  if (window.gtag) {
-    if (document.readyState === 'complete') nactiVitals();
-    else window.addEventListener('load', nactiVitals);
-  }
+  if (window.gtag) nactiVitals();
 
   var jeAppka = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;

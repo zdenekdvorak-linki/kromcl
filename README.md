@@ -379,6 +379,7 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | **IndexNow** po nasazení, jen nové články, úvodka a jejich témata | Seznam a Bing se o zprávě dozví hned, ne až při příštím procházení. Program se nehlásí, hodinové hlášení by bylo spam |
 | 2026-10-24 | **Týdenní pozvánka** na akce Po–Ne, v cronu v pondělí od 6:00, dohání se v úterý | Program je důvod k návratu, ale sám čtenáře neosloví. Model píše komentář ke dnům, fakta jsou karty ze snímku dat. Výjimka z principu 1, atribuce CC BY místo odkazu na oznámení |
 | 2026-10-24 | **Core Web Vitals do GA4** (web-vitals 6.2.3 ve `static/vendor/`), oprava CLS víkendu, obrázek ke sdílení až 3 s po načtení | Google o malém webu vlastní data nemá, laboratoř je odhad. Víkend posouvalo odkrývané tlačítko Sdílet (CLS 0,16 → 0) a předem stahovaný obrázek zdržoval LCP (2,5 → 2,0 s). Ořezání přednačtení písem změřeno a zamítnuto: LCP beze změny, FCP horší |
+| 2026-10-25 | web-vitals se načítá hned s nízkou prioritou, ne po `load` | `load` čeká i na 177 kB `gtag.js`, takže by se neměřily právě nejpomalejší návštěvy. A/B v Lighthouse: LCP beze změny. V Edge s odchodem přes odkaz dorazily LCP, CLS i INP 12× z 12 v obou variantách |
 
 ## Appka a favicona
 
@@ -574,14 +575,21 @@ s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
 jako `click` v rozšířeném měření.
 
 **Core Web Vitals návštěvníků.** Google vlastní data (CrUX) o malém webu
-mít nemusí, chybí mu návštěvy. `app.js` proto po načtení stránky stáhne
-`static/vendor/web-vitals.js` (web-vitals 6.2.3, sestavení attribution,
+mít nemusí, chybí mu návštěvy. `app.js` proto hned, s nízkou prioritou,
+stáhne `static/vendor/web-vitals.js` (web-vitals 6.2.3, sestavení attribution,
 Apache-2.0, licence vedle) a pošle události `LCP`, `CLS` a `INP` s parametry
 `metric_id`, `metric_value`, `metric_rating` (`good`, `needs-improvement`,
 `poor`) a `debug_target` (selektor prvku, který hodnotu způsobil). `value`
 je přírůstek, takže se dá sčítat. Jen tam, kde existuje `gtag`, tedy na
 ostré doméně. Aby šly `metric_rating` a `debug_target` filtrovat v
 přehledech, musí být v GA4 zaregistrované jako vlastní dimenze (Událost).
+
+Knihovna se nenačítá až po `load`: ten čeká i na `gtag.js`, takže by se
+ztratily návštěvy, které odešly dřív — právě ty nejpomalejší. LCP a CLS si
+dočte z vyrovnávací paměti prohlížeče i pozdě. Srovnání A/B 25. 10. 2026
+(Lighthouse, 3 běhy): LCP článku 1,97 → 1,92 s, víkendu 2,00 → 2,00 s,
+tedy bez ceny. Pokrytí se dá ověřit v GA4: kolik `page_view` má svou
+událost `LCP`; výrazně pod 90 % znamená, že se něco ztrácí.
 
 Laboratorní výchozí stav 24. 10. 2026 (Lighthouse 13.4.1, Edge, mobil,
 simulovaná pomalá 4G): úvod, program a průvodce LCP 1,4–1,6 s, článek
