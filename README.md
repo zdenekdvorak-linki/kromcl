@@ -706,7 +706,9 @@ jednou odeslané, už nikdy neodejde. Proto po odeslání druhý commit.
   Facebook na kartě z og:image, odkaz proto jde do `link`, ne do textu.
 - **UTM:** `utm_source=facebook&utm_medium=social&utm_campaign=<slug>&utm_content=autopost`.
   Slug v kampani ukáže v GA4, který článek táhl; `autopost` oddělí
-  automatické příspěvky od ručních.
+  automatické příspěvky od ručních. Ověřeno na prvním ostrém příspěvku
+  26. 10. 2026: karta vede na adresu se všemi čtyřmi parametry, i když
+  `og:url` je kanonická adresa bez nich, a web na ni vrací 200.
 - Nanečisto: `python -m kromka facebook --nanecisto` vypíše frontu s textem
   a odkazem. Bez `KROMKA_FB_PAGE_ID` a `KROMKA_FB_TOKEN` se krok přeskočí.
 
