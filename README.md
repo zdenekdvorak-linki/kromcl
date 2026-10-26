@@ -200,6 +200,12 @@ formulář je rozbitý pro všechny, nejen pro nás. Nic se neuložilo. Chybu
 i prosbu o `Access-Control-Allow-Origin: https://kromcl.cz` nese
 `dopis-sprave-akci.md`, odeslaný 26. 10. 2026.
 
+**Diakritika už prochází (26. 10. 2026).** Skill `/pridat-akci` odeslal
+akci „Magion House – PHUNXX_J" s českým popisem a server ji přijal: skript
+města přesměruje na `/akce/` jen při `error == 0`. Chybu tedy nejspíš
+opravili. Prosba o CORS hlavičku platí dál, bez ní vlastní formulář
+výsledek nepřečte.
+
 Odsouhlasené zadání, které se staví po odpovědi města:
 
 - stránka `/program/pridat-akci.html`, odkaz v hlavním menu (po změně
@@ -277,6 +283,14 @@ nejvýš 30 odeslání za hodinu (`STROP_ZA_HODINU`). Pravidla polí kontroluje
 | `chyba` | cron | pojistka neprošla, druh pádu je v Poznámce. Text jde v tabulce opravit a dát znovu `schváleno` |
 | `stáhnout` | redakce | cron smaže JSON, článek zmizí z webu |
 | `staženo` | cron | hotovo; v historii veřejného repa text zůstává |
+| `akce` | redakce | příspěvek je pozvánka na akci, patří do kalendáře města, ne do článku |
+| `akce odeslána` | skill `/pridat-akci` | podáno formulářem města, datum a výsledek jsou v Poznámce |
+
+Akce z příspěvku se městu podává skillem `.claude/skills/pridat-akci/`
+(Claude in Chrome, odeslání vždy až po potvrzení). Jako kontakt jde
+Zdeněk, **nikdy jméno ani e-mail čtenáře**: souhlas mu slibuje, že e-mail
+uvidí jen redakce. ID tabulky čte skill z `.env`
+(`KROMKA_PRISPEVKY_TABULKA`).
 
 **Čtení tabulky** obstarává Apps Script `apps-script/prispevky.gs`, nasazený
 jako webová aplikace, chráněný klíčem. Vrací jen řádky `schváleno` a
@@ -389,7 +403,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `data/kromeriz-v-kostce.json` | text průvodce Kroměříž v kostce: úvod, 15 sekcí, zdroj s číslem revize hesla; opravuje se tady, ne v kódu |
 | `kromka/render.py` | `KOSTKA_CESTA`, `_kostka`, `_ld_kostka`, `_kostka_stranka` — stránka průvodce, atribuce CC BY-SA, JSON-LD `Article` s `isBasedOn` |
 | `kromka/og.py` | karta 1200 × 630 pro `og:image`: `vytvor`, `rozloz_titulek`; `cesta`, `tvary`, `piktogram` — převod SVG piktogramů na čáry pro Pillow |
-| `kromka/render.py` | `_og` (adresa karty z adresy stránky), `_ld_vydavatel` (logo, `sameAs`), `_zmeneno` a `_sitemap` (`lastmod` podle obsahu), parametr `indexovat` v `_stranka` |
+| `kromka/render.py` | `_og` (adresa karty z adresy stránky), `_ld_vydavatel` (logo, `sameAs`), `_zmeneno` a `_sitemap` (`lastmod` podle obsahu), `_news_sitemap` (48 hodin podle `published`), parametr `indexovat` v `_stranka` |
 | `kromka/prispevky.py` | příspěvky čtenářů: `nacti`, `napis`, `stahni`, `zapis_stav`, `v_cronu`; **mimo `sources/`** |
 | `kromka/rewrite.py` | `PRISPEVEK_PROMPT`, `prepis_prispevku` — přepis příspěvku bez pojistky na opisování |
 | `kromka/render.py` | `PRISPEVEK_CESTA`, `PRISPEVEK_SOUHLAS`, `_vyzva`, `_podpis`, `_prispevek_formular`, `_prispevek_stranka` — vlastní formulář, štítek a podpis u příspěvku |
@@ -522,6 +536,9 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **UTM na všech odkazech ven** (`_ven`), kampaň podle místa na webu; sdílení, JSON-LD a Klubíčko (404 s parametry) bez UTM | Zadání Zdeňka: ať se o nás ví. Referrer ukáže jen doménu, UTM pojmenovaný zdroj v přehledech pořadatelů. Rozhodnutí z 24. 10. o sdílení bez UTM platí dál, sdílí se adresy KROMCL |
 | 2026-10-26 | **Akcentová zelená `#26C064`** místo `#39E67A`; `ZELENA` ve `znacka`, `karta` a `og` se bere z `config.ACCENT`, ikony přegenerované `bin/ikony.py` | Designér: zelená vedle bílé a ikon „vypaluje oči". Ze čtyř variant prostřední: pořád svítivá, ale klidnější. Černý text na ní má 8,8 : 1 (dřív 12,8), WCAG drží s rezervou. Hex byl natvrdo na čtyřech místech, teď na jednom |
 | 2026-10-26 | **Automatické sdílení na FB stránku Kromcl** (`kromka/facebook.py`, krok po nasazení, fronta v `data/facebook.json`, jeden příspěvek za běh, text z TL;DR, UTM `facebook / social / <slug> / autopost`) | Zdeněk je nově admin stránky. Běží v Actions, aby nezáleželo na zapnutém počítači; vlastní appka „Kromcl autopost“, aby token nezávisel na GeekLife. AI štítek v textu příspěvku vědomě ne: Zdeněk chce, aby přiznání zůstalo na webu |
+| 2026-10-26 | **Skill `/pridat-akci`**: Claude in Chrome vyplní formulář akcí města z volného vstupu nebo z příspěvků ve stavu `akce`, odešle po potvrzení, stav `akce odeslána` zpátky do tabulky. Při známé chybě s diakritikou nabídne verzi bez háčků | Do vlastního formuláře se čeká na odpověď města; pozvánky od čtenářů a pořadatelů se mezitím mají jak dostat do kalendáře. Skript místo klikání, protože popis je Trumbowyg a kalendář jen pro čtení. Kontakt u příspěvků Zdeněk, souhlas čtenáři slibuje e-mail jen pro redakci |
+| 2026-10-26 | První akce podaná skillem (Magion House – PHUNXX_J, Tvenis Bar, 16. 11.) prošla i s diakritikou; skill bere za důkaz úspěchu přesměrování na `/akce/` | Skript města přesměruje jen při `error == 0`, hláška zmizí po 2 s a síť se sleduje až od prvního čtení. Chyba z 24. 10. je nejspíš opravená, záložní verze bez háčků zůstává jako pojistka |
+| 2026-10-26 | **Google News sitemap** `/news-sitemap.xml` (`_news_sitemap`): všechny typy článků s `published` za posledních 48 hodin, datum stejné jako `datePublished` v JSON-LD, název `KROMCL`, jazyk `cs`; odkaz v `robots.txt` | Zdeněk ji chce, přestože byla v Parking lotu (přínos je malý, nic ale nestojí). Do Google News se dnes nehlásí, Google zařazuje sám. Samostatný soubor, aby hlavní sitemapa neměnila obsah každou hodinu. Archivní přepisy tam nepatří, jejich vydání u města je staré |
 
 ## Appka a favicona
 
@@ -677,6 +694,13 @@ nás (`rewritten_at`, u archivu pozdější než vydání u města), téma a úv
 podle nejnovějšího článku, program podle `stazeno`, okna dnes a víkend podle
 dnešního data, kostka podle revize hesla. Když `lastmod` lže, Google mu
 přestane věřit u celé sitemapy.
+
+**News sitemap** (`/news-sitemap.xml`) nese jen články vydané za posledních
+48 hodin, jak Google chce. Rozhoduje `published`, stejné datum jako
+`datePublished` v JSON-LD a `article:published_time`, takže přepis archivu
+z loňska sem nepatří, i když vyšel u nás dnes. Pozvánka s vydáním dopředu
+přijde až v ten den. Bez čerstvého článku je sitemapa prázdná, to je
+v pořádku. V GSC se odesílá zvlášť.
 
 **robots.txt** pouští všechny, i AI crawlery (rozhodnuto 24. 10. 2026): web
 chce dosah a AI vyhledávání je pro mladé publikum další vstup.
@@ -876,7 +900,6 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Jedna og:image karta na téma nebo na celý web | Všechny články o dopravě by se na sítích tvářily stejně; karta ke článku stojí 45 ms |
 | Blokovat AI crawlery v robots.txt | Rozhodnuto 24. 10. 2026: web chce dosah a AI odpovědi jsou pro mladé čtenáře další vstup |
 | Hlásit přes IndexNow i program | Přestavuje se každou hodinu, vyhledávače by hlášení braly jako spam |
-| Google News sitemap | Při jednom článku denně a hodinové sitemapě nic nepřidá; až kdyby se KROMCL hlásil do Google News |
 | `twitter:site` | KROMCL nemá účet na X; doplní se s `config.PROFILY` |
 | Fotka v příspěvku čtenáře | Licence k cizí fotce, EXIF s polohou a úložiště; zatím jen text a odkaz |
 | Vlastní HTML formulář posílající rovnou do formResponse Googlu | Odpověď Googlu nejde z cizí stránky přečíst a formulář by hlásil „odesláno" naslepo. Vyřešeno přes Apps Script, viz Příspěvky čtenářů |

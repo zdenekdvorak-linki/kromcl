@@ -1656,8 +1656,11 @@ def vykresli(clanky, akce_data=None):
     (config.SITE / "feed.xml").write_text(_rss(clanky), encoding="utf-8")
     (config.SITE / "sitemap.xml").write_text(
         _sitemap(clanky, akce_data), encoding="utf-8")
+    (config.SITE / "news-sitemap.xml").write_text(
+        _news_sitemap(clanky), encoding="utf-8")
     (config.SITE / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n".format(config.SITE_URL),
+        "User-agent: *\nAllow: /\nSitemap: {0}/sitemap.xml\n"
+        "Sitemap: {0}/news-sitemap.xml\n".format(config.SITE_URL),
         encoding="utf-8")
     (config.SITE / "CNAME").write_text(_domena() + "\n", encoding="utf-8")
     # Ověřovací soubor IndexNow, viz kromka/indexnow.py.
@@ -2040,4 +2043,34 @@ def _sitemap(clanky, akce_data=None):
                          _zmeneno(clanek) or dnes, "0.8"))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{0}</urlset>'
+            ).format("".join(radky))
+
+
+def _news_sitemap(clanky, ted=None):
+    """Google News sitemap: jen články vydané za posledních 48 hodin.
+
+    Datum je `published`, stejné jako `datePublished` v JSON-LD, takže
+    archivní přepisy se starým vydáním u města sem nepatří. Článek
+    s vydáním v budoucnu (pozvánka chystaná dopředu) přijde až v ten den.
+    """
+    ted = ted or datetime.now(timezone.utc)
+    od = ted - timedelta(days=2)
+    radky = []
+    for clanek in sorted(clanky, key=lambda c: c.get("published", ""), reverse=True):
+        try:
+            vydano = datetime.fromisoformat(clanek.get("published") or "")
+        except ValueError:
+            continue
+        if vydano.tzinfo is None or not od <= vydano <= ted:
+            continue
+        radky.append(
+            "<url><loc>{0}</loc><news:news><news:publication>"
+            "<news:name>{1}</news:name><news:language>cs</news:language>"
+            "</news:publication><news:publication_date>{2}</news:publication_date>"
+            "<news:title>{3}</news:title></news:news></url>".format(
+                _abs("/clanek/{0}.html".format(clanek["slug"])), _e(config.BRAND),
+                vydano.isoformat(), _e(clanek["headline"])))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">{0}</urlset>'
             ).format("".join(radky))

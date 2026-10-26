@@ -6,6 +6,7 @@ Spuštění: python -m unittest discover -s tests
 
 import sys
 import unittest
+import xml.etree.ElementTree as ET
 from datetime import date, datetime
 from pathlib import Path
 
@@ -1259,6 +1260,30 @@ class TechSeo(unittest.TestCase):
         self.assertIn("/clanek/novy.html</loc><lastmod>2026-10-20<", mapa)
         self.assertIn("/tema/radnice.html</loc><lastmod>2026-10-20<", mapa)
         self.assertIn(config.SITE_URL + "/</loc><lastmod>2026-10-23<", mapa)
+
+    def test_news_sitemap_jen_poslednich_48_hodin(self):
+        ted = datetime.fromisoformat("2026-10-26T12:00:00+00:00")
+        clanky = [
+            {"slug": "cerstvy", "headline": "Lávka & most", "published": "2026-10-25T09:00:00+02:00"},
+            {"slug": "archiv", "headline": "A", "published": "2025-01-15T10:00:00+01:00",
+             "rewritten_at": "2026-10-26T10:00:00+00:00"},
+            {"slug": "predevcirem", "headline": "B", "published": "2026-10-24T11:00:00+00:00"},
+            {"slug": "zitra", "headline": "C", "published": "2026-10-27T06:00:00+01:00"},
+        ]
+        mapa = render._news_sitemap(clanky, ted)
+        ET.fromstring(mapa.encode("utf-8"))
+        self.assertIn('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"', mapa)
+        self.assertIn("/clanek/cerstvy.html</loc>", mapa)
+        self.assertIn("<news:publication_date>2026-10-25T09:00:00+02:00<", mapa)
+        self.assertIn("<news:title>Lávka &amp; most</news:title>", mapa)
+        self.assertIn("<news:name>{0}</news:name><news:language>cs<".format(config.BRAND), mapa)
+        # Datum vydání u města, ne přepisu; budoucí vydání ještě ne.
+        for slug in ("archiv", "predevcirem", "zitra"):
+            self.assertNotIn("/clanek/{0}.html".format(slug), mapa)
+
+    def test_news_sitemap_bez_cerstvych_clanku_je_platna(self):
+        mapa = render._news_sitemap([], datetime.fromisoformat("2026-10-26T12:00:00+00:00"))
+        self.assertEqual(len(ET.fromstring(mapa.encode("utf-8"))), 0)
 
 
 class IndexNow(unittest.TestCase):
