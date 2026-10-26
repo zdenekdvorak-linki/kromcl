@@ -53,7 +53,8 @@ RSS feed města                  (708 položek, leden 2025 → dnes, jen perex)
    ├─ data/articles/<id>.json       trvalý archiv v gitu
    ├─ render → site/                HTML + RSS + sitemap + robots + karty og:image
    │
-   └─ po nasazení: IndexNow         nové články → Bing, Seznam
+   ├─ po nasazení: IndexNow         nové články → Bing, Seznam
+   └─ po nasazení: Facebook         jeden článek z fronty → stránka Kromcl
 
 Google Form → tabulka → Stav „schváleno"     (příspěvky čtenářů)
    └─ Apps Script → prispevky.v_cronu → přepis → pojistky → data/articles
@@ -378,7 +379,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/pozvanka.py` | týdenní pozvánka: `tyden`, `ma_vzniknout`, `rozdel`, prompt, pojistky, `napis`, `v_cronu`; render v `render._pozvanka_telo` |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
-| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow` |
+| `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow`, `facebook` |
 | `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
 | `bin/ikony.py` | vyrobí ikony do `static/`; pouští se ručně po změně značky, výsledek se commituje |
 | `static/` | kopíruje se do kořene webu i s podsložkami: ikony, `fonts/`, `sw.js` (service worker), `app.js` (výzva k instalaci) |
@@ -394,6 +395,8 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/render.py` | `PRISPEVEK_CESTA`, `PRISPEVEK_SOUHLAS`, `_vyzva`, `_podpis`, `_prispevek_formular`, `_prispevek_stranka` — vlastní formulář, štítek a podpis u příspěvku |
 | `apps-script/prispevky.gs` | `zalozit` (formulář, tabulka, upozornění, klíč), `zverejnit`, endpoint `doPost`: `odeslat` z webu, čtení schválených řádků bez e-mailu, zápis stavu; vkládá se na script.google.com ručně |
 | `kromka/indexnow.py` | fronta adres z `all` vedle složky webu a odeslání na `api.indexnow.org`; příkaz `python -m kromka indexnow` |
+| `kromka/facebook.py` | fronta a odeslané v `data/facebook.json`, text z TL;DR, odkaz s UTM, `POST /{stránka}/feed`; příkaz `python -m kromka facebook` |
+| `bin/fb_token.py` | z dlouhodobého user tokenu odvodí Page token stránky Kromcl, ověří ho a zapíše jako GitHub secret `KROMKA_FB_TOKEN` + proměnnou `KROMKA_FB_PAGE_ID` |
 
 ## Vývojové poznámky
 
@@ -518,6 +521,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Filtr podle data** na programu, typech a dětech: předvolby + od–do v `app.js`, adresa `?od=&do=`, kanonická bez parametrů, GA4 `program_cas` | Zpětná vazba na rozcestník akcí. Výběr se má dát poslat dál, ale nemá dělat nové stránky pro vyhledávač |
 | 2026-10-26 | **UTM na všech odkazech ven** (`_ven`), kampaň podle místa na webu; sdílení, JSON-LD a Klubíčko (404 s parametry) bez UTM | Zadání Zdeňka: ať se o nás ví. Referrer ukáže jen doménu, UTM pojmenovaný zdroj v přehledech pořadatelů. Rozhodnutí z 24. 10. o sdílení bez UTM platí dál, sdílí se adresy KROMCL |
 | 2026-10-26 | **Akcentová zelená `#26C064`** místo `#39E67A`; `ZELENA` ve `znacka`, `karta` a `og` se bere z `config.ACCENT`, ikony přegenerované `bin/ikony.py` | Designér: zelená vedle bílé a ikon „vypaluje oči". Ze čtyř variant prostřední: pořád svítivá, ale klidnější. Černý text na ní má 8,8 : 1 (dřív 12,8), WCAG drží s rezervou. Hex byl natvrdo na čtyřech místech, teď na jednom |
+| 2026-10-26 | **Automatické sdílení na FB stránku Kromcl** (`kromka/facebook.py`, krok po nasazení, fronta v `data/facebook.json`, jeden příspěvek za běh, text z TL;DR, UTM `facebook / social / <slug> / autopost`) | Zdeněk je nově admin stránky. Běží v Actions, aby nezáleželo na zapnutém počítači; vlastní appka „Kromcl autopost“, aby token nezávisel na GeekLife. AI štítek v textu příspěvku vědomě ne: Zdeněk chce, aby přiznání zůstalo na webu |
 
 ## Appka a favicona
 
@@ -686,6 +690,46 @@ v `config.INDEXNOW_KLIC` a v kořeni webu jako `<klíč>.txt`. Celý web jde
 nahlásit jednou ručně: `python -m kromka indexnow --vse`, nanečisto
 s `--nanecisto`. Google IndexNow nepodporuje, ten má sitemapu v GSC.
 
+**Facebook.** Nové články jdou jako příspěvek na stránku
+[Kromcl](https://www.facebook.com/Kromcl/). Stejný tvar jako IndexNow:
+`all` je zařadí do `data/facebook.json` a workflow po nasazení pošle
+krokem `python -m kromka facebook` nejstarší z nich. Soubor je v `data/`,
+protože musí přežít do dalšího běhu: drží frontu i odeslané, a co je
+jednou odeslané, už nikdy neodejde. Proto po odeslání druhý commit.
+
+- **Jeden příspěvek za běh.** Cron jede po hodině, dávka tří článků se
+  tak rozprostře do tří hodin. Ve feedu by čtenář ze tří naráz viděl jeden.
+- **Po 24 hodinách se zahodí**, co neodešlo. Neúspěch (výpadek, chyba
+  tokenu) nechá článek ve frontě na příští běh. Krok má
+  `continue-on-error`, výpadek Facebooku nasazení nezpochybní.
+- **Text je TL;DR článku**, bod na řádek jako na webu. Titulek ukáže
+  Facebook na kartě z og:image, odkaz proto jde do `link`, ne do textu.
+- **UTM:** `utm_source=facebook&utm_medium=social&utm_campaign=<slug>&utm_content=autopost`.
+  Slug v kampani ukáže v GA4, který článek táhl; `autopost` oddělí
+  automatické příspěvky od ručních.
+- Nanečisto: `python -m kromka facebook --nanecisto` vypíše frontu s textem
+  a odkazem. Bez `KROMKA_FB_PAGE_ID` a `KROMKA_FB_TOKEN` se krok přeskočí.
+
+Token je Page token z Meta appky **Kromcl autopost** (App ID
+`1605702060630467`, use case *Manage everything on your Page*, bez
+business portfolia, postování na vlastní stránku nepotřebuje App Review).
+Odvozený z dlouhodobého user tokenu nevyprší, dokud se nezmění heslo
+nebo se appce neodebere oprávnění. Obnova: Graph API Explorer → appka
+Kromcl autopost → oprávnění `pages_show_list`, `pages_read_engagement`,
+`pages_manage_posts`, `business_management` → *Generate Access Token*
+(v souhlasu zaškrtnout stránku Kromcl) → ⓘ → *Open in Access Token Tool*
+→ *Extend Access Token* → prodloužený token (dole, „This new long-lived
+access token…") zkopírovat → `python bin/fb_token.py --schranka`. Skript
+vezme token ze schránky a schránku vymaže; token nevypisuje a krátkodobý
+odmítne s výpisem, dokdy co platí. Bez `--schranka` se ptá skrytým
+vstupem, ten ale na Windows v panelu Terminal nebere Ctrl+V a vložení
+do shellu místo do skriptu nechá token v historii PowerShellu (stalo se
+26. 10. 2026, appka se kvůli tomu musela odebrat a autorizovat znovu).
+
+Pozor: zneplatnit user token (odebrání appky ve Firemních integracích,
+`DELETE /me/permissions`) zneplatní i Page token v GitHubu. Prodloužený
+user token sám vyprší po 60 dnech, Page token z něj odvozený ne.
+
 ## Měření
 
 GA4 `G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name, uchovávání dat
@@ -838,6 +882,12 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Příspěvky přes Cloudflare Worker do issues soukromého repa | Zdeněk zvolil Google Form; Worker by byl další účet a služba |
 | Čtení tabulky přes service account a Sheets API | Podpis JWT ve stdlib nejde, přibyla by `google-auth` (princip 6) |
 | Dvojí schválení (originál, pak přepis) | Zdeněk chce jedno; přepis hlídají pojistky a jde stáhnout |
+| Sdílení do FB skupiny místo stránky | Meta v dubnu 2024 zavřela publikování do skupin přes Graph API; Kromcl je stránka |
+| Vlastní FB text psaný modelem | Tokeny navíc a další text, který by potřeboval pojistky na čísla a citace (principy 2 a 3); TL;DR je už prověřené |
+| Řádek „přepsáno AI“ v textu FB příspěvku | Rozhodnuto 26. 10. 2026: přiznání stačí na webu, kam karta vede |
+| Sdílení přes lokální hlídač z GeekLife (`social_runner`) | Běží jen při zapnutém PC a na Macu zvlášť; Actions běží v cloudu vedle nasazení |
+| Meta appka GeekLife pro Kromcl | Adminům by se pod příspěvky ukazovala GeekLife a oba weby by visely na jednom tokenu |
+| Starý archiv na FB zpětně | Feed by zaplavily měsíc staré zprávy; sdílí se jen nové |
 | Turnstile nebo jiný antispam u formuláře | Každý příspěvek čte redakce, spam se zastaví tam; řešit až kdyby ho bylo moc |
 | Relativní předvolby v adrese (`?kdy=pristi-tyden`) | Sdílený odkaz by se posouval s časem; za týden by ukazoval jiný týden, než jaký se posílal |
 | Vlastní výběr dětských akcí podle slov (pohádka, dílna, rodina…) | Náš úsudek nad daty, která přebíráme beze změny, a s dírami. Bere se příznak pořadatele, vyřazují se jen obřady |

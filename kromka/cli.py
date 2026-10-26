@@ -5,8 +5,8 @@ import argparse
 import json
 import sys
 
-from . import (akce, config, indexnow, kino_dk, pipeline, pozvanka, prispevky, render,
-               sources, store)
+from . import (akce, config, facebook, indexnow, kino_dk, pipeline, pozvanka, prispevky,
+               render, sources, store)
 
 
 def main(argv=None):
@@ -63,6 +63,10 @@ def main(argv=None):
     p.add_argument("--nanecisto", action="store_true",
                    help="jen vypiš, co by se poslalo")
 
+    p = pod.add_parser("facebook", help="pošle nejstarší článek z fronty na stránku Kromcl (po nasazení)")
+    p.add_argument("--nanecisto", action="store_true",
+                   help="jen vypiš frontu a text příspěvku, nic neposílej")
+
     args = parser.parse_args(argv)
 
     if args.prikaz == "nove":
@@ -90,6 +94,9 @@ def main(argv=None):
 
     if args.prikaz == "indexnow":
         return _indexnow(args)
+
+    if args.prikaz == "facebook":
+        return _facebook(args)
 
     if args.prikaz == "pozvanka":
         return _pozvanka(args)
@@ -124,6 +131,7 @@ def main(argv=None):
         hotove = list(hotove or []) + prispevky.v_cronu()
         if hotove:
             indexnow.zarad(indexnow.adresy(hotove))
+            facebook.zarad(hotove)
 
     clanky = store.vsechny()
     pocet = render.vykresli(clanky)
@@ -146,6 +154,31 @@ def _indexnow(args):
     if ok and not args.vse:
         indexnow.vyprazdni_frontu()
     return 0 if ok else 1
+
+
+def _facebook(args):
+    """Pošle frontu z posledního `all` na stránku Kromcl.
+
+    Ve workflow běží až po nasazení, aby Facebook na adrese našel článek
+    i kartu og:image. Chyba vrací 0: neodeslaný článek zůstává ve frontě
+    a výpadek Facebooku nemá v Actions svítit jako rozbitý web.
+    """
+    if args.nanecisto:
+        fronta = facebook.nacti()["fronta"]
+        if not fronta:
+            print("Fronta je prázdná.")
+        for polozka in fronta:
+            clanek = store.nacti(polozka["id"])
+            print("{0}  {1}\n{2}\n{3}\n".format(
+                polozka["zarazeno"], clanek["headline"], facebook.odkaz(clanek),
+                facebook.text(clanek)))
+        return 0
+    if not facebook.zapnuto():
+        print("Facebook není nastavený (KROMKA_FB_PAGE_ID a KROMKA_FB_TOKEN), přeskakuju.")
+        return 0
+    for radek in facebook.odesli() or ["Fronta je prázdná."]:
+        print(radek)
+    return 0
 
 
 def _pozvanka(args):

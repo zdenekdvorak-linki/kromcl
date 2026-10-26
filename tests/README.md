@@ -109,6 +109,23 @@ napsané:
 | metadata typů | titulek, popis, H1 i úvod se mezi typy neopakují |
 | rozbité HTML stránky DK | prázdný dict, žádná výjimka |
 
+## `test_facebook.py`
+
+Fronta příspěvků na stránku Kromcl. Odeslání je podvržené, síť se nevolá.
+
+| Situace | Očekávání |
+|---|---|
+| odkaz článku | `?utm_source=facebook&utm_medium=social&utm_campaign=<slug>&utm_content=autopost` |
+| text | body TL;DR „emoji Štítek: věta“ oddělené prázdným řádkem, bez titulku |
+| článek bez TL;DR | aspoň titulek |
+| zařazení podruhé | nepřidá se |
+| odeslaný článek zařazený znovu | neodejde |
+| tři ve frontě | za běh odejde jen nejstarší |
+| chyba při odeslání | článek zůstane ve frontě a odejde příště |
+| ve frontě přes 24 h | zahodí se, neodejde |
+| článek smazaný z archivu | vyřadí se z fronty |
+| chybí token | sdílení vypnuté |
+
 ## Co se netestuje
 
 Volání modelu, stahování z webu a render. Ty se ověřují ručně podle smoke

@@ -70,3 +70,18 @@ jobs:
       - name: Nahlásit nové adresy přes IndexNow
         continue-on-error: true
         run: python -m kromka indexnow
+
+      # Také až po nasazení: Facebook si z adresy hned stahuje kartu og:image.
+      # Fronta i odeslané jsou v data/facebook.json, proto druhý commit —
+      # bez něj by příští běh poslal tentýž článek znovu.
+      - name: Sdílet nový článek na Facebook
+        continue-on-error: true
+        env:
+          KROMKA_FB_TOKEN: ${{ secrets.KROMKA_FB_TOKEN }}
+          KROMKA_FB_PAGE_ID: ${{ vars.KROMKA_FB_PAGE_ID }}
+          KROMKA_SITE_URL: ${{ vars.KROMKA_SITE_URL }}
+        run: |
+          python -m kromka facebook
+          git add data
+          git diff --staged --quiet || git commit -m "facebook: odeslaný příspěvek $(date +%F)"
+          git push

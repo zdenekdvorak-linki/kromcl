@@ -42,6 +42,12 @@ GA4_ID = os.environ.get("KROMKA_GA4_ID", "G-M0MPCR8ZW7")
 # K 24. 10. 2026 žádný profil není; prázdný seznam se do stránek nepíše.
 PROFILY = []
 
+# Stránka Kromcl na Facebooku, kam `python -m kromka facebook` posílá nové
+# články. Token je Page token z appky „Kromcl autopost" (zapisuje ho
+# bin/fb_token.py jako GitHub secret). Bez obou hodnot se sdílení přeskočí.
+FB_PAGE_ID = os.environ.get("KROMKA_FB_PAGE_ID", "")
+FB_TOKEN = os.environ.get("KROMKA_FB_TOKEN", "")
+
 # --- IndexNow -------------------------------------------------------------
 # Klíč je veřejný: leží v kořeni webu jako <klíč>.txt a vyhledávač podle
 # něj ověří, že hlášení přišlo z tohohle webu. Změna klíče = nový soubor
