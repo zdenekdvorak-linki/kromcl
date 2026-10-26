@@ -1314,7 +1314,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-26T01:10:15.307010+00:00",
+  "stazeno": "2026-10-26T19:19:41.048762+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -2396,7 +2396,7 @@
       "pro_deti": false,
       "typ": "Přednášky a besedy",
       "typ_id": 12,
-      "upraveno": "2026-10-12T15:05:47",
+      "upraveno": "2026-10-26T15:04:35",
       "vicedenni": false,
       "web": "https://www.muzeum-km.cz",
       "youtube": "",
@@ -2691,6 +2691,27 @@
       "vicedenni": false,
       "web": "https://www.dk-kromeriz.cz/audience",
       "youtube": "LYq6RdsCKK8",
+      "zacatek": "2026-11-07T17:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11939,
+      "cena": 200,
+      "cena_pozn": "Vstupenky k prodeji v síti Ticketportal v předprodeji za 150,-. Cena na místě 200,-, do 15ti let vstup zdarma.",
+      "id": 21829,
+      "konec": "2026-11-07T19:00:00",
+      "misto": "",
+      "misto_web": "",
+      "nazev": "SK HS Kroměříž - FK Třinec",
+      "perex": "14.kolo Chance Národní Liga",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-10-26T12:37:20",
+      "vicedenni": false,
+      "web": "",
+      "youtube": "",
       "zacatek": "2026-11-07T17:00:00",
       "zdarma": false
     },
@@ -3604,6 +3625,27 @@
       "web": "https://www.dk-kromeriz.cz/hunger-games-vrazedna-pomsta",
       "youtube": "",
       "zacatek": "2026-11-16T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11942,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21832,
+      "konec": "2026-11-17T02:00:00",
+      "misto": "",
+      "misto_web": "",
+      "nazev": "Magion House – PHUNXX_J",
+      "perex": "Večer elektronické taneční hudby v Tvenis Baru. Hraje PHUNXX_J z Frýdku-Místku, doplní ho kroměřížští LUXUS a MAG.",
+      "poznamka": "Konec není uvedený, 2:00 je odhad.",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-10-26T13:17:59",
+      "vicedenni": true,
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-11-16T21:00:00",
       "zdarma": false
     },
     {
