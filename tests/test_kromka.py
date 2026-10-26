@@ -305,8 +305,15 @@ class Appka(unittest.TestCase):
 
     def test_sablona_odkazuje_manifest_a_skript(self):
         for kus in ('rel="manifest"', 'href="/favicon.svg"',
-                    'rel="apple-touch-icon"', 'src="/app.js" defer'):
+                    'rel="apple-touch-icon"', 'src="/app.js?v={app_verze}" defer'):
             self.assertIn(kus, render.ZAKLAD)
+
+    def test_skript_ma_otisk_obsahu(self):
+        # Nová stránka nesmí dostat starý app.js z mezipaměti: formulář
+        # pro příspěvky by zůstal skrytý.
+        import hashlib
+        otisk = hashlib.sha1((config.STATIC / "app.js").read_bytes()).hexdigest()[:10]
+        self.assertIn('src="/app.js?v={0}"'.format(otisk), render._stranka("T", "P", "x"))
 
     def test_staticke_soubory_jsou_v_repu(self):
         for nazev in ("favicon.svg", "favicon.ico", "apple-touch-icon.png",

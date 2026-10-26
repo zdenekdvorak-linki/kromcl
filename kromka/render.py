@@ -9,6 +9,7 @@ Twitter karta, JSON-LD a drobečková navigace se skládají v `_stranka`, aby s
 na žádném typu stránky nedaly zapomenout.
 """
 
+import hashlib
 import html
 import json
 import re
@@ -354,6 +355,12 @@ FONTY_PRELOAD = "".join(
         soubor.name)
     for soubor in sorted((config.STATIC / "fonts").glob("*.woff2")))
 
+# Otisk app.js v adrese skriptu. Stránka i skript mají v mezipaměti prohlížeče
+# 10 minut (GitHub Pages) a service worker skript nehlídá. Nová stránka se
+# starým skriptem by neukázala formulář pro příspěvky, který odkrývá až nový
+# app.js; s otiskem si nová stránka vždy stáhne svou verzi.
+APP_VERZE = hashlib.sha1((config.STATIC / "app.js").read_bytes()).hexdigest()[:10]
+
 # GA4 bez lišty se souhlasem, rozhodnutí z 24. 10. 2026. Skript se načte jen
 # na ostré doméně, aby náhled na localhostu a zkušební běhy neplnily data.
 # Parametry stránky jdou s každou událostí; `rezim` pozná až prohlížeč.
@@ -427,7 +434,7 @@ ZAKLAD = """<!doctype html>
 <meta name="apple-mobile-web-app-title" content="{brand}">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">
-<script src="/app.js" defer></script>
+<script src="/app.js?v={app_verze}" defer></script>
 {fonty_preload}
 <style>{css}</style>
 {jsonld}</head>
@@ -611,7 +618,7 @@ def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
         locale=config.LOCALE, css=CSS,
         brand=_e(config.BRAND), tagline=_e(config.TAGLINE),
         disclaimer=_e(config.DISCLAIMER), obsah=obsah, jsonld=jsonld,
-        menu=_menu(), fonty_preload=FONTY_PRELOAD, mereni=_mereni(cesta, tema),
+        menu=_menu(), fonty_preload=FONTY_PRELOAD, app_verze=APP_VERZE, mereni=_mereni(cesta, tema),
         tw_karta="summary_large_image" if obrazek else "summary",
     )
 
