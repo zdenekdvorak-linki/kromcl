@@ -97,18 +97,27 @@ figcaption { font-size: 13px; color: var(--slabe); margin-top: 10px; }
 .tldr b { background: linear-gradient(transparent 62%, var(--akcent) 62%); }
 .zdroj { border: 3px dashed var(--slabe); padding: 16px 18px; margin: 34px 0 0; font-size: 15px; }
 .zdroj a { font-weight: 700; }
+.od-ctenare { background: var(--akcent); color: #000; }
+.vyzva { border: 3px solid var(--ram); background: var(--karta); box-shadow: 6px 6px 0 var(--ram); padding: 18px 20px; margin: 40px 0 0; }
+.vyzva h2 { font-size: 20px; margin: 0 0 6px; }
+.vyzva p { margin: 0 0 14px; }
+.vyzva a.tlacitko { display: inline-block; padding: 10px 14px; background: var(--akcent); color: #000; border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); font-weight: 700; text-decoration: none; }
+.vyzva a.tlacitko::after { content: " →"; }
+.formular-ramec { border: 3px solid var(--ram); background: #fff; margin: 28px 0 0; }
+.formular-ramec iframe { display: block; width: 100%; height: 1500px; border: 0; }
 .dalsi { margin-top: 48px; }
 .dalsi h2 { font-size: 18px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
 footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 26px 0; font-size: 14px; color: var(--slabe); }
 footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
 .strankovani { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 .strankovani a { border: 3px solid var(--ram); padding: 8px 16px; text-decoration: none; font-weight: 700; background: var(--karta); box-shadow: 4px 4px 0 var(--ram); }
-/* Hamburger až do 900 px, ne jen na mobilu. Logo nad 629 px nezmenšuje
-   (336 px) a menu potřebuje 469 px, takže pod šířkou okna zhruba 870 px se
-   láme do dvou řádků — změřeno, na 861 px dva, od 870 px jeden. Hranice 900
-   nechává rezervu na jiné vykreslení písma na Macu. Při změně položek menu
-   nebo stylu štítku „program" je potřeba změřit znovu. */
-@media (max-width: 900px) {
+/* Hamburger až do 1040 px, ne jen na mobilu. Logo nad 629 px nezmenšuje
+   (336 px) a menu s „pošli novinku" potřebuje 604 px, takže pod šířkou okna
+   zhruba 1005 px se láme do dvou řádků — změřeno 26. 10. 2026, na 1000 px
+   dva, od 1010 px jeden. Hranice 1040 nechává rezervu na jiné vykreslení
+   písma na Macu. Při změně položek menu nebo stylu štítků je potřeba změřit
+   znovu. */
+@media (max-width: 1040px) {
   .hlava .obal { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
   .menu .hamburger { display: inline-flex; cursor: pointer; }
   .menu .odkazy { display: none; position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; flex-direction: column; gap: 0; min-width: 200px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); }
@@ -164,7 +173,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .menu-vic-seznam li + li { border-top: 2px solid var(--ram); }
 .menu .menu-vic-seznam a { display: block; padding: 10px 14px; border-bottom: 0; }
 .menu .menu-vic-seznam a:hover, .menu .menu-vic-seznam a:focus-visible { background: var(--akcent); color: #000; border-bottom: 0; }
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .menu .odkazy { align-items: stretch; }
   .menu-vic-tlacitko { display: none; }
   .menu-vic-seznam { display: block; position: static; min-width: 0; border: 0; box-shadow: none; }
@@ -412,7 +421,7 @@ ZAKLAD = """<!doctype html>
 <main id="obsah"><div class="obal">{obsah}</div></main>
 <footer><div class="obal">
   <p style="max-width:620px;margin:0">{disclaimer}</p>
-  <p style="margin:0"><a href="/kromeriz-v-kostce.html">Kroměříž v kostce</a> &middot; <a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a></p>
+  <p style="margin:0"><a href="/kromeriz-v-kostce.html">Kroměříž v kostce</a> &middot; <a href="/feed.xml">RSS</a> &middot; <a href="/o-webu.html">O webu</a> &middot; <a href="/poslat-novinku.html">Pošli novinku</a></p>
 </div></footer>
 </body>
 </html>
@@ -510,7 +519,27 @@ def _menu():
             '<label for="menu-vic" class="menu-vic-tlacitko">další</label>'
             '<ul class="menu-vic-seznam">{0}</ul></li>'.format(
                 "".join(polozka(t) for t in ostatni)))
+    # Příspěvek není téma, vede na formulář. Stojí poslední, aby se pořadí
+    # témat, na které jsou čtenáři zvyklí, neposunulo.
+    polozky.append('<li><a class="je-sekce je-prispevek" href="{0}">{1}</a></li>'.format(
+        PRISPEVEK_CESTA, PRISPEVEK_MENU))
     return "".join(polozky)
+
+
+# --- Příspěvky čtenářů -------------------------------------------------------
+# Formulář je Google Form vložený do vlastní stránky, schvaluje se v tabulce
+# a přepisuje v kromka/prispevky.py.
+PRISPEVEK_CESTA = "/poslat-novinku.html"
+PRISPEVEK_MENU = "pošli novinku"
+# Stránka s formulářem je ruční text; lastmod v sitemapě se mění s ním.
+PRISPEVEK_ZMENENO = "2026-10-26"
+
+
+def _vyzva(trida, nadpis, text, tlacitko="Pošli novinku"):
+    """Box s odkazem na formulář. Třída určuje `misto` v události GA4."""
+    return ('<aside class="vyzva {0}"><h2>{1}</h2><p>{2}</p>'
+            '<a class="tlacitko" href="{3}">{4}</a></aside>').format(
+                trida, _e(nadpis), _e(text), PRISPEVEK_CESTA, _e(tlacitko))
 
 
 def _stranka(titulek, popis, obsah, cesta="/", og_typ="website", obrazek="",
@@ -657,6 +686,8 @@ def _clanek(clanek, souvisejici):
 
     stitky = "".join('<a class="stitek" href="{0}">{1}</a>'.format(_e(_tema_cesta(t)), _e(t))
                      for t in clanek.get("tags", []))
+    if clanek.get("typ") == "prispevek":
+        stitky += '<span class="stitek od-ctenare">od čtenáře</span>'
     casti.append('<div class="stitky">{0}<time class="datum" datetime="{1}">{2}</time></div>'.format(
         stitky, _e((clanek.get("published") or "")[:10]),
         _datum_cesky(clanek.get("published"))))
@@ -689,10 +720,16 @@ def _clanek(clanek, souvisejici):
             if i == 0:
                 casti.append(ilustrace.karty_html(odstavce))
 
+    if clanek.get("typ") == "prispevek":
+        casti.append(_podpis(clanek))
+
     # Sdílet až pod textem: kdo článek nedočetl, neví, jestli ho chce poslat dál.
     casti.append('<div class="sdileni na-konci">{0}</div>'.format(_sdilet(
         clanek["headline"], "/clanek/{0}.html".format(clanek["slug"]), "clanek")))
 
+    casti.append(_vyzva("vyzva-clanek", "Víš o něčem dalším?",
+                        "Co se děje u vás na ulici, ve spolku nebo ve škole? "
+                        "Pošli nám to a my to napíšeme po svém."))
     telo = '<article class="clanek">{0}</article>'.format("".join(casti))
 
     if souvisejici:
@@ -700,6 +737,18 @@ def _clanek(clanek, souvisejici):
         telo += ('<section class="dalsi"><h2>Další z Kroměříže</h2>'
                  '<div class="mrizka">{0}</div></section>'.format(karty))
     return telo
+
+
+def _podpis(clanek):
+    """Podpis čtenáře pod příspěvkem. Odkaz je jeho, proto nofollow a ugc:
+    za cizí odkaz se web vyhledávačům nezaručuje."""
+    odkaz = ""
+    if clanek.get("odkaz"):
+        odkaz = ' Víc najdeš <a href="{0}" rel="nofollow ugc noopener">u zdroje</a>.'.format(
+            _e(clanek["odkaz"]))
+    return ('<p class="zdroj">Poslal(a) <b>{0}</b>. Text jsme přepsali do našeho '
+            'jazyka a před zveřejněním ho viděla redakce.{1}</p>').format(
+                _e(clanek.get("autor", "")), odkaz)
 
 
 def _pozvanka_telo(clanek):
@@ -749,6 +798,8 @@ def _ld_clanek(clanek, obrazek=""):
         # Poctivé přiznání, že jde o přepis cizí zprávy.
         "keywords": ", ".join(clanek.get("tags", [])),
     }
+    if clanek.get("typ") == "prispevek" and clanek.get("autor"):
+        data["author"] = {"@type": "Person", "name": clanek["autor"]}
     if obrazek:
         # Bez obrázku Google článek nevezme do Discoveru ani do velkých
         # výsledků; karta má 1200 px na šířku, jak Discover chce.
@@ -1413,6 +1464,13 @@ def vykresli(clanky, akce_data=None):
         cesta="/o-webu.html",
         obrazek=_og("/o-webu.html", "O webu", "", "_vychozi")),
         encoding="utf-8")
+    (config.SITE / PRISPEVEK_CESTA.lstrip("/")).write_text(_stranka(
+        "Pošli novinku – " + config.BRAND,
+        "Víš o něčem, co se děje v Kroměříži? Pošli nám to. Redakce si to "
+        "přečte, a když to projde, napíšeme to po svém.",
+        _prispevek_stranka(), cesta=PRISPEVEK_CESTA,
+        obrazek=_og(PRISPEVEK_CESTA, "Pošli novinku", "", "_vychozi")),
+        encoding="utf-8")
     (config.SITE / "404.html").write_text(_stranka(
         "Stránka nenalezena – " + config.BRAND,
         "Tahle stránka tu není. Zkus úvodku.",
@@ -1432,7 +1490,7 @@ def vykresli(clanky, akce_data=None):
         config.INDEXNOW_KLIC, encoding="utf-8")
     (config.SITE / "manifest.webmanifest").write_text(_manifest(), encoding="utf-8")
     zapsano += _staticke_soubory()
-    return zapsano + 8
+    return zapsano + 9
 
 
 def _rozcestniky(clanky):
@@ -1441,8 +1499,11 @@ def _rozcestniky(clanky):
     for cislo, davka in enumerate(stranky, start=1):
         karty = "".join(_karta(c, hlavni=(cislo == 1 and i == 0))
                         for i, c in enumerate(davka))
-        obsah = '<div class="mrizka">{0}</div>{1}'.format(
-            karty, _strankovani(cislo, len(stranky)))
+        obsah = '<div class="mrizka">{0}</div>{1}{2}'.format(
+            karty, _strankovani(cislo, len(stranky)),
+            _vyzva("vyzva-uvod", "Máš novinku z Kroměříže?",
+                   "Akce spolku, nová kavárna, rozkopaná ulice. Pošli nám, "
+                   "co víš, a když to projde, vyjde to tady.") if cislo == 1 else "")
         cesta = "/" if cislo == 1 else "/strana-{0}.html".format(cislo)
         nazev = "index.html" if cislo == 1 else "strana-{0}.html".format(cislo)
         titulek = "{0} — {1}".format(config.BRAND, config.TAGLINE)
@@ -1503,12 +1564,55 @@ def _o_webu():
         "<p>Texty píše jazykový model. Čísla a data si hlídáme strojově, "
         "nikoho tu necitujeme v uvozovkách a kontaktní údaje sem nedáváme. "
         "Chyba se ale stát může. Když nějakou najdeš, napiš.</p>"
+        '<p>Píšou nám i čtenáři. Přes <a class="vyzva-o-webu" href="{prispevek}">'
+        "formulář</a> pošleš novinku, redakce si ji přečte a schválí, a pak ji "
+        "přepíšeme stejně jako zprávy z radnice. Pod článkem bude tvoje jméno. "
+        "E-mail vidí jen redakce, kdyby se potřebovala na něco doptat, a na "
+        "web ani nikam dál nejde.</p>"
         '<p>Nový ve městě, nebo jen chceš vědět, co je zač? Mrkni na '
         '<a href="{kostka}">Kroměříž v kostce</a>, celé město v jednom '
         "scrollu.</p>"
         "</article>"
     ).format(disclaimer=_e(config.DISCLAIMER), kostka=KOSTKA_CESTA,
+             prispevek=PRISPEVEK_CESTA,
              drobecky=_drobecky([("Domů", "/"), ("O webu", None)]))
+
+
+def _prispevek_stranka():
+    """Pravidla a pod nimi Google Form v rámu.
+
+    Formulář je vložený, ne vlastní: odpověď Googlu cizí stránka nepřečte,
+    a vlastní formulář by tak hlásil „odesláno" naslepo. Google se načte jen
+    tady, a až když k rámu čtenář doscrolluje.
+    """
+    if config.PRISPEVKY_FORMULAR:
+        formular = ('<div class="formular-ramec"><iframe src="{0}" loading="lazy" '
+                    'title="Formulář pro poslání novinky">Načítám formulář…</iframe>'
+                    '</div>').format(_e(config.PRISPEVKY_FORMULAR))
+    else:
+        formular = ('<p class="zdroj">Formulář se právě chystá. Zkus to prosím '
+                    'za pár dní.</p>')
+    return (
+        '<article class="clanek">{drobecky}<h1>Pošli novinku</h1>'
+        "<p>Víš o něčem, co se v Kroměříži děje a stojí za to, aby to věděli "
+        "ostatní? Nová kavárna, akce spolku, rozkopaná ulice, úspěch tvojí "
+        "školy. Napiš nám to.</p>"
+        "<h2>Jak to funguje</h2><ul>"
+        "<li>Každý příspěvek si přečte redakce. Co projde, vyjde jako článek.</li>"
+        "<li>Text přepíšeme do našeho jazyka. Píše ho jazykový model a fakta "
+        "nechává tvoje: nic nepřidá a čísla si hlídáme strojově.</li>"
+        "<li>Pod článkem bude tvoje jméno, proto je povinné.</li>"
+        "<li>E-mail vidí jen redakce, kdyby se potřebovala doptat. Na web nejde.</li>"
+        "<li>Odkaz na zdroj, třeba web spolku nebo příspěvek na sítích, dáme pod "
+        "článek.</li></ul>"
+        "<h2>Co nevezmeme</h2><ul>"
+        "<li>Útoky na konkrétní lidi, pomluvy a nic, co nemáš z první ruky.</li>"
+        "<li>Reklamu. Novinka o tom, že otevíráš, je v pohodě, ceník ne.</li>"
+        '<li>Termíny akcí. Ty patří do <a href="{program}">programu</a>, který '
+        "bereme z otevřených dat města.</li></ul>"
+        "{formular}</article>"
+    ).format(drobecky=_drobecky([("Domů", "/"), ("Pošli novinku", None)]),
+             program=PROGRAM_CESTA, formular=formular)
 
 
 # --- Kroměříž v kostce -----------------------------------------------------
@@ -1660,6 +1764,7 @@ def _sitemap(clanky, akce_data=None):
     kostka = _nacti_kostku()
     if kostka:
         radky.append(url(KOSTKA_CESTA, kostka.get("zdroj", {}).get("datum") or dnes, "0.6"))
+    radky.append(url(PRISPEVEK_CESTA, PRISPEVEK_ZMENENO, "0.5"))
     terminy = (akce_data or {}).get("terminy") or []
     if terminy:
         stazeno = ((akce_data or {}).get("stazeno") or dnes)[:10]

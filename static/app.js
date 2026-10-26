@@ -31,9 +31,20 @@
   var NAVIGACE = [['.dalsi', 'dalsi'], ['.drobecky', 'drobecky'],
     ['.menu', 'menu'], ['.stitek', 'stitek']];
 
+  // Odkazy na formulář pro příspěvky. Odeslání samo změřit nejde: formulář
+  // je v rámu Googlu a cizí stránka do něj nevidí.
+  var PRISPEVEK = [['.menu', 'menu'], ['footer', 'paticka'], ['.vyzva-uvod', 'uvod'],
+    ['.vyzva-clanek', 'clanek'], ['.vyzva-o-webu', 'o-webu']];
+
   document.addEventListener('click', function (udalost) {
     var a = udalost.target.closest && udalost.target.closest('a[href]');
     if (!a) return;
+    if (a.pathname === '/poslat-novinku.html') {
+      for (var j = 0; j < PRISPEVEK.length; j++) {
+        if (a.closest(PRISPEVEK[j][0])) return zmer('prispevek_klik', { misto: PRISPEVEK[j][1] });
+      }
+      return zmer('prispevek_klik', { misto: 'jinde' });
+    }
     if (a.closest('.pribeh-odkaz')) return zmer('pribeh_stazeni');
     if (/\/feed\.xml$/.test(a.pathname)) return zmer('rss_klik');
     if (a.classList.contains('filtr-odkaz')) {

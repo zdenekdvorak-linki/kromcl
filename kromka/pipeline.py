@@ -32,7 +32,11 @@ def nove_polozky(limit=None, nejstarsi=False, jen_novejsi=False):
 
 
 def _nejnovejsi_hotovy():
-    data = [c.get("published", "") for c in store.vsechny()]
+    # Jen články ze zdrojů. Pozvánka a příspěvek čtenáře mají datum vzniku
+    # u nás; zpráva, kterou město vydalo dřív a cron ji ještě nestihl, by
+    # jinak spadla pod hranici a už by se nezpracovala.
+    data = [c.get("published", "") for c in store.vsechny()
+            if c.get("source") in sources.REGISTR]
     return max(data) if data else ""
 
 

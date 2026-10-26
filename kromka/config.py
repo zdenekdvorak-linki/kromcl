@@ -78,6 +78,16 @@ AKCE_DNI = 30
 # přeskočí, dokud jsou uložená data mladší.
 AKCE_MAX_STARI_HODIN = 12
 
+# --- Příspěvky čtenářů ----------------------------------------------------
+# Google Form → tabulka → Apps Script (apps-script/prispevky.gs). Adresa a
+# klíč jsou tajné, žijí v .env a v repo secrets. Prázdná adresa = vypnuto.
+# KROMKA_PRISPEVKY_SOUBOR čte místo endpointu lokální JSON (testy, náhled).
+PRISPEVKY_URL = os.environ.get("KROMKA_PRISPEVKY_URL", "")
+PRISPEVKY_KLIC = os.environ.get("KROMKA_PRISPEVKY_KLIC", "")
+PRISPEVKY_SOUBOR = os.environ.get("KROMKA_PRISPEVKY_SOUBOR", "")
+# Adresa formuláře pro iframe (…/viewform?embedded=true). Není tajná.
+PRISPEVKY_FORMULAR = os.environ.get("KROMKA_PRISPEVKY_FORMULAR", "")
+
 # --- Modely ---------------------------------------------------------------
 # Klasifikace je jednoslovná odpověď, stačí nejlevnější model.
 MODEL_CLASSIFY = os.environ.get("KROMKA_MODEL_CLASSIFY", "claude-haiku-5-5")

@@ -107,6 +107,70 @@ Datum: {datum}
 
 {text}"""
 
+PRISPEVEK_PROMPT = """Jsi redaktor webu {brand}, který píše o dění v Kroměříži.
+
+Čtenář nám poslal vlastní novinku a souhlasil, že ji přepíšeme a zveřejníme
+pod jeho jménem. Redakce ji přečetla a schválila. Teď z ní uděláš zprávu
+naším jazykem.
+
+## Jak z příspěvku udělat zprávu
+
+1. Vypiš si holá fakta: co, kdo, kdy, kde, za kolik.
+2. Napiš z nich zprávu po svém. Začni tím, co je pro čtenáře v Kroměříži
+   nejdůležitější, i kdyby to v příspěvku bylo až na konci.
+3. Je to zpráva od čtenáře, ne oznámení města. Nepodávej ji jako oficiální
+   stanovisko radnice ani jako ověřený fakt, který víme sami. Pod článkem
+   bude podpis autora, takže ho v textu jmenovat nemusíš.
+4. Když čtenář něco hodnotí nebo si stěžuje, nech to jako jeho pohled a
+   nepřiostřuj to. Nikoho neobviňuj víc, než to dělá příspěvek.
+
+## Tón
+
+{ton}
+
+{jazyk}
+
+{proti_slopu}
+
+## Pravidla, která se neporušují
+
+1. Nesmíš přidat JEDINÝ fakt, který ti příspěvek nedal. Žádná čísla, data,
+   jména, částky, místa ani důvody navíc. Když příspěvek neříká proč, ty taky ne.
+2. Čísla, data a částky musí sedět přesně.
+3. Nepoužívej uvozovky a necituj nikoho přímo. Co někdo řekl, parafrázuj.
+4. Jména a funkce zachovej správně. Nikomu se neposmívej. Vtip patří situaci
+   a úřednímu jazyku, nikdy konkrétnímu člověku.
+5. Nehodnoť politicky.
+6. Nadpis nesmí končit tečkou.
+7. Nemluv o příspěvku, o čtenáři ani o tom, odkud to víš. Píšeš zprávu.
+8. Číslo nikdy nepoužívej jako vtip vedle jiného čísla.
+9. Žádné e-maily, telefonní čísla ani čísla účtů. Kontakty prostě vynech.
+10. Vybírej, nepřevyprávěj. Odstavec má do 80 slov.
+
+## Výstup
+
+Vrať POUZE JSON, bez markdown bloku, v tomhle tvaru:
+
+{{
+  "headline": "nadpis, max 90 znaků, konkrétní, bez tečky na konci",
+  "tldr": [
+    {{"label": "Dvě Anglická Slova", "text": "jedna věta česky", "emoji": "🚌📺"}}
+  ],
+  "body": ["odstavec", "odstavec"],
+  "tags": ["lidé"]
+}}
+
+tldr má přesně 3 položky. body má 2 až 4 odstavce. tags jsou 1 až 3 krátká
+česká slova malými písmeny z okruhu: doprava, kultura, sport, školství, peníze,
+stavba, radnice, volby, příroda, lidé, akce.
+
+## Zdroj: příspěvek čtenáře, ze kterého si bereš fakta
+
+Titulek: {titulek}
+Datum: {datum}
+
+{text}"""
+
 TON_VOLNY = """Píšeš, jak se píše do skupinového chatu, ne jak se píše do
 novin. Vtip dělej ze situace a z úředního jazyka, nikdy z lidí. Když ti po
 dopsání zpráva zní jako běžné zpravodajství, přepiš ji."""
@@ -179,6 +243,9 @@ def _stub(prompt):
     if "píše pozvánku na akce" in prompt.split("\n", 1)[0]:
         return _stub_pozvanka(prompt)
     zdroj = prompt.split("## Zdroj", 1)[-1]
+    if "## Zdroj" in prompt:
+        # Zbytek nadpisu sekce („: příspěvek čtenáře…") do textu nepatří.
+        zdroj = zdroj.split("\n", 1)[-1]
     radky = [r.strip() for r in zdroj.split("\n") if r.strip()]
     titulek = next((r[8:].strip() for r in radky if r.startswith("Titulek:")), "Zpráva")
     odstavce = [r for r in radky if not r.startswith(("Titulek:", "Rubrika:", "Datum:"))]
@@ -249,7 +316,32 @@ def prepis(item, citlivost, pokusy=2):
     raise ValueError(str(posledni))
 
 
-def _jeden_pokus(item, zprava):
+def prepis_prispevku(item, pokusy=2):
+    """Přepis příspěvku čtenáře. Stejné pojistky jako u zpráv, kromě opisování.
+
+    Pojistky na převzaté formulace hlídají autorské právo města. Čtenář nám
+    text svěřil souhlasem ve formuláři, takže u něj ten důvod odpadá —
+    stejně jako u pozvánky, jejíž data jsou pod CC BY.
+    """
+    zprava = PRISPEVEK_PROMPT.format(
+        brand=config.BRAND, ton=TON_VOLNY, jazyk=styl.pravidla_jazyka(),
+        proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
+        titulek=item["title"], datum=(item.get("published") or "")[:10],
+        text="\n\n".join(item.get("body") or []),
+    )
+    posledni = None
+    for pokus in range(pokusy):
+        try:
+            return _jeden_pokus(item, zprava, opisovani=False)
+        except (ValueError, KeyError, TypeError) as exc:
+            posledni = exc
+            if pokus < pokusy - 1:
+                zprava += ("\n\n## Předchozí pokus neprošel\n{0}\n"
+                           "Oprav přesně tohle a zbytek nech být.").format(exc)
+    raise ValueError(str(posledni))
+
+
+def _jeden_pokus(item, zprava, opisovani=True):
     data = _json(_zeptej_se(config.MODEL_REWRITE, zprava, config.MAX_TOKENS_REWRITE))
 
     zdroj = " ".join([item["title"]] + (item.get("body") or []) + [item.get("perex", "")])
@@ -267,11 +359,11 @@ def _jeden_pokus(item, zprava):
     kontakty = zkontroluj_kontakty(vystup)
     if kontakty:
         raise ValueError("Výstup obsahuje kontaktní údaje: {0}".format(", ".join(kontakty)))
-    opsane = zkontroluj_opisovani(zdroj, vystup)
+    opsane = zkontroluj_opisovani(zdroj, vystup) if opisovani else []
     if opsane:
         raise ValueError("Doslova převzaté formulace z oznámení: {0}".format(
             " | ".join('„{0}"'.format(o) for o in opsane[:3])))
-    podobne = zkontroluj_podobne_vety(zdroj, vystup)
+    podobne = zkontroluj_podobne_vety(zdroj, vystup) if opisovani else []
     if podobne:
         raise ValueError(
             "Věty skoro totožné s oznámením (shoda {0}): „{1}\"".format(

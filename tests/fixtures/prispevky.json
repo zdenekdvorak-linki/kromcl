@@ -1,0 +1,23 @@
+{
+  "radky": [
+    {
+      "id": "2026-10-26T08:15:00Z",
+      "cas": "2026-10-26T08:15:00Z",
+      "jmeno": "Jana Nováková",
+      "nadpis": "Spolek Zahrada uklidil park Podzámčí",
+      "text": "V sobotu uklidilo 12 dobrovolníků ze spolku Zahrada park pod zámkem.\n\nSebrali 40 pytlů odpadu a příští úklid chystají na jaře.",
+      "odkaz": "https://example.org/spolek-zahrada",
+      "email": "jana@example.org",
+      "stav": "schváleno"
+    },
+    {
+      "id": "2026-10-26T09:00:00Z",
+      "cas": "2026-10-26T09:00:00Z",
+      "jmeno": "Petr",
+      "nadpis": "Nová kavárna na Velkém náměstí",
+      "text": "Na Velkém náměstí otevřela kavárna Pod Arkádami.",
+      "odkaz": "javascript:alert(1)",
+      "stav": "zamítnuto"
+    }
+  ]
+}

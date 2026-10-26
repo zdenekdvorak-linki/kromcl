@@ -5,7 +5,8 @@ import argparse
 import json
 import sys
 
-from . import akce, config, indexnow, kino_dk, pipeline, pozvanka, render, sources, store
+from . import (akce, config, indexnow, kino_dk, pipeline, pozvanka, prispevky, render,
+               sources, store)
 
 
 def main(argv=None):
@@ -48,6 +49,10 @@ def main(argv=None):
     p.add_argument("--vynutit", action="store_true",
                    help="napiš ji znovu, i když už pro ten týden existuje")
 
+    p = pod.add_parser("prispevky", help="zpracuje schválené příspěvky čtenářů a postaví web")
+    p.add_argument("--nanecisto", action="store_true",
+                   help="jen vypiš, co je v tabulce ke zpracování")
+
     pod.add_parser("build", help="vykreslí statický web ze uložených JSONů")
     p = pod.add_parser("all", help="run + build")
     p.add_argument("--limit", type=int, default=10)
@@ -89,6 +94,16 @@ def main(argv=None):
     if args.prikaz == "pozvanka":
         return _pozvanka(args)
 
+    if args.prikaz == "prispevky":
+        if not prispevky.zapnuto():
+            print("Příspěvky nejsou nastavené (KROMKA_PRISPEVKY_URL a _KLIC).")
+            return 1
+        if args.nanecisto:
+            for radek in prispevky.nacti():
+                print("{0:12s} {1}".format(radek.get("stav", ""), radek.get("nadpis", "")))
+            return 0
+        prispevky.v_cronu()
+
     if args.prikaz in ("akce", "all"):
         _akce(args)
         if args.prikaz == "akce":
@@ -106,6 +121,7 @@ def main(argv=None):
         nova = _pozvanka_v_cronu()
         if nova:
             hotove = list(hotove or []) + [nova]
+        hotove = list(hotove or []) + prispevky.v_cronu()
         if hotove:
             indexnow.zarad(indexnow.adresy(hotove))
 

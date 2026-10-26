@@ -14,7 +14,9 @@ logu změn, ne vedlejší efekt refaktoru.
    funkčního odkazu na zdroj se nepublikuje. Proto `NeresolvovanyClanek`.
    Jediná výjimka je týdenní pozvánka: oznámení za ní žádné není, zdrojem je
    program z otevřených dat. Má proto atribuci CC BY jako stránky programu,
-   odkaz na `/program.html` a u každé akce její vlastní odkaz.
+   odkaz na `/program.html` a u každé akce její vlastní odkaz. Druhá
+   výjimka je příspěvek čtenáře: veřejný originál nemá, zdrojem je
+   podepsaný čtenář. Článek nese jeho jméno a jeho odkaz, pokud ho dal.
 2. **Přepis nesmí přidat fakt.** Pojistky jsou strojové, ne jen prosba
    v promptu — `zkontroluj_cisla` a `zkontroluj_citace`. Když neprojdou,
    článek se zahodí a nezkouší se znovu se slabším pravidlem.
@@ -52,6 +54,9 @@ RSS feed města                  (708 položek, leden 2025 → dnes, jen perex)
    ├─ render → site/                HTML + RSS + sitemap + robots + karty og:image
    │
    └─ po nasazení: IndexNow         nové články → Bing, Seznam
+
+Google Form → tabulka → Stav „schváleno"     (příspěvky čtenářů)
+   └─ Apps Script → prispevky.v_cronu → přepis → pojistky → data/articles
 ```
 
 Stav mimo soubory projektu žádný není. `data/state.json`:
@@ -170,12 +175,12 @@ Test z 24. 10. 2026: **každý text s diakritikou spadne** na
 dopadl i pokus s cookie a hlavičkami vlastní stránky města, takže
 formulář je rozbitý pro všechny, nejen pro nás. Nic se neuložilo. Chybu
 i prosbu o `Access-Control-Allow-Origin: https://kromcl.cz` nese
-`dopis-sprave-akci.md`.
+`dopis-sprave-akci.md`, odeslaný 26. 10. 2026.
 
 Odsouhlasené zadání, které se staví po odpovědi města:
 
 - stránka `/program/pridat-akci.html`, odkaz v hlavním menu (po změně
-  znovu změřit hranici hamburgeru 900 px) a na všech stránkách programu
+  znovu změřit hranici hamburgeru 1040 px) a na všech stránkách programu
 - vlastní formulář posílá rovnou do městské databáze; povinná pole
   nahoře, zbytek (vstupné, plakát, odkazy, věk, telefon) sbalený
 - místo jedním polem s našeptávačem z číselníku v `data/akce.json`
@@ -211,6 +216,82 @@ Prompt navíc zakazuje psát do komentáře časy a ceny, protože jsou hned pod
 
 Adresa má pevný vzor `akce-v-kromerizi-26-rijna-1-listopadu-2026`, nevzniká
 z nadpisu. Ručně: `python -m kromka pozvanka [--tyden YYYY-MM-DD] [--vynutit]`.
+
+### Příspěvky čtenářů
+
+Čtenář pošle novinku na `/poslat-novinku.html`, redakce ji v tabulce
+schválí a hodinový cron ji přepíše a publikuje (`kromka/prispevky.py`).
+Modul je mimo `sources/` ze stejného důvodu jako `akce.py`: registr čeká
+feed s URL detailu.
+
+**Příjem je Google Form vložený v rámu** na vlastní stránce. Vlastní HTML
+formulář by odpověď Googlu nepřečetl a hlásil by „odesláno" naslepo, což
+jsme u přidání akce zamítli. Google se načte jen na téhle stránce.
+
+**Tabulka je pravda o stavu**, ne `state.json`. Sloupec Stav:
+
+| Stav | Kdo ho píše | Co se stane |
+|---|---|---|
+| prázdný | formulář | čeká na redakci |
+| `schváleno` | redakce | cron přepíše a publikuje |
+| `zamítnuto` | redakce | nic |
+| `publikováno` | cron | do sloupce Odkaz na článek jde adresa |
+| `chyba` | cron | pojistka neprošla, druh pádu je v Poznámce. Text jde v tabulce opravit a dát znovu `schváleno` |
+| `stáhnout` | redakce | cron smaže JSON, článek zmizí z webu |
+| `staženo` | cron | hotovo; v historii veřejného repa text zůstává |
+
+**Čtení tabulky** obstarává Apps Script `apps-script/prispevky.gs`, nasazený
+jako webová aplikace, chráněný klíčem. Vrací jen řádky `schváleno` a
+`stáhnout` a nikdy e-mail: ten je jen pro redakci. Článek si navíc bere jen
+vyjmenovaná pole, test to hlídá. Service account se Sheets API by
+potřeboval knihovnu na podpis JWT (princip 6).
+
+**Přepis** má vlastní prompt `PRISPEVEK_PROMPT`: stejný tón a pravidla jako
+zprávy, zprávu ale nepodává jako stanovisko radnice a nic nepřiostřuje.
+Pojistky čísla, citace, kontakty, slang a antiteze platí. **Opisování se
+nekontroluje**: chrání autorské právo města, a čtenář nám text svěřil
+souhlasem. Jedno schválení stačí, redakce schvaluje originál.
+
+**Na webu** má příspěvek štítek „od čtenáře", pod textem podpis
+„Poslal(a) <jméno>" a odkaz `rel="nofollow ugc noopener"` (jen http a https),
+v JSON-LD autora `Person`. Odkaz na formulář je v menu, v patičce, na
+stránce O webu, v boxu na úvodce a pod každým článkem.
+
+`published` je čas publikace u nás. Hranice `jen_novejsi` proto bere jen
+články ze zdrojů, jinak by zpráva vydaná městem dřív než příspěvek už
+nikdy neprošla.
+
+**Kde to žije** (založeno 26. 10. 2026): účet zdenek@linki.cz, samostatný
+projekt Apps Script „KROMCL – příspěvky čtenářů". Ten drží formulář
+„KROMCL – pošli novinku", tabulku „KROMCL – příspěvky čtenářů" a jejich ID
+ve vlastnostech skriptu (`FORMULAR_ID`, `TABULKA_ID`, `KLIC`). Upozornění na
+nový příspěvek chodí na zdenek@linki.cz (`UPOZORNENI` ve skriptu).
+Adresa endpointu a klíč jsou v `.env` a v repo secrets, adresa formuláře
+v proměnné repa `KROMKA_PRISPEVKY_FORMULAR`.
+
+Všechno zakládá skript sám, ručně se nic nenaklikává:
+
+1. Nový projekt na script.google.com, vložit `apps-script/prispevky.gs`,
+   spustit `zalozit()` a potvrdit oprávnění. Založí formulář bez přihlášení
+   s otázkami **Jméno**, **E-mail**, **Nadpis**, **Text**, **Odkaz**
+   (nepovinný) a souhlasem, tabulku se sloupci **Stav** (rozbalovací seznam
+   všech hodnot z tabulky výš), **Odkaz na článek** a **Poznámka**,
+   upozornění a klíč. Do protokolu vypíše adresy a klíč. Podruhé se
+   nespustí, aby nevznikly dva formuláře.
+2. Implementovat → Nová implementace → Webová aplikace, spouštět jako já,
+   přístup **Kdokoli** (cron v Actions se nepřihlašuje; chrání to klíč).
+3. Spustit `zverejnit()`. Do té doby formulář nikdo z venku nevyplní.
+4. Repo secrets `KROMKA_PRISPEVKY_URL` a `KROMKA_PRISPEVKY_KLIC`, proměnná
+   `KROMKA_PRISPEVKY_FORMULAR` s adresou `…/viewform?embedded=true`.
+   Lokálně totéž do `.env`.
+
+Změna kódu skriptu se do běžícího endpointu dostane až novou verzí
+implementace (Implementovat → Spravovat implementace → upravit → Nová verze);
+adresa zůstane stejná. Názvy otázek jsou zároveň názvy sloupců: přejmenovaná
+otázka se musí přejmenovat i v `OTAZKY` ve skriptu.
+
+Ruční běh: `python -m kromka prispevky [--nanecisto]`. Bez tabulky:
+`KROMKA_PRISPEVKY_SOUBOR=tests/fixtures/prispevky.json`.
 
 ### Pojistka na čísla
 
@@ -269,6 +350,10 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/render.py` | `KOSTKA_CESTA`, `_kostka`, `_ld_kostka`, `_kostka_stranka` — stránka průvodce, atribuce CC BY-SA, JSON-LD `Article` s `isBasedOn` |
 | `kromka/og.py` | karta 1200 × 630 pro `og:image`: `vytvor`, `rozloz_titulek`; `cesta`, `tvary`, `piktogram` — převod SVG piktogramů na čáry pro Pillow |
 | `kromka/render.py` | `_og` (adresa karty z adresy stránky), `_ld_vydavatel` (logo, `sameAs`), `_zmeneno` a `_sitemap` (`lastmod` podle obsahu), parametr `indexovat` v `_stranka` |
+| `kromka/prispevky.py` | příspěvky čtenářů: `nacti`, `napis`, `stahni`, `zapis_stav`, `v_cronu`; **mimo `sources/`** |
+| `kromka/rewrite.py` | `PRISPEVEK_PROMPT`, `prepis_prispevku` — přepis příspěvku bez pojistky na opisování |
+| `kromka/render.py` | `PRISPEVEK_CESTA`, `_vyzva`, `_podpis`, `_prispevek_stranka` — formulář v rámu, štítek a podpis u příspěvku |
+| `apps-script/prispevky.gs` | `zalozit` (formulář, tabulka, upozornění, klíč), `zverejnit`, endpoint `doPost` (čtení schválených řádků bez e-mailu, zápis stavu); vkládá se na script.google.com ručně |
 | `kromka/indexnow.py` | fronta adres z `all` vedle složky webu a odeslání na `api.indexnow.org`; příkaz `python -m kromka indexnow` |
 
 ## Vývojové poznámky
@@ -380,6 +465,12 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | **Týdenní pozvánka** na akce Po–Ne, v cronu v pondělí od 6:00, dohání se v úterý | Program je důvod k návratu, ale sám čtenáře neosloví. Model píše komentář ke dnům, fakta jsou karty ze snímku dat. Výjimka z principu 1, atribuce CC BY místo odkazu na oznámení |
 | 2026-10-24 | **Core Web Vitals do GA4** (web-vitals 6.2.3 ve `static/vendor/`), oprava CLS víkendu, obrázek ke sdílení až 3 s po načtení | Google o malém webu vlastní data nemá, laboratoř je odhad. Víkend posouvalo odkrývané tlačítko Sdílet (CLS 0,16 → 0) a předem stahovaný obrázek zdržoval LCP (2,5 → 2,0 s). Ořezání přednačtení písem změřeno a zamítnuto: LCP beze změny, FCP horší |
 | 2026-10-25 | web-vitals se načítá hned s nízkou prioritou, ne po `load` | `load` čeká i na 177 kB `gtag.js`, takže by se neměřily právě nejpomalejší návštěvy. A/B v Lighthouse: LCP beze změny. V Edge s odchodem přes odkaz dorazily LCP, CLS i INP 12× z 12 v obou variantách |
+| 2026-10-26 | **Příspěvky čtenářů**: Google Form v rámu na `/poslat-novinku.html`, schválení v tabulce, Apps Script endpoint, přepis v cronu, stažení stavem v tabulce | Čtenáři mají mít jak poslat vlastní novinku. Jedno schválení originálu, pojistky hlídají přepis. Povinné jméno pod článkem, e-mail jen v tabulce. Odkaz čtenáře `nofollow ugc`. Výjimka z principu 1 zapsaná v Principech |
+| 2026-10-26 | Formulář, tabulku a upozornění zakládá skript (`zalozit`), samostatný projekt v účtu zdenek@linki.cz; endpoint nasazený, formulář zveřejněný, secrets nastavené | Ruční naklikání formuláře a sloupců se dá snadno splést a názvy otázek musí sedět se sloupci. Upozornění z vlastního spouštěče, protože FormApp e-mailové notifikace Forms zapnout neumí |
+| 2026-10-26 | Pojistka na opisování se u příspěvků nevolá | Chrání autorské právo města; čtenář text svěřil souhlasem. Stejně jako u pozvánky |
+| 2026-10-26 | Hamburger do **1040 px** místo 900 | Položka „pošli novinku" natáhla menu na 604 px, láme se pod 1005 px okna (měřeno: 1000 dva řádky, 1010 jeden). Rezerva na Mac stejná jako dřív |
+| 2026-10-26 | `jen_novejsi` počítá hranici jen z článků ze zdrojů | Pozvánka a příspěvek mají datum vzniku u nás; zpráva vydaná městem dřív by pod hranici spadla a už se nezpracovala |
+| 2026-10-26 | `stub` vynechá zbytek nadpisu sekce „## Zdroj…" | Jinak by se v zkušebním běhu příspěvku objevil jako odstavec |
 | 2026-10-26 | **Nadpisy Syne 730** místo 800, logo zůstává 800; karty og:image a víkendu statický Syne 700 | Zpětná vazba: extended řez v nadpisech „bolí oči". Syne nemá osu šířky, roztahuje se s váhou a mezi 700 a 800 nejvíc. 730 je výrazně užší a pořád tučné; 700 působilo lehce. Stačí stávající proměnný woff2 (700–800). Pillow umí jen statické TTF a Google jinou mezivahu nedá, proto na kartách 700 |
 
 ## Appka a favicona
@@ -574,6 +665,11 @@ protože rozhraní GA4 dovolí označit jen událost, která už má zpracovaná
 | `instalace_nabidka` | lišta s instalací | `vysledek`: `zobrazeno`, `prijato`, `odmitnuto`, `ted_ne`, `ios_navod` |
 | `navigace` | klik v `.dalsi`, `.drobecky`, `.menu`, na `.stitek` (v tomhle pořadí) | `misto`: `dalsi`, `drobecky`, `menu`, `stitek` |
 | `program_filtr` | klik na `.filtr-odkaz` | `typ_akce`: slug typu nebo okna, `vse` |
+| `prispevek_klik` | klik na odkaz na `/poslat-novinku.html` (má přednost před `navigace`) | `misto`: `menu`, `paticka`, `uvod`, `clanek`, `o-webu`, `jinde` |
+
+Odeslání formuláře změřit nejde: je v rámu Googlu a stránka do něj nevidí.
+Kolik příspěvků přišlo, ukáže tabulka. Parametr `misto` je v GA4 jako
+vlastní dimenze zaregistrovaný už kvůli `navigace`.
 
 Všech šest parametrů je v GA4 zaregistrovaných jako vlastní dimenze
 s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
@@ -666,4 +762,10 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Hlásit přes IndexNow i program | Přestavuje se každou hodinu, vyhledávače by hlášení braly jako spam |
 | Google News sitemap | Při jednom článku denně a hodinové sitemapě nic nepřidá; až kdyby se KROMCL hlásil do Google News |
 | `twitter:site` | KROMCL nemá účet na X; doplní se s `config.PROFILY` |
+| Fotka v příspěvku čtenáře | Licence k cizí fotce, EXIF s polohou a úložiště; zatím jen text a odkaz |
+| Vlastní HTML formulář místo Google Formu | Odpověď Googlu by nešla přečíst a formulář by hlásil „odesláno" naslepo |
+| Příspěvky přes Cloudflare Worker do issues soukromého repa | Zdeněk zvolil Google Form; Worker by byl další účet a služba |
+| Čtení tabulky přes service account a Sheets API | Podpis JWT ve stdlib nejde, přibyla by `google-auth` (princip 6) |
+| Dvojí schválení (originál, pak přepis) | Zdeněk chce jedno; přepis hlídají pojistky a jde stáhnout |
+| Turnstile nebo jiný antispam u formuláře | Každý příspěvek čte redakce, spam se zastaví tam; řešit až kdyby ho bylo moc |
 | Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |
