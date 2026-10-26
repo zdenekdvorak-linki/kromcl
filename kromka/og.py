@@ -26,13 +26,13 @@ import math
 import re
 from pathlib import Path
 
-from . import karta, piktogramy
+from . import config, karta, piktogramy
 
 ROZMER = (1200, 630)
 
 PAPIR = "#f5f3ee"
 INKOUST = "#0c0c0c"
-ZELENA = "#39E67A"
+ZELENA = config.ACCENT
 BILA = "#ffffff"
 
 PISMA = Path(__file__).resolve().parent / "pisma"

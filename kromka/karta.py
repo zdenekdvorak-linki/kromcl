@@ -25,7 +25,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from . import znacka
+from . import config, znacka
 
 ROZMER = (1080, 1920)
 MAX_AKCI = 6
@@ -34,7 +34,7 @@ NA_DEN = 3
 
 PAPIR = "#f5f3ee"
 INKOUST = "#0c0c0c"
-ZELENA = "#39E67A"
+ZELENA = config.ACCENT
 SEDA = "#55524c"
 BILA = "#ffffff"
 

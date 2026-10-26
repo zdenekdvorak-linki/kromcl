@@ -31,7 +31,7 @@ BRAND = "KROMCL"
 TAGLINE = "Kroměříž bez filtru"
 SITE_URL = os.environ.get("KROMKA_SITE_URL", "https://kromcl.cz")
 LOCALE = "cs_CZ"
-ACCENT = "#39E67A"  # signální zelená, používá se jen na akcenty
+ACCENT = "#26C064"  # signální zelená jen na akcenty; jediné místo, odkud ji bere web, ikony i karty
 
 # --- Měření ---------------------------------------------------------------
 # GA4, služba KROMCL v účtu gyd.name. Prázdná hodnota měření vypne.

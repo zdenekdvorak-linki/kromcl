@@ -174,8 +174,8 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 /* --- Program akcí. Nový blok patří na konec: výš v souboru se pravidla
    přebíjejí (.obrazek má aspect-ratio dvakrát) a vkládat doprostřed se
    nevyplácí. --- */
-/* Program jako štítek, ne zelený text. Zelená #39E67A na bílé má kontrast
-   1,6 : 1 a WCAG chce u malého textu 4,5. Černá na zelené dá 11,9 : 1 a
+/* Program jako štítek, ne zelený text. Zelená na bílé má kontrast 2,4 : 1
+   a WCAG chce u malého textu 4,5. Černá na zelené dá 8,8 : 1 a
    sedí to k aktivnímu filtru i ke štítkům témat. Selektor s `a` kvůli
    specifičnosti — `.menu .odkazy a` by jinak přebil rámeček i odsazení. */
 .menu .odkazy a.je-sekce { background: var(--akcent); color: #000; padding: 3px 8px; border: 2px solid var(--ram); }

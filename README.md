@@ -517,6 +517,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Program pro děti** na `/program/deti.html` podle příznaku města, bez pietních aktů a kladení věnců | Zpětná vazba na rozcestník akcí. Jako jediný výběr mimo okna má hledanost (30 + 20 měsíčně). Příznak je hrubý, má ho polovina termínů, proto „vhodné pro děti“ a poctivý úvod místo vlastního výběru |
 | 2026-10-26 | **Filtr podle data** na programu, typech a dětech: předvolby + od–do v `app.js`, adresa `?od=&do=`, kanonická bez parametrů, GA4 `program_cas` | Zpětná vazba na rozcestník akcí. Výběr se má dát poslat dál, ale nemá dělat nové stránky pro vyhledávač |
 | 2026-10-26 | **UTM na všech odkazech ven** (`_ven`), kampaň podle místa na webu; sdílení, JSON-LD a Klubíčko (404 s parametry) bez UTM | Zadání Zdeňka: ať se o nás ví. Referrer ukáže jen doménu, UTM pojmenovaný zdroj v přehledech pořadatelů. Rozhodnutí z 24. 10. o sdílení bez UTM platí dál, sdílí se adresy KROMCL |
+| 2026-10-26 | **Akcentová zelená `#26C064`** místo `#39E67A`; `ZELENA` ve `znacka`, `karta` a `og` se bere z `config.ACCENT`, ikony přegenerované `bin/ikony.py` | Designér: zelená vedle bílé a ikon „vypaluje oči". Ze čtyř variant prostřední: pořád svítivá, ale klidnější. Černý text na ní má 8,8 : 1 (dřív 12,8), WCAG drží s rezervou. Hex byl natvrdo na čtyřech místech, teď na jednom |
 
 ## Appka a favicona
 
@@ -653,7 +654,7 @@ proti prohlížeči na všech dvaceti tvarech. Test hlídá, že se převede ka�
 tvar v `piktogramy.TVARY` — nový příkaz SVG by jinak shodil build.
 
 PNG je v paletě o 64 barvách (MEDIANCUT): 20 kB místo 59 kB a značková
-zelená zůstává přesně `#39E67A`. FASTOCTREE je dvakrát rychlejší, ale barvy
+zelená zůstává přesně `config.ACCENT`. FASTOCTREE je dvakrát rychlejší, ale barvy
 posouvá o jedničku. Karta trvá asi 45 ms, u 64 článků a 26 dalších stránek
 přidá build asi čtyři sekundy.
 
@@ -842,3 +843,5 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Vlastní výběr dětských akcí podle slov (pohádka, dílna, rodina…) | Náš úsudek nad daty, která přebíráme beze změny, a s dírami. Bere se příznak pořadatele, vyřazují se jen obřady |
 | Filtr podle data na oknech Dnes a Víkend | Okno je jejich smysl; rozsah uvnitř dne nebo víkendu nic nepřidá |
 | Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |
+| Zelená `#2DD46E` (ztmavit jen maličko) | Od původní `#39E67A` se na pohled skoro neliší, oči by pálila dál |
+| Zelená `#2AAE5E` (tlumená) | Šetří oči nejvíc, ale je už trávová a působí jako jiná značka |

@@ -15,7 +15,9 @@ zůstala čistá i v 16 px na skutečném rastru; ostatní se v liště slévaly
 
 import math
 
-ZELENA = "#39E67A"
+from . import config
+
+ZELENA = config.ACCENT
 INKOUST = "#0c0c0c"
 MRIZKA = 64
 
