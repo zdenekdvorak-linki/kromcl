@@ -146,7 +146,8 @@ class PrispevkyOdkazy(unittest.TestCase):
         # Bez JS skrytý, místo něj odkaz na Google Form bez parametru pro rám.
         self.assertRegex(html, r'<form class="prispevek"[^>]* hidden>')
         self.assertIn('<noscript><p class="zdroj">Formulář potřebuje JavaScript', html)
-        self.assertIn('href="https://docs.google.com/forms/d/e/x/viewform"', html)
+        self.assertIn('href="https://docs.google.com/forms/d/e/x/viewform?utm_source=', html)
+        self.assertNotIn("embedded=true", html)
         self.assertNotIn("<iframe", html)
         for nazev in ("jmeno", "email", "nadpis", "text", "odkaz", "souhlas", "web"):
             self.assertIn('name="{0}"'.format(nazev), html, nazev)

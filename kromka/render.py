@@ -497,6 +497,36 @@ def _abs(cesta):
     return config.SITE_URL.rstrip("/") + cesta
 
 
+# Weby, které na adresu s parametry vrací 404. UTM by z funkčního odkazu
+# udělalo rozbitý; ověřeno 26. 10. 2026 proti všem doménám z programu.
+_BEZ_UTM = {"www.klubickokm.cz", "klubickokm.cz"}
+
+
+def _ven(url, kampan):
+    """Odkaz ven s UTM, aby nás cílový web viděl jako zdroj návštěv.
+
+    Jde na každý proklik z webu ven, ať o KROMCL vědí pořadatelé i weby, na
+    které posíláme lidi. Ne na sdílení (adresy KROMCL zůstávají bez
+    parametrů, viz `_sdilet`) a ne do JSON-LD, to není proklik. UTM, které
+    v odkazu už je, se nepřepisuje: pořadatel si ho tam dal sám. Kotva
+    zůstává na konci, jinak by parametry skončily v ní. Holá doména dostane
+    lomítko, `hkkm.cz?utm_…` je sice platné, ale vypadá jako chyba.
+    """
+    if not url or "utm_" in url:
+        return url
+    casti = urlparse(url)
+    if casti.hostname in _BEZ_UTM:
+        return url
+    adresa, kotva = (url.split("#", 1) + [""])[:2]
+    if not casti.path and not casti.query:
+        adresa += "/"
+    parametry = "utm_source={0}&utm_medium=referral&utm_campaign={1}".format(_domena(), kampan)
+    if not adresa.endswith(("?", "&")):
+        adresa += "&" if "?" in adresa else "?"
+    adresa += parametry
+    return adresa + ("#" + kotva if kotva else "")
+
+
 def _datum_cesky(iso):
     if not iso:
         return ""
@@ -796,7 +826,7 @@ def _podpis(clanek):
     odkaz = ""
     if clanek.get("odkaz"):
         odkaz = ' Víc najdeš <a href="{0}" rel="nofollow ugc noopener">u zdroje</a>.'.format(
-            _e(clanek["odkaz"]))
+            _e(_ven(clanek["odkaz"], "prispevek")))
     return ('<p class="zdroj">Poslal(a) <b>{0}</b>. Text jsme přepsali do našeho '
             'jazyka a před zveřejněním ho viděla redakce.{1}</p>').format(
                 _e(clanek.get("autor", "")), odkaz)
@@ -812,7 +842,8 @@ def _pozvanka_telo(clanek):
     for den in clanek.get("dny", []):
         terminy = den.get("terminy") or []
         seznam = ('<div class="akce-seznam">{0}</div>'.format(
-            "".join(_karta_akce(t, cas_zacatku=True) for t in terminy)) if terminy
+            "".join(_karta_akce(t, cas_zacatku=True, kampan="pozvanka")
+                    for t in terminy)) if terminy
             else '<p class="akce-prazdno">Tenhle den se v programu nic nekoná.</p>')
         casti.append(
             '<section class="den"><h2 id="d{0}">{1}</h2>{2}{3}</section>'.format(
@@ -825,10 +856,10 @@ def _pozvanka_telo(clanek):
             '<div class="akce-seznam">{1}</div></section>'.format(
                 '<p>{0}</p>'.format(_e(clanek["vystavy_text"]))
                 if clanek.get("vystavy_text") else "",
-                "".join(_karta_akce(t) for t in clanek["vystavy"])))
+                "".join(_karta_akce(t, kampan="pozvanka") for t in clanek["vystavy"])))
     casti.append('<p class="pozvanka-zaver"><a href="{0}">{1}</a></p>'.format(
         PROGRAM_CESTA, _e(clanek.get("zaver") or "Celý program")))
-    casti.append(_atribuce())
+    casti.append(_atribuce("pozvanka"))
     return "".join(casti)
 
 
@@ -1142,9 +1173,10 @@ def _cena_text(termin):
     return text
 
 
-def _karta_akce(termin, cas_zacatku=False):
+def _karta_akce(termin, cas_zacatku=False, kampan="program"):
     """`cas_zacatku`: vícedenní akce ukáže ve sloupci začátek, ne konec. Pro
-    seznam dne v pozvánce, kde Halloweenská noc patří k sobotnímu večeru."""
+    seznam dne v pozvánce, kde Halloweenská noc patří k sobotnímu večeru.
+    `kampan` jde do UTM odkazů ven (`_ven`)."""
     tvar = piktogramy.pro_typ_akce(termin.get("typ"))
     if termin.get("vicedenni") and not cas_zacatku:
         kdy = "do {0}".format(_datum_kratce(termin.get("konec", "")))
@@ -1176,10 +1208,10 @@ def _karta_akce(termin, cas_zacatku=False):
     odkazy = []
     if termin.get("web"):
         odkazy.append('<a href="{0}" rel="noopener">Víc o akci</a>'.format(
-            _e(termin["web"])))
+            _e(_ven(termin["web"], kampan))))
     if termin.get("youtube"):
-        odkazy.append('<a href="https://www.youtube.com/watch?v={0}" '
-                      'rel="noopener">Trailer</a>'.format(_e(termin["youtube"])))
+        odkazy.append('<a href="{0}" rel="noopener">Trailer</a>'.format(_e(_ven(
+            "https://www.youtube.com/watch?v=" + termin["youtube"], kampan))))
 
     nazev = _e(termin.get("nazev", ""))
     if kino.get("puvodni_nazev"):
@@ -1237,7 +1269,7 @@ def _filtr(aktivni, dostupne):
         "".join(kusy))
 
 
-def _atribuce():
+def _atribuce(kampan="program"):
     """Podpis pod programem. Licence ho vyžaduje na každé stránce s daty."""
     return (
         '<p class="atribuce">Data o akcích poskytuje '
@@ -1245,8 +1277,8 @@ def _atribuce():
         'licencí <a href="{lic_url}" rel="license noopener">{lic}</a>. '
         'Program přebíráme beze změny, včetně časů a cen; ověřit si je '
         'u pořadatele se vždycky vyplatí.</p>'
-    ).format(spec=_e(config.AKCE_SPECIFIKACE), kdo=_e(config.AKCE_POSKYTOVATEL),
-             lic_url=_e(config.AKCE_LICENCE_URL), lic=_e(config.AKCE_LICENCE))
+    ).format(spec=_e(_ven(config.AKCE_SPECIFIKACE, kampan)), kdo=_e(config.AKCE_POSKYTOVATEL),
+             lic_url=_e(_ven(config.AKCE_LICENCE_URL, kampan)), lic=_e(config.AKCE_LICENCE))
 
 
 _PREDVOLBY = (("zitra", "Zítra"), ("tyden", "Tento týden"), ("pristi-tyden", "Příští týden"))
@@ -1789,7 +1821,7 @@ def _prispevek_formular():
     if config.PRISPEVKY_FORMULAR:
         zaloha = ('<noscript><p class="zdroj">Formulář potřebuje JavaScript. Bez něj '
                   'nám novinku pošleš <a href="{0}">přes Google Formulář</a>.</p>'
-                  '</noscript>').format(_e(_google_formular()))
+                  '</noscript>').format(_e(_ven(_google_formular(), "poslat-novinku")))
     return (
         '<form class="prispevek" data-adresa="{adresa}" data-zaloha="{zaloha_url}" '
         'novalidate hidden>{pole}{souhlas}{past}'
@@ -1800,7 +1832,8 @@ def _prispevek_formular():
         'na kromcl.cz pod svým jménem.</p>'
         '<button type="button" class="dalsi-prispevek">Poslat další</button></div>'
         '{noscript}'
-    ).format(adresa=_e(config.PRISPEVKY_URL), zaloha_url=_e(_google_formular()),
+    ).format(adresa=_e(config.PRISPEVKY_URL),
+             zaloha_url=_e(_ven(_google_formular(), "poslat-novinku")),
              pole=pole, souhlas=souhlas, past=past, noscript=zaloha)
 
 
@@ -1874,9 +1907,10 @@ def _kostka(data):
         'Převyprávěli jsme ho po svém. Původní heslo i tenhle průvodce jsou pod '
         'licencí <a href="{lic_url}" rel="license noopener">{lic}</a>, takže ho '
         'můžeš dál sdílet a upravovat za stejných podmínek.</p>'
-    ).format(url=_e(_kostka_zdroj_url(zdroj)), heslo=_e(zdroj["heslo"]),
-             datum=_e(_datum_cesky(zdroj["datum"])), historie=_e(zdroj["historie"]),
-             lic_url=_e(zdroj["licence_url"]), lic=_e(zdroj["licence"]))
+    ).format(url=_e(_ven(_kostka_zdroj_url(zdroj), "kostka")), heslo=_e(zdroj["heslo"]),
+             datum=_e(_datum_cesky(zdroj["datum"])),
+             historie=_e(_ven(zdroj["historie"], "kostka")),
+             lic_url=_e(_ven(zdroj["licence_url"], "kostka")), lic=_e(zdroj["licence"]))
     return (
         '<article class="clanek kostka">{drobecky}<h1>{nadpis}</h1>'
         '<p class="uvod">{uvod}</p>'

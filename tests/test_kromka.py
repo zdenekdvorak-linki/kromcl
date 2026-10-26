@@ -791,6 +791,53 @@ class AkceVykresleni(unittest.TestCase):
         self.assertIn("creativecommons.org", podpis)
 
 
+class OdkazyVen(unittest.TestCase):
+    """UTM na proklicích ven, ať cílové weby vidí KROMCL jako zdroj."""
+
+    UTM = "utm_source=kromcl.cz&utm_medium=referral&utm_campaign=program"
+
+    def test_prida_utm(self):
+        self.assertEqual(render._ven("https://www.hkkm.cz/akce", "program"),
+                         "https://www.hkkm.cz/akce?" + self.UTM)
+
+    def test_hola_domena_dostane_lomitko(self):
+        self.assertEqual(render._ven("https://www.hkkm.cz", "program"),
+                         "https://www.hkkm.cz/?" + self.UTM)
+
+    def test_web_rozbity_parametry_utm_nedostane(self):
+        # Klubíčko vrací na adresu s parametry 404.
+        url = "https://www.klubickokm.cz/vzdelani-pro-rodice/"
+        self.assertEqual(render._ven(url, "program"), url)
+
+    def test_k_existujicim_parametrum_pres_ampersand(self):
+        self.assertEqual(render._ven("https://www.youtube.com/watch?v=abc", "program"),
+                         "https://www.youtube.com/watch?v=abc&" + self.UTM)
+
+    def test_kotva_zustane_na_konci(self):
+        self.assertEqual(render._ven("https://x.cz/akce?id=1#termin", "program"),
+                         "https://x.cz/akce?id=1&" + self.UTM + "#termin")
+
+    def test_vlastni_utm_poradatele_se_neprepisuje(self):
+        url = "https://x.cz/?utm_source=facebook"
+        self.assertEqual(render._ven(url, "program"), url)
+
+    def test_prazdny_odkaz_zustane_prazdny(self):
+        self.assertEqual(render._ven("", "program"), "")
+
+    def test_karta_akce_ma_utm_jen_v_odkazech(self):
+        termin = {"nazev": "Film", "zacatek": "2026-10-24T17:30:00", "typ": "Kino",
+                  "web": "https://www.dk-kromeriz.cz/film", "youtube": "abc"}
+        karta = render._karta_akce(termin)
+        self.assertIn('href="https://www.dk-kromeriz.cz/film?' + self.UTM.replace("&", "&amp;"), karta)
+        self.assertIn("watch?v=abc&amp;utm_source=", karta)
+        self.assertIn("utm_campaign=pozvanka", render._karta_akce(termin, kampan="pozvanka"))
+        # Do strukturovaných dat jde adresa pořadatele beze změny.
+        self.assertEqual(render._ld_akce(termin)["url"], "https://www.dk-kromeriz.cz/film")
+
+    def test_sdileni_utm_nema(self):
+        self.assertNotIn("utm_", render._sdilet("T", "/program.html", "program"))
+
+
 class ProgramDetiACas(unittest.TestCase):
     """Stránka pro děti a filtr podle data."""
 

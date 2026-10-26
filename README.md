@@ -516,6 +516,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Nadpisy Syne 730** místo 800, logo zůstává 800; karty og:image a víkendu statický Syne 700 | Zpětná vazba: extended řez v nadpisech „bolí oči". Syne nemá osu šířky, roztahuje se s váhou a mezi 700 a 800 nejvíc. 730 je výrazně užší a pořád tučné; 700 působilo lehce. Stačí stávající proměnný woff2 (700–800). Pillow umí jen statické TTF a Google jinou mezivahu nedá, proto na kartách 700 |
 | 2026-10-26 | **Program pro děti** na `/program/deti.html` podle příznaku města, bez pietních aktů a kladení věnců | Zpětná vazba na rozcestník akcí. Jako jediný výběr mimo okna má hledanost (30 + 20 měsíčně). Příznak je hrubý, má ho polovina termínů, proto „vhodné pro děti“ a poctivý úvod místo vlastního výběru |
 | 2026-10-26 | **Filtr podle data** na programu, typech a dětech: předvolby + od–do v `app.js`, adresa `?od=&do=`, kanonická bez parametrů, GA4 `program_cas` | Zpětná vazba na rozcestník akcí. Výběr se má dát poslat dál, ale nemá dělat nové stránky pro vyhledávač |
+| 2026-10-26 | **UTM na všech odkazech ven** (`_ven`), kampaň podle místa na webu; sdílení, JSON-LD a Klubíčko (404 s parametry) bez UTM | Zadání Zdeňka: ať se o nás ví. Referrer ukáže jen doménu, UTM pojmenovaný zdroj v přehledech pořadatelů. Rozhodnutí z 24. 10. o sdílení bez UTM platí dál, sdílí se adresy KROMCL |
 
 ## Appka a favicona
 
@@ -722,6 +723,26 @@ v rozhraní GA4, jakmile má data.
 Všech šest parametrů je v GA4 zaregistrovaných jako vlastní dimenze
 s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
 jako `click` v rozšířeném měření.
+
+**UTM na odkazech ven.** Každý proklik z webu ven jde přes
+`render._ven` a dostane `utm_source=kromcl.cz&utm_medium=referral&utm_campaign=…`,
+aby pořadatelé a weby, na které posíláme lidi, viděli KROMCL ve svých
+přehledech jako pojmenovaný zdroj. Kampaň říká, odkud z webu odkaz je:
+
+| `utm_campaign` | Odkazy |
+|---|---|
+| `program` | „Víc o akci“, Trailer a atribuce na stránkách programu |
+| `pozvanka` | totéž v týdenní pozvánce |
+| `prispevek` | odkaz čtenáře pod jeho příspěvkem |
+| `kostka` | Wikipedie, historie hesla a licence v Kroměříži v kostce |
+| `poslat-novinku` | záložní Google Formulář |
+
+UTM, které v odkazu už je, se nepřepisuje. Výjimka je `_BEZ_UTM`: web,
+který na adresu s parametry vrací 404 (26. 10. 2026 jen Klubíčko,
+`klubickokm.cz`, 23 odkazů). Ověřeno stažením jednoho odkazu s UTM
+z každé domény programu. Bez UTM zůstává sdílení
+(adresy KROMCL, viz Tlačítko Sdílet) a JSON-LD, protože to není proklik.
+Naše vlastní kliky ven měří GA4 samo jako `click`; UTM je pro cílové weby.
 
 **Core Web Vitals návštěvníků.** Google vlastní data (CrUX) o malém webu
 mít nemusí, chybí mu návštěvy. `app.js` proto hned, s nízkou prioritou,
