@@ -154,6 +154,28 @@ právě probíhající (`_okno_vikend`). Vícedenní akce (výstavy) spadnou do
 okna, pokud přes něj běží. Prázdný typ se nevykreslí, prázdné okno ano —
 adresa musí být stabilní a „dnes se nic nekoná" je poctivá odpověď.
 
+**Pro děti** (`/program/deti.html`) je jediný výběr podle publika.
+Bere příznak `for_kids` z exportu, kterým město označí zhruba polovinu
+termínů, včetně hokeje 2. ligy, výstav a besed pro rodiče. Proto H1
+„vhodné pro děti“ a úvod, který řekne, že výběr dělá pořadatel. Vyřazují
+se jen obřady (`_OBRADY`: pietní akty, kladení a položení věnců), ne holé
+„věnc“, protože výroba adventních věnců je dětská dílna. Stránka se
+chová jako typ: bez jediného termínu nevznikne a nikam se na ni
+neodkazuje. Marketing Miner (říjen 2026): „kroměříž pro děti“ 30 hledání
+měsíčně, v červenci 90, „akce pro děti kroměříž“ 20; v sitemapě má proto
+0.6, nad typy.
+
+**Filtr podle data** je na celém programu, typech a dětech, ne na oknech
+Dnes a Víkend, ta mají rozsah pevný. Obsluhuje ho celý `app.js`, v HTML
+je skrytý, takže bez JS stránka ukáže všechno. Předvolby Zítra, Tento
+týden a Příští týden jen vyplní pole od–do; v adrese je vždy absolutní
+`?od=…&do=…`, aby sdílený „příští týden“ ukázal totéž i za týden.
+Pro SEO se neladí: kanonická adresa je bez parametrů, takže varianty
+vyhledávač nebere jako samostatné stránky. Akce zůstane vidět, když se
+její dny s rozsahem překrývají (`data-od`, `data-do` na kartě), jako
+v `_v_okne`. Tlačítko Sdílet ve filtru posílá kanonickou adresu
+s rozsahem, bez dalších parametrů.
+
 Cron volá `akce` každou hodinu, ale stahuje nejvýš jednou za
 `AKCE_MAX_STARI_HODIN` (12 h). Výpadek endpointu `all` neshodí, zůstane
 poslední uložený program.
@@ -492,6 +514,8 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | `jen_novejsi` počítá hranici jen z článků ze zdrojů | Pozvánka a příspěvek mají datum vzniku u nás; zpráva vydaná městem dřív by pod hranici spadla a už se nezpracovala |
 | 2026-10-26 | `stub` vynechá zbytek nadpisu sekce „## Zdroj…" | Jinak by se v zkušebním běhu příspěvku objevil jako odstavec |
 | 2026-10-26 | **Nadpisy Syne 730** místo 800, logo zůstává 800; karty og:image a víkendu statický Syne 700 | Zpětná vazba: extended řez v nadpisech „bolí oči". Syne nemá osu šířky, roztahuje se s váhou a mezi 700 a 800 nejvíc. 730 je výrazně užší a pořád tučné; 700 působilo lehce. Stačí stávající proměnný woff2 (700–800). Pillow umí jen statické TTF a Google jinou mezivahu nedá, proto na kartách 700 |
+| 2026-10-26 | **Program pro děti** na `/program/deti.html` podle příznaku města, bez pietních aktů a kladení věnců | Zpětná vazba na rozcestník akcí. Jako jediný výběr mimo okna má hledanost (30 + 20 měsíčně). Příznak je hrubý, má ho polovina termínů, proto „vhodné pro děti“ a poctivý úvod místo vlastního výběru |
+| 2026-10-26 | **Filtr podle data** na programu, typech a dětech: předvolby + od–do v `app.js`, adresa `?od=&do=`, kanonická bez parametrů, GA4 `program_cas` | Zpětná vazba na rozcestník akcí. Výběr se má dát poslat dál, ale nemá dělat nové stránky pro vyhledávač |
 
 ## Appka a favicona
 
@@ -684,12 +708,14 @@ protože rozhraní GA4 dovolí označit jen událost, která už má zpracovaná
 | `rss_klik` | klik na odkaz na `/feed.xml` | — |
 | `instalace_nabidka` | lišta s instalací | `vysledek`: `zobrazeno`, `prijato`, `odmitnuto`, `ted_ne`, `ios_navod` |
 | `navigace` | klik v `.dalsi`, `.drobecky`, `.menu`, na `.stitek` (v tomhle pořadí) | `misto`: `dalsi`, `drobecky`, `menu`, `stitek` |
-| `program_filtr` | klik na `.filtr-odkaz` | `typ_akce`: slug typu nebo okna, `vse` |
+| `program_filtr` | klik na `.filtr-odkaz` | `typ_akce`: slug typu nebo okna, `deti`, `vse` |
+| `program_cas` | změna filtru podle data | `rozsah`: `zitra`, `tyden`, `pristi-tyden`, `vlastni` (pole od–do), `zrusit` |
 | `prispevek_klik` | klik na odkaz na `/poslat-novinku.html` (má přednost před `navigace`) | `misto`: `menu`, `paticka`, `uvod`, `clanek`, `o-webu`, `jinde` |
 | `prispevek_odeslani` | pokus o odeslání formuláře | `vysledek`: `ok`, `kontrola` (chybí nebo nesedí pole), `chyba` (síť, skript) |
 
 Parametry `misto` a `vysledek` jsou v GA4 jako vlastní dimenze
-zaregistrované už kvůli `navigace` a `instalace_nabidka`.
+zaregistrované už kvůli `navigace` a `instalace_nabidka`. `rozsah`
+z `program_cas` zaregistrovaný zatím není (k 26. 10. 2026).
 `prispevek_odeslani` zatím není klíčová událost; označit ji jde až
 v rozhraní GA4, jakmile má data.
 
@@ -791,4 +817,7 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Čtení tabulky přes service account a Sheets API | Podpis JWT ve stdlib nejde, přibyla by `google-auth` (princip 6) |
 | Dvojí schválení (originál, pak přepis) | Zdeněk chce jedno; přepis hlídají pojistky a jde stáhnout |
 | Turnstile nebo jiný antispam u formuláře | Každý příspěvek čte redakce, spam se zastaví tam; řešit až kdyby ho bylo moc |
+| Relativní předvolby v adrese (`?kdy=pristi-tyden`) | Sdílený odkaz by se posouval s časem; za týden by ukazoval jiný týden, než jaký se posílal |
+| Vlastní výběr dětských akcí podle slov (pohádka, dílna, rodina…) | Náš úsudek nad daty, která přebíráme beze změny, a s dírami. Bere se příznak pořadatele, vyřazují se jen obřady |
+| Filtr podle data na oknech Dnes a Víkend | Okno je jejich smysl; rozsah uvnitř dne nebo víkendu nic nepřidá |
 | Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |

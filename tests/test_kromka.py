@@ -364,6 +364,7 @@ class Appka(unittest.TestCase):
                            ("/clanek/x.html", "clanek"), ("/tema/doprava.html", "tema"),
                            ("/program/dnes.html", "okno"), ("/program/vikend.html", "okno"),
                            (render.PROGRAM_CESTA, "program"), ("/program/kino.html", "program"),
+                           (render.DETI_CESTA, "program"),
                            ("/o-webu.html", "o-webu")]:
             self.assertEqual(render._typ_stranky(cesta), typ, cesta)
 
@@ -378,11 +379,12 @@ class Appka(unittest.TestCase):
         import inspect
         app = (config.STATIC / "app.js").read_text(encoding="utf-8")
         sablona = inspect.getsource(render)
-        for trida in ("dalsi", "drobecky", "menu", "stitek", "filtr-odkaz", "pribeh-odkaz"):
+        for trida in ("dalsi", "drobecky", "menu", "stitek", "filtr-odkaz", "pribeh-odkaz",
+                      "cas-filtr", "cas-prazdno"):
             self.assertRegex(app, r"'\.?" + trida + "'", trida)
             self.assertIn('class="' + trida, sablona, trida)
         for nazev in ("appka_instalace", "pribeh_stazeni", "rss_klik",
-                      "instalace_nabidka", "navigace", "program_filtr"):
+                      "instalace_nabidka", "navigace", "program_filtr", "program_cas"):
             self.assertIn("'" + nazev + "'", app, nazev)
 
 
@@ -787,6 +789,86 @@ class AkceVykresleni(unittest.TestCase):
         podpis = render._atribuce()
         self.assertIn(config.AKCE_POSKYTOVATEL, podpis)
         self.assertIn("creativecommons.org", podpis)
+
+
+class ProgramDetiACas(unittest.TestCase):
+    """Stránka pro děti a filtr podle data."""
+
+    def termin(self, nazev, deti=True, typ="Zábava"):
+        return {"nazev": nazev, "zacatek": "2026-11-03T10:00:00",
+                "konec": "2026-11-03T12:00:00", "vicedenni": False,
+                "typ": typ, "pro_deti": deti}
+
+    def postav(self, terminy):
+        """Stránky programu do dočasné složky, bez karet og:image."""
+        import shutil
+        import tempfile
+        from unittest import mock
+        slozka = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, slozka, True)
+        with mock.patch.object(config, "SITE", slozka), \
+                mock.patch.object(render, "_og", return_value=""), \
+                mock.patch.object(render, "_pribeh_odkaz", return_value=""):
+            render._program_stranky({"terminy": terminy, "dni": 30})
+        return slozka
+
+    def cti(self, slozka, soubor):
+        return (slozka / soubor).read_text(encoding="utf-8")
+
+    def test_obrady_nejsou_pro_deti(self):
+        # Město je označuje jako vhodné pro děti, do dětského programu nepatří.
+        for nazev in ("Pietní akt - výročí vzniku samostatného československého státu",
+                      "Slavnostní položení věnců u příležitosti Dne válečných veteránů",
+                      "Kladení věnců k pomníku padlých"):
+            self.assertFalse(render._pro_deti(self.termin(nazev)), nazev)
+
+    def test_adventni_venec_pro_deti_zustava(self):
+        # Falešná shoda na „věnc": výroba věnců je dětská dílna.
+        self.assertTrue(render._pro_deti(self.termin("Výroba adventních věnců")))
+
+    def test_bez_priznaku_neni_pro_deti(self):
+        self.assertFalse(render._pro_deti(self.termin("Pohádka", deti=False)))
+
+    def test_karta_nese_rozsah_dni(self):
+        self.assertIn('data-od="2026-11-03" data-do="2026-11-03"',
+                      render._karta_akce(self.termin("Pohádka")))
+        vystava = render._karta_akce({"nazev": "Výstava", "zacatek": "2026-05-15T09:00:00",
+                                      "konec": "2026-11-01T17:00:00", "vicedenni": True})
+        self.assertIn('data-od="2026-05-15" data-do="2026-11-01"', vystava)
+
+    def test_stranka_pro_deti(self):
+        site = self.postav([self.termin("Pohádka"), self.termin("Pietní akt"),
+                            self.termin("Koncert", deti=False)])
+        deti = self.cti(site, "program/deti.html")
+        self.assertIn("<h1>" + render.DETI["h1"] + "</h1>", deti)
+        self.assertIn("<h3>Pohádka</h3>", deti)
+        self.assertNotIn("<h3>Pietní akt</h3>", deti)
+        self.assertNotIn("<h3>Koncert</h3>", deti)
+        # Kanonická bez parametrů filtru podle data.
+        self.assertIn('rel="canonical" href="{0}"'.format(render._abs(render.DETI_CESTA)), deti)
+        self.assertIn('href="/program/deti.html">Pro děti</a>', self.cti(site, "program.html"))
+
+    def test_bez_detskych_akci_stranka_nevznikne(self):
+        site = self.postav([self.termin("Koncert", deti=False)])
+        self.assertFalse((site / "program" / "deti.html").exists())
+        self.assertNotIn(render.DETI_CESTA, self.cti(site, "program.html"))
+
+    def test_filtr_podle_data_jen_mimo_okna(self):
+        site = self.postav([self.termin("Pohádka")])
+        for soubor in ("program.html", "program/zabava.html", "program/deti.html"):
+            self.assertIn('class="cas-filtr"', self.cti(site, soubor), soubor)
+        # Okna mají rozsah pevný.
+        for soubor in ("program/dnes.html", "program/vikend.html"):
+            self.assertNotIn('class="cas-filtr"', self.cti(site, soubor), soubor)
+
+    def test_deti_v_sitemape(self):
+        mapa = render._sitemap([], {"terminy": [self.termin("Pohádka")],
+                                    "stazeno": "2026-10-26T01:00:00+00:00"})
+        self.assertIn(render.DETI_CESTA + "</loc><lastmod>2026-10-26</lastmod>"
+                      "<priority>0.6</priority>", mapa)
+        bez = render._sitemap([], {"terminy": [self.termin("Koncert", deti=False)],
+                                   "stazeno": "2026-10-26T01:00:00+00:00"})
+        self.assertNotIn(render.DETI_CESTA, bez)
 
 
 class KinoDK(unittest.TestCase):

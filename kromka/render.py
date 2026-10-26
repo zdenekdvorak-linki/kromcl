@@ -247,6 +247,21 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .filtr-odkaz { display: inline-block; padding: 6px 12px; border: 2px solid var(--ram); background: var(--karta); color: var(--inkoust); text-decoration: none; font-size: 14px; font-weight: 500; }
 .filtr-odkaz:hover { box-shadow: 3px 3px 0 var(--ram); }
 .filtr-odkaz.je-aktivni { background: var(--akcent); font-weight: 700; box-shadow: 3px 3px 0 var(--ram); }
+/* Filtr podle data. Skrytý v HTML, odkrývá ho app.js. Předvolby jsou
+   tlačítka ve stylu štítků filtru, pole data v rámečku webu. */
+.cas-filtr { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: -14px 0 30px; }
+.cas-filtr[hidden] { display: none; }
+.cas-predvolby, .cas-pole { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cas-filtr button.filtr-odkaz { font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
+.cas-filtr button.filtr-odkaz.je-aktivni { font-weight: 700; }
+.cas-pole label { font-size: 14px; font-weight: 500; color: var(--slabe); }
+.cas-pole input { font: inherit; font-size: 14px; color: var(--inkoust); background: var(--karta); border: 2px solid var(--ram); padding: 4px 6px; max-width: 150px; }
+.cas-pole input:focus-visible, .cas-filtr button:focus-visible { outline: 3px solid var(--akcent); outline-offset: 2px; }
+.cas-zrusit { font-size: 14px; font-weight: 700; }
+.cas-zrusit[hidden] { display: none; }
+.cas-filtr .sdilet { padding: 6px 12px; box-shadow: 3px 3px 0 var(--ram); }
+/* Akce a dny mimo zvolený rozsah. Třída, ne `hidden`: .akce má display: flex. */
+.mimo-rozsah { display: none !important; }
 .den { margin: 0 0 34px; }
 .den h2 { font-size: 20px; text-transform: lowercase; border-bottom: 3px solid var(--ram); padding-bottom: 6px; margin: 0 0 16px; }
 .akce-seznam { display: grid; gap: 14px; }
@@ -1014,6 +1029,32 @@ VYBERY = {
     },
 }
 
+# Akce pro děti. Jediný výběr podle publika, ne podle typu nebo času, a jako
+# jediný má měřitelnou hledanost (Marketing Miner, říjen 2026: „kroměříž pro
+# děti" 30 měsíčně, v létě 90; „akce pro děti kroměříž" 20). Výběr dělá
+# pořadatel příznakem `for_kids` a dává ho i hokeji, výstavám nebo besedám
+# pro rodiče — proto „vhodné pro děti", ne „pro děti".
+DETI = {
+    "h1": "Akce vhodné pro děti v Kroměříži",
+    "titulek": "Akce pro děti v Kroměříži",
+    "popis": "Akce v Kroměříži, které pořadatelé označili jako vhodné pro "
+             "děti. Pohádky, dílny, kino, výstavy i sport na měsíc dopředu.",
+    "uvod": "Co pořadatelé sami označili jako vhodné pro děti. Je to jejich "
+            "výběr, ne náš, takže tu vedle pohádek a dílen najdeš i hokej, "
+            "výstavu nebo besedu pro rodiče. Pietní akty jsme vyřadili, ty "
+            "se do dětského programu nehodí, i když je město tak označí.",
+}
+
+DETI_CESTA = "/program/deti.html"
+
+# Obřady, které město označuje jako vhodné pro děti, ale do dětského programu
+# nepatří. Ne holé „věnc": výroba adventních věnců je typická dětská dílna.
+_OBRADY = re.compile(r"pietn|(kladení|položení) věnců", re.I)
+
+
+def _pro_deti(termin):
+    return bool(termin.get("pro_deti")) and not _OBRADY.search(termin.get("nazev") or "")
+
 
 def _vyber_cesta(klic):
     return "/program/{0}.html".format(klic)
@@ -1145,14 +1186,19 @@ def _karta_akce(termin, cas_zacatku=False):
         nazev += ' <span class="akce-puvodni">{0}</span>'.format(
             _e(kino["puvodni_nazev"]))
 
+    # Rozsah dní pro filtr podle data v app.js.
+    od = (termin.get("zacatek") or "")[:10]
+    do = (termin.get("konec") or "")[:10] if termin.get("vicedenni") else od
+
     return (
-        '<article class="akce">'
+        '<article class="akce" data-od="{od}" data-do="{do}">'
         '<div class="akce-kdy"><span class="akce-cas">{kdy}</span>'
         '<div class="akce-znak">{znak}</div></div>'
         '<div class="akce-telo"><h3>{nazev}</h3>'
         '<p class="akce-kde">{kde}</p>'
         '{perex}{info}{odkazy}</div></article>'
     ).format(
+        od=_e(od), do=_e(do),
         kdy=_e(kdy), znak=piktogramy.svg(tvar, trida="piktogram", popis=""),
         nazev=nazev, kde=" · ".join(_e(k) for k in kde),
         perex='<p class="akce-perex">{0}</p>'.format(
@@ -1166,7 +1212,9 @@ def _karta_akce(termin, cas_zacatku=False):
 def _filtr(aktivni, dostupne):
     """Lišta filtru. Odkazy vykreslené na serveru, žádný JavaScript.
 
-    Nejdřív okna v čase, pak typy — v tom pořadí se podle dat i hledá.
+    Nejdřív okna v čase a děti, pak typy — v tom pořadí se podle dat i hledá.
+    `dostupne` nese typy s aspoň jedním termínem a "deti", když je stránka
+    pro děti.
     """
     def odkaz(cesta, popisek, je):
         return '<a class="filtr-odkaz{0}" href="{1}">{2}</a>'.format(
@@ -1177,6 +1225,8 @@ def _filtr(aktivni, dostupne):
         kusy.append(odkaz(_vyber_cesta(klic),
                           "Dnes" if klic == "dnes" else "Víkend",
                           aktivni == klic))
+    if "deti" in dostupne:
+        kusy.append(odkaz(DETI_CESTA, "Pro děti", aktivni == "deti"))
     kusy.append('<span class="filtr-del" aria-hidden="true"></span>')
     for typ in TYPY_AKCI:
         if typ not in dostupne:
@@ -1199,12 +1249,48 @@ def _atribuce():
              lic_url=_e(config.AKCE_LICENCE_URL), lic=_e(config.AKCE_LICENCE))
 
 
-def _program(terminy, aktivni, dostupne, prazdno=""):
-    """Tělo stránky programu: probíhající akce, pak dny."""
+_PREDVOLBY = (("zitra", "Zítra"), ("tyden", "Tento týden"), ("pristi-tyden", "Příští týden"))
+
+
+def _cas_filtr(terminy, cesta, titulek):
+    """Filtr podle data. Celý ho obsluhuje app.js, proto je skrytý.
+
+    Výběr se drží v adrese jako `?od=…&do=…`, aby šel poslat dál. Kanonická
+    adresa zůstává bez parametrů, takže vyhledávač varianty nebere jako
+    samostatné stránky. Předvolby jen vyplní pole; v adrese jsou vždy
+    absolutní data, aby sdílený „příští týden" ukázal totéž i za týden.
+    """
+    posledni = max(((t.get("konec") or t.get("zacatek") or "")[:10] for t in terminy),
+                   default="")
+    predvolby = "".join(
+        '<button type="button" class="filtr-odkaz" data-rozsah="{0}">{1}</button>'.format(
+            klic, _e(popisek)) for klic, popisek in _PREDVOLBY)
+    pole = "".join(
+        '<label>{0} <input type="date" name="{1}" max="{2}"></label>'.format(
+            popisek, nazev, _e(posledni)) for nazev, popisek in (("od", "od"), ("do", "do")))
+    return (
+        '<form class="cas-filtr" hidden aria-label="Filtr podle data">'
+        '<div class="cas-predvolby">{predvolby}</div>'
+        '<div class="cas-pole">{pole}<a class="cas-zrusit" href="{cesta}">Zrušit</a></div>'
+        '{sdilet}</form>'
+        '<p class="cas-prazdno akce-prazdno" hidden>V tomhle rozmezí tu nic není. '
+        '<a class="cas-zrusit" href="{cesta}">Ukázat všechno.</a></p>'
+    ).format(predvolby=predvolby, pole=pole, cesta=_e(cesta),
+             sdilet=_sdilet(titulek, cesta, "program-vyber", popisek="Šérni výběr"))
+
+
+def _program(terminy, aktivni, dostupne, prazdno="", cas=None):
+    """Tělo stránky programu: probíhající akce, pak dny.
+
+    `cas` je `(cesta, titulek)` stránky, která má mít filtr podle data.
+    Okna dnes a víkend ho nemají, jejich rozsah je pevný.
+    """
     probiha = [t for t in terminy if t.get("vicedenni")]
     jednodenni = [t for t in terminy if not t.get("vicedenni")]
 
     casti = [_filtr(aktivni, dostupne)]
+    if cas and terminy:
+        casti.append(_cas_filtr(terminy, *cas))
     if probiha:
         casti.append(
             '<section class="den"><h2>Probíhá teď</h2><div class="akce-seznam">'
@@ -1316,6 +1402,9 @@ def _program_stranky(akce_data):
     """
     terminy = akce_data.get("terminy") or []
     dostupne = {t.get("typ") for t in terminy if t.get("typ") in TYPY_AKCI}
+    deti = [t for t in terminy if _pro_deti(t)]
+    if deti:
+        dostupne.add("deti")
     (config.SITE / "program").mkdir(parents=True, exist_ok=True)
 
     uvod = ("Co se děje v Kroměříži příštích {0} dní. Divadlo, kino, koncerty, "
@@ -1331,7 +1420,8 @@ def _program_stranky(akce_data):
             akce_data.get("dni") or config.AKCE_DNI),
         '{0}<h1>Program akcí v Kroměříži</h1><p class="uvod">{1}</p>{2}'.format(
             _drobecky([("Domů", "/"), ("Program", None)]), _e(uvod),
-            _program(terminy, None, dostupne)),
+            _program(terminy, None, dostupne,
+                     cas=(PROGRAM_CESTA, "Program akcí v Kroměříži"))),
         cesta=PROGRAM_CESTA,
         obrazek=_og(PROGRAM_CESTA, "Program akcí v Kroměříži", "program", "akce"),
         jsonld=_jsonld(_ld_seznam(terminy, PROGRAM_CESTA),
@@ -1379,11 +1469,28 @@ def _program_stranky(akce_data):
                 _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
                            (udaje["h1"], None)]),
                 _e(udaje["h1"]), _e(udaje["uvod"]),
-                _program(vybrane, typ, dostupne)),
+                _program(vybrane, typ, dostupne, cas=(cesta, udaje["titulek"]))),
             cesta=cesta, og_titulek=udaje["titulek"],
             obrazek=_og(cesta, udaje["h1"], "program", piktogramy.pro_typ_akce(typ)),
             jsonld=_jsonld(_ld_seznam(vybrane, cesta),
                            _ld_drobecky_program(udaje["h1"], cesta)),
+        ), encoding="utf-8")
+        zapsano += 1
+
+    # Jako typ: bez jediného termínu se nevykreslí ani neodkazuje.
+    if deti:
+        (config.SITE / DETI_CESTA.lstrip("/")).write_text(_stranka(
+            "{0} – {1}".format(DETI["titulek"], config.BRAND),
+            DETI["popis"],
+            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}'.format(
+                _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
+                           (DETI["h1"], None)]),
+                _e(DETI["h1"]), _e(DETI["uvod"]),
+                _program(deti, "deti", dostupne, cas=(DETI_CESTA, DETI["titulek"]))),
+            cesta=DETI_CESTA, og_titulek=DETI["titulek"],
+            obrazek=_og(DETI_CESTA, DETI["h1"], "program", "zabava"),
+            jsonld=_jsonld(_ld_seznam(deti, DETI_CESTA),
+                           _ld_drobecky_program(DETI["h1"], DETI_CESTA)),
         ), encoding="utf-8")
         zapsano += 1
     return zapsano
@@ -1885,6 +1992,9 @@ def _sitemap(clanky, akce_data=None):
         for typ in TYPY_AKCI:
             if any(t.get("typ") == typ for t in terminy):
                 radky.append(url(_typ_cesta(typ), stazeno, "0.8" if typ == "Kino" else "0.5"))
+        # Děti nad typy: jako jediný výběr mimo okna mají měřitelnou hledanost.
+        if any(_pro_deti(t) for t in terminy):
+            radky.append(url(DETI_CESTA, stazeno, "0.6"))
     temata = {}
     for clanek in clanky:
         for tag in clanek.get("tags", []):

@@ -164,6 +164,117 @@
     });
   }
 
+  /* Filtr programu podle data (render._cas_filtr). Výběr se drží v adrese
+   * jako ?od=…&do=…, aby šel poslat dál; kanonická adresa stránky parametry
+   * nemá, vyhledávač varianty nebere. Předvolby jen vyplní pole a v adrese
+   * jsou vždy absolutní data, takže sdílený „příští týden" ukáže totéž i za
+   * týden. Bez JS zůstane filtr skrytý a stránka ukáže všechno.
+   */
+  var casFiltr = document.querySelector('.cas-filtr');
+  if (casFiltr && window.URL && window.history && history.replaceState) (function () {
+    var DATUM = /^\d{4}-\d{2}-\d{2}$/;
+    var poleOd = casFiltr.querySelector('input[name=od]');
+    var poleDo = casFiltr.querySelector('input[name=do]');
+    var zrusit = casFiltr.querySelector('.cas-pole .cas-zrusit');
+    var prazdno = document.querySelector('.cas-prazdno');
+    var sdilet = casFiltr.querySelector('.sdilet');
+    var kanonicka = sdilet ? sdilet.dataset.url : '';
+    function kazdy(seznam, fn) { Array.prototype.forEach.call(seznam, fn); }
+
+    // Místní datum prohlížeče, ne toISOString(): to je v UTC a po půlnoci
+    // by „zítra" ukazovalo dnešek.
+    function iso(d) {
+      return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2)
+        + '-' + ('0' + d.getDate()).slice(-2);
+    }
+    function posun(d, dni) { var x = new Date(d); x.setDate(x.getDate() + dni); return x; }
+
+    // Týden od pondělí do neděle. V neděli je „tento týden" jen ta neděle.
+    function predvolba(klic) {
+      var dnes = new Date();
+      var doNedele = (7 - dnes.getDay()) % 7;
+      if (klic === 'zitra') return [iso(posun(dnes, 1)), iso(posun(dnes, 1))];
+      if (klic === 'tyden') return [iso(dnes), iso(posun(dnes, doNedele))];
+      var pondeli = posun(dnes, doNedele + 1);
+      return [iso(pondeli), iso(posun(pondeli, 6))];
+    }
+
+    function pouzij() {
+      var od = DATUM.test(poleOd.value) ? poleOd.value : '';
+      var po = DATUM.test(poleDo.value) ? poleDo.value : '';
+      if (od && po && od > po) {
+        var x = od; od = po; po = x;
+        poleOd.value = od; poleDo.value = po;
+      }
+      var aktivni = !!(od || po);
+      var videt = 0;
+      // Akce zůstane, když se její dny s rozsahem překrývají: výstava, která
+      // přes rozsah běží, je vidět, i když začala dřív (jako render._v_okne).
+      kazdy(document.querySelectorAll('article.akce[data-od]'), function (a) {
+        var mimo = !!((od && a.dataset.do < od) || (po && a.dataset.od > po));
+        a.classList.toggle('mimo-rozsah', mimo);
+        if (!mimo) videt++;
+      });
+      kazdy(document.querySelectorAll('section.den'), function (s) {
+        s.classList.toggle('mimo-rozsah',
+          aktivni && !s.querySelector('article.akce:not(.mimo-rozsah)'));
+      });
+      if (prazdno) prazdno.hidden = !aktivni || videt > 0;
+      zrusit.hidden = !aktivni;
+      kazdy(casFiltr.querySelectorAll('[data-rozsah]'), function (b) {
+        var r = predvolba(b.dataset.rozsah);
+        var je = r[0] === od && r[1] === po;
+        b.classList.toggle('je-aktivni', je);
+        b.setAttribute('aria-pressed', je ? 'true' : 'false');
+      });
+
+      // Ostatní parametry (třeba UTM) v adrese zůstanou, sdílí se ale jen
+      // kanonická adresa s rozsahem, stejně jako u ostatních tlačítek Sdílet.
+      var adresa = new URL(location.href);
+      var vyber = new URLSearchParams();
+      [['od', od], ['do', po]].forEach(function (p) {
+        if (p[1]) { adresa.searchParams.set(p[0], p[1]); vyber.set(p[0], p[1]); }
+        else adresa.searchParams.delete(p[0]);
+      });
+      history.replaceState(history.state, '', adresa.pathname + adresa.search + adresa.hash);
+      if (sdilet) sdilet.dataset.url = kanonicka + (aktivni ? '?' + vyber.toString() : '');
+    }
+
+    var dnes = iso(new Date());
+    poleOd.min = poleDo.min = dnes;
+    var parametry = new URL(location.href).searchParams;
+    if (DATUM.test(parametry.get('od') || '')) poleOd.value = parametry.get('od');
+    if (DATUM.test(parametry.get('do') || '')) poleDo.value = parametry.get('do');
+
+    casFiltr.addEventListener('submit', function (u) { u.preventDefault(); });
+    [poleOd, poleDo].forEach(function (pole) {
+      pole.addEventListener('change', function () {
+        pouzij();
+        zmer('program_cas', { rozsah: 'vlastni' });
+      });
+    });
+    kazdy(casFiltr.querySelectorAll('[data-rozsah]'), function (b) {
+      b.addEventListener('click', function () {
+        var r = predvolba(b.dataset.rozsah);
+        poleOd.value = r[0];
+        poleDo.value = r[1];
+        pouzij();
+        zmer('program_cas', { rozsah: b.dataset.rozsah });
+      });
+    });
+    kazdy(document.querySelectorAll('.cas-zrusit'), function (a) {
+      a.addEventListener('click', function (u) {
+        u.preventDefault();
+        poleOd.value = poleDo.value = '';
+        pouzij();
+        zmer('program_cas', { rozsah: 'zrusit' });
+      });
+    });
+
+    pouzij();
+    casFiltr.hidden = false;
+  })();
+
   /* Core Web Vitals skutečných návštěvníků do GA4. Laboratorní měření
    * (Lighthouse) je odhad; Google vlastní data o malém webu nemusí mít
    * nikdy, protože potřebuje dost návštěv.
