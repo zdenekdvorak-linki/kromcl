@@ -126,7 +126,11 @@ class PrispevkyOdkazy(unittest.TestCase):
 
     def test_odkaz_v_menu_paticce_a_pod_clankem(self):
         stranka = render._stranka("T", "P", "<p>x</p>")
-        self.assertIn('class="je-sekce je-prispevek" href="/poslat-novinku.html"', stranka)
+        self.assertIn('<li class="menu-prispevek"><a class="je-sekce je-prispevek" '
+                      'href="/poslat-novinku.html"', stranka)
+        # V hamburgeru druhá za programem; drží to `order` v CSS podle třídy.
+        self.assertIn("li.menu-prispevek { order: 0; }", stranka)
+        self.assertIn('</span>Menu', stranka)
         self.assertRegex(stranka, r'(?s)<footer>.*href="/poslat-novinku.html"')
         clanek = render._clanek({"slug": "x", "headline": "Most", "body": ["Text."],
                                  "tags": ["doprava"]}, [])
@@ -134,13 +138,34 @@ class PrispevkyOdkazy(unittest.TestCase):
         self.assertIn("vyzva-o-webu", render._o_webu())
 
     def test_stranka_s_formularem(self):
-        with mock.patch.object(config, "PRISPEVKY_FORMULAR",
-                               "https://docs.google.com/forms/d/e/x/viewform?embedded=true"):
+        with mock.patch.object(config, "PRISPEVKY_URL", "https://script.google.com/macros/s/x/exec"), \
+                mock.patch.object(config, "PRISPEVKY_FORMULAR",
+                                  "https://docs.google.com/forms/d/e/x/viewform?embedded=true"):
             html = render._prispevek_stranka()
-        self.assertIn('<iframe src="https://docs.google.com/forms/d/e/x/viewform?embedded=true"', html)
-        self.assertIn('loading="lazy"', html)
-        with mock.patch.object(config, "PRISPEVKY_FORMULAR", ""):
-            self.assertNotIn("<iframe", render._prispevek_stranka())
+        self.assertIn('data-adresa="https://script.google.com/macros/s/x/exec"', html)
+        # Bez JS skrytý, místo něj odkaz na Google Form bez parametru pro rám.
+        self.assertRegex(html, r'<form class="prispevek"[^>]* hidden>')
+        self.assertIn('<noscript><p class="zdroj">Formulář potřebuje JavaScript', html)
+        self.assertIn('href="https://docs.google.com/forms/d/e/x/viewform"', html)
+        self.assertNotIn("<iframe", html)
+        for nazev in ("jmeno", "email", "nadpis", "text", "odkaz", "souhlas", "web"):
+            self.assertIn('name="{0}"'.format(nazev), html, nazev)
+        with mock.patch.object(config, "PRISPEVKY_URL", ""):
+            self.assertNotIn("<form", render._prispevek_stranka())
+
+    def test_souhlas_sedi_se_skriptem(self):
+        # Do tabulky jde text z Google Formu; čtenář musí odsouhlasit tentýž.
+        skript = (config.ROOT / "apps-script" / "prispevky.gs").read_text(encoding="utf-8")
+        import re
+        kusy = re.search(r"var SOUHLAS = (.*?);\n", skript, re.S).group(1)
+        text = "".join(re.findall(r"'([^']*)'", kusy))
+        self.assertEqual(text, render.PRISPEVEK_SOUHLAS)
+
+    def test_app_js_odesila_a_meri(self):
+        app = (config.STATIC / "app.js").read_text(encoding="utf-8")
+        self.assertIn("'prispevek_odeslani'", app)
+        self.assertIn("text/plain", app)
+        self.assertIn("form.prispevek", app)
 
     def test_mereni_zna_mista(self):
         app = (config.STATIC / "app.js").read_text(encoding="utf-8")

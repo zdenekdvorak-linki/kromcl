@@ -19,6 +19,14 @@
  *   {klic, akce: "nacti"}  → {ok, radky: [{id, cas, jmeno, nadpis, text, odkaz, stav}]}
  *                            jen řádky ve stavu „schváleno" a „stáhnout"
  *   {klic, akce: "stav", id, stav, odkaz, poznamka} → {ok}
+ *   {akce: "odeslat", jmeno, email, nadpis, text, odkaz, souhlas, web, trvani}
+ *                          → {ok} nebo {ok: false, chyba, pole}
+ *                            bez klíče: posílá ho formulář na kromcl.cz
+ *
+ * Odeslání zapíše odpověď do Google Formu, takže tabulka i upozornění jedou
+ * stejně jako při vyplnění formuláře u Googlu. Odpověď Apps Scriptu se dá
+ * z cizí stránky přečíst (na rozdíl od formResponse Googlu), a web tak
+ * hlásí skutečný výsledek, ne „odesláno" naslepo.
  */
 
 var UPOZORNENI = 'zdenek@linki.cz';
@@ -180,12 +188,86 @@ function doPost(e) {
   } catch (chyba) {
     return odpoved_({ ok: false, chyba: 'neplatný JSON' });
   }
+  if (vstup.akce === 'odeslat') return odpoved_(odeslat_(vstup));
+
   var klic = PropertiesService.getScriptProperties().getProperty('KLIC');
   if (!klic || vstup.klic !== klic) return odpoved_({ ok: false, chyba: 'klíč' });
 
   if (vstup.akce === 'nacti') return odpoved_({ ok: true, radky: nacti_() });
   if (vstup.akce === 'stav') return odpoved_(zapisStav_(vstup));
   return odpoved_({ ok: false, chyba: 'neznámá akce' });
+}
+
+// Víc odeslání za hodinu od všech dohromady KROMCL nedostane; víc by znamenalo
+// robota. Strop zároveň drží v mezích denní kvótu e-mailů s upozorněním.
+var STROP_ZA_HODINU = 30;
+// Člověk formulář nevyplní za tři sekundy, robot ano.
+var NEJKRATSI_VYPLNENI_MS = 3000;
+
+function odeslat_(v) {
+  // Skryté pole „web" vyplní jen robot. Tváříme se, že prošlo, ať to nezkouší jinak.
+  if (v.web) return { ok: true };
+  if (!(Number(v.trvani) >= NEJKRATSI_VYPLNENI_MS)) {
+    return { ok: false, chyba: 'Tohle bylo moc rychlé. Zkus to prosím znovu.' };
+  }
+
+  var hodnoty = {
+    jmeno: String(v.jmeno || '').trim(),
+    email: String(v.email || '').trim(),
+    nadpis: String(v.nadpis || '').trim(),
+    text: String(v.text || '').trim(),
+    odkaz: String(v.odkaz || '').trim()
+  };
+  var pole = {};
+  if (!hodnoty.jmeno) pole.jmeno = 'Napiš jméno, ukáže se pod článkem.';
+  else if (hodnoty.jmeno.length > 80) pole.jmeno = 'Jméno může mít nejvýš 80 znaků.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(hodnoty.email)) pole.email = 'Tohle nevypadá jako e-mail.';
+  if (!hodnoty.nadpis) pole.nadpis = 'O čem to je? Stačí jedna věta.';
+  else if (hodnoty.nadpis.length > 150) pole.nadpis = 'Nadpis může mít nejvýš 150 znaků.';
+  if (!hodnoty.text) pole.text = 'Napiš, co se děje.';
+  else if (hodnoty.text.length > 6000) pole.text = 'Text může mít nejvýš 6000 znaků.';
+  if (hodnoty.odkaz && !/^https?:\/\/\S+$/i.test(hodnoty.odkaz)) {
+    pole.odkaz = 'Odkaz musí začínat https://';
+  }
+  if (v.souhlas !== true) pole.souhlas = 'Bez souhlasu to zveřejnit nemůžeme.';
+  if (Object.keys(pole).length) {
+    return { ok: false, chyba: 'Něco ještě chybí, mrkni na označená pole.', pole: pole };
+  }
+
+  var mezipamet = CacheService.getScriptCache();
+  var hodina = 'odeslano-' + Utilities.formatDate(new Date(), 'Etc/UTC', 'yyyyMMddHH');
+  var zamek = LockService.getScriptLock();
+  zamek.waitLock(10000);
+  try {
+    var pocet = Number(mezipamet.get(hodina) || 0);
+    if (pocet >= STROP_ZA_HODINU) {
+      return { ok: false, chyba: 'Teď toho chodí moc najednou. Zkus to prosím za hodinu.' };
+    }
+    mezipamet.put(hodina, String(pocet + 1), 3700);
+  } finally {
+    zamek.releaseLock();
+  }
+
+  var form = FormApp.openById(vlastnost_('FORMULAR_ID'));
+  var odpoved = form.createResponse();
+  var podle = {};
+  podle[OTAZKY.jmeno] = hodnoty.jmeno;
+  podle[OTAZKY.email] = hodnoty.email;
+  podle[OTAZKY.nadpis] = hodnoty.nadpis;
+  podle[OTAZKY.text] = hodnoty.text;
+  podle[OTAZKY.odkaz] = hodnoty.odkaz;
+  form.getItems().forEach(function (polozka) {
+    var nazev = polozka.getTitle();
+    if (nazev === OTAZKY.souhlas) {
+      odpoved.withItemResponse(polozka.asCheckboxItem().createResponse([SOUHLAS]));
+    } else if (polozka.getType() === FormApp.ItemType.PARAGRAPH_TEXT && podle[nazev]) {
+      odpoved.withItemResponse(polozka.asParagraphTextItem().createResponse(podle[nazev]));
+    } else if (polozka.getType() === FormApp.ItemType.TEXT && podle[nazev]) {
+      odpoved.withItemResponse(polozka.asTextItem().createResponse(podle[nazev]));
+    }
+  });
+  odpoved.submit();
+  return { ok: true };
 }
 
 function vlastnost_(nazev) {

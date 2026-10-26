@@ -31,8 +31,7 @@
   var NAVIGACE = [['.dalsi', 'dalsi'], ['.drobecky', 'drobecky'],
     ['.menu', 'menu'], ['.stitek', 'stitek']];
 
-  // Odkazy na formulář pro příspěvky. Odeslání samo změřit nejde: formulář
-  // je v rámu Googlu a cizí stránka do něj nevidí.
+  // Odkazy na formulář pro příspěvky. Odeslání měří prispevek_odeslani níž.
   var PRISPEVEK = [['.menu', 'menu'], ['footer', 'paticka'], ['.vyzva-uvod', 'uvod'],
     ['.vyzva-clanek', 'clanek'], ['.vyzva-o-webu', 'o-webu']];
 
@@ -202,6 +201,122 @@
   }
 
   if (window.gtag) nactiVitals();
+
+  /* Formulář pro příspěvky čtenářů (/poslat-novinku.html). Bez JS zůstane
+   * skrytý a stránka místo něj nabídne Google Form.
+   *
+   * Posílá se do Apps Scriptu jako text/plain. S application/json by
+   * prohlížeč nejdřív poslal dotaz OPTIONS a ten Apps Script neobslouží.
+   * Odpověď skriptu se z naší stránky přečíst dá, takže hlásíme skutečný
+   * výsledek, ne „odesláno" naslepo.
+   */
+  var formular = document.querySelector('form.prispevek');
+  if (formular && window.fetch) {
+    var hotovo = document.querySelector('.prispevek-hotovo');
+    var tlOdeslat = formular.querySelector('.odeslat');
+    var chybaFormulare = formular.querySelector('.formular-chyba');
+    var zacatek = Date.now();
+    var POLE = ['jmeno', 'email', 'nadpis', 'text', 'odkaz', 'souhlas'];
+
+    // Stejná pravidla jako odeslat_ v apps-script/prispevky.gs. Server je
+    // kontroluje znovu; tady jde jen o to, aby čtenář nečekal na síť.
+    var zkontroluj = function (d) {
+      var c = {};
+      if (!d.jmeno) c.jmeno = 'Napiš jméno, ukáže se pod článkem.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) c.email = 'Tohle nevypadá jako e-mail.';
+      if (!d.nadpis) c.nadpis = 'O čem to je? Stačí jedna věta.';
+      if (!d.text) c.text = 'Napiš, co se děje.';
+      if (d.odkaz && !/^https?:\/\/\S+$/i.test(d.odkaz)) c.odkaz = 'Odkaz musí začínat https://';
+      if (!d.souhlas) c.souhlas = 'Bez souhlasu to zveřejnit nemůžeme.';
+      return c;
+    };
+
+    var ukazChyby = function (chyby) {
+      var prvni = null;
+      POLE.forEach(function (nazev) {
+        var prvek = formular.elements[nazev];
+        var zprava = document.getElementById('p-' + nazev + '-ch');
+        if (chyby[nazev]) {
+          prvek.setAttribute('aria-invalid', 'true');
+          prvni = prvni || prvek;
+        } else {
+          prvek.removeAttribute('aria-invalid');
+        }
+        if (zprava) zprava.textContent = chyby[nazev] || '';
+      });
+      if (prvni) prvni.focus();
+    };
+
+    // Při chybě sítě nebo skriptu nabídneme Google Form, ať se novinka neztratí.
+    var ukazChybu = function (text) {
+      chybaFormulare.textContent = text + ' ';
+      if (formular.dataset.zaloha) {
+        var a = document.createElement('a');
+        a.href = formular.dataset.zaloha;
+        a.textContent = 'Pošli to přes Google Formulář.';
+        chybaFormulare.appendChild(a);
+      }
+    };
+
+    formular.addEventListener('submit', function (udalost) {
+      udalost.preventDefault();
+      var e = formular.elements;
+      var data = {
+        akce: 'odeslat',
+        jmeno: e.jmeno.value.trim(),
+        email: e.email.value.trim(),
+        nadpis: e.nadpis.value.trim(),
+        text: e.text.value.trim(),
+        odkaz: e.odkaz.value.trim(),
+        souhlas: e.souhlas.checked,
+        web: e.web.value,
+        trvani: Date.now() - zacatek
+      };
+      chybaFormulare.textContent = '';
+      var chyby = zkontroluj(data);
+      ukazChyby(chyby);
+      if (Object.keys(chyby).length) {
+        zmer('prispevek_odeslani', { vysledek: 'kontrola' });
+        return;
+      }
+
+      tlOdeslat.disabled = true;
+      tlOdeslat.textContent = 'Posílám…';
+      fetch(formular.dataset.adresa, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.json(); }).then(function (odpoved) {
+        if (odpoved.ok) {
+          zmer('prispevek_odeslani', { vysledek: 'ok' });
+          formular.hidden = true;
+          hotovo.hidden = false;
+          hotovo.focus();
+          return;
+        }
+        ukazChyby(odpoved.pole || {});
+        ukazChybu(odpoved.chyba || 'Něco se pokazilo.');
+        zmer('prispevek_odeslani', { vysledek: odpoved.pole ? 'kontrola' : 'chyba' });
+      }).catch(function () {
+        ukazChybu('Nepodařilo se to odeslat. Zkus to za chvíli znovu.');
+        zmer('prispevek_odeslani', { vysledek: 'chyba' });
+      }).then(function () {
+        tlOdeslat.disabled = false;
+        tlOdeslat.textContent = 'Poslat novinku';
+      });
+    });
+
+    hotovo.querySelector('.dalsi-prispevek').addEventListener('click', function () {
+      formular.reset();
+      ukazChyby({});
+      zacatek = Date.now();
+      hotovo.hidden = true;
+      formular.hidden = false;
+      formular.elements.nadpis.focus();
+    });
+
+    formular.hidden = false;
+  }
 
   var jeAppka = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;

@@ -25,16 +25,16 @@ MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
 CSS = """
 :root {
   --papir: #f5f3ee; --inkoust: #0c0c0c; --akcent: ACCENT;
-  --slabe: #6b6b6b; --ram: #0c0c0c; --karta: #ffffff;
+  --slabe: #6b6b6b; --ram: #0c0c0c; --karta: #ffffff; --chyba: #c0261a;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --papir: #121212; --inkoust: #f2f2f2; --slabe: #9a9a9a;
+    --papir: #121212; --inkoust: #f2f2f2; --slabe: #9a9a9a; --chyba: #ff8a7a;
     --ram: #f2f2f2; --karta: #1c1c1c;
   }
 }
 :root[data-theme="dark"] {
-  --papir: #121212; --inkoust: #f2f2f2; --slabe: #9a9a9a;
+  --papir: #121212; --inkoust: #f2f2f2; --slabe: #9a9a9a; --chyba: #ff8a7a;
   --ram: #f2f2f2; --karta: #1c1c1c;
 }
 * { box-sizing: border-box; }
@@ -103,8 +103,31 @@ figcaption { font-size: 13px; color: var(--slabe); margin-top: 10px; }
 .vyzva p { margin: 0 0 14px; }
 .vyzva a.tlacitko { display: inline-block; padding: 10px 14px; background: var(--akcent); color: #000; border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); font-weight: 700; text-decoration: none; }
 .vyzva a.tlacitko::after { content: " →"; }
-.formular-ramec { border: 3px solid var(--ram); background: #fff; margin: 28px 0 0; }
-.formular-ramec iframe { display: block; width: 100%; height: 1500px; border: 0; }
+/* Formulář pro příspěvky: stejné rámečky a tvrdé stíny jako karty. */
+.prispevek, .prispevek-hotovo { border: 3px solid var(--ram); background: var(--karta); box-shadow: 6px 6px 0 var(--ram); padding: 22px 22px 24px; margin: 28px 0 0; }
+.prispevek .pole { margin: 0 0 20px; }
+.prispevek label { display: block; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 4px; }
+.prispevek label span { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--slabe); }
+.prispevek .napoveda { margin: 0 0 8px; font-size: 14px; color: var(--slabe); line-height: 1.45; }
+.prispevek input[type=text], .prispevek input[type=email], .prispevek input[type=url], .prispevek textarea { display: block; width: 100%; font: inherit; font-size: 17px; color: var(--inkoust); background: var(--papir); border: 3px solid var(--ram); border-radius: 0; padding: 10px 12px; box-shadow: 3px 3px 0 var(--ram); -webkit-appearance: none; appearance: none; }
+.prispevek textarea { resize: vertical; min-height: 180px; line-height: 1.5; }
+.prispevek input:focus-visible, .prispevek textarea:focus-visible, .prispevek button:focus-visible { outline: 3px solid var(--akcent); outline-offset: 2px; }
+.prispevek input[aria-invalid=true], .prispevek textarea[aria-invalid=true] { border-color: var(--chyba); box-shadow: 3px 3px 0 var(--chyba); }
+.pole-souhlas input[aria-invalid=true] { outline: 3px solid var(--chyba); outline-offset: 2px; }
+.prispevek .chyba-pole, .prispevek .formular-chyba { margin: 6px 0 0; font-size: 14px; font-weight: 700; color: var(--chyba); }
+.prispevek .chyba-pole:empty, .prispevek .formular-chyba:empty { display: none; }
+.pole-souhlas label { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 500; text-transform: none; letter-spacing: 0; line-height: 1.45; cursor: pointer; }
+.pole-souhlas input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--akcent); }
+.pole-past { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.prispevek .odeslat, .prispevek-hotovo button { font: inherit; font-weight: 700; font-size: 16px; cursor: pointer; padding: 12px 18px; background: var(--akcent); color: #000; border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); margin-top: 6px; }
+.prispevek .odeslat::after { content: " →"; }
+.prispevek .odeslat:active, .prispevek-hotovo button:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ram); }
+.prispevek .odeslat[disabled] { opacity: .6; cursor: progress; }
+.prispevek-hotovo { background: var(--akcent); color: #000; }
+.prispevek-hotovo h2 { margin: 0 0 6px; }
+.prispevek-hotovo p { margin: 0 0 14px; }
+.prispevek-hotovo button { background: var(--karta); color: var(--inkoust); }
+@media (max-width: 640px) { .prispevek, .prispevek-hotovo { padding: 16px 14px 18px; box-shadow: 4px 4px 0 var(--ram); } }
 .dalsi { margin-top: 48px; }
 .dalsi h2 { font-size: 18px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
 footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 26px 0; font-size: 14px; color: var(--slabe); }
@@ -184,6 +207,11 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .menu .menu-vic-seznam a { padding: 12px 16px; }
   /* V hamburgeru zůstane program zeleným řádkem, ne malým štítkem. */
   .menu .odkazy a.je-sekce { padding: 12px 16px; border: 0; box-shadow: none; }
+  /* „pošli novinku" je v hamburgeru druhá, hned pod programem. Na
+     desktopu zůstává poslední; pořadí v HTML se kvůli tomu nemění.
+     Položky se stejným `order` drží pořadí z HTML. */
+  .menu .odkazy > li { order: 1; }
+  .menu .odkazy > li:first-child, .menu .odkazy > li.menu-prispevek { order: 0; }
 }
 .uvod { max-width: 62ch; font-size: 18px; margin: 0 0 26px; }
 .pribeh-odkaz { margin: -12px 0 26px; font-size: 15px; }
@@ -410,10 +438,10 @@ ZAKLAD = """<!doctype html>
     <a class="logo" href="/">{brand}<span>.</span></a>
     <p class="tagline">{tagline}</p>
   </div>
-  <nav class="menu" aria-label="Témata">
+  <nav class="menu" aria-label="Menu">
     <input class="prepinac" type="checkbox" id="menu-prepinac">
     <label class="hamburger" for="menu-prepinac">
-      <span class="carky" aria-hidden="true"></span>Témata
+      <span class="carky" aria-hidden="true"></span>Menu
     </label>
     <ul class="odkazy">{menu}</ul>
   </nav>
@@ -519,9 +547,10 @@ def _menu():
             '<label for="menu-vic" class="menu-vic-tlacitko">další</label>'
             '<ul class="menu-vic-seznam">{0}</ul></li>'.format(
                 "".join(polozka(t) for t in ostatni)))
-    # Příspěvek není téma, vede na formulář. Stojí poslední, aby se pořadí
-    # témat, na které jsou čtenáři zvyklí, neposunulo.
-    polozky.append('<li><a class="je-sekce je-prispevek" href="{0}">{1}</a></li>'.format(
+    # Příspěvek není téma, vede na formulář. Na desktopu stojí poslední, aby
+    # se pořadí témat, na které jsou čtenáři zvyklí, neposunulo; v hamburgeru
+    # ho CSS posouvá na druhé místo.
+    polozky.append('<li class="menu-prispevek"><a class="je-sekce je-prispevek" href="{0}">{1}</a></li>'.format(
         PRISPEVEK_CESTA, PRISPEVEK_MENU))
     return "".join(polozky)
 
@@ -1578,20 +1607,92 @@ def _o_webu():
              drobecky=_drobecky([("Domů", "/"), ("O webu", None)]))
 
 
-def _prispevek_stranka():
-    """Pravidla a pod nimi Google Form v rámu.
+# Musí sedět se SOUHLAS v apps-script/prispevky.gs: do tabulky jde text
+# z Google Formu, tady ho čtenář odsouhlasí.
+PRISPEVEK_SOUHLAS = ("Souhlasím, že KROMCL můj text přepíše a zveřejní na kromcl.cz "
+                     "pod mým jménem. Píšu jen to, co vím z první ruky, a nikoho "
+                     "nepomlouvám. E-mail slouží jen redakci pro doplňující otázky.")
 
-    Formulář je vložený, ne vlastní: odpověď Googlu cizí stránka nepřečte,
-    a vlastní formulář by tak hlásil „odesláno" naslepo. Google se načte jen
-    tady, a až když k rámu čtenář doscrolluje.
+
+def _google_formular():
+    """Adresa Google Formu pro čtenáře, záloha bez JavaScriptu a při chybě."""
+    return config.PRISPEVKY_FORMULAR.split("?", 1)[0]
+
+
+def _pole(nazev, popisek, prvek, napoveda=""):
+    """Jedno pole formuláře: popisek, nápověda, prvek a místo pro chybu."""
+    id_ = "p-" + nazev
+    popsano = ([id_ + "-n"] if napoveda else []) + [id_ + "-ch"]
+    return ('<div class="pole"><label for="{id}">{popisek}</label>{napoveda}'
+            '{prvek}<p class="chyba-pole" id="{id}-ch"></p></div>').format(
+                id=id_, popisek=popisek,
+                napoveda='<p class="napoveda" id="{0}-n">{1}</p>'.format(id_, napoveda)
+                if napoveda else "",
+                prvek=prvek.format(id=id_, popsano=" ".join(popsano)))
+
+
+def _prispevek_formular():
+    """Vlastní formulář v designu webu. Odesílá ho app.js do Apps Scriptu.
+
+    Google Form v rámu stylovat nejde (cizí doména) a jeho formResponse
+    odpověď cizí stránce nevrátí. Apps Script ano, takže formulář hlásí
+    skutečný výsledek. Bez JavaScriptu zůstane skrytý a místo něj je odkaz
+    na Google Form.
     """
+    if not config.PRISPEVKY_URL:
+        return ('<p class="zdroj">Formulář se právě chystá. Zkus to prosím '
+                'za pár dní.</p>')
+    pole = "".join([
+        _pole("jmeno", "Jméno",
+              '<input id="{id}" name="jmeno" type="text" required maxlength="80" '
+              'autocomplete="name" aria-describedby="{popsano}">',
+              "Ukáže se pod článkem."),
+        _pole("email", "E-mail",
+              '<input id="{id}" name="email" type="email" required maxlength="200" '
+              'autocomplete="email" aria-describedby="{popsano}">',
+              "Jen pro redakci, kdyby se potřebovala doptat. Na web nejde."),
+        _pole("nadpis", "Nadpis",
+              '<input id="{id}" name="nadpis" type="text" required maxlength="150" '
+              'aria-describedby="{popsano}">',
+              "O čem to je, jednou větou."),
+        _pole("text", "Text",
+              '<textarea id="{id}" name="text" required maxlength="6000" rows="8" '
+              'aria-describedby="{popsano}"></textarea>',
+              "Co, kdo, kdy, kde. Přepíšeme to do našeho jazyka a nic nepřidáme."),
+        _pole("odkaz", "Odkaz <span>(nepovinný)</span>",
+              '<input id="{id}" name="odkaz" type="url" inputmode="url" '
+              'placeholder="https://" maxlength="500" aria-describedby="{popsano}">',
+              "Web spolku nebo příspěvek na sítích, kde se dá zjistit víc."),
+    ])
+    souhlas = ('<div class="pole pole-souhlas"><label><input type="checkbox" '
+               'name="souhlas" required aria-describedby="p-souhlas-ch"> {0}</label>'
+               '<p class="chyba-pole" id="p-souhlas-ch"></p></div>').format(
+                   _e(PRISPEVEK_SOUHLAS))
+    # Past na roboty: pole, které člověk nevidí a nevyplní.
+    past = ('<div class="pole-past" aria-hidden="true"><label>Web <input name="web" '
+            'type="text" tabindex="-1" autocomplete="off"></label></div>')
+    zaloha = ""
     if config.PRISPEVKY_FORMULAR:
-        formular = ('<div class="formular-ramec"><iframe src="{0}" loading="lazy" '
-                    'title="Formulář pro poslání novinky">Načítám formulář…</iframe>'
-                    '</div>').format(_e(config.PRISPEVKY_FORMULAR))
-    else:
-        formular = ('<p class="zdroj">Formulář se právě chystá. Zkus to prosím '
-                    'za pár dní.</p>')
+        zaloha = ('<noscript><p class="zdroj">Formulář potřebuje JavaScript. Bez něj '
+                  'nám novinku pošleš <a href="{0}">přes Google Formulář</a>.</p>'
+                  '</noscript>').format(_e(_google_formular()))
+    return (
+        '<form class="prispevek" data-adresa="{adresa}" data-zaloha="{zaloha_url}" '
+        'novalidate hidden>{pole}{souhlas}{past}'
+        '<p class="formular-chyba" role="alert"></p>'
+        '<button type="submit" class="odeslat">Poslat novinku</button></form>'
+        '<div class="prispevek-hotovo" tabindex="-1" hidden>'
+        '<h2>Díky, máme to!</h2><p>Redakce si to přečte. Když to projde, najdeš to '
+        'na kromcl.cz pod svým jménem.</p>'
+        '<button type="button" class="dalsi-prispevek">Poslat další</button></div>'
+        '{noscript}'
+    ).format(adresa=_e(config.PRISPEVKY_URL), zaloha_url=_e(_google_formular()),
+             pole=pole, souhlas=souhlas, past=past, noscript=zaloha)
+
+
+def _prispevek_stranka():
+    """Pravidla a pod nimi formulář."""
+    formular = _prispevek_formular()
     return (
         '<article class="clanek">{drobecky}<h1>Pošli novinku</h1>'
         "<p>Víš o něčem, co se v Kroměříži děje a stojí za to, aby to věděli "

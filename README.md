@@ -224,9 +224,24 @@ schválí a hodinový cron ji přepíše a publikuje (`kromka/prispevky.py`).
 Modul je mimo `sources/` ze stejného důvodu jako `akce.py`: registr čeká
 feed s URL detailu.
 
-**Příjem je Google Form vložený v rámu** na vlastní stránce. Vlastní HTML
-formulář by odpověď Googlu nepřečetl a hlásil by „odesláno" naslepo, což
-jsme u přidání akce zamítli. Google se načte jen na téhle stránce.
+**Příjem je vlastní formulář v designu webu** (`render._prispevek_formular`,
+obsluha v `app.js`). Posílá data do Apps Scriptu (akce `odeslat`) a ten je
+zapíše jako odpověď do Google Formu, takže tabulka i upozornění jedou
+stejně jako při vyplnění u Googlu. Odpověď Apps Scriptu jde z naší stránky
+přečíst, takže formulář hlásí skutečný výsledek. U formResponse Googlu by
+to nešlo a hlásilo by se „odesláno" naslepo, což jsme u přidání akce
+zamítli. Posílá se jako `text/plain`: s `application/json` by prohlížeč
+nejdřív poslal dotaz OPTIONS a ten Apps Script neobslouží.
+
+Google Form v rámu byl první verze. Vypadal jako cizí prvek a stylovat
+nejde, protože běží na doméně Googlu. Zůstává jako záloha: bez
+JavaScriptu je formulář skrytý a stránka odkáže na Google Form, při chybě
+sítě nebo skriptu ho nabídne v hlášce.
+
+Proti robotům: skryté pole `web` (vyplní ho jen robot; skript odpoví „ok"
+a nic nezapíše), vyplnění rychlejší než 3 s se odmítne a celkem projde
+nejvýš 30 odeslání za hodinu (`STROP_ZA_HODINU`). Pravidla polí kontroluje
+`app.js` kvůli rychlé odezvě a skript znovu, protože jen jemu se dá věřit.
 
 **Tabulka je pravda o stavu**, ne `state.json`. Sloupec Stav:
 
@@ -266,8 +281,10 @@ projekt Apps Script „KROMCL – příspěvky čtenářů". Ten drží formulá
 „KROMCL – pošli novinku", tabulku „KROMCL – příspěvky čtenářů" a jejich ID
 ve vlastnostech skriptu (`FORMULAR_ID`, `TABULKA_ID`, `KLIC`). Upozornění na
 nový příspěvek chodí na zdenek@linki.cz (`UPOZORNENI` ve skriptu).
-Adresa endpointu a klíč jsou v `.env` a v repo secrets, adresa formuláře
-v proměnné repa `KROMKA_PRISPEVKY_FORMULAR`.
+Adresa endpointu a klíč jsou v `.env` a v repo secrets, adresa Google
+Formu v proměnné repa `KROMKA_PRISPEVKY_FORMULAR`. Tajný je jen klíč:
+adresa endpointu je v HTML stránky s formulářem a bez klíče přes ni jde jen
+poslat příspěvek.
 
 Všechno zakládá skript sám, ručně se nic nenaklikává:
 
@@ -352,8 +369,8 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/render.py` | `_og` (adresa karty z adresy stránky), `_ld_vydavatel` (logo, `sameAs`), `_zmeneno` a `_sitemap` (`lastmod` podle obsahu), parametr `indexovat` v `_stranka` |
 | `kromka/prispevky.py` | příspěvky čtenářů: `nacti`, `napis`, `stahni`, `zapis_stav`, `v_cronu`; **mimo `sources/`** |
 | `kromka/rewrite.py` | `PRISPEVEK_PROMPT`, `prepis_prispevku` — přepis příspěvku bez pojistky na opisování |
-| `kromka/render.py` | `PRISPEVEK_CESTA`, `_vyzva`, `_podpis`, `_prispevek_stranka` — formulář v rámu, štítek a podpis u příspěvku |
-| `apps-script/prispevky.gs` | `zalozit` (formulář, tabulka, upozornění, klíč), `zverejnit`, endpoint `doPost` (čtení schválených řádků bez e-mailu, zápis stavu); vkládá se na script.google.com ručně |
+| `kromka/render.py` | `PRISPEVEK_CESTA`, `PRISPEVEK_SOUHLAS`, `_vyzva`, `_podpis`, `_prispevek_formular`, `_prispevek_stranka` — vlastní formulář, štítek a podpis u příspěvku |
+| `apps-script/prispevky.gs` | `zalozit` (formulář, tabulka, upozornění, klíč), `zverejnit`, endpoint `doPost`: `odeslat` z webu, čtení schválených řádků bez e-mailu, zápis stavu; vkládá se na script.google.com ručně |
 | `kromka/indexnow.py` | fronta adres z `all` vedle složky webu a odeslání na `api.indexnow.org`; příkaz `python -m kromka indexnow` |
 
 ## Vývojové poznámky
@@ -467,6 +484,8 @@ Smoke checklist po refaktoru:
 | 2026-10-25 | web-vitals se načítá hned s nízkou prioritou, ne po `load` | `load` čeká i na 177 kB `gtag.js`, takže by se neměřily právě nejpomalejší návštěvy. A/B v Lighthouse: LCP beze změny. V Edge s odchodem přes odkaz dorazily LCP, CLS i INP 12× z 12 v obou variantách |
 | 2026-10-26 | **Příspěvky čtenářů**: Google Form v rámu na `/poslat-novinku.html`, schválení v tabulce, Apps Script endpoint, přepis v cronu, stažení stavem v tabulce | Čtenáři mají mít jak poslat vlastní novinku. Jedno schválení originálu, pojistky hlídají přepis. Povinné jméno pod článkem, e-mail jen v tabulce. Odkaz čtenáře `nofollow ugc`. Výjimka z principu 1 zapsaná v Principech |
 | 2026-10-26 | Formulář, tabulku a upozornění zakládá skript (`zalozit`), samostatný projekt v účtu zdenek@linki.cz; endpoint nasazený, formulář zveřejněný, secrets nastavené | Ruční naklikání formuláře a sloupců se dá snadno splést a názvy otázek musí sedět se sloupci. Upozornění z vlastního spouštěče, protože FormApp e-mailové notifikace Forms zapnout neumí |
+| 2026-10-26 | **Vlastní formulář** místo Google Formu v rámu; odesílá přes Apps Script (akce `odeslat`, verze 2 implementace), GA4 `prispevek_odeslani` | Formulář v rámu vypadal v designu webu jako cizí prvek a stylovat nejde. Apps Script vrací čitelnou odpověď, takže výsledek je skutečný. Ověřeno naostro z prohlížeče: řádek v tabulce, jedno upozornění, potvrzení na stránce |
+| 2026-10-26 | Hamburger se jmenuje **Menu** místo Témata, „pošli novinku" je v něm druhá za programem | Zadání Zdeňka. Na desktopu zůstává poslední; pořadí mění jen CSS `order` pod 1040 px, HTML se nemění |
 | 2026-10-26 | Pojistka na opisování se u příspěvků nevolá | Chrání autorské právo města; čtenář text svěřil souhlasem. Stejně jako u pozvánky |
 | 2026-10-26 | Hamburger do **1040 px** místo 900 | Položka „pošli novinku" natáhla menu na 604 px, láme se pod 1005 px okna (měřeno: 1000 dva řádky, 1010 jeden). Rezerva na Mac stejná jako dřív |
 | 2026-10-26 | `jen_novejsi` počítá hranici jen z článků ze zdrojů | Pozvánka a příspěvek mají datum vzniku u nás; zpráva vydaná městem dřív by pod hranici spadla a už se nezpracovala |
@@ -666,10 +685,12 @@ protože rozhraní GA4 dovolí označit jen událost, která už má zpracovaná
 | `navigace` | klik v `.dalsi`, `.drobecky`, `.menu`, na `.stitek` (v tomhle pořadí) | `misto`: `dalsi`, `drobecky`, `menu`, `stitek` |
 | `program_filtr` | klik na `.filtr-odkaz` | `typ_akce`: slug typu nebo okna, `vse` |
 | `prispevek_klik` | klik na odkaz na `/poslat-novinku.html` (má přednost před `navigace`) | `misto`: `menu`, `paticka`, `uvod`, `clanek`, `o-webu`, `jinde` |
+| `prispevek_odeslani` | pokus o odeslání formuláře | `vysledek`: `ok`, `kontrola` (chybí nebo nesedí pole), `chyba` (síť, skript) |
 
-Odeslání formuláře změřit nejde: je v rámu Googlu a stránka do něj nevidí.
-Kolik příspěvků přišlo, ukáže tabulka. Parametr `misto` je v GA4 jako
-vlastní dimenze zaregistrovaný už kvůli `navigace`.
+Parametry `misto` a `vysledek` jsou v GA4 jako vlastní dimenze
+zaregistrované už kvůli `navigace` a `instalace_nabidka`.
+`prispevek_odeslani` zatím není klíčová událost; označit ji jde až
+v rozhraní GA4, jakmile má data.
 
 Všech šest parametrů je v GA4 zaregistrovaných jako vlastní dimenze
 s rozsahem Událost. Proklik ven („Víc o akci", „Trailer") měří GA4 samo
@@ -763,7 +784,8 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Google News sitemap | Při jednom článku denně a hodinové sitemapě nic nepřidá; až kdyby se KROMCL hlásil do Google News |
 | `twitter:site` | KROMCL nemá účet na X; doplní se s `config.PROFILY` |
 | Fotka v příspěvku čtenáře | Licence k cizí fotce, EXIF s polohou a úložiště; zatím jen text a odkaz |
-| Vlastní HTML formulář místo Google Formu | Odpověď Googlu by nešla přečíst a formulář by hlásil „odesláno" naslepo |
+| Vlastní HTML formulář posílající rovnou do formResponse Googlu | Odpověď Googlu nejde z cizí stránky přečíst a formulář by hlásil „odesláno" naslepo. Vyřešeno přes Apps Script, viz Příspěvky čtenářů |
+| Motiv Google Formu (barva, písmo, záhlaví) místo vlastního formuláře | Pořád by vypadal jako Google; naše písma ani rámečky tam nejdou |
 | Příspěvky přes Cloudflare Worker do issues soukromého repa | Zdeněk zvolil Google Form; Worker by byl další účet a služba |
 | Čtení tabulky přes service account a Sheets API | Podpis JWT ve stdlib nejde, přibyla by `google-auth` (princip 6) |
 | Dvojí schválení (originál, pak přepis) | Zdeněk chce jedno; přepis hlídají pojistky a jde stáhnout |
