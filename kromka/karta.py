@@ -155,8 +155,8 @@ def vytvor(terminy, dny, cil, ted=None):
     def pismo(nazev, velikost):
         return ImageFont.truetype(str(PISMA / nazev), velikost)
 
-    syne = pismo("Syne-800.ttf", 96)
-    den_pismo = pismo("Syne-800.ttf", 38)
+    syne = pismo("Syne-700.ttf", 96)
+    den_pismo = pismo("Syne-700.ttf", 38)
     # Čas ve Space Grotesk: Syne má tak široké číslice, že „16.30" se do
     # sloupce nevešlo a usekla se jednička.
     cas_pismo = pismo("SpaceGrotesk-700.ttf", 40)

@@ -380,6 +380,7 @@ Smoke checklist po refaktoru:
 | 2026-10-24 | **Týdenní pozvánka** na akce Po–Ne, v cronu v pondělí od 6:00, dohání se v úterý | Program je důvod k návratu, ale sám čtenáře neosloví. Model píše komentář ke dnům, fakta jsou karty ze snímku dat. Výjimka z principu 1, atribuce CC BY místo odkazu na oznámení |
 | 2026-10-24 | **Core Web Vitals do GA4** (web-vitals 6.2.3 ve `static/vendor/`), oprava CLS víkendu, obrázek ke sdílení až 3 s po načtení | Google o malém webu vlastní data nemá, laboratoř je odhad. Víkend posouvalo odkrývané tlačítko Sdílet (CLS 0,16 → 0) a předem stahovaný obrázek zdržoval LCP (2,5 → 2,0 s). Ořezání přednačtení písem změřeno a zamítnuto: LCP beze změny, FCP horší |
 | 2026-10-25 | web-vitals se načítá hned s nízkou prioritou, ne po `load` | `load` čeká i na 177 kB `gtag.js`, takže by se neměřily právě nejpomalejší návštěvy. A/B v Lighthouse: LCP beze změny. V Edge s odchodem přes odkaz dorazily LCP, CLS i INP 12× z 12 v obou variantách |
+| 2026-10-26 | **Nadpisy Syne 730** místo 800, logo zůstává 800; karty og:image a víkendu statický Syne 700 | Zpětná vazba: extended řez v nadpisech „bolí oči". Syne nemá osu šířky, roztahuje se s váhou a mezi 700 a 800 nejvíc. 730 je výrazně užší a pořád tučné; 700 působilo lehce. Stačí stávající proměnný woff2 (700–800). Pillow umí jen statické TTF a Google jinou mezivahu nedá, proto na kartách 700 |
 
 ## Appka a favicona
 
@@ -439,7 +440,11 @@ Syne a Space Grotesk jsou na webu, ne na Google Fonts. Stáhl je
 
 - `static/fonts/` — čtyři proměnné woff2 pro web, po latince a latince
   rozšířené o češtinu, dohromady 90 kB; prohlížeč si je přednačte
-- `kromka/pisma/` — statické TTF pro víkendovou kartu; Pillow woff2 neumí
+- `kromka/pisma/` — statické TTF pro víkendovou kartu a og:image; Pillow
+  woff2 neumí. Syne 700 na titulky, Syne 800 jen na logo „KROMCL."
+
+Syne se s váhou rozšiřuje, 800 je extended. Na webu má plnou šíři jen
+logo, nadpisy a ostatní prvky ze Syne jsou na 730.
 
 K oběma patří `OFL-*.txt`, licence to při šíření vyžaduje. Service worker
 má seznam fontů natvrdo a ukládá je při instalaci — test hlídá, že sedí se

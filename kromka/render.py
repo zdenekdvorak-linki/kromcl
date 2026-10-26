@@ -44,7 +44,9 @@ body {
   font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%;
   overflow-wrap: break-word;
 }
-h1, h2, h3, .logo { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 800; line-height: 1.12; }
+/* Syne se s váhou rozšiřuje: 800 je extended a v delším nadpisu se čte
+   špatně. Plnou šíři má jen logo. */
+h1, h2, h3, .logo { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 730; line-height: 1.12; }
 a { color: inherit; }
 img { max-width: 100%; height: auto; }
 .obal { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
@@ -52,7 +54,7 @@ img { max-width: 100%; height: auto; }
 .preskocit:focus { left: 8px; top: 8px; background: var(--akcent); color: #000; padding: 8px 12px; z-index: 50; }
 header.hlava { border-bottom: 4px solid var(--ram); background: var(--karta); position: sticky; top: 0; z-index: 10; }
 .hlava .obal { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
-.logo { font-size: clamp(26px, 7vw, 44px); letter-spacing: -0.04em; text-decoration: none; }
+.logo { font-size: clamp(26px, 7vw, 44px); font-weight: 800; letter-spacing: -0.04em; text-decoration: none; }
 .logo span { color: var(--akcent); }
 .tagline { font-size: 13px; color: var(--slabe); text-transform: uppercase; letter-spacing: 0.08em; }
 .znacka { display: flex; flex-direction: column; }
@@ -212,7 +214,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .akce-seznam { display: grid; gap: 14px; }
 .akce { display: flex; gap: 14px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 14px; }
 .akce-kdy { flex: 0 0 74px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.akce-cas { font-family: Syne, sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1; text-align: center; }
+.akce-cas { font-family: Syne, sans-serif; font-weight: 730; font-size: 19px; line-height: 1.1; text-align: center; }
 .akce-znak { width: 40px; color: var(--inkoust); }
 .akce-znak .piktogram { width: 100%; height: auto; }
 .akce-telo { min-width: 0; }
@@ -224,7 +226,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .akce-info { font-weight: 500; }
 .akce-odkazy a { margin-right: 12px; }
 .akce-prazdno { font-size: 18px; }
-.pozvanka-zaver { margin: 30px 0 0; font-family: Syne, sans-serif; font-weight: 800; font-size: 20px; }
+.pozvanka-zaver { margin: 30px 0 0; font-family: Syne, sans-serif; font-weight: 730; font-size: 20px; }
 .pozvanka-zaver a { display: inline-block; padding: 12px 16px; background: var(--akcent); color: var(--inkoust); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); text-decoration: none; }
 .pozvanka-zaver a::after { content: " →"; }
 .atribuce { margin: 34px 0 0; padding-top: 14px; border-top: 2px dashed var(--ram); font-size: 13px; color: var(--slabe); max-width: 70ch; }
@@ -254,7 +256,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .ilu-cislo .piktogram { width: 60px; height: 60px; margin-bottom: 6px; flex: none; }
 /* Velikost čísla podle šířky karty (cqi): třetina 720px sloupce i polovina
    telefonu. Prohlížeč bez container queries dostane pevných 22 px. */
-.ilu-cislo b { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 22px; font-size: clamp(18px, 15cqi, 30px); line-height: 1.05; }
+.ilu-cislo b { font-family: Syne, ui-sans-serif, system-ui, sans-serif; font-weight: 730; font-size: 22px; font-size: clamp(18px, 15cqi, 30px); line-height: 1.05; }
 .ilu-cislo small { font-size: .6em; }
 .ilu-popis { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--slabe); }
 .ilu-penize { background: var(--akcent); color: #000; }

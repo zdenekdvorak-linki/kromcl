@@ -36,7 +36,7 @@ UA_TTF = "curl/8"
 
 CSS_WEB = ("https://fonts.googleapis.com/css2?family=Syne:wght@700;800"
            "&family=Space+Grotesk:wght@400;500;700&display=swap")
-CSS_TTF = ("https://fonts.googleapis.com/css2?family=Syne:wght@800"
+CSS_TTF = ("https://fonts.googleapis.com/css2?family=Syne:wght@700;800"
            "&family=Space+Grotesk:wght@500;700")
 LICENCE = {
     "syne": "https://raw.githubusercontent.com/google/fonts/main/ofl/syne/OFL.txt",

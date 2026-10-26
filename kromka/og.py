@@ -351,8 +351,8 @@ def vytvor(cil, nadpis, stitek, tema, pata):
 
     # Titulek.
     velikost, radky = rozloz_titulek(
-        nadpis, lambda v: pismo("Syne-800.ttf", v).getlength)
-    syne = pismo("Syne-800.ttf", velikost)
+        nadpis, lambda v: pismo("Syne-700.ttf", v).getlength)
+    syne = pismo("Syne-700.ttf", velikost)
     for i, radek in enumerate(radky):
         k.text((OKRAJ, TITULEK_Y + i * velikost * 1.05), radek, font=syne,
                fill=INKOUST, anchor="la")
