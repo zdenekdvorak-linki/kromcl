@@ -1,4 +1,9 @@
 {
-  "fronta": [],
+  "fronta": [
+    {
+      "id": "ctenar:1d5a940f783e1457",
+      "zarazeno": "2026-10-26T11:08:14+00:00"
+    }
+  ],
   "odeslane": {}
 }
