@@ -935,6 +935,64 @@ class ProgramDetiACas(unittest.TestCase):
         self.assertNotIn(render.DETI_CESTA, bez)
 
 
+class ProgramMista(unittest.TestCase):
+    """Stránky podle místa (27. 10. 2026)."""
+
+    postav = ProgramDetiACas.postav
+    cti = ProgramDetiACas.cti
+
+    def termin(self, nazev, misto="Zimní stadion", typ="Sport"):
+        return {"nazev": nazev, "zacatek": "2026-11-07T17:30:00",
+                "konec": "2026-11-07T20:00:00", "vicedenni": False,
+                "typ": typ, "misto": misto}
+
+    def test_stranka_mista_ma_jen_sve_akce(self):
+        site = self.postav([self.termin("HK Kroměříž – HC Kopřivnice"),
+                            self.termin("Koncert", misto="Dům kultury v Kroměříži",
+                                        typ="Hudba a tanec")])
+        stadion = self.cti(site, "program/zimni-stadion.html")
+        self.assertIn("<h1>" + render.MISTA["Zimní stadion"]["h1"] + "</h1>", stadion)
+        self.assertIn("<h3>HK Kroměříž – HC Kopřivnice</h3>", stadion)
+        self.assertNotIn("<h3>Koncert</h3>", stadion)
+        self.assertIn('rel="canonical" href="{0}"'.format(
+            render._abs("/program/zimni-stadion.html")), stadion)
+        self.assertIn('class="cas-filtr"', stadion)
+        self.assertIn('class="filtr-odkaz je-aktivni" href="/program/zimni-stadion.html"',
+                      stadion)
+
+    def test_prazdne_misto_se_vykresli(self):
+        # Na rozdíl od typů: adresa musí zůstat, i když se tam nic nekoná.
+        site = self.postav([self.termin("HK Kroměříž – HC Kopřivnice")])
+        vystaviste = self.cti(site, "program/vystaviste.html")
+        self.assertIn(render.MISTA["Výstaviště Kroměříž"]["prazdno"], vystaviste)
+        self.assertIn('href="/program/vystaviste.html">Výstaviště</a>',
+                      self.cti(site, "program.html"))
+
+    def test_filtr_nese_vsechna_mista(self):
+        filtr = render._filtr(None, set())
+        for udaje in render.MISTA.values():
+            self.assertIn('href="/program/{0}.html">{1}</a>'.format(
+                udaje["slug"], udaje["stitek"]), filtr)
+
+    def test_mista_maji_vlastni_slug_a_metadata(self):
+        # Slug nesmí přepsat stránku typu, okna ani dětí.
+        obsazene = ({u["slug"] for u in render.TYPY_AKCI.values()}
+                    | set(render.VYBERY) | {"deti"})
+        for misto, udaje in render.MISTA.items():
+            self.assertNotIn(udaje["slug"], obsazene, misto)
+            self.assertIn(udaje["piktogram"], piktogramy.dostupna_temata(), misto)
+        for pole in ("slug", "titulek", "popis", "h1", "uvod", "prazdno"):
+            hodnoty = [u[pole] for u in render.MISTA.values()]
+            self.assertEqual(len(hodnoty), len(set(hodnoty)), pole)
+
+    def test_mista_v_sitemape(self):
+        mapa = render._sitemap([], {"terminy": [self.termin("Zápas")],
+                                    "stazeno": "2026-10-26T01:00:00+00:00"})
+        for udaje in render.MISTA.values():
+            self.assertIn("/program/{0}.html</loc><lastmod>2026-10-26</lastmod>"
+                          "<priority>0.6</priority>".format(udaje["slug"]), mapa)
+
+
 class KinoDK(unittest.TestCase):
     def test_rozebere_vzorek_stranky(self):
         markup = (FIXTURES / "dk-film.html").read_text(encoding="utf-8")

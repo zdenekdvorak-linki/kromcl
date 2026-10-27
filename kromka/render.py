@@ -1091,6 +1091,78 @@ def _pro_deti(termin):
     return bool(termin.get("pro_deti")) and not _OBRADY.search(termin.get("nazev") or "")
 
 
+# Výběry podle místa. Jen místa s vlastní hledaností (Marketing Miner,
+# říjen 2026): „hk kroměříž" 980 a „zimní stadion kroměříž" 670,
+# „výstaviště kroměříž" 2 800 a „floria kroměříž" 2 500, „dům kultury
+# kroměříž" 840 a „dk kroměříž" 650, „knihovna kroměříž" 600.
+#
+# Klíč je název místa z číselníku, ne číslo, stejně jako u piktogramů typů.
+# Když město místo přejmenuje, stránka zůstane prázdná, ale nezmizí.
+#
+# Jako okna se vykreslí i prázdné: výstaviště žije nárazově a stadion
+# sezónou, a adresa, která bliká mezi 200 a 404, se ve vyhledávání neusadí.
+MISTA = {
+    "Zimní stadion": {
+        "slug": "zimni-stadion",
+        "stitek": "Zimní stadion",
+        "piktogram": "sport",
+        "h1": "Zimní stadion Kroměříž: zápasy a program",
+        "titulek": "Zimní stadion Kroměříž: zápasy HK Kroměříž",
+        "popis": "Domácí zápasy HK Kroměříž a další akce na zimním stadionu "
+                 "v Kroměříži na měsíc dopředu. Kdy se hraje a proti komu.",
+        "uvod": "Domácí zápasy HK Kroměříž i všechno ostatní, co se na zimáku "
+                "koná. Soupeř je v názvu zápasu, čas začátku vlevo. Hraje se "
+                "hlavně přes zimu, takže mimo sezónu tu bude prázdno.",
+        "prazdno": "Na zimním stadionu teď na měsíc dopředu nic není. Mimo "
+                   "hokejovou sezónu je to normální.",
+    },
+    "Výstaviště Kroměříž": {
+        "slug": "vystaviste",
+        "stitek": "Výstaviště",
+        "piktogram": "vystava",
+        "h1": "Výstaviště Kroměříž: akce",
+        "titulek": "Akce na Výstavišti Kroměříž",
+        "popis": "Co se koná na Výstavišti Kroměříž na měsíc dopředu. Výstavy, "
+                 "trhy a festivaly s časy a vstupným.",
+        "uvod": "Výstavy, trhy a festivaly v areálu výstaviště. Akce tu bývají "
+                "velké a nárazové, takže je stránka chvíli plná a chvíli "
+                "prázdná. Program bereme z otevřených dat města, ne od "
+                "výstaviště, a co pořadatel do dat nezadá, tu nenajdeš.",
+        "prazdno": "Na výstavišti teď na měsíc dopředu nic není.",
+    },
+    "Dům kultury v Kroměříži": {
+        "slug": "dum-kultury",
+        "stitek": "Dům kultury",
+        "piktogram": "divadlo",
+        "h1": "Dům kultury Kroměříž: program",
+        "titulek": "Program Domu kultury v Kroměříži",
+        "popis": "Koncerty, divadlo, výstavy a besedy v Domě kultury "
+                 "v Kroměříži na měsíc dopředu. Časy, ceny a odkaz na pořadatele.",
+        "uvod": "Kulturák na jednom místě: koncerty, divadlo, výstavy i besedy. "
+                "Projekce Kina Nadsklepí tu nejsou, ty mají v programu "
+                "vlastní stránku s každým filmem.",
+        "prazdno": "V Domě kultury teď na měsíc dopředu nic není.",
+    },
+    "Knihovna Kroměřížska": {
+        "slug": "knihovna",
+        "stitek": "Knihovna",
+        "piktogram": "beseda",
+        "h1": "Knihovna Kroměřížska: akce",
+        "titulek": "Akce v Knihovně Kroměřížska",
+        "popis": "Besedy, přednášky, dílny a výstavy v Knihovně Kroměřížska "
+                 "na měsíc dopředu.",
+        "uvod": "Program knihovny, ne výpůjčky: otevírací dobu tu nenajdeš, "
+                "ta je na webu knihovny. Besedy a dílny bývají často zadarmo, "
+                "koukni na štítek u ceny.",
+        "prazdno": "V knihovně teď na měsíc dopředu nic není.",
+    },
+}
+
+
+def _misto_cesta(nazev_mista):
+    return "/program/{0}.html".format(MISTA[nazev_mista]["slug"])
+
+
 def _vyber_cesta(klic):
     return "/program/{0}.html".format(klic)
 
@@ -1248,9 +1320,10 @@ def _karta_akce(termin, cas_zacatku=False, kampan="program"):
 def _filtr(aktivni, dostupne):
     """Lišta filtru. Odkazy vykreslené na serveru, žádný JavaScript.
 
-    Nejdřív okna v čase a děti, pak typy — v tom pořadí se podle dat i hledá.
-    `dostupne` nese typy s aspoň jedním termínem a "deti", když je stránka
-    pro děti.
+    Nejdřív okna v čase a děti, pak typy, nakonec místa. Okna a místa
+    mají hledanost, typy jsou navigace (`VYBERY`, `MISTA`). `dostupne` nese
+    typy s aspoň jedním termínem a "deti", když je stránka pro děti. Místa
+    jsou tu vždy, jejich stránka vzniká i prázdná.
     """
     def odkaz(cesta, popisek, je):
         return '<a class="filtr-odkaz{0}" href="{1}">{2}</a>'.format(
@@ -1269,6 +1342,9 @@ def _filtr(aktivni, dostupne):
             continue
         kusy.append(odkaz(_typ_cesta(typ), TYPY_AKCI[typ]["h1"].split(":")[0],
                           typ == aktivni))
+    kusy.append('<span class="filtr-del" aria-hidden="true"></span>')
+    for misto, udaje in MISTA.items():
+        kusy.append(odkaz(_misto_cesta(misto), udaje["stitek"], misto == aktivni))
     return '<nav class="filtr" aria-label="Filtr programu">{0}</nav>'.format(
         "".join(kusy))
 
@@ -1527,6 +1603,26 @@ def _program_stranky(akce_data):
             obrazek=_og(DETI_CESTA, DETI["h1"], "program", "zabava"),
             jsonld=_jsonld(_ld_seznam(deti, DETI_CESTA),
                            _ld_drobecky_program(DETI["h1"], DETI_CESTA)),
+        ), encoding="utf-8")
+        zapsano += 1
+
+    # Jako okna: vznikne i prázdná, adresa musí být stabilní.
+    for misto, udaje in MISTA.items():
+        vybrane = [t for t in terminy if t.get("misto") == misto]
+        cesta = _misto_cesta(misto)
+        (config.SITE / "program" / (udaje["slug"] + ".html")).write_text(_stranka(
+            "{0} – {1}".format(udaje["titulek"], config.BRAND),
+            udaje["popis"],
+            '{0}<h1>{1}</h1><p class="uvod">{2}</p>{3}'.format(
+                _drobecky([("Domů", "/"), ("Program", PROGRAM_CESTA),
+                           (udaje["h1"], None)]),
+                _e(udaje["h1"]), _e(udaje["uvod"]),
+                _program(vybrane, misto, dostupne, udaje["prazdno"],
+                         cas=(cesta, udaje["titulek"]))),
+            cesta=cesta, og_titulek=udaje["titulek"],
+            obrazek=_og(cesta, udaje["h1"], "program", udaje["piktogram"]),
+            jsonld=_jsonld(_ld_seznam(vybrane, cesta),
+                           _ld_drobecky_program(udaje["h1"], cesta)),
         ), encoding="utf-8")
         zapsano += 1
     return zapsano
@@ -2036,6 +2132,9 @@ def _sitemap(clanky, akce_data=None):
         # Děti nad typy: jako jediný výběr mimo okna mají měřitelnou hledanost.
         if any(_pro_deti(t) for t in terminy):
             radky.append(url(DETI_CESTA, stazeno, "0.6"))
+        # Místa jako děti: mají hledanost, a vznikají i prázdná.
+        for misto in MISTA:
+            radky.append(url(_misto_cesta(misto), stazeno, "0.6"))
     temata = {}
     for clanek in clanky:
         for tag in clanek.get("tags", []):

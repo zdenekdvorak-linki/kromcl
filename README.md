@@ -166,7 +166,22 @@ neodkazuje. Marketing Miner (říjen 2026): „kroměříž pro děti“ 30 hled
 měsíčně, v červenci 90, „akce pro děti kroměříž“ 20; v sitemapě má proto
 0.6, nad typy.
 
-**Filtr podle data** je na celém programu, typech a dětech, ne na oknech
+**Místa** (`MISTA`) jsou čtyři stránky podle místa konání:
+`/program/zimni-stadion.html`, `vystaviste.html`, `dum-kultury.html`
+a `knihovna.html`. Vybraná jsou podle hledanosti v Marketing Mineru
+(říjen 2026): „hk kroměříž" 980 a „zimní stadion kroměříž" 670,
+„výstaviště kroměříž" 2 800 a „floria kroměříž" 2 500, „dům kultury
+kroměříž" 840, „knihovna kroměříž" 600. Celý průzkum je
+v `pruzkum-dotazu-2026-10.md`. Klíčem je název místa z číselníku, ne
+číslo, stejně jako u piktogramů typů. Chovají se jako okna: vzniknou
+i prázdné a ve filtru jsou vždy, jako třetí skupina za typy. Výstaviště
+žije nárazově, stadion sezónou, a adresa, která bliká mezi 200 a 404,
+se ve vyhledávání neusadí. V sitemapě mají 0.6 jako děti.
+
+Floria má největší hledanost, jenže na stránce bude, jen pokud ji
+pořadatel zadá do otevřených dat města. Úvod výstaviště to říká.
+
+**Filtr podle data** je na celém programu, typech, dětech a místech, ne na oknech
 Dnes a Víkend, ta mají rozsah pevný. Obsluhuje ho celý `app.js`, v HTML
 je skrytý, takže bez JS stránka ukáže všechno. Předvolby Zítra, Tento
 týden a Příští týden jen vyplní pole od–do; v adrese je vždy absolutní
@@ -418,7 +433,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
 | `kromka/pozvanka.py` | týdenní pozvánka: `tyden`, `ma_vzniknout`, `rozdel`, prompt, pojistky, `napis`, `v_cronu`; render v `render._pozvanka_telo` |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
-| `kromka/render.py` | `TYPY_AKCI`, `VYBERY` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend` |
+| `kromka/render.py` | `TYPY_AKCI`, `VYBERY`, `MISTA` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend`, `_misto_cesta` |
 | `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow`, `facebook` |
 | `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
 | `bin/ikony.py` | vyrobí ikony do `static/`; pouští se ručně po změně značky, výsledek se commituje |
@@ -565,6 +580,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Skill `/pridat-akci`**: Claude in Chrome vyplní formulář akcí města z volného vstupu nebo z příspěvků ve stavu `akce`, odešle po potvrzení, stav `akce odeslána` zpátky do tabulky. Při známé chybě s diakritikou nabídne verzi bez háčků | Do vlastního formuláře se čeká na odpověď města; pozvánky od čtenářů a pořadatelů se mezitím mají jak dostat do kalendáře. Skript místo klikání, protože popis je Trumbowyg a kalendář jen pro čtení. Kontakt u příspěvků Zdeněk, souhlas čtenáři slibuje e-mail jen pro redakci |
 | 2026-10-26 | První akce podaná skillem (Magion House – PHUNXX_J, Tvenis Bar, 16. 11.) prošla i s diakritikou; skill bere za důkaz úspěchu přesměrování na `/akce/` | Skript města přesměruje jen při `error == 0`, hláška zmizí po 2 s a síť se sleduje až od prvního čtení. Chyba z 24. 10. je nejspíš opravená, záložní verze bez háčků zůstává jako pojistka |
 | 2026-10-26 | **Google News sitemap** `/news-sitemap.xml` (`_news_sitemap`): všechny typy článků s `published` za posledních 48 hodin, datum stejné jako `datePublished` v JSON-LD, název `KROMCL`, jazyk `cs`; odkaz v `robots.txt` | Zdeněk ji chce, přestože byla v Parking lotu (přínos je malý, nic ale nestojí). Do Google News se dnes nehlásí, Google zařazuje sám. Samostatný soubor, aby hlavní sitemapa neměnila obsah každou hodinu. Archivní přepisy tam nepatří, jejich vydání u města je staré |
+| 2026-10-27 | **Stránky podle místa** (`MISTA`): zimní stadion, výstaviště, Dům kultury, knihovna; třetí skupina ve filtru, vznikají i prázdné, sitemap 0.6 | Průzkum dotazů v Marketing Mineru (`pruzkum-dotazu-2026-10.md`): místa mají hledanost, kterou typy nemají, a data ji umí obsloužit bez nového zdroje. Stadion pojmenovaný podle místa, ne podle hokeje, aby seděl i na jinou akci |
 | 2026-10-27 | **Přepis na Opus** (`MODEL_REWRITE` = `claude-opus-5-5`, dřív Sonnet); platí pro články, pozvánku i příspěvky, klasifikace zůstává na Haiku | Rozhodnutí Zdeňka. Starší JSONy se nepřegenerovávají (princip 5), pole `model` u článku ukazuje, čím vznikl. Přepis je dražší na token |
 | 2026-10-27 | **Opravy z bezpečnostního auditu repa** (Fable): štítky od modelu jen ze slovníku `rewrite.STITKY` (`vyber_stitky`, zahodí neznámé, nejvýš tři; prompt bere seznam odtud), JSON ve skriptu měření escapuje `</` jako JSON-LD (`render._do_skriptu`), `akce._odkaz` pustí jen http a https | Štítek jde do inline skriptu GA4, takže `</script>` od zmanipulovaného modelu by spustil cizí kód na kromcl.cz. Odkaz akce podá kdokoli přes formulář města a `javascript://` se spustil po kliknutí. Archiv je čistý, žádný štítek mimo slovník. Zbytek auditu (ruční schválení před FB, RSS CDATA, host u DK, piny závislostí, ochrana `main`) zatím otevřený |
 | 2026-10-27 | **Slovník Gen Z a pojistka na pestrost**: slovník z 48 na 113 výrazů (+44 živých, 2 ironické, 19 zakázaných) z [Slovníku Gen Z FMK UTB](https://fmk.utb.cz/slovnik-gen-z-aneb-generace-z-ve-slovech/) a [slovníku pro učitele](https://www.nezzazvoni.cz/vykladovy-slovnik-pro-ucitele/) (2020); `misto` přeneseno na město (glow-up = rekonstrukce, red flag = varovný signál). Prompt dostává okoukané výrazy z posledních 10 článků (`styl.okoukane`, `rewrite.jazyk`), u zakázaných nové `presne` | Cílem je pestřejší text. Archiv ukázal, že model jede na pěti výrazech (lowkey 51/66), takže samotný větší slovník nestačí. Hanlivé a sexuální výrazy jdou do zakázaných (princip 4). Věta o verdiktu v promptu už nejmenuje W, L, mid…, protože výčet sám tlačil právě ty. Prompt jazyka narostl z 5,9k na 9,9k znaků. Staré články zůstávají |
