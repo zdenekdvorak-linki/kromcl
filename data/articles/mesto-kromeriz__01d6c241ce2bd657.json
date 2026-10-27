@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Nová parta na radnici se poprvé schází a lowkey to bude maraton. Ustavující zasedání kroměřížských zastupitelů má 25 bodů a ty nejsledovanější přijdou až ve druhé půlce: volba starosty, jeho první projev, pak místostarostové a rada města.",
+    "Před main questem čeká zastupitele pár side questů. Mandátový výbor ověří, že jejich volba platí, nováčci složí slib a pak odhlasují jednací i volební řád. Zastupitelé taky rozhodnou, kolik lidí bude sedět v radě, jaké výbory vzniknou a kolik z nich bude mít funkci jako hlavní práci.",
+    "Řeší se i peníze, no cap. Zastupitelé odhlasují měsíční odměny pro kolegy, kteří funkci nedělají naplno, a určí, kdo z nich povede občanské obřady. Úplně na konci programu je prostor pro diskusi.",
+    "Chceš to vidět naživo? Čtvrtek 1. listopadu 2018, začátek ve 14:30, místo: zasedací místnost kroměřížského městského úřadu. Vstup má každý, pozvánku podepsal starosta Jaroslav Němec. Kdo vydrží sedět od prvního bodu až po diskusi, odemyká achievement."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.298,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-27T09:34:47.239539+00:00"
+  },
+  "headline": "Noví zastupitelé skládají slib a volí starostu, main quest má 25 bodů",
+  "id": "mesto-kromeriz:01d6c241ce2bd657",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-10-27T06:25:24+01:00",
+  "rewritten_at": "2026-10-27T09:34:47.239563+00:00",
+  "sensitivity": "volny",
+  "slug": "novi-zastupitele-skladaji-slib-a-voli-starostu-main-quest-ma-25-bodu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "volby"
+  ],
+  "tldr": [
+    {
+      "emoji": "🗳️",
+      "label": "Main Quest",
+      "text": "Zastupitelé na svém prvním zasedání zvolí starostu, místostarosty a radu města."
+    },
+    {
+      "emoji": "🚪",
+      "label": "Open Door",
+      "text": "Přijít se může podívat kdokoliv, zasedání je přístupné veřejnosti."
+    },
+    {
+      "emoji": "📅",
+      "label": "Save Date",
+      "text": "Start je ve čtvrtek 1. listopadu 2018 ve 14:30 na kroměřížské radnici."
+    }
+  ]
+}
