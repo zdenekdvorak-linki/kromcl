@@ -152,10 +152,18 @@ def _odkaz(text):
     Pořadatelé do exportu píšou i „www.hkkm.cz" bez https. Takový odkaz
     bere prohlížeč jako relativní a vede na kromcl.cz/program/www.hkkm.cz,
     tedy na 404 — 23. 10. 2026 to bylo 22 ze 115 odkazů.
+
+    Jiný protokol než http a https se zahodí. Akci do dat města podá
+    kdokoli, a `javascript://` by se na webu spustil po kliknutí.
     """
     text = (text or "").strip()
-    if not text or re.match(r"^[a-z][a-z0-9+.-]*://", text, re.I):
+    if not text:
+        return ""
+    if re.match(r"^https?://", text, re.I):
         return text
+    # Protokol je cokoli před dvojtečkou, za kterou nejde číslo portu.
+    if re.match(r"^[a-z][a-z0-9+.-]*:(?!\d)", text, re.I):
+        return ""
     return "https://" + text.lstrip("/")
 
 

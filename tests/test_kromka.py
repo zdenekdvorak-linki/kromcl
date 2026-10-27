@@ -374,6 +374,12 @@ class Appka(unittest.TestCase):
         self.assertIn('"typ_stranky": "clanek"', kod)
         self.assertIn('"tema": "\\u0161kolstv\\u00ed"', kod)
 
+    def test_tema_neukonci_skript_mereni(self):
+        # Štítek pochází od modelu; </script> v něm nesmí blok ukončit.
+        kod = render._mereni("/clanek/x.html", "</script><script>zle()</script>")
+        self.assertEqual(kod.count("</script>"), 1)
+        self.assertIn("<\\/script>", kod)
+
     def test_udalosti_najdou_tridy_ze_sablony(self):
         # app.js pozná kliknutí podle tříd z render.py. Přejmenování třídy
         # by měření tiše vypnulo, proto se hlídají obě strany.
@@ -499,6 +505,16 @@ class OdkazyProgramu(unittest.TestCase):
     def test_prazdny_zustane_prazdny(self):
         self.assertEqual(akce._odkaz(""), "")
         self.assertEqual(akce._odkaz("  "), "")
+
+    def test_jiny_protokol_nez_http_zahodi(self):
+        # Akci do dat města podá kdokoli; javascript: by se spustil po kliknutí.
+        for odkaz in ("javascript://x%0aalert(1)//", "JavaScript:alert(1)",
+                      "data:text/html,<b>x</b>", "mailto:a@b.cz", "ftp://a.cz"):
+            self.assertEqual(akce._odkaz(odkaz), "", odkaz)
+
+    def test_port_neni_protokol(self):
+        self.assertEqual(akce._odkaz("www.hkkm.cz:8080/x"), "https://www.hkkm.cz:8080/x")
+        self.assertEqual(akce._odkaz("HTTPS://a.cz"), "HTTPS://a.cz")
 
     def test_ted_je_bez_zony(self):
         # Časy akcí v datech zónu nemají; porovnání se zónou by spadlo.
@@ -1065,6 +1081,27 @@ class PrepisBezSite(unittest.TestCase):
             self.assertIn("999", str(chyba.exception))
         finally:
             rewrite._zeptej_se = puvodni
+
+    def test_stitky_jen_ze_slovniku(self):
+        puvodni = rewrite._zeptej_se
+        rewrite._zeptej_se = lambda *a, **k: (
+            '{"headline": "Tabule", "tldr": [], "body": ["Přibudou tabule"], '
+            '"tags": ["</script><script>zle()</script>", " Doprava", "doprava", '
+            '"kultura", "sport", "akce", 7]}')
+        try:
+            data = rewrite.prepis(dict(self.POLOZKA), "volny", pokusy=1)
+            self.assertEqual(data["tags"], ["doprava", "kultura", "sport"])
+        finally:
+            rewrite._zeptej_se = puvodni
+
+    def test_stitky_mimo_seznam_daji_prazdny_vysledek(self):
+        self.assertEqual(rewrite.vyber_stitky(["politika"]), [])
+        self.assertEqual(rewrite.vyber_stitky("doprava"), [])
+        self.assertEqual(rewrite.vyber_stitky(None), [])
+
+    def test_prompt_vyjmenuje_slovnik_stitku(self):
+        for prompt in (rewrite.ZPRAVA_PROMPT, rewrite.PRISPEVEK_PROMPT):
+            self.assertIn("{stitky}", prompt)
 
     def test_opravny_pokus(self):
         """První odpověď je vadná, druhá dobrá — `prepis` to má ustát."""

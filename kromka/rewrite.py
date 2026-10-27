@@ -31,6 +31,11 @@ Titulek: {titulek}
 Text:
 {text}"""
 
+# Jediný slovník štítků. Štítek jde do adresy stránky tématu i do skriptu
+# měření, takže se od modelu nebere nic, co tu není (`vyber_stitky`).
+STITKY = ("doprava", "kultura", "sport", "školství", "peníze", "stavba",
+          "radnice", "volby", "příroda", "lidé", "akce")
+
 ZPRAVA_PROMPT = """Jsi redaktor webu {brand}, který píše o dění v Kroměříži.
 
 Právě sis přečetl oznámení radnice. Teď o té věci napíšeš VLASTNÍ zprávu.
@@ -96,8 +101,7 @@ Vrať POUZE JSON, bez markdown bloku, v tomhle tvaru:
 }}
 
 tldr má přesně 3 položky. body má 2 až 4 odstavce. tags jsou 1 až 3 krátká
-česká slova malými písmeny z okruhu: doprava, kultura, sport, školství, peníze,
-stavba, radnice, volby, příroda, lidé, akce.
+česká slova malými písmeny z okruhu: {stitky}.
 
 ## Oznámení radnice, ze kterého si bereš fakta
 
@@ -161,8 +165,7 @@ Vrať POUZE JSON, bez markdown bloku, v tomhle tvaru:
 }}
 
 tldr má přesně 3 položky. body má 2 až 4 odstavce. tags jsou 1 až 3 krátká
-česká slova malými písmeny z okruhu: doprava, kultura, sport, školství, peníze,
-stavba, radnice, volby, příroda, lidé, akce.
+česká slova malými písmeny z okruhu: {stitky}.
 
 ## Zdroj: příspěvek čtenáře, ze kterého si bereš fakta
 
@@ -295,6 +298,7 @@ def prepis(item, citlivost, pokusy=2):
         ton=TON_VOLNY if citlivost == "volny" else TON_NEUTRALNI,
         jazyk=styl.pravidla_jazyka() if citlivost == "volny" else "",
         proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
+        stitky=", ".join(STITKY),
         titulek=item["title"],
         rubrika=item.get("rubrika") or "—",
         datum=(item.get("published") or "")[:10],
@@ -325,7 +329,7 @@ def prepis_prispevku(item, pokusy=2):
     """
     zprava = PRISPEVEK_PROMPT.format(
         brand=config.BRAND, ton=TON_VOLNY, jazyk=styl.pravidla_jazyka(),
-        proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
+        proti_slopu=styl.PRAVIDLA_PROTI_SLOPU, stitky=", ".join(STITKY),
         titulek=item["title"], datum=(item.get("published") or "")[:10],
         text="\n\n".join(item.get("body") or []),
     )
@@ -376,7 +380,22 @@ def _jeden_pokus(item, zprava, opisovani=True):
         raise ValueError("Antiteze „A, ne B\": {0}".format(antiteze[0]))
     if data["headline"].rstrip().endswith("."):
         data["headline"] = data["headline"].rstrip().rstrip(".")
+    data["tags"] = vyber_stitky(data.get("tags"))
     return data
+
+
+def vyber_stitky(tags):
+    """Jen štítky ze slovníku `STITKY`, bez opakování, nejvýš tři.
+
+    Neznámý štítek se zahodí, ne opraví: přepis kvůli němu nepadá, protože
+    o faktech nic neříká. Prázdný výsledek dorovná volající.
+    """
+    vybrane = []
+    for tag in tags if isinstance(tags, list) else []:
+        tag = str(tag).strip().lower()
+        if tag in STITKY and tag not in vybrane:
+            vybrane.append(tag)
+    return vybrane[:3]
 
 
 def _json(text):

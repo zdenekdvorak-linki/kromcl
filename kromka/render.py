@@ -420,7 +420,13 @@ def _mereni(cesta="/", tema=""):
         parametry["tema"] = tema
     return (MERENI.replace("__GA4_ID__", config.GA4_ID)
             .replace("__HOST__", urlparse(config.SITE_URL).hostname)
-            .replace("__PARAMETRY__", json.dumps(parametry)))
+            .replace("__PARAMETRY__", _do_skriptu(json.dumps(parametry))))
+
+
+def _do_skriptu(text):
+    """JSON vložený do <script>. `</script>` uvnitř řetězce by blok ukončil
+    dřív, než má, a zbytek by prohlížeč vzal jako HTML."""
+    return text.replace("</", "<\\/")
 
 
 ZAKLAD = """<!doctype html>
@@ -551,9 +557,7 @@ def _jsonld(*bloky):
     if not bloky:
         return ""
     data = bloky[0] if len(bloky) == 1 else bloky
-    text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
-    # </script> uvnitř řetězce by ukončil blok dřív, než má.
-    text = text.replace("</", "<\\/")
+    text = _do_skriptu(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
     return '<script type="application/ld+json">{0}</script>\n'.format(text)
 
 
