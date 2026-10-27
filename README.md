@@ -967,3 +967,4 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |
 | Zelená `#2DD46E` (ztmavit jen maličko) | Od původní `#39E67A` se na pohled skoro neliší, oči by pálila dál |
 | Zelená `#2AAE5E` (tlumená) | Šetří oči nejvíc, ale je už trávová a působí jako jiná značka |
+| Přesadit diakritiku v nadpisech karet (jiné písmo nebo ruční posun) | Měřeno 26. 10. 2026: není co opravovat. Statické `Syne-700.ttf` i webový `syne-latin-ext.woff2` mají vrchol háčku na 757–759 em proti výšce verzálek 650, takže Pillow kreslí totéž co prohlížeč — ověřeno srovnáním téhož titulku z webu a z Pillow. Vysoko posazená diakritika je rys Syne; u „Kroměříž“ se čtyři značky v řadě slijí do pásu, což svádí k dojmu vady |
