@@ -45,8 +45,10 @@ var OTAZKY = {
 var REDAKCE = { stav: 'Stav', clanek: 'Odkaz na článek', poznamka: 'Poznámka' };
 
 // Všechny hodnoty sloupce Stav, i ty, které zapisuje cron. Rozbalovací
-// seznam jiné neprověří a zápis z cronu by spadl.
-var STAVY = ['schváleno', 'zamítnuto', 'stáhnout', 'publikováno', 'chyba', 'staženo'];
+// seznam jiné neprověří a zápis z cronu by spadl. „akce" a „akce odeslána"
+// píše redakce a skill /pridat-akci; endpoint je nevrací, cron je nevidí.
+var STAVY = ['schváleno', 'zamítnuto', 'stáhnout', 'publikováno', 'chyba', 'staženo',
+  'akce', 'akce odeslána'];
 var KE_ZPRACOVANI = ['schváleno', 'stáhnout'];
 
 var SOUHLAS = 'Souhlasím, že KROMCL můj text přepíše a zveřejní na kromcl.cz ' +

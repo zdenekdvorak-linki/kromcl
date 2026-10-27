@@ -78,6 +78,10 @@ https://kromcl.cz
 
 ## Poznámky k odeslání
 
+- **Odesláno 26. 10. 2026.** Čeká se na odpověď.
+- **26. 10. 2026 odpoledne už diakritika prošla:** akce „Magion House –
+  PHUNXX_J" se přes formulář uložila (přesměrování na /akce/ = `error == 0`).
+  Bod 1 dopisu je tedy nejspíš vyřízený, bod 2 (CORS) ne.
 - Posílá Zdeněk ze svého e-mailu. Před odesláním si ověř, že je kontakt
   pořád platný.
 - Test proběhl 24. 10. 2026 v 12:47–12:50: tři pokusy, ani jeden se

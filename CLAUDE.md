@@ -54,6 +54,9 @@ Backend se přepíná `KROMKA_BACKEND=api|cli`. `api` potřebuje
 
 Náhled webu: `preview_start` s konfigurací `kromka`, port 4173.
 
+Akci do kalendáře města podává skill `/pridat-akci` (`.claude/skills/`).
+Odeslání vytvoří skutečný záznam u města, takže se na zkoušku neodesílá.
+
 ## Co sem nepatří
 
 Tenhle projekt nemá nic společného s klientskými weby v `work/SEO/`. Pravidla
