@@ -107,7 +107,9 @@ def rozparsuj(xml_text):
     mista = {}
     for m in _deti(koren, "places"):
         mista[_cislo(m, "id")] = {"nazev": _text(m, "label"),
-                                  "web": _odkaz(_text(m, "web"))}
+                                  "web": _odkaz(_text(m, "web")),
+                                  "adresa": _adresa(m),
+                                  "gps": _gps(_text(m, "gps"))}
     typy = {}
     for t in _deti(koren, "event_types"):
         typy[_cislo(t, "id")] = _text(t, "label")
@@ -117,12 +119,58 @@ def rozparsuj(xml_text):
     return {"mista": mista, "typy": typy, "terminy": terminy}
 
 
+def _adresa(el):
+    """Poštovní adresa místa z číselníku, jen z vyplněných polí.
+
+    Město se bere z exportu, ne natvrdo: 68 z 328 míst v číselníku leží
+    mimo Kroměříž (Holešov, Velehrad, Zlín, Lutopecny), takže
+    `addressLocality: Kroměříž` u všech by ve strukturovaných datech
+    tvrdila nepravdu.
+
+    Prázdné pole se vynechá a nedopočítává se. Sedm míst nemá město a PSČ
+    na jeho odvození nestačí: 767 01 je Kroměříž, ale 768 71 je Rusava.
+    """
+    ulice = " ".join(c for c in (_radek(el, "street"), _radek(el, "house_nr")) if c)
+    adresa = {"ulice": ulice,
+              "mesto": _radek(el, "city"),
+              "psc": _psc(_text(el, "psc"))}
+    return {k: v for k, v in adresa.items() if v}
+
+
+def _psc(hodnota):
+    """PSČ na český tvar `767 01`. Nula v exportu znamená neuvedeno."""
+    cislice = re.sub(r"\D", "", hodnota or "")
+    if len(cislice) != 5 or cislice == "00000":
+        return ""
+    return "{0} {1}".format(cislice[:3], cislice[3:])
+
+
+def _gps(hodnota):
+    """`49.29, 17.39` na `[šířka, délka]`, jinak prázdný seznam.
+
+    Seznam, ne dvojice: program se ukládá do `data/akce.json` a z JSONu
+    by se dvojice vrátila jako seznam, takže by se typ lišil podle toho,
+    jestli data přišla z exportu, nebo ze souboru.
+
+    Pět míst má pole prázdné a pořadatelé do něj píšou mezeru za čárkou.
+    """
+    casti = [c.strip() for c in (hodnota or "").split(",")]
+    if len(casti) != 2:
+        return []
+    try:
+        sirka, delka = float(casti[0]), float(casti[1])
+    except ValueError:
+        return []
+    if not (-90 <= sirka <= 90 and -180 <= delka <= 180):
+        return []
+    return [sirka, delka]
+
+
 def _termin(el, mista, typy):
     zacatek = _cas(_text(el, "time_from"))
     konec = _cas(_text(el, "time_to"))
-    misto_id = _cislo(el, "place")
     # Místo 0 znamená neuvedeno; v číselníku má prázdný název.
-    misto = mista.get(misto_id, {}).get("nazev", "")
+    misto = mista.get(_cislo(el, "place"), {})
     return {
         "id": _cislo(el, "id"),
         "akce_id": _cislo(el, "event_id"),
@@ -133,14 +181,18 @@ def _termin(el, mista, typy):
         "vicedenni": bool(zacatek and konec and zacatek[:10] != konec[:10]),
         "typ_id": _cislo(el, "type"),
         "typ": typy.get(_cislo(el, "type"), ""),
-        "misto": misto,
-        "misto_web": mista.get(misto_id, {}).get("web", ""),
+        "misto": misto.get("nazev", ""),
+        "misto_web": misto.get("web", ""),
+        "misto_adresa": misto.get("adresa", {}),
+        "misto_gps": misto.get("gps", []),
         "poznamka": _radek(el, "note"),
         "cena": _cislo(el, "price"),
         "cena_pozn": _radek(el, "price_note"),
         "zdarma": _bool(el, "free_entrance"),
         "pro_deti": _bool(el, "for_kids"),
         "web": _odkaz(_text(el, "web")),
+        "vstupenky": _odkaz(_text(el, "ticket_url")),
+        "obrazek": _odkaz(_text(el, "image")),
         "youtube": _text(el, "youtube"),
         "upraveno": _cas(_text(el, "last_edit")),
     }

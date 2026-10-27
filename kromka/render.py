@@ -1440,19 +1440,62 @@ def _ld_akce(termin):
         data["endDate"] = termin["konec"]
     if termin.get("perex"):
         data["description"] = termin["perex"]
-    if termin.get("misto"):
-        data["location"] = {"@type": "Place", "name": termin["misto"],
-                            "address": {"@type": "PostalAddress",
-                                        "addressLocality": "Kroměříž",
-                                        "addressCountry": "CZ"}}
+    data["location"] = _ld_misto(termin)
+    if termin.get("obrazek"):
+        data["image"] = termin["obrazek"]
     if termin.get("web"):
         data["url"] = termin["web"]
     if termin.get("zdarma"):
         data["isAccessibleForFree"] = True
     elif termin.get("cena"):
-        data["offers"] = {"@type": "Offer", "price": termin["cena"],
-                          "priceCurrency": "CZK"}
+        nabidka = {"@type": "Offer", "price": termin["cena"],
+                   "priceCurrency": "CZK"}
+        # Kde se vstupenka dá koupit. `ticket_url` je v exportu zavedené,
+        # ale nevyplněné, takže se padá na web akce a pak na web místa.
+        odkaz = (termin.get("vstupenky") or termin.get("web")
+                 or termin.get("misto_web"))
+        if odkaz:
+            nabidka["url"] = odkaz
+        data["offers"] = nabidka
     return data
+
+
+def _ld_misto(termin):
+    """Place pro Event. Vzniká vždycky, i když místo není vyplněné.
+
+    `location` je u Eventu povinné a bez něj Google akci do výsledků
+    nepustí — 27. 10. 2026 to Search Console nahlásila jako kritický
+    problém u osmi položek.
+
+    Obec i ulice se berou z číselníku míst. Natvrdo psaná Kroměříž tu
+    byla do 27. 10. 2026 a lhala u každé akce mimo město, třeba u jurty
+    v Lutopecnách; kalendář města nese i okolí, od Holešova po Zlín.
+
+    Termín s `place=0`, tedy s místem neuvedeným, dostane za místo samotnou
+    Kroměříž. Je to jediný dopočítaný údaj v celém schématu akce a stojí na
+    tom, že kalendář je městský a web je o Kroměříži. U čtyř ze 74 termínů
+    v okně to je odhad, ne fakt ze zdroje — vynechat ho ale nejde, protože
+    bez `location` Google akci zahodí celou.
+    """
+    nazev = termin.get("misto")
+    adresa = {"@type": "PostalAddress"}
+    zdroj = termin.get("misto_adresa") or {}
+    if zdroj.get("ulice"):
+        adresa["streetAddress"] = zdroj["ulice"]
+    if zdroj.get("mesto"):
+        adresa["addressLocality"] = zdroj["mesto"]
+    elif not nazev:
+        adresa["addressLocality"] = "Kroměříž"
+    if zdroj.get("psc"):
+        adresa["postalCode"] = zdroj["psc"]
+    adresa["addressCountry"] = "CZ"
+
+    misto = {"@type": "Place", "name": nazev or "Kroměříž", "address": adresa}
+    gps = termin.get("misto_gps") or []
+    if len(gps) == 2:
+        misto["geo"] = {"@type": "GeoCoordinates",
+                        "latitude": gps[0], "longitude": gps[1]}
+    return misto
 
 
 def _ld_seznam(terminy, cesta):

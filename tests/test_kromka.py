@@ -720,6 +720,40 @@ class AkceParsovani(unittest.TestCase):
         self.assertEqual(akce._cas("nesmysl"), "")
         self.assertEqual(akce._cas(""), "")
 
+    def test_misto_nese_celou_adresu(self):
+        # Adresu potřebují strukturovaná data; do 27. 10. 2026 se nečetla.
+        dk = self.data["mista"][5]
+        self.assertEqual(dk["adresa"], {"ulice": "Tovačovského 2828",
+                                        "mesto": "Kroměříž", "psc": "767 01"})
+        self.assertEqual(dk["gps"], [49.298481, 17.399122])
+
+    def test_misto_nula_nema_adresu_ani_gps(self):
+        neuvedeno = self.data["mista"][0]
+        self.assertEqual(neuvedeno["adresa"], {})
+        self.assertEqual(neuvedeno["gps"], [])
+
+    def test_termin_nese_obrazek_a_vstupenky(self):
+        # Protokol zůstává, jaký ho dalo město: starší export vrací http.
+        for t in self.terminy:
+            self.assertTrue(t["obrazek"].startswith(("http://", "https://")),
+                            t["nazev"])
+        # `ticket_url` je v exportu zavedené, ale město ho nevyplňuje.
+        self.assertEqual({t["vstupenky"] for t in self.terminy}, {""})
+
+    def test_psc_na_cesky_tvar(self):
+        self.assertEqual(akce._psc("76701"), "767 01")
+        # Nula i prázdno znamenají v exportu neuvedeno.
+        self.assertEqual(akce._psc("0"), "")
+        self.assertEqual(akce._psc(""), "")
+        self.assertEqual(akce._psc("00000"), "")
+        self.assertEqual(akce._psc("7670"), "")
+
+    def test_gps_snese_mezeru_i_nesmysl(self):
+        # Pořadatelé do pole píšou mezeru za čárkou.
+        self.assertEqual(akce._gps("49.318910, 17.469289"), [49.31891, 17.469289])
+        for rozbite in ("", "49.3", "a,b", "49.3,17.4,5", "95.0,17.4", "49.3,181.0"):
+            self.assertEqual(akce._gps(rozbite), [], rozbite)
+
 
 class AkceOkna(unittest.TestCase):
     """Okna „dnes" a „víkend" — podle nich lidé akce hledají."""
@@ -806,6 +840,90 @@ class AkceVykresleni(unittest.TestCase):
         podpis = render._atribuce()
         self.assertIn(config.AKCE_POSKYTOVATEL, podpis)
         self.assertIn("creativecommons.org", podpis)
+
+
+class StrukturovanaDataAkce(unittest.TestCase):
+    """Event schema. Search Console ho 27. 10. 2026 nahlásila jako vadné."""
+
+    @classmethod
+    def setUpClass(cls):
+        xml = (FIXTURES / "akce-vzorek.xml").read_text(encoding="utf-8")
+        cls.data = akce.rozparsuj(xml)
+        cls.ld = [render._ld_akce(t) for t in cls.data["terminy"]]
+
+    def test_kazda_akce_ma_location(self):
+        # Kritický nález GSC: bez `location` Google akci zahodí celou.
+        for d in self.ld:
+            self.assertIn("location", d, d["name"])
+            self.assertTrue(d["location"]["name"], d["name"])
+            self.assertTrue(d["location"]["address"]["addressLocality"], d["name"])
+
+    def test_kazda_akce_ma_obrazek(self):
+        for d in self.ld:
+            self.assertTrue(d["image"].startswith(("http://", "https://")),
+                            d["name"])
+
+    def test_misto_bez_adresy_dostane_aspon_obec(self):
+        termin = {"nazev": "Běh", "zacatek": "2026-10-28T11:00:00"}
+        misto = render._ld_misto(termin)
+        self.assertEqual(misto["name"], "Kroměříž")
+        self.assertEqual(misto["address"]["addressLocality"], "Kroměříž")
+        # Ulici ani GPS si nevymýšlíme, zdroj je nemá.
+        self.assertNotIn("streetAddress", misto["address"])
+        self.assertNotIn("geo", misto)
+
+    def test_obec_se_bere_ze_zdroje_ne_natvrdo(self):
+        # Kalendář města nese i okolí; natvrdo psaná Kroměříž tu lhala
+        # u jurty v Lutopecnách a u všeho od Holešova po Zlín.
+        termin = {"nazev": "Beseda", "zacatek": "2026-10-27T17:00:00",
+                  "misto": "SOLACE – jurta Lutopecny",
+                  "misto_adresa": {"mesto": "Lutopecny", "psc": "767 01"}}
+        adresa = render._ld_misto(termin)["address"]
+        self.assertEqual(adresa["addressLocality"], "Lutopecny")
+        self.assertEqual(adresa["postalCode"], "767 01")
+
+    def test_misto_s_adresou_nese_ulici_a_gps(self):
+        termin = next(t for t in self.data["terminy"]
+                      if t["misto"] == "Kino Nadsklepí")
+        misto = render._ld_misto(termin)
+        self.assertEqual(misto["address"]["streetAddress"], "Milíčovo náměstí 488")
+        self.assertEqual(misto["geo"], {"@type": "GeoCoordinates",
+                                        "latitude": 49.296484,
+                                        "longitude": 17.391565})
+
+    def test_nabidka_nese_odkaz_na_vstupenky(self):
+        termin = {"nazev": "Film", "zacatek": "2026-10-24T17:30:00", "cena": 160,
+                  "web": "https://www.dk-kromeriz.cz/film"}
+        self.assertEqual(render._ld_akce(termin)["offers"]["url"],
+                         "https://www.dk-kromeriz.cz/film")
+        # `ticket_url` ze zdroje má přednost před webem akce.
+        termin["vstupenky"] = "https://vstupenky.cz/film"
+        self.assertEqual(render._ld_akce(termin)["offers"]["url"],
+                         "https://vstupenky.cz/film")
+        # Bez obojího se padá na web místa.
+        del termin["vstupenky"], termin["web"]
+        termin["misto_web"] = "https://www.dk-kromeriz.cz/"
+        self.assertEqual(render._ld_akce(termin)["offers"]["url"],
+                         "https://www.dk-kromeriz.cz/")
+
+    def test_nabidka_bez_odkazu_pole_url_nevyrobi(self):
+        termin = {"nazev": "Koncert", "zacatek": "2026-10-26T18:00:00", "cena": 350}
+        self.assertNotIn("url", render._ld_akce(termin)["offers"])
+
+    def test_zdarma_nabidku_nevyrobi(self):
+        termin = {"nazev": "Pietní akt", "zacatek": "2026-10-27T10:00:00",
+                  "zdarma": True, "cena": 0}
+        ld = render._ld_akce(termin)
+        self.assertTrue(ld["isAccessibleForFree"])
+        self.assertNotIn("offers", ld)
+
+    def test_poradatel_a_vystupujici_se_nedopocitavaji(self):
+        # Export je nemá a odvodit pořadatele z místa by schéma nechalo
+        # tvrdit nepravdu jménem jmenované organizace. Rozhodnuto
+        # 27. 10. 2026, viz Parking lot.
+        for d in self.ld:
+            self.assertNotIn("organizer", d)
+            self.assertNotIn("performer", d)
 
 
 class OdkazyVen(unittest.TestCase):
