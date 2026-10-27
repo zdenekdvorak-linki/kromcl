@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Dort se 108 svíčkama by nikdo neufoukal, tak to Kroměříž pojala po svém. Už 27. října se u sochy T. G. Masaryka před Justiční akademií sešli lidi z radnice a položili tam věnce, no cap. Přidali se sokolové, legionáři, váleční veteráni a Český svaz bojovníků za svobodu. Svátek přitom připadá až na 28. října, kdy v roce 1918 vzniklo Československo a z Rakouska-Uherska se stala minulost.",
+    "Starosta Tomáš Opatrný připomněl, na čem republika od začátku stála: svoboda, demokracie, humanita a solidarita. Podle něj nic z toho nikdo nedostal zadarmo a 20. století to legit ukázalo, když země zažila nacisty i komunisty a boj proti nim stál spoustu životů. Lepší budoucnost si podle starosty vybudujeme aktivitou, respektem a spoluprací. Samotné stěžování nás nikam neposune.",
+    "Pak přišla část, která hits different než učebnice dějepisu. Opatrný mluvil o Oldřichu Šenkyříkovi z Kroměříže, který se narodil v září 1926. V květnu 1945 padl při bojích za osvobození města a 19. narozenin se nedočkal. Díky lidem jako on dnes podle starosty prožíváme nejdelší svobodnou a prosperující etapu v dějinách našeho státu.",
+    "Za Sokol promluvila jeho kroměřížská starostka Ivana Zavadilová. Ano, Sokol má taky starostku. 28. říjen pro ni znamená svobodu, odvahu a víru, že národ smí rozhodovat sám o sobě. Mezi těmi, kdo za vlast bojovali a často i padli, měli podle ní silné místo sokolové. Kroměřížský Sokol vznikl v roce 1865 a vedle cvičení se v něm od začátku řešilo i vlastenectví, vzdělávání a společný život. Takovou auru si žádná fitka nekoupí. 108 let a republika pořád drží pohromadě, to je fr achievement."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.58,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-27T19:05:42.840084+00:00"
+  },
+  "headline": "Republice je 108 a Kroměříž jí nesla věnce o den dřív, no cap",
+  "id": "mesto-kromeriz:69bca1645cd40047",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-10-27T11:52:24+01:00",
+  "rewritten_at": "2026-10-27T19:05:42.840107+00:00",
+  "sensitivity": "volny",
+  "slug": "republice-je-108-a-kromeriz-ji-nesla-vence-o-den-driv-no-cap",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "💐",
+      "label": "Early Bird",
+      "text": "Věnce u sochy T. G. Masaryka před Justiční akademií ležely už 27. října, den před státním svátkem."
+    },
+    {
+      "emoji": "🇨🇿",
+      "label": "Big Number",
+      "text": "Od vyhlášení samostatného Československa 28. října 1918 uběhlo 108 let."
+    },
+    {
+      "emoji": "🕯️",
+      "label": "Real Story",
+      "text": "Starosta Tomáš Opatrný připomněl Oldřicha Šenkyříka, který padl při osvobozování Kroměříže v květnu 1945 a nedožil se ani 19."
+    }
+  ]
+}
