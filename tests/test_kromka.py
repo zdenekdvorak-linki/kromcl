@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from kromka import (akce, config, htmlutil, ilustrace, kino_dk, piktogramy,  # noqa: E402
                     karta, znacka, og, indexnow,
                     pipeline, pozvanka, render, rewrite, styl)
+from kromka.sources import mesto_kromeriz  # noqa: E402
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 
@@ -1273,6 +1274,67 @@ class ExtrakceHtml(unittest.TestCase):
 
     def test_meta_chybejici(self):
         self.assertEqual(htmlutil.meta("<html></html>", "og:image"), "")
+
+
+class RozliseniRocniku(unittest.TestCase):
+    """Stejný titulek, jiný rok: 27. 10. 2026 se místo dnešní pozvánky na
+    ustavující zasedání vzala ta z roku 2018, protože og:title seděl."""
+
+    TITULEK = "Pozvánka na ustavující zasedání Zastupitelstva města Kroměříže"
+    SLUG = "pozvanka-na-ustavujici-zasedani-zastupitelstva-mesta-kromerize"
+
+    @classmethod
+    def stranka(cls, datum, text):
+        return (
+            '<html><head><meta property="og:title" content="{t}" /></head>'
+            '<body><div class="news-date"><time itemprop="datePublished" '
+            'datetime="{d}"> x </time></div><div class="news-content">'
+            '<div class="plugin-text"><p>{x}</p></div></div></body></html>'
+        ).format(t=cls.TITULEK, d=datum, x=text)
+
+    def polozka(self):
+        return {"source": "mesto-kromeriz", "slug": self.SLUG, "title": self.TITULEK,
+                "published": "2026-10-27T06:25:24+01:00", "perex": ""}
+
+    def test_date_published(self):
+        self.assertEqual(mesto_kromeriz._date_published(self.stranka("2018-10-25", "")),
+                         "2018-10-25")
+        self.assertEqual(mesto_kromeriz._date_published("<html></html>"), "")
+
+    def test_jiny_rok_nesedi(self):
+        self.assertFalse(mesto_kromeriz._sedi(self.stranka("2018-10-25", ""), self.polozka()))
+
+    def test_stejny_den_sedi_i_pres_pulnoc(self):
+        self.assertTrue(mesto_kromeriz._sedi(self.stranka("2026-10-27", ""), self.polozka()))
+        self.assertTrue(mesto_kromeriz._sedi(self.stranka("2026-10-26", ""), self.polozka()))
+
+    def test_bez_data_rozhoduje_titulek(self):
+        # Ruční `detail <slug>` z CLI nezná pubDate; stránka bez <time> zase datum.
+        bez_data = dict(self.polozka(), published="")
+        self.assertTrue(mesto_kromeriz._sedi(self.stranka("2018-10-25", ""), bez_data))
+        bez_time = '<meta property="og:title" content="{0}" />'.format(self.TITULEK)
+        self.assertTrue(mesto_kromeriz._sedi(bez_time, self.polozka()))
+
+    def test_fetch_detail_preskoci_starsi_rocniky(self):
+        stranky = {
+            mesto_kromeriz.DETAIL.format(self.SLUG): self.stranka("2018-10-25", "rok 2018"),
+            mesto_kromeriz.DETAIL.format(self.SLUG + "-1"): self.stranka("2022-10-13", "rok 2022"),
+            mesto_kromeriz.DETAIL.format(self.SLUG + "-2"): self.stranka("2026-10-27", "rok 2026"),
+        }
+
+        def falesny_get(url, binary=False):
+            if url not in stranky:
+                raise RuntimeError("404")
+            return stranky[url]
+
+        puvodni = mesto_kromeriz.net.get
+        mesto_kromeriz.net.get = falesny_get
+        try:
+            polozka = mesto_kromeriz.fetch_detail(self.polozka())
+        finally:
+            mesto_kromeriz.net.get = puvodni
+        self.assertEqual(polozka["url"], mesto_kromeriz.DETAIL.format(self.SLUG + "-2"))
+        self.assertEqual(polozka["body"], ["rok 2026"])
 
 
 class PrepisBezSite(unittest.TestCase):

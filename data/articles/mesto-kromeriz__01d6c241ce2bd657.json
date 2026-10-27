@@ -1,27 +1,27 @@
 {
   "body": [
-    "Nová parta na radnici se poprvé schází a lowkey to bude maraton. Ustavující zasedání kroměřížských zastupitelů má 25 bodů a ty nejsledovanější přijdou až ve druhé půlce: volba starosty, jeho první projev, pak místostarostové a rada města.",
-    "Před main questem čeká zastupitele pár side questů. Mandátový výbor ověří, že jejich volba platí, nováčci složí slib a pak odhlasují jednací i volební řád. Zastupitelé taky rozhodnou, kolik lidí bude sedět v radě, jaké výbory vzniknou a kolik z nich bude mít funkci jako hlavní práci.",
-    "Řeší se i peníze, no cap. Zastupitelé odhlasují měsíční odměny pro kolegy, kteří funkci nedělají naplno, a určí, kdo z nich povede občanské obřady. Úplně na konci programu je prostor pro diskusi.",
-    "Chceš to vidět naživo? Čtvrtek 1. listopadu 2018, začátek ve 14:30, místo: zasedací místnost kroměřížského městského úřadu. Vstup má každý, pozvánku podepsal starosta Jaroslav Němec. Kdo vydrží sedět od prvního bodu až po diskusi, odemyká achievement."
+    "Bruh, 30 bodů programu na jedno odpoledne. Zastupitelé se sejdou v úterý 3. listopadu v 16:00 v zasedačce na radnici a dovnitř může kdokoliv, kdo chce vidět, jak to probíhá.",
+    "Nejdřív komise checkne, jestli je zvolení všech zastupitelů legit. Pak každý z nich složí slib, a to bez výhrad. Teprve potom přijde highlight celého dne: volba starosty, místostarostů a celé rady města.",
+    "Zastupitelé si taky odhlasují, kolik lidí bude v radě a ve výborech, kdo z nich bude pro město pracovat na plný úvazek a jaké měsíční odměny dostanou ostatní. Na seznamu jsou i osadní výbory a elektromobil pro strážníky, což je fr nečekaný bod mezi samými volbami.",
+    "Kdo chce vidět skládání slibu naživo, úterní odpoledne má vyřešené. Bet?"
   ],
   "doklad": {
     "kontaktnich_udaju": 0,
-    "nejdelsi_shoda_slov": 5,
+    "nejdelsi_shoda_slov": 4,
     "prah_shody": 8,
-    "prekryv_slovniku": 0.298,
+    "prekryv_slovniku": 0.356,
     "primych_citaci": 0,
     "verze_pojistek": "1.1",
-    "zmereno": "2026-10-27T09:34:47.239539+00:00"
+    "zmereno": "2026-10-27T18:50:20.756697+00:00"
   },
-  "headline": "Noví zastupitelé skládají slib a volí starostu, main quest má 25 bodů",
+  "headline": "30 bodů a volba starosty: zastupitelé mají 3. listopadu main quest",
   "id": "mesto-kromeriz:01d6c241ce2bd657",
   "image_h": 0,
   "image_local": "",
   "image_w": 0,
   "model": "claude-opus-5-5",
   "published": "2026-10-27T06:25:24+01:00",
-  "rewritten_at": "2026-10-27T09:34:47.239563+00:00",
+  "rewritten_at": "2026-10-27T18:50:20.756758+00:00",
   "sensitivity": "volny",
   "slug": "novi-zastupitele-skladaji-slib-a-voli-starostu-main-quest-ma-25-bodu",
   "source": "mesto-kromeriz",
@@ -32,19 +32,19 @@
   ],
   "tldr": [
     {
+      "emoji": "🗓️🏛️",
+      "label": "When Where",
+      "text": "V úterý 3. listopadu od 16:00 v zasedačce na radnici."
+    },
+    {
+      "emoji": "🚪👀",
+      "label": "Open Doors",
+      "text": "Jednání je veřejné, takže se můžeš přijít podívat."
+    },
+    {
       "emoji": "🗳️",
       "label": "Main Quest",
-      "text": "Zastupitelé na svém prvním zasedání zvolí starostu, místostarosty a radu města."
-    },
-    {
-      "emoji": "🚪",
-      "label": "Open Door",
-      "text": "Přijít se může podívat kdokoliv, zasedání je přístupné veřejnosti."
-    },
-    {
-      "emoji": "📅",
-      "label": "Save Date",
-      "text": "Start je ve čtvrtek 1. listopadu 2018 ve 14:30 na kroměřížské radnici."
+      "text": "Zastupitelé složí slib a zvolí starostu, místostarosty a radu města."
     }
   ]
 }

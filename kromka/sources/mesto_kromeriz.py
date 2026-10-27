@@ -8,11 +8,15 @@ Dvě věci, které nejsou samozřejmé a stojí za zapamatování:
    ze slugifikovaného titulku. Ověřeno napříč ročníky 2025 i 2026.
 2. Feed nese jen perex (medián 464 znaků), žádnou fotku ani rubriku. Všechno
    ostatní je až na detailní stránce.
+3. Stejný titulek se vrací: pozvánka na ustavující zasedání vychází po každých
+   volbách a TYPO3 jen přidá -1, -2. Kandidát se proto ověřuje titulkem
+   i datem vydání, jinak se vezme nejstarší ročník (stalo se 27. 10. 2026).
 """
 
 import html
 import re
 import xml.etree.ElementTree as ET
+from datetime import date
 from email.utils import parsedate_to_datetime
 
 from .. import htmlutil, net
@@ -58,7 +62,7 @@ def fetch_detail(item):
             continue
         # Přípona -1 může patřit úplně jinému článku se stejně znějícím
         # titulkem. Bez téhle kontroly bychom přepsali cizí zprávu.
-        if _sedi_titulek(kandidat, item["title"]):
+        if _sedi(kandidat, item):
             markup = kandidat
             item["url"] = adresa
             break
@@ -131,9 +135,21 @@ def _najdi_v_prehledu(item):
             markup = net.get(adresa)
         except RuntimeError:
             continue
-        if _sedi_titulek(markup, item["title"]):
+        if _sedi(markup, item):
             return adresa, markup
     return None
+
+
+def _sedi(markup, item):
+    """Stránka patří k položce z feedu, když sedí titulek i datum vydání.
+
+    Titulek sám nestačí: „Pozvánka na ustavující zasedání Zastupitelstva“
+    vychází po každých volbách znovu a slug bez přípony drží ročník 2018,
+    `-1` ročník 2022, `-2` ročník 2026. Všechny tři mají stejný og:title,
+    takže by se vzala první, o osm let stará. Datum ročníky rozliší.
+    """
+    return (_sedi_titulek(markup, item["title"])
+            and _sedi_datum(markup, item.get("published", "")))
 
 
 def _sedi_titulek(markup, titulek):
@@ -142,6 +158,32 @@ def _sedi_titulek(markup, titulek):
     if not nalezeny:
         return True  # stránka titulek neuvádí, nic lepšího nemáme
     return htmlutil.slugify(nalezeny) == htmlutil.slugify(titulek)
+
+
+def _sedi_datum(markup, published):
+    """Porovná `datePublished` stránky s `pubDate` z feedu, na dny.
+
+    Tolerance jednoho dne kryje půlnoc a posun pásma; ročníky jsou od sebe
+    roky, takže na rozlišení stačí. Když jedno z dat chybí (třeba u ručního
+    `detail <slug>` z CLI), rozhoduje jen titulek jako dřív.
+    """
+    datum_stranky = _date_published(markup)
+    if not datum_stranky or not published:
+        return True
+    try:
+        a = date.fromisoformat(datum_stranky[:10])
+        b = date.fromisoformat(published[:10])
+    except ValueError:
+        return True
+    return abs((a - b).days) <= 1
+
+
+def _date_published(markup):
+    """Hodnota `datetime` z <time itemprop="datePublished">, jinak ''."""
+    m = re.search(r'<time[^>]+itemprop="datePublished"[^>]+datetime="([^"]+)"', markup)
+    if not m:
+        m = re.search(r'<time[^>]+datetime="([^"]+)"[^>]+itemprop="datePublished"', markup)
+    return m.group(1).strip() if m else ""
 
 
 def _kandidati(item):

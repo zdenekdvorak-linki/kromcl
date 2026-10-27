@@ -20,6 +20,10 @@
   `1,2 milionu` → `12-milionu`. Test `test_desetinna_carka_se_maze` to hlídá.
 - **`<guid>` z feedu je k ničemu**, odkaz z něj vrací 404. Adresa se vždy
   odvozuje z titulku.
+- **Stejný titulek vychází znovu po letech** (pozvánka na ustavující zasedání:
+  základní slug je rok 2018, `-1` rok 2022, `-2` rok 2026) a `og:title` je u
+  všech stejný. Kandidát se proto ověřuje i datem (`_sedi_datum`, `<time
+  itemprop="datePublished">` proti `pubDate`). Test `RozliseniRocniku`.
 - **Perex je na detailní stránce vlastní blok** a v `news-content` už není.
   Když se vynechá, článku chybí úvodní odstavec s hlavním sdělením.
 - **Popisek hlavní fotky je v atributu `alt`**, ne jako text pod obrázkem.
