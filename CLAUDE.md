@@ -28,6 +28,12 @@
 - **Slovník ikon v `ilustrace._IKONY` chytá i podobná slova.** „postava" není stavba,
   „dopravy" obsahuje „opravy". Při rozšiřování přidej test na falešnou shodu
   (`test_stavba_se_nechyta_na_podobnych_slovech`).
+- **Zakázaný slang se chytá jako předpona** (`boomer` chytí i „boomerka“).
+  Výraz, který je začátkem běžného slova nebo jména, potřebuje ve
+  `data/slovnik.json` `"presne": true` (simp/simplifikace, Karen/Karenina).
+  Pozor i na skloňování se změnou hlásky: „boomeři“ potřebuje tvar `boomeř`.
+  Falešná shoda zahodí celý článek, takže ke každému novému výrazu patří
+  test (`test_zakazane_se_nechyta_na_podobnych_slovech`).
 - **Piktogram musí jít nakreslit i na kartu og:image.** `og.cesta` umí jen
   podmnožinu SVG (M L H V C S Q A Z, circle, ellipse, rect). Nový tvar
   s jiným prvkem nebo příkazem shodí `test_kazdy_piktogram_se_prevede`.

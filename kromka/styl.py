@@ -64,21 +64,79 @@ def _radek(v):
     return kus
 
 
+def _alternace(slova):
+    # Delší tvary musí v alternaci stát první, jinak „mog" ukousne „mogging".
+    serazene = sorted(set(slova), key=len, reverse=True)
+    return "|".join(re.escape(z) for z in serazene)
+
+
 def _zakazane_re():
     if "re" not in _CACHE:
-        slova = zakazane() + [t for v in vyrazy("zakazane")
-                              for t in (v.get("tvary") or [])]
-        # Delší tvary musí v alternaci stát první, jinak „mog" ukousne „mogging".
-        serazene = sorted(set(slova), key=len, reverse=True)
-        _CACHE["re"] = re.compile(
-            r"\b(?:" + "|".join(re.escape(z) for z in serazene) + r")\w*",
-            re.IGNORECASE | re.UNICODE)
+        # Výraz se chytá jako předpona, aby prošly i české koncovky
+        # (boomeři). `presne` je pro výrazy, které jsou zároveň začátkem
+        # běžného slova nebo jména: simp/simplifikace, Karen/Karenina.
+        predpony, cela = set(), set()
+        for v in vyrazy("zakazane"):
+            cil = cela if v.get("presne") else predpony
+            cil.update([v["vyraz"]] + (v.get("tvary") or []))
+        casti = []
+        if predpony:
+            casti.append(r"\b(?:" + _alternace(predpony) + r")\w*")
+        if cela:
+            casti.append(r"\b(?:" + _alternace(cela) + r")\b")
+        _CACHE["re"] = re.compile("|".join(casti), re.IGNORECASE | re.UNICODE)
     return _CACHE["re"]
 
 
 def zkontroluj_zakazany_slang(text):
     """Výrazy, které shazují lidi. Prázdný seznam = čisté."""
     return sorted({m.group(0).lower() for m in _zakazane_re().finditer(text)})
+
+
+# --- Pestrost --------------------------------------------------------------
+# Model si oblíbí pár výrazů a sahá po nich pořád: v archivu z 27. 10. 2026
+# měl lowkey 51 článků z 66. Výrazy, které se v posledních článcích opakují,
+# dostane prompt jako okoukané.
+
+OKOUKANE_CLANKU = 10
+OKOUKANE_PRAH = 4
+
+
+def _vzor_vyrazu(slovo):
+    if len(slovo) <= 2:
+        # W, L, F, fr: jen samostatně a s velikostí písmen, jinak by se
+        # počítalo „W" ve „Wi-Fi" nebo „fr" ve „fr." u francouzštiny.
+        return re.compile(r"(?<![\w-])" + re.escape(slovo) + r"(?![\w-])")
+    # Tři znaky navíc pro české koncovky (buffu, glow-upem), ne víc, aby
+    # „lit" nepočítal „literaturu".
+    return re.compile(r"\b" + re.escape(slovo) + r"\w{0,3}\b", re.IGNORECASE)
+
+
+def najdi_vyraz(v, text):
+    """Je výraz nebo některý jeho tvar v textu?"""
+    return any(_vzor_vyrazu(s).search(text)
+               for s in [v["vyraz"]] + (v.get("tvary") or []))
+
+
+def _text_clanku(clanek):
+    kusy = [clanek.get("headline", ""), clanek.get("zaver", "")]
+    kusy += [b for b in clanek.get("body") or [] if isinstance(b, str)]
+    kusy += [t.get("text", "") for t in clanek.get("tldr") or [] if isinstance(t, dict)]
+    return "\n".join(kusy)
+
+
+def okoukane(clanky, posledni=OKOUKANE_CLANKU, prah=OKOUKANE_PRAH):
+    """Živé slangové výrazy, které jsou aspoň v `prah` z posledních článků.
+
+    `clanky` čeká seřazené od nejnovějšího, jak je vrací `store.vsechny()`.
+    """
+    texty = [_text_clanku(c) for c in clanky[:posledni]]
+    vysledek = []
+    for v in vyrazy("zive", "slang"):
+        pocet = sum(1 for t in texty if najdi_vyraz(v, t))
+        if pocet >= prah:
+            vysledek.append((pocet, v["vyraz"]))
+    return [vyraz for _, vyraz in sorted(vysledek, key=lambda p: -p[0])]
 
 
 # --- Antiteze --------------------------------------------------------------
@@ -117,9 +175,9 @@ Konkrétně:
 - V každém odstavci těla je aspoň jeden výraz z téhle listiny.
 - Začni reakcí, ne faktem. Fakt přijde hned ve druhé větě.
 - Oslovuj čtenáře „ty". Krátké věty. Klidně si odfrkni nahlas.
-- Poslední věta je tvoje reakce na celou věc. Může to být verdikt (W, L, mid,
-  peak, cooked), ale klidně i jiná pointa, otázka nebo odfrknutí. Nesahej
-  pokaždé po stejném slově — tři články za sebou zakončené „W" jsou nuda.
+- Poslední věta je tvoje reakce na celou věc. Může to být verdikt slovem ze
+  slovníku, ale klidně i jiná pointa, otázka nebo odfrknutí. Nesahej
+  pokaždé po stejném slově — tři články za sebou zakončené stejně jsou nuda.
 
 Co naopak NESMÍŠ: vyskládat větu tak, že se v tom ztratí fakt. Čísla, jména
 a termíny zůstávají přesné a čitelné i někomu, kdo slang nezná.
@@ -139,7 +197,7 @@ Takhle to vypadá, když se to povede:
 něm tam, kde bys jinak napsal přesně to. Uvedené tvary jsou doložené,
 jiné si nevymýšlej:
 {jadro}
-
+{okoukane}
 Tyhle používej jen vědomě a ironicky:
 {ironicke}
 
@@ -183,9 +241,14 @@ PRAVIDLA_PROTI_SLOPU = """## Obraty, po kterých text okamžitě zní jako stroj
 - „poháněný AI" → využívá model, běží na modelu"""
 
 
-def pravidla_jazyka():
+def pravidla_jazyka(okoukane=()):
+    radek = ""
+    if okoukane:
+        radek = ("\nTyhle se v posledních článcích opakují pořád dokola, dnes po "
+                 "nich nesahej a vyber jiné z listiny: {0}.\n").format(", ".join(okoukane))
     return PRAVIDLA_JAZYKA.format(
         jadro="\n".join(_radek(v) for v in vyrazy("zive", "slang")),
+        okoukane=radek,
         ironicke="\n".join(_radek(v) for v in vyrazy("ironicke")),
         uredni="\n".join(_radek(v) for v in vyrazy("zive", "uredni")),
         zakazane=", ".join(zakazane()),

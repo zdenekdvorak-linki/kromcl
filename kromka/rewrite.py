@@ -13,7 +13,7 @@ Pojistky proti vymýšlení jsou dvě a obě jsou strojové, ne jen prosba v pro
 import json
 import re
 
-from . import config, styl
+from . import config, store, styl
 CITLIVOST_PROMPT = """Jsi klasifikátor zpravodajských článků z webu českého města.
 
 Odpověz JEDNÍM slovem, nic dalšího:
@@ -277,6 +277,11 @@ def _stub_pozvanka(prompt):
     return json.dumps(data, ensure_ascii=False)
 
 
+def jazyk():
+    """Pravidla jazyka s výrazy, které jsou v posledních článcích okoukané."""
+    return styl.pravidla_jazyka(styl.okoukane(store.vsechny()))
+
+
 def klasifikuj(item):
     """Vrací 'volny', 'neutralni' nebo 'vynechat'."""
     zprava = CITLIVOST_PROMPT.format(
@@ -296,7 +301,7 @@ def prepis(item, citlivost, pokusy=2):
     zprava = ZPRAVA_PROMPT.format(
         brand=config.BRAND,
         ton=TON_VOLNY if citlivost == "volny" else TON_NEUTRALNI,
-        jazyk=styl.pravidla_jazyka() if citlivost == "volny" else "",
+        jazyk=jazyk() if citlivost == "volny" else "",
         proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
         stitky=", ".join(STITKY),
         titulek=item["title"],
@@ -328,7 +333,7 @@ def prepis_prispevku(item, pokusy=2):
     stejně jako u pozvánky, jejíž data jsou pod CC BY.
     """
     zprava = PRISPEVEK_PROMPT.format(
-        brand=config.BRAND, ton=TON_VOLNY, jazyk=styl.pravidla_jazyka(),
+        brand=config.BRAND, ton=TON_VOLNY, jazyk=jazyk(),
         proti_slopu=styl.PRAVIDLA_PROTI_SLOPU, stitky=", ".join(STITKY),
         titulek=item["title"], datum=(item.get("published") or "")[:10],
         text="\n\n".join(item.get("body") or []),

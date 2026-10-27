@@ -264,7 +264,7 @@ def napis(dnes, pokusy=2):
     program = program_text(po_dnech, vystavy)
     zprava = POZVANKA_PROMPT.format(
         brand=config.BRAND, od=_den(dny[0]), do=_den(dny[-1]),
-        ton=rewrite.TON_VOLNY, jazyk=styl.pravidla_jazyka(),
+        ton=rewrite.TON_VOLNY, jazyk=rewrite.jazyk(),
         proti_slopu=styl.PRAVIDLA_PROTI_SLOPU,
         klice_dnu=",\n".join('    "{0}": "1 až 3 věty k {1}"'.format(d, _den(d))
                              for d in dny),

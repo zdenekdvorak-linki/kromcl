@@ -1,6 +1,6 @@
 {
-  "_comment": "Slovník jazyka KROMCL. Doplňuj příkazem `python -m kromka slovnik --pridej`, ne ruční editací. Klíč `misto` říká, jakou běžnou nebo úřední formulaci výraz nahrazuje — podle toho ho prompt nabízí. `kategorie`: slang (výrazy generace Alpha) nebo uredni (lidový tvar úředního termínu). `stav`: zive | ironicke | zastarale | zakazane.",
-  "_overeno": "2026-10-23",
+  "_comment": "Slovník jazyka KROMCL. Jednotlivé výrazy doplňuj příkazem `python -m kromka slovnik --pridej`; větší kurátorskou dávku jde zapsat skriptem, každá položka ale musí mít `zdroj`. Klíč `misto` říká, jakou běžnou nebo úřední formulaci výraz nahrazuje — podle toho ho prompt nabízí. `kategorie`: slang (výrazy generace Z a Alpha) nebo uredni (lidový tvar úředního termínu). `stav`: zive | ironicke | zastarale | zakazane. `presne: true` u zakázaného výrazu = chytá se jen celé slovo, ne předpona.",
+  "_overeno": "2026-10-27",
   "vyrazy": [
     {
       "vyraz": "aura",
@@ -105,7 +105,7 @@
         "cap = lež"
       ],
       "stav": "zive",
-      "zdroj": "atlaso.cz",
+      "zdroj": "atlaso.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -131,7 +131,7 @@
       "vyznam": "odvážné a autentické, myšleno obdivně",
       "tvary": [],
       "stav": "zive",
-      "zdroj": "atlaso.cz",
+      "zdroj": "atlaso.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -160,7 +160,7 @@
         "stay delulu"
       ],
       "stav": "zive",
-      "zdroj": "aktualnibod.cz",
+      "zdroj": "aktualnibod.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -288,7 +288,7 @@
         "highkey"
       ],
       "stav": "zive",
-      "zdroj": "genppt.com",
+      "zdroj": "genppt.com, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -313,10 +313,11 @@
       ],
       "vyznam": "odvedl to dokonale a se stylem",
       "tvary": [
-        "ate that"
+        "ate that",
+        "ate and left no crumbs"
       ],
       "stav": "zive",
-      "zdroj": "atlaso.cz",
+      "zdroj": "atlaso.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -332,7 +333,7 @@
         "L rizz"
       ],
       "stav": "zive",
-      "zdroj": "atlaso.cz, aktualnibod.cz",
+      "zdroj": "atlaso.cz, aktualnibod.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -343,10 +344,11 @@
       ],
       "vyznam": "předvádět status nebo výhodu",
       "tvary": [
-        "flexnout"
+        "flexnout",
+        "flex"
       ],
       "stav": "zive",
-      "zdroj": "atlaso.cz",
+      "zdroj": "atlaso.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -356,9 +358,11 @@
         "zmizet"
       ],
       "vyznam": "bez vysvětlení přestat komunikovat",
-      "tvary": [],
+      "tvary": [
+        "vyghostit"
+      ],
       "stav": "zive",
-      "zdroj": "aktualnibod.cz",
+      "zdroj": "aktualnibod.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -369,10 +373,11 @@
       ],
       "vyznam": "trapnost, stud za někoho jiného",
       "tvary": [
-        "cringe moment"
+        "cringe moment",
+        "cringovat"
       ],
       "stav": "zive",
-      "zdroj": "aktualnibod.cz",
+      "zdroj": "aktualnibod.cz, fmk.utb.cz",
       "kategorie": "slang"
     },
     {
@@ -636,6 +641,774 @@
       "stav": "zive",
       "kategorie": "uredni",
       "zdroj": "Zdeněk"
+    },
+    {
+      "vyraz": "glow-up",
+      "misto": [
+        "rekonstrukce",
+        "proměna k lepšímu",
+        "opravené"
+      ],
+      "vyznam": "výrazné zlepšení vzhledu; u věcí oprava, po které to konečně vypadá",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "glow-down",
+      "misto": [
+        "zhoršení",
+        "zchátralé"
+      ],
+      "vyznam": "opak glow-upu, vypadá to hůř než dřív",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "red flag",
+      "misto": [
+        "varovný signál",
+        "špatné znamení"
+      ],
+      "vyznam": "znamení, že je něco špatně; původně ve vztazích",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "green flag",
+      "misto": [
+        "dobré znamení",
+        "dobrý krok"
+      ],
+      "vyznam": "znamení, že je něco v pořádku; opak red flagu",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "crush",
+      "misto": [
+        "oblíbené místo",
+        "zamilovat se do"
+      ],
+      "vyznam": "platonická láska; u míst a věcí to, do čeho ses zakoukal",
+      "tvary": [
+        "crushovat"
+      ],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "flop",
+      "misto": [
+        "propadák",
+        "nevyšlo to"
+      ],
+      "vyznam": "nezdar, věc, která nevyšla",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "fail",
+      "misto": [
+        "selhání",
+        "nepovedený pokus"
+      ],
+      "vyznam": "chyba, nepovedený pokus",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "banger",
+      "misto": [
+        "pecka",
+        "hit",
+        "skvělá akce"
+      ],
+      "vyznam": "něco výborného, hlavně hudba nebo akce",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "bombex",
+      "misto": [
+        "super",
+        "paráda"
+      ],
+      "vyznam": "skvělé, česky domácí slang",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "lit",
+      "misto": [
+        "nabitá akce",
+        "skvělé"
+      ],
+      "vyznam": "skvělé a plné energie; opak cringe",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "legit",
+      "misto": [
+        "opravdu",
+        "pravé",
+        "fakt"
+      ],
+      "vyznam": "skutečně, doopravdy; i pravý, nepadělaný",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "sus",
+      "misto": [
+        "podezřelé",
+        "divné"
+      ],
+      "vyznam": "podezřelé, něco nesedí",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "shady",
+      "misto": [
+        "pochybné",
+        "podezřelé"
+      ],
+      "vyznam": "na hraně, nevzbuzuje důvěru",
+      "tvary": [
+        "shade"
+      ],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "scam",
+      "misto": [
+        "podvod"
+      ],
+      "vyznam": "podvod, napálení; typicky falešné SMS a výzvy k platbě",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "chillovat",
+      "misto": [
+        "odpočívat",
+        "relaxovat"
+      ],
+      "vyznam": "užívat si klidu",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "felit",
+      "misto": [
+        "posedět s kámoši",
+        "trávit čas"
+      ],
+      "vyznam": "trávit volný čas s přáteli",
+      "tvary": [
+        "feláci"
+      ],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "booknout",
+      "misto": [
+        "zarezervovat",
+        "objednat se"
+      ],
+      "vyznam": "zamluvit si termín nebo místo",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "checknout",
+      "misto": [
+        "zkontrolovat",
+        "podívat se"
+      ],
+      "vyznam": "ověřit, mrknout na to",
+      "tvary": [
+        "checkuju",
+        "zchecknout"
+      ],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "let him cook",
+      "misto": [
+        "nechat je pracovat",
+        "ať to dodělají"
+      ],
+      "vyznam": "nech ho, ví, co dělá; pozor, opak `cooked` (v háji)",
+      "tvary": [
+        "cooking something"
+      ],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "hits different",
+      "misto": [
+        "působí jinak",
+        "má to něco"
+      ],
+      "vyznam": "zasáhne víc než obvykle, má zvláštní kouzlo",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "vibes",
+      "misto": [
+        "atmosféra",
+        "nálada"
+      ],
+      "vyznam": "pocit z místa nebo situace",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "mood",
+      "misto": [
+        "nálada",
+        "přesně tohle"
+      ],
+      "vyznam": "naladění; i souhlas „to jsem přesně já“",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "highlight",
+      "misto": [
+        "vrchol programu",
+        "hlavní bod"
+      ],
+      "vyznam": "nejlepší moment",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "niche",
+      "misto": [
+        "neobvyklé",
+        "pro úzkou skupinu"
+      ],
+      "vyznam": "něco pro pár zasvěcených",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "basic",
+      "misto": [
+        "obyčejné",
+        "nic extra"
+      ],
+      "vyznam": "jednoduché, bez nápadu",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "fancy",
+      "misto": [
+        "luxusní",
+        "nóbl"
+      ],
+      "vyznam": "elegantní, trochu snobské",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "wack",
+      "misto": [
+        "nudné",
+        "na nic"
+      ],
+      "vyznam": "nudné, nepovedené",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "trash",
+      "misto": [
+        "špatné",
+        "odpad"
+      ],
+      "vyznam": "nekvalitní, pod úroveň",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "valid",
+      "misto": [
+        "rozumné",
+        "oprávněné"
+      ],
+      "vyznam": "rozumný, obhajitelný názor nebo krok",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "period",
+      "misto": [
+        "a tečka",
+        "konec debaty"
+      ],
+      "vyznam": "tečka za větou, víc k tomu není",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "bet",
+      "misto": [
+        "jasně",
+        "platí",
+        "domluveno"
+      ],
+      "vyznam": "souhlas, počítej s tím",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "bruh",
+      "misto": [
+        "no tohle",
+        "to snad ne"
+      ],
+      "vyznam": "údiv nebo nesouhlas",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "roman empire",
+      "misto": [
+        "téma, ke kterému se všichni vracejí"
+      ],
+      "vyznam": "věc, na kterou člověk myslí pořád dokola",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "photo dump",
+      "misto": [
+        "fotogalerie",
+        "hromada fotek"
+      ],
+      "vyznam": "spousta fotek najednou",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "shoutout",
+      "misto": [
+        "poděkování",
+        "pochvala"
+      ],
+      "vyznam": "veřejné ocenění",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "dad joke",
+      "misto": [
+        "trapný vtip",
+        "slovní hříčka"
+      ],
+      "vyznam": "vtip, za který se stydí všichni kromě autora",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "built different",
+      "misto": [
+        "výjimečný",
+        "jiný level"
+      ],
+      "vyznam": "zvládne, co ostatní ne; hodí se na týmy a výkony",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "bussin",
+      "misto": [
+        "výborné jídlo"
+      ],
+      "vyznam": "extrémně dobré, hlavně jídlo",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "hype",
+      "misto": [
+        "očekávání",
+        "rozruch"
+      ],
+      "vyznam": "nadšení dopředu, někdy přehnané",
+      "tvary": [
+        "vyhajpovat"
+      ],
+      "stav": "zive",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "quitnout",
+      "misto": [
+        "skončit",
+        "přestat"
+      ],
+      "vyznam": "vzdát to, odejít",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "F",
+      "misto": [
+        "škoda",
+        "upřímnou soustrast"
+      ],
+      "vyznam": "vážná i hraná soustrast, z hlášky „press F“",
+      "tvary": [
+        "press F"
+      ],
+      "stav": "zive",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "prank",
+      "misto": [
+        "žert",
+        "vtípek"
+      ],
+      "vyznam": "naplánovaný žert na někoho",
+      "tvary": [
+        "prankovat"
+      ],
+      "stav": "zive",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "BTW",
+      "misto": [
+        "mimochodem"
+      ],
+      "vyznam": "zkratka by the way",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "puffík",
+      "misto": [
+        "elektronická cigareta"
+      ],
+      "vyznam": "jednorázová e-cigareta",
+      "tvary": [],
+      "stav": "zive",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "passenger princess",
+      "misto": [
+        "spolujezdec"
+      ],
+      "vyznam": "kdo se nechává jen vozit",
+      "tvary": [],
+      "stav": "ironicke",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "solulu",
+      "misto": [
+        "řešení"
+      ],
+      "vyznam": "řešení, rýmovačka k delulu",
+      "tvary": [],
+      "stav": "ironicke",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "boomer",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [
+        "boomeř"
+      ],
+      "stav": "zakazane",
+      "duvod": "shazuje starší lidi kvůli věku",
+      "zdroj": "fmk.utb.cz, nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "degeš",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "nadávka, shazuje lidi",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "pick me",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje ženy",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "zneživit se",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [
+        "zneživ"
+      ],
+      "stav": "zakazane",
+      "duvod": "slang pro sebevraždu",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "thirst trap",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "sexuální podtext",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "sugar daddy",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [
+        "sugar mamma"
+      ],
+      "stav": "zakazane",
+      "duvod": "sexuální podtext",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "sugar baby",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "sexuální podtext",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "zaddy",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "sexuální podtext",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "fruity",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi kvůli orientaci",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "snowflake",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi jako přecitlivělé",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "woke",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "politická nálepka na lidi",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "weirdo",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [
+        "wierdo"
+      ],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "hypebeast",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "fufu",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi kvůli oblečení",
+      "zdroj": "nezzazvoni.cz (2020)",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "resting bitch face",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "vulgární, shazuje ženy",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang"
+    },
+    {
+      "vyraz": "simp",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang",
+      "presne": true
+    },
+    {
+      "vyraz": "Karen",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje ženy; jen přesná shoda, je to i jméno",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang",
+      "presne": true
+    },
+    {
+      "vyraz": "chad",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "shazuje lidi; jen přesná shoda kvůli příjmení Chadima",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang",
+      "presne": true
+    },
+    {
+      "vyraz": "hoe",
+      "misto": [],
+      "vyznam": "",
+      "tvary": [],
+      "stav": "zakazane",
+      "duvod": "vulgární, shazuje ženy",
+      "zdroj": "fmk.utb.cz",
+      "kategorie": "slang",
+      "presne": true
     }
   ]
 }

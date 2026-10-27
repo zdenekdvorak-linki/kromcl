@@ -358,6 +358,31 @@ Zamítnuto: kontrola jmen. Produkovala falešné poplachy u skloňování a
 u zkrácených tvarů („Hebnar" místo „Jan Hebnar"), takže by se stejně
 vypínala. Jména hlídá prompt a korektura.
 
+### Pestrost slangu
+
+Model si oblíbí pár výrazů a pak po nich sahá pořád dokola. Měřeno na
+archivu 27. 10. 2026 (66 článků): lowkey v 51, L ve 48, W ve 40, buff
+v 35 a no cap v 33. Deset živých výrazů nebylo v žádném článku. Větší
+slovník to samo nezlomí, a proto `styl.okoukane` před každým přepisem
+spočítá výrazy z posledních **10** článků. Výraz, který je aspoň ve **4**
+z nich, dostane prompt jako okoukaný: „dnes po nich nesahej“. Na
+posledních 10 článcích dává práh 4 pět výrazů (lowkey, buff, peak, side
+quest, W). Práh 3 přidá no cap a achievement a práh 2 už devět výrazů,
+tedy skoro všechno, co model vůbec používá. Práh 6 nechá jen lowkey
+a buff.
+
+Shoda (`najdi_vyraz`) bere tři znaky navíc kvůli českým koncovkám
+(buffu, glow-upem), ale ne víc, aby „lit“ nepočítal literaturu. Výrazy
+do dvou znaků (W, L, F, fr) se hledají jen samostatně a s velikostí
+písmen. Seznam okoukaných slouží jen jako rada v promptu a nikdy nic
+nezahazuje, takže občasná falešná shoda nevadí.
+
+Zakázané výrazy (`zkontroluj_zakazany_slang`) naopak článek zahazují.
+Chytají se jako předpona, aby prošly i koncovky. Výrazy, které jsou
+začátkem běžného slova nebo jména (simp/simplifikace, Karen/Karenina,
+chad/Chadima), mají ve slovníku `presne: true` a chytají se jen jako
+celé slovo.
+
 ### Ověření kandidáta podle og:title
 
 TYPO3 přidává u kolizí příponu `-1`, `-2`. Zkoušet je naslepo by mohlo trefit
@@ -384,6 +409,7 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/rewrite.py:148` | `klasifikuj` — citlivost |
 | `kromka/rewrite.py:158` | `prepis` — volání s jedním opravným pokusem |
 | `kromka/rewrite.py:256` | `zkontroluj_cisla`, `zkontroluj_citace` |
+| `kromka/styl.py` | jazyk: slovník z `data/slovnik.json`, `pravidla_jazyka` do promptu, `okoukane` (pestrost), pojistky na zakázaný slang a antitezi |
 | `kromka/pipeline.py:27` | `zpracuj` — jedna položka od detailu po JSON |
 | `kromka/pipeline.py:101` | `_zapis_selhani` — počítadlo pádů a vzdání se |
 | `kromka/render.py:204` | `vykresli` — celý statický web |
@@ -541,6 +567,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Google News sitemap** `/news-sitemap.xml` (`_news_sitemap`): všechny typy článků s `published` za posledních 48 hodin, datum stejné jako `datePublished` v JSON-LD, název `KROMCL`, jazyk `cs`; odkaz v `robots.txt` | Zdeněk ji chce, přestože byla v Parking lotu (přínos je malý, nic ale nestojí). Do Google News se dnes nehlásí, Google zařazuje sám. Samostatný soubor, aby hlavní sitemapa neměnila obsah každou hodinu. Archivní přepisy tam nepatří, jejich vydání u města je staré |
 | 2026-10-27 | **Přepis na Opus** (`MODEL_REWRITE` = `claude-opus-5-5`, dřív Sonnet); platí pro články, pozvánku i příspěvky, klasifikace zůstává na Haiku | Rozhodnutí Zdeňka. Starší JSONy se nepřegenerovávají (princip 5), pole `model` u článku ukazuje, čím vznikl. Přepis je dražší na token |
 | 2026-10-27 | **Opravy z bezpečnostního auditu repa** (Fable): štítky od modelu jen ze slovníku `rewrite.STITKY` (`vyber_stitky`, zahodí neznámé, nejvýš tři; prompt bere seznam odtud), JSON ve skriptu měření escapuje `</` jako JSON-LD (`render._do_skriptu`), `akce._odkaz` pustí jen http a https | Štítek jde do inline skriptu GA4, takže `</script>` od zmanipulovaného modelu by spustil cizí kód na kromcl.cz. Odkaz akce podá kdokoli přes formulář města a `javascript://` se spustil po kliknutí. Archiv je čistý, žádný štítek mimo slovník. Zbytek auditu (ruční schválení před FB, RSS CDATA, host u DK, piny závislostí, ochrana `main`) zatím otevřený |
+| 2026-10-27 | **Slovník Gen Z a pojistka na pestrost**: slovník z 48 na 113 výrazů (+44 živých, 2 ironické, 19 zakázaných) z [Slovníku Gen Z FMK UTB](https://fmk.utb.cz/slovnik-gen-z-aneb-generace-z-ve-slovech/) a [slovníku pro učitele](https://www.nezzazvoni.cz/vykladovy-slovnik-pro-ucitele/) (2020); `misto` přeneseno na město (glow-up = rekonstrukce, red flag = varovný signál). Prompt dostává okoukané výrazy z posledních 10 článků (`styl.okoukane`, `rewrite.jazyk`), u zakázaných nové `presne` | Cílem je pestřejší text. Archiv ukázal, že model jede na pěti výrazech (lowkey 51/66), takže samotný větší slovník nestačí. Hanlivé a sexuální výrazy jdou do zakázaných (princip 4). Věta o verdiktu v promptu už nejmenuje W, L, mid…, protože výčet sám tlačil právě ty. Prompt jazyka narostl z 5,9k na 9,9k znaků. Staré články zůstávají |
 
 ## Appka a favicona
 
@@ -886,6 +913,8 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 
 | Nápad | Proč odložen |
 |---|---|
+| Vulgární zkratky AF, WTF, IDC ve slovníku | Jako živé se nehodí a do zakázaných nejdou, protože předpona „af“ by chytila aféru i Afriku |
+| „hejtr“ mezi zakázanými | Předpona „hejt“ je kousek od „hejtmana“, který je ve zprávách z kraje pořád. Výsměch lidem hlídá prompt (princip 4) |
 | Index titulek → URL z ročníkových archivů | 24 stránkovaných požadavků na rok kvůli 5 % článků; `cHash` v URL brání skládání adres |
 | Fallback na sitemapu při 404 | Sitemapa nese jen 1 000 posledních URL a chybějící články v ní nejsou |
 | Kontrola jmen v pojistce | Falešné poplachy u skloňování, vypínalo by se |

@@ -968,6 +968,75 @@ class PojistkaSlang(unittest.TestCase):
     def test_uvnitr_jineho_slova_neplati(self):
         self.assertEqual(styl.zkontroluj_zakazany_slang("Rozbopovaný nesmysl"), [])
 
+    def test_ceske_koncovky_se_chytaji(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Boomeři to nechápou."),
+                         ["boomeři"])
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Málem se zneživil."),
+                         ["zneživil"])
+
+    def test_presna_shoda_chyti_cele_slovo(self):
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Totální simp."), ["simp"])
+        self.assertEqual(styl.zkontroluj_zakazany_slang("Klasická Karen."), ["karen"])
+
+    def test_zakazane_se_nechyta_na_podobnych_slovech(self):
+        # Falešný poplach zahodí celý článek, proto `presne` u výrazů,
+        # které jsou začátkem běžného slova nebo jména.
+        for veta in ("Simplifikace pravidel pomohla.", "Hraje se Anna Karenina.",
+                     "Gól dal Tomáš Chadima.", "Hejtman podepsal smlouvu.",
+                     "Aféra kolem parkoviště.", "Zelenina smažená ve woku."):
+            self.assertEqual(styl.zkontroluj_zakazany_slang(veta), [], veta)
+
+
+class SlovnikJazyka(unittest.TestCase):
+    def test_vyrazy_a_tvary_jsou_unikatni(self):
+        videne = {}
+        for v in styl.nacti_slovnik()["vyrazy"]:
+            klic = v["vyraz"].lower()
+            self.assertNotIn(klic, videne, v["vyraz"])
+            videne[klic] = v["vyraz"]
+
+    def test_polozky_maji_platne_hodnoty(self):
+        for v in styl.nacti_slovnik()["vyrazy"]:
+            self.assertIn(v["stav"], ("zive", "ironicke", "zastarale", "zakazane"), v["vyraz"])
+            self.assertIn(v.get("kategorie", "slang"), ("slang", "uredni"), v["vyraz"])
+            self.assertTrue(v.get("zdroj"), v["vyraz"])
+            if v["stav"] in ("zive", "ironicke"):
+                self.assertTrue(v.get("misto"), v["vyraz"])
+                self.assertTrue(v.get("vyznam"), v["vyraz"])
+
+
+class PestrostSlangu(unittest.TestCase):
+    @staticmethod
+    def _clanky(texty):
+        return [{"headline": "", "body": [t]} for t in texty]
+
+    def test_casty_vyraz_je_okoukany(self):
+        clanky = self._clanky(["Je to lowkey dobrý."] * 5 + ["Nic."] * 5)
+        self.assertIn("lowkey", styl.okoukane(clanky))
+
+    def test_obcasny_vyraz_neni_okoukany(self):
+        clanky = self._clanky(["Je to lowkey dobrý."] * 2 + ["Nic."] * 8)
+        self.assertNotIn("lowkey", styl.okoukane(clanky))
+
+    def test_pocitaji_se_jen_posledni_clanky(self):
+        clanky = self._clanky(["Nic."] * 10 + ["Je to lowkey dobrý."] * 10)
+        self.assertNotIn("lowkey", styl.okoukane(clanky))
+
+    def test_kratky_vyraz_jen_samostatne(self):
+        w = {"vyraz": "W", "tvary": []}
+        self.assertTrue(styl.najdi_vyraz(w, "Tohle je W."))
+        for text in ("Na zastávce je Wi-Fi.", "Nové WC v parku.", "Je to w."):
+            self.assertFalse(styl.najdi_vyraz(w, text), text)
+
+    def test_ceska_koncovka_ano_jine_slovo_ne(self):
+        self.assertTrue(styl.najdi_vyraz({"vyraz": "buff"}, "Kasa dostala buffu."))
+        self.assertFalse(styl.najdi_vyraz({"vyraz": "lit"}, "Knihovna a literatura."))
+
+    def test_okoukane_jdou_do_promptu(self):
+        self.assertIn("nesahej a vyber jiné z listiny: lowkey, buff.",
+                      styl.pravidla_jazyka(["lowkey", "buff"]))
+        self.assertNotIn("nesahej a vyber jiné", styl.pravidla_jazyka())
+
 
 class PojistkaAntiteze(unittest.TestCase):
     def test_carka_ne(self):

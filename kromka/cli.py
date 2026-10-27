@@ -313,7 +313,7 @@ def _slovnik(args):
 
     print("Přidávám {0!r} jako {1}.".format(args.pridej, args.stav))
     vyznam = input("Co to znamená? ").strip()
-    misto = input("Místo jakých běžných slov se to říká? (oddělenÉ čárkou) ").strip()
+    misto = input("Místo jakých běžných slov se to říká? (oddělené čárkou) ").strip()
     tvary = input("Další tvary, pokud nějaké jsou? (čárkou) ").strip()
     duvod = ""
     if args.stav == "zakazane":
