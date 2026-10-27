@@ -47,7 +47,7 @@ RSS feed města                  (708 položek, leden 2025 → dnes, jen perex)
    ├─ detail: perex + news-content, autor, rubrika, og:image
    │
    ├─ klasifikace citlivosti        haiku, jedno slovo
-   ├─ přepis                        sonnet, JSON
+   ├─ přepis                        opus, JSON
    ├─ pojistky                      čísla + uvozovky
    │
    ├─ data/articles/<id>.json       trvalý archiv v gitu
@@ -539,6 +539,7 @@ Smoke checklist po refaktoru:
 | 2026-10-26 | **Skill `/pridat-akci`**: Claude in Chrome vyplní formulář akcí města z volného vstupu nebo z příspěvků ve stavu `akce`, odešle po potvrzení, stav `akce odeslána` zpátky do tabulky. Při známé chybě s diakritikou nabídne verzi bez háčků | Do vlastního formuláře se čeká na odpověď města; pozvánky od čtenářů a pořadatelů se mezitím mají jak dostat do kalendáře. Skript místo klikání, protože popis je Trumbowyg a kalendář jen pro čtení. Kontakt u příspěvků Zdeněk, souhlas čtenáři slibuje e-mail jen pro redakci |
 | 2026-10-26 | První akce podaná skillem (Magion House – PHUNXX_J, Tvenis Bar, 16. 11.) prošla i s diakritikou; skill bere za důkaz úspěchu přesměrování na `/akce/` | Skript města přesměruje jen při `error == 0`, hláška zmizí po 2 s a síť se sleduje až od prvního čtení. Chyba z 24. 10. je nejspíš opravená, záložní verze bez háčků zůstává jako pojistka |
 | 2026-10-26 | **Google News sitemap** `/news-sitemap.xml` (`_news_sitemap`): všechny typy článků s `published` za posledních 48 hodin, datum stejné jako `datePublished` v JSON-LD, název `KROMCL`, jazyk `cs`; odkaz v `robots.txt` | Zdeněk ji chce, přestože byla v Parking lotu (přínos je malý, nic ale nestojí). Do Google News se dnes nehlásí, Google zařazuje sám. Samostatný soubor, aby hlavní sitemapa neměnila obsah každou hodinu. Archivní přepisy tam nepatří, jejich vydání u města je staré |
+| 2026-10-27 | **Přepis na Opus** (`MODEL_REWRITE` = `claude-opus-5-5`, dřív Sonnet); platí pro články, pozvánku i příspěvky, klasifikace zůstává na Haiku | Rozhodnutí Zdeňka. Starší JSONy se nepřegenerovávají (princip 5), pole `model` u článku ukazuje, čím vznikl. Přepis je dražší na token |
 
 ## Appka a favicona
 

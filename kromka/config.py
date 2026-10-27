@@ -97,7 +97,8 @@ PRISPEVKY_FORMULAR = os.environ.get("KROMKA_PRISPEVKY_FORMULAR", "")
 # --- Modely ---------------------------------------------------------------
 # Klasifikace je jednoslovná odpověď, stačí nejlevnější model.
 MODEL_CLASSIFY = os.environ.get("KROMKA_MODEL_CLASSIFY", "claude-haiku-5-5")
-MODEL_REWRITE = os.environ.get("KROMKA_MODEL_REWRITE", "claude-sonnet-5-5")
+# Přepis je produkt sám: jazyk, nadsázka, pravidlo o lidech. Proto Opus.
+MODEL_REWRITE = os.environ.get("KROMKA_MODEL_REWRITE", "claude-opus-5-5")
 
 # Model utratí část rozpočtu za přemýšlení, takže limit musí být výrazně větší
 # než samotný JSON. Na 2000 se odpověď usekávala uprostřed řetězce.
