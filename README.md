@@ -213,7 +213,7 @@ Test z 24. 10. 2026: **každý text s diakritikou spadne** na
 dopadl i pokus s cookie a hlavičkami vlastní stránky města, takže
 formulář je rozbitý pro všechny, nejen pro nás. Nic se neuložilo. Chybu
 i prosbu o `Access-Control-Allow-Origin: https://kromcl.cz` nese
-`dopis-sprave-akci.md`, odeslaný 26. 10. 2026.
+dopis správkyni akcí, odeslaný 26. 10. 2026 (mimo repo, viz `.gitignore`).
 
 **Diakritika už prochází (26. 10. 2026).** Skill `/pridat-akci` odeslal
 akci „Magion House – PHUNXX_J" s českým popisem a server ji přijal: skript
@@ -587,6 +587,7 @@ Smoke checklist po refaktoru:
 | 2026-10-27 | **Kandidát URL se ověřuje i datem vydání** (`mesto_kromeriz._sedi` = `_sedi_titulek` + `_sedi_datum`, `<time itemprop="datePublished">` proti `pubDate` z feedu, tolerance 1 den). Článek `01d6c241ce2bd657` přegenerován ze správného zdroje (`…-kromerize-2`), slug ponechán, aby držela URL i odkaz z Facebooku | „Pozvánka na ustavující zasedání Zastupitelstva" vychází po každých volbách: základní slug drží rok 2018, `-1` rok 2022, `-2` rok 2026, a `og:title` je u všech stejný. Kontrola jen podle titulku vzala první z nich a web i Facebook dostaly přepis osm let staré pozvánky (1. 11. 2018, starosta Němec). Test `RozliseniRocniku` |
 
 | 2026-10-27 | **Event schema opraveno podle Search Console** (`render._ld_misto`, `akce._adresa`/`_psc`/`_gps`): `location` vzniká vždycky, obec a ulice z číselníku míst, GPS jako `geo`, `image` a `offers.url` z nově čtených polí exportu (`image`, `ticket_url`) | GSC 27. 10. 2026 nahlásila 8 vadných položek, kriticky „chybí pole location" u termínů s `place=0`. Natvrdo psaná `addressLocality: Kroměříž` navíc lhala u 68 z 328 míst mimo město (Holešov, Velehrad, jurta v Lutopecnách). `ticket_url` je v exportu zavedené, ale město ho nevyplňuje, takže se padá na web akce a pak na web místa. Místo neuvedené (4 ze 74) dostane samotnou Kroměříž — jediný dopočítaný údaj ve schématu, protože bez `location` Google akci zahodí celou |
+| 2026-10-28 | `dopis-sprave-akci.md` vyjmutý z repa a přidaný do `.gitignore` | Nese jméno a e-mail úřednice města a celou chybovou hlášku SQL z jejich formuláře. Do veřejného repa nepatří, stejně jako dopis tiskovému mluvčímu. V historii gitu zůstává |
 ## Appka a favicona
 
 Značka je jedna geometrie v `kromka/znacka.py`. Z ní `bin/ikony.py` vyrobí
