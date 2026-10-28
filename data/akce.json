@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-27T10:33:47.526611+00:00",
+  "stazeno": "2026-10-28T01:22:02.126551+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -4630,171 +4630,6 @@
       "web": "https://www.dk-kromeriz.cz/klubove-hudebni-toulky",
       "youtube": "",
       "zacatek": "2026-10-13T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11891,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21774,
-      "konec": "2026-10-27T12:00:00",
-      "misto": "Masarykovo náměstí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Masarykovo náměstí"
-      },
-      "misto_gps": [
-        49.297364,
-        17.390665
-      ],
-      "misto_web": "",
-      "nazev": "Pietní akt - výročí vzniku samostatného československého státu",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11891.jpg",
-      "perex": "Pietní akt - výročí vzniku samostatného československého státu",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-12T09:01:53",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-10-27T10:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11774,
-      "cena": 0,
-      "cena_pozn": "vstupné se platí na místě-hotově",
-      "id": 21611,
-      "konec": "2026-10-27T19:00:00",
-      "misto": "Bezručův park",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Kotojedská"
-      },
-      "misto_gps": [
-        49.294719,
-        17.397306
-      ],
-      "misto_web": "",
-      "nazev": "Strašidelná stezka",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11774.jpg",
-      "perex": "Podzimní akce inspirovaná obdobím Dušiček a Halloweenu promění park v tajemný strašidelný svět.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-14T09:29:06",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.svcsipka.cz/akce/485-strasidelna-stezka",
-      "youtube": "",
-      "zacatek": "2026-10-27T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11904,
-      "cena": 100,
-      "cena_pozn": "Vstupné dobrovolné",
-      "id": 21787,
-      "konec": "2026-10-27T20:00:00",
-      "misto": "SOLACE – jurta Lutopecny",
-      "misto_adresa": {
-        "mesto": "Lutopecny",
-        "psc": "767 01",
-        "ulice": "Lutopecny, parcely č. 2201 a 2202."
-      },
-      "misto_gps": [
-        49.2996236,
-        17.346165
-      ],
-      "misto_web": "https://www.solace.cz/",
-      "nazev": "Zdraví v souvislostech - večer, který patří vám",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11904.jpg",
-      "perex": "Zveme vás na příjemné večerní setkání v útulné jurtě v Lutopecnách, věnované zdraví v souvislostech. Společně se zaměříme na chronický zánět, zdraví srdce, krevní tlak a vliv životního stylu na naše fyzické i duševní zdraví. Čeká vás srozumitelné povídání, prostor pro otázky, teplý čaj a příjemná atmosféra u praskajícího ohně. 27. října 2026 | 17:00–20:00 SOLACE, Lutopecny u Kroměříže Kapacita je omezená, rezervace na tel. 704 051 802.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T06:59:47",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-10-27T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11437,
-      "cena": 390,
-      "cena_pozn": "zahájení předprodeje 6. 5. 2026",
-      "id": 21132,
-      "konec": "2026-10-27T20:00:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "OTEVŘENÉ SRDCE",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11437.jpg",
-      "perex": "Beseda s Jaroslavem Duškem a Josefem Formánkem",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-05-05T07:20:23",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/otevrene-srdce-1",
-      "youtube": "",
-      "zacatek": "2026-10-27T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11873,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21747,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "stopaz": "asi 1 hodina a 47 minut"
-      },
-      "konec": "2026-10-27T20:47:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Kluci to vidí jinak než holky (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11873.jpg",
-      "perex": "Komedie Režie: David Ondříček Hrají: Jaroslav Plesl, Martha Issová, Václav Neužil, Denisa Barešová, Vojtěch Vodochodský, Anna Kameníková, Jan Nedbal",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-22T18:23:19",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/kluci-to-vidi-jinak-nez-holky",
-      "youtube": "MMUR9tcVn6U",
-      "zacatek": "2026-10-27T19:00:00",
       "zdarma": false
     },
     {
@@ -8565,6 +8400,70 @@
       "web": "https://www.dk-kromeriz.cz/babicka-drsnacka-1",
       "youtube": "",
       "zacatek": "2026-11-26T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 10047,
+      "cena": 400,
+      "cena_pozn": "Cena je za pár. Čas ukončení workshopu je pouze orientační.",
+      "id": 21768,
+      "konec": "2026-11-27T18:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Workshop pro páry: Vše, co potřebujete vědět k porodu a šestinedělí",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10047.jpg",
+      "perex": "Workshop vhodný pro nastávající rodiče na téma porod a šestinedělí - jasně, výstižně a prakticky.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-10T11:09:15",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz/vzdelani-pro-rodice/",
+      "youtube": "",
+      "zacatek": "2026-11-27T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11914,
+      "cena": 150,
+      "cena_pozn": "zahájení předprodeje 19. 10. 2026",
+      "id": 21797,
+      "konec": "2026-11-27T21:00:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Project From",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11914.jpg",
+      "perex": "Kapela Project From v sobě spojuje krásné hlasy tří zpěvaček za doprovodu akustické kytary. V jejich repertoáru jsou kromě vlastní tvorby také akustické verze známých světových hitů z žánru rock a pop, jako například od kapel Queen, Mr.Big, Heart, Suzi Quatro, Aretha Franklin, Tom Petty a mnoho dalších.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-10-19T07:33:47",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/project-from",
+      "youtube": "",
+      "zacatek": "2026-11-27T19:00:00",
       "zdarma": false
     }
   ],
