@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-28T16:02:22.983713+00:00",
+  "stazeno": "2026-10-29T07:05:36.862224+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -4662,100 +4662,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-akce/428-za-pokladem-orientu",
       "youtube": "",
       "zacatek": "2026-10-28T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11627,
-      "cena": 350,
-      "cena_pozn": "startovné dospělí online registrace 350 Kč, registrace na místě 450 Kč startovné online registrace 100 Kč, registrace na místě 200 Kč",
-      "id": 21451,
-      "konec": "2026-10-28T17:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "Sokolský běh republiky",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11627.jpg",
-      "perex": "Sokolský běh republiky je každoroční oslava založení Československa - 28. října slavíme pohybem!",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-07-21T06:24:49",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-10-28T11:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11449,
-      "cena": 80,
-      "cena_pozn": "",
-      "id": 21621,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "stopaz": "asi 1 hodina a 40 minut"
-      },
-      "konec": "2026-10-28T16:40:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Pět švestek (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11449.jpg",
-      "perex": "Komedie Režie: Jan Svěrák Hrají: Lenka Termerová, Oldřich Kaiser, Petr Kostka, Jan Vlasák, Dana Syslová, Petra Špalková, Petr Lněnička, Judit Pecháček, Marek Adamczyk",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-09-11T12:41:29",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/pet-svestek",
-      "youtube": "Kmjyl3BhWM0",
-      "zacatek": "2026-10-28T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11851,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21713,
-      "konec": "2026-10-28T23:00:00",
-      "misto": "Hvězdárna Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Braunerova 2397"
-      },
-      "misto_gps": [
-        49.2962,
-        17.419075
-      ],
-      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
-      "nazev": "Pravidelná pozorování hvězd",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
-      "perex": "Pravidelná pozorování podzim 2026",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-30T10:44:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-10-28T20:00:00",
       "zdarma": false
     },
     {
@@ -8464,6 +8370,70 @@
       "web": "https://www.dk-kromeriz.cz/project-from",
       "youtube": "",
       "zacatek": "2026-11-27T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11911,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21794,
+      "konec": "2026-11-28T16:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Den pro dětskou knihu",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11911.jpg",
+      "perex": "Oslava narozenin Miloše Macourka.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-10-15T09:25:38",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-11-28T15:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11920,
+      "cena": 60,
+      "cena_pozn": "",
+      "id": 21803,
+      "konec": "2026-11-28T19:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "Hokejová Krajská liga mužů / HK Kroměříž \"B\" – HC Uherské Hradiště",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11920.jpg",
+      "perex": "Krajský přebor v hokeji.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-10-19T07:33:37",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-11-28T17:00:00",
       "zdarma": false
     }
   ],
