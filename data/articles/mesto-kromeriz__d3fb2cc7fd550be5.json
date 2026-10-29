@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Trávník si letos odemkl achievement. Strom, který bude o Vánocích stát na Velkém náměstí, vyrostl na městském pozemku před jedním domem v téhle místní části. Je to smrk pichlavý a měří kolem 12 metrů. Na krku má odhadem zhruba 25 let. Popsal ho tak Martin Posolda, který se ve městě stará o zeleň. Loni dorazil smrk ztepilý z areálu dopravní firmy ve Vážanech, takže letos přichází patch na pichlavou verzi.",
+    "Zapiš si neděli 29. listopadu, tohle vypadá na banger. Strom se rozsvítí v 16:30. Hned potom dostanou pódium nejmenší děti, protože začíná Mikulášská show s Bárou Ladrovou a kamarády. Po 18:00 to převezme Petr Bende s kapelou. Kolem náměstí přitom celý den pojede jarmark.",
+    "Kdo dorazí dřív, může u pódia chillovat už od 14:00. Jako první vystoupí folklorní soubor Hanácké šponti z MŠ Mánesova Kroměříž. Po nich přijdou na řadu tanečníci a muzikanti z Tanečního klubu Henzély, kroměřížské zušky a soukromé zušky D-MUSIC.",
+    "Od dalšího dne náměstí převezmou trhy Šťastné a veselé a vydrží tam do 23. prosince. Stánky se svařákem, punčem, kafem, čajem a něčím k zakousnutí budou otevřené celý advent, tedy 25 dní. A fr, nezavřou ani mezi svátky, od 25. do 31. prosince. Dárky, ozdoby, svíčky a jmelí koupíš 29. listopadu, o víkendu od 4. do 6. prosince a od pátku 11. prosince pak každý den až do 23. prosince. Svařák skoro na celý prosinec, tyhle vibes beru."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.624,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-10-29T14:19:59.922029+00:00"
+  },
+  "headline": "Trávník posílá na náměstí vánoční smrk a jeho aura měří 12 metrů",
+  "id": "mesto-kromeriz:d3fb2cc7fd550be5",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-10-29T11:37:27+01:00",
+  "rewritten_at": "2026-10-29T14:19:59.922060+00:00",
+  "sensitivity": "volny",
+  "slug": "travnik-posila-na-namesti-vanocni-smrk-a-jeho-aura-meri-12-metru",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "kultura"
+  ],
+  "tldr": [
+    {
+      "emoji": "🌲",
+      "label": "Tree Drop",
+      "text": "Letošní vánoční strom je smrk pichlavý z Trávníku, vysoký asi 12 metrů."
+    },
+    {
+      "emoji": "✨🎸",
+      "label": "Light Up",
+      "text": "Rozsvítí se v neděli 29. listopadu v 16:30 a po šesté večer hraje Petr Bende s kapelou."
+    },
+    {
+      "emoji": "🍷",
+      "label": "Market Mode",
+      "text": "Trhy Šťastné a veselé jedou do 23. prosince a stánky s pitím a jídlem zůstanou i mezi svátky."
+    }
+  ]
+}
