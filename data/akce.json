@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-29T20:17:50.010595+00:00",
+  "stazeno": "2026-10-30T14:07:55.803421+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -4662,108 +4662,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-akce/428-za-pokladem-orientu",
       "youtube": "",
       "zacatek": "2026-10-28T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11734,
-      "cena": 0,
-      "cena_pozn": "Pro registrované členy A3V zdarma, ostatní 10,-",
-      "id": 21559,
-      "konec": "2026-10-29T16:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Pohádky z Podzámecké zahrady",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11734.jpg",
-      "perex": "Pohádky představí jejich autorka Daniela Hebnarová.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-09-02T08:26:17",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-10-29T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11564,
-      "cena": 890,
-      "cena_pozn": "základní od 10. řady: 790 Kč",
-      "id": 21326,
-      "konec": "2026-10-29T19:30:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "JAREK NOHAVICA A BOŽÍ MLÝNY",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11564.jpg",
-      "perex": "Koncert Jarka Nohavici s cimbálovou kapelou Boží mlýny. Během večera budete mít možnost poslechnout si písničky z divadelní inscenace Moravského divadla Boží mlýny v aranžích Filipa Tailora a jeho kapely, ale i další písně Jarka Nohavici zaranžované speciálně pro tuto mimořádnou koncertní příležitost.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-06-18T06:52:24",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/jarek-nohavica-a-bozi-mlyny",
-      "youtube": "",
-      "zacatek": "2026-10-29T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11874,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21748,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Le Fantôme de L'Opéra",
-        "stopaz": "asi 2 hodiny a 14 minut"
-      },
-      "konec": "2026-10-29T21:14:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Fantom opery (FRA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11874.jpg",
-      "perex": "Drama / Romantický / Horor Režie: Alexandre Castagnetti Hrají: Deva Cassel, Romain Duris, Julien de Saint-Jean, Laïka Blanc-Francard a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:39:36",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/fantom-opery",
-      "youtube": "UrjKN7ElHpw",
-      "zacatek": "2026-10-29T19:00:00",
       "zdarma": false
     },
     {
@@ -8434,6 +8332,38 @@
       "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-28T17:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11893,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21776,
+      "konec": "2026-12-23T19:00:00",
+      "misto": "Velké náměstí - Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí"
+      },
+      "misto_gps": [
+        49.298815,
+        17.393019
+      ],
+      "misto_web": "",
+      "nazev": "Šťastné a veselé",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11893.jpg",
+      "perex": "Vánoční trhy s doprovodným kulturním programem.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-10-12T10:17:36",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/stastne-a-vesele-2026",
+      "youtube": "",
+      "zacatek": "2026-11-29T10:00:00",
       "zdarma": false
     }
   ],
