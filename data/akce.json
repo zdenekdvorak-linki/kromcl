@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-30T14:07:55.803421+00:00",
+  "stazeno": "2026-10-31T05:40:19.997968+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -4374,38 +4374,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-10-01T08:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11796,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21648,
-      "konec": "2026-10-30T18:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "TAM, KDE ZAČÍNÁ FANTAZIE (MALÝ PRINC A MUMÍNCI)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11796.jpg",
-      "perex": "Mumínci a Malý princ inspirovali děti k vlastnímu výtvarnému putování světem fantazie.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Muzea, výstavy, galerie",
-      "typ_id": 9,
-      "upraveno": "2026-09-16T09:11:02",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-10-01T14:00:00",
       "zdarma": false
     },
     {
@@ -4662,113 +4630,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-akce/428-za-pokladem-orientu",
       "youtube": "",
       "zacatek": "2026-10-28T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11875,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21750,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "puvodni_nazev": "Other Mommy",
-        "stopaz": "asi 1 hodina a 33 minut"
-      },
-      "konec": "2026-10-30T19:03:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Neskutečná máma (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11875.jpg",
-      "perex": "Horor Režie: Rob Savage Hrají: Jessica Chastain, Jay Duplass, Dichen Lachman, Karen Allen, Travis Nelson, Arabella Olivia Clark a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:40:51",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/neskutecna-mama",
-      "youtube": "2yHSlh8NfBw",
-      "zacatek": "2026-10-30T17:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11563,
-      "cena": 890,
-      "cena_pozn": "základní od 10. řady: 790 Kč, zahájení předprodeje 17. 6. 2026",
-      "id": 21325,
-      "konec": "2026-10-30T19:30:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "JAREK NOHAVICA A BOŽÍ MLÝNY",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11563.jpg",
-      "perex": "Koncert Jarka Nohavici s cimbálovou kapelou Boží mlýny. Během večera budete mít možnost poslechnout si písničky z divadelní inscenace Moravského divadla Boží mlýny v aranžích Filipa Tailora a jeho kapely, ale i další písně Jarka Nohavici zaranžované speciálně pro tuto mimořádnou koncertní příležitost.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-06-18T06:51:53",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/jarek-nohavica-a-bozi-mlyny-1",
-      "youtube": "",
-      "zacatek": "2026-10-30T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11870,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21741,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "stopaz": "asi 1 hodina a 48 minut"
-      },
-      "konec": "2026-10-30T21:48:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Clayface (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11870.jpg",
-      "perex": "Akční / Fantasy / Sci-Fi / Horor Režie: James Watkins Hrají: Tom Rhys Harries, Naomi Ackie, Eddie Marsan, Max Minghella, Wil Coban, Jake Curran a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:40:40",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/clayface",
-      "youtube": "cm_QbKRSNbg",
-      "zacatek": "2026-10-30T20:00:00",
       "zdarma": false
     },
     {
@@ -8364,6 +8225,38 @@
       "web": "https://www.dk-kromeriz.cz/stastne-a-vesele-2026",
       "youtube": "",
       "zacatek": "2026-11-29T10:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 10514,
+      "cena": 100,
+      "cena_pozn": "",
+      "id": 21769,
+      "konec": "2026-11-30T18:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Beseda: Jak mluvit, aby druhé srdce lásku nejen slyšelo, ale i cítilo?",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10514.jpg",
+      "perex": "Beseda pro všechny, kteří chtějí o svůj vztah pečovat nebo v něm znovu nacházet blízkost.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-11T20:11:06",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-11-30T16:30:00",
       "zdarma": false
     }
   ],
