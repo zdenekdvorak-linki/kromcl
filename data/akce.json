@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-10-31T17:43:45.497159+00:00",
+  "stazeno": "2026-11-01T07:32:07.662991+00:00",
   "terminy": [
     {
       "akce_id": 11113,
@@ -4374,38 +4374,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-10-01T08:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11801,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21653,
-      "konec": "2026-10-31T00:00:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Fotobraní 2026",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11801.jpg",
-      "perex": "Fotoklub DK Kroměříž a Dům kultury v Kroměříži si Vás dovolují pozvat na tradiční výroční výstavu členů fotoklubu FOTOBRANÍ 2026, která představí průřez jejich tvorbou.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Muzea, výstavy, galerie",
-      "typ_id": 9,
-      "upraveno": "2026-09-16T09:14:21",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/fotobrani-2026",
-      "youtube": "",
-      "zacatek": "2026-10-02T17:00:00",
       "zdarma": false
     },
     {
@@ -4630,38 +4598,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-akce/428-za-pokladem-orientu",
       "youtube": "",
       "zacatek": "2026-10-28T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11809,
-      "cena": 140,
-      "cena_pozn": "",
-      "id": 21661,
-      "konec": "2026-10-31T19:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "HK Kroměříž – Draci Pars Šumperk / 2. hokejová liga",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11809.jpg",
-      "perex": "Zápas 2. hokejové ligy, domácí.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-09-21T09:36:16",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-10-31T17:00:00",
       "zdarma": false
     },
     {
@@ -5822,6 +5758,38 @@
       "web": "https://www.hkkm.cz",
       "youtube": "",
       "zacatek": "2026-11-08T16:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11943,
+      "cena": 150,
+      "cena_pozn": "zahájení předprodeje 23. 10. 2026",
+      "id": 21833,
+      "konec": "2026-11-08T20:00:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Duo Jindra a Mara",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11943.jpg",
+      "perex": "Podvečer plný nejznámnějších česko-slovenských hitů z 90tých let až po současnost",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-10-31T22:32:21",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duo-jindra-a-martin",
+      "youtube": "",
+      "zacatek": "2026-11-08T17:00:00",
       "zdarma": false
     },
     {
