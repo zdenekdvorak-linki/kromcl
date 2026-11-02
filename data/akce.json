@@ -4221,40 +4221,8 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-01T19:39:58.192274+00:00",
+  "stazeno": "2026-11-02T15:51:23.731045+00:00",
   "terminy": [
-    {
-      "akce_id": 11113,
-      "cena": 80,
-      "cena_pozn": "snížené: 60 Kč rodinné: 190 Kč",
-      "id": 20673,
-      "konec": "2026-11-01T17:00:00",
-      "misto": "Muzeum Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Velké náměstí 38"
-      },
-      "misto_gps": [
-        49.299106,
-        17.392644
-      ],
-      "misto_web": "http://www.muzeum-km.cz/",
-      "nazev": "Íránský poutník zpátky doma. Výstava ke 140. výročí narození orientalisty Jana Rypky",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11113.jpg",
-      "perex": "Íránský poutník zpátky doma. Výstava ke 140. výročí narození orientalisty Jana Rypky",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Muzea, výstavy, galerie",
-      "typ_id": 9,
-      "upraveno": "2026-01-08T11:11:50",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.muzeum-km.cz/pripravovane-vystavy/401-iransky-poutnik-zpatky-doma-vystava-ke-140-vyroci-narozeni-orientalisty-jana-rypky",
-      "youtube": "",
-      "zacatek": "2026-05-15T09:00:00",
-      "zdarma": false
-    },
     {
       "akce_id": 11850,
       "cena": 170,
@@ -4566,149 +4534,6 @@
       "web": "https://www.dk-kromeriz.cz/klubove-hudebni-toulky",
       "youtube": "",
       "zacatek": "2026-10-13T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11887,
-      "cena": 0,
-      "cena_pozn": "Základní 100 Kč, snížené 70 Kč, rodinné 250 Kč U tohoto typu akcí neplatí snížené vstupné pro děti od 3 let, vstup zdarma mají děti 0-3 roky.",
-      "id": 21764,
-      "konec": "2026-11-01T17:00:00",
-      "misto": "Muzeum Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Velké náměstí 38"
-      },
-      "misto_gps": [
-        49.299106,
-        17.392644
-      ],
-      "misto_web": "http://www.muzeum-km.cz/",
-      "nazev": "Za pokladem Orientu",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11887.jpg",
-      "perex": "Program pro rodiny s dětmi na podzimní prázdniny",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Muzea, výstavy, galerie",
-      "typ_id": 9,
-      "upraveno": "2026-10-12T06:53:27",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.muzeum-km.cz/pripravovane-akce/428-za-pokladem-orientu",
-      "youtube": "",
-      "zacatek": "2026-10-28T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11576,
-      "cena": 390,
-      "cena_pozn": "předprodej: 290 Kč, zahájení předprodeje 19. 6. 2026",
-      "id": 21372,
-      "kino": {
-        "puvodni_nazev": "Maraton hororových filmů"
-      },
-      "konec": "2026-11-01T06:00:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Halloweenská noc",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11576.jpg",
-      "perex": "Halloweenská noc je oslavou hororu ve všech jeho podobách. Akce bude maraton hororových filmů a další překvapení.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-06-29T11:38:34",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/halloweenska-noc-2",
-      "youtube": "",
-      "zacatek": "2026-10-31T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11872,
-      "cena": 160,
-      "cena_pozn": "děti: 140 Kč",
-      "id": 21745,
-      "kino": {
-        "format": "dabing | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "puvodni_nazev": "Shaun the Sheep: The Beast of Mossy Bottom",
-        "stopaz": "asi 1 hodina a 20 minut"
-      },
-      "konec": "2026-11-01T16:20:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Ovečka Shaun ve filmu: Příšera z Mossy Bottom (UK 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11872.jpg",
-      "perex": "Animovaný / Komedie / Rodinný Režie: Steve Cox, Matthew Walker Hrají: Justin Fletcher, John Sparkes, Kate Harbour, Nina Sosanya, Paul Whitehouse",
-      "poznamka": "dabing",
-      "pro_deti": true,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:40:00",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/ovecka-shaun-ve-filmu-prisera-z-mossy-bottom",
-      "youtube": "aLjNwYlA8vU",
-      "zacatek": "2026-11-01T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11874,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21749,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Le Fantôme de L'Opéra",
-        "stopaz": "asi 2 hodiny a 14 minut"
-      },
-      "konec": "2026-11-01T20:14:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Fantom opery (FRA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11874.jpg",
-      "perex": "Drama / Romantický / Horor Režie: Alexandre Castagnetti Hrají: Deva Cassel, Romain Duris, Julien de Saint-Jean, Laïka Blanc-Francard a další",
-      "poznamka": "dabing",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:39:36",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/fantom-opery",
-      "youtube": "UrjKN7ElHpw",
-      "zacatek": "2026-11-01T18:00:00",
       "zdarma": false
     },
     {
@@ -5336,6 +5161,31 @@
       "zdarma": false
     },
     {
+      "akce_id": 11944,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21834,
+      "konec": "2026-11-06T19:00:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Kozlí Halloween v hale",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11944.jpg",
+      "perex": "Halloweenska akce florbalového klubu",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-02T07:04:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-11-06T16:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11844,
       "cena": 0,
       "cena_pozn": "",
@@ -5497,6 +5347,38 @@
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/divoky-kun-devitka",
       "youtube": "JZYV30y2uHk",
+      "zacatek": "2026-11-06T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11946,
+      "cena": 250,
+      "cena_pozn": "na místě 300,-",
+      "id": 21836,
+      "konec": "2026-11-07T01:00:00",
+      "misto": "Stará masna",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hulínská 2352"
+      },
+      "misto_gps": [
+        49.307275,
+        17.406919
+      ],
+      "misto_web": "https://www.stara-masna.cz/",
+      "nazev": "Divá Bára & Breaking Loose",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11946.jpg",
+      "perex": "Tvrdá rocková muzika",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-02T07:03:50",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://stara-masna.cz/",
+      "youtube": "FqhVpoMG1ls",
       "zacatek": "2026-11-06T20:00:00",
       "zdarma": false
     },
@@ -5784,7 +5666,7 @@
       "pro_deti": false,
       "typ": "Hudba a tanec",
       "typ_id": 10,
-      "upraveno": "2026-10-31T22:32:21",
+      "upraveno": "2026-11-02T07:03:28",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/duo-jindra-a-martin",
@@ -8036,6 +7918,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11947,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21837,
+      "konec": "2026-11-26T20:00:00",
+      "misto": "Galerie Pekelné sáně",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Malý Val 1512"
+      },
+      "misto_gps": [
+        49.297769,
+        17.389164
+      ],
+      "misto_web": "https://www.pekelnesane.cz",
+      "nazev": "Marika Toman Bumbálková: Mozaika života",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11947.jpg",
+      "perex": "Marika Toman Bumbálková je autorkou mozaiky Louže, která je aktuálně k vidění na Velkém náměstí v Kroměříži. Je absolventkou v ateliéru Televizní a filmové grafiky u prof. Jiřího Bárty a v roce 2003 získala Cenu za nejlepší absolventskou práci. Také se zabývá ilustrací. Mezi lety 2002 a 2012 pracovala jako výtvarnice v divadle Líšeň, připravovala plakáty, scénografii a loutky. Za představení Putin lyžuje získala Cenu J. Wilkowskiegona udělovanou v Toruni. Aktuálně se zaměřuje především na tvorbu mozaik ve volné i zakázkové tvorbě. Přijďte si poslechnout její vyprávění ve čtvrtek 26. 11. 2026 na Malý Val 1552.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-02T10:10:47",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.pekelnesane.cz/ctvrtky/mozaika-zivota-121",
+      "youtube": "",
+      "zacatek": "2026-11-26T18:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 10047,
       "cena": 400,
       "cena_pozn": "Cena je za pár. Čas ukončení workshopu je pouze orientační.",
@@ -8097,6 +8011,38 @@
       "web": "https://www.dk-kromeriz.cz/project-from",
       "youtube": "",
       "zacatek": "2026-11-27T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11945,
+      "cena": 350,
+      "cena_pozn": "",
+      "id": 21835,
+      "konec": "2026-11-28T01:00:00",
+      "misto": "Stará masna",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hulínská 2352"
+      },
+      "misto_gps": [
+        49.307275,
+        17.406919
+      ],
+      "misto_web": "https://www.stara-masna.cz/",
+      "nazev": "Judas Priest revival Praha",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11945.jpg",
+      "perex": "Heavy metal v plné síle...",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-02T07:02:51",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://stara-masna.cz/",
+      "youtube": "zcSqfJEACQs",
+      "zacatek": "2026-11-27T20:30:00",
       "zdarma": false
     },
     {
@@ -8225,6 +8171,102 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-30T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11820,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21673,
+      "konec": "2026-12-02T18:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Jak zbohatnout na venkově",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11820.jpg",
+      "perex": "Přednáška o životě a práci na Islandu Jany Raclavské.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-09-29T08:36:35",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-12-02T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11758,
+      "cena": 490,
+      "cena_pozn": "zahájení předprodeje 14. 9. 2026",
+      "id": 21591,
+      "konec": "2026-12-02T21:15:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Lazebník sevillský",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11758.jpg",
+      "perex": "Hrají: Michal Isteník, Svetlana Janotová, Aleš Slanina, Milan Němec, Alan Novotný, Jakub Przebinda, Ondřej Halámek, Josef Jurásek, Patrik Bořecký",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Divadlo",
+      "typ_id": 8,
+      "upraveno": "2026-09-14T09:30:37",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/lazebnik-sevillsky",
+      "youtube": "",
+      "zacatek": "2026-12-02T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11851,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21718,
+      "konec": "2026-12-02T23:00:00",
+      "misto": "Hvězdárna Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Braunerova 2397"
+      },
+      "misto_gps": [
+        49.2962,
+        17.419075
+      ],
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "nazev": "Pravidelná pozorování hvězd",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
+      "perex": "Pravidelná pozorování podzim 2026",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-09-30T10:44:50",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-02T20:00:00",
       "zdarma": false
     }
   ],
