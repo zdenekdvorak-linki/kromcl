@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tvoje babi má teď W svezení. Senior taxi v Kroměříži od září provozuje soukromá firma a ta zvládne vypravit 3 auta najednou. Vozí seniory a lidi se zdravotním postižením po městě i po místních částech. Jezdí se k doktorovi, na úřad, na nákup nebo za rodinou. Zájem vystřelil hned: lidí, co taxíkem jezdí, je od té doby výrazně víc.",
+    "Za tímhle buffem stojí Rada seniorů města Kroměříže. Je to poradní sbor, který vedení města radí ve všem, co se týká seniorů a lidí s handicapem. Místostarosta Pavel Motyčka, který vznik rady inicioval, popisuje její práci takhle: členové sbírají problémy, na které narazí sami nebo jim je řeknou lidi kolem nich, a radnice je pak posílá na správné odbory k vyřešení. Green flag.",
+    "Taxi ale není jediné téma. Rada řeší taky dopravu a hlásí místa, kde hrozí nebezpečí chodcům, řidičům i cestujícím. Zajímá ji i čistota ulic a to, jestli je ve městě dost lavic, košů a dalšího vybavení a jestli je potřeba ho obnovit. Schází se jednou za 3 měsíce v Kroměřížském centru pro seniory a zdravotně postižené na Velehradské ulici. Celé volební období 2022–2026 to fungovalo, no cap.",
+    "Další setkání chystá rada na leden 2027. Přijít můžou i noví zájemci a kdo se přihlásí, dostane přesný den a čas mailem. Jestli máš doma dědu, co pořád nadává na díry v chodníku, tady by jeho stížnosti měly kam dorazit. Pošli mu to."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.522,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-03T06:47:57.895526+00:00"
+  },
+  "headline": "Senior taxi dostalo buff: od září po Kroměříži jezdí 3 auta naráz",
+  "id": "mesto-kromeriz:21aea53889c0b7ec",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-02T13:35:05+01:00",
+  "rewritten_at": "2026-11-03T06:47:57.895554+00:00",
+  "sensitivity": "volny",
+  "slug": "senior-taxi-dostalo-buff-od-zari-po-kromerizi-jezdi-3-auta-naraz",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "lidé",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚕",
+      "label": "Taxi Buff",
+      "text": "Senior taxi od září provozuje soukromá firma, která pošle na cestu až 3 auta zároveň."
+    },
+    {
+      "emoji": "👵",
+      "label": "Who Cooked",
+      "text": "S nápadem na rozšíření přišla Rada seniorů města Kroměříže, poradní sbor vedení města."
+    },
+    {
+      "emoji": "📅",
+      "label": "Next Meeting",
+      "text": "Rada pokračuje i po volebním období 2022–2026 a další sraz chystá na leden 2027, vítaní jsou i noví lidi."
+    }
+  ]
+}

@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-02T15:51:23.731045+00:00",
+  "stazeno": "2026-11-03T06:47:22.785348+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4630,76 +4630,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-02T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 10377,
-      "cena": 100,
-      "cena_pozn": "",
-      "id": 21771,
-      "konec": "2026-11-02T18:30:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Albertova 4062"
-      },
-      "misto_gps": [
-        49.290614,
-        17.385099
-      ],
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Cyklus besed: Skloubení podnikání a mateřství",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10377.jpg",
-      "perex": "Besedy pro rodiče malých dětí, kteří přemýšlí nad slaďování rodinného a pracovního života.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-23T10:47:56",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.klubickokm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-02T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11871,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21743,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Sense and Sensibility",
-        "stopaz": "asi 2 hodiny a 11 minut"
-      },
-      "konec": "2026-11-02T21:11:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Rozum a cit (USA/UK 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11871.jpg",
-      "perex": "Drama / Romantický Režie: Georgia Oakley Hrají: Daisy Edgar-Jones, Esme Creed-Miles, Caitríona Balfe, George MacKay a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:58",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/rozum-a-cit",
-      "youtube": "w1x3pN2vtzc",
-      "zacatek": "2026-11-02T19:00:00",
       "zdarma": false
     },
     {
@@ -8267,6 +8197,70 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-02T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11924,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21807,
+      "konec": "2026-12-03T20:00:00",
+      "misto": "Galerie Pekelné sáně",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Malý Val 1512"
+      },
+      "misto_gps": [
+        49.297769,
+        17.389164
+      ],
+      "misto_web": "https://www.pekelnesane.cz",
+      "nazev": "Jan Poupě: Stopy paměti v nekonečnu",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11924.jpg",
+      "perex": "Jan Poupě je jeden z aktuálně vystavujících umělců na 15. výstavním bloku Galerie Pekelné sáně, kde jsou jeho díla nepřehlédnutelnou součástí výstavy Podmínky viditelnosti. Návštěvníky zaujmou především precizním a dokonale technickým ztvárněním malby a nadčasového pojetí odkazujícího na nekonečnost času a prostoru. Jako autor má za sebou řadu výstav a spoluprací v zahraničí, při besedě se ho tedy budeme ptát na cestu, která k těmto jedinečným příležitostem dovedla, na jeho vidění světa a všechny rozměru nekonečného prostoru. Přijďte si jeho vyprávění poslechnout ve čtvrtek 3. 12. 2026 v 18:00 na Malý Val 1552.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-20T06:42:15",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.pekelnesane.cz/ctvrtky/jan-poupe-119",
+      "youtube": "",
+      "zacatek": "2026-12-03T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11695,
+      "cena": 150,
+      "cena_pozn": "zahájení předprodeje 17. 8. 2026",
+      "id": 21524,
+      "konec": "2026-12-03T19:30:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Tomáš Rendl",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11695.jpg",
+      "perex": "Vydejte se na 2700 km dlouhé dobrodružství Japonskem, zemí, jejíž kultura se vyvíjí bez ovlivnění cizími vlivy už od období bohů. Co dnes znamená žít jako Japonec? Jak přemýšlí, pracují a užívají si? To vše detailně prozkoumáme.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-08-17T08:20:15",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/tomas-rendl",
+      "youtube": "",
+      "zacatek": "2026-12-03T18:00:00",
       "zdarma": false
     }
   ],
