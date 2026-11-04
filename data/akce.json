@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-04T09:11:23.681689+00:00",
+  "stazeno": "2026-11-04T22:39:26.582693+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -6977,6 +6977,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21841,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-11-18T22:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "titulky, předpremiéra",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-11-18T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11851,
       "cena": 0,
       "cena_pozn": "",
@@ -7075,6 +7113,44 @@
       "web": "https://www.pekelnesane.cz/ctvrtky/strom-poznani-118",
       "youtube": "",
       "zacatek": "2026-11-19T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21842,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-11-19T21:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-11-19T19:00:00",
       "zdarma": false
     },
     {
@@ -7196,6 +7272,44 @@
       "web": "https://www.dk-kromeriz.cz/navstevy-u-pana-greena-1",
       "youtube": "",
       "zacatek": "2026-11-20T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21843,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-11-20T22:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-11-20T20:00:00",
       "zdarma": false
     },
     {
@@ -7456,6 +7570,44 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-23T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21844,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-11-23T20:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-11-23T18:00:00",
       "zdarma": false
     },
     {
@@ -7976,6 +8128,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21845,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-11-29T20:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-11-29T18:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 10514,
       "cena": 100,
       "cena_pozn": "",
@@ -8005,6 +8195,44 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-30T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11951,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21846,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
+        "stopaz": "asi 2 hodiny a 39 minut"
+      },
+      "konec": "2026-12-02T19:09:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
+      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-04T15:51:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
+      "youtube": "v9qME-AYPbE",
+      "zacatek": "2026-12-02T16:30:00",
       "zdarma": false
     },
     {
