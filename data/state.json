@@ -99,8 +99,8 @@
       "pocet": 1
     },
     "mesto-kromeriz:b51f7dc552eb1321": {
-      "duvod": "Věty skoro totožné s oznámením (shoda 0.73)",
-      "pocet": 2
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.79)",
+      "pocet": 3
     },
     "mesto-kromeriz:b8356b44b5603f91": {
       "duvod": "Doslova převzaté formulace z oznámení",
@@ -209,6 +209,7 @@
     "mesto-kromeriz:adc0ff1f789560aa",
     "mesto-kromeriz:b0a6b871aed22ec2",
     "mesto-kromeriz:b34309ff02299b12",
+    "mesto-kromeriz:b51f7dc552eb1321",
     "mesto-kromeriz:b854ba79e9c30b66",
     "mesto-kromeriz:bb5be1a17dc799d0",
     "mesto-kromeriz:bbb473dda88d5cfb",

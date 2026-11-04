@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-03T20:59:17.632944+00:00",
+  "stazeno": "2026-11-04T09:11:23.681689+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4630,102 +4630,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-02T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11889,
-      "cena": 100,
-      "cena_pozn": "",
-      "id": 21772,
-      "konec": "2026-11-03T11:30:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Albertova 4062"
-      },
-      "misto_gps": [
-        49.290614,
-        17.385099
-      ],
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Beseda: SOUROZENCI – Proč spolu soupeří a co nám tím chtějí říct?",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11889.jpg",
-      "perex": "Beseda pro rodiče, kteří chtějí lépe porozumět vztahům mezi svými dětmi, pochopit příčiny jejich chování a naučit se zvládat sourozenecké konflikty s větším klidem a porozuměním.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-23T10:49:31",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.klubickokm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-03T09:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11905,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21788,
-      "konec": "2026-11-03T16:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Svět virtuální reality pro děti - Úterky u Terky",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11905.jpg",
-      "perex": "Týden pro knihovny - digital.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T10:07:04",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-03T12:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11859,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21728,
-      "konec": "2026-11-03T18:30:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Robert Mikoláš - Za hranou ticha: Reportáže z míst, kam se běžný smrtelník nedostane",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11859.jpg",
-      "perex": "O nové knize novináře, historika a diplomata Roberta Mikoláše.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-23T10:50:13",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-03T17:00:00",
       "zdarma": false
     },
     {
@@ -8261,6 +8165,70 @@
       "web": "https://www.dk-kromeriz.cz/tomas-rendl",
       "youtube": "",
       "zacatek": "2026-12-03T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11438,
+      "cena": 750,
+      "cena_pozn": "základní od 9. řady: 650 Kč, základní od 16. řady: 600 Kč, zahájení předprodeje 5. 5. 2026",
+      "id": 21133,
+      "konec": "2026-12-04T19:30:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Najkrajšie vianoce s Kollárovcami",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11438.jpg",
+      "perex": "Vánoční koncert Kollárovci v Kroměříži.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-05-05T07:04:45",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/najkrajsie-vianoce-s-kollarovcami",
+      "youtube": "",
+      "zacatek": "2026-12-04T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11913,
+      "cena": 100,
+      "cena_pozn": "zahájení předprodeje 19. 10. 2026",
+      "id": 21796,
+      "konec": "2026-12-05T01:00:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Oldies párty",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11913.jpg",
+      "perex": "Přijďte si užít páteční večer plný hitů 80. a 90. let",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-10-19T07:32:29",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/oldies-party",
+      "youtube": "",
+      "zacatek": "2026-12-04T20:00:00",
       "zdarma": false
     }
   ],
