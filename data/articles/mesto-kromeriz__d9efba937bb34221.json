@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Konečně, ty omšelý koše v parku jdou do kopru. Do konce roku dostane Bezručův park 16 nových, všechny šedé a každý na 45 litrů. Na 2 z nich vytřídíš odpad, což tam doteď nešlo, a další 2 budou mít schránku na sáčky po pejskovi. Místostarosta Pavel Motyčka ty staré popsal jako letité a ošklivé, některé už prý na rozpad, a jejich opravování podle něj nemá smysl. Glow-up, na který park čekal.",
+    "Třídit budeš moct i jinde. Na Velkém a Milíčově náměstí, u Bajdy v ulici Na Sladovnách a ve Vejvanovského ulici přibudou 50litrové koše na papír, plast a kovy. Vedoucí odboru služeb Bohumil Jančík to vysvětlil tím, že se tam pohybuje nejvíc lidí. Typem budou sedět k těm na směsný odpad, které loni dostala památková rezervace. Lowkey sladěný outfit pro celé centrum.",
+    "Ještě větší, 100litrové třídicí koše dostanou zastávky MHD Kotojedská a u hřbitova, Albert na Oskole, COOP v Koperníkově ulici, obchod pro zvířata na Milíčově náměstí a Hanácké náměstí u místa, kde se v zimě bruslí na mobilním kluzišti. Za poštou na Oskole u dětského hřiště postaví Elkoplast sadu Pastelka po 70 litrech, kam hodíš plast, papír, sklo, kov i směsný odpad. Fr pořádná nálož košů.",
+    "Klidu se dočká i jedna školka. Kontejnery u Mateřské školy Páleníčkova obehne ohrádka, o kterou si řekla ředitelka, protože vítr tam rozfoukává odpadky po celém pozemku školky. Postaví ji František Obdržálek z Kroměříže z děrovaného pozinkovaného plechu, stejnou, jakou už mají kontejnery v ulicích Gen. Svobody a Vejvanovského. Vítr si tam odteď chytne L."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.586,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-04T17:16:08.843785+00:00"
+  },
+  "headline": "Bezručák jde na glow-up: 16 nových košů a konečně tam půjde třídit",
+  "id": "mesto-kromeriz:d9efba937bb34221",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-04T09:33:56+01:00",
+  "rewritten_at": "2026-11-04T17:16:08.843812+00:00",
+  "sensitivity": "volny",
+  "slug": "bezrucak-jde-na-glow-up-16-novych-kosu-a-konecne-tam-pujde-tridit",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🌳🗑️",
+      "label": "Park Glow-up",
+      "text": "Bezručův park dostane do konce roku 16 nových šedých košů a na 2 z nich půjde tříděný odpad."
+    },
+    {
+      "emoji": "♻️",
+      "label": "Recycling Buff",
+      "text": "Třídicí koše přibudou i na náměstích, u Bajdy, na zastávkách MHD a u obchodů."
+    },
+    {
+      "emoji": "💸",
+      "label": "Price Tag",
+      "text": "Všechno i s montáží vyjde město na 750 tisíc korun."
+    }
+  ]
+}
