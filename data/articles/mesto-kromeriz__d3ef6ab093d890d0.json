@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Konečně víš, za kým jít, až tě něco štve na škole. Nová koalice na kroměřížské radnici si rozparcelovala, kdo z vedení má co na starosti, a platí to na volební období 2026–2030. Místostarostka Vladimíra Vondráčková dostala školky, základky, školství a mládež, sport, projekt Zdravé město Kroměříž, Sportovní zařízení města Kroměříže, Knihovnu Kroměřížska i Šipku. Pro tebe je to lowkey nejdůležitější jméno z celé sestavy.",
+    "Starosta Tomáš Opatrný si vzal městskou kasu, tedy finance a investice. K tomu personálku, tiskové oddělení, interní audit a vnitřní kontrolu, strážníky a dobrovolné hasiče. Kdo má pod sebou peníze i uniformy, má aury na rozdávání.",
+    "Místostarosta Pavel Motyčka bere sociální věci a zdravotnictví, odbor služeb a kancelář úřadu. Pod něj spadají taky Sociální služby města Kroměříže, Srdcem doma a Biopas. Místostarosta Jan Hebnar řídí stavební úřad spolu se životním prostředím, občansko-správní agendy, IT a Kroměřížské technické služby. Stavebník a ajťák v jednom, dost niche combo.",
+    "Radní Evžen Petřík má kulturu, cestovní ruch a památky, živnostenský úřad, kulturák a partnerská města. Až budeš checkovat, kdo zodpovídá za Dům kultury v Kroměříži, víš, na koho mířit. Role jsou rozdané, teď se ukáže, kdo z nich je built different."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.448,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-03T21:02:08.868880+00:00"
+  },
+  "headline": "Radnice si rozdala role jak v RPG: školy, sport i Šipka jdou za Vondráčkovou",
+  "id": "mesto-kromeriz:d3ef6ab093d890d0",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-03T16:30:00+01:00",
+  "rewritten_at": "2026-11-03T21:02:08.868903+00:00",
+  "sensitivity": "volny",
+  "slug": "radnice-si-rozdala-role-jak-v-rpg-skoly-sport-i-sipka-jdou-za-vondrackovou",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "školství"
+  ],
+  "tldr": [
+    {
+      "emoji": "📋",
+      "label": "Who Got What",
+      "text": "Nová koalice rozdělila lidem ve vedení města agendy na volební období 2026–2030."
+    },
+    {
+      "emoji": "🏫",
+      "label": "School Squad",
+      "text": "Školky, základky, městská sportoviště, knihovnu i Šipku má místostarostka Vladimíra Vondráčková."
+    },
+    {
+      "emoji": "💰",
+      "label": "Money Boss",
+      "text": "Starosta Tomáš Opatrný drží finance, investice, strážníky i dobrovolné hasiče."
+    }
+  ]
+}

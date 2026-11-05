@@ -98,6 +98,10 @@
       "duvod": "Věty skoro totožné s oznámením (shoda 0.67)",
       "pocet": 1
     },
+    "mesto-kromeriz:b51f7dc552eb1321": {
+      "duvod": "Věty skoro totožné s oznámením (shoda 0.79)",
+      "pocet": 3
+    },
     "mesto-kromeriz:b8356b44b5603f91": {
       "duvod": "Doslova převzaté formulace z oznámení",
       "pocet": 1
@@ -146,6 +150,7 @@
     "mesto-kromeriz:193e527249487e6d",
     "mesto-kromeriz:1a68a476fe018c56",
     "mesto-kromeriz:2065a096866d5a9c",
+    "mesto-kromeriz:21aea53889c0b7ec",
     "mesto-kromeriz:23bb15ff995d8ae0",
     "mesto-kromeriz:23d8af3fabdff5ca",
     "mesto-kromeriz:24e7c92399c3b1f9",
@@ -155,6 +160,7 @@
     "mesto-kromeriz:2fdc1af9d9ab65da",
     "mesto-kromeriz:3097cd1b95e16ce6",
     "mesto-kromeriz:31c901cb0fce3663",
+    "mesto-kromeriz:32984fe22399226c",
     "mesto-kromeriz:33a50814b1dd7ef7",
     "mesto-kromeriz:3ab80badca7b41ee",
     "mesto-kromeriz:3bfcce3a2b8a61a4",
@@ -175,6 +181,7 @@
     "mesto-kromeriz:6443252092694aad",
     "mesto-kromeriz:65914f7782203c1b",
     "mesto-kromeriz:66fdd6b155d02f47",
+    "mesto-kromeriz:69bca1645cd40047",
     "mesto-kromeriz:6ae64df3cd3a5e4c",
     "mesto-kromeriz:7253cbc0436e31ba",
     "mesto-kromeriz:72dda50e9ac42414",
@@ -202,6 +209,7 @@
     "mesto-kromeriz:adc0ff1f789560aa",
     "mesto-kromeriz:b0a6b871aed22ec2",
     "mesto-kromeriz:b34309ff02299b12",
+    "mesto-kromeriz:b51f7dc552eb1321",
     "mesto-kromeriz:b854ba79e9c30b66",
     "mesto-kromeriz:bb5be1a17dc799d0",
     "mesto-kromeriz:bbb473dda88d5cfb",
@@ -214,8 +222,11 @@
     "mesto-kromeriz:c62fa8dfd9693a71",
     "mesto-kromeriz:c72949e07236aa30",
     "mesto-kromeriz:d376347fdd938843",
+    "mesto-kromeriz:d3ef6ab093d890d0",
+    "mesto-kromeriz:d3fb2cc7fd550be5",
     "mesto-kromeriz:d523740de05c33f3",
     "mesto-kromeriz:d9c860e6ba8eee56",
+    "mesto-kromeriz:d9efba937bb34221",
     "mesto-kromeriz:da1082f680fc63cf",
     "mesto-kromeriz:de248d9778579cc7",
     "mesto-kromeriz:de4984e52c5f6e99",

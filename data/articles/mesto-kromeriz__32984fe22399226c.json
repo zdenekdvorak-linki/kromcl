@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Bruh, tenhle comeback nikdo nečekal. Na hvězdárně v Braunerově ulici zase funguje zrcadlový Newtonův dalekohled, a to po víc než 30 letech. Od devadesátek tam stál jen jako kus vybavení, přes který nikdo nic neviděl. Zprovoznili ho místní amatérští hvězdáři, které vedl Jiří Dočkálek.",
+    "Dalekohled patří k hvězdárně už od jejího vzniku v roce 1973. Jeho hlavní zrcadlo má průměr 240 mm a ohnisková vzdálenost je 1200 mm. Hvězdáři na něm makali poslední rok. Hlavní parabolické zrcadlo i to sekundární dostala nový povrch a přibyl nový okulárový výtah Sky-Watcher. Glow-up jak z učebnice.",
+    "No cap, první kouknutí je ve středu 4. listopadu ve 20:00. Potom se pozoruje každou středu ve stejný čas, naposledy 16. prosince. Na obloze bývá vidět Saturn, galaxie, mlhoviny a hvězdokupy, které ukazuje podzim a zima. Platit nic nebudeš. Háček je v počasí: když není jasno, pozorování se ten den ruší, takže si předtím checkni oblohu.",
+    "Hvězdárna spadá pod kulturák a jeho ředitel Pavel Sedláček slibuje pohledy na oblohu, jaké tu dlouhé roky nebyly. Starosta Tomáš Opatrný ocenil, že díky novějšímu vybavení je hvězdárna ještě zajímavější cíl pro místní i lidi odjinud, a to pro všechny generace. Kdyby tě něco zajímalo, na místě ti odpoví regionální amatérští astronomové. Středeční večer máš vyřešený, bet."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.531,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-02T15:51:59.572630+00:00"
+  },
+  "headline": "Dalekohled na hvězdárně po víc než 30 letech zase vidí hvězdy a to je W",
+  "id": "mesto-kromeriz:32984fe22399226c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-02T13:32:32+01:00",
+  "rewritten_at": "2026-11-02T15:51:59.572655+00:00",
+  "sensitivity": "volny",
+  "slug": "dalekohled-na-hvezdarne-po-vic-nez-30-letech-zase-vidi-hvezdy-a-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "🔭",
+      "label": "Big Comeback",
+      "text": "Newtonův dalekohled na kroměřížské hvězdárně po víc než 30 letech znovu funguje."
+    },
+    {
+      "emoji": "✨",
+      "label": "First Look",
+      "text": "Poprvé se přes něj podíváš ve středu 4. listopadu ve 20:00."
+    },
+    {
+      "emoji": "🌌",
+      "label": "Free Entry",
+      "text": "Vstup je zdarma, jen musí být jasno, jinak se ten večer nekouká."
+    }
+  ]
+}
