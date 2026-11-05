@@ -126,6 +126,30 @@ Fronta příspěvků na stránku Kromcl. Odeslání je podvržené, síť se nev
 | článek smazaný z archivu | vyřadí se z fronty |
 | chybí token | sdílení vypnuté |
 
+## `test_obedy.py`
+
+Polední menu. Vzorky v `fixtures/obedy-<podnik>.html` jsou ořezané skutečné
+stránky z 5. 11. 2026, stahování je podvržené.
+
+| Situace | Očekávání |
+|---|---|
+| „139 Kč", „159", „20Kč", „40,-", „Kč 65,-" | cena se pozná |
+| „HUSÍ HODY 6.-11.11.2026", „150g", „12-17 hod." | cena to **není** |
+| každý z pěti vzorků ve čtvrtek 5. 11. | polévka, jídla a ceny jako na webu |
+| Earnest: inline značky | žádné „( 1a" ani mezera před čárkou |
+| Kozlovna v pátek 6. 11. | nic, pátek na stránce je 30. 10. |
+| Nová Bohemia příští týden nebo v sobotu | nic |
+| Nová Bohemia: „ZDE VLOŽIT", zakomentované „více" | na web nejdou |
+| Sladovna | zvýhodněná cena polévky, oznámení jako poznámka, bez nápojů |
+| rozbité HTML u každého parseru | prázdný dict, žádná výjimka |
+| sobota, před 8:00, po 14:00 | nestahuje se |
+| druhý běh za pár minut | nestahuje se znovu |
+| výpadek jednoho webu | ostatní se uloží |
+| Sladovna druhý den se stejným menu | neukáže se |
+| záznam ze včerejška, víkend | stránka ho neukáže, o víkendu prázdný stav |
+| HTML v názvu jídla | escapuje se |
+| menu a sitemapa | „obědy" za programem, stránka v sitemapě s datem stažení |
+
 ## Co se netestuje
 
 Volání modelu, stahování z webu a render. Ty se ověřují ručně podle smoke

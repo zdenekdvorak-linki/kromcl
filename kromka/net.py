@@ -8,12 +8,16 @@ import urllib.request
 from . import config
 
 
-def get(url, binary=False):
-    """Stáhne URL. Vrací str (utf-8) nebo bytes. Při chybě zkouší znovu."""
+def get(url, binary=False, agent=None):
+    """Stáhne URL. Vrací str (utf-8) nebo bytes. Při chybě zkouší znovu.
+
+    `agent` přebije User-Agent; výchozí mluví o přepisu zpráv města, což
+    u webu restaurace není pravda.
+    """
     last = None
     for pokus in range(config.HTTP_RETRIES):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": config.USER_AGENT})
+            req = urllib.request.Request(url, headers={"User-Agent": agent or config.USER_AGENT})
             with urllib.request.urlopen(req, timeout=config.HTTP_TIMEOUT) as resp:
                 raw = resp.read()
                 return raw if binary else raw.decode("utf-8", "replace")

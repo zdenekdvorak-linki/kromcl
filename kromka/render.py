@@ -18,7 +18,7 @@ from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlparse
 from pathlib import Path
 
-from . import akce, config, htmlutil, ilustrace, piktogramy
+from . import akce, config, htmlutil, ilustrace, obedy, piktogramy
 from . import og as ogkarta
 MESICE = ["", "ledna", "února", "března", "dubna", "května", "června",
           "července", "srpna", "září", "října", "listopadu", "prosince"]
@@ -135,13 +135,13 @@ footer { border-top: 4px solid var(--ram); background: var(--karta); padding: 26
 footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
 .strankovani { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 .strankovani a { border: 3px solid var(--ram); padding: 8px 16px; text-decoration: none; font-weight: 700; background: var(--karta); box-shadow: 4px 4px 0 var(--ram); }
-/* Hamburger až do 1040 px, ne jen na mobilu. Logo nad 629 px nezmenšuje
-   (336 px) a menu s „pošli novinku" potřebuje 604 px, takže pod šířkou okna
-   zhruba 1005 px se láme do dvou řádků — změřeno 26. 10. 2026, na 1000 px
-   dva, od 1010 px jeden. Hranice 1040 nechává rezervu na jiné vykreslení
-   písma na Macu. Při změně položek menu nebo stylu štítků je potřeba změřit
-   znovu. */
-@media (max-width: 1040px) {
+/* Hamburger až do 1120 px, ne jen na mobilu. Logo nad 629 px nezmenšuje
+   (336 px) a menu s „obědy" a „pošli novinku" potřebuje 682 px, takže pod
+   šířkou okna zhruba 1081 px se láme do dvou řádků — změřeno 5. 11. 2026,
+   na 1080 px dva, od 1082 px jeden. Hranice 1120 nechává stejnou rezervu
+   na jiné vykreslení písma na Macu jako dřív 1040 nad 1005. Při změně
+   položek menu nebo stylu štítků je potřeba změřit znovu. */
+@media (max-width: 1120px) {
   .hlava .obal { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
   .menu .hamburger { display: inline-flex; cursor: pointer; }
   .menu .odkazy { display: none; position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; flex-direction: column; gap: 0; min-width: 200px; background: var(--karta); border: 3px solid var(--ram); box-shadow: 6px 6px 0 var(--ram); }
@@ -197,7 +197,7 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 .menu-vic-seznam li + li { border-top: 2px solid var(--ram); }
 .menu .menu-vic-seznam a { display: block; padding: 10px 14px; border-bottom: 0; }
 .menu .menu-vic-seznam a:hover, .menu .menu-vic-seznam a:focus-visible { background: var(--akcent); color: #000; border-bottom: 0; }
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .menu .odkazy { align-items: stretch; }
   .menu-vic-tlacitko { display: none; }
   .menu-vic-seznam { display: block; position: static; min-width: 0; border: 0; box-shadow: none; }
@@ -208,11 +208,12 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .menu .menu-vic-seznam a { padding: 12px 16px; }
   /* V hamburgeru zůstane program zeleným řádkem, ne malým štítkem. */
   .menu .odkazy a.je-sekce { padding: 12px 16px; border: 0; box-shadow: none; }
-  /* „pošli novinku" je v hamburgeru druhá, hned pod programem. Na
+  /* Obědy a „pošli novinku" jsou v hamburgeru hned pod programem. Na
      desktopu zůstává poslední; pořadí v HTML se kvůli tomu nemění.
      Položky se stejným `order` drží pořadí z HTML. */
   .menu .odkazy > li { order: 1; }
-  .menu .odkazy > li:first-child, .menu .odkazy > li.menu-prispevek { order: 0; }
+  .menu .odkazy > li:first-child, .menu .odkazy > li.menu-obedy,
+  .menu .odkazy > li.menu-prispevek { order: 0; }
 }
 .uvod { max-width: 62ch; font-size: 18px; margin: 0 0 26px; }
 .pribeh-odkaz { margin: -12px 0 26px; font-size: 15px; }
@@ -294,6 +295,28 @@ footer .obal { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .akce-cas { font-size: 17px; }
   .akce-znak { width: 30px; }
   .akce-telo h3 { font-size: 17px; }
+}
+
+/* Polední menu. Karta jako u akcí, ceny v pravém sloupci, aby šly
+   porovnat pohledem shora dolů. */
+.obed-den { margin: -8px 0 14px; font-family: Syne, sans-serif; font-weight: 730; font-size: 20px; }
+.obedy { display: grid; gap: 22px; }
+.obed { background: var(--karta); border: 3px solid var(--ram); box-shadow: 4px 4px 0 var(--ram); padding: 16px 18px; }
+.obed h2 { font-size: 22px; margin: 0 0 10px; }
+.obed h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--slabe); margin: 14px 0 4px; }
+.obed-seznam { list-style: none; margin: 0; padding: 0; }
+.obed-seznam li { display: flex; gap: 14px; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed var(--slabe); }
+.obed-seznam li:last-child { border-bottom: 0; }
+.obed-text { min-width: 0; }
+.obed-alergeny { font-size: 13px; color: var(--slabe); white-space: nowrap; }
+.obed-cena { flex: none; font-weight: 700; white-space: nowrap; }
+.obed-poznamka { margin: 0 0 10px; padding: 8px 10px; border-left: 4px solid var(--akcent); background: var(--papir); font-size: 15px; }
+.obed-nic { margin: 0; color: var(--slabe); }
+.obed-odkaz { margin: 12px 0 0; font-size: 14px; font-weight: 700; }
+.obed-odkaz a::after { content: " →"; }
+@media (max-width: 640px) {
+  .obed { padding: 12px 13px; box-shadow: 3px 3px 0 var(--ram); }
+  .obed h2 { font-size: 19px; }
 }
 
 /* Obrázky v textu článku (kromka/ilustrace.py). Ikona visí na desktopu na
@@ -592,6 +615,9 @@ def _menu():
     # a vede jinam než zbytek menu.
     polozky = ['<li><a class="je-sekce" href="{0}">program</a></li>'.format(
         _e(PROGRAM_CESTA))]
+    # Obědy jsou taky sekce s vlastními daty, proto štítek hned za programem.
+    polozky.append('<li class="menu-obedy"><a class="je-sekce" href="{0}">{1}</a></li>'.format(
+        OBEDY_CESTA, OBEDY_MENU))
     polozky += [polozka(t) for t in poradi if t in HLAVNI_TEMATA and existuje(t)]
     ostatni = [t for t in poradi if t not in HLAVNI_TEMATA and existuje(t)]
     if ostatni:
@@ -1773,6 +1799,8 @@ def vykresli(clanky, akce_data=None):
         akce_data = akce.nacti()
     zapsano += _program_stranky(akce_data)
 
+    zapsano += _obedy_stranka(obedy.nacti())
+
     kostka = _nacti_kostku()
     if kostka:
         zapsano += _kostka_stranka(kostka)
@@ -2015,6 +2043,115 @@ def _prispevek_stranka():
 # chce uvést heslo a autory, označit úpravu a pustit upravený text ven pod
 # stejnou licencí. Text je v data/kromeriz-v-kostce.json, aby šel opravit
 # bez sahání do kódu.
+# --- Polední menu ------------------------------------------------------------
+# Data stahuje kromka/obedy.py z webů podniků. Tady se jen skládají, beze
+# změny textu: co podnik napsal, to tu je.
+OBEDY_CESTA = "/poledni-menu.html"
+OBEDY_MENU = "obědy"
+OBEDY_TITULEK = "Polední menu v Kroměříži dnes"
+OBEDY_POPIS = ("Co se dnes vaří v Kroměříži: polední menu podniků s polévkou, "
+               "hlavními jídly a cenami, přímo z jejich webů.")
+OBEDY_UVOD = ("Dnešní polední menu z kroměřížských podniků na jednom místě. "
+              "Bereme ho z jejich webů přesně tak, jak ho tam napsali, nic "
+              "nepřepisujeme. Když se něco liší, platí to, co je u podniku.")
+OBEDY_VIKEND = "O víkendu se polední menu nevaří. V pondělí tu bude znova."
+
+
+def _kc(cena):
+    # Nezlomitelná mezera: „139" a „Kč" na dvou řádcích vypadá jako chyba.
+    return "{0}\xa0Kč".format(cena) if cena else ""
+
+
+def _polozka_obedu(polozka):
+    alergeny = polozka.get("alergeny")
+    return ('<li><span class="obed-text">{0}{1}</span>'
+            '<span class="obed-cena">{2}</span></li>').format(
+        _e(polozka["nazev"]),
+        ' <span class="obed-alergeny">alergeny {0}</span>'.format(_e(alergeny))
+        if alergeny else "",
+        _e(_kc(polozka.get("cena"))))
+
+
+def _karta_obedu(podnik, menu):
+    casti = ['<h2>{0}</h2>'.format(_e(podnik["nazev"]))]
+    if menu:
+        for poznamka in menu.get("poznamky", []):
+            casti.append('<p class="obed-poznamka">{0}</p>'.format(_e(poznamka)))
+        if menu.get("polevky"):
+            casti.append('<h3>polévka</h3><ul class="obed-seznam">{0}</ul>'.format(
+                "".join(_polozka_obedu(p) for p in menu["polevky"])))
+        casti.append('<h3>hlavní jídla</h3><ul class="obed-seznam">{0}</ul>'.format(
+            "".join(_polozka_obedu(j) for j in menu["jidla"])))
+    else:
+        casti.append('<p class="obed-nic">Dnešní menu na webu zatím není.</p>')
+    casti.append('<p class="obed-odkaz"><a href="{0}" rel="noopener">Menu na webu podniku</a></p>'.format(
+        _e(_ven(podnik["menu"], "obedy"))))
+    return '<section class="obed{0}" id="{1}">{2}</section>'.format(
+        "" if menu else " obed-bez", _e(podnik["id"]), "".join(casti))
+
+
+def _obedy_zmeneno(data):
+    """Den posledního stažení, pro lastmod v sitemapě."""
+    return max((z.get("den", "") for z in data.get("podniky", {}).values()), default="")
+
+
+def _cas_stazeni(data, dnes):
+    """Poslední dnešní stažení pražským časem („11.17"), nebo ""."""
+    casy = [z.get("stazeno", "") for z in data.get("podniky", {}).values()
+            if z.get("den") == dnes.isoformat() and z.get("stazeno")]
+    if not casy:
+        return ""
+    try:
+        from zoneinfo import ZoneInfo
+        kdy = datetime.fromisoformat(max(casy)).astimezone(ZoneInfo("Europe/Prague"))
+    except Exception:                                 # noqa: BLE001
+        # Windows bez tzdata zónu nezná; čas je jen doplněk, radši žádný
+        # než o hodinu vedle.
+        return ""
+    return "{0}.{1:02d}".format(kdy.hour, kdy.minute)
+
+
+def _obedy(data, ted=None):
+    ted = ted or akce.ted()
+    dnes = ted.date()
+    hlavicka = '{0}<h1>{1}</h1><p class="obed-den">{2}</p><p class="uvod">{3}</p>'.format(
+        _drobecky([("Domů", "/"), ("Polední menu", None)]), _e(OBEDY_TITULEK),
+        _e(_den_cesky(dnes.isoformat())), _e(OBEDY_UVOD))
+    if dnes.weekday() >= 5:
+        telo = '<p class="akce-prazdno">{0}</p>'.format(_e(OBEDY_VIKEND))
+    else:
+        menu = obedy.dnesni(data, dnes)
+        # Podniky s dnešním menu nahoru, uvnitř skupin abecedně jako v PODNIKY.
+        poradi = sorted(obedy.PODNIKY, key=lambda p: not menu[p["id"]])
+        telo = '<div class="obedy">{0}</div>'.format(
+            "".join(_karta_obedu(p, menu[p["id"]]) for p in poradi))
+    cas = _cas_stazeni(data, dnes)
+    pata = ('<p class="atribuce">Menu stahujeme z webů podniků ve všední dny '
+            'mezi {od}. a {do}. hodinou{kdy}. Texty i ceny jsou jejich, beze '
+            'změny. Chybí tu podnik, který menu zveřejňuje na svém webu? '
+            '<a href="{prispevek}">Dej nám vědět.</a></p>').format(
+        od=config.OBEDY_OKNO[0], do=config.OBEDY_OKNO[1],
+        kdy=", naposledy dnes v {0}".format(cas) if cas else "",
+        prispevek=PRISPEVEK_CESTA)
+    return hlavicka + telo + pata
+
+
+def _obedy_stranka(data):
+    (config.SITE / OBEDY_CESTA.lstrip("/")).write_text(_stranka(
+        "{0} – {1}".format(OBEDY_TITULEK, config.BRAND), OBEDY_POPIS, _obedy(data),
+        cesta=OBEDY_CESTA,
+        # Karta bez data: Facebook si náhled drží týdny, stejně jako u oken.
+        obrazek=_og(OBEDY_CESTA, OBEDY_TITULEK, "obědy", "obed"),
+        jsonld=_jsonld({
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Domů", "item": _abs("/")},
+                {"@type": "ListItem", "position": 2, "name": "Polední menu",
+                 "item": _abs(OBEDY_CESTA)}]}),
+    ), encoding="utf-8")
+    return 1
+
+
 KOSTKA_CESTA = "/kromeriz-v-kostce.html"
 
 
@@ -2160,6 +2297,8 @@ def _sitemap(clanky, akce_data=None):
     if kostka:
         radky.append(url(KOSTKA_CESTA, kostka.get("zdroj", {}).get("datum") or dnes, "0.6"))
     radky.append(url(PRISPEVEK_CESTA, PRISPEVEK_ZMENENO, "0.5"))
+    # Obědy se mění každý všední den; lastmod je den posledního stažení.
+    radky.append(url(OBEDY_CESTA, _obedy_zmeneno(obedy.nacti()) or dnes, "0.8"))
     terminy = (akce_data or {}).get("terminy") or []
     if terminy:
         stazeno = ((akce_data or {}).get("stazeno") or dnes)[:10]

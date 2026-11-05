@@ -84,6 +84,18 @@ AKCE_DNI = 30
 # přeskočí, dokud jsou uložená data mladší.
 AKCE_MAX_STARI_HODIN = 12
 
+# --- Polední menu ---------------------------------------------------------
+# Z vlastních webů podniků, ne z Meníček: ty mají v patičce „Užití obsahu je
+# bez souhlasu provozovatele zakázáno". Seznam podniků je v obedy.PODNIKY.
+OBEDY_FILE = DATA / "obedy.json"
+# Stahuje se jen ve všední den v tomhle rozmezí hodin (pražský čas, od–do).
+# Před osmou menu většinou ještě nevisí, po druhé se už nemění.
+OBEDY_OKNO = (8, 14)
+# Hodinový cron přijde vždy kolem :17; s 60 minutami by kvůli délce běhu
+# každý druhý přeskočil.
+OBEDY_MAX_STARI_MINUT = 50
+OBEDY_USER_AGENT = "KromclBot/1.0 (+{0}/poledni-menu.html)".format(SITE_URL)
+
 # --- Příspěvky čtenářů ----------------------------------------------------
 # Google Form → tabulka → Apps Script (apps-script/prispevky.gs). Adresa a
 # klíč jsou tajné, žijí v .env a v repo secrets. Prázdná adresa = vypnuto.

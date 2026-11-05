@@ -41,6 +41,15 @@
 - **Piktogram musí jít nakreslit i na kartu og:image.** `og.cesta` umí jen
   podmnožinu SVG (M L H V C S Q A Z, circle, ellipse, rect). Nový tvar
   s jiným prvkem nebo příkazem shodí `test_kazdy_piktogram_se_prevede`.
+- **Polední menu nikdy neukáže včerejšek.** Parser vrací jen dnešní den podle
+  data na stránce; Sladovna datum nemá, tam hlídá otisk (`obedy._bez_data`).
+  Nový podnik bez data potřebuje totéž, jinak v pondělí ráno ukáže pátek.
+  Komentáře HTML se mažou dřív, než se hledá blok s menu.
+- **Rozsypaná diakritika v konzoli na Windows není chyba stránky.** Výpis
+  Pythonu jde v cp1250; před hledáním chyby v kódování webu pusť skript
+  s `PYTHONIOENCODING=utf-8`. Všech pět webů podniků posílá UTF-8.
+- **Nová položka v hlavním menu = přeměřit hranici hamburgeru** (komentář
+  nad `@media (max-width: 1120px)` v `render.CSS`, dvě místa).
 - **`data/articles/*.json` se nepřepisují.** Když se mění prompt, starý článek
   zůstává takový, jaký je; přegenerování je vědomý krok (smazat JSON).
 

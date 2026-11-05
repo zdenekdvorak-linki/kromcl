@@ -1,0 +1,206 @@
+{
+  "podniky": {
+    "beer-bowl": {
+      "den": "2026-11-05",
+      "menu": {
+        "jidla": [
+          {
+            "alergeny": "1a, 9",
+            "cena": 175,
+            "nazev": "Vídeňská hovězí pečeně (150 g), (z býka z farmy Rampuše), jasmínová rýže"
+          },
+          {
+            "alergeny": "1a, 3, 7, 10",
+            "cena": 185,
+            "nazev": "Kuřecí řízek (150 g), náš bramborový salát"
+          },
+          {
+            "alergeny": "1a, 3, 7, 10",
+            "cena": 185,
+            "nazev": "Smažený sýr (100 g), petrželkové brambory, zeleninový salátek"
+          },
+          {
+            "alergeny": "7, 9",
+            "cena": 235,
+            "nazev": "B&B high protein talíř (200 g), krůtí špalík provoněný kouřem, fazolky na anglické a česneku, opékané brambory, zeleninový salát"
+          },
+          {
+            "alergeny": "1a, 3, 7, 10",
+            "cena": 195,
+            "nazev": "Signature B&B burger, hranolky (150 g), vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
+          },
+          {
+            "alergeny": "1a, 3, 7",
+            "cena": 175,
+            "nazev": "Špenátové palačinky (300 g), plněné grilovanou zeleninou a mozzarellou, malý salát"
+          }
+        ],
+        "polevky": [
+          {
+            "cena": 30,
+            "nazev": "Hovězí vývar s trhaným masem, zeleninou a kapáním (1a, 3, 7, 9)"
+          }
+        ],
+        "poznamky": []
+      },
+      "stazeno": "2026-11-05T09:57:52+00:00"
+    },
+    "earnest": {
+      "den": "2026-11-05",
+      "menu": {
+        "jidla": [
+          {
+            "alergeny": "1a, 3, 7, 8a, 9",
+            "cena": 245,
+            "nazev": "Filírovaný hovězí steak (150 g), hříbkové ragú se smetanou, naše mandlové krokety"
+          },
+          {
+            "cena": 255,
+            "nazev": "Pomalu pečené hovězí z farmy Rampuše (150 g), jemná křenová omáčka, slaný trhanec, křenová sláma"
+          },
+          {
+            "alergeny": "1a, 7, 9",
+            "cena": 255,
+            "nazev": "Grilované kuřecí prso s kaštanovou nádivkou (0,33 l), zelí z červené řepy, bramborové rösti, masový jus"
+          },
+          {
+            "cena": 215,
+            "nazev": "Hovězí ossobuco po milánsku, šafránové risotto - cena za porci se 100 g hotové masa bez kosti, příplatek za vyšší váhu masa - 10 g = 18 Kč (7, 9)"
+          },
+          {
+            "alergeny": "1a, 3, 7",
+            "cena": 235,
+            "nazev": "Naše brynzové taštičky (300 g), křupavá cibulka, granátové jablko"
+          },
+          {
+            "alergeny": "1a, 3, 10",
+            "cena": 165,
+            "nazev": "Bagel McEarnest (100 g), bagel Uncle Bakers, zelenina, marinovaná cibulka, umami mayo"
+          },
+          {
+            "alergeny": "1a, 3, 7",
+            "cena": 175,
+            "nazev": "Vejce Benedikt, 2 zastřená vejce, šunka od kosti nebo uzený losos, anglický muffin, holandská omáčka"
+          },
+          {
+            "alergeny": "1a, 1b, 3, 7",
+            "cena": 195,
+            "nazev": "Anglická snídaně, 2 sázená vejce, hovězí párek, anglická slanina, fazole, žampiony, pečivo"
+          }
+        ],
+        "polevky": [
+          {
+            "cena": 65,
+            "nazev": "Hovězí vývar s trhaným masem, zeleninou a kapáním (1a, 3, 7, 9)"
+          }
+        ],
+        "poznamky": []
+      },
+      "stazeno": "2026-11-05T09:57:53+00:00"
+    },
+    "kozlovna-oskol": {
+      "den": "2026-11-05",
+      "menu": {
+        "jidla": [
+          {
+            "cena": 139,
+            "nazev": "Luštěninový guláš s grilovanou paprikou, chléb"
+          },
+          {
+            "cena": 149,
+            "nazev": "Uzené maso, křenová omáčka, knedlík"
+          },
+          {
+            "cena": 159,
+            "nazev": "Gril mix (koleno, krkovička, kuřecí palička), hořčice, křen, beraní rohy, chléb"
+          },
+          {
+            "cena": 199,
+            "nazev": "Vepřová panenka v anglické slanině (sous-vide), hranolky, tatarka"
+          }
+        ],
+        "polevky": [
+          {
+            "cena": 20,
+            "nazev": "Dýňový krém"
+          }
+        ],
+        "poznamky": []
+      },
+      "stazeno": "2026-11-05T09:57:53+00:00"
+    },
+    "nova-bohemia": {
+      "den": "2026-11-05",
+      "menu": {
+        "jidla": [
+          {
+            "cena": 170,
+            "nazev": "M1: Medailonky z kuřecích prsíček 150g s bylinkovým máslem, smetanová zelenina, bramborová kaše"
+          },
+          {
+            "cena": 185,
+            "nazev": "M2: Grilované žampióny Portobello 240g plněné mladým špenátem, rajčaty, cibulkou, česnekem a naším pestem gratinované mozzarellou a gorgonzolou, restované brambůrky na másle, dip z kroměřížského tvarohu"
+          },
+          {
+            "cena": 195,
+            "nazev": "M3: Pivovarský hovězí guláš 180g (krk a kližka mladý býček Biofarma Podhoran) na polotmavém ležáku, barevná cibulka, domácí bramboráčky/houskové knedlíky"
+          },
+          {
+            "cena": 210,
+            "nazev": "M4: Filet z candáta 150g na oříškovém másle, krémová koprovo-libečková omáčka, pečené brambory se šalotkou, hříbky, mladými hrášky a křupavým guanciale, mandlové lupínky, dýně"
+          },
+          {
+            "cena": 220,
+            "nazev": "M5: Mini steaky z vepřové panenky 180g, omáčka z lišek a smetany, zapečené brambory se sýrem, cibulkou a slaninou"
+          }
+        ],
+        "polevky": [
+          {
+            "cena": 40,
+            "nazev": "Hrášková s uzeným masem a opečeným chlebem"
+          }
+        ],
+        "poznamky": [
+          "HUSÍ HODY 6.-11.11.2026",
+          "otevřeno i v neděli 12-17 hod."
+        ]
+      },
+      "stazeno": "2026-11-05T09:57:53+00:00"
+    },
+    "sladovna": {
+      "den": "2026-11-05",
+      "menu": {
+        "jidla": [
+          {
+            "cena": 225,
+            "nazev": "Hovězí svíčková na smetaně, karlovarský knedlík, brusinky, šlehačka, citrón (1,3,7,9,10)"
+          },
+          {
+            "cena": 215,
+            "nazev": "Králičí hřbet, dijonská omáčka, šťouchané brambory s cibulkou, glazovaná mrkev (7,9,10)"
+          },
+          {
+            "cena": 189,
+            "nazev": "Pečená krkovice na Záhlinickém pivu, jasmínová rýže s cibulkou, nakládaná cibulka a hořčice (7,9,10)"
+          },
+          {
+            "cena": 179,
+            "nazev": "Smažená cuketa, vařené brambory s máslem a pažitkou, tatarská omáčka (1,3,7)"
+          }
+        ],
+        "polevky": [
+          {
+            "cena": 40,
+            "nazev": "Pórkový krém se smetanou, slaninový crumble (7,9)"
+          }
+        ],
+        "poznamky": [
+          "Dnes máme zavřeno z důvodu vaření nového al carte menu. Děkujeme za pochopení. Opět se na vás těšíme zítra."
+        ]
+      },
+      "otisk": "df67bf2372c2247c",
+      "otisk_od": "2026-11-05",
+      "stazeno": "2026-11-05T09:57:53+00:00"
+    }
+  }
+}

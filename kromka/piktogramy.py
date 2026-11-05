@@ -175,6 +175,14 @@ TVARY = {
         _oci(27, 37, 42, 2.4),
         '<path d="M27 47q5 4 10 0"/>',
     ],
+    "obed": [  # miska polévky, ze které se kouří
+        '<path d="M8 30h48c0 14-10 24-24 24S8 44 8 30z"/>',
+        '<path d="M22 58h20"/>',
+        '<path d="M24 22q-4-5 0-10"/>',
+        '<path d="M40 22q-4-5 0-10"/>',
+        _oci(26, 38, 38, 2.6),
+        '<path d="M27 44q5 4 10 0"/>',
+    ],
     # Výchozí značka: arcibiskupský zámek. Cibulová báň dělá účes.
     "_vychozi": [
         '<path d="M32 5c-11 6-12 11 0 15 12-4 11-9 0-15z"/>',

@@ -5,8 +5,8 @@ import argparse
 import json
 import sys
 
-from . import (akce, config, facebook, indexnow, kino_dk, pipeline, pozvanka, prispevky,
-               render, sources, store)
+from . import (akce, config, facebook, indexnow, kino_dk, obedy, pipeline, pozvanka,
+               prispevky, render, sources, store)
 
 
 def main(argv=None):
@@ -33,6 +33,12 @@ def main(argv=None):
                    help="stáhni, i když jsou uložená data ještě čerstvá")
     p.add_argument("--bez-kina", action="store_true",
                    help="nedoplňuj stopáž a přístupnost ze stránek Domu kultury")
+
+    p = pod.add_parser("obedy", help="stáhne dnešní polední menu z webů podniků")
+    p.add_argument("--vynutit", action="store_true",
+                   help="stáhni i mimo všední den 8–14 h a i když je záznam čerstvý")
+    p.add_argument("--nanecisto", action="store_true",
+                   help="jen vypiš, co se na webech našlo, nic neukládej")
 
     p = pod.add_parser("slovnik", help="vypíše nebo rozšíří slovník jazyka")
     p.add_argument("--pridej", metavar="VÝRAZ",
@@ -114,6 +120,11 @@ def main(argv=None):
     if args.prikaz in ("akce", "all"):
         _akce(args)
         if args.prikaz == "akce":
+            return 0
+
+    if args.prikaz in ("obedy", "all"):
+        _obedy(args)
+        if args.prikaz == "obedy":
             return 0
 
     if args.prikaz in ("run", "backfill", "all"):
@@ -228,6 +239,25 @@ def _akce(args):
         if sum(1 for t in data["terminy"] if t.get("kino")) != puvodni:
             akce.uloz(data)
     return data
+
+
+def _obedy(args):
+    """Polední menu. Výpadek nesmí shodit `all`, stejně jako u programu."""
+    try:
+        data = obedy.aktualizuj(vynutit=getattr(args, "vynutit", False),
+                                nanecisto=getattr(args, "nanecisto", False))
+    except Exception as exc:                          # noqa: BLE001
+        print("Obědy se nepodařilo stáhnout ({0}).".format(exc), file=sys.stderr)
+        return
+    if getattr(args, "nanecisto", False):
+        dnes = obedy.dnesni(data)
+        for podnik in obedy.PODNIKY:
+            menu = dnes[podnik["id"]]
+            print("\n{0}{1}".format(podnik["nazev"], "" if menu else " — dnes nic"))
+            for polozka in menu.get("polevky", []) + menu.get("jidla", []):
+                print("  {0:>4}  {1}".format(polozka.get("cena") or "", polozka["nazev"]))
+            for poznamka in menu.get("poznamky", []):
+                print("  pozn. {0}".format(poznamka))
 
 
 def _doklad(args):

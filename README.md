@@ -224,7 +224,7 @@ výsledek nepřečte.
 Odsouhlasené zadání, které se staví po odpovědi města:
 
 - stránka `/program/pridat-akci.html`, odkaz v hlavním menu (po změně
-  znovu změřit hranici hamburgeru 1040 px) a na všech stránkách programu
+  znovu změřit hranici hamburgeru, od 5. 11. 2026 1120 px) a na všech stránkách programu
 - vlastní formulář posílá rovnou do městské databáze; povinná pole
   nahoře, zbytek (vstupné, plakát, odkazy, věk, telefon) sbalený
 - místo jedním polem s našeptávačem z číselníku v `data/akce.json`
@@ -362,6 +362,75 @@ otázka se musí přejmenovat i v `OTAZKY` ve skriptu.
 Ruční běh: `python -m kromka prispevky [--nanecisto]`. Bez tabulky:
 `KROMKA_PRISPEVKY_SOUBOR=tests/fixtures/prispevky.json`.
 
+### Polední menu
+
+`/poledni-menu.html` ukazuje dnešní polední menu kroměřížských podniků
+(`kromka/obedy.py`, render v `render._obedy`). Modul je mimo `sources/` ze
+stejného důvodu jako `akce.py`: menu se nepřepisuje. Názvy jídel, ceny
+i oznámení podniků jdou na web beze změny, model do toho nevstupuje.
+
+**Meníčka.cz jako zdroj nejdou.** V patičce každé stránky mají „Užití obsahu
+je bez souhlasu provozovatele zakázáno", restaurace jim za zápis platí a
+výpis je jejich databáze. Robots.txt stahování sice pouští, podmínky ne.
+Menu se proto bere **z vlastních webů podniků**. Podnik, který má i na
+svém webu jen rámeček nebo odkaz Meníček, sem nepatří, protože by to byl
+pořád jejich obsah.
+
+Průzkum 5. 11. 2026, všech 34 kroměřížských podniků z výpisu Meníček:
+
+| Kolik | Co mají na vlastním webu |
+|---|---|
+| 6 | menu v HTML (Nová Bohemia, Kozlovna Oskol, Earnest, Beer & Bowl, Sladovna, Tilak) |
+| 2 | JS aplikace s menu v Supabase (Octárna, Uno) |
+| 12 | rámeček nebo odkaz Meníček |
+| 2 | obrázek nebo PDF (Quickdeli týdenní JPG, Flavor of India stálý lístek) |
+| 4 | jen Facebook nebo web nenalezen |
+| 8 | denní menu na webu nemají |
+
+Zdeněk vybral pět (Tilak, Octárnu a Uno ne, viz Parking lot). Registr je
+`obedy.PODNIKY`, pořadí abecední, aby žádný podnik nebyl „první" z naší vůle.
+Na stránce jdou podniky s dnešním menu nahoru. Všech pět má robots.txt
+otevřený, Kozlovna s `Crawl-delay: 10`. Každý podnik je na vlastní doméně a
+stahuje se nejvýš jednou za hodinu, takže se to dodrží bez čekání. Vlastní
+User-Agent `config.OBEDY_USER_AGENT` odkazuje na stránku obědů.
+
+**Včerejší menu se nikdy neukáže jako dnešní.** Je to hlavní pravidlo modulu:
+
+- Parser vrací jen den, který je dnes. Earnest, Beer & Bowl a Kozlovna mají
+  datum u dne, Nová Bohemia rozsah týdne („2.-6.11.") a jména dnů. Kozlovna
+  nechává pátek s datem minulého týdne (5. 11. visel „PÁTEK 30. 10.") a ten
+  se neukáže.
+- Sladovna datum nepíše vůbec, ani v datech stránky (`info.date` je
+  prázdné). Menu se proto bere jen staženo dnes. Když se otisk menu shoduje
+  s menu z dřívějšího dne, bere se, že ho ještě nepřepsali (`_bez_data`).
+  Daň: podnik, který dva dny po sobě vaří totéž, druhý den vypadne. Je to
+  menší zlo než pondělní stránka s pátečním menu.
+- Render bere jen záznam s `den` = dnešek pražského času (`obedy.dnesni`).
+
+**Stahování** jen ve všední den mezi 8. a 14. hodinou (`OBEDY_OKNO`)
+v hodinovém cronu přes `all`. Záznam mladší než 50 minut se nestahuje znovu
+(`OBEDY_MAX_STARI_MINUT`, s 60 by kvůli délce běhu vypadl každý druhý).
+Výpadek jednoho webu nechá jeho poslední záznam a neshodí ostatní ani build.
+`data/obedy.json` drží jen poslední stav podniků, žádnou historii, a
+commituje ho cron s ostatními daty.
+
+**Parsery** jsou regexy nad známými kotvami jako u `kino_dk.py`. Před
+hledáním se mažou komentáře HTML: Nová Bohemia má zakomentovaný odkaz
+„více" a Sladovna (SvelteKit) komentáře uprostřed textu. Inline značky
+(`a`, `span`, `strong`…) se mažou bez mezery, jinak by z „(<a>1a</a>)"
+bylo „( 1a )". Cena na konci řádku: „139 Kč", „159", „20Kč", „170,-",
+„Kč 65,-". Holé číslo bez Kč bere jen trojmístné a ne za tečkou, jinak by
+„HUSÍ HODY 6.-11.11.2026" stálo 2026 Kč. Nová Bohemia má v HTML šablonové
+řádky „ZDE VLOŽIT…", které návštěvník nevidí, ty se zahazují. Jídla M2–M5
+platí celý týden, a proto jsou u každého dne. U Sladovny se vynechávají
+nápoje k menu (Mattoni), oznámení („Dnes máme zavřeno…") jde nad menu
+jako poznámka, jak ho podnik napsal.
+
+Podnik, který tu být nechce, se smaže z `PODNIKY`. Nový podnik potřebuje
+parser, ořezaný skutečný vzorek v `tests/fixtures/obedy-<id>.html` a test.
+
+Ruční běh: `python -m kromka obedy [--vynutit] [--nanecisto]`.
+
 ### Pojistka na čísla
 
 Množina čísel ve výstupu musí být podmnožinou povolených. Povolené =
@@ -433,6 +502,8 @@ porovnává `og:title` se slugifikovaným titulkem z feedu.
 | `kromka/akce.py` | program z otevřených dat: stažení, parsování, uložení do `data/akce.json`; **mimo `sources/`** |
 | `kromka/pozvanka.py` | týdenní pozvánka: `tyden`, `ma_vzniknout`, `rozdel`, prompt, pojistky, `napis`, `v_cronu`; render v `render._pozvanka_telo` |
 | `kromka/kino_dk.py` | stopáž, přístupnost, formát a původní název ze stránek Domu kultury, mezipaměť v `data/kino-dk.json` |
+| `kromka/obedy.py` | polední menu: `PODNIKY`, parsery `rozeber_*`, `rozeber` (maže komentáře), `_bez_data` (otisk u Sladovny), `aktualizuj`, `dnesni`; **mimo `sources/`** |
+| `kromka/render.py` | `OBEDY_*`, `_obedy`, `_karta_obedu`, `_obedy_stranka` — stránka `/poledni-menu.html` |
 | `kromka/render.py` | `TYPY_AKCI`, `VYBERY`, `MISTA` — metadata vstupních stránek programu; `_program_stranky`, `_karta_akce`, `_okno_vikend`, `_misto_cesta` |
 | `kromka/cli.py` | příkazy `nove`, `run`, `backfill`, `detail`, `akce`, `build`, `all`, `indexnow`, `facebook` |
 | `kromka/znacka.py` | geometrie značky (K na dlaždici) — z ní jde SVG favicona i všechny PNG ikony |
@@ -587,6 +658,10 @@ Smoke checklist po refaktoru:
 | 2026-10-27 | **Kandidát URL se ověřuje i datem vydání** (`mesto_kromeriz._sedi` = `_sedi_titulek` + `_sedi_datum`, `<time itemprop="datePublished">` proti `pubDate` z feedu, tolerance 1 den). Článek `01d6c241ce2bd657` přegenerován ze správného zdroje (`…-kromerize-2`), slug ponechán, aby držela URL i odkaz z Facebooku | „Pozvánka na ustavující zasedání Zastupitelstva" vychází po každých volbách: základní slug drží rok 2018, `-1` rok 2022, `-2` rok 2026, a `og:title` je u všech stejný. Kontrola jen podle titulku vzala první z nich a web i Facebook dostaly přepis osm let staré pozvánky (1. 11. 2018, starosta Němec). Test `RozliseniRocniku` |
 
 | 2026-10-27 | **Event schema opraveno podle Search Console** (`render._ld_misto`, `akce._adresa`/`_psc`/`_gps`): `location` vzniká vždycky, obec a ulice z číselníku míst, GPS jako `geo`, `image` a `offers.url` z nově čtených polí exportu (`image`, `ticket_url`) | GSC 27. 10. 2026 nahlásila 8 vadných položek, kriticky „chybí pole location" u termínů s `place=0`. Natvrdo psaná `addressLocality: Kroměříž` navíc lhala u 68 z 328 míst mimo město (Holešov, Velehrad, jurta v Lutopecnách). `ticket_url` je v exportu zavedené, ale město ho nevyplňuje, takže se padá na web akce a pak na web místa. Místo neuvedené (4 ze 74) dostane samotnou Kroměříž — jediný dopočítaný údaj ve schématu, protože bez `location` Google akci zahodí celou |
+| 2026-11-05 | **Polední menu** na `/poledni-menu.html` (`kromka/obedy.py`): pět podniků z jejich vlastních webů, beze změny, bez modelu; stahování ve všední den 8–14 h v cronu, pojistka na datum (u Sladovny otiskem); položka „obědy" v hlavním řádku menu za programem, sitemap 0.8, piktogram `obed` | Zadání Zdeňka: nabídka menu pro aktuální den. Navržené Meníčka.cz zakazují užití obsahu bez souhlasu, proto weby podniků. Z 34 podniků jich má menu v HTML na svém webu šest, Zdeněk vybral pět. Marketing Miner (11/2026): „polední menu kroměříž" 50 hledání měsíčně, „denní menu kroměříž" 20 |
+| 2026-11-05 | Hamburger do **1120 px** místo 1040 | Položka „obědy" natáhla menu na 682 px, láme se pod 1081 px okna (měřeno: 1080 dva řádky, 1082 jeden). Rezerva na Mac stejná jako dřív |
+| 2026-11-05 | `net.get(…, agent=)` | Výchozí User-Agent mluví o přepisu zpráv města, což u webu restaurace není pravda |
+
 ## Appka a favicona
 
 Značka je jedna geometrie v `kromka/znacka.py`. Z ní `bin/ikony.py` vyrobí
@@ -812,7 +887,7 @@ GA4 `G-M0MPCR8ZW7`, služba KROMCL v účtu gyd.name, uchovávání dat
 
 | Parametr | Hodnoty |
 |---|---|
-| `typ_stranky` | `uvod`, `clanek`, `tema`, `program`, `okno` (dnes a víkend), jinak název souboru (`o-webu`, `404`, `kromeriz-v-kostce`) |
+| `typ_stranky` | `uvod`, `clanek`, `tema`, `program`, `okno` (dnes a víkend), jinak název souboru (`o-webu`, `404`, `kromeriz-v-kostce`, `poledni-menu`) |
 | `tema` | první štítek článku, u stránky tématu to téma |
 | `rezim` | `appka` v nainstalované appce, jinak `web` |
 
@@ -851,6 +926,7 @@ přehledech jako pojmenovaný zdroj. Kampaň říká, odkud z webu odkaz je:
 |---|---|
 | `program` | „Víc o akci“, Trailer a atribuce na stránkách programu |
 | `pozvanka` | totéž v týdenní pozvánce |
+| `obedy` | „Menu na webu podniku" na stránce poledního menu |
 | `prispevek` | odkaz čtenáře pod jeho příspěvkem |
 | `kostka` | Wikipedie, historie hesla a licence v Kroměříži v kostce |
 | `poslat-novinku` | záložní Google Formulář |
@@ -971,4 +1047,11 @@ Enforce HTTPS (certifikát se vydá až po ověření domény).
 | Mezipaměť karet mezi buildy | `site/` se maže a karta trvá 45 ms; řešit až kdyby build archivu nad ~700 článků vadil |
 | Zelená `#2DD46E` (ztmavit jen maličko) | Od původní `#39E67A` se na pohled skoro neliší, oči by pálila dál |
 | Zelená `#2AAE5E` (tlumená) | Šetří oči nejvíc, ale je už trávová a působí jako jiná značka |
+| Polední menu z Meníčka.cz | Patička: „Užití obsahu je bez souhlasu provozovatele zakázáno"; výpis je jejich placená databáze. Totéž platí pro jejich rámeček na webu podniku. Šlo by jen se souhlasem provozovatele |
+| Odkaz na Meníčka pro podniky, které tu nejsou | Rozhodl Zdeněk 5. 11. 2026: stránka ukazuje jen naše podniky |
+| Octárna a Uno přes jejich Supabase API | Menu mají na webu, ale jako JS aplikaci; klíč k API by se tahal z jejich JS balíčku bez souhlasu a měnil by se s každým nasazením. Jde přidat, když podnik souhlasí a dá stabilní adresu |
+| Tilak (vegetariánská restaurace) | Sídlí ve Střílkách a do Kroměříže rozváží, ceny jsou jen v e-shopu; Zdeněk nevybral |
+| Quickdeli | Týdenní menu je obrázek JPG, chtělo by OCR a jeho chyby by šly na web jako fakt |
+| Schéma `Menu` / `Restaurant` u obědů | Stránka má zatím jen drobečky. Bohatý výsledek by chtěl adresu a otevírací dobu podniku, které nemáme z jednoho zdroje |
+| Týdenní pohled na obědy | Zadání je dnešek; týden mají na webu jen dva z pěti podniků |
 | Přesadit diakritiku v nadpisech karet (jiné písmo nebo ruční posun) | Měřeno 26. 10. 2026: není co opravovat. Statické `Syne-700.ttf` i webový `syne-latin-ext.woff2` mají vrchol háčku na 757–759 em proti výšce verzálek 650, takže Pillow kreslí totéž co prohlížeč — ověřeno srovnáním téhož titulku z webu a z Pillow. Vysoko posazená diakritika je rys Syne; u „Kroměříž“ se čtyři značky v řadě slijí do pásu, což svádí k dojmu vady |
