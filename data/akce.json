@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-04T22:39:26.582693+00:00",
+  "stazeno": "2026-11-05T12:20:17.366730+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4630,144 +4630,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-02T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11824,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21751,
-      "kino": {
-        "format": "slovensky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "stopaz": "asi 1 hodina a 48 minut"
-      },
-      "konec": "2026-11-04T19:18:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Milovník, ne bojovník (CZE/SVK 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11824.jpg",
-      "perex": "Romantický / Komedie / Drama Režie: Martina Buchelová Hrají: Adam Kubala, Michaela Kostková, František Beleš, Jaroslav Vojtek, Marián Mitaš a další",
-      "poznamka": "české titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-07T15:24:45",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/milovnik-ne-bojovnik",
-      "youtube": "fmkeOvR46Hc",
-      "zacatek": "2026-11-04T17:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11757,
-      "cena": 490,
-      "cena_pozn": "zahájení předprodeje 14. 9. 2026",
-      "id": 21590,
-      "konec": "2026-11-04T20:40:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Proč muži neposlouchají a ženy neumí číst v mapách",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11757.jpg",
-      "perex": "Hrají: Klára Cibulková, Miroslav Hanuš, Lukáš Jurek, Zbigniew Kalina, Petr Klimeš, Ludmila Molínová, Aneta Krejčíková, Barbora Mošnová, Veronika Svojtková, Martin Písařík / Lukáš Rous, Zdeněk Maryška",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-09-14T09:28:53",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/proc-muzi-neposlouchaji-a-zeny-neumi-cist-v-mapach",
-      "youtube": "",
-      "zacatek": "2026-11-04T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11851,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21714,
-      "konec": "2026-11-04T23:00:00",
-      "misto": "Hvězdárna Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Braunerova 2397"
-      },
-      "misto_gps": [
-        49.2962,
-        17.419075
-      ],
-      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
-      "nazev": "Pravidelná pozorování hvězd",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
-      "perex": "Pravidelná pozorování podzim 2026",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-30T10:44:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-04T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11814,
-      "cena": 350,
-      "cena_pozn": "",
-      "id": 21666,
-      "kino": {
-        "format": "2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "stopaz": "asi 1 hodina a 50 minut"
-      },
-      "konec": "2026-11-04T21:50:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Rammstein – Live in Mexico City (DEU 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11814.jpg",
-      "perex": "Snímek Rammstein – Live in Mexico City, natočený během tří vyprodaných večerů na stadionu Foro Sol s kapacitou 65 000 diváků, zachycuje jednu z klíčových zastávek monumentálního pětiletého světového turné kapely. Velkolepý koncertní film natočil dvojnásobný držitel ceny Primetime Emmy® Paul Dugdale.",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-09-22T07:21:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/rammstein-live-in-mexico-city",
-      "youtube": "9x-dFyLxfBQ",
-      "zacatek": "2026-11-04T20:00:00",
       "zdarma": false
     },
     {
@@ -6421,6 +6283,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11952,
+      "cena": 390,
+      "cena_pozn": "předprodej na SMSticket",
+      "id": 21847,
+      "konec": "2026-11-15T00:30:00",
+      "misto": "Stará masna",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hulínská 2352"
+      },
+      "misto_gps": [
+        49.307275,
+        17.406919
+      ],
+      "misto_web": "https://www.stara-masna.cz/",
+      "nazev": "INSANIA + Happiness In Slavery (NEO-NOE TOUR)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11952.jpg",
+      "perex": "Brněnská INSANIA, kultovní kapela tuzemské tvrdé alternativní scény, přiváží do Staré masny turné k novému albu NEO-NOE. Jako host zahraje Happiness In Slavery.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-05T10:59:19",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.insania.cz",
+      "youtube": "",
+      "zacatek": "2026-11-14T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11936,
       "cena": 160,
       "cena_pozn": "",
@@ -7006,7 +6900,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -7145,7 +7039,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -7304,7 +7198,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -7602,7 +7496,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -8157,7 +8051,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -8198,6 +8092,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11956,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21851,
+      "konec": "2026-12-01T17:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Peníze v době digitální",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11956.jpg",
+      "perex": "Jak AI, technologie a udržitelnost mění finance? Přednáška Ondřeje Mikulčíka z Czech Wealthtech Association.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-05T10:58:56",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-12-01T17:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11951,
       "cena": 160,
       "cena_pozn": "",
@@ -8227,7 +8153,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-11-04T15:51:22",
+      "upraveno": "2026-11-05T06:42:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
@@ -8329,6 +8255,38 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-02T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11955,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21850,
+      "konec": "2026-12-03T18:30:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Jaképak soužití, sakra!",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11955.jpg",
+      "perex": "Promítání filmu.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T10:58:47",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-12-03T17:00:00",
       "zdarma": false
     },
     {
@@ -8457,6 +8415,36 @@
       "web": "https://www.dk-kromeriz.cz/oldies-party",
       "youtube": "",
       "zacatek": "2026-12-04T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11912,
+      "cena": 250,
+      "cena_pozn": "Běh pro děti bez startovného",
+      "id": 21795,
+      "konec": "2026-12-05T15:00:00",
+      "misto": "Hrubý rybník - Bágrák",
+      "misto_adresa": {
+        "psc": "767 01"
+      },
+      "misto_gps": [
+        49.289191,
+        17.410547
+      ],
+      "misto_web": "",
+      "nazev": "ČERTOVSKÝ BĚH",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11912.jpg",
+      "perex": "10ti kilometrový Čertovský běh v Kroměříži. Dětský běh za andělem, Mikulášem a čertem!",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-10-19T07:32:19",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://rudahvezdakm.com/",
+      "youtube": "",
+      "zacatek": "2026-12-05T11:00:00",
       "zdarma": false
     }
   ],
