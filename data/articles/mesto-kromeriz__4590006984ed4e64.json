@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Bruh, i strážníci teď jezdí na baterku. Radnice jim koupila elektromobil KGM Torres EVX od jihokorejské značky a zaplatila za něj 1 milion korun. Starosta Tomáš Opatrný v tom vidí další krok k tomu, aby městské organizace měnily auta za úspornější a šetrnější k přírodě.",
+    "Výbava je no cap nadupaná. Ředitel městské policie Libor Kubiš vyjmenoval majáky, sirénu, vysílačku i kamerový systém. Vzadu je vestavba, kam se vejde vybavení a taky drobná odchycená zvěř, takže side quest s chytáním zvířat má vlastní kufr. Garantovaný dojezd je zhruba 460 km a podle Kubiše to strážníkům bohatě stačí.",
+    "Stará Octavia jde do důchodu, press F. Slouží už přes 10 let. Najeto má kolem 250 tisíc km. Nové auto budou strážníci nabíjet u vlastní nabíječky v areálu v Havlíčkově ulici. Do budoucna chtějí auta obměňovat dál a Kubišovi by se nejvíc líbila půlka flotily na elektřinu a půlka se spalovákem.",
+    "Město v elektru lowkey jede už delší dobu. Kroměřížské technické služby letos koupily 3 elektrické dodávky. Stejný počet pořídily už v letech 2023 a 2024. Pro MHD nakupují 4 elektrobusy. Tři z nich už dorazily do Kroměříže. A od léta má vlastní elektroauto i příspěvkovka Sociální služby města Kroměříže. Garáže města se pomalu mění v jednu velkou powerbanku."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.496,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-05T10:23:32.032652+00:00"
+  },
+  "headline": "Strážníci dostali elektro buff: nový KGM Torres EVX za milion korun",
+  "id": "mesto-kromeriz:4590006984ed4e64",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-05T08:15:27+01:00",
+  "rewritten_at": "2026-11-05T10:23:32.032685+00:00",
+  "sensitivity": "volny",
+  "slug": "straznici-dostali-elektro-buff-novy-kgm-torres-evx-za-milion-korun",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚓⚡",
+      "label": "New Ride",
+      "text": "Strážníci budou vyjíždět v elektrickém KGM Torres EVX, které radnici vyšlo na 1 milion korun."
+    },
+    {
+      "emoji": "🔋",
+      "label": "Battery Life",
+      "text": "Na jedno nabití ujede zhruba 460 km a dobíjet se bude v areálu strážníků v Havlíčkově ulici."
+    },
+    {
+      "emoji": "🚗💤",
+      "label": "Retirement Time",
+      "text": "Auto střídá starou Škodu Octavii, která už má na tachometru kolem 250 tisíc km."
+    }
+  ]
+}

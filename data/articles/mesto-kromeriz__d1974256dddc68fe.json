@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Děcka na kolech si brzo odemknou achievement Obrubník. Radnice kupuje pro dopravní hřiště v Koperníkově ulici takzvané skill prvky. Jsou to překážky, které vypadají jako obrubník, schod, kořen nebo hrbol a střídají různé druhy povrchu. Přesně tohle tě na kole čeká venku na silnici, takže W rozhodnutí.",
+    "Místostarostka Vladimíra Vondráčková si od toho slibuje, že se děti na hřišti naučí jezdit správně a ve městě se pak budou pohybovat bezpečněji. Hřiště tím podle ní dostane i glow-up, takže ho víc využijí školy, kroužky a vlastně kdokoli z veřejnosti.",
+    "Překážky vyrábí švýcarská značka Velosolutions, kterou znají pumptrackové a cyklo areály po celém světě. U nás ji zastupuje firma Gergel ze Zlína, takže žádné mid vybavení. Eliška Pifková, která na radnici šéfuje školskému odboru, popsala, že prvky přišroubují do trávy vedle asfaltové dráhy pro kola. Rozmístit je chtějí tak, aby na nich bezpečně jezdili malí i větší.",
+    "Hřiště patří městu od začátku roku 2025, kdy ho zadarmo převzalo od státu i s budovou, garáží a koly. Čtvrťáci z celého kroměřížského správního obvodu sem jezdí na dopravní výchovu a konají se tu akce pro školy, školky, družiny i veřejnost. V sezoně je areál ve vybrané dny otevřený všem, takže si to můžeš checknout sám. Kořen na hřišti, kde ho čekáš, je pořád lepší než ten v parku, kde ho nečekáš."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.494,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-05T10:24:32.908002+00:00"
+  },
+  "headline": "Dopravní hřiště dostane buff: děcka si tam natrénují obrubníky i kořeny",
+  "id": "mesto-kromeriz:d1974256dddc68fe",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-05T08:11:20+01:00",
+  "rewritten_at": "2026-11-05T10:24:32.908038+00:00",
+  "sensitivity": "volny",
+  "slug": "dopravni-hriste-dostane-buff-decka-si-tam-natrenuji-obrubniky-i-koreny",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "školství",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚲🪨",
+      "label": "New Stuff",
+      "text": "Na dětské dopravní hřiště v Koperníkově ulici přibudou překážky, které napodobí obrubníky, schody, kořeny a hrbolatý povrch."
+    },
+    {
+      "emoji": "💸",
+      "label": "Price Tag",
+      "text": "Město za ně zaplatí zhruba 260 tisíc korun."
+    },
+    {
+      "emoji": "📦",
+      "label": "Drop Date",
+      "text": "Překážky mají dorazit do konce roku 2026."
+    }
+  ]
+}
