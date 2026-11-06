@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-05T12:20:17.366730+00:00",
+  "stazeno": "2026-11-06T01:32:47.529389+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4630,166 +4630,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-02T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11906,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21789,
-      "konec": "2026-11-05T15:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Den s AI",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11906.jpg",
-      "perex": "Seznámení veřejnosti s nejdůležitějšími principy AI, jejími dovednostmi a přínosy pro budoucnost. Osvětlíme etické hodnoty a představíme některé kreativní nástroje.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T10:06:31",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-05T13:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11908,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21791,
-      "konec": "2026-11-05T18:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "O životě mezi kanadskými indiány",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11908.jpg",
-      "perex": "Přednáška Terezy Dufkové.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T10:06:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-05T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11897,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21780,
-      "konec": "2026-11-05T18:30:00",
-      "misto": "Muzeum Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Velké náměstí 38"
-      },
-      "misto_gps": [
-        49.299106,
-        17.392644
-      ],
-      "misto_web": "http://www.muzeum-km.cz/",
-      "nazev": "Floristika stokrát jinak",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11897.jpg",
-      "perex": "Přednáška z cyklu Zahradní kultura v souvislostech přiblíží pestrý a voňavý svět floristiky. Téma představí Jiří Martinek z Mendelovy univerzity v Brně.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-26T15:04:35",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.muzeum-km.cz",
-      "youtube": "",
-      "zacatek": "2026-11-05T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11693,
-      "cena": 150,
-      "cena_pozn": "zahájení předprodeje 17. 8. 2026",
-      "id": 21522,
-      "konec": "2026-11-05T19:30:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Deny a Carol",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11693.jpg",
-      "perex": "Přednáška o naší 4-měsíční cestě střední Amerikou plnou zážitků (hezkých, ale i těch horších). Procestovaly jsme země Belize, Guatemala, Salvador, Nikaragua, Kostarika a Panama. Plavaly jsme s rejnoky a žraloky, letěly Cessnou nad Blue Hole, vylezly na vrcholy mnoha hor, vysokých mayských pyramid i sopek (jednu jsme sjely dolů na bobech), propluly jsme na kánoji obětní mayskou jeskyni, zchladily se pod mnoha vodopády, bloudily nádhernou džunglí, pozorovaly jsme krásnou flóru i faunu a ochutnaly spoustu tradičních jídel. Mnoho času jsme strávily v přítomnosti místních obyvatel od kterých jsme čerpaly informace o dané lokalitě, zvycích, nebo třeba víře, abychom vám mohly zprostředkovat co nejzajímavější postřehy z těchto zemí.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-08-17T08:21:20",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/deny-a-carol",
-      "youtube": "",
-      "zacatek": "2026-11-05T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11630,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21454,
-      "konec": "2026-11-05T20:00:00",
-      "misto": "Galerie Pekelné sáně",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Malý Val 1512"
-      },
-      "misto_gps": [
-        49.297769,
-        17.389164
-      ],
-      "misto_web": "https://www.pekelnesane.cz",
-      "nazev": "Petr Stanický: Sklo a světlo",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11630.jpg",
-      "perex": "Na první listopadové besedě se potkáme s Petrem Stanickým, absolventem Vysoké školy uměleckoprůmyslové se zaměřením na sklo a kamenosochařství v architektuře. Petr Stanický uskutečnil několik zahraničních stáží a studoval v USA na Rhode Islandu. Za svou tvorbu získal řadu ocenění a vystavoval na mnoha místech v zahraničí. Aktuálně učí na Fakultě multimédií na UTB ve Zlíně. Ve své tvorbě uplatňuje práci se sklem a kovem, jeho propracovaná díla přinášející nevšední zážitky a neočekávaná technická řešení. Přijďte si poslechnout jeho vyprávění ve čtvrtek 5. 11. 2026 v 18:00.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-07-29T06:35:22",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.pekelnesane.cz/ctvrtky/sklo-a-svetlo-115",
-      "youtube": "",
-      "zacatek": "2026-11-05T18:00:00",
       "zdarma": false
     },
     {
@@ -5571,7 +5411,7 @@
       "pro_deti": false,
       "typ": "Kino",
       "typ_id": 11,
-      "upraveno": "2026-10-23T06:31:59",
+      "upraveno": "2026-11-05T18:28:05",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/uvidis-vsechno",
@@ -7366,6 +7206,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11958,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21853,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "I Play Rocky",
+        "stopaz": "asi 2 hodiny a 8 minut"
+      },
+      "konec": "2026-11-21T22:08:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Já, Rocky (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11958.jpg",
+      "perex": "Drama / Komedie / Životopisný Režie: Peter Farrelly Hrají: Anthony Ippolito, AnnaSophia Robb, Matt Dillon, P.J. Byrne, Toby Kebbell, Tracy Letts a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:22:43",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/ja-rocky",
+      "youtube": "S9Pg-UwNOhI",
+      "zacatek": "2026-11-21T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11697,
       "cena": 70,
       "cena_pozn": "Dospělí: 70,- Kč Děti do 150 cm, ZTP/P + doprovod: ZDARMA",
@@ -7702,6 +7580,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11958,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21854,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "I Play Rocky",
+        "stopaz": "asi 2 hodiny a 8 minut"
+      },
+      "konec": "2026-11-25T22:08:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Já, Rocky (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11958.jpg",
+      "perex": "Drama / Komedie / Životopisný Režie: Peter Farrelly Hrají: Anthony Ippolito, AnnaSophia Robb, Matt Dillon, P.J. Byrne, Toby Kebbell, Tracy Letts a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:22:43",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/ja-rocky",
+      "youtube": "S9Pg-UwNOhI",
+      "zacatek": "2026-11-25T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11851,
       "cena": 0,
       "cena_pozn": "",
@@ -7894,6 +7810,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11959,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21855,
+      "kino": {
+        "format": "dabing | 2D",
+        "pristupnost": "přístupné bez omezení",
+        "puvodni_nazev": "Focker In-Law",
+        "stopaz": "asi 1 hodina a 45 minut"
+      },
+      "konec": "2026-11-27T21:45:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Všichni fotři jsou lotři (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11959.jpg",
+      "perex": "Komedie Režie: John Hamburg Hrají: Robert De Niro, Ben Stiller, Ariana Grande, Teri Polo, Skyler Gisondo, Beanie Feldstein, Owen Wilson a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:26:15",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/vsichni-fotri-jsou-lotri",
+      "youtube": "kvJCZyzcmLQ",
+      "zacatek": "2026-11-27T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11945,
       "cena": 350,
       "cena_pozn": "",
@@ -7990,6 +7944,81 @@
       "zdarma": false
     },
     {
+      "akce_id": 11960,
+      "cena": 160,
+      "cena_pozn": "děti: 140 Kč, 3D: 190 Kč, děti 3D: 160 Kč",
+      "id": 21856,
+      "kino": {
+        "format": "dabing | 3D",
+        "pristupnost": "přístupné bez omezení",
+        "puvodni_nazev": "Hexed",
+        "stopaz": "asi 1 hodina a 39 minut"
+      },
+      "konec": "2026-11-28T19:09:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hexe: Magický svět (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11960.jpg",
+      "perex": "NA VYBRANÉ PROJEKCE JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "3D, dabing",
+      "pro_deti": true,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:26:59",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hexe-magicky-svet",
+      "youtube": "F2Fch9lFsk4",
+      "zacatek": "2026-11-28T17:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11961,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21858,
+      "kino": {
+        "format": "česky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 1 hodina a 35 minut"
+      },
+      "konec": "2026-11-28T21:35:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Něco jako rodina (CZE 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11961.jpg",
+      "perex": "Komedie Režie: Zuzana Marianková Hrají: Tereza Ramba, Jakub Prachař, Zuzana Mauréry, Elizaveta Maximová, Stanislav Majer, Tomáš Maštalír a další",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:27:30",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/neco-jako-rodina",
+      "youtube": "nWHDJBK_0es",
+      "zacatek": "2026-11-28T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11893,
       "cena": 0,
       "cena_pozn": "",
@@ -8019,6 +8048,44 @@
       "web": "https://www.dk-kromeriz.cz/stastne-a-vesele-2026",
       "youtube": "",
       "zacatek": "2026-11-29T10:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11960,
+      "cena": 160,
+      "cena_pozn": "děti: 140 Kč, 3D: 190 Kč, děti 3D: 160 Kč",
+      "id": 21857,
+      "kino": {
+        "format": "dabing | 3D",
+        "pristupnost": "přístupné bez omezení",
+        "puvodni_nazev": "Hexed",
+        "stopaz": "asi 1 hodina a 39 minut"
+      },
+      "konec": "2026-11-29T16:39:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Hexe: Magický svět (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11960.jpg",
+      "perex": "NA VYBRANÉ PROJEKCE JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "dabing",
+      "pro_deti": true,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:26:59",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/hexe-magicky-svet",
+      "youtube": "F2Fch9lFsk4",
+      "zacatek": "2026-11-29T15:00:00",
       "zdarma": false
     },
     {
@@ -8089,6 +8156,44 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-11-30T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11931,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21859,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "You Can See Everything",
+        "stopaz": "asi 2 hodiny a 54 minut"
+      },
+      "konec": "2026-11-30T20:54:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Uvidíš všechno (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11931.jpg",
+      "perex": "Dokumentární Režie: Nathan Fielder, Lance Oppenheim Hrají: Elizabeth Holmes, Nathan Fielder, Amanda Seyfried",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:28:05",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/uvidis-vsechno",
+      "youtube": "9Mp0KI0BItI",
+      "zacatek": "2026-11-30T18:00:00",
       "zdarma": false
     },
     {
@@ -8254,6 +8359,44 @@
       "vstupenky": "",
       "web": "",
       "youtube": "",
+      "zacatek": "2026-12-02T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11962,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21860,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Villeneuve: Rise of a Champion",
+        "stopaz": "asi 1 hodina a 42 minut"
+      },
+      "konec": "2026-12-02T21:42:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Villeneuve: Zrození šampióna (CAN 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11962.jpg",
+      "perex": "Drama / Životopisný / Sportovní Režie: Yan Lanouette Turgeon Hrají: Rémi Goulet, Rosalie Bonenfant, Patrice Robitaille, Anick Lemay, Frank Crudele a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-05T18:28:37",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/villeneuve-zrozeni-sampiona",
+      "youtube": "yE4_vZSPGLM",
       "zacatek": "2026-12-02T20:00:00",
       "zdarma": false
     },

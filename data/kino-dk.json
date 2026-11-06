@@ -57,6 +57,12 @@
   "https://www.dk-kromeriz.cz/halloweenska-noc-2": {
     "puvodni_nazev": "Maraton hororových filmů"
   },
+  "https://www.dk-kromeriz.cz/hexe-magicky-svet": {
+    "format": "dabing | 3D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Hexed",
+    "stopaz": "asi 1 hodina a 39 minut"
+  },
   "https://www.dk-kromeriz.cz/houpacky": {
     "format": "česky | 2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
@@ -103,6 +109,12 @@
     "puvodni_nazev": "The Hunger Games: Catching Fire",
     "stopaz": "asi 2 hodiny a 26 minut"
   },
+  "https://www.dk-kromeriz.cz/ja-rocky": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "I Play Rocky",
+    "stopaz": "asi 2 hodiny a 8 minut"
+  },
   "https://www.dk-kromeriz.cz/jak-dulezite-je-mit-filipa": {
     "format": "titulky | 2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
@@ -135,6 +147,11 @@
     "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
     "puvodni_nazev": "Minotaure",
     "stopaz": "asi 2 hodiny a 22 minut"
+  },
+  "https://www.dk-kromeriz.cz/neco-jako-rodina": {
+    "format": "česky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "stopaz": "asi 1 hodina a 35 minut"
   },
   "https://www.dk-kromeriz.cz/neskutecna-mama": {
     "format": "titulky | 2D",
@@ -186,6 +203,18 @@
     "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
     "puvodni_nazev": "Victorian Psycho",
     "stopaz": "asi 1 hodina a 35 minut"
+  },
+  "https://www.dk-kromeriz.cz/villeneuve-zrozeni-sampiona": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Villeneuve: Rise of a Champion",
+    "stopaz": "asi 1 hodina a 42 minut"
+  },
+  "https://www.dk-kromeriz.cz/vsichni-fotri-jsou-lotri": {
+    "format": "dabing | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Focker In-Law",
+    "stopaz": "asi 1 hodina a 45 minut"
   },
   "https://www.dk-kromeriz.cz/wildwood-tajemstvi-zakazaneho-lesa": {
     "format": "dabing | 2D",
