@@ -1,13 +1,13 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-05",
+      "den": "2026-11-06",
       "menu": {
         "jidla": [
           {
-            "alergeny": "1a, 9",
-            "cena": 175,
-            "nazev": "Vídeňská hovězí pečeně (150 g), (z býka z farmy Rampuše), jasmínová rýže"
+            "alergeny": "1a, 3, 7",
+            "cena": 165,
+            "nazev": "Holandský řízek (150 g), se sýrem maasdamer, bramborová kaše, okurka"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -38,15 +38,15 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Hovězí vývar s trhaným masem, zeleninou a kapáním (1a, 3, 7, 9)"
+            "nazev": "Špenátová s vejcem (3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-05T12:20:19+00:00"
+      "stazeno": "2026-11-06T09:24:02+00:00"
     },
     "earnest": {
-      "den": "2026-11-05",
+      "den": "2026-11-06",
       "menu": {
         "jidla": [
           {
@@ -91,51 +91,25 @@
         "polevky": [
           {
             "cena": 65,
-            "nazev": "Hovězí vývar s trhaným masem, zeleninou a kapáním (1a, 3, 7, 9)"
+            "nazev": "Špenátová s vejcem (3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-05T12:20:21+00:00"
+      "stazeno": "2026-11-06T09:24:03+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-05",
-      "menu": {
-        "jidla": [
-          {
-            "cena": 139,
-            "nazev": "Luštěninový guláš s grilovanou paprikou, chléb"
-          },
-          {
-            "cena": 149,
-            "nazev": "Uzené maso, křenová omáčka, knedlík"
-          },
-          {
-            "cena": 159,
-            "nazev": "Gril mix (koleno, krkovička, kuřecí palička), hořčice, křen, beraní rohy, chléb"
-          },
-          {
-            "cena": 199,
-            "nazev": "Vepřová panenka v anglické slanině (sous-vide), hranolky, tatarka"
-          }
-        ],
-        "polevky": [
-          {
-            "cena": 20,
-            "nazev": "Dýňový krém"
-          }
-        ],
-        "poznamky": []
-      },
-      "stazeno": "2026-11-05T12:20:22+00:00"
+      "den": "2026-11-06",
+      "menu": {},
+      "stazeno": "2026-11-06T09:24:04+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-05",
+      "den": "2026-11-06",
       "menu": {
         "jidla": [
           {
             "cena": 170,
-            "nazev": "M1: Medailonky z kuřecích prsíček 150g s bylinkovým máslem, smetanová zelenina, bramborová kaše"
+            "nazev": "M1: Stripsy z kuřecích prsíček 150g v pikantním těstíčku a drcených corn flakes, hranolky, salátek, česnekový dip"
           },
           {
             "cena": 185,
@@ -157,50 +131,23 @@
         "polevky": [
           {
             "cena": 40,
-            "nazev": "Hrášková s uzeným masem a opečeným chlebem"
+            "nazev": "Frankfurtská s párkem"
           }
         ],
         "poznamky": [
+          "Informace o alergenech žádejte u obsluhy.",
           "HUSÍ HODY 6.-11.11.2026",
           "otevřeno i v neděli 12-17 hod."
         ]
       },
-      "stazeno": "2026-11-05T12:20:23+00:00"
+      "stazeno": "2026-11-06T09:24:05+00:00"
     },
     "sladovna": {
-      "den": "2026-11-05",
-      "menu": {
-        "jidla": [
-          {
-            "cena": 225,
-            "nazev": "Hovězí svíčková na smetaně, karlovarský knedlík, brusinky, šlehačka, citrón (1,3,7,9,10)"
-          },
-          {
-            "cena": 215,
-            "nazev": "Králičí hřbet, dijonská omáčka, šťouchané brambory s cibulkou, glazovaná mrkev (7,9,10)"
-          },
-          {
-            "cena": 189,
-            "nazev": "Pečená krkovice na Záhlinickém pivu, jasmínová rýže s cibulkou, nakládaná cibulka a hořčice (7,9,10)"
-          },
-          {
-            "cena": 179,
-            "nazev": "Smažená cuketa, vařené brambory s máslem a pažitkou, tatarská omáčka (1,3,7)"
-          }
-        ],
-        "polevky": [
-          {
-            "cena": 40,
-            "nazev": "Pórkový krém se smetanou, slaninový crumble (7,9)"
-          }
-        ],
-        "poznamky": [
-          "Dnes máme zavřeno z důvodu vaření nového al carte menu. Děkujeme za pochopení. Opět se na vás těšíme zítra."
-        ]
-      },
+      "den": "2026-11-06",
+      "menu": {},
       "otisk": "df67bf2372c2247c",
       "otisk_od": "2026-11-05",
-      "stazeno": "2026-11-05T12:20:24+00:00"
+      "stazeno": "2026-11-06T09:24:06+00:00"
     }
   }
 }
