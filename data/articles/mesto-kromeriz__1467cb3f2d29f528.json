@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Bruh, i popelnice si jdou pro glow-up. Kroměříž mění 150 nádob na tříděný odpad za úplně nové. Na papír jich přijde 141. Plasty dostanou 9 nových kusů. Město za ně nedalo ani korunu, dodala je zdarma společnost EKO-KOM. To je čisté W.",
+    "Místostarosta Pavel Motyčka to zdůvodnil tím, že staré kusy už mají nejlepší léta za sebou a vizuálně je to spíš glow-down. Ty nové podle něj vypadají líp a splňují přísné bezpečnostní normy EU.",
+    "A teď pozor na ruce. Nové nádoby mají bezpečnostní prvky, které některým starším typům chyběly. Vedoucí odboru služeb Bohumil Jančík upozornil, že hlavní víko proto může jít ztuha než dosud. Celé ho ale zvedat nemusíš. Nahoře je menší otvor, takzvané víko ve víku, a papír i plasty prostrčíš tudy. Žádný crash out u popelnic nehrozí.",
+    "Výměna poběží postupně po celém městě, aby tě co nejmíň otravovala při třídění. Radnice v popelnicovém side questu jede už delší dobu. Nedávno přibyly nové kontejnery na textil a nové na sklo nahradily ty ošoupané. Letos nechalo město staré nádoby umýt a v ulicích Sokolovská, Třasoňova a Chropyňská postavilo polopodzemní kontejnery. Jinde staví ohrádky kolem kontejnerových stání. Popelnice si farmí auru a ty si hlavně pamatuj ten malý otvor nahoře."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.502,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-06T17:30:56.544890+00:00"
+  },
+  "headline": "Kontejnery dostanou glow-up, víko dostane buff. 150 nových kusů v Kroměříži",
+  "id": "mesto-kromeriz:1467cb3f2d29f528",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-06T10:33:00+01:00",
+  "rewritten_at": "2026-11-06T17:30:56.544934+00:00",
+  "sensitivity": "volny",
+  "slug": "kontejnery-dostanou-glow-up-viko-dostane-buff-150-novych-kusu-v-kromerizi",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "příroda"
+  ],
+  "tldr": [
+    {
+      "emoji": "🗑️✨",
+      "label": "Free Upgrade",
+      "text": "EKO-KOM dal Kroměříži zadarmo 150 nových kontejnerů na papír a plasty."
+    },
+    {
+      "emoji": "💪📦",
+      "label": "Heavy Lid",
+      "text": "Hlavní víko jde otevřít ztuha, takže použij malý otvor nahoře."
+    },
+    {
+      "emoji": "🐢🗺️",
+      "label": "Slow Rollout",
+      "text": "Nádoby se budou měnit postupně po celém městě."
+    }
+  ]
+}

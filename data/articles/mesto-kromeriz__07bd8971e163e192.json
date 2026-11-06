@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Kroměříž si jde pro námořní achievement. Ředitelství vodních cest ČR 6. listopadu začalo stavět veřejné přístaviště na pravém břehu Moravy u Erbenova nábřeží. Zakotvit u něj může až 9 malých rekreačních lodí a zastavovat tu budou i výletní lodě s cestujícími. Na molo se dostaneš bezbariérově. Hotovo má být v červnu 2027.",
+    "Pro cyklisty je to zatím L. Asi za měsíc stavbaři cyklostezku v místě stavby kvůli bezpečnosti úplně zavřou a otevřou ji až po dokončení prací. Objížďka povede okolními ulicemi a velkou zajížďku prý neudělá. V lednu se dělníci pustí do štětové stěny, pak zabetonují molo a v dubnu a květnu osadí lávku. Firma STANTER, která vede zhotovitele, se za omezení omlouvá a žádá tě, ať respektuješ značení i staveniště.",
+    "Samotné molo bude lowkey flexit. Pevná hrana bude mít na délku 60 metrů. Díky 4 výškovým úrovním se na loď nastoupí při nízké i vysoké vodě. Z cyklostezky na molo povede 72 metrů dlouhá rampa s ocelovou lávkou. Parkování lodí bude zdarma, nejdéle na 24 hodin. Proud ze sloupku si posádky zaplatí přes Přístavní kartu ŘVC.",
+    "Celé je to první krok k main questu: protáhnout Baťův kanál až do Kroměříže. Ředitel ŘVC Lubomír Fojtů vysvětlil, že klíčová bude nová plavební komora u jezu Bělov na Zlínsku. Ta spojí dva dnes oddělené splavné úseky. Přístaviště ŘVC staví napřed, aby se lodím na řece zlepšily podmínky už příští sezónu. Později by u letiště poblíž soutoku s Kotojedkou mohl vyrůst přístav asi pro 80 lodí. Kroměříž jako přístavní město, to zní highkey Ohio-coded."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.579,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-06T17:30:25.904288+00:00"
+  },
+  "headline": "Lodě dostanou parkovačku skoro v centru, cyklostezka mezitím chytí L",
+  "id": "mesto-kromeriz:07bd8971e163e192",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-06T12:29:00+01:00",
+  "rewritten_at": "2026-11-06T17:30:25.904323+00:00",
+  "sensitivity": "volny",
+  "slug": "lode-dostanou-parkovacku-skoro-v-centru-cyklostezka-mezitim-chyti-l",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "⚓🚤",
+      "label": "Boat Parking",
+      "text": "Na Erbenově nábřeží vzniká přístaviště pro až 9 malých lodí a hotové má být v červnu 2027."
+    },
+    {
+      "emoji": "🚲🚧",
+      "label": "Bike Detour",
+      "text": "Cyklostezka u stavby se zhruba za měsíc úplně zavře a objížďka povede okolními ulicemi."
+    },
+    {
+      "emoji": "💸🏗️",
+      "label": "Price Tag",
+      "text": "Stavba vyjde na 45,9 milionu korun bez DPH a zaplatí ji Státní fond dopravní infrastruktury."
+    }
+  ]
+}
