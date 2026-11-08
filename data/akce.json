@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-07T10:07:54.431206+00:00",
+  "stazeno": "2026-11-08T00:35:33.433713+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4665,38 +4665,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11946,
-      "cena": 250,
-      "cena_pozn": "na místě 300,-",
-      "id": 21836,
-      "konec": "2026-11-07T01:00:00",
-      "misto": "Stará masna",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Hulínská 2352"
-      },
-      "misto_gps": [
-        49.307275,
-        17.406919
-      ],
-      "misto_web": "https://www.stara-masna.cz/",
-      "nazev": "Divá Bára & Breaking Loose",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11946.jpg",
-      "perex": "Tvrdá rocková muzika",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-02T07:03:50",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://stara-masna.cz/",
-      "youtube": "FqhVpoMG1ls",
-      "zacatek": "2026-11-06T20:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11659,
       "cena": 100,
       "cena_pozn": "Dospělí: 100,-Kč Důchodci nad 65 let, ZTP: 80,- Kč Děti do 150 cm, ZTP/P + doprovod: ZDARMA",
@@ -4726,170 +4694,6 @@
       "web": "https://www.hobbyvystaviste.cz",
       "youtube": "",
       "zacatek": "2026-11-07T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11902,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21785,
-      "konec": "2026-11-07T19:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Kromstar",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11902.jpg",
-      "perex": "KROMSTAR – Hledá se talent! SOUTĚŽ PRO ZAČÍNAJÍCÍ ZPĚVÁKY!",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-10-13T11:18:12",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/kromstar-4",
-      "youtube": "",
-      "zacatek": "2026-11-07T16:00:00",
-      "zdarma": true
-    },
-    {
-      "akce_id": 11915,
-      "cena": 140,
-      "cena_pozn": "",
-      "id": 21798,
-      "konec": "2026-11-07T19:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "2. hokejová liga / HK Kroměříž – HC RT Torax Poruba",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11915.jpg",
-      "perex": "Zápas 2. ligy.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-19T07:36:58",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-07T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11532,
-      "cena": 390,
-      "cena_pozn": "studenti: 350 Kč, senioři: 350 Kč",
-      "id": 21255,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "National Theatre Live: The Audience",
-        "stopaz": "asi 2 hodiny a 28 minut"
-      },
-      "konec": "2026-11-07T19:28:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Audience (UK 2013)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11532.jpg",
-      "perex": "Helen Mirren (Královna) se opět vrací na filmová plátna v roli královny Alžběty II. v úspěšné inscenaci v režii Stephena Daldryho oceněné soškami Olivier i Tony.",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-06-01T07:40:46",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/audience",
-      "youtube": "LYq6RdsCKK8",
-      "zacatek": "2026-11-07T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11939,
-      "cena": 200,
-      "cena_pozn": "Vstupenky k prodeji v síti Ticketportal v předprodeji za 150,-. Cena na místě 200,-, do 15ti let vstup zdarma.",
-      "id": 21829,
-      "konec": "2026-11-07T19:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "SK HS Kroměříž - FK Třinec",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11939.jpg",
-      "perex": "14.kolo Chance Národní Liga",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-26T12:37:20",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-07T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11814,
-      "cena": 350,
-      "cena_pozn": "",
-      "id": 21667,
-      "kino": {
-        "format": "2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "stopaz": "asi 1 hodina a 50 minut"
-      },
-      "konec": "2026-11-07T21:50:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Rammstein – Live in Mexico City (DEU 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11814.jpg",
-      "perex": "Snímek Rammstein – Live in Mexico City, natočený během tří vyprodaných večerů na stadionu Foro Sol s kapacitou 65 000 diváků, zachycuje jednu z klíčových zastávek monumentálního pětiletého světového turné kapely. Velkolepý koncertní film natočil dvojnásobný držitel ceny Primetime Emmy® Paul Dugdale.",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-09-22T07:21:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/rammstein-live-in-mexico-city",
-      "youtube": "9x-dFyLxfBQ",
-      "zacatek": "2026-11-07T20:00:00",
       "zdarma": false
     },
     {
