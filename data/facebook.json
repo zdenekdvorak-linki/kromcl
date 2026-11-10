@@ -1,5 +1,14 @@
 {
-  "fronta": [],
+  "fronta": [
+    {
+      "id": "mesto-kromeriz:90715c5f43271624",
+      "zarazeno": "2026-11-10T11:48:03+00:00"
+    },
+    {
+      "id": "ctenar:a05d3fbab720a768",
+      "zarazeno": "2026-11-10T11:48:03+00:00"
+    }
+  ],
   "odeslane": {
     "ctenar:1d5a940f783e1457": {
       "kdy": "2026-10-26T11:08:30+00:00",

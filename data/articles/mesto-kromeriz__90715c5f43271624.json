@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Úřad, kam se chodí rádo do práce? Radnice v Kroměříži zrovna odemkla achievement a skončila první mezi obcemi v 13. ročníku ankety Férový zaměstnavatel. Tu pořádá Zlínský kraj spolu s Krajskou hospodářskou komorou Zlínského kraje a odměňuje místa, kde se k lidem chovají slušně a dávají jim pořádné podmínky.",
+    "Porota u každého zaměstnavatele koukala, co pro lidi dělá navíc oproti povinnému minimu. Zajímala ji pružná pracovní doba, benefity, pomoc rodičům se skloubením práce a rodiny, práce pro lidi se zdravotním postižením i společenská odpovědnost. Kraj tím chce ostatním firmám v regionu ukázat, od koho můžou opisovat. Valid.",
+    "Starosta Tomáš Opatrný si ceny podle svých slov hodně váží. Bere ji jako důkaz, že slušné prostředí v práci má smysl, protože spokojený úředník podle něj odvede lepší služby pro tebe. Tajemnice úřadu Veronika Škrabalová připsala zásluhy hlavně zaměstnancům a první místo chápe i jako závazek jet dál stejně. Green flag.",
+    "Hejtman Radim Holiš počítá do férovosti kromě výplaty a benefitů i to, jestli se lidi v práci cítí dobře a můžou se spolehnout na kolegy a vedení. V dalších kategoriích kraj ocenil IVF Czech Republic, PSG Construction a Českou zbrojovku, mezi příspěvkovkami ZŠ Rajnochovice a zvláštní cenu poroty si odnesl Domov pro seniory Burešov. Radnice jako dream job, kdo by to čekal, bruh."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.555,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-10T11:47:21.424572+00:00"
+  },
+  "headline": "Kroměřížská radnice je nejférovější šéf mezi obcemi v kraji, no cap",
+  "id": "mesto-kromeriz:90715c5f43271624",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-10T09:26:56+01:00",
+  "rewritten_at": "2026-11-10T11:47:21.424601+00:00",
+  "sensitivity": "volny",
+  "slug": "kromerizska-radnice-je-nejferovejsi-sef-mezi-obcemi-v-kraji-no-cap",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🥇",
+      "label": "Gold Medal",
+      "text": "Kroměříž vyhrála mezi obcemi 13. ročník krajské ankety Férový zaměstnavatel."
+    },
+    {
+      "emoji": "⏰👶",
+      "label": "What Counts",
+      "text": "Porota sleduje třeba pružnou pracovní dobu, benefity, podporu rodičů nebo práci pro lidi se zdravotním postižením."
+    },
+    {
+      "emoji": "🏆",
+      "label": "Other Winners",
+      "text": "Z firem bodovaly IVF Czech Republic, PSG Construction a Česká zbrojovka, z příspěvkovek ZŠ Rajnochovice."
+    }
+  ]
+}

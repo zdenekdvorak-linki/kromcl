@@ -1,0 +1,41 @@
+{
+  "autor": "Jana Hedencová",
+  "body": [
+    "Tohle je W pro každého, koho baví šroubovat. Střední škola – Centrum odborné přípravy technické v Kroměříži je zapojená do projektu Naučíme vás to opravit. Ten už šest let propojuje střední školy s praxí v servisních střediscích a chce řešit nedostatek kvalifikovaných servisních techniků. Celkem se do něj zapojilo 1 187 žáků.",
+    "Opravy tady jedou na legit spotřebičích. Školy v rámci projektu dostaly už bezmála 350 kusů, třeba pračky, myčky, sušičky, sporáky, trouby a kombinované spotřebiče. Žáci na nich hledají závady a trénují postupy pro servisní praxi. Spotřebiče dodává Sdružení evropských výrobců domácích spotřebičů APPLiA CZ. Jeho generální ředitel Radek Hacaperka říká, že kdo chce být technik, musí si opravu vyzkoušet na skutečném spotřebiči.",
+    "Nově přibyly stáže a to je green flag. Projekt má za sebou prvních 10 stáží a dva žáci po škole nastoupili do servisu. Podle Hacaperky stáž ukáže, jak servis funguje, a pomůže ti rozhodnout se, jestli v oboru zůstaneš. Cílem jsou postupně 4 až 5 míst pro stáže v regionálních servisech pro každou zapojenou školu.",
+    "Certifikace je fr náročná. Podmínkou je mimo jiné 20 dní praxe po sedmi hodinách denně, pak tě čeká teoretický a praktický test. Projekt má i odborné přednášky a celorepublikovou soutěž dvoučlenných týmů. Deváťáku, tohle stojí za to checknout. Hacaperka doporučuje sledovat dny otevřených dveří zapojených škol v Kroměříži, Hradci Králové, Plzni, Praze, Ostravě, Třebíči, Hluboké nad Vltavou a Chomutově. Kdo umí opravit myčku, má u spolubydlících +1000 aura."
+  ],
+  "headline": "Rozbitá pračka jako učebnice? Škola z Kroměříže v tom jede a je to W",
+  "id": "ctenar:a05d3fbab720a768",
+  "model": "claude-opus-5-5",
+  "odkaz": "https://www.naucimevastoopravit.cz/",
+  "published": "2026-11-10T12:47:24+01:00",
+  "rewritten_at": "2026-11-10T11:48:01.833361+00:00",
+  "sensitivity": "volny",
+  "slug": "rozbita-pracka-jako-ucebnice-skola-z-kromerize-v-tom-jede-a-je-to-w",
+  "source": "ctenar",
+  "source_name": "KROMCL",
+  "tags": [
+    "školství",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🔧🏫",
+      "label": "Local School",
+      "text": "Do projektu Naučíme vás to opravit je zapojená i Střední škola – Centrum odborné přípravy technické v Kroměříži."
+    },
+    {
+      "emoji": "🧺🛠️",
+      "label": "Real Repairs",
+      "text": "Školy v projektu dostaly už bezmála 350 spotřebičů, na kterých žáci zkouší skutečné opravy."
+    },
+    {
+      "emoji": "📜✅",
+      "label": "New Stuff",
+      "text": "Nově projekt nabízí stáže v servisech a certifikaci s teoretickým a praktickým testem."
+    }
+  ],
+  "typ": "prispevek"
+}
