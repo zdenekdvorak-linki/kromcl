@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle zní jako banger pro každého, kdo v prosinci mrzne mezi stánky. Ve středu 16. prosince se na Velkém náměstí nalévá vánoční polévka, a to od 11 do 17 hodin, nebo dokud se kotle nevyprázdní. Stánek najdeš pod vánočním stromem naproti radnici a patří k trhům Šťastné a veselé.",
+    "Na výběr máš 3 polívky: rybí, hrstkovou a gulášovou. Pečivo k tomu taky dostaneš. Uvaří je kuchyně Domova pro seniory U Moravy a těch 100 litrů zvládne navíc k běžnému provozu domova. Místostarosta Pavel Motyčka kuchařům za to poděkoval. Za mě je to odemčený achievement. Celou akci pořádá každý rok město Kroměříž spolu se Sociálními službami města Kroměříže.",
+    "Polévku ti nalejí lidi z vedení radnice a ze sociálních služeb. Přijít může úplně kdokoliv, nemusíš patřit mezi ty, kdo potřebují pomoc. Motyčka zve Kroměřížany, ať se zastaví a pokecají, prý se s nimi při takových akcích potkává rád. Ředitelka sociálních služeb Dagmar Klučková doufá, že si lidi kromě jídla užijí i předvánoční vibes a na chvíli vypadnou z adventního shonu.",
+    "Trhy Šťastné a veselé jedou na Velkém náměstí od 29. listopadu do 23. prosince, takže felit u stánků můžeš skoro celý advent. Polévkový den je ale jenom jeden. Teplá polívka pod stromečkem uprostřed prosince? Bet."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.566,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-10T09:50:09.975861+00:00"
+  },
+  "headline": "Domov U Moravy navaří 100 litrů polívky na Velké náměstí. Let them cook",
+  "id": "mesto-kromeriz:0569830a13c4070e",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-10T06:55:22+01:00",
+  "rewritten_at": "2026-11-10T09:50:09.975888+00:00",
+  "sensitivity": "volny",
+  "slug": "domov-u-moravy-navari-100-litru-polivky-na-velke-namesti-let-them-cook",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎄🕚",
+      "label": "When Where",
+      "text": "Ve středu 16. prosince od 11 do 17 hodin, případně dokud nedojde, pod vánočním stromem naproti radnici."
+    },
+    {
+      "emoji": "🍲🥖",
+      "label": "Soup Menu",
+      "text": "Vybereš si rybí, hrstkovou nebo gulášovou a k tomu dostaneš pečivo."
+    },
+    {
+      "emoji": "🥄🏛️",
+      "label": "Who Pours",
+      "text": "Naběračku převezmou lidi z vedení radnice a ze Sociálních služeb města Kroměříže."
+    }
+  ]
+}
