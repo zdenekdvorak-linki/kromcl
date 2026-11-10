@@ -31,6 +31,18 @@
     "pristupnost": "přístupné bez omezení",
     "stopaz": "asi 1 hodina a 38 minut"
   },
+  "https://www.dk-kromeriz.cz/duna": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Dune",
+    "stopaz": "asi 2 hodiny a 46 minut"
+  },
+  "https://www.dk-kromeriz.cz/duna-cast-druha": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Dune: Part Two",
+    "stopaz": "asi 2 hodiny a 57 minut"
+  },
   "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda": {
     "format": "titulky | 2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 12 let",

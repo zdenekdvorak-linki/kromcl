@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-09T06:27:24.343611+00:00",
+  "stazeno": "2026-11-10T01:30:51.432329+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4694,140 +4694,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-09T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 9639,
-      "cena": 100,
-      "cena_pozn": "",
-      "id": 21766,
-      "konec": "2026-11-09T19:30:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Albertova 4062"
-      },
-      "misto_gps": [
-        49.290614,
-        17.385099
-      ],
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Diskuzní skupina: Sdílecí ženský kruh",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/9639.jpg",
-      "perex": "Setkání vhodné pro každou ženu, která je ráda v přítomnosti ženské energie.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-07-05T16:27:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.klubickokm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-09T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11815,
-      "cena": 290,
-      "cena_pozn": "zahájení předprodeje 23. 9. 2026",
-      "id": 21668,
-      "konec": "2026-11-09T19:30:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Dasha a Rozhlasový Big Band Gustava Broma",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11815.jpg",
-      "perex": "Český rozhlas Zlín připravil ke svým devátým narozeninám koncert populární zpěvačky Dashi s Rozhlasovým Big Bandem Gustava Broma.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-09-22T07:20:54",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/dasha-a-rozhlasovy-big-band-gustava-broma",
-      "youtube": "",
-      "zacatek": "2026-11-09T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11931,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21819,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "You Can See Everything",
-        "stopaz": "asi 2 hodiny a 54 minut"
-      },
-      "konec": "2026-11-09T20:54:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Uvidíš všechno (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11931.jpg",
-      "perex": "Dokumentární Režie: Nathan Fielder, Lance Oppenheim Hrají: Elizabeth Holmes, Nathan Fielder, Amanda Seyfried",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-05T18:28:05",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/uvidis-vsechno",
-      "youtube": "9Mp0KI0BItI",
-      "zacatek": "2026-11-09T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11925,
-      "cena": 350,
-      "cena_pozn": "zahájení předprodeje 20. 10. 2026",
-      "id": 21808,
-      "konec": "2026-11-09T20:35:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "PROCES",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11925.jpg",
-      "perex": "Josef K. ulehne jako svobodný člověk a vzbudí se jako vězeň. Nedozví se, ale z čeho je obviněn. Musí hledat příčinu a smysl svého soudního procesu a zjistit, jaká je pravda. Ale jak dlouho člověk vydrží hledat pravdu, když je všechno tak nejednoznačné a na všechny otázky existují různé, často zcela protikladné odpovědi. Kolem nás je přece tolik pokušení, která nás nenutí tápat, bloudit a třeba ani přemýšlet. Není nakonec snazší na pravdu rezignovat?",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-10-20T06:42:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/proces",
-      "youtube": "CCEKAXTz2EM",
-      "zacatek": "2026-11-09T19:00:00",
       "zdarma": false
     },
     {
@@ -6388,6 +6254,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11967,
+      "cena": 542,
+      "cena_pozn": "",
+      "id": 21865,
+      "konec": "2026-11-20T22:00:00",
+      "misto": "Výstaviště Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "K Výstavišti 4069/8"
+      },
+      "misto_gps": [
+        49.284548,
+        17.392976
+      ],
+      "misto_web": "http://www.vystavistekromeriz.cz",
+      "nazev": "Pokáč - Ignor tour",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11967.jpg",
+      "perex": "Oblíbený písničkář, král české rýmované ironie a majitel nejznámější pleše Česku se vrací do Kroměříže!",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-09T10:45:25",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.vystavistekromeriz.cz/akce/2026-11-20-pokac---ignor-tour-2026",
+      "youtube": "",
+      "zacatek": "2026-11-20T19:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11951,
       "cena": 160,
       "cena_pozn": "",
@@ -7640,6 +7538,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11970,
+      "cena": 0,
+      "cena_pozn": "60 Kč za osobu",
+      "id": 21868,
+      "konec": "2026-12-02T11:00:00",
+      "misto": "Muzeum Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí 38"
+      },
+      "misto_gps": [
+        49.299106,
+        17.392644
+      ],
+      "misto_web": "http://www.muzeum-km.cz/",
+      "nazev": "Vyšla hvězda na kraj světa - akce pro seniory",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11970.jpg",
+      "perex": "Vánoční program pro seniory",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-09T15:26:13",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-02T09:30:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11951,
       "cena": 160,
       "cena_pozn": "",
@@ -7876,6 +7806,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 7701,
+      "cena": 150,
+      "cena_pozn": "",
+      "id": 21870,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune",
+        "stopaz": "asi 2 hodiny a 46 minut"
+      },
+      "konec": "2026-12-03T20:46:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna (USA 2021)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/7701.jpg",
+      "perex": "Dobrodružný / Sci-Fi Režie: Denis Villeneuve Hrají: Timothée Chalamet, Rebecca Ferguson, Josh Brolin, Zendaya, Oscar Isaac, Javier Bardem, Dave Bautista a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-09T15:50:27",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna",
+      "youtube": "7eV7nmHu7Ns",
+      "zacatek": "2026-12-03T18:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11924,
       "cena": 0,
       "cena_pozn": "",
@@ -8066,6 +8034,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 9549,
+      "cena": 150,
+      "cena_pozn": "",
+      "id": 21871,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Two",
+        "stopaz": "asi 2 hodiny a 57 minut"
+      },
+      "konec": "2026-12-06T20:57:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část druhá (USA 2024)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/9549.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Rebecca Ferguson, Zendaya, Javier Bardem, Stellan Skarsgård, Dave Bautista, Josh Brolin, Florence Pugh, Austin Butler, Christopher Walken a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-09T15:50:43",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-druha",
+      "youtube": "a37vCJTAdJI",
+      "zacatek": "2026-12-06T18:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11804,
       "cena": 790,
       "cena_pozn": "základní od 10. řady: 750 Kč, základní od 17. řady: 690 Kč, zahájení předprodeje 16. 9. 2026",
@@ -8130,6 +8136,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11968,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21866,
+      "konec": "2026-12-09T15:00:00",
+      "misto": "Horizont Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Mánesova 3880"
+      },
+      "misto_gps": [
+        49.295752,
+        17.403984
+      ],
+      "misto_web": "https://www.cspzlin.cz/zarizeni/horizont_kromeriz.htm",
+      "nazev": "DEN OTEVŘENÝCH DVEŘÍ V HORIZONTU",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11968.jpg",
+      "perex": "Den otevřených dveří v Horizontu nabídne možnost poznat prostředí a činnost sociální rehabilitace. Součástí programu bude vánoční workshop, prohlídka prostor a další doprovodné aktivity.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-09T15:25:44",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-09T10:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11851,
       "cena": 0,
       "cena_pozn": "",
@@ -8159,6 +8197,102 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-09T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11953,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21848,
+      "konec": "2026-12-10T17:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "O čertovi",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11953.jpg",
+      "perex": "Klub Puntička - zastavení nad knihou Pavla Čecha.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-05T10:58:14",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-12-10T10:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11926,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21809,
+      "konec": "2026-12-10T20:00:00",
+      "misto": "Galerie Pekelné sáně",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Malý Val 1512"
+      },
+      "misto_gps": [
+        49.297769,
+        17.389164
+      ],
+      "misto_web": "https://www.pekelnesane.cz",
+      "nazev": "Komentovaná prohlídka sbírky Pekelné sáně",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11926.jpg",
+      "perex": "Opět budete mít příležitost projít si sbírku zakladatele galerie a soukromého sběratele Josefa Maixnera. Tentokrát se zaměříme nejnovější přírůstky a také kmenové koberce, které se nevešly do nedávné výstavy a dosud ještě nebyly vystaveny.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-20T13:31:55",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.pekelnesane.cz/ctvrtky/komentovana-prohlidka-sbirky-pekelne-sane-120",
+      "youtube": "",
+      "zacatek": "2026-12-10T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11687,
+      "cena": 160,
+      "cena_pozn": "zahájení předprodeje 22. 9. 2026",
+      "id": 21516,
+      "konec": "2026-12-10T20:30:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Den, kdy unesli papeže",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11687.jpg",
+      "perex": "Newyorský taxikář Samuel Leibowitz, muž s velkým srdcem a svérázným smyslem pro spravedlnost, využije zmatku při papežově návštěvě New Yorku a prostě ho „unese“. Jako výkupné však nechce peníze, ale aby se na celém světě na 24 hodin přestalo válčit. A zatímco venku šílí policie, armáda i média, uvnitř Samuelova domu Papež Albrecht IV. v zástěře pomáhá Samuelově ženě Sáře loupat brambory k obědu….",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Divadlo",
+      "typ_id": 8,
+      "upraveno": "2026-09-23T14:57:26",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/den-kdy-unesli-papeze",
+      "youtube": "",
+      "zacatek": "2026-12-10T19:00:00",
       "zdarma": false
     }
   ],
