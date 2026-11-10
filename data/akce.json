@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-10T01:30:51.432329+00:00",
+  "stazeno": "2026-11-10T17:50:05.334122+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -5266,6 +5266,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11973,
+      "cena": 250,
+      "cena_pozn": "",
+      "id": 21873,
+      "konec": "2026-11-14T00:00:00",
+      "misto": "Stará masna",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hulínská 2352"
+      },
+      "misto_gps": [
+        49.307275,
+        17.406919
+      ],
+      "misto_web": "https://www.stara-masna.cz/",
+      "nazev": "Iron Maiden Moravia tribute",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11973.jpg",
+      "perex": "Koncert tribute kapely Iron Maiden",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-10T11:06:15",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.stara-masna.cz",
+      "youtube": "",
+      "zacatek": "2026-11-13T20:30:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11857,
       "cena": 380,
       "cena_pozn": "vstupenka s místenkou 380,- Kč Vstupenky: TS Nemocnice KM (ÚT,ST) 7-8:30 hod. Hana Jelínková tel.: 603 582 576 Eva Rubintová tel.: 604 170 586 na místě po domluvě na tel.: 603 582 576",
@@ -5395,6 +5427,38 @@
       "vicedenni": true,
       "vstupenky": "",
       "web": "https://www.insania.cz",
+      "youtube": "",
+      "zacatek": "2026-11-14T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11974,
+      "cena": 350,
+      "cena_pozn": "",
+      "id": 21874,
+      "konec": "2026-11-15T00:00:00",
+      "misto": "Stará masna",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hulínská 2352"
+      },
+      "misto_gps": [
+        49.307275,
+        17.406919
+      ],
+      "misto_web": "https://www.stara-masna.cz/",
+      "nazev": "Insania & Happines in Slavery",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11974.jpg",
+      "perex": "Koncert dvou kultovních kapel",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-10T11:05:39",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.stara-masna.cz",
       "youtube": "",
       "zacatek": "2026-11-14T20:00:00",
       "zdarma": false
@@ -7471,6 +7535,38 @@
       "web": "https://www.dk-kromeriz.cz/uvidis-vsechno",
       "youtube": "9Mp0KI0BItI",
       "zacatek": "2026-11-30T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11969,
+      "cena": 0,
+      "cena_pozn": "30 Kč za osobu, která bude vyrábět",
+      "id": 21867,
+      "konec": "2026-12-23T17:00:00",
+      "misto": "Muzeum Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí 38"
+      },
+      "misto_gps": [
+        49.299106,
+        17.392644
+      ],
+      "misto_web": "http://www.muzeum-km.cz/",
+      "nazev": "Vánoční tvoření v Muzeu Kroměřížska",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11969.jpg",
+      "perex": "Samoobslužná dílna",
+      "poznamka": "Tvořit je možné od 9 do 12 a od 12.30 do 17 hodin.",
+      "pro_deti": true,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-10T11:07:52",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-01T09:00:00",
       "zdarma": false
     },
     {
