@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tohle si zaslouží chvilku vážnosti, fr. Několik desítek Kroměřížanů dnes, 11. listopadu, položilo věnce u památníku obětem obou světových válek na hřbitově a uctilo tak válečné veterány. Přišel starosta Tomáš Opatrný s lidmi z radnice a dorazili vojáci z Armády ČR i spolky veteránů a legionářů. Opatrný pak poděkoval všem, kdo se přišli poklonit nebo přispěli do sbírky pro veterány.",
+    "Proč zrovna dneska? Spojenci a Německo podepsali 11. listopadu 1918 příměří a boje první světové války na západní frontě tím skončily. Veterány si v tenhle den připomíná celý svět. BTW Česko se přidalo v roce 2001. Padlých vojáků bylo podle odhadů 10 milionů. Civilních obětí se odhaduje dalších 6 milionů.",
+    "Vlčí mák má mezi symboly fakt největší auru. Na bojištích a hrobech padlých z první světové války ho vyrostly celé záplavy a stal se znakem veteránů. Milan Antoš, předseda Sdružení válečných veteránů ČR ve Zlínském kraji, k tomu řekl, že při pohledu na ten květ myslíme na skutečné lidi. Na předky z front obou válek i na dnešní veterány ze zahraničních misí.",
+    "Antoš vyjmenoval i konkrétní hrdiny: legionáře z první světové války, britské letce, obránce Tobruku a bojovníky od Sokolova, Kyjeva a Dukly. Zvlášť zmínil generála Ludvíka Svobodu, jehož jméno je s Kroměříží svázané napořád. Podle Antoše jsou mír a bezpečí křehké a lidi si je musí pořád hlídat. Sbírka na veterány a jejich příběhy běží dál, víc najdeš na denveteranu.cz. Hodit tam pár korun je čisté W."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.623,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-11T15:12:31.870351+00:00"
+  },
+  "headline": "Kroměříž položila věnce veteránům. Vlčí mák má víc aury než jakýkoliv flex",
+  "id": "mesto-kromeriz:1c9e236609e95f68",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-11T11:55:30+01:00",
+  "rewritten_at": "2026-11-11T15:12:31.870376+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-polozila-vence-veteranum-vlci-mak-ma-vic-aury-nez-jakykoliv-flex",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "💐🕯️",
+      "label": "Wreaths Down",
+      "text": "Několik desítek Kroměřížanů dnes se starostou Tomášem Opatrným uctilo válečné veterány u památníku na hřbitově."
+    },
+    {
+      "emoji": "📜🕊️",
+      "label": "Why Today",
+      "text": "Právě 11. listopadu skončily boje první světové války na západní frontě."
+    },
+    {
+      "emoji": "🌺🤝",
+      "label": "Help Out",
+      "text": "Sbírka pro veterány a na uchování jejich příběhů běží na denveteranu.cz."
+    }
+  ]
+}

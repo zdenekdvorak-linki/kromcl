@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Konečně kalendář, co nevypadá jako další pohlednice z náměstí. Radnice vydala na rok 2027 nástěnný kalendář s podtitulem Místo pro vaše příběhy. Pořídíš ho za 185 korun v Turistickém informačním centru Kroměříž. Lowkey dárek pro babičku i pro tvůj pokoj.",
+    "Barokní centrum má tentokrát pauzu. Fotograf městského úřadu Tomáš Vrtal fotil u vodní elektrárny na Strži, u Čínského pavilonu v Podzámecké zahradě, u dřevěné loděnice u Moravy, na sportovním letišti a taky na sídlišti Slovan. Slovan v oficiálním kalendáři města, to má fakt auru.",
+    "Do každé scény naskákala historická technika. Pavel Zrna, vedoucí odboru kultury, cestovního ruchu a památkové péče, zmínil auta veterány, vlaky, letadlo, přívěsový stan i starou laminátovou kánoi. Podle něj si má každý sám domyslet, co se na fotce zrovna děje. Příběh si tedy vymyslíš ty a to hits different.",
+    "S kalendářem pomáhaly místní spolky, třeba veteránisti, aeroklub nebo vodáci. Radní pro kulturu a cestovní ruch Evžen Petřík byl u focení osobně jako člen jednoho z nich. Vysvětlil, že Kroměříž podle něj neznamená jen baroko a že zdejší příběhy můžou být pestřejší a pořád trochu nostalgické. Radnice se k tomuhle stylu vrací po delší době, což je valid tah. Tak co, pověsíš si letos Slovan na zeď?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 8,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.571,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-11T15:14:09.451606+00:00"
+  },
+  "headline": "Sídliště Slovan v městském kalendáři vedle veteránů? Radnice jde do aura farmingu",
+  "id": "mesto-kromeriz:7a8122a58ba16495",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-11T11:40:12+01:00",
+  "rewritten_at": "2026-11-11T15:14:09.451633+00:00",
+  "sensitivity": "volny",
+  "slug": "sidliste-slovan-v-mestskem-kalendari-vedle-veteranu-radnice-jde-do-aura-farmingu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "📅",
+      "label": "What Dropped",
+      "text": "Radnice pustila ven nástěnný kalendář na rok 2027 s podtitulem Místo pro vaše příběhy."
+    },
+    {
+      "emoji": "🚂",
+      "label": "Main Vibe",
+      "text": "Na fotkách jsou stará auta, vlaky, letadlo i kánoe na místech, kam se turisti moc nedívají."
+    },
+    {
+      "emoji": "💸",
+      "label": "Price Check",
+      "text": "Koupíš ho za 185 korun v Turistickém informačním centru Kroměříž."
+    }
+  ]
+}

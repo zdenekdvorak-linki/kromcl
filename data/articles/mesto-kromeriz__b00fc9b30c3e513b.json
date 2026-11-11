@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Bruh, venku ještě žádný sníh a plán na zimu už je hotový. Kroměřížské technické služby (KTS) budou letos uklízet i stezky pro pěší a cyklisty Kroměříž – Miňůvky a Kotojedy – Vážany. Přibyla taky nová silnice ze Stoličkovy ulice na Zborovskou a chodníky v Obvodové, U Rejdiště, v Kotojedské, v ulici Kazimíra Rudého a na úseku Skopalíkova-Zborovská. Novinky představil místostarosta Pavel Motyčka.",
+    "Dohromady KTS čeká zhruba 122 kilometrů chodníků. Silnic je k tomu asi 82 kilometrů. Firma patří celá městu a vyrazí s 2 sypači na silnice, traktorem s radlicí a sypačem, 5 multikárami a 6 dalšími stroji. Mezi nimi jsou chodníkové frézy, malotraktor a 2 sypače s radlicí na chodníky. Přechody, zastávky a okolí škol a jiných veřejných budov čistí lidi ručně, no cap.",
+    "Na sníh a led půjde sůl, solanka i inertní posyp. Tři místa jsou ale niche případ. Na lávce přes Moravu, na Zborovském mostě a na mostě v Postoupkách se smí sypat jen inertním materiálem, sůl tam nepatří.",
+    "A teď peníze, protože zima je lowkey drahý koníček. Loni dalo město za zimní údržbu skoro 7,2 milionu korun. O rok dřív, v roce 2024, vyšla radnici přibližně na 5,3 milionu. Letos spolkly samotné měsíce leden až březen 5,5 milionu. Další peníze si ještě vezme úklid na konci roku. Tak ať je ta zima aspoň mid, kasa by to ocenila."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.592,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-11T15:13:40.618288+00:00"
+  },
+  "headline": "Sypače dostaly buff: nové stezky a chodníky letos v zimě taky přijdou na řadu",
+  "id": "mesto-kromeriz:b00fc9b30c3e513b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-11T11:42:40+01:00",
+  "rewritten_at": "2026-11-11T15:13:40.618321+00:00",
+  "sensitivity": "volny",
+  "slug": "sypace-dostaly-buff-nove-stezky-a-chodniky-letos-v-zime-taky-prijdou-na-radu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "peníze",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🚶❄️",
+      "label": "New Routes",
+      "text": "Sypat se bude nově i na stezkách do Miňůvek a z Kotojed do Vážan a na několika nových chodnících."
+    },
+    {
+      "emoji": "🗺️",
+      "label": "Big Map",
+      "text": "Zhruba 122 kilometrů chodníků mají letos v zimě na starost Kroměřížské technické služby."
+    },
+    {
+      "emoji": "💸",
+      "label": "Cash Check",
+      "text": "Loni stál úklid sněhu a ledu město skoro 7,2 milionu korun."
+    }
+  ]
+}
