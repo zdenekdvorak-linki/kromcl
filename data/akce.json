@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-10T17:50:05.334122+00:00",
+  "stazeno": "2026-11-11T06:18:59.076166+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4694,102 +4694,6 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-09T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 10455,
-      "cena": 100,
-      "cena_pozn": "",
-      "id": 21770,
-      "konec": "2026-11-10T11:30:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Albertova 4062"
-      },
-      "misto_gps": [
-        49.290614,
-        17.385099
-      ],
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Beseda: Nenásilná komunikace",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10455.jpg",
-      "perex": "Beseda vhodná pro každého, koho zajímá mezilidská komunikace.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-11-06T09:44:51",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.klubickokm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-10T09:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11440,
-      "cena": 100,
-      "cena_pozn": "děti: 60 Kč, rodinné: 250 Kč, senioři: 60 Kč, zahájení předprodeje 6. 5. 2026",
-      "id": 21135,
-      "konec": "2026-11-10T20:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Planetárium",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11440.jpg",
-      "perex": "Planetárium přináší fascinující svět vesmíru přímo k Vám! Vzdělávací a zábavný program pro děti, žáky, studenty i dospělé.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-05-05T07:19:04",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/planetarium",
-      "youtube": "",
-      "zacatek": "2026-11-10T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11858,
-      "cena": 0,
-      "cena_pozn": "Vstupné dobrovolné",
-      "id": 21727,
-      "konec": "2026-11-10T20:15:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "koncert - Camerata cremsiriensis",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11858.jpg",
-      "perex": "Již tradiční seskupení hudebníků z řad studentů i pedagogů Konzervatoře P. J. Vejvanovského Kroměříž se vám představí v koncertu plném pestrých skladeb.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-10-06T08:07:21",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.konzkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-10T19:00:00",
       "zdarma": false
     },
     {
