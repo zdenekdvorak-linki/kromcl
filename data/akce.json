@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-11T06:18:59.076166+00:00",
+  "stazeno": "2026-11-11T21:57:36.723879+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -6558,6 +6558,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11992,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21895,
+      "konec": "2026-11-25T16:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Adventní prodej výrobků",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11992.jpg",
+      "perex": "Knihovna Kroměříž Výrobky klientů aktivizačních dílen můžete zakoupit ve dnech: pondělí 23.11. (9-16) - DOZP BARBORKA, DPS U KAŠNY úterý 24.11. (9-16) - DPS VÁŽANY, DPS U MORAVY středa 25.11. (9-16) - STD HANÁČEK, DZR STROM ŽIVOTA",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-11-11T15:25:18",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-11-23T09:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11890,
       "cena": 0,
       "cena_pozn": "",
@@ -6790,6 +6822,38 @@
       "web": "https://www.dk-kromeriz.cz/lecive-ucinky-sebeklamu",
       "youtube": "5XuKiMGhx7Q",
       "zacatek": "2026-11-25T15:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11978,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21881,
+      "konec": "2026-11-25T18:00:00",
+      "misto": "Riegrovo náměstí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Riegrovo náměstí"
+      },
+      "misto_gps": [
+        49.297151,
+        17.394264
+      ],
+      "misto_web": "",
+      "nazev": "Pěstounství/osvojení začínají otázkami",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11978.jpg",
+      "perex": "Beseda o přípravách zájemců o pěstounskou péči nebo osvojení",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-11T10:44:35",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-11-25T16:30:00",
       "zdarma": false
     },
     {
@@ -7296,6 +7360,35 @@
       "zdarma": false
     },
     {
+      "akce_id": 11979,
+      "cena": 259,
+      "cena_pozn": "Akce je v rámci vstupného do Dětského světa.",
+      "id": 21882,
+      "konec": "2026-11-29T17:00:00",
+      "misto": "Dětský svět Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velehradská 4080/111"
+      },
+      "misto_gps": [],
+      "misto_web": "https://www.detskysvetkromeriz.cz/",
+      "nazev": "První adventní neděle v Dětském světě",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11979.jpg",
+      "perex": "První adventní neděle bude plná barevných korálků a pohádek.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T10:44:22",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.detskysvetkromeriz.cz/akce/2026-11-29-prvni-adventni-nedele-",
+      "youtube": "",
+      "zacatek": "2026-11-29T13:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11960,
       "cena": 160,
       "cena_pozn": "děti: 140 Kč, 3D: 190 Kč, děti 3D: 160 Kč",
@@ -7742,6 +7835,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11981,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21884,
+      "konec": "2027-01-31T00:00:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Dialog",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11981.jpg",
+      "perex": "Společná výstava, jejichž dílo představuje uměleckou tvorba Miroslavy Rychtářové a Pavla Gregora, nese název DIALOG a návštěvníci ji mohou vidět od 3. prosince 2026 do konce ledna 2027 ve foyer Domu kultury v Kroměříži. Vernisáž je stanovena na čtvrtek 3. prosince v 17 hodin. Výstavu zahájí Romana Blažková.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-11T10:44:14",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/dialog",
+      "youtube": "",
+      "zacatek": "2026-12-03T17:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11955,
       "cena": 0,
       "cena_pozn": "",
@@ -7908,6 +8033,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11976,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21876,
+      "konec": "2026-12-05T16:00:00",
+      "misto": "Výstaviště Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "K Výstavišti 4069/8"
+      },
+      "misto_gps": [
+        49.284548,
+        17.392976
+      ],
+      "misto_web": "http://www.vystavistekromeriz.cz",
+      "nazev": "Vánoce na Výstavišti",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11976.jpg",
+      "perex": "Dva dny plné pohody a vánoční atmosféry na Výstavišti Kroměříž.",
+      "poznamka": "Pátek 4. 12. 2026 9:00 - 18:00 a sobota 5. 12. 2026 9:00 - 17:00",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-11-11T10:44:03",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.vystavistekromeriz.cz/akce/2026-12-04-vanoce-na-vystavisti",
+      "youtube": "",
+      "zacatek": "2026-12-04T09:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11965,
       "cena": 0,
       "cena_pozn": "",
@@ -7935,6 +8092,38 @@
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.sokolkromeriz.eu/adventni-odpoledne-2026/",
+      "youtube": "",
+      "zacatek": "2026-12-04T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 10047,
+      "cena": 400,
+      "cena_pozn": "Cena je za pár. Čas ukončení workshopu je pouze orientační.",
+      "id": 21880,
+      "konec": "2026-12-04T18:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Workshop pro páry: Vše, co potřebujete vědět k porodu a šestinedělí",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10047.jpg",
+      "perex": "Workshop vhodný pro nastávající rodiče na téma porod a šestinedělí - jasně, výstižně a prakticky.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-10-10T11:09:15",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz/vzdelani-pro-rodice/",
       "youtube": "",
       "zacatek": "2026-12-04T16:30:00",
       "zdarma": false
@@ -8034,6 +8223,96 @@
       "zdarma": false
     },
     {
+      "akce_id": 11977,
+      "cena": 259,
+      "cena_pozn": "Akce je v rámci vstupného do Dětského světa Kroměříž.",
+      "id": 21879,
+      "konec": "2026-12-05T17:00:00",
+      "misto": "Dětský svět Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velehradská 4080/111"
+      },
+      "misto_gps": [],
+      "misto_web": "https://www.detskysvetkromeriz.cz/",
+      "nazev": "Mikuláš v Dětském světě",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11977.jpg",
+      "perex": "I tento rok Dětský svět navštíví Mikuláš, anděl a čert",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T10:43:51",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.detskysvetkromeriz.cz/akce/2026-12-05-mikulas-v-detskem-svete-",
+      "youtube": "",
+      "zacatek": "2026-12-05T13:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11984,
+      "cena": 259,
+      "cena_pozn": "Akce je v rámci vstupného do Dětského světa.",
+      "id": 21887,
+      "konec": "2026-12-06T17:00:00",
+      "misto": "Dětský svět Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velehradská 4080/111"
+      },
+      "misto_gps": [],
+      "misto_web": "https://www.detskysvetkromeriz.cz/",
+      "nazev": "Druhá adventní neděle v Dětském světě",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11984.jpg",
+      "perex": "Druhá adventní neděle bude o tvoření dárků a psaní dopisů Ježíškovi",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T10:43:42",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.detskysvetkromeriz.cz/akce/2026-12-06-druha-adventni-nedele-",
+      "youtube": "",
+      "zacatek": "2026-12-06T13:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11990,
+      "cena": 150,
+      "cena_pozn": "Vstupné se platí na místě, v hotovosti nebo přes QR kód.",
+      "id": 21893,
+      "konec": "2026-12-06T17:00:00",
+      "misto": "Šipka - středisko volného času",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Úprkova 3268"
+      },
+      "misto_gps": [
+        49.294345,
+        17.399176
+      ],
+      "misto_web": "https://www.svcsipka.cz/",
+      "nazev": "Mikulášské odpoledne na Šipce",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11990.jpg",
+      "perex": "Mikulášské odpoledne na Šipce",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T14:37:43",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.svcsipka.cz/akce/491-mikulasske-odpoledne",
+      "youtube": "",
+      "zacatek": "2026-12-06T15:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 9549,
       "cena": 150,
       "cena_pozn": "",
@@ -8069,6 +8348,70 @@
       "web": "https://www.dk-kromeriz.cz/duna-cast-druha",
       "youtube": "a37vCJTAdJI",
       "zacatek": "2026-12-06T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11306,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21878,
+      "konec": "2026-12-07T11:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Mezigenerační sdílecí setkání aneb propojme světy",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11306.jpg",
+      "perex": "Setkání pro maminky, babičky i děti se společným sdílením i tvořením.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-11T08:09:40",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-07T09:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 9639,
+      "cena": 100,
+      "cena_pozn": "",
+      "id": 21877,
+      "konec": "2026-12-07T19:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Diskuzní skupina: Sdílecí ženský kruh",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/9639.jpg",
+      "perex": "Setkání vhodné pro každou ženu, která je ráda v přítomnosti ženské energie.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-07-05T16:27:07",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-07T16:30:00",
       "zdarma": false
     },
     {
@@ -8197,6 +8540,38 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-09T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11982,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21885,
+      "konec": "2027-02-28T00:00:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Momentky a momenty",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11982.jpg",
+      "perex": "Momentky a momenty – tak nazval svou aktuální výstavu Robert Rohál. Jeho fotografická tvorba je k vidění od 10. prosince 2026 do konce února 2027 v Pravé klubovně. Autor nebude tentokrát vystavuje černobílé a velkoformátové portréty známých tváří, ale v drtivé většině představí fotografie v barvě, které zachycující krásu či detaily jeho oblíbených míst. Vedle toho nechybějí ani momentky lidí, kteří neměli problém se vyfotit.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-11T10:43:33",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/momentky-a-momenty",
+      "youtube": "",
+      "zacatek": "2026-12-10T00:00:00",
       "zdarma": false
     },
     {
