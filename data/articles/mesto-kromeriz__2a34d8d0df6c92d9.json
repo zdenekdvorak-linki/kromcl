@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Zima právě dostala pořádný buff. Od pátku 27. listopadu si zase zajezdíš na mobilním kluzišti na Hanáckém náměstí. Led má být ready dřív, než na Velkém náměstí 29. listopadu rozsvítí strom a odstartují trhy Šťastné a veselé. Místostarostka Vladimíra Vondráčková to popsala tak, že brusle budou k trhům patřit stejně jako koncerty, jídlo a pití.",
+    "Otevírací doba je valid. Každý den se bruslí od 9 do 20 hodin. Na Štědrý den se zavírá už v 16 hodin. Na Silvestra jedeš do 18 hodin. Na Nový rok 2027 led otevře až ve 14 hodin, mood. Když počasí vydrží, kluziště pojede až do konce ledna 2027.",
+    "Peněženka to fr přežije. Děti do 6 let jezdí zadarmo. Mládež platí 30 Kč. Dospělí nechají u vstupu 60 Kč. Brusle si můžeš půjčit, ale za poplatek, a boty zamkneš do skříňky. Karel Holík vede příspěvkovku Sportovní zařízení města Kroměříže, která kluziště provozuje. Podle něj budou půjčovna i skříňky stejně jako v minulých letech. Město chystá i stánek s občerstvením.",
+    "Kluziště měří 13 × 28 metrů a město ho koupilo v roce 2020. Hned první zimu 2020/2021 ho ale kvůli covidu nemohlo pustit do provozu, to bylo L. Minulou zimu si vstupenku koupilo asi 7500 bruslařů. Rekord drží sezona 2024/2025, kdy díky přízni počasí dorazilo přes 12 tisíc lidí se zaplaceným vstupem. Město tím řeší, že na zimním stadionu je pro veřejnost málo hodin na bruslení. Tak kdy jdete s feláky na led?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.582,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-12T18:57:11.574168+00:00"
+  },
+  "headline": "Led je zpátky: kluziště na Hanáckém náměstí jede od 27. listopadu a to je W",
+  "id": "mesto-kromeriz:2a34d8d0df6c92d9",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-12T11:59:39+01:00",
+  "rewritten_at": "2026-11-12T18:57:11.574201+00:00",
+  "sensitivity": "volny",
+  "slug": "led-je-zpatky-kluziste-na-hanackem-namesti-jede-od-27-listopadu-a-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "sport",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "⛸️❄️",
+      "label": "Opening Day",
+      "text": "Bruslit na Hanáckém náměstí můžeš od pátku 27. listopadu, ještě před startem vánočních trhů."
+    },
+    {
+      "emoji": "💸🎟️",
+      "label": "Price Check",
+      "text": "Děti do 6 let mají vstup zdarma, mládež dá 30 Kč a dospělí 60 Kč."
+    },
+    {
+      "emoji": "🕘🧊",
+      "label": "Open Hours",
+      "text": "Kluziště jede denně od 9 do 20 hodin a při dobrém počasí vydrží do konce ledna 2027."
+    }
+  ]
+}
