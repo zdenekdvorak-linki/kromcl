@@ -4221,7 +4221,7 @@
       "web": "https://www.solace.cz/"
     }
   },
-  "stazeno": "2026-11-11T21:57:36.723879+00:00",
+  "stazeno": "2026-11-12T11:08:22.603621+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4662,266 +4662,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11869,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21738,
-      "konec": "2026-11-11T17:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Prodej vyřazených knih a časopisů",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11869.jpg",
-      "perex": "Prodej vyřazených knih pro děti i dospělé.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2026-10-07T07:13:54",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-09T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11892,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21775,
-      "konec": "2026-11-11T11:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "Slavnostní položení věnců u příležitosti Dne válečných veteránů",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11892.jpg",
-      "perex": "Slavnostní položení věnců u příležitosti Dne válečných veteránů",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-12T09:06:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-11T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11901,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21784,
-      "konec": "2026-11-11T18:00:00",
-      "misto": "Hanácké náměstí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Hanácké náměstí"
-      },
-      "misto_gps": [
-        49.293428,
-        17.389753
-      ],
-      "misto_web": "",
-      "nazev": "Svatomartinské hodování",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11901.jpg",
-      "perex": "Jarmark s kulturním doprovodným programem.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2026-10-13T08:11:14",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/svatomartinske-hodovani-2026",
-      "youtube": "",
-      "zacatek": "2026-11-11T10:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11873,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21820,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "stopaz": "asi 1 hodina a 47 minut"
-      },
-      "konec": "2026-11-11T19:17:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Kluci to vidí jinak než holky (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11873.jpg",
-      "perex": "Komedie Režie: David Ondříček Hrají: Jaroslav Plesl, Martha Issová, Václav Neužil, Denisa Barešová, Vojtěch Vodochodský, Anna Kameníková, Jan Nedbal",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-22T18:23:19",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/kluci-to-vidi-jinak-nez-holky",
-      "youtube": "MMUR9tcVn6U",
-      "zacatek": "2026-11-11T17:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11916,
-      "cena": 140,
-      "cena_pozn": "",
-      "id": 21799,
-      "konec": "2026-11-11T20:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "2. hokejová liga / HK Kroměříž – HC Kopřivnice",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11916.jpg",
-      "perex": "2. liga.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-19T07:36:21",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-11T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11903,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21786,
-      "konec": "2026-11-11T20:30:00",
-      "misto": "Arcibiskupské gymnázium v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Pilařova 3"
-      },
-      "misto_gps": [
-        49.299881,
-        17.391645
-      ],
-      "misto_web": "http://www.agkm.cz/",
-      "nazev": "Tizian, Kroměřížský Benátčan",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11903.jpg",
-      "perex": "Přednáška Ing. Tomáše Váni v rámci cyklu přednášek ČKA Přednášku uvádí a následující besedu moderuje Mgr. Štěpán Bekárek",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T06:58:41",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.krestanskaakademie.cz/",
-      "youtube": "",
-      "zacatek": "2026-11-11T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11932,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21821,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "puvodni_nazev": "Minotaure",
-        "stopaz": "asi 2 hodiny a 22 minut"
-      },
-      "konec": "2026-11-11T22:22:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Minotaur (FRA/LVA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11932.jpg",
-      "perex": "Drama / Thriller / Krimi Režie: Andrej Zvjagincev Hrají: Dmitrij Mazurov, Iris Lebeděva, Varvara Šmykova, Yuriy Zavalnyouk, Anatolij Bělyj, Artur Smoljaninov a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:31:49",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/minotaur",
-      "youtube": "L7ilzZ9GJ_o",
-      "zacatek": "2026-11-11T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11851,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21715,
-      "konec": "2026-11-11T23:00:00",
-      "misto": "Hvězdárna Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Braunerova 2397"
-      },
-      "misto_gps": [
-        49.2962,
-        17.419075
-      ],
-      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
-      "nazev": "Pravidelná pozorování hvězd",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
-      "perex": "Pravidelná pozorování podzim 2026",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-30T10:44:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-11T20:00:00",
       "zdarma": false
     },
     {
@@ -7835,6 +7575,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11997,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21900,
+      "konec": "2026-12-03T18:30:00",
+      "misto": "Muzeum Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí 38"
+      },
+      "misto_gps": [
+        49.299106,
+        17.392644
+      ],
+      "misto_web": "http://www.muzeum-km.cz/",
+      "nazev": "Aktuality z kroměřížských památek UNESCO",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11997.jpg",
+      "perex": "Přednáška z cyklu Zahradní kultura v souvislostech přiblíží aktuální dění v kroměřížských zahradách a zámku. Přednáškou provede Michaela Šojdrová, site manažerka památky světového dědictví UNESCO Zahrady a zámek v Kroměříži a členka Klubu UNESCO Kroměříž.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-12T11:46:14",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.muzeum-km.cz",
+      "youtube": "",
+      "zacatek": "2026-12-03T17:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11981,
       "cena": 0,
       "cena_pozn": "",
@@ -8668,6 +8440,95 @@
       "web": "https://www.dk-kromeriz.cz/den-kdy-unesli-papeze",
       "youtube": "",
       "zacatek": "2026-12-10T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11186,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 20772,
+      "konec": "2026-12-12T13:00:00",
+      "misto": "Hanácké náměstí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Hanácké náměstí"
+      },
+      "misto_gps": [
+        49.293428,
+        17.389753
+      ],
+      "misto_web": "",
+      "nazev": "Farmářské trhy",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11186.jpg",
+      "perex": "Farmářské trhy",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-03-16T07:18:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-12T09:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11940,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21830,
+      "konec": "2026-12-12T20:00:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Vánoční Ztracená ✨",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11940.jpg",
+      "perex": "Ztracená ulice pod rouškou Vánoc. Živá hudba, jazz, groove, piano, viola, saxofon i zpěv, jedinečné trhy, vůně svařáku a dobrého jídla. Přijďte se setkat a užít si jedinečni předvánoční čas.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-10-26T12:36:27",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-12T09:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11971,
+      "cena": 0,
+      "cena_pozn": "350 Kč za osobu",
+      "id": 21869,
+      "konec": "2026-12-12T16:00:00",
+      "misto": "Muzeum Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí 38"
+      },
+      "misto_gps": [
+        49.299106,
+        17.392644
+      ],
+      "misto_web": "http://www.muzeum-km.cz/",
+      "nazev": "Vánoční vlnění s Ivanou Langrovou",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11971.jpg",
+      "perex": "Vánoční dílna",
+      "poznamka": "Tvoření probíhá ve dvou blocích, a to od 10 do 12 a od 14 do 16 hodin.",
+      "pro_deti": true,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-09T15:25:30",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-12T10:00:00",
       "zdarma": false
     }
   ],
