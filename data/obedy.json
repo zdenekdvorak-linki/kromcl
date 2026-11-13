@@ -1,13 +1,13 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-12",
+      "den": "2026-11-13",
       "menu": {
         "jidla": [
           {
-            "alergeny": "7, 9",
-            "cena": 165,
-            "nazev": "Pomalu pečená krkovička (150 g), pepřová omáčka, batátové hranolky"
+            "alergeny": "1a, 9",
+            "cena": 175,
+            "nazev": "Filet lososa s pomerančovým pepřem (150 g), zeleninový kuskus"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -38,15 +38,15 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Rajská s rýží (1a, 7, 9)"
+            "nazev": "Hovězí vývar s masem, zeleninou a celestkýnskými nudlemi (1a, 3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-12T11:08:23+00:00"
+      "stazeno": "2026-11-13T07:57:51+00:00"
     },
     "earnest": {
-      "den": "2026-11-12",
+      "den": "2026-11-13",
       "menu": {
         "jidla": [
           {
@@ -92,28 +92,28 @@
         "polevky": [
           {
             "cena": 65,
-            "nazev": "Rajská s rýží (1a, 7, 9)"
+            "nazev": "Hovězí vývar s masem, zeleninou a nudlemi (1a, 3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-12T11:08:25+00:00"
+      "stazeno": "2026-11-13T07:57:53+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-12",
+      "den": "2026-11-13",
       "menu": {
         "jidla": [
           {
             "cena": 139,
-            "nazev": "Těstovinový salát s tuňákem a vejci, jogurtový dresink"
+            "nazev": "Špagety po uhlířsku s italskou pancettou a strouhaným sýrem"
           },
           {
             "cena": 149,
-            "nazev": "Pečené koleno, zelí, bramborový knedlík"
+            "nazev": "Smažený vepřový karbanátek, bramborový salát s majonézou"
           },
           {
             "cena": 159,
-            "nazev": "Kuřecí medailonky na oregánu, jasmínová rýže"
+            "nazev": "Vídeňský hovězí guláš, knedlík, restovaná cibulka"
           },
           {
             "cena": 199,
@@ -123,20 +123,20 @@
         "polevky": [
           {
             "cena": 20,
-            "nazev": "Květáková"
+            "nazev": "Česnekový krém"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-12T11:08:26+00:00"
+      "stazeno": "2026-11-13T07:57:54+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-12",
+      "den": "2026-11-13",
       "menu": {
         "jidla": [
           {
-            "cena": 170,
-            "nazev": "M1: Grilované kuřecí á la gyros 150g, zeleninový salát, řecké tzatziki, hranolky/ pita"
+            "cena": 175,
+            "nazev": "M1: Smažená kuřecí prsíčka 150g v bylinkové panco strouhance, máslová bramborová kaše, broskvový kompot/rajčatový salátek"
           },
           {
             "cena": 185,
@@ -158,22 +158,23 @@
         "polevky": [
           {
             "cena": 40,
-            "nazev": "Čočková s párkem"
+            "nazev": "Kulajda"
           }
         ],
         "poznamky": [
+          "Informace o alergenech žádejte u obsluhy.",
           "HUSÍ HODY 6.-11.11.2026",
           "otevřeno i v neděli 12-17 hod."
         ]
       },
-      "stazeno": "2026-11-12T11:08:27+00:00"
+      "stazeno": "2026-11-13T07:57:55+00:00"
     },
     "sladovna": {
-      "den": "2026-11-12",
+      "den": "2026-11-13",
       "menu": {},
       "otisk": "dc215d86164f7f6c",
       "otisk_od": "2026-11-10",
-      "stazeno": "2026-11-12T11:08:28+00:00"
+      "stazeno": "2026-11-13T07:57:56+00:00"
     }
   }
 }
