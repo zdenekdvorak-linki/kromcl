@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tohle je lowkey green flag. Vedení kroměřížské radnice drží pravidelné hodiny pro veřejnost i v novém volebním období. Každou první středu v měsíci mezi 15:00 a 17:00 můžeš přijít za starostou, místostarosty nebo uvolněným radním. Řešit s nimi smíš cokoliv, co se týká města.",
+    "Startuje se 2. prosince 2026. Další termín připadá na 6. ledna 2027. Postup je basic: dorazíš na sekretariát a odtamtud tě odvedou za někým z vedení. Vedení má celkem pět lidí. V tu středeční dvouhodinovku tam najdeš aspoň dva z nich.",
+    "Starosta Tomáš Opatrný k tomu vzkázal, že radnice má pro lidi dveře otevřené a komunikace s veřejností patří mezi priority vedení. Připomněl, že v minulém období pomáhali lidem s problémy, které město dokáže řešit, a sbírali nápady, jak v Kroměříži líp žít. V tom chtějí pokračovat.",
+    "BTW, když ti středa nesedí, schůzku s někým z vedení si můžeš domluvit i individuálně, podle toho, co zrovna potřebuješ. Takže až tě něco ve městě vytočí, nemusíš hned crashnout out. Stačí počkat na první středu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.538,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-13T16:23:52.061068+00:00"
+  },
+  "headline": "Side quest na první středu v měsíci: zajdi si pokecat s vedením města",
+  "id": "mesto-kromeriz:614bb029dfec216b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-13T11:59:01+01:00",
+  "rewritten_at": "2026-11-13T16:23:52.061096+00:00",
+  "sensitivity": "volny",
+  "slug": "side-quest-na-prvni-stredu-v-mesici-zajdi-si-pokecat-s-vedenim-mesta",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🗓️🏛️",
+      "label": "When Where",
+      "text": "Každou první středu v měsíci mezi 15:00 a 17:00 tě na radnici přijme někdo z vedení Kroměříže."
+    },
+    {
+      "emoji": "📅",
+      "label": "First Dates",
+      "text": "Poprvé to jede 2. prosince 2026, pak znovu 6. ledna 2027."
+    },
+    {
+      "emoji": "👥",
+      "label": "Squad Check",
+      "text": "Z pětičlenného vedení tam vždycky sedí minimálně dva lidi."
+    }
+  ]
+}

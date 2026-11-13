@@ -4219,9 +4219,19 @@
       ],
       "nazev": "SOLACE – jurta Lutopecny",
       "web": "https://www.solace.cz/"
+    },
+    "346": {
+      "adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Riegrovo náměstí 142"
+      },
+      "gps": [],
+      "nazev": "Komunitní centrum Arkáda",
+      "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-13T00:23:36.569904+00:00",
+  "stazeno": "2026-11-13T16:23:16.136971+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -5283,6 +5293,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 11919,
+      "cena": 60,
+      "cena_pozn": "",
+      "id": 21802,
+      "konec": "2026-11-17T18:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "Hokejová Krajská liga mužů / HK Kroměříž \"B\" – HC Lvi Fosfa Břeclav",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11919.jpg",
+      "perex": "Krajský přebor v hokeji.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-10-19T07:36:03",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-11-17T16:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11881,
       "cena": 150,
       "cena_pozn": "",
@@ -5350,38 +5392,6 @@
       "web": "https://www.dk-kromeriz.cz/hunger-games-utery",
       "youtube": "",
       "zacatek": "2026-11-17T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11919,
-      "cena": 60,
-      "cena_pozn": "",
-      "id": 21802,
-      "konec": "2026-11-17T19:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "Hokejová Krajská liga mužů / HK Kroměříž \"B\" – HC Lvi Fosfa Břeclav",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11919.jpg",
-      "perex": "Krajský přebor v hokeji.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-19T07:36:03",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-17T17:00:00",
       "zdarma": false
     },
     {
@@ -7104,23 +7114,30 @@
       "zdarma": false
     },
     {
-      "akce_id": 12011,
+      "akce_id": 12012,
       "cena": 0,
       "cena_pozn": "",
-      "id": 21914,
+      "id": 21915,
       "konec": "2027-01-31T00:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
       "nazev": "Kroměříž. Stavební a architektonický vývoj města od 13. do poloviny 17. století",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12011.jpg",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12012.jpg",
       "perex": "Výstava, která byla na konci září zahájena ve foyer kroměřížské radnice, bude nyní přístupná návštěvníkům Knihovny Kroměřížska. Přibližuje podobu města ve středověku a raném novověku, tedy v období před jeho zásadními barokními proměnami.",
       "poznamka": "",
       "pro_deti": true,
       "typ": "Muzea, výstavy, galerie",
       "typ_id": 9,
-      "upraveno": "2026-11-12T17:55:23",
+      "upraveno": "2026-11-13T07:55:00",
       "vicedenni": true,
       "vstupenky": "",
       "web": "https://www.knihkm.cz/",
@@ -7452,7 +7469,7 @@
       "pro_deti": false,
       "typ": "Přednášky a besedy",
       "typ_id": 12,
-      "upraveno": "2026-11-12T11:46:14",
+      "upraveno": "2026-11-13T15:28:11",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.muzeum-km.cz",
@@ -8009,6 +8026,43 @@
       "zdarma": false
     },
     {
+      "akce_id": 11828,
+      "cena": 80,
+      "cena_pozn": "",
+      "id": 21918,
+      "kino": {
+        "format": "česky | 2D",
+        "pristupnost": "přístupné bez omezení",
+        "stopaz": "asi 1 hodina a 37 minut"
+      },
+      "konec": "2026-12-07T17:37:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Bára Basiková (CZE 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11828.jpg",
+      "perex": "Dokumentární Režie: Helena Třeštíková Hrají: Bára Basiková",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-13T16:52:00",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/bara-basikova",
+      "youtube": "Luz5RQJk4_8",
+      "zacatek": "2026-12-07T16:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 9639,
       "cena": 100,
       "cena_pozn": "",
@@ -8134,6 +8188,38 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-09T10:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12014,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21917,
+      "konec": "2026-12-09T18:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Představení publikace Kroměříž. Stavební a architektonický vývoj města od 13. do poloviny 17. století",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12014.jpg",
+      "perex": "Představení odborné publikace věnované stavebnímu a urbanistickému vývoji města. Publikace přibližuje proměny Kroměříže i jejích významných staveb na základě historických pramenů, stavebněhistorického a archeologického poznání.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-13T07:29:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.npu.cz/cs/uop-kromeriz",
+      "youtube": "",
+      "zacatek": "2026-12-09T16:30:00",
       "zdarma": false
     },
     {
@@ -8409,7 +8495,7 @@
       "pro_deti": true,
       "typ": "Divadlo",
       "typ_id": 8,
-      "upraveno": "2026-11-12T13:56:07",
+      "upraveno": "2026-11-13T16:56:00",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.dk-kromeriz.cz/vanoce-v-nasi-chaloupce",
@@ -8501,6 +8587,43 @@
       "web": "https://www.dk-kromeriz.cz/katerina-marie-ticha",
       "youtube": "",
       "zacatek": "2026-12-13T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11830,
+      "cena": 140,
+      "cena_pozn": "",
+      "id": 21919,
+      "kino": {
+        "format": "česky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 1 hodina a 50 minut"
+      },
+      "konec": "2026-12-13T21:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Kdyby se holubi proměnili ve zlato (CZE/SVK 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11830.jpg",
+      "perex": "Dokumentární Režie: Pepa Lubojacki Hrají: Pepa Lubojacki, David Richter, Marco Arnone",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-13T16:52:23",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/kdyby-se-holubi-promenili-ve-zlato",
+      "youtube": "BIBOQeTVRmE",
+      "zacatek": "2026-12-13T20:00:00",
       "zdarma": false
     }
   ],

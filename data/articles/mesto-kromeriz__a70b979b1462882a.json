@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Cihelna ve Vážanech je zase na stole a radnice ze svých požadavků nepouští ani kousek, period. Firma Biotrend Morava chce dál navážet materiál do bývalé hliněné jámy a rada města k tomu znovu poslala výhrady. Teď je řeší úředníci městského úřadu, protože jde o zásah do krajinného rázu a významných krajinných prvků. O povolení celé věci rozhodne Krajský úřad Zlínského kraje. Místostarosta Pavel Motyčka vysvětlil, že firma v žádosti pořád nemá vyřešené některé otázky.",
+    "Rozsah je spíš main quest než drobnost. Do jámy má putovat zhruba 620 tisíc kubíků hlíny, kamení, hlušiny a cihel. Navážet se má 6 let. Za rok tam podle plánu skončí nejvýš 440 tisíc tun odpadu. Projekt počítá s denní kapacitou 1760 tun. Firma se má zbavit i důlní vody, která ohrožuje stabilitu staré skládky Zachar vedle cihelny. Na konci má z díry vyrůst park s jezírkem.",
+    "Radnice chce, aby celá akce byla bezpečná, šetrná k přírodě a šla zkontrolovat. Než firma zlikviduje současné jezírko, má podle města vzniknout náhradní tůň. Důlní voda má odtékat do potoka Zacharka, takže město chce chránit kvalitu vody v něm a jasná pravidla pro vypouštění, která půjdou ověřit. Ze seznamu materiálů pak radnice škrtá cihly. Navážet cihly zpátky do cihelny zní dost Ohio a radnice to prostě nebere.",
+    "Starší požadavky platí dál a jsou docela valid. Město chce předem určit, kudy budou náklaďáky jezdit a kolikrát denně nejvýš projedou. Navážený materiál se má vzorkovat podle jasných pravidel a kontrola má být průhledná, klidně tak, že si město samo nečekaně checkne náklad. Proti prachu radnice žádá opatření včetně zpevněných ploch, po kterých se bude v areálu jezdit. Park s jezírkem zní jako budoucí crush, jen se k němu musí dojet přes 6 let náklaďáků."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.497,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-13T16:24:42.074423+00:00"
+  },
+  "headline": "Cihly zpátky do cihelny? Radnice to nebere a svoje podmínky pro Vážany drží",
+  "id": "mesto-kromeriz:a70b979b1462882a",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-13T11:24:31+01:00",
+  "rewritten_at": "2026-11-13T16:24:42.074459+00:00",
+  "sensitivity": "volny",
+  "slug": "cihly-zpatky-do-cihelny-radnice-to-nebere-a-svoje-podminky-pro-vazany-drzi",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "příroda",
+    "radnice",
+    "stavba"
+  ],
+  "tldr": [
+    {
+      "emoji": "🧱",
+      "label": "What's Up",
+      "text": "Radnice nepouští svoje požadavky k dalšímu zavážení bývalé vážanské cihelny firmou Biotrend Morava."
+    },
+    {
+      "emoji": "🚛",
+      "label": "Big Numbers",
+      "text": "Firma chce do jámy během šesti let navézt zhruba 620 tisíc kubíků materiálu."
+    },
+    {
+      "emoji": "🌊",
+      "label": "City Says",
+      "text": "Město odmítá navážení cihel a chce mít pod kontrolou vodu v Zacharce, prach i trasy náklaďáků."
+    }
+  ]
+}

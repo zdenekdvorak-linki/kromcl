@@ -5,6 +5,11 @@
     "puvodni_nazev": "National Theatre Live: The Audience",
     "stopaz": "asi 2 hodiny a 28 minut"
   },
+  "https://www.dk-kromeriz.cz/bara-basikova": {
+    "format": "česky | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "stopaz": "asi 1 hodina a 37 minut"
+  },
   "https://www.dk-kromeriz.cz/call": {
     "format": "česky | 2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
@@ -138,6 +143,11 @@
     "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
     "puvodni_nazev": "How to Rob a Bank",
     "stopaz": "asi 2 hodiny a 3 minuty"
+  },
+  "https://www.dk-kromeriz.cz/kdyby-se-holubi-promenili-ve-zlato": {
+    "format": "česky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "stopaz": "asi 1 hodina a 50 minut"
   },
   "https://www.dk-kromeriz.cz/kluci-to-vidi-jinak-nez-holky": {
     "format": "česky | 2D",
