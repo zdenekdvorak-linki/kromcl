@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-13T16:23:16.136971+00:00",
+  "stazeno": "2026-11-14T10:33:30.279322+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4672,80 +4672,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11934,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21824,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "stopaz": "asi 1 hodina a 54 minut"
-      },
-      "konec": "2026-11-13T19:24:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "George Michael: The Faith Tour (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11934.jpg",
-      "perex": "Hudební / Dokumentární Režie: David Austin, Andrew Morahan Hrají: George Michael",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:31:39",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/george-michael-the-faith-tour",
-      "youtube": "pc5wx41A9Yo",
-      "zacatek": "2026-11-13T17:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11935,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21825,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "stopaz": "asi 1 hodina a 38 minut"
-      },
-      "konec": "2026-11-13T21:38:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Dřevorubec (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11935.jpg",
-      "perex": "Romantický / Komedie Režie: Petr Zahrádka Hrají: Pavla Gajdošíková, Adam Vacula, Marek Lambora, Martin Pechlát, Michaela Petřeková a další",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:31:30",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/drevorubec",
-      "youtube": "WxpNcBp73Rs",
-      "zacatek": "2026-11-13T20:00:00",
       "zdarma": false
     },
     {
@@ -8624,6 +8550,75 @@
       "web": "https://www.dk-kromeriz.cz/kdyby-se-holubi-promenili-ve-zlato",
       "youtube": "BIBOQeTVRmE",
       "zacatek": "2026-12-13T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11873,
+      "cena": 80,
+      "cena_pozn": "",
+      "id": 21920,
+      "kino": {
+        "format": "česky | 2D",
+        "pristupnost": "přístupné bez omezení",
+        "stopaz": "asi 1 hodina a 47 minut"
+      },
+      "konec": "2026-12-14T17:47:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Kluci to vidí jinak než holky (CZE 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11873.jpg",
+      "perex": "Komedie Režie: David Ondříček Hrají: Jaroslav Plesl, Martha Issová, Václav Neužil, Denisa Barešová, Vojtěch Vodochodský, Anna Kameníková, Jan Nedbal",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-13T16:52:50",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/kluci-to-vidi-jinak-nez-holky",
+      "youtube": "MMUR9tcVn6U",
+      "zacatek": "2026-12-14T16:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11980,
+      "cena": 100,
+      "cena_pozn": "",
+      "id": 21883,
+      "konec": "2026-12-14T18:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Beseda: Obdaruj své dítě",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11980.jpg",
+      "perex": "Seberozvojová beseda pro rodiče nabízející informace, tipy a povzbuzení do každodennosti s dětmi.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-11T10:43:02",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-14T16:30:00",
       "zdarma": false
     }
   ],
