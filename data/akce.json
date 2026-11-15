@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-14T10:33:30.279322+00:00",
+  "stazeno": "2026-11-15T01:55:48.710561+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4675,38 +4675,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11973,
-      "cena": 250,
-      "cena_pozn": "",
-      "id": 21873,
-      "konec": "2026-11-14T00:00:00",
-      "misto": "Stará masna",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Hulínská 2352"
-      },
-      "misto_gps": [
-        49.307275,
-        17.406919
-      ],
-      "misto_web": "https://www.stara-masna.cz/",
-      "nazev": "Iron Maiden Moravia tribute",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11973.jpg",
-      "perex": "Koncert tribute kapely Iron Maiden",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-10T11:06:15",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.stara-masna.cz",
-      "youtube": "",
-      "zacatek": "2026-11-13T20:30:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11857,
       "cena": 380,
       "cena_pozn": "vstupenka s místenkou 380,- Kč Vstupenky: TS Nemocnice KM (ÚT,ST) 7-8:30 hod. Hana Jelínková tel.: 603 582 576 Eva Rubintová tel.: 604 170 586 na místě po domluvě na tel.: 603 582 576",
@@ -4736,76 +4704,6 @@
       "web": "https://www.kdkk.cz",
       "youtube": "",
       "zacatek": "2026-11-14T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11909,
-      "cena": 0,
-      "cena_pozn": "Vstupné dobrovolné",
-      "id": 21792,
-      "konec": "2026-11-14T10:30:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Setkání s biotronikou",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11909.jpg",
-      "perex": "Osud, poznání, cesta života, životní filosofie, zdraví, tajemno, záhady...",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-23T10:48:25",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dub.cz",
-      "youtube": "lzY2qZpVB3w",
-      "zacatek": "2026-11-14T09:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11933,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21823,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Ebenezer",
-        "stopaz": "asi 1 hodina a 57 minut"
-      },
-      "konec": "2026-11-14T18:57:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Ebenezer: Vánoční koleda (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11933.jpg",
-      "perex": "Fantasy / Drama / Komedie Režie: Ti West Hrají: Johnny Depp, Andrea Riseborough, Sam Claflin, Daisy Ridley, Ian McKellen a další",
-      "poznamka": "dabing",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:30:42",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda",
-      "youtube": "4W_pfj-NYoA",
-      "zacatek": "2026-11-14T17:00:00",
       "zdarma": false
     },
     {
@@ -4869,44 +4767,6 @@
       "vstupenky": "",
       "web": "https://www.stara-masna.cz",
       "youtube": "",
-      "zacatek": "2026-11-14T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11936,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21826,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "How to Rob a Bank",
-        "stopaz": "asi 2 hodiny a 3 minuty"
-      },
-      "konec": "2026-11-14T22:03:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Jak udělat banku (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11936.jpg",
-      "perex": "Akční / Krimi / Thriller / Komedie Režie: David Leitch Hrají: Nicholas Hoult, Pete Davidson, Zoë Kravitz, Anna Sawai, Rhenzy Feliz, Christian Slater, John C. Reilly a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:30:23",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/jak-udelat-banku",
-      "youtube": "DJaMrvsIFDc",
       "zacatek": "2026-11-14T20:00:00",
       "zdarma": false
     },
@@ -8619,6 +8479,38 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-12-14T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11986,
+      "cena": 100,
+      "cena_pozn": "",
+      "id": 21889,
+      "konec": "2026-12-15T11:30:00",
+      "misto": "Klubíčko Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Albertova 4062"
+      },
+      "misto_gps": [
+        49.290614,
+        17.385099
+      ],
+      "misto_web": "http://www.klubickokm.cz/",
+      "nazev": "Beseda: Manželství a vše kolem něj",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11986.jpg",
+      "perex": "Beseda pro ženy, které rády sdílí a mají chuť pracovat na sobě a svých vztazích.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Přednášky a besedy",
+      "typ_id": 12,
+      "upraveno": "2026-11-11T10:42:48",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.klubickokm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-15T09:30:00",
       "zdarma": false
     }
   ],
