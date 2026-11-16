@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Kdo jezdí do práce mimo Kroměříž, lowkey teď dostal dárek. Od neděle 13. prosince platí nový jízdní řád městských busů a šestka nově vyráží od vlakového nádraží ve 4:23. Na nádraží se otočí ve 4:49, takže stihneš krajský bus do Zlína, Koryčan, Vyškova nebo Bystřice pod Hostýnem. Místostarosta Jan Hebnar, který je zároveň jednatelem Kroměřížských technických služeb, ty MHD ve městě provozují, vysvětlil, že si o spoj řekli sami pravidelní dojížděči. Prý se snažili lidem vyhovět všude, kde to šlo.",
+    "Kdo by se bál škrtů, může chillovat. Žádný současný spoj nekončí. Většina dalších úprav jsou jen drobné posuny časů. Vedoucí provozu MHD Jaroslav Černý to zdůvodnil tím, že se měnily jízdní řády vlaků a busy musely srovnat své příjezdy a odjezdy podle nich. Smyslem je, abys přestoupil v pohodě a nečekal na zastávce zbytečně dlouho. Takový patch podle železnice.",
+    "Večery taky dostaly upgrade. Šestka v 18:45 nově projede i zastávkami Kazimíra Rudého a Lutopecká. Víkendový spoj v 18:25 dosud jezdil jen v neděli a končil u Květné zahrady, což byl spíš side quest. Teď pojede v sobotu i v neděli a odjede celý main quest šestky: zastaví na všech základních zastávkách a naváže na vlaky.",
+    "Papírový jízdní řád do kapsy je trochu unc, ale kdo ho chce, sežene ho začátkem prosince v kanceláři MHD hned u východu z vlakového nádraží. Budík na čtvrtou ti ale nikdo nenastaví, bruh."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.545,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-16T09:44:00.572605+00:00"
+  },
+  "headline": "Šestka dostala buff: první bus už ve 4:23 a víkendový večer po celé trase",
+  "id": "mesto-kromeriz:b09f273fb8bd59dc",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-16T09:29:04+01:00",
+  "rewritten_at": "2026-11-16T09:44:00.572631+00:00",
+  "sensitivity": "volny",
+  "slug": "sestka-dostala-buff-prvni-bus-uz-ve-423-a-vikendovy-vecer-po-cele-trase",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava"
+  ],
+  "tldr": [
+    {
+      "emoji": "🌅🚌",
+      "label": "Early Bird",
+      "text": "Od neděle 13. prosince vyráží linka 6 od vlakového nádraží už ve 4:23 a zpátky tam je ve 4:49, akorát na krajské busy."
+    },
+    {
+      "emoji": "🚆⏱️",
+      "label": "Nothing Cancelled",
+      "text": "Žádný současný spoj nekončí, většina úprav jsou jen drobné posuny časů kvůli vlakům."
+    },
+    {
+      "emoji": "🌙✨",
+      "label": "Weekend Patch",
+      "text": "Večerní šestka v 18:25 nově jezdí v sobotu i v neděli a projede celou trasu."
+    }
+  ]
+}

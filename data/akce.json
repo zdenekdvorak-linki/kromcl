@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-15T17:10:41.242535+00:00",
+  "stazeno": "2026-11-16T09:43:15.485052+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4672,242 +4672,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11857,
-      "cena": 380,
-      "cena_pozn": "vstupenka s místenkou 380,- Kč Vstupenky: TS Nemocnice KM (ÚT,ST) 7-8:30 hod. Hana Jelínková tel.: 603 582 576 Eva Rubintová tel.: 604 170 586 na místě po domluvě na tel.: 603 582 576",
-      "id": 21726,
-      "konec": "2026-11-15T02:00:00",
-      "misto": "Psychiatrická nemocnice v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Havlíčkova 1265/50"
-      },
-      "misto_gps": [
-        49.29361,
-        17.378964
-      ],
-      "misto_web": "http://www.plkm.cz/",
-      "nazev": "1. Martinská karnevalová noc",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11857.jpg",
-      "perex": "Diskotéka pro širokou veřejnost. Výtěžek ze vstupného poputuje na propagaci náboru nových dárců krve a plazmy.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-10-01T13:29:46",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.kdkk.cz",
-      "youtube": "",
-      "zacatek": "2026-11-14T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11952,
-      "cena": 390,
-      "cena_pozn": "předprodej na SMSticket",
-      "id": 21847,
-      "konec": "2026-11-15T00:30:00",
-      "misto": "Stará masna",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Hulínská 2352"
-      },
-      "misto_gps": [
-        49.307275,
-        17.406919
-      ],
-      "misto_web": "https://www.stara-masna.cz/",
-      "nazev": "INSANIA + Happiness In Slavery (NEO-NOE TOUR)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11952.jpg",
-      "perex": "Brněnská INSANIA, kultovní kapela tuzemské tvrdé alternativní scény, přiváží do Staré masny turné k novému albu NEO-NOE. Jako host zahraje Happiness In Slavery.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-05T10:59:19",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.insania.cz",
-      "youtube": "",
-      "zacatek": "2026-11-14T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11974,
-      "cena": 350,
-      "cena_pozn": "",
-      "id": 21874,
-      "konec": "2026-11-15T00:00:00",
-      "misto": "Stará masna",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Hulínská 2352"
-      },
-      "misto_gps": [
-        49.307275,
-        17.406919
-      ],
-      "misto_web": "https://www.stara-masna.cz/",
-      "nazev": "Insania & Happines in Slavery",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11974.jpg",
-      "perex": "Koncert dvou kultovních kapel",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-10T11:05:39",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.stara-masna.cz",
-      "youtube": "",
-      "zacatek": "2026-11-14T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 10985,
-      "cena": 70,
-      "cena_pozn": "Děti do 150 cm, držitelé ZTP a ZTP/P ZDARMA",
-      "id": 20476,
-      "konec": "2026-11-15T10:00:00",
-      "misto": "Výstaviště Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "K Výstavišti 4069/8"
-      },
-      "misto_gps": [
-        49.284548,
-        17.392976
-      ],
-      "misto_web": "http://www.vystavistekromeriz.cz",
-      "nazev": "Chovatelské trhy - listopad",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10985.jpg",
-      "perex": "Pravidelné chovatelské trhy - každou třetí neděli v měsíci",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2025-11-13T13:07:57",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.vystavistekromeriz.cz/akce/2026-11-15-chovatelske-trhy---listopad",
-      "youtube": "",
-      "zacatek": "2026-11-15T06:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11900,
-      "cena": 290,
-      "cena_pozn": "děti: 240 Kč, zahájení předprodeje 14. 10. 2026",
-      "id": 21783,
-      "konec": "2026-11-15T17:20:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Sněhová královna",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11900.jpg",
-      "perex": "Novinka Těšínského divadla. Výpravné, jedinečné představení. To nejlepší z české scény.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-10-13T06:53:21",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/snehova-kralovna",
-      "youtube": "",
-      "zacatek": "2026-11-15T15:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11929,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21817,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "puvodni_nazev": "Wild Horse Nine",
-        "stopaz": "asi 1 hodina a 58 minut"
-      },
-      "konec": "2026-11-15T19:28:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Divoký kůň Devítka (USA/UK 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11929.jpg",
-      "perex": "Komedie / Thriller / Drama Režie: Martin McDonagh Hrají: Sam Rockwell, John Malkovich, Steve Buscemi, Parker Posey a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:30:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/divoky-kun-devitka",
-      "youtube": "JZYV30y2uHk",
-      "zacatek": "2026-11-15T17:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11937,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21827,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "puvodni_nazev": "Victorian Psycho",
-        "stopaz": "asi 1 hodina a 35 minut"
-      },
-      "konec": "2026-11-15T21:35:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Viktoriánské psycho (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11937.jpg",
-      "perex": "Komedie / Horor / Thriller Režie: Zachary Wigon Hrají: Maika Monroe, Thomasin McKenzie, Jason Isaacs, Ruth Wilson, Evie Templeton a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-23T06:29:51",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/viktorianske-psycho",
-      "youtube": "fiaRRZRKoLo",
-      "zacatek": "2026-11-15T20:00:00",
       "zdarma": false
     },
     {
@@ -8511,6 +8275,70 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-12-15T09:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11993,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21896,
+      "konec": "2026-12-16T17:00:00",
+      "misto": "Velké náměstí - Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velké náměstí"
+      },
+      "misto_gps": [
+        49.298815,
+        17.393019
+      ],
+      "misto_web": "",
+      "nazev": "Tradiční vánoční polévka",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11993.jpg",
+      "perex": "Tradiční vánoční polévka 16.12.2026 11:00-17:00 pod vánočním stromem, Velké náměstí polévka je vydávána zdarma",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2026-11-11T15:27:40",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-16T11:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11851,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21720,
+      "konec": "2026-12-16T23:00:00",
+      "misto": "Hvězdárna Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Braunerova 2397"
+      },
+      "misto_gps": [
+        49.2962,
+        17.419075
+      ],
+      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
+      "nazev": "Pravidelná pozorování hvězd",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
+      "perex": "Pravidelná pozorování podzim 2026",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-09-30T10:44:50",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-16T20:00:00",
       "zdarma": false
     }
   ],
