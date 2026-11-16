@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tuhle brigádu si fr můžeš vzít i ty. Radnice hledá pro program Stravenka koordinátory na dohodu o provedení práce. Koordinátor vyráží v pracovní dny ráno s lidmi z programu do ulic sbírat odpadky a zabere mu to asi hodinu. Přidat se může každý od 18 let, klidně i senioři nebo invalidní důchodci. Chodit denně nemusíš. Stačí se domluvit třeba na jeden nebo dva dny v týdnu a koordinátoři se mezi sebou vystřídají.",
+    "Stravenka v Kroměříži jede od ledna 2025. Lidi bez domova nebo ti, kdo jsou na tom finančně hodně špatně, uklízejí město a za odměnu dostávají jídlo. Zapojilo se jich už několik desítek. Město jim dá balené chlazené jídlo a náramek s datem. S ním si ten den vyzvednou ještě něco malého k jídlu u řádových sester na Malém valu nebo v Koperníkově ulici. Celé je to postavené jako achievement: práce odemkne oběd.",
+    "Veřejná sbírka, kterou vyhlásil Český červený kříž, pořád běží. Město z ní koupí teplé oblečení pro ty, kdo uklízejí pravidelně. Takových je zhruba 20 a do ulic chodí každý den. Místostarosta Pavel Motyčka to vysvětlil tím, že město chce ocenit jejich pracovní morálku, pravidelnost a snahu žít jinak než doteď. Právě o to v projektu podle něj jde. Na zimu je to legit dobrý tah.",
+    "Radovan Klabal, vedoucí odboru sociálních věcí a zdravotnictví na radnici, k tomu dodal, že peníze rozdané přímo na ulici obvykle skončí za alkohol nebo jiné návykové látky. Příspěvek do sbírky proto považuje za smysluplnější cestu, jak pomoct. Uklizené ulice a teplá bunda pro toho, kdo je uklízí. Tohle je green flag."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.599,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-16T20:30:11.186154+00:00"
+  },
+  "headline": "Stravenka shání parťáky na ranní úklid a ze sbírky bude teplé oblečení, to je W",
+  "id": "mesto-kromeriz:31c28fde20ec51d8",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-16T09:52:06+01:00",
+  "rewritten_at": "2026-11-16T20:30:11.186183+00:00",
+  "sensitivity": "volny",
+  "slug": "stravenka-shani-partaky-na-ranni-uklid-a-ze-sbirky-bude-teple-obleceni-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🧹",
+      "label": "Morning Shift",
+      "text": "Radnice hledá koordinátory od 18 let na zhruba hodinu ranního úklidu ve dny, které si domluvíš."
+    },
+    {
+      "emoji": "🧤",
+      "label": "Warm Drop",
+      "text": "Peníze z veřejné sbírky půjdou na teplé oblečení pro zhruba 20 lidí, kteří uklízejí každý den."
+    },
+    {
+      "emoji": "🍱",
+      "label": "Food Deal",
+      "text": "Účastníci Stravenky dostávají za úklid jídlo od města a od řádových sester."
+    }
+  ]
+}
