@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-16T09:43:15.485052+00:00",
+  "stazeno": "2026-11-17T03:53:19.812482+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4675,76 +4675,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11879,
-      "cena": 150,
-      "cena_pozn": "",
-      "id": 21755,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games",
-        "stopaz": "asi 2 hodiny a 17 minut"
-      },
-      "konec": "2026-11-16T19:17:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games (USA 2012)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11879.jpg",
-      "perex": "Akční / Dobrodružný / Sci-Fi / Thriller Režie: Gary Ross Hrají: Jennifer Lawrence, Josh Hutcherson, Elizabeth Banks, Liam Hemsworth, Willow Shields a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:37:52",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games",
-      "youtube": "",
-      "zacatek": "2026-11-16T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11876,
-      "cena": 250,
-      "cena_pozn": "",
-      "id": 21752,
-      "konec": "2026-11-16T22:30:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games - pondělí",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11876.jpg",
-      "perex": "Kompletní znovuuvedení série Hunger Games včetně prequelu těsně před uvedením nového dílu s podtitulem \"Úsvit sklizně\".",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:37:36",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-pondeli",
-      "youtube": "",
-      "zacatek": "2026-11-16T17:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11878,
       "cena": 500,
       "cena_pozn": "",
@@ -4777,44 +4707,6 @@
       "web": "https://www.dk-kromeriz.cz/hunger-games-maraton",
       "youtube": "",
       "zacatek": "2026-11-16T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11880,
-      "cena": 150,
-      "cena_pozn": "",
-      "id": 21756,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Catching Fire",
-        "stopaz": "asi 2 hodiny a 26 minut"
-      },
-      "konec": "2026-11-16T22:26:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Vražedná pomsta (USA 2013)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11880.jpg",
-      "perex": "Akční / Dobrodružný / Mysteriózní / Sci-Fi / Thriller Režie: Francis Lawrence Hrají: Jennifer Lawrence, Josh Hutcherson, Donald Sutherland, Woody Harrelson, Philip Seymour Hoffman a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:11",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-vrazedna-pomsta",
-      "youtube": "",
-      "zacatek": "2026-11-16T20:00:00",
       "zdarma": false
     },
     {
@@ -8339,6 +8231,38 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-16T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11983,
+      "cena": 490,
+      "cena_pozn": "",
+      "id": 21886,
+      "konec": "2026-12-17T20:15:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Limonádový Joe",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11983.jpg",
+      "perex": "Náhradní termín představení z 14. 5. 2026.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Divadlo",
+      "typ_id": 8,
+      "upraveno": "2026-11-11T10:42:00",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/limonadovy-joe-1",
+      "youtube": "",
+      "zacatek": "2026-12-17T18:00:00",
       "zdarma": false
     }
   ],
