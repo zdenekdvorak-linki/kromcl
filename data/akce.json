@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-17T22:23:44.356462+00:00",
+  "stazeno": "2026-11-18T13:57:53.746111+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4710,171 +4710,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11942,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21832,
-      "konec": "2026-11-17T02:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "Magion House – PHUNXX_J",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11942.jpg",
-      "perex": "Večer elektronické taneční hudby v Tvenis Baru. Hraje PHUNXX_J z Frýdku-Místku, doplní ho kroměřížští LUXUS a MAG.",
-      "poznamka": "Konec není uvedený, 2:00 je odhad.",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-10-26T13:17:59",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-16T21:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11919,
-      "cena": 60,
-      "cena_pozn": "",
-      "id": 21802,
-      "konec": "2026-11-17T18:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "Hokejová Krajská liga mužů / HK Kroměříž \"B\" – HC Lvi Fosfa Břeclav",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11919.jpg",
-      "perex": "Krajský přebor v hokeji.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-19T07:36:03",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-17T16:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11881,
-      "cena": 150,
-      "cena_pozn": "",
-      "id": 21757,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Mockingjay - Part 1",
-        "stopaz": "asi 2 hodiny a 5 minut"
-      },
-      "konec": "2026-11-17T18:05:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Síla vzdoru 1. část (USA 2014)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11881.jpg",
-      "perex": "Sci-Fi / Dobrodružný / Thriller Režie: Francis Lawrence Hrají: Jennifer Lawrence, Josh Hutcherson, Liam Hemsworth, Woody Harrelson, Elizabeth Banks, Julianne Moore, Philip Seymour Hoffman, Stanley Tucci a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:21",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-sila-vzdoru-1-cast",
-      "youtube": "",
-      "zacatek": "2026-11-17T16:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11877,
-      "cena": 250,
-      "cena_pozn": "",
-      "id": 21753,
-      "konec": "2026-11-17T20:45:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games - úterý",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11877.jpg",
-      "perex": "Kompletní znovuuvedení série Hunger Games včetně prequelu těsně před uvedením nového dílu s podtitulem \"Úsvit sklizně\".",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:32",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-utery",
-      "youtube": "",
-      "zacatek": "2026-11-17T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11882,
-      "cena": 150,
-      "cena_pozn": "",
-      "id": 21758,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Mockingjay - Part 2",
-        "stopaz": "asi 2 hodiny a 17 minut"
-      },
-      "konec": "2026-11-17T20:47:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Síla vzdoru 2. část (USA 2015)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11882.jpg",
-      "perex": "Sci-Fi / Dobrodružný / Akční / Thriller Režie: Francis Lawrence Hrají: Jennifer Lawrence, Josh Hutcherson, Liam Hemsworth, Woody Harrelson, Sam Claflin, Elizabeth Banks, Donald Sutherland, Julianne Moore a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:38:40",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-sila-vzdoru-2-cast",
-      "youtube": "",
-      "zacatek": "2026-11-17T18:30:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 9280,
       "cena": 150,
       "cena_pozn": "",
@@ -5208,6 +5043,38 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-11-20T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12018,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21940,
+      "konec": "2026-11-20T19:00:00",
+      "misto": "Kostel svatého Jana Křtitele",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Masarykovo náměstí"
+      },
+      "misto_gps": [
+        49.29779,
+        17.390842
+      ],
+      "misto_web": "",
+      "nazev": "Benefiční koncert - Větrníkový den",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12018.jpg",
+      "perex": "koncert na podporu dětí trpících Cystickou fibrózou",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-18T14:41:00",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-11-20T17:00:00",
       "zdarma": false
     },
     {
@@ -6684,6 +6551,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 12019,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21941,
+      "konec": "2026-12-01T21:00:00",
+      "misto": "Konzervatoř P. J. Vejvanovského",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Pilařova 7/1"
+      },
+      "misto_gps": [
+        49.298036,
+        17.390947
+      ],
+      "misto_web": "https://www.konzkm.cz",
+      "nazev": "Koncert - klavírní duo",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12019.jpg",
+      "perex": "komorní koncert konzervatoře klavírní duo Eliška Novotná a Lukáš Michel 1.12.2026 v 19:00",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-18T14:43:03",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-01T19:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11970,
       "cena": 0,
       "cena_pozn": "60 Kč za osobu",
@@ -7601,6 +7500,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 12020,
+      "cena": 0,
+      "cena_pozn": "vstupné dobrovolné",
+      "id": 21942,
+      "konec": "2026-12-08T21:00:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Koncert studentů konzervatoře",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12020.jpg",
+      "perex": "Koncert studentů konzervatoře 8.12.2026 v 19:00",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-18T14:44:20",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-08T19:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11968,
       "cena": 0,
       "cena_pozn": "",
@@ -8202,6 +8133,81 @@
       "zdarma": false
     },
     {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21921,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-16T19:20:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "titulky, předpremiéra",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-16T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21932,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-16T22:30:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "titulky, předpremiéra",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-16T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11851,
       "cena": 0,
       "cena_pozn": "",
@@ -8234,6 +8240,43 @@
       "zdarma": false
     },
     {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21922,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-17T17:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-17T15:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11983,
       "cena": 490,
       "cena_pozn": "",
@@ -8263,6 +8306,151 @@
       "web": "https://www.dk-kromeriz.cz/limonadovy-joe-1",
       "youtube": "",
       "zacatek": "2026-12-17T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21933,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-17T21:30:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-17T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21934,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-18T19:00:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-18T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11802,
+      "cena": 1090,
+      "cena_pozn": "základní od 10. řady: 990 Kč, základní od 17. řady: 890 Kč, zahájení předprodeje 16. 9. 2026",
+      "id": 21654,
+      "konec": "2026-12-18T20:30:00",
+      "misto": "Dům kultury v Kroměříži",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Tovačovského 2828"
+      },
+      "misto_gps": [
+        49.298481,
+        17.399122
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/",
+      "nazev": "Vánoční Čechomor",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11802.jpg",
+      "perex": "Česko-moravská hudební skupina, která originálním způsobem zpracovává lidové písně. Na scéně působí již přes třicet let. Za tu dobu se Čechomor mnohokrát proměnil jak personálně, tak stylem hudby. Jeho charakteristickým rysem ale vždy zůstala nápaditost aranžmá, osobitá interpretace a inspirace v lidové písni.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-09-16T09:11:10",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/vanocni-cechomor",
+      "youtube": "",
+      "zacatek": "2026-12-18T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21923,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-18T22:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-18T20:00:00",
       "zdarma": false
     }
   ],

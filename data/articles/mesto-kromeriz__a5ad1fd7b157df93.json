@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Bruh, letos žádné rakety nad hlavou. Dům kultury znovu chystá silvestrovskou party na Hanáckém náměstí, kde přivítáš rok 2027. Místo ohňostroje tam ale poletí lasery. Laser show podle města nijak nezatěžuje lidi, zvířata ani životní prostředí, což je docela green flag.",
+    "Plán večera si checkni dopředu. Začíná se v 18 hodin, kdy Polygon odehraje první část svého koncertu. V 18.50 přijde na řadu laser show. Jakmile dosvítí, kapela se v 19.10 vrátí a jede druhou půlku. Na Hanáckém budou stát stánky, kde se dá najíst, napít a hlavně trochu zahřát.",
+    "Proč ten patch? Starosta Tomáš Opatrný vysvětlil, že další ohňostroj město pořádat nemůže kvůli loňské novele zákona o pyrotechnice. Ta zakazuje odpalovat pyrotechniku v určených ochranných pásmech. Starosta zároveň zve lidi, ať poslední den roku dorazí, popřejí si a připijí na ten další.",
+    "Rachejtle quitly, lasery nastupují. Uvidíme, jestli z toho bude banger."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.481,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-18T13:58:58.499071+00:00"
+  },
+  "headline": "Ohňostroj dostal nerf, Silvestr na Hanáckém letos rozsvítí lasery",
+  "id": "mesto-kromeriz:a5ad1fd7b157df93",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-18T09:40:36+01:00",
+  "rewritten_at": "2026-11-18T13:58:58.499093+00:00",
+  "sensitivity": "volny",
+  "slug": "ohnostroj-dostal-nerf-silvestr-na-hanackem-letos-rozsviti-lasery",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "kultura"
+  ],
+  "tldr": [
+    {
+      "emoji": "🔦✨",
+      "label": "Laser Time",
+      "text": "V 18.50 se Hanácké náměstí rozsvítí laser show, která nahradí rachejtle."
+    },
+    {
+      "emoji": "🎸🔊",
+      "label": "Live Music",
+      "text": "Kapela Polygon rozjede večer v 18 hodin a po laserech hraje dál."
+    },
+    {
+      "emoji": "🚫🎆",
+      "label": "Why Change",
+      "text": "Ohňostroj stopla loňská novela zákona o pyrotechnice."
+    }
+  ]
+}
