@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Kalendář si na tebe připravil prank. Rok 2026 má 53 týdnů, a proto Kroměříž od ledna prohazuje, která popelnice jede kdy. Letos mizí z ulic v lichých týdnech hnědá nádoba s bioodpadem a v sudých černá se zbytkovým odpadem. V roce 2027 se to otočí. Lichý týden bude patřit černé a sudý hnědé.",
+    "Ten patch má logiku. První lednový týden roku 2027 vychází na lichý. Se starým rozpisem by hnědá popelnice jela dvakrát po sobě a na černou bys čekal tři týdny, což by byl pořádný fail. Nové pořadí drží každou nádobu v rytmu jednou za 14 dní a rok se přehoupne bez zadrhnutí.",
+    "Pavla Moravcová z odboru služeb radnice připomíná, že svozové dny se v žádné ulici nemění. Jiná je jen barva, kterou začátkem ledna vystrčíš před dům. Rok 2027 otevírá černá popelnice, tak si to checkni v kalendáři, ať nechytíš L s hnědou nádobou na chodníku v blbém týdnu.",
+    "Novoroční předsevzetí číslo jedna tedy zní: černá. Period."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 5,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.521,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-19T13:06:29.768244+00:00"
+  },
+  "headline": "Kalendář udělal prank: od ledna jede černá popelnice v liché týdny",
+  "id": "mesto-kromeriz:9e398bf7dd5b5e3b",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-19T10:01:55+01:00",
+  "rewritten_at": "2026-11-19T13:06:29.768271+00:00",
+  "sensitivity": "volny",
+  "slug": "kalendar-udelal-prank-od-ledna-jede-cerna-popelnice-v-liche-tydny",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "příroda"
+  ],
+  "tldr": [
+    {
+      "emoji": "🗑️🔄",
+      "label": "Big Switch",
+      "text": "V roce 2027 se černá popelnice se zbytkovým odpadem vyváží v liché týdny a hnědá s bioodpadem v sudé."
+    },
+    {
+      "emoji": "📅✅",
+      "label": "Same Days",
+      "text": "Svozový den ve tvojí ulici zůstává stejný a každá nádoba jede dál jednou za 14 dní."
+    },
+    {
+      "emoji": "⚫🗓️",
+      "label": "January Check",
+      "text": "První týden roku 2027 je lichý, takže před dům patří černá popelnice."
+    }
+  ]
+}

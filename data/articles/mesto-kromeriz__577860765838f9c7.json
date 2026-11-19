@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Dárky pořád nemáš? Lowkey máš řešení kousek od radnice. Turistické informační centrum Kroměříž v Prusinovského ulici celý rok radí turistům i místním a teď k tomu prodává věci pod stromeček a na vánoční výzdobu.",
+    "Letošní novinka je papírový betlém k vystřihnutí. Nakreslila ho výtvarnice, která pochází z Kroměříže. Ty si vezmeš nůžky a postavíš si ho doma sám. Na sváteční večer je to fr mood.",
+    "Dál tam najdeš svícen, na kterém se potkává dřevo se sklem, a dřevěnou baňku na stromek. Na obou je motiv Kroměříže a dodává je sociální podnik EMIT-CZ, se kterým infocentrum spolupracuje už dlouho. Vánoční pohlednice tam mají jako každý rok, takže legit klasika taky nechybí.",
+    "Největší banger jsou ale podle místostarostky Vladimíry Vondráčkové nástěnné kalendáře. Lidi je kupují celý rok, nejen před Vánoci. Jsou na nich dominanty města i zákoutí, kam se běžně nezatoulá skoro nikdo. Město teď vydalo vlastní kalendář a vedle něj tam mají i kalendáře od jiných vydavatelů s kroměřížskými fotkami. Kroměříž na zdi na celý rok a dárková krize je vyřešená, period."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.498,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-19T13:06:56.084402+00:00"
+  },
+  "headline": "Vánoční merch z infáče: Kroměříž na baňce, na svícnu a betlém na vystřihnutí",
+  "id": "mesto-kromeriz:577860765838f9c7",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-19T09:56:31+01:00",
+  "rewritten_at": "2026-11-19T13:06:56.084430+00:00",
+  "sensitivity": "volny",
+  "slug": "vanocni-merch-z-inface-kromeriz-na-bance-na-svicnu-a-betlem-na-vystrihnuti",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "✂️⭐",
+      "label": "New Drop",
+      "text": "Novinkou je papírový betlém, který si vystřihneš sám, a nakreslila ho výtvarnice z Kroměříže."
+    },
+    {
+      "emoji": "🕯️🎄",
+      "label": "Local Merch",
+      "text": "Svícen ze dřeva a skla a dřevěnou baňku s motivem Kroměříže dodává sociální podnik EMIT-CZ."
+    },
+    {
+      "emoji": "📅🔥",
+      "label": "Top Seller",
+      "text": "Nejvíc letí nástěnné kalendáře, mezi nimi i ten, který město zrovna vydalo."
+    }
+  ]
+}

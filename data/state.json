@@ -30,6 +30,10 @@
       "duvod": "Výstup obsahuje přímou citaci v uvozovkách.",
       "pocet": 1
     },
+    "mesto-kromeriz:3dbf57e9d4af01ab": {
+      "duvod": "Čísla, která nejsou ve zdroji",
+      "pocet": 1
+    },
     "mesto-kromeriz:4116c5e8a9e159a8": {
       "duvod": "Věty skoro totožné s oznámením (shoda 0.84)",
       "pocet": 1
@@ -186,6 +190,7 @@
     "mesto-kromeriz:51d5b9d1940b2b8f",
     "mesto-kromeriz:5337761ed12895b8",
     "mesto-kromeriz:550a036cc0ac95a3",
+    "mesto-kromeriz:577860765838f9c7",
     "mesto-kromeriz:5af2ba6b4f785379",
     "mesto-kromeriz:614bb029dfec216b",
     "mesto-kromeriz:627a5fe1917ee3a5",
@@ -216,6 +221,7 @@
     "mesto-kromeriz:98d1e79a6b81ebf6",
     "mesto-kromeriz:9a8675d9a12d1a9d",
     "mesto-kromeriz:9aebd8cde9fd21b0",
+    "mesto-kromeriz:9e398bf7dd5b5e3b",
     "mesto-kromeriz:9f98746212fd3207",
     "mesto-kromeriz:a053e7493cb47a44",
     "mesto-kromeriz:a1a76619afe00e79",
