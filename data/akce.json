@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-18T13:57:53.746111+00:00",
+  "stazeno": "2026-11-19T03:27:37.516119+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4672,181 +4672,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11878,
-      "cena": 500,
-      "cena_pozn": "",
-      "id": 21754,
-      "kino": {
-        "puvodni_nazev": "Znovuuvedení kompletní série"
-      },
-      "konec": "2026-11-18T19:00:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games maraton",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11878.jpg",
-      "perex": "Kompletní znovuuvedení série Hunger Games včetně prequelu těsně před uvedením nového dílu s podtitulem \"Úsvit sklizně\".",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-08T06:37:09",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-maraton",
-      "youtube": "",
-      "zacatek": "2026-11-16T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 9280,
-      "cena": 150,
-      "cena_pozn": "",
-      "id": 21759,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: The Ballad of Songbirds and Snakes",
-        "stopaz": "asi 2 hodiny a 37 minut"
-      },
-      "konec": "2026-11-18T19:07:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Balada o ptácích a hadech (USA 2023)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/9280.jpg",
-      "perex": "Akční / Dobrodružný / Sci-Fi Režie: Francis Lawrence Hrají: Tom Blyth, Rachel Zegler, Peter Dinklage, Viola Davis, Hunter Schafer, Jason Schwartzman a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-07T16:43:47",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-balada-o-ptacich-a-hadech",
-      "youtube": "WZEqei9wTHQ",
-      "zacatek": "2026-11-18T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11862,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21731,
-      "konec": "2026-11-18T18:30:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Václav Havel - Odcházení",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11862.jpg",
-      "perex": "Promítání poslední velké hry Václava Havla protkané odkazy na „Višňový sad“ A. P. Čechova a Shakespearova „Krále Leara“. Inscenace vystihuje to nejlepší z Havla, jeho humor, mistrovskou hru se slovy i groteskní pohled na společenské hemžení.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-06T08:01:17",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-18T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11951,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21841,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
-        "stopaz": "asi 2 hodiny a 39 minut"
-      },
-      "konec": "2026-11-18T22:39:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
-      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
-      "poznamka": "titulky, předpremiéra",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-05T06:42:11",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
-      "youtube": "v9qME-AYPbE",
-      "zacatek": "2026-11-18T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11851,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21716,
-      "konec": "2026-11-18T23:00:00",
-      "misto": "Hvězdárna Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Braunerova 2397"
-      },
-      "misto_gps": [
-        49.2962,
-        17.419075
-      ],
-      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
-      "nazev": "Pravidelná pozorování hvězd",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
-      "perex": "Pravidelná pozorování podzim 2026",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-30T10:44:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-18T20:00:00",
       "zdarma": false
     },
     {
@@ -5745,6 +5570,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 11933,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21945,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Ebenezer",
+        "stopaz": "asi 1 hodina a 57 minut"
+      },
+      "konec": "2026-11-25T18:57:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Ebenezer: Vánoční koleda (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11933.jpg",
+      "perex": "Fantasy / Drama / Komedie Režie: Ti West Hrají: Johnny Depp, Andrea Riseborough, Sam Claflin, Daisy Ridley, Ian McKellen a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:18:38",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda",
+      "youtube": "4W_pfj-NYoA",
+      "zacatek": "2026-11-25T17:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11775,
       "cena": 180,
       "cena_pozn": "zahájení předprodeje 25. 9. 2026",
@@ -6176,6 +6039,38 @@
       "web": "https://www.dk-kromeriz.cz/hexe-magicky-svet",
       "youtube": "F2Fch9lFsk4",
       "zacatek": "2026-11-28T17:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12021,
+      "cena": 150,
+      "cena_pozn": "zahájení předprodeje 19. 11. 2026",
+      "id": 21943,
+      "konec": "2026-11-28T20:00:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "3 Světy Tance",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12021.jpg",
+      "perex": "Zažijete úžasný večer v podání tří souborů, každého z jiného koutu Země. Horkým Španělskem Vás provedou tanečnice z Diosas Flamencas, zatančí s kloboukem, s kastanětami, budou vážné i hravé až budete mít chuť volat Olé.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-18T15:24:18",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/3-svety-tance",
+      "youtube": "",
+      "zacatek": "2026-11-28T18:00:00",
       "zdarma": false
     },
     {
@@ -6682,6 +6577,38 @@
       "web": "https://www.knihkm.cz/kalendar-akci.html",
       "youtube": "",
       "zacatek": "2026-12-02T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12028,
+      "cena": 140,
+      "cena_pozn": "",
+      "id": 21954,
+      "konec": "2026-12-02T20:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "2. hokejová liga / HK Kroměříž – Technika Hockey Brno",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12028.jpg",
+      "perex": "2. hokejová liga",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-11-18T18:25:02",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-02T18:00:00",
       "zdarma": false
     },
     {
@@ -7236,6 +7163,82 @@
       "zdarma": false
     },
     {
+      "akce_id": 11933,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21946,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Ebenezer",
+        "stopaz": "asi 1 hodina a 57 minut"
+      },
+      "konec": "2026-12-05T18:57:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Ebenezer: Vánoční koleda (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11933.jpg",
+      "perex": "Fantasy / Drama / Komedie Režie: Ti West Hrají: Johnny Depp, Andrea Riseborough, Sam Claflin, Daisy Ridley, Ian McKellen a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:18:38",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda",
+      "youtube": "4W_pfj-NYoA",
+      "zacatek": "2026-12-05T17:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12023,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21947,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+        "puvodni_nazev": "Violent Night 2",
+        "stopaz": "asi 1 hodina a 50 minut"
+      },
+      "konec": "2026-12-05T21:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Šílená noc 2 (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12023.jpg",
+      "perex": "Akční / Komedie / Thriller Režie: Tommy Wirkola Hrají: David Harbour, Kristen Bell, Jared Harris, Joe Pantoliano, Daniela Melchior, Andrew Bachelor a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:19:25",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/silena-noc-2",
+      "youtube": "0Avn2QAxyMc",
+      "zacatek": "2026-12-05T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11984,
       "cena": 259,
       "cena_pozn": "Akce je v rámci vstupného do Dětského světa.",
@@ -7262,6 +7265,44 @@
       "web": "https://www.detskysvetkromeriz.cz/akce/2026-12-06-druha-adventni-nedele-",
       "youtube": "",
       "zacatek": "2026-12-06T13:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12024,
+      "cena": 160,
+      "cena_pozn": "děti: 140 Kč",
+      "id": 21949,
+      "kino": {
+        "format": "dabing | 2D",
+        "pristupnost": "přístupné bez omezení",
+        "puvodni_nazev": "Astérix et le Royaume de Nubie",
+        "stopaz": "asi 1 hodina a 26 minut"
+      },
+      "konec": "2026-12-06T16:26:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Asterix a Obelix: Království Núbie (FRA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12024.jpg",
+      "perex": "Animovaný / Dobrodružný / Komedie Režie: Alexandre Heboyan Hrají: Christian Clavier, François-Xavier Demaison, Bernard Alane, Issa Doumbia a další",
+      "poznamka": "dabing",
+      "pro_deti": true,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:20:02",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/asterix-a-obelix-kralovstvi-nubie",
+      "youtube": "D1LDBuL9BJY",
+      "zacatek": "2026-12-06T15:00:00",
       "zdarma": false
     },
     {
@@ -7468,6 +7509,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 12025,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21951,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Behemoth!",
+        "stopaz": "asi 2 hodiny a 7 minut"
+      },
+      "konec": "2026-12-07T21:07:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Behemot! (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12025.jpg",
+      "perex": "Drama / Hudební Režie: Tony Gilroy Hrají: Pedro Pascal, Olivia Wilde, Will Arnett, Eva Victor, Matthew Lillard, Kamy D. Bruder a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:21:00",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/behemot",
+      "youtube": "USOUARJvwlg",
+      "zacatek": "2026-12-07T19:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11964,
       "cena": 0,
       "cena_pozn": "Vstupné dobrovolné",
@@ -7596,6 +7675,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 12029,
+      "cena": 140,
+      "cena_pozn": "",
+      "id": 21955,
+      "konec": "2026-12-09T20:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "2. hokejová liga / HK Kroměříž – HC Orli Znojmo",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12029.jpg",
+      "perex": "2. hokejová liga",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-11-18T18:28:23",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-09T18:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11851,
       "cena": 0,
       "cena_pozn": "",
@@ -7624,6 +7735,44 @@
       "vstupenky": "",
       "web": "",
       "youtube": "",
+      "zacatek": "2026-12-09T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12023,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21948,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+        "puvodni_nazev": "Violent Night 2",
+        "stopaz": "asi 1 hodina a 50 minut"
+      },
+      "konec": "2026-12-09T21:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Šílená noc 2 (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12023.jpg",
+      "perex": "Akční / Komedie / Thriller Režie: Tommy Wirkola Hrají: David Harbour, Kristen Bell, Jared Harris, Joe Pantoliano, Daniela Melchior, Andrew Bachelor a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:19:25",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/silena-noc-2",
+      "youtube": "0Avn2QAxyMc",
       "zacatek": "2026-12-09T20:00:00",
       "zdarma": false
     },
@@ -7756,6 +7905,43 @@
       "zdarma": false
     },
     {
+      "akce_id": 12026,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21952,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+        "stopaz": "asi 1 hodina a 47 minut"
+      },
+      "konec": "2026-12-11T19:17:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Primetime (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12026.jpg",
+      "perex": "Thriller / Drama / Krimi Režie: Lance Oppenheim Hrají: Robert Pattinson, Merritt Wever, Anna Faris, Skyler Gisondo, Bokeem Woodbine a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:22:53",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/primetime",
+      "youtube": "xFMiM6myxQs",
+      "zacatek": "2026-12-11T17:30:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11186,
       "cena": 0,
       "cena_pozn": "",
@@ -7877,6 +8063,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 12027,
+      "cena": 160,
+      "cena_pozn": "",
+      "id": 21953,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+        "puvodni_nazev": "Ink",
+        "stopaz": "asi 1 hodina a 56 minut"
+      },
+      "konec": "2026-12-12T21:56:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Bulvár (USA/UK 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12027.jpg",
+      "perex": "Drama / Thriller / Životopisný Režie: Danny Boyle Hrají: Jack O'Connell, Guy Pearce, Claire Foy, Brian Gleeson, Jonathan Hyde, Patrick Kennedy a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:26:02",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/bulvar",
+      "youtube": "3hQzHpbJiHU",
+      "zacatek": "2026-12-12T20:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11987,
       "cena": 259,
       "cena_pozn": "Akce je v rámci vstupného do Dětského světa.",
@@ -7906,6 +8130,44 @@
       "zdarma": false
     },
     {
+      "akce_id": 12024,
+      "cena": 160,
+      "cena_pozn": "děti: 140 Kč",
+      "id": 21950,
+      "kino": {
+        "format": "dabing | 2D",
+        "pristupnost": "přístupné bez omezení",
+        "puvodni_nazev": "Astérix et le Royaume de Nubie",
+        "stopaz": "asi 1 hodina a 26 minut"
+      },
+      "konec": "2026-12-13T16:26:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Asterix a Obelix: Království Núbie (FRA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12024.jpg",
+      "perex": "Animovaný / Dobrodružný / Komedie Režie: Alexandre Heboyan Hrají: Christian Clavier, François-Xavier Demaison, Bernard Alane, Issa Doumbia a další",
+      "poznamka": "dabing",
+      "pro_deti": true,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T16:20:02",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/asterix-a-obelix-kralovstvi-nubie",
+      "youtube": "D1LDBuL9BJY",
+      "zacatek": "2026-12-13T15:00:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11989,
       "cena": 50,
       "cena_pozn": "Vstupné je doporučené dobrovolné.",
@@ -7928,6 +8190,38 @@
       "web": "https://www.klubickokm.cz",
       "youtube": "",
       "zacatek": "2026-12-13T15:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12031,
+      "cena": 60,
+      "cena_pozn": "",
+      "id": 21957,
+      "konec": "2026-12-13T18:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "Krajská liga mužů v hokeji / HK Kroměříž \"B\" – HC Žraloci Vyškov",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12031.jpg",
+      "perex": "Krajská liga mužů v hokeji",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-11-18T18:40:14",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-13T16:00:00",
       "zdarma": false
     },
     {
@@ -8167,6 +8461,38 @@
       "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
       "youtube": "gVndBKAeoYM",
       "zacatek": "2026-12-16T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12030,
+      "cena": 140,
+      "cena_pozn": "",
+      "id": 21956,
+      "konec": "2026-12-16T20:15:00",
+      "misto": "Zimní stadion",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Obvodová 3474"
+      },
+      "misto_gps": [
+        49.293456,
+        17.406441
+      ],
+      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
+      "nazev": "2. hokejová liga / HK Kroměříž – LHK Jestřábi Prostějov",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12030.jpg",
+      "perex": "2. hokejová liga",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Sport",
+      "typ_id": 13,
+      "upraveno": "2026-11-18T18:31:23",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.hkkm.cz",
+      "youtube": "",
+      "zacatek": "2026-12-16T18:00:00",
       "zdarma": false
     },
     {
@@ -8451,6 +8777,68 @@
       "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
       "youtube": "gVndBKAeoYM",
       "zacatek": "2026-12-18T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11991,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21894,
+      "konec": "2026-12-19T21:00:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Vánoční setkání v útulku",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11991.jpg",
+      "perex": "Naši pejsci a kočičky vás srdečně zvou na vánoční setkání, které se bude konat dne 19.12.2026 v Městském útulku Čápka v Kroměříži. Přijďte s námi posedět u kávičky nebo čaje a povyprávět příběhy o svých mazlíčcích. Rádi uvítáme: deky, ručníky, prostěradla, dezinfekční prostředky, piškoty (lidské i psí), pamlsky a granulky jak pro pejsky, tak pro kočičky. Děkujeme. Budeme se na vás těšit!",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T15:21:14",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-19T00:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21924,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-19T16:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "3D, dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-19T14:00:00",
       "zdarma": false
     }
   ],

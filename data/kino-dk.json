@@ -1,4 +1,10 @@
 {
+  "https://www.dk-kromeriz.cz/asterix-a-obelix-kralovstvi-nubie": {
+    "format": "dabing | 2D",
+    "pristupnost": "přístupné bez omezení",
+    "puvodni_nazev": "Astérix et le Royaume de Nubie",
+    "stopaz": "asi 1 hodina a 26 minut"
+  },
   "https://www.dk-kromeriz.cz/audience": {
     "format": "titulky | 2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
@@ -14,6 +20,18 @@
     "format": "česky | 2D",
     "pristupnost": "přístupné bez omezení",
     "stopaz": "asi 1 hodina a 37 minut"
+  },
+  "https://www.dk-kromeriz.cz/behemot": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+    "puvodni_nazev": "Behemoth!",
+    "stopaz": "asi 2 hodiny a 7 minut"
+  },
+  "https://www.dk-kromeriz.cz/bulvar": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "puvodni_nazev": "Ink",
+    "stopaz": "asi 1 hodina a 56 minut"
   },
   "https://www.dk-kromeriz.cz/call": {
     "format": "česky | 2D",
@@ -209,6 +227,11 @@
     "stopaz": "asi 1 hodina a 40 minut"
   },
   "https://www.dk-kromeriz.cz/planetarium": {},
+  "https://www.dk-kromeriz.cz/primetime": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "stopaz": "asi 1 hodina a 47 minut"
+  },
   "https://www.dk-kromeriz.cz/rammstein-live-in-mexico-city": {
     "format": "2D",
     "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
@@ -219,6 +242,12 @@
     "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
     "puvodni_nazev": "Sense and Sensibility",
     "stopaz": "asi 2 hodiny a 11 minut"
+  },
+  "https://www.dk-kromeriz.cz/silena-noc-2": {
+    "format": "titulky | 2D",
+    "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
+    "puvodni_nazev": "Violent Night 2",
+    "stopaz": "asi 1 hodina a 50 minut"
   },
   "https://www.dk-kromeriz.cz/uvidis-vsechno": {
     "format": "titulky | 2D",
