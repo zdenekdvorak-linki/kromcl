@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-19T21:33:40.828736+00:00",
+  "stazeno": "2026-11-20T11:44:53.756741+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4672,145 +4672,6 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11741,
-      "cena": 80,
-      "cena_pozn": "",
-      "id": 21813,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "stopaz": "asi 1 hodina a 34 minut"
-      },
-      "konec": "2026-11-19T17:34:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Osamělý vlk (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11741.jpg",
-      "perex": "Dokumentární / Drama / Historický / Válečný / Životopisný Režie: Ondřej Veverka Hrají: Viktor Zavadil, Tadeáš Moravec, Piotr Trojan, Kryštof Grygar, Josef Trojan, Jan Nedbal, Miroslav Hanuš, Jan Budař a další",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-20T15:13:18",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/osamely-vlk-1",
-      "youtube": "cQguQ4c-ZhI",
-      "zacatek": "2026-11-19T16:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11923,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21806,
-      "konec": "2026-11-19T20:00:00",
-      "misto": "Galerie Pekelné sáně",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Malý Val 1512"
-      },
-      "misto_gps": [
-        49.297769,
-        17.389164
-      ],
-      "misto_web": "https://www.pekelnesane.cz",
-      "nazev": "Adam Kašpar: Strom poznání",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11923.jpg",
-      "perex": "Adam Kašpar patří mezi nejvýznamnější osobnosti současné české realistické malby. Ve své tvorbě se námětově zaměřuje na ztvárnění krajiny, především lesních porostů a hornin. Studoval na Akademii výtvarných umění v Praze v ateliéru Malby u prof. Martina Mainera a svá díla vystavoval na řadě výstav v České republice i zahraničí. Na besedě si budeme povídat o jeho aktuální výstavě v Galerii Pekelné sáně, potřebě tvořit, cestě za životem a dráhou umělce a také o námětech, které od motivů z přírody vedou k archetypům a pradávné mytologii. S Adamem Kašparem se setkáme ve čtvrtek 19. 11. 2026 v 18:00 Na Malém Vale 1552.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-20T06:42:31",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.pekelnesane.cz/ctvrtky/strom-poznani-118",
-      "youtube": "",
-      "zacatek": "2026-11-19T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11951,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21842,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
-        "stopaz": "asi 2 hodiny a 39 minut"
-      },
-      "konec": "2026-11-19T21:39:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
-      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-05T06:42:11",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
-      "youtube": "v9qME-AYPbE",
-      "zacatek": "2026-11-19T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11686,
-      "cena": 160,
-      "cena_pozn": "zahájení předprodeje 22. 9. 2026",
-      "id": 21515,
-      "konec": "2026-11-19T20:20:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Návštěvy u pana Greena",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11686.jpg",
-      "perex": "V manhatanském činžáku žije pan Green, starý pravověrný žid. Nikam nechodí, nevybírá poštu, nekupuje si jídlo, nevaří a neuklízí. Jeho milovaná žena, se kterou se nikdy nepohádal a která všechnu tuto práci zastala, před časem zemřela. Do jeho existence vstupuje Ross Gardiner, perspektivní muž z dobré rodiny. Ross byl odsouzen k trestu obecně prospěšných prací - starat se nějaký čas o pana Greena, jehož na cestě ohrozil rychlou jízdou autem. Vzájemný vztah obou mužů začíná agresívním odmítáním ze strany starého pána a mění se během pravidelných Rossových návštěv u pana Greena. Týdny odhalují tajemství, prověřují se lidské vztahy a vytváří přátelství... Legrační i dojímavý příběh lásky a odpuštění.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-09-23T14:56:37",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/navstevy-u-pana-greena",
-      "youtube": "",
-      "zacatek": "2026-11-19T19:00:00",
       "zdarma": false
     },
     {
@@ -7104,6 +6965,38 @@
       "zdarma": false
     },
     {
+      "akce_id": 12032,
+      "cena": 260,
+      "cena_pozn": "Snížené vstupné 180 Kč: děti do 15 let, studenti do 26 let s platným průkazem o studiu/ ISIC, senioři nad 65 let, držitelé senior pasu, držitelé průkazu ZTP a ZTP/P, děti do 6 let zdarma, průvodce ZTP/P zdarma Rodinné vstupné 700 Kč: 2 dospělí a 2-3 děti do 15 let, držitelé rodinných pasů Pro skupiny nad 15 osob je nutná rezervace",
+      "id": 21958,
+      "konec": "2026-12-20T17:30:00",
+      "misto": "Arcibiskupský zámek Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Sněmovní náměstí 1"
+      },
+      "misto_gps": [
+        49.300236,
+        17.393244
+      ],
+      "misto_web": "http://www.zamek-kromeriz.cz",
+      "nazev": "Advent na zámku",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12032.jpg",
+      "perex": "Adventní prohlídky svátečně vyzdobenými reprezentačními sály i zimním bytem arcibiskupa, který je přístupný jen ve výjimečných případech.",
+      "poznamka": "Termíny adventních prohlídek pro veřejnost: 5. a 6. 12.| 12. a 13. 12.| 19. a 20. 12.",
+      "pro_deti": true,
+      "typ": "Muzea, výstavy, galerie",
+      "typ_id": 9,
+      "upraveno": "2026-11-20T06:59:20",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.zamek-kromeriz.cz/navstevni-trasy/advent/",
+      "youtube": "",
+      "zacatek": "2026-12-05T09:30:00",
+      "zdarma": false
+    },
+    {
       "akce_id": 11912,
       "cena": 250,
       "cena_pozn": "Běh pro děti bez startovného",
@@ -8839,6 +8732,167 @@
       "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
       "youtube": "gVndBKAeoYM",
       "zacatek": "2026-12-19T14:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 10986,
+      "cena": 70,
+      "cena_pozn": "Děti do 150 cm, držitelé ZTP a ZTP/P ZDARMA",
+      "id": 20477,
+      "konec": "2026-12-20T10:00:00",
+      "misto": "Výstaviště Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "K Výstavišti 4069/8"
+      },
+      "misto_gps": [
+        49.284548,
+        17.392976
+      ],
+      "misto_web": "http://www.vystavistekromeriz.cz",
+      "nazev": "Chovatelské trhy - prosinec",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10986.jpg",
+      "perex": "Pravidelné chovatelské trhy - každou třetí neděli v měsíci",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Jarmarky, trhy a gastro",
+      "typ_id": 15,
+      "upraveno": "2025-11-13T13:07:49",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.vystavistekromeriz.cz/akce/2026-12-20-chovatelske-trhy---prosinec",
+      "youtube": "",
+      "zacatek": "2026-12-20T06:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11988,
+      "cena": 259,
+      "cena_pozn": "Akce je v rámci vstupného do Dětského světa.",
+      "id": 21891,
+      "konec": "2026-12-20T17:00:00",
+      "misto": "Dětský svět Kroměříž",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Velehradská 4080/111"
+      },
+      "misto_gps": [],
+      "misto_web": "https://www.detskysvetkromeriz.cz/",
+      "nazev": "Čtvrtá adventní neděle v Dětském světě",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11988.jpg",
+      "perex": "Poslední adventní neděle bude také plná tvoření",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-11T10:41:50",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.detskysvetkromeriz.cz/akce/2026-12-20-ctvrta-adventni-nedele",
+      "youtube": "",
+      "zacatek": "2026-12-20T13:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11966,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21864,
+      "konec": "2026-12-20T16:30:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Zdobení stromečku pro zvířátka",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11966.jpg",
+      "perex": "Nedělní procházka na Barbořinu, kde ozdobíme stromeček pro zvířátka.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-09T07:06:28",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.sokolkromeriz.eu/stromecek-pro-zviratka/",
+      "youtube": "",
+      "zacatek": "2026-12-20T14:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21935,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-20T19:00:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-20T16:30:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21925,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-20T22:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-20T20:00:00",
       "zdarma": false
     }
   ],

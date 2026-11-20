@@ -1,13 +1,13 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-16",
+      "den": "2026-11-20",
       "menu": {
         "jidla": [
           {
-            "alergeny": "1a, 3, 7",
+            "alergeny": "1a, 3, 7, 9",
             "cena": 175,
-            "nazev": "Kuřecí stripsy (150 g), bramborová kaše, coleslaw s farmářským jogurtem"
+            "nazev": "Boloňské lasagne (150 g), s vyzrálým hovězím z farmy Rampuše, sýr Gran Moravia"
           },
           {
             "alergeny": "1a, 7",
@@ -33,21 +33,21 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Kuřecí vývar s masem a nudlemi (1a, 3, 9)"
+            "nazev": "Čočková se zeleninou a párkem (9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-16T09:43:17+00:00"
+      "stazeno": "2026-11-20T11:44:55+00:00"
     },
     "earnest": {
-      "den": "2026-11-16",
+      "den": "2026-11-20",
       "menu": {
         "jidla": [
           {
-            "alergeny": "1a, 3, 7",
+            "alergeny": "1a, 3, 7, 9",
             "cena": 175,
-            "nazev": "Kuřecí stripsy (150 g), bramborová kaše, coleslaw s farmářským jogurtem"
+            "nazev": "Boloňské lasagne (150 g), s vyzrálým hovězím z farmy Rampuše, sýr Gran Moravia"
           },
           {
             "alergeny": "1a, 7",
@@ -73,28 +73,28 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Kuřecí vývar s masem a nudlemi (1a, 3, 9)"
+            "nazev": "Čočková se zeleninou a párkem (9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-16T09:43:19+00:00"
+      "stazeno": "2026-11-20T11:44:57+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-16",
+      "den": "2026-11-20",
       "menu": {
         "jidla": [
           {
             "cena": 139,
-            "nazev": "Smažené žampióny, brambory, tatarka"
+            "nazev": "Špagety Aglio Olio s feferonkou a anglickou slaninou"
           },
           {
             "cena": 149,
-            "nazev": "Farmářská kotleta s fazolkami a anglickou slaninou, jasmínová rýže"
+            "nazev": "Smažený holandský řízek, bramborová kaše, okurek"
           },
           {
             "cena": 159,
-            "nazev": "Kuřecí medailonky na paprice, těstoviny"
+            "nazev": "Kuřecí roládky, jasmínová rýže, salátek"
           },
           {
             "cena": 199,
@@ -104,20 +104,20 @@
         "polevky": [
           {
             "cena": 20,
-            "nazev": "Polévka z červené čočky"
+            "nazev": "Husí vývar s kapáním a drůbky"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-16T09:43:20+00:00"
+      "stazeno": "2026-11-20T11:44:58+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-16",
+      "den": "2026-11-20",
       "menu": {
         "jidla": [
           {
             "cena": 175,
-            "nazev": "M1: Kuřecí řízek Ondráš 150g v bramboráku, šopský salát s feta sýrem"
+            "nazev": "M1: Mac and Cheese - kuřecí prsíčka 150g v cheddarové omáčce s těstovinami, cibulkou a křupavým guanciale"
           },
           {
             "cena": 185,
@@ -139,47 +139,21 @@
         "polevky": [
           {
             "cena": 40,
-            "nazev": "Gulášová"
-          }
-        ],
-        "poznamky": []
-      },
-      "stazeno": "2026-11-16T09:43:21+00:00"
-    },
-    "sladovna": {
-      "den": "2026-11-16",
-      "menu": {
-        "jidla": [
-          {
-            "cena": 195,
-            "nazev": "Tortilla plněná trhaným hovězím masem, coleslaw salát, hranolky (1,3,7,9,10)"
-          },
-          {
-            "cena": 185,
-            "nazev": "Segedínský guláš s kynutým knedlíkem (1,3,7,9)"
-          },
-          {
-            "cena": 185,
-            "nazev": "Kuřecí krokety s máslovou bramborovou kaší (1,3,7)"
-          },
-          {
-            "cena": 170,
-            "nazev": "Drůbeží játra na cibulce, jasmínová rýže, nakládaná cibulka (9)"
-          }
-        ],
-        "polevky": [
-          {
-            "cena": 35,
-            "nazev": "Dýňový krém se zázvorem (7,9)"
+            "nazev": "Bramboračka s hříbky"
           }
         ],
         "poznamky": [
-          "pondělí 16. listopadu - pátek 20. listopadu 2026"
+          "Informace o alergenech žádejte u obsluhy."
         ]
       },
+      "stazeno": "2026-11-20T11:44:59+00:00"
+    },
+    "sladovna": {
+      "den": "2026-11-20",
+      "menu": {},
       "otisk": "0a625ac8f04ee260",
       "otisk_od": "2026-11-16",
-      "stazeno": "2026-11-16T09:43:22+00:00"
+      "stazeno": "2026-11-20T11:45:00+00:00"
     }
   }
 }
