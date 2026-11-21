@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-20T11:44:53.756741+00:00",
+  "stazeno": "2026-11-21T02:14:15.772417+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4704,165 +4704,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-vystavy/404-vysla-hvezda-na-kraj-sveta-vanocni-souzneni-ludmily-vaskove-a-ivany-langrove",
       "youtube": "",
       "zacatek": "2026-11-20T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11910,
-      "cena": 200,
-      "cena_pozn": "Předprodej vstupenek v Knihovně Kroměřížska od 2.11.2026.",
-      "id": 21793,
-      "konec": "2026-11-20T19:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "Setkání s hrabětem Františkem Kinským",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11910.jpg",
-      "perex": "Beseda s autogramiádou. Pořadem provází moderátor z Českého rozhlasu Zlín M. Neradílek.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-14T10:05:26",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-20T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 12018,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21940,
-      "konec": "2026-11-20T19:00:00",
-      "misto": "Kostel svatého Jana Křtitele",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Masarykovo náměstí"
-      },
-      "misto_gps": [
-        49.29779,
-        17.390842
-      ],
-      "misto_web": "",
-      "nazev": "Benefiční koncert - Větrníkový den",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12018.jpg",
-      "perex": "koncert na podporu dětí trpících Cystickou fibrózou",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-18T14:41:00",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-20T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11898,
-      "cena": 160,
-      "cena_pozn": "zahájení předprodeje 14. 10. 2026",
-      "id": 21781,
-      "konec": "2026-11-20T20:20:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Návštěvy u pana Greena",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11898.jpg",
-      "perex": "V manhatanském činžáku žije pan Green, starý pravověrný žid. Nikam nechodí, nevybírá poštu, nekupuje si jídlo, nevaří a neuklízí. Jeho milovaná žena, se kterou se nikdy nepohádal a která všechnu tuto práci zastala, před časem zemřela. Do jeho existence vstupuje Ross Gardiner, perspektivní muž z dobré rodiny. Ross byl odsouzen k trestu obecně prospěšných prací - starat se nějaký čas o pana Greena, jehož na cestě ohrozil rychlou jízdou autem. Vzájemný vztah obou mužů začíná agresívním odmítáním ze strany starého pána a mění se během pravidelných Rossových návštěv u pana Greena. Týdny odhalují tajemství, prověřují se lidské vztahy a vytváří přátelství... Legrační i dojímavý příběh lásky a odpuštění.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-10-13T06:53:07",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/navstevy-u-pana-greena-1",
-      "youtube": "",
-      "zacatek": "2026-11-20T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11967,
-      "cena": 542,
-      "cena_pozn": "",
-      "id": 21865,
-      "konec": "2026-11-20T22:00:00",
-      "misto": "Výstaviště Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "K Výstavišti 4069/8"
-      },
-      "misto_gps": [
-        49.284548,
-        17.392976
-      ],
-      "misto_web": "http://www.vystavistekromeriz.cz",
-      "nazev": "Pokáč - Ignor tour",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11967.jpg",
-      "perex": "Oblíbený písničkář, král české rýmované ironie a majitel nejznámější pleše Česku se vrací do Kroměříže!",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-11-09T10:45:25",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.vystavistekromeriz.cz/akce/2026-11-20-pokac---ignor-tour-2026",
-      "youtube": "",
-      "zacatek": "2026-11-20T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11951,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21843,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "The Hunger Games: Sunrise on the Reaping",
-        "stopaz": "asi 2 hodiny a 39 minut"
-      },
-      "konec": "2026-11-20T22:39:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Hunger Games: Úsvit sklizně (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11951.jpg",
-      "perex": "Akční / Dobrodružný / Fantasy Režie: Francis Lawrence Hrají: Joseph Zada, Jesse Plemons, Mckenna Grace, Whitney Peak, Ralph Fiennes, Elle Fanning a další",
-      "poznamka": "dabing",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-05T06:42:11",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/hunger-games-usvit-sklizne",
-      "youtube": "v9qME-AYPbE",
-      "zacatek": "2026-11-20T20:00:00",
       "zdarma": false
     },
     {
@@ -8893,6 +8734,81 @@
       "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
       "youtube": "gVndBKAeoYM",
       "zacatek": "2026-12-20T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21926,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-21T17:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-21T15:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21936,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-21T21:30:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-21T19:00:00",
       "zdarma": false
     }
   ],

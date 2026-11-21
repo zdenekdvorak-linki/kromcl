@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Lowkey nečekaná novinka pro jednu kroměřížskou ulici. Ve Vejvanovského bude stát milníkový poutní kámen, který ukáže, že tudy vede Cyrilometodějská stezka. Trasa prochází městem na více místech a radnice z nich vybrala tuhle ulici jako nejlepší.",
+    "Kámen vznikne z pískovce. Pracují na něm výtvarník Jozef Vydrnák a sochař Ľubomír Vavruš. Najdeš na něm symbol stezky a prvky hlaholice. Bude to umělecké dílo uprostřed ulice, značka dálkové turistické trasy a zároveň místo na fotku. Tvůj příští photo dump z Kroměříže má o highlight víc.",
+    "Městská kasa si oddechne, no cap. Výrobu i instalaci zaplatí Zlínský kraj. Ten celý projekt letos táhne přes spolek Evropská kulturní stezka sv. Cyrila a Metoděje a peníze na něj dostal z Fondu malých projektů programu Interreg Slovensko – Česko. Kroměříž na oplátku poskytne pozemek zdarma a postará se o údržbu, a to minimálně po dobu udržitelnosti projektu. Celkem valid deal.",
+    "Radní Evžen Petřík, který má na starost kulturu, turistický ruch a památky, má radost, že město dostane na téhle poutní trase vlastní symbolickou zastávku. Podle něj kámen připomene odkaz Cyrila a Metoděje a turisti si ho při návštěvě můžou cíleně vyhledat. Kroměříží vede Arcibiskupská trasa ze Svatého Kopečku u Olomouce na Velehrad, dlouhá asi 113 kilometrů. Kus šutru, a Vejvanovského si přičte pořádnou dávku aury. Bet."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.538,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-21T02:15:01.101396+00:00"
+  },
+  "headline": "Vejvanovského ulice odemyká achievement: pískovcový kámen s hlaholicí",
+  "id": "mesto-kromeriz:9bbeaf8165ba06d0",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-20T10:18:26+01:00",
+  "rewritten_at": "2026-11-21T02:15:01.101419+00:00",
+  "sensitivity": "volny",
+  "slug": "vejvanovskeho-ulice-odemyka-achievement-piskovcovy-kamen-s-hlaholici",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "🪨📍",
+      "label": "Where It Lands",
+      "text": "Do Vejvanovského ulice přibude umělecky zpracovaný milníkový poutní kámen, který označí Cyrilometodějskou stezku."
+    },
+    {
+      "emoji": "💸🤝",
+      "label": "Who Pays",
+      "text": "Výrobu i osazení platí Zlínský kraj ze svého projektu, Kroměříž dá zdarma pozemek a bude se o kámen starat."
+    },
+    {
+      "emoji": "📸✨",
+      "label": "Photo Spot",
+      "text": "Kámen bude kus umění na ulici, značka pro poutníky a místo, kde si uděláš fotku."
+    }
+  ]
+}
