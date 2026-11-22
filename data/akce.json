@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-21T17:31:08.263136+00:00",
+  "stazeno": "2026-11-22T11:29:35.256599+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4515,38 +4515,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11773,
-      "cena": 950,
-      "cena_pozn": "zahájení předprodeje 10. 9. 2026",
-      "id": 21610,
-      "konec": "2026-11-21T22:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Klubové hudební toulky",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11773.jpg",
-      "perex": "Permanentka na celý nový cyklus koncertů propojující několik žánrů, osobností a hudebních dovedností.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-09-14T09:22:20",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/klubove-hudebni-toulky",
-      "youtube": "",
-      "zacatek": "2026-10-13T00:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11860,
       "cena": 0,
       "cena_pozn": "",
@@ -4704,203 +4672,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-vystavy/404-vysla-hvezda-na-kraj-sveta-vanocni-souzneni-ludmily-vaskove-a-ivany-langrove",
       "youtube": "",
       "zacatek": "2026-11-20T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11696,
-      "cena": 80,
-      "cena_pozn": "Dospělí: 80,-Kč Děti do 150 cm ZDARMA",
-      "id": 21525,
-      "konec": "2026-11-21T17:00:00",
-      "misto": "",
-      "misto_adresa": {},
-      "misto_gps": [],
-      "misto_web": "",
-      "nazev": "Svět kamenů",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11696.jpg",
-      "perex": "Prodejní výstava kamenů, minerálů a výrobků z nich.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2026-09-16T13:10:55",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hobbyvystaviste.cz",
-      "youtube": "",
-      "zacatek": "2026-11-21T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11854,
-      "cena": 0,
-      "cena_pozn": "Vstup na MDM zdarma. Divadlo pro děti bude zpoplatněno.",
-      "id": 21723,
-      "konec": "2026-11-21T22:00:00",
-      "misto": "Sokolský dům Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "1.máje 214"
-      },
-      "misto_gps": [
-        49.296266,
-        17.393215
-      ],
-      "misto_web": "https://tj-sokol-kromeriz.webnode.cz/",
-      "nazev": "Mini design market",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11854.jpg",
-      "perex": "Totál lokál! Market s lokální rukodělnou tvorbou a doprovodným programem. Poprvé v Sokolském domě.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2026-10-06T10:56:57",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.kultik.cz/",
-      "youtube": "",
-      "zacatek": "2026-11-21T10:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11533,
-      "cena": 390,
-      "cena_pozn": "studenti: 350 Kč, senioři: 350 Kč",
-      "id": 21256,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "National Theatre Live: The Importance of Being Earnest",
-        "stopaz": "asi 2 hodiny a 50 minut"
-      },
-      "konec": "2026-11-21T19:20:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Jak důležité je mít Filipa (UK 2025)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11533.jpg",
-      "perex": "Na venkově hraje Jack roli svědomitého gentlemana, ve městě si ale vyhazuje z kopýtka pod falešnou identitou. A jeho kamarád Algy se od něj inspiruje. Jakmile však chtějí oba muži zapůsobit na dvě slušně vychované dámy, začnou se zamotávat do pavučiny lží, v níž se velmi těžko pohybuje.",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-06-01T07:40:53",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/jak-dulezite-je-mit-filipa",
-      "youtube": "",
-      "zacatek": "2026-11-21T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11917,
-      "cena": 140,
-      "cena_pozn": "",
-      "id": 21800,
-      "konec": "2026-11-21T19:15:00",
-      "misto": "Zimní stadion",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Obvodová 3474"
-      },
-      "misto_gps": [
-        49.293456,
-        17.406441
-      ],
-      "misto_web": "http://www.szmk.cz/sportoviste/zimni-stadion-kromeriz/page1.html",
-      "nazev": "2. hokejová liga / HK Kroměříž – HHK Velké Meziříčí",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11917.jpg",
-      "perex": "2. liga.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Sport",
-      "typ_id": 13,
-      "upraveno": "2026-10-19T07:35:28",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.hkkm.cz",
-      "youtube": "",
-      "zacatek": "2026-11-21T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11772,
-      "cena": 150,
-      "cena_pozn": "zahájení předprodeje 10. 9. 2026",
-      "id": 21609,
-      "konec": "2026-11-21T22:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Flow Pathfinders",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11772.jpg",
-      "perex": "Skupina Flow Pathfinders vznikla z dlouhodobého přátelství několika profesionálních hudebníků, jež spojuje láska k hudbě. Společné prozkoumávání vlastní kreativity, jamování, groovu, emocí, atmosfér, to je to co nás vždy bavilo a baví. Po uvědomění si, že to co skupina tvoří, je ryzí hudba bez komerce a s nejčistším úmyslem tvořit ji co nejlépe, vznikl název seskupení Flow Pathfinders - hledači flow, neboli pocitu, že hudba „teče“ bez zádrhelů - fráze na sebe navazují hladce, dynamika dává smysl a celek působí uvolněně a přirozeně.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-09-14T09:29:54",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/flow-pathfinders",
-      "youtube": "",
-      "zacatek": "2026-11-21T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11958,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21853,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "I Play Rocky",
-        "stopaz": "asi 2 hodiny a 8 minut"
-      },
-      "konec": "2026-11-21T22:08:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Já, Rocky (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11958.jpg",
-      "perex": "Drama / Komedie / Životopisný Režie: Peter Farrelly Hrají: Anthony Ippolito, AnnaSophia Robb, Matt Dillon, P.J. Byrne, Toby Kebbell, Tracy Letts a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-06T06:43:55",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/ja-rocky",
-      "youtube": "S9Pg-UwNOhI",
-      "zacatek": "2026-11-21T20:00:00",
       "zdarma": false
     },
     {
@@ -8809,6 +8580,43 @@
       "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
       "youtube": "jNcdoqcOdgk",
       "zacatek": "2026-12-21T19:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21927,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-22T21:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "3D, dabing",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-22T19:00:00",
       "zdarma": false
     }
   ],
