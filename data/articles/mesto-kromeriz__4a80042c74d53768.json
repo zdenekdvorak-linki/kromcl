@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Tohle je W pro každého, komu se kvůli divadlu nechce do Prahy. Kulturák v Kroměříži sveze na jaro 2027 celkem 5 představení od pražských souborů a rozloží je do pěti měsíců. Radní pro kulturu Evžen Petřík k tomu připomněl, že předplatné patří ve městě už roky k nejžádanějším akcím. Podle něj díky němu Kroměřížané vidí profi herce, aniž by museli někam daleko jezdit.",
+    "Start je ve čtvrtek 14. ledna. Divadlo pod Palmovkou přiveze Ženu filmového kritika, popkulturní grotesku o lásce, filmech a průšvizích, kde hrají Barbora Kubátová a Jakub Albrecht. V úterý 9. února se vrací Rendy a Jáchym. Divadlo Radka Brzobohatého z nich udělalo muzikál Snowboarďáci a scénář k němu napsal Karel Janák, který natočil i původní film. Nostalgie level banger.",
+    "Na 16. března chystá Ungelt Příběh ze zoo od Edwarda Albeeho s Davidem Švehlíkem a Ondřejem Brouskem. Kritici tenhle kus legit chválí, hlavně kvůli herectví. Na 1. dubna je naplánovaný Chaos od Indigo Company: tři ženy středního věku v existenciální krizi, předloha od současného finského autora a režie Radima Špačka. Celou sérii zavře Dejvické divadlo s Fifty od Petra Zelenky. Hlavní roli má Ivan Trojan a o auru je postaráno.",
+    "S lístky si dej pozor, prodej má vlastní side quest. Startuje 9. prosince a sudé řady prodává pokladna kulturáku od 9:00. Liché řady jdou online na www.dk-kromeriz.cz, ty ale až od 18:00. Od 10. prosince 2026 už to pojede normálně a jeden člověk koupí nejvýš 4 vstupenky. Kdo prošvihne svoji hodinu, chytí L a bude Trojana sledovat leda na plakátu."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.582,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-23T21:26:13.756841+00:00"
+  },
+  "headline": "Trojan, Švehlík i Snowboarďáci míří do kulturáku. Jarní divadelní předplatné je peak",
+  "id": "mesto-kromeriz:4a80042c74d53768",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-23T09:37:00+01:00",
+  "rewritten_at": "2026-11-23T21:26:13.756878+00:00",
+  "sensitivity": "volny",
+  "slug": "trojan-svehlik-i-snowboardaci-miri-do-kulturaku-jarni-divadelni-predplatne-je-pe",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "kultura",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎭",
+      "label": "Big Names",
+      "text": "Na jaro 2027 přivezou do kulturáku svoje kusy Dejvické divadlo, Ungelt, Divadlo pod Palmovkou, Divadlo Radka Brzobohatého a Indigo Company."
+    },
+    {
+      "emoji": "🏂",
+      "label": "Fan Favorite",
+      "text": "V úterý 9. února dorazí Snowboarďáci předělaní na muzikál."
+    },
+    {
+      "emoji": "🎟️",
+      "label": "Ticket Drop",
+      "text": "Permanentky se začnou prodávat 9. prosince, na jednoho člověka připadnou maximálně 4 vstupenky."
+    }
+  ]
+}

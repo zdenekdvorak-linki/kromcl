@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-23T00:53:04.426213+00:00",
+  "stazeno": "2026-11-23T21:24:00.087641+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -5196,12 +5196,12 @@
       "misto_web": "https://www.pekelnesane.cz",
       "nazev": "Marika Toman Bumbálková: Mozaika života",
       "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11947.jpg",
-      "perex": "Marika Toman Bumbálková je autorkou mozaiky Louže, která je aktuálně k vidění na Velkém náměstí v Kroměříži. Je absolventkou v ateliéru Televizní a filmové grafiky u prof. Jiřího Bárty a v roce 2003 získala Cenu za nejlepší absolventskou práci. Také se zabývá ilustrací. Mezi lety 2002 a 2012 pracovala jako výtvarnice v divadle Líšeň, připravovala plakáty, scénografii a loutky. Za představení Putin lyžuje získala Cenu J. Wilkowskiegona udělovanou v Toruni. Aktuálně se zaměřuje především na tvorbu mozaik ve volné i zakázkové tvorbě. Přijďte si poslechnout její vyprávění ve čtvrtek 26. 11. 2026 na Malý Val 1552.",
+      "perex": "Marika Toman Bumbálková je autorkou mozaiky Louže I., která je aktuálně k vidění na Velkém náměstí v Kroměříži. V roce 2003 získala Cenu za nejlepší absolventskou práci. Studovala v ateliéru Televizní a filmové grafiky u prof. Jiřího Barty. Také se zabývá ilustrací. Mezi lety 2002 a 2012 pracovala jako výtvarnice v divadle Líšeň, kde připravovala plakáty, scénografii a loutky. Za představení Putin lyžuje získala Cenu J. Wilkowskiegona udělovanou v Toruni. Aktuálně se zaměřuje především na tvorbu mozaik ve volné i zakázkové tvorbě. Přijďte si poslechnout její vyprávění ve čtvrtek 26. 11. 2026 na Malý Val 1552.",
       "poznamka": "",
       "pro_deti": true,
       "typ": "Přednášky a besedy",
       "typ_id": 12,
-      "upraveno": "2026-11-03T08:54:21",
+      "upraveno": "2026-11-23T10:09:05",
       "vicedenni": false,
       "vstupenky": "",
       "web": "https://www.pekelnesane.cz/ctvrtky/mozaika-zivota-121",
@@ -7432,6 +7432,31 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-12T09:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12034,
+      "cena": 80,
+      "cena_pozn": "Ceník jednosměrného jízdného pro cestující starší 15 let: 01 - 05 km = 30 Kč 06 - 09 km = 40 Kč 10 - 13 km = 50 Kč 14 - 17 km = 60 Kč 18 - 20 km = 80 Kč Ceník jednosměrného jízdného pro děti od 6 do 15 let: 01 - 09 km = 20 Kč 10 - 13 km = 30 Kč 14 - 17 km = 40 Kč 18 - 20 km = 50 Kč Jednosměrná jízdenka pro zvíře = 30 Kč. Děti do 6 let jezdí zdarma. Prodej jízdenek pouze ve vlaku, předprodej ani rezervace jízdenek se nezavádí. Platba je možná pouze v hotovosti nebo prostřednictvím QR kódu.",
+      "id": 21960,
+      "konec": "2026-12-13T17:45:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Historickým vlakem za vůní Vánoc do Tovačova či Kroměříže",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12034.jpg",
+      "perex": "Na 3. adventní víkend, tedy sobotu 12. a neděli 13. prosince 2026, pro Vás spolek Kroměřížšká dráha připravuje jízdy zvláštních vlaků mezi Kroměříží a Tovačovem.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-23T11:09:04",
+      "vicedenni": true,
+      "vstupenky": "",
+      "web": "https://www.kmdraha.cz/akce/75-adventni-jizdy-hurvinkem-do-tovacova",
+      "youtube": "",
+      "zacatek": "2026-12-12T09:15:00",
       "zdarma": false
     },
     {

@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tak tohle je L. Rekonstrukce radniční věže v Kroměříži se natáhne, protože stavbaři nahoře narazili na nosné trámy v havarijním stavu. Ty drží celou horní část věže, která váží přes 20 tun, a v rozích jsou shnilé a sežrané červotočem. Libor Pecháček, šéf radničního odboru investic, vysvětlil, že trámy byly schované v zakrytém hrázděném zdivu a dokud ho stavbaři neodkryli, nikdo to nemohl poznat. Plán dostal nečekaný patch.",
+    "Teď odborníci řeší, kudy z toho ven. Jana Gregorová, která má na odboru investic na starosti památky, popsala dvě cesty. Buď jeřáb zvedne střechu věže, položí ji na zem a konstrukci pod ní repasují s pomocí nových dubových trámů. Nebo se shnilé kusy vyříznou a spraví přímo nahoře, což je technicky hodně náročné. BTW, to dřevo pamatuje třicetiletou válku, takže je z první půlky 17. století. Mezi dřevěnými konstrukcemi ve městě patří k nejstarším, aura level vysoko.",
+    "Proč to shnilo? Gregorová to dává za vinu opravě zhruba před 80 lety. Tehdy nikdo nevyspádoval ochozy s balustrádou v 6. nadzemním podlaží, a tak dešťová voda desítky let neodtékala ven a tekla rovnou dovnitř do dřeva. Takový unc behavior, který věž splácí dodnes.",
+    "Opravu dělá od června brněnská firma STCH. Počítalo se zhruba s 10,5 milionu korun a hotovo mělo být v červnu příštího roku. O kolik se termín posune a o kolik to podraží, záleží na zvolené variantě, která by měla být jasná v příštích týdnech. Starosta Tomáš Opatrný to zdůvodnil tím, že památku je potřeba opravit a jde i o bezpečnost lidí pod věží. Dražší to bude fr. Památka z třicetileté války holt nespěchá."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.604,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-23T21:24:40.659661+00:00"
+  },
+  "headline": "Radniční věž chytila L: shnilé trámy pod střechou, oprava bude delší a dražší",
+  "id": "mesto-kromeriz:404d1b457d487f5c",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-23T11:25:13+01:00",
+  "rewritten_at": "2026-11-23T21:24:40.659700+00:00",
+  "sensitivity": "volny",
+  "slug": "radnicni-vez-chytila-l-shnile-tramy-pod-strechou-oprava-bude-delsi-a-drazsi",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "stavba",
+    "radnice",
+    "peníze"
+  ],
+  "tldr": [
+    {
+      "emoji": "🪵🐛",
+      "label": "Bad News",
+      "text": "Nosné trámy v horní části radniční věže jsou shnilé a prožrané červotočem, takže se oprava protáhne."
+    },
+    {
+      "emoji": "🏗️",
+      "label": "Two Options",
+      "text": "Buď jeřáb sundá střechu věže na zem, nebo se trámy opraví přímo nahoře."
+    },
+    {
+      "emoji": "💸",
+      "label": "Price Check",
+      "text": "Původně se počítalo zhruba s 10,5 milionu korun, konečná cena bude vyšší."
+    }
+  ]
+}
