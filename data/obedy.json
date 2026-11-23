@@ -1,18 +1,23 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-20",
+      "den": "2026-11-23",
       "menu": {
         "jidla": [
           {
             "alergeny": "1a, 3, 7, 9",
             "cena": 175,
-            "nazev": "Boloňské lasagne (150 g), s vyzrálým hovězím z farmy Rampuše, sýr Gran Moravia"
+            "nazev": "Moravský vrabec na černém pivu (150 g), červené zelí s křenem, variace knedlíků"
           },
           {
-            "alergeny": "1a, 7",
+            "alergeny": "1a, 7, 9",
             "cena": 185,
-            "nazev": "Špagety cacio e pepe (300 g), (se sýrem pecorino romano a čerstvě mletou pepřovou směsí Earnest), rukolový salátek"
+            "nazev": "Quesadilla s dýní a fazolemi (300 g), čedar, dip ze zakysané smetany"
+          },
+          {
+            "alergeny": "7, 9",
+            "cena": 225,
+            "nazev": "B&B high protein talíř (200 g), Grilovaná vepřová panenka, smetanová omáčka s hříbky, jasmínová rýže, malý salát"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -22,7 +27,7 @@
           {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
-            "nazev": "Signature B&B burger, hranolky (150 g), vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
+            "nazev": "Signature B&B burger, hranolky, vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -33,26 +38,31 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Čočková se zeleninou a párkem (9)"
+            "nazev": "Hovězí vývar s masovými knedlíčky (1a, 3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-20T11:44:55+00:00"
+      "stazeno": "2026-11-23T09:04:23+00:00"
     },
     "earnest": {
-      "den": "2026-11-20",
+      "den": "2026-11-23",
       "menu": {
         "jidla": [
           {
             "alergeny": "1a, 3, 7, 9",
             "cena": 175,
-            "nazev": "Boloňské lasagne (150 g), s vyzrálým hovězím z farmy Rampuše, sýr Gran Moravia"
+            "nazev": "Moravský vrabec na černém pivu (150 g), červené zelí s křenem, variace knedlíků"
           },
           {
-            "alergeny": "1a, 7",
+            "alergeny": "1a, 7, 9",
             "cena": 185,
-            "nazev": "Špagety cacio e pepe (300 g), (se sýrem pecorino romano a čerstvě mletou pepřovou směsí Earnest), rukolový salátek"
+            "nazev": "Quesadilla s dýní a fazolemi (300 g), čedar, dip ze zakysané smetany"
+          },
+          {
+            "alergeny": "7, 9",
+            "cena": 225,
+            "nazev": "B&B high protein talíř (200 g), Grilovaná vepřová panenka, smetanová omáčka s hříbky, jasmínová rýže, malý salát"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -62,7 +72,7 @@
           {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
-            "nazev": "Signature B&B burger, hranolky (150 g), vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
+            "nazev": "Signature B&B burger, hranolky, vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -73,87 +83,118 @@
         "polevky": [
           {
             "cena": 30,
-            "nazev": "Čočková se zeleninou a párkem (9)"
+            "nazev": "Hovězí vývar s masovými knedlíčky (1a, 3, 7, 9)"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-20T11:44:57+00:00"
+      "stazeno": "2026-11-23T09:04:25+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-20",
+      "den": "2026-11-23",
       "menu": {
         "jidla": [
           {
             "cena": 139,
-            "nazev": "Špagety Aglio Olio s feferonkou a anglickou slaninou"
+            "nazev": "Smažený gothaj v těstíčku, vařené brambory, tatarka"
           },
           {
             "cena": 149,
-            "nazev": "Smažený holandský řízek, bramborová kaše, okurek"
+            "nazev": "Vepřová kýta na kmíně, jasmínová rýže"
           },
           {
             "cena": 159,
-            "nazev": "Kuřecí roládky, jasmínová rýže, salátek"
+            "nazev": "Kuřecí steak se smetanovo-žampionovou omáčkou, hranolky"
           },
           {
             "cena": 199,
-            "nazev": "Burger s husím trhaným masem, BBQ, rukolou a červeným zelím, steakové hranolky, slaninový dip"
+            "nazev": "Kuřecí řízek v corn flakes strouhance, vařené brambory s máslem a pažitkou"
           }
         ],
         "polevky": [
           {
             "cena": 20,
-            "nazev": "Husí vývar s kapáním a drůbky"
+            "nazev": "Staročeská křenová"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-20T11:44:58+00:00"
+      "stazeno": "2026-11-23T09:04:26+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-20",
+      "den": "2026-11-23",
       "menu": {
         "jidla": [
           {
-            "cena": 175,
-            "nazev": "M1: Mac and Cheese - kuřecí prsíčka 150g v cheddarové omáčce s těstovinami, cibulkou a křupavým guanciale"
+            "cena": null,
+            "nazev": "M1: Kuřecí prsíčka 150g gratinovaná šunkou a hermelínem, smažené bramborové dolárky/rýže, kompot (175,-)"
           },
           {
-            "cena": 185,
-            "nazev": "M2: Smažené karbanátky 150g z kuřecích prsíček, mozzarelly a zeleniny, bramborová kaše, naše pečená řepa"
+            "cena": 180,
+            "nazev": "M2: Čočka s poctivým uzeným 120g a sázeným vejcem, cibulka, okurek a čerstvý chléb"
           },
           {
-            "cena": 190,
-            "nazev": "M3: Pomalu pečený trhaný králík 200g s cibulkou a vlastní šťávou, omáčka z hořčice a pečené dýně, špenátové žemlové knedlíčky se slaninou"
+            "cena": 195,
+            "nazev": "M3: Dančí ragout 200g se smetanou a bílým vínem (hlíva, šalotky, lišky, krémové žampióny, mladý špenát), škvarkové placky/máslové špecle"
           },
           {
-            "cena": 200,
-            "nazev": "M4: Fish and Chips - filet okouna nilského 150g v bylinkovém těstíčku, hráškové pyré, listový salátek, hranolky, libečkové mayo s jogurtem"
+            "cena": null,
+            "nazev": "M4: Udon nudle STIR FRY - pak choi, shitake, kořenovka, pórek, paprika, teriyaki omáčka, sezam, kuřecí prsíčka 150g (190,-)/krevety 100g (220,-)/tempeh 100g (190,-)"
           },
           {
-            "cena": 225,
-            "nazev": "M5: Dorůžova pečený anglický roastbeef 170g (Biofarma Podhoran), pepřová omáčka, zelené fazolky se slaninou, hranolky, mayo z pečené dýně a gorgonzoly"
+            "cena": null,
+            "nazev": "M5: Grilovaná vepřová panenka 170g plněná parmazánem, máslem, bazalkou a parmskou šunkou, demi glace, máslová karotka a brokolice, smetanová bramborová kaše (220,-)"
+          },
+          {
+            "cena": null,
+            "nazev": "M6: Dukátové buchtičky na másle s vanilkovým krémem, horké maliny, nutella (170,-) Buchtičky dezert (70,-)"
+          }
+        ],
+        "polevky": [],
+        "poznamky": [
+          "Česneková krémová se sýrem a chlebovými krutony (40,-)"
+        ]
+      },
+      "stazeno": "2026-11-23T09:04:27+00:00"
+    },
+    "sladovna": {
+      "den": "2026-11-23",
+      "menu": {
+        "jidla": [
+          {
+            "cena": 195,
+            "nazev": "Koprová omáčka s trhaným hovězím masem, pečené grenaille (1,3,7,9)"
+          },
+          {
+            "cena": 170,
+            "nazev": "Koprová omáčka s vařeným vejcem (2ks), pečené grenaille (1,7,9)"
+          },
+          {
+            "cena": 180,
+            "nazev": "Řízek z vepřové kotlety, bramborový salát (1,3,7,9,10)"
+          },
+          {
+            "cena": 180,
+            "nazev": "Butter chicken, jasmínová rýže (7)"
+          },
+          {
+            "cena": 170,
+            "nazev": "Domácí halušky se zelím a uzeným masem, smažená cibulka (1,3,7)"
           }
         ],
         "polevky": [
           {
-            "cena": 40,
-            "nazev": "Bramboračka s hříbky"
+            "cena": 35,
+            "nazev": "Hráškový krém (7,9)"
           }
         ],
         "poznamky": [
-          "Informace o alergenech žádejte u obsluhy."
+          "pondělí 23. listopadu - pátek 27. listopadu 2026"
         ]
       },
-      "stazeno": "2026-11-20T11:44:59+00:00"
-    },
-    "sladovna": {
-      "den": "2026-11-20",
-      "menu": {},
-      "otisk": "0a625ac8f04ee260",
-      "otisk_od": "2026-11-16",
-      "stazeno": "2026-11-20T11:45:00+00:00"
+      "otisk": "3d48e371fbebaafb",
+      "otisk_od": "2026-11-23",
+      "stazeno": "2026-11-23T09:04:28+00:00"
     }
   }
 }
