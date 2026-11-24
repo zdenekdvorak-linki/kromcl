@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tohle si přepošli do rodinného chatu, babi to fr ocení. Radnice už vydává průkazy na Senior taxi pro rok 2027. Taxík vozí lidi nad 65 let a držitele průkazu ZTP nebo ZTP/P s trvalým pobytem v Kroměříži nebo v místní části. Jedna jízda po městě stojí pevných 30 korun a zbytek ceny doplácí město.",
+    "Háček je v tom, že se letošní průkaz do dalšího roku nepřenáší. Podle místostarosty Pavla Motyčky ho teď má zhruba 400 lidí. Kdo z nich chce jezdit i v roce 2027, musí si dojít pro nový, který pak platí celý kalendářní rok. Kdo ho nevyzvedne, chytí L hned u první jízdy.",
+    "Papíry řeší odbor sociálních služeb a zdravotnictví v budově C na ulici 1. máje 533. Michaela Hrdinová a Vratislav Snídal tam průkazy vyřizují v pondělí a ve středu od osmi do čtyř odpoledne. Vedoucí odboru Radovan Klabal připomněl, že s sebou je potřeba občanka. Lidi se zdravotním postižením přinesou navíc průkaz ZTP nebo ZTP/P. Bez trvalého pobytu ve městě nebo místní části to nepůjde, period.",
+    "Evidence jízd taky dostala lowkey buff. Do průkazu se teď budou jízdy zapisovat po měsících, takže řidič i cestující hned uvidí, kolik z 8 měsíčních jízd ještě zbývá. Od září službu pro město jezdí soukromý taxikář Petr Bonďa se třemi auty. Lidi s ním jezdí hlavně k doktorovi, na úřady, do obchodů a do lékárny. Třicet kaček za cestu k doktorovi? Highkey valid."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.586,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-24T10:18:14.061027+00:00"
+  },
+  "headline": "Řekni to babi: průkazy na Senior taxi 2027 už se vydávají a je to W",
+  "id": "mesto-kromeriz:fa6b87d3ad8bf8ce",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-24T11:42:00+01:00",
+  "rewritten_at": "2026-11-24T10:18:14.061058+00:00",
+  "sensitivity": "volny",
+  "slug": "rekni-to-babi-prukazy-na-senior-taxi-2027-uz-se-vydavaji-a-je-to-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "doprava",
+    "lidé",
+    "radnice"
+  ],
+  "tldr": [
+    {
+      "emoji": "👵🚕",
+      "label": "Who Rides",
+      "text": "Nárok má každý nad 65 let nebo držitel ZTP či ZTP/P s trvalým pobytem v Kroměříži nebo některé místní části."
+    },
+    {
+      "emoji": "🪪",
+      "label": "New Card",
+      "text": "Kdo chce jezdit i v roce 2027, musí si vyzvednout nový průkaz, ten současný nestačí."
+    },
+    {
+      "emoji": "🏛️",
+      "label": "Where When",
+      "text": "Průkazy vydává radnice v budově C na ulici 1. máje 533, a to v pondělí a ve středu."
+    }
+  ]
+}
