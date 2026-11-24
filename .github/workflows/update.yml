@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.nasazeni.outputs.page_url }}
+      url: ${{ steps.nasazeni.outputs.page_url || steps.nasazeni2.outputs.page_url || steps.nasazeni3.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -62,7 +62,25 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
+      # deploy-pages se na artefakt ptá hned po nahrání a API ho občas ještě
+      # nevidí: „No artifacts named github-pages" (actions/deploy-pages#451,
+      # od 22. 11. 2026 skoro pokaždé). Spadne dřív, než založí deployment,
+      # takže se dá v tomtéž běhu zopakovat. Re-run celého běhu nepomůže,
+      # nahraje druhý artefakt a pak spadne na „Multiple artifacts".
       - id: nasazeni
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.nasazeni.outcome == 'failure'
+        run: sleep 30
+      - id: nasazeni2
+        if: steps.nasazeni.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.nasazeni2.outcome == 'failure'
+        run: sleep 90
+      - id: nasazeni3
+        if: steps.nasazeni2.outcome == 'failure'
         uses: actions/deploy-pages@v4
 
       # Až po nasazení, aby Bing a Seznam na adrese našly novou verzi.

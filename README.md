@@ -662,6 +662,7 @@ Smoke checklist po refaktoru:
 | 2026-11-05 | **Polední menu** na `/poledni-menu.html` (`kromka/obedy.py`): pět podniků z jejich vlastních webů, beze změny, bez modelu; stahování ve všední den 8–14 h v cronu, pojistka na datum (u Sladovny otiskem); položka „obědy" v hlavním řádku menu za programem, sitemap 0.8, piktogram `obed` | Zadání Zdeňka: nabídka menu pro aktuální den. Navržené Meníčka.cz zakazují užití obsahu bez souhlasu, proto weby podniků. Z 34 podniků jich má menu v HTML na svém webu šest, Zdeněk vybral pět. Marketing Miner (11/2026): „polední menu kroměříž" 50 hledání měsíčně, „denní menu kroměříž" 20 |
 | 2026-11-05 | Hamburger do **1120 px** místo 1040 | Položka „obědy" natáhla menu na 682 px, láme se pod 1081 px okna (měřeno: 1080 dva řádky, 1082 jeden). Rezerva na Mac stejná jako dřív |
 | 2026-11-05 | `net.get(…, agent=)` | Výchozí User-Agent mluví o přepisu zpráv města, což u webu restaurace není pravda |
+| 2026-11-24 | **Nasazení na Pages se v běhu zkouší až třikrát** (`update.yml`: `nasazeni`, po 30 s `nasazeni2`, po 90 s `nasazeni3`) | `deploy-pages` hledá artefakt hned po nahrání a API ho někdy ještě nevidí (actions/deploy-pages#451). Od 22. 11. to shodilo dva běhy po sobě, web stál a IndexNow nedostal dva nové články. Re-run nepomůže, nahraje druhý artefakt. Čekání přes REST API nejde, `deploy-pages` se ptá jiného, interního API |
 
 ## Appka a favicona
 
