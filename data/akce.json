@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-25T02:28:42.378873+00:00",
+  "stazeno": "2026-11-25T22:32:01.963044+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -5073,38 +5073,6 @@
       "web": "https://www.klubickokm.cz/vzdelani-pro-rodice/",
       "youtube": "",
       "zacatek": "2026-11-27T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11914,
-      "cena": 150,
-      "cena_pozn": "zahájení předprodeje 19. 10. 2026",
-      "id": 21797,
-      "konec": "2026-11-27T21:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Project From",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11914.jpg",
-      "perex": "Kapela Project From v sobě spojuje krásné hlasy tří zpěvaček za doprovodu akustické kytary. V jejich repertoáru jsou kromě vlastní tvorby také akustické verze známých světových hitů z žánru rock a pop, jako například od kapel Queen, Mr.Big, Heart, Suzi Quatro, Aretha Franklin, Tom Petty a mnoho dalších.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-10-19T07:33:47",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/project-from",
-      "youtube": "",
-      "zacatek": "2026-11-27T19:00:00",
       "zdarma": false
     },
     {

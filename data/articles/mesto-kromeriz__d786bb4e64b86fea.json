@@ -1,0 +1,49 @@
+{
+  "body": [
+    "Tak jo, Vánoce už klepou na dveře. V neděli 29. listopadu se v Kroměříži rozsvítí vánoční strom. Jestli jsou světýlka tvůj roman empire, máš lowkey highlight celého listopadu.",
+    "Pokud chceš u toho felit s kámošema, checkni si ten den v kalendáři hned teď a domluv partu dopředu. Kdo to prošvihne, uvidí strom až rozsvícený a přijde o moment, kdy se to celé spustí. To by bylo teda F.",
+    "Strom dostane glow-up a celé město dostane vibes. Neděle 29. listopadu, kdo jde?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 4,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.242,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-25T22:32:27.887356+00:00"
+  },
+  "headline": "Kroměříž chystá vánoční glow-up: stromek se rozsvítí v neděli 29. listopadu",
+  "id": "mesto-kromeriz:d786bb4e64b86fea",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-25T14:32:21+01:00",
+  "rewritten_at": "2026-11-25T22:32:27.887377+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-chysta-vanocni-glow-up-stromek-se-rozsviti-v-nedeli-29-listopadu",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "akce",
+    "kultura"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎄✨",
+      "label": "Main Quest",
+      "text": "Kroměříž rozsvítí svůj vánoční strom."
+    },
+    {
+      "emoji": "📅",
+      "label": "Save Date",
+      "text": "Stane se to v neděli 29. listopadu."
+    },
+    {
+      "emoji": "📸",
+      "label": "Squad Plan",
+      "text": "Zablokuj si ten den s partou, ať pak nekoukáš jen na cizí photo dump."
+    }
+  ]
+}

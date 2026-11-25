@@ -1,0 +1,50 @@
+{
+  "body": [
+    "Smutná zpráva pro celé město. Ve věku 61 let zemřel Marek Šindler, bývalý místostarosta, radní a dlouholetý člen zastupitelstva. Starosta Tomáš Opatrný připomněl, kolik toho pro Kroměříž udělal, a jeho nejbližším vyjádřil soustrast.",
+    "Kroměřížané ho do zastupitelstva poprvé zvolili v roce 1990, kdy mu bylo teprve 25. Tehdy kandidoval za Hnutí za samosprávnou demokracii – Společnost pro Moravu a Slezsko. Později mezi zastupitele usedl za ČSSD, a to v letech 1994–2002 a pak znovu 2006–2018.",
+    "Ve vedení města byl také jako radní a od roku 2014 do roku 2018 jako místostarosta. Na starosti měl služby a dohlížel na Kroměřížské technické služby, Sportovní zařízení města Kroměříže, Biopas a tehdejší Správu majetku města Kroměříže.",
+    "Radnice na jeho památku vyvěsila černý prapor. Na radniční věži ho ale nehledej, protože ta je zrovna v rekonstrukci. Prapor proto výjimečně visí na budově číslo 33 na Velkém náměstí. Čest jeho památce."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 9,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.668,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-25T22:32:53.689349+00:00"
+  },
+  "headline": "Kroměříž se loučí s Markem Šindlerem, do zastupitelstva šel už ve 25 letech",
+  "id": "mesto-kromeriz:7fccb5a8b598172d",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-25T13:50:27+01:00",
+  "rewritten_at": "2026-11-25T22:32:53.689371+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-se-louci-s-markem-sindlerem-do-zastupitelstva-sel-uz-ve-25-letech",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🕯️",
+      "label": "Sad News",
+      "text": "Ve 61 letech zemřel Marek Šindler, v letech 2014 až 2018 místostarosta Kroměříže."
+    },
+    {
+      "emoji": "🏛️",
+      "label": "Long Career",
+      "text": "Zastupitelem byl poprvé od roku 1990, kdy mu bylo 25, a naposledy do roku 2018."
+    },
+    {
+      "emoji": "🏴",
+      "label": "Black Flag",
+      "text": "Černý prapor na jeho památku visí na domě číslo 33 na Velkém náměstí, protože radniční věž se opravuje."
+    }
+  ]
+}
