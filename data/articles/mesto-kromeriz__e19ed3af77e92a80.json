@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Tenhle achievement ti běžná základka nenabídne. Adam Stavjaník ze ZŠ Komenského náměstí se 24. listopadu 2026 stal v tajné volbě starostou Žákovského zastupitelstva města Kroměříže. Místostarostkou je Ema Pospíšilová z Gymnázia Kroměříž. Tři desítky žáků ze základek a z nižších ročníků gymnázií si sedly do hlavní zasedačky na radnici, kde normálně jednají dospělí.",
+    "Žádný larp na půl plynu. Děti si nejdřív nechaly ověřit platnost volby, pak složily slib zastupitele a odhlasovaly program. Teprve potom volily vedení. Do rady pošle každá škola po jednom žákovi. Byrokracie se vším všudy, no cap.",
+    "Teď začíná main quest. Do konce školního roku žáky čeká ještě 5 zasedání a práce ve výborech pro školství a sport, sociální věci, kulturu a životní prostředí. Musí se shodnout na jednom projektu a město ho pak zaplatí a uskuteční. Starosta Tomáš Opatrný jim popřál, ať je to baví, a označil je za zdroj nápadů, protože se na město dívají jinak. Místostarostka Vladimíra Vondráčková, která celý nápad rozjela, chce, aby děti zjistily, jak město funguje a že spousta věcí je těžší, než vypadá. Let them cook.",
+    "Minulá sestava zvládla dva W projekty. V rámci Digitálních parťáků žáci natočili video o tom, jak podvodníci na internetu loví údaje a peníze, hlavně od seniorů. Pustili ho v Kroměřížském centru pro seniory a zdravotně postižené a pak pomáhali s nastavením aplikací v mobilu. K tomu sázeli stromy u cyklostezky Kotojedy – Vážany. Laťka visí docela vysoko, tak s čím přijde Adamova parta?"
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 6,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.554,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-25T02:30:08.623155+00:00"
+  },
+  "headline": "Kroměříž má dětskou radnici a Adam Stavjaník právě odemkl starostovský achievement",
+  "id": "mesto-kromeriz:e19ed3af77e92a80",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-24T12:44:48+01:00",
+  "rewritten_at": "2026-11-25T02:30:08.623192+00:00",
+  "sensitivity": "volny",
+  "slug": "kromeriz-ma-detskou-radnici-a-adam-stavjanik-prave-odemkl-starostovsky-achieveme",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "radnice",
+    "školství",
+    "lidé"
+  ],
+  "tldr": [
+    {
+      "emoji": "🏛️👑",
+      "label": "New Boss",
+      "text": "Starostou žákovského zastupitelstva je Adam Stavjaník ze ZŠ Komenského náměstí, místostarostkou Ema Pospíšilová z Gymnázia Kroměříž."
+    },
+    {
+      "emoji": "🎯",
+      "label": "Main Quest",
+      "text": "Žáky čeká ještě 5 zasedání a dohoda na projektu, který město zaplatí a uskuteční."
+    },
+    {
+      "emoji": "🌳📱",
+      "label": "Last Season",
+      "text": "Minulí žákovští zastupitelé natočili video proti online scamům na seniory a sázeli stromy u cyklostezky Kotojedy – Vážany."
+    }
+  ]
+}
