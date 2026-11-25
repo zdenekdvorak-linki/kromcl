@@ -1,17 +1,13 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-24",
+      "den": "2026-11-25",
       "menu": {
         "jidla": [
           {
-            "alergeny": "2, 7, 9",
+            "alergeny": "7, 9",
             "cena": 175,
-            "nazev": "Italské krémové risotto (150 g), s grilovanými plody moře"
-          },
-          {
-            "cena": 40,
-            "nazev": "Věneček / choux mini (150 g)"
+            "nazev": "Hovězí maso na červeném víně (150 g), bramborovo-celerové pyré, zeleninové chipsy"
           },
           {
             "alergeny": "1a, 7, 9",
@@ -24,26 +20,14 @@
             "nazev": "B&B high protein talíř (200 g), Grilovaná vepřová panenka, smetanová omáčka s hříbky, jasmínová rýže, malý salát"
           },
           {
-            "cena": 40,
-            "nazev": "Mini mousse dezert (150 g)"
-          },
-          {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
             "nazev": "Kuřecí řízek (150 g), náš bramborový salát"
           },
           {
-            "cena": 35,
-            "nazev": "Pavlova mini (150 g)"
-          },
-          {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
             "nazev": "Signature B&B burger, hranolky, vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
-          },
-          {
-            "cena": 30,
-            "nazev": "Mini cheesecake (150 g)"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -53,26 +37,26 @@
         ],
         "polevky": [
           {
+            "cena": null,
+            "nazev": "Kuřecí vývar s trhaným masem, zeleninou a bylinkovým kápáním"
+          },
+          {
             "cena": 30,
-            "nazev": "Bramborový krém s anglickou slaninou (7, 9)"
+            "nazev": "Alergeny: 1a, 3, 7, 9"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-24T10:17:26+00:00"
+      "stazeno": "2026-11-25T12:54:10+00:00"
     },
     "earnest": {
-      "den": "2026-11-24",
+      "den": "2026-11-25",
       "menu": {
         "jidla": [
           {
-            "alergeny": "2, 7, 9",
+            "alergeny": "7, 9",
             "cena": 175,
-            "nazev": "Italské krémové risotto (150 g), s grilovanými plody moře"
-          },
-          {
-            "cena": 40,
-            "nazev": "Věneček / choux mini (150 g)"
+            "nazev": "Hovězí maso na červeném víně (150 g), bramborovo-celerové pyré, zeleninové chipsy"
           },
           {
             "alergeny": "1a, 7, 9",
@@ -85,26 +69,14 @@
             "nazev": "B&B high protein talíř (200 g), Grilovaná vepřová panenka, smetanová omáčka s hříbky, jasmínová rýže, malý salát"
           },
           {
-            "cena": 40,
-            "nazev": "Mini mousse dezert (150 g)"
-          },
-          {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
             "nazev": "Kuřecí řízek (150 g), náš bramborový salát"
           },
           {
-            "cena": 35,
-            "nazev": "Pavlova mini (150 g)"
-          },
-          {
             "alergeny": "1a, 3, 7, 10",
             "cena": 195,
             "nazev": "Signature B&B burger, hranolky, vepřový smash burger (2x 75 g), uzený sýr, umami mayo, čerstvá a nakládaná zelenina, máslová brioška, hranolky"
-          },
-          {
-            "cena": 30,
-            "nazev": "Mini cheesecake (150 g)"
           },
           {
             "alergeny": "1a, 3, 7, 10",
@@ -114,52 +86,56 @@
         ],
         "polevky": [
           {
+            "cena": null,
+            "nazev": "Kuřecí vývar s trhaným masem, zeleninou a bylinkovým kápáním"
+          },
+          {
             "cena": 30,
-            "nazev": "Bramborový krém s anglickou slaninou (7, 9)"
+            "nazev": "Alergeny: 1a, 3, 7, 9"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-24T10:17:28+00:00"
+      "stazeno": "2026-11-25T12:54:12+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-24",
+      "den": "2026-11-25",
       "menu": {
         "jidla": [
           {
             "cena": 139,
-            "nazev": "Čočka na kyselo, vejce / klobáska, chléb, okurek"
+            "nazev": "Zapečené palačinky s tvarohem a meruňkami"
           },
           {
             "cena": 149,
-            "nazev": "Pražská vepřová kapsa, jasmínová rýže"
+            "nazev": "Kuřecí sekaná pečeně se sýrem, bramborová kaše, zelný salát"
           },
           {
             "cena": 159,
-            "nazev": "Pečené jelítko, kysané zelí, vařené brambory"
+            "nazev": "Steak z vepřové kotlety se šunkou a vejcem, bramborové krokety"
           },
           {
-            "cena": 199,
+            "cena": null,
             "nazev": "Kuřecí řízek v corn flakes strouhance, vařené brambory s máslem a pažitkou"
           }
         ],
         "polevky": [
           {
             "cena": 20,
-            "nazev": "Špenátová s vejci"
+            "nazev": "Gulášová"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-24T10:17:29+00:00"
+      "stazeno": "2026-11-25T12:54:13+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-24",
+      "den": "2026-11-25",
       "menu": {
         "jidla": [
           {
             "cena": null,
-            "nazev": "M1: Ražniči z kuřecích prsíček 180g s paprikou, cibulí a slaninou, opékané brambory, domácí tatarka (175,-)"
+            "nazev": "M1: Mix řízků 150g (kuřecí prsíčka, vepřová panenka), domácí bramborový salát s majonézou/vařené brambory s máslem a domácí tatarkou (180,-)"
           },
           {
             "cena": 180,
@@ -184,17 +160,17 @@
         ],
         "polevky": [],
         "poznamky": [
-          "Vývar s játrovými knedlíčky a nudlemi (35,-)"
+          "Indická květáková (35,-)"
         ]
       },
-      "stazeno": "2026-11-24T10:17:30+00:00"
+      "stazeno": "2026-11-25T12:54:14+00:00"
     },
     "sladovna": {
-      "den": "2026-11-24",
+      "den": "2026-11-25",
       "menu": {},
       "otisk": "3d48e371fbebaafb",
       "otisk_od": "2026-11-23",
-      "stazeno": "2026-11-24T10:17:31+00:00"
+      "stazeno": "2026-11-25T12:54:15+00:00"
     }
   }
 }
