@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-25T22:32:01.963044+00:00",
+  "stazeno": "2026-11-26T15:15:37.619826+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4675,247 +4675,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11992,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21895,
-      "konec": "2026-11-25T16:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Adventní prodej výrobků",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11992.jpg",
-      "perex": "Knihovna Kroměříž Výrobky klientů aktivizačních dílen můžete zakoupit ve dnech: pondělí 23.11. (9-16) - DOZP BARBORKA, DPS U KAŠNY úterý 24.11. (9-16) - DPS VÁŽANY, DPS U MORAVY středa 25.11. (9-16) - STD HANÁČEK, DZR STROM ŽIVOTA",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Jarmarky, trhy a gastro",
-      "typ_id": 15,
-      "upraveno": "2026-11-11T15:25:18",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-23T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11738,
-      "cena": 80,
-      "cena_pozn": "",
-      "id": 21814,
-      "kino": {
-        "format": "česky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 15 let",
-        "stopaz": "asi 1 hodina a 33 minut"
-      },
-      "konec": "2026-11-25T16:33:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Léčivé účinky sebeklamu (CZE 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11738.jpg",
-      "perex": "Komedie / Drama Režie: Adolf Zika Hrají: Martin Stránský, Ondřej Sokol, Jitka Čvančarová, Vica Kerekes, Petr Vaněk a další",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-10-20T15:13:52",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/lecive-ucinky-sebeklamu",
-      "youtube": "5XuKiMGhx7Q",
-      "zacatek": "2026-11-25T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11978,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21881,
-      "konec": "2026-11-25T18:00:00",
-      "misto": "Riegrovo náměstí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Riegrovo náměstí"
-      },
-      "misto_gps": [
-        49.297151,
-        17.394264
-      ],
-      "misto_web": "",
-      "nazev": "Pěstounství/osvojení začínají otázkami",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11978.jpg",
-      "perex": "Beseda o přípravách zájemců o pěstounskou péči nebo osvojení",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-11-11T10:44:35",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-25T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11933,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21945,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "Ebenezer",
-        "stopaz": "asi 1 hodina a 57 minut"
-      },
-      "konec": "2026-11-25T18:57:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Ebenezer: Vánoční koleda (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11933.jpg",
-      "perex": "Fantasy / Drama / Komedie Režie: Ti West Hrají: Johnny Depp, Andrea Riseborough, Sam Claflin, Daisy Ridley, Ian McKellen a další",
-      "poznamka": "dabing",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-18T16:18:38",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/ebenezer-vanocni-koleda",
-      "youtube": "4W_pfj-NYoA",
-      "zacatek": "2026-11-25T17:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11775,
-      "cena": 180,
-      "cena_pozn": "zahájení předprodeje 25. 9. 2026",
-      "id": 21612,
-      "konec": "2026-11-25T21:00:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Za5",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11775.jpg",
-      "perex": "Vokální sextet Za5 patří k výrazným představitelům české acapella scény. Šest lidských hlasů bez doprovodu hudebních nástrojů vytváří bohaté harmonie v autorských aranžích známých písní z oblasti popu, jazzu i lidové hudby. Soubor je držitelem několika zlatých ocenění z domácích i mezinárodních soutěží a koncertoval nejen po celé České republice, ale také ve Švýcarsku, Rakousku a v USA. Letos slaví 10. výročí své existence.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Hudba a tanec",
-      "typ_id": 10,
-      "upraveno": "2026-09-14T09:30:13",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/za5",
-      "youtube": "",
-      "zacatek": "2026-11-25T19:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11958,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21854,
-      "kino": {
-        "format": "titulky | 2D",
-        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
-        "puvodni_nazev": "I Play Rocky",
-        "stopaz": "asi 2 hodiny a 8 minut"
-      },
-      "konec": "2026-11-25T22:08:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Já, Rocky (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11958.jpg",
-      "perex": "Drama / Komedie / Životopisný Režie: Peter Farrelly Hrají: Anthony Ippolito, AnnaSophia Robb, Matt Dillon, P.J. Byrne, Toby Kebbell, Tracy Letts a další",
-      "poznamka": "titulky",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-06T06:43:55",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/ja-rocky",
-      "youtube": "S9Pg-UwNOhI",
-      "zacatek": "2026-11-25T20:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11851,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21717,
-      "konec": "2026-11-25T23:00:00",
-      "misto": "Hvězdárna Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Braunerova 2397"
-      },
-      "misto_gps": [
-        49.2962,
-        17.419075
-      ],
-      "misto_web": "https://www.dk-kromeriz.cz/hvezdarna-kromeriz",
-      "nazev": "Pravidelná pozorování hvězd",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11851.jpg",
-      "perex": "Pravidelná pozorování podzim 2026",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-09-30T10:44:50",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-25T20:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11836,
       "cena": 0,
       "cena_pozn": "Pro členy A3V zdarma, ostatní 10,-",
@@ -5041,6 +4800,38 @@
       "web": "https://www.stara-masna.cz",
       "youtube": "zcSqfJEACQs",
       "zacatek": "2026-11-27T00:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11911,
+      "cena": 0,
+      "cena_pozn": "",
+      "id": 21973,
+      "konec": "2026-11-27T16:00:00",
+      "misto": "Knihovna Kroměřížska",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Slovanské náměstí 3920"
+      },
+      "misto_gps": [
+        49.292074,
+        17.395305
+      ],
+      "misto_web": "http://www.knihkm.cz/",
+      "nazev": "Den pro dětskou knihu",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11911.jpg",
+      "perex": "Oslava narozenin Miloše Macourka.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-10-15T09:25:38",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.knihkm.cz/kalendar-akci.html",
+      "youtube": "",
+      "zacatek": "2026-11-27T13:00:00",
       "zdarma": false
     },
     {
