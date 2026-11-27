@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-26T15:15:37.619826+00:00",
+  "stazeno": "2026-11-27T08:32:00.607930+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4672,102 +4672,6 @@
       "web": "https://www.muzeum-km.cz/pripravovane-vystavy/404-vysla-hvezda-na-kraj-sveta-vanocni-souzneni-ludmily-vaskove-a-ivany-langrove",
       "youtube": "",
       "zacatek": "2026-11-20T09:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11836,
-      "cena": 0,
-      "cena_pozn": "Pro členy A3V zdarma, ostatní 10,-",
-      "id": 21695,
-      "konec": "2026-11-26T16:15:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Tajemství šťastného seniorského života",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11836.jpg",
-      "perex": "Přednáška Pavla Motyčky - A3V.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-09-29T08:36:58",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-26T15:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11899,
-      "cena": 80,
-      "cena_pozn": "zahájení předprodeje 14. 10. 2026",
-      "id": 21782,
-      "konec": "2026-11-26T19:30:00",
-      "misto": "Klub Starý pivovar",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Prusinovského 114"
-      },
-      "misto_gps": [
-        49.29772,
-        17.393386
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
-      "nazev": "Babička drsňačka",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11899.jpg",
-      "perex": "Divadelní hra na motivy stejnojmenné knihy Davida Williamse.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-10-13T06:52:57",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/babicka-drsnacka-1",
-      "youtube": "",
-      "zacatek": "2026-11-26T18:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11947,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21837,
-      "konec": "2026-11-26T20:00:00",
-      "misto": "Galerie Pekelné sáně",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Malý Val 1512"
-      },
-      "misto_gps": [
-        49.297769,
-        17.389164
-      ],
-      "misto_web": "https://www.pekelnesane.cz",
-      "nazev": "Marika Toman Bumbálková: Mozaika života",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11947.jpg",
-      "perex": "Marika Toman Bumbálková je autorkou mozaiky Louže I., která je aktuálně k vidění na Velkém náměstí v Kroměříži. V roce 2003 získala Cenu za nejlepší absolventskou práci. Studovala v ateliéru Televizní a filmové grafiky u prof. Jiřího Barty. Také se zabývá ilustrací. Mezi lety 2002 a 2012 pracovala jako výtvarnice v divadle Líšeň, kde připravovala plakáty, scénografii a loutky. Za představení Putin lyžuje získala Cenu J. Wilkowskiegona udělovanou v Toruni. Aktuálně se zaměřuje především na tvorbu mozaik ve volné i zakázkové tvorbě. Přijďte si poslechnout její vyprávění ve čtvrtek 26. 11. 2026 na Malý Val 1552.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-11-23T10:09:05",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.pekelnesane.cz/ctvrtky/mozaika-zivota-121",
-      "youtube": "",
-      "zacatek": "2026-11-26T18:00:00",
       "zdarma": false
     },
     {
@@ -8292,6 +8196,101 @@
       "web": "",
       "youtube": "",
       "zacatek": "2026-12-25T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12039,
+      "cena": 120,
+      "cena_pozn": "Jednosměrné jízdné (dospělý / dítě 6-15 let): 01 - 06 km: 30 Kč / 30 Kč 07 - 15 km: 60 Kč / 30 Kč 16 - 25 km: 90 Kč / 60 Kč 26 a více km: 120 Kč / 90 Kč",
+      "id": 21965,
+      "konec": "2026-12-27T21:45:00",
+      "misto": "",
+      "misto_adresa": {},
+      "misto_gps": [],
+      "misto_web": "",
+      "nazev": "Historickými motoráčky z Kroměříže do Zlína a Vizovic",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12039.jpg",
+      "perex": "Na poslední prosincovou neděli roku 2026 spolek Kroměřížská dráha připravuje jízdy zvláštních vlaků mezi Kroměříží, Otrokovicemi, Zlínem a Vizovicemi.",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Zábava",
+      "typ_id": 14,
+      "upraveno": "2026-11-24T08:09:56",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.kmdraha.cz/akce/110-zimni-ozvd",
+      "youtube": "",
+      "zacatek": "2026-12-27T07:45:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12035,
+      "cena": 0,
+      "cena_pozn": "Vstupné dobrovolné.",
+      "id": 21961,
+      "konec": "2026-12-27T17:15:00",
+      "misto": "Kostel Nanebevzetí Panny Marie",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Riegrovo náměstí 165"
+      },
+      "misto_gps": [
+        49.297705,
+        17.395866
+      ],
+      "misto_web": "http://www.farnostpm.cz/",
+      "nazev": "Vánoční koncert Moravských madrigalistů",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12035.jpg",
+      "perex": "Moravští madrigalisté vás srdečně zvou na vánoční koncert! Přijďte si v čase vánočním vychutnat slavnostní hudební odpoledne plné krásných melodií, radosti a sváteční atmosféry.",
+      "poznamka": "",
+      "pro_deti": true,
+      "typ": "Hudba a tanec",
+      "typ_id": 10,
+      "upraveno": "2026-11-23T11:08:50",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "",
+      "youtube": "",
+      "zacatek": "2026-12-27T16:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12016,
+      "cena": 180,
+      "cena_pozn": "",
+      "id": 21937,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "puvodni_nazev": "Dune: Part Three",
+        "stopaz": "asi 2 hodiny a 30 minut"
+      },
+      "konec": "2026-12-27T22:30:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Duna: Část třetí (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12016.jpg",
+      "perex": "Sci-Fi / Akční / Dobrodružný / Drama Režie: Denis Villeneuve Hrají: Timothée Chalamet, Zendaya, Jason Momoa, Florence Pugh, Rebecca Ferguson a další",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:12",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
+      "youtube": "jNcdoqcOdgk",
+      "zacatek": "2026-12-27T20:00:00",
       "zdarma": false
     }
   ],

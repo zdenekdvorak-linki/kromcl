@@ -1,13 +1,13 @@
 {
   "podniky": {
     "beer-bowl": {
-      "den": "2026-11-25",
+      "den": "2026-11-27",
       "menu": {
         "jidla": [
           {
-            "alergeny": "7, 9",
+            "alergeny": "1a, 3, 7",
             "cena": 175,
-            "nazev": "Hovězí maso na červeném víně (150 g), bramborovo-celerové pyré, zeleninové chipsy"
+            "nazev": "Kuřecí Cordon Bleu (150 g), řízek z kuřecích prs plněný šunkou a ementálem, brambory s máslem a petrželkou"
           },
           {
             "alergeny": "1a, 7, 9",
@@ -38,25 +38,25 @@
         "polevky": [
           {
             "cena": null,
-            "nazev": "Kuřecí vývar s trhaným masem, zeleninou a bylinkovým kápáním"
+            "nazev": "Gulášová s mletým masem a bramborami"
           },
           {
             "cena": 30,
-            "nazev": "Alergeny: 1a, 3, 7, 9"
+            "nazev": "Alergeny: 1a, 9"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-25T12:54:10+00:00"
+      "stazeno": "2026-11-27T08:32:02+00:00"
     },
     "earnest": {
-      "den": "2026-11-25",
+      "den": "2026-11-27",
       "menu": {
         "jidla": [
           {
-            "alergeny": "7, 9",
+            "alergeny": "1a, 3, 7",
             "cena": 175,
-            "nazev": "Hovězí maso na červeném víně (150 g), bramborovo-celerové pyré, zeleninové chipsy"
+            "nazev": "Kuřecí Cordon Bleu (150 g), řízek z kuřecích prs plněný šunkou a ementálem, brambory s máslem a petrželkou"
           },
           {
             "alergeny": "1a, 7, 9",
@@ -87,32 +87,32 @@
         "polevky": [
           {
             "cena": null,
-            "nazev": "Kuřecí vývar s trhaným masem, zeleninou a bylinkovým kápáním"
+            "nazev": "Gulášová s mletým masem a bramborami"
           },
           {
             "cena": 30,
-            "nazev": "Alergeny: 1a, 3, 7, 9"
+            "nazev": "Alergeny: 1a, 9"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-25T12:54:12+00:00"
+      "stazeno": "2026-11-27T08:32:03+00:00"
     },
     "kozlovna-oskol": {
-      "den": "2026-11-25",
+      "den": "2026-11-27",
       "menu": {
         "jidla": [
           {
             "cena": 139,
-            "nazev": "Zapečené palačinky s tvarohem a meruňkami"
+            "nazev": "Smažený květák, vařené brambory, tatarka"
           },
           {
             "cena": 149,
-            "nazev": "Kuřecí sekaná pečeně se sýrem, bramborová kaše, zelný salát"
+            "nazev": "Chilli con carne, chléb"
           },
           {
             "cena": 159,
-            "nazev": "Steak z vepřové kotlety se šunkou a vejcem, bramborové krokety"
+            "nazev": "Zapečená vepřová krkovička se sýrem, smetanou, kus - kus"
           },
           {
             "cena": null,
@@ -122,20 +122,20 @@
         "polevky": [
           {
             "cena": 20,
-            "nazev": "Gulášová"
+            "nazev": "Vývar s masem a nudlemi"
           }
         ],
         "poznamky": []
       },
-      "stazeno": "2026-11-25T12:54:13+00:00"
+      "stazeno": "2026-11-27T08:32:04+00:00"
     },
     "nova-bohemia": {
-      "den": "2026-11-25",
+      "den": "2026-11-27",
       "menu": {
         "jidla": [
           {
             "cena": null,
-            "nazev": "M1: Mix řízků 150g (kuřecí prsíčka, vepřová panenka), domácí bramborový salát s majonézou/vařené brambory s máslem a domácí tatarkou (180,-)"
+            "nazev": "M1: Pečená kuřecí prsíčka 170g s bylinkovo-slaninovou nádivkou, bramborová kaše/rýže, okurek (175,-)"
           },
           {
             "cena": 180,
@@ -160,17 +160,18 @@
         ],
         "polevky": [],
         "poznamky": [
-          "Indická květáková (35,-)"
+          "Ukrajinský boršč (40,-)",
+          "Informace o alergenech žádejte u obsluhy."
         ]
       },
-      "stazeno": "2026-11-25T12:54:14+00:00"
+      "stazeno": "2026-11-27T08:32:05+00:00"
     },
     "sladovna": {
-      "den": "2026-11-25",
+      "den": "2026-11-27",
       "menu": {},
       "otisk": "3d48e371fbebaafb",
       "otisk_od": "2026-11-23",
-      "stazeno": "2026-11-25T12:54:15+00:00"
+      "stazeno": "2026-11-27T08:32:06+00:00"
     }
   }
 }

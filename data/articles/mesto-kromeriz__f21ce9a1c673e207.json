@@ -1,0 +1,51 @@
+{
+  "body": [
+    "Advent na Velkém náměstí má zase svůj side quest. Pod vánočním stromem naproti radnici stojí kasičky a hodit do nich můžeš, kolik chceš. Klidně i pár drobných z kapsy, žádné minimum radnice nestanovila.",
+    "Komu to pošleš, rozhodneš ty. Jedna část jde Dětskému domovu Kroměříž, který z toho platí dětem sport, kulturu, různé akce podle zájmů a hlavně letní tábory a pobyty. Druhá jde spolku Korálky, který za ty peníze zajistí, aby se žáci s hendikepem dostali do ZŠ a MŠ Kroměříž, F. Vančury. Konkrétní věci pro konkrétní děcka, to je legit green flag.",
+    "Loni lidi z Kroměříže i přespolní naházeli do kasiček přes 53 tisíc korun. No cap, slušné číslo. Místostarosta Pavel Motyčka za to poděkoval loňským dárcům a díky posílá dopředu i těm letošním. Věří, že lidi zase přispějí, ať to bude jakákoliv částka. Tahle dvojka příjemců sbírá pod stromem společně už od roku 2015.",
+    "Až půjdeš přes náměstí, mrkni pod strom. Pár korun do kasičky je nejlevnější aura farming, co o adventu najdeš."
+  ],
+  "doklad": {
+    "kontaktnich_udaju": 0,
+    "nejdelsi_shoda_slov": 7,
+    "prah_shody": 8,
+    "prekryv_slovniku": 0.464,
+    "primych_citaci": 0,
+    "verze_pojistek": "1.1",
+    "zmereno": "2026-11-27T08:32:40.253589+00:00"
+  },
+  "headline": "Pod stromem na náměstí zase stojí kasičky. Loni přes 53 tisíc, to je W",
+  "id": "mesto-kromeriz:f21ce9a1c673e207",
+  "image_h": 0,
+  "image_local": "",
+  "image_w": 0,
+  "model": "claude-opus-5-5",
+  "published": "2026-11-27T06:27:55+01:00",
+  "rewritten_at": "2026-11-27T08:32:40.253612+00:00",
+  "sensitivity": "volny",
+  "slug": "pod-stromem-na-namesti-zase-stoji-kasicky-loni-pres-53-tisic-to-je-w",
+  "source": "mesto-kromeriz",
+  "source_name": "Město Kroměříž",
+  "tags": [
+    "lidé",
+    "peníze",
+    "akce"
+  ],
+  "tldr": [
+    {
+      "emoji": "🎄📍",
+      "label": "Where Exactly",
+      "text": "Kasičky najdeš pod vánočním stromem na Velkém náměstí, hned naproti radnici."
+    },
+    {
+      "emoji": "🫶🧒",
+      "label": "Pick Your Side",
+      "text": "Sám si vybereš, jestli peníze pošleš Dětskému domovu Kroměříž, nebo spolku Korálky."
+    },
+    {
+      "emoji": "💰✨",
+      "label": "Last Year",
+      "text": "Loni lidi do kasiček naházeli přes 53 tisíc korun."
+    }
+  ]
+}
