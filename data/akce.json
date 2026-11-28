@@ -4231,7 +4231,7 @@
       "web": "https://www.kcarkada.cz/"
     }
   },
-  "stazeno": "2026-11-27T08:32:00.607930+00:00",
+  "stazeno": "2026-11-28T01:59:22.195233+00:00",
   "terminy": [
     {
       "akce_id": 11850,
@@ -4579,38 +4579,6 @@
       "zdarma": false
     },
     {
-      "akce_id": 11843,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21702,
-      "konec": "2026-11-27T23:45:00",
-      "misto": "Dům kultury v Kroměříži",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Tovačovského 2828"
-      },
-      "misto_gps": [
-        49.298481,
-        17.399122
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/",
-      "nazev": "Výstava - Dvakrát Karel Toman",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11843.jpg",
-      "perex": "6. - 27.11.2026 v přízemí Domu kultury vernisáž 6.11.v 16 hodin výstava maleb akademického malíře Karla Tomana st. a kreseb Karla Tomana ml.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Divadlo",
-      "typ_id": 8,
-      "upraveno": "2026-10-19T13:22:07",
-      "vicedenni": true,
-      "vstupenky": "",
-      "web": "",
-      "youtube": "",
-      "zacatek": "2026-11-06T00:00:00",
-      "zdarma": false
-    },
-    {
       "akce_id": 11842,
       "cena": 0,
       "cena_pozn": "",
@@ -4704,108 +4672,6 @@
       "web": "https://www.stara-masna.cz",
       "youtube": "zcSqfJEACQs",
       "zacatek": "2026-11-27T00:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11911,
-      "cena": 0,
-      "cena_pozn": "",
-      "id": 21973,
-      "konec": "2026-11-27T16:00:00",
-      "misto": "Knihovna Kroměřížska",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Slovanské náměstí 3920"
-      },
-      "misto_gps": [
-        49.292074,
-        17.395305
-      ],
-      "misto_web": "http://www.knihkm.cz/",
-      "nazev": "Den pro dětskou knihu",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11911.jpg",
-      "perex": "Oslava narozenin Miloše Macourka.",
-      "poznamka": "",
-      "pro_deti": true,
-      "typ": "Zábava",
-      "typ_id": 14,
-      "upraveno": "2026-10-15T09:25:38",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.knihkm.cz/kalendar-akci.html",
-      "youtube": "",
-      "zacatek": "2026-11-27T13:00:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 10047,
-      "cena": 400,
-      "cena_pozn": "Cena je za pár. Čas ukončení workshopu je pouze orientační.",
-      "id": 21768,
-      "konec": "2026-11-27T18:30:00",
-      "misto": "Klubíčko Kroměříž",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Albertova 4062"
-      },
-      "misto_gps": [
-        49.290614,
-        17.385099
-      ],
-      "misto_web": "http://www.klubickokm.cz/",
-      "nazev": "Workshop pro páry: Vše, co potřebujete vědět k porodu a šestinedělí",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/10047.jpg",
-      "perex": "Workshop vhodný pro nastávající rodiče na téma porod a šestinedělí - jasně, výstižně a prakticky.",
-      "poznamka": "",
-      "pro_deti": false,
-      "typ": "Přednášky a besedy",
-      "typ_id": 12,
-      "upraveno": "2026-10-10T11:09:15",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.klubickokm.cz/vzdelani-pro-rodice/",
-      "youtube": "",
-      "zacatek": "2026-11-27T16:30:00",
-      "zdarma": false
-    },
-    {
-      "akce_id": 11959,
-      "cena": 160,
-      "cena_pozn": "",
-      "id": 21855,
-      "kino": {
-        "format": "dabing | 2D",
-        "pristupnost": "přístupné bez omezení",
-        "puvodni_nazev": "Focker In-Law",
-        "stopaz": "asi 1 hodina a 45 minut"
-      },
-      "konec": "2026-11-27T21:45:00",
-      "misto": "Kino Nadsklepí",
-      "misto_adresa": {
-        "mesto": "Kroměříž",
-        "psc": "767 01",
-        "ulice": "Milíčovo náměstí 488"
-      },
-      "misto_gps": [
-        49.296484,
-        17.391565
-      ],
-      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
-      "nazev": "Všichni fotři jsou lotři (USA 2026)",
-      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11959.jpg",
-      "perex": "Komedie Režie: John Hamburg Hrají: Robert De Niro, Ben Stiller, Ariana Grande, Teri Polo, Skyler Gisondo, Beanie Feldstein, Owen Wilson a další",
-      "poznamka": "dabing",
-      "pro_deti": false,
-      "typ": "Kino",
-      "typ_id": 11,
-      "upraveno": "2026-11-06T06:43:45",
-      "vicedenni": false,
-      "vstupenky": "",
-      "web": "https://www.dk-kromeriz.cz/vsichni-fotri-jsou-lotri",
-      "youtube": "kvJCZyzcmLQ",
-      "zacatek": "2026-11-27T20:00:00",
       "zdarma": false
     },
     {
@@ -8291,6 +8157,75 @@
       "web": "https://www.dk-kromeriz.cz/duna-cast-treti",
       "youtube": "jNcdoqcOdgk",
       "zacatek": "2026-12-27T20:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 11996,
+      "cena": 160,
+      "cena_pozn": "zahájení předprodeje 18. 11. 2026",
+      "id": 21899,
+      "konec": "2026-12-28T19:20:00",
+      "misto": "Klub Starý pivovar",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Prusinovského 114"
+      },
+      "misto_gps": [
+        49.29772,
+        17.393386
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24802-stary-pivovar",
+      "nazev": "Tchyně na zabití",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/11996.jpg",
+      "perex": "Komedie o dospělých dětech a jejich nedospělých matkách. Komedie o vztazích mezi tchyní a zetěm, snachou a tchyní, matkou a dcerou, synem a matkou, mezi mladými manžely a konečně (a hlavně) mezi tchyněmi samotnými...",
+      "poznamka": "",
+      "pro_deti": false,
+      "typ": "Divadlo",
+      "typ_id": 8,
+      "upraveno": "2026-11-13T16:51:34",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/tchyne-na-zabiti-3",
+      "youtube": "",
+      "zacatek": "2026-12-28T18:00:00",
+      "zdarma": false
+    },
+    {
+      "akce_id": 12015,
+      "cena": 180,
+      "cena_pozn": "3D: 190 Kč",
+      "id": 21929,
+      "kino": {
+        "format": "titulky | 2D",
+        "pristupnost": "nevhodné pro nezletilé osoby do 12 let",
+        "stopaz": "asi 2 hodiny a 50 minut"
+      },
+      "konec": "2026-12-28T21:50:00",
+      "misto": "Kino Nadsklepí",
+      "misto_adresa": {
+        "mesto": "Kroměříž",
+        "psc": "767 01",
+        "ulice": "Milíčovo náměstí 488"
+      },
+      "misto_gps": [
+        49.296484,
+        17.391565
+      ],
+      "misto_web": "http://www.dk-kromeriz.cz/24801-nadsklepi",
+      "nazev": "Avengers: Doomsday (USA 2026)",
+      "obrazek": "https://opendata.mesto-kromeriz.cz/akce/images/events/12015.jpg",
+      "perex": "NA TUTO PROJEKCI JE NUTNO POUŽITÍ 3D BRÝLÍ – standardní typ: CinemaNext 3D glasses.",
+      "poznamka": "titulky",
+      "pro_deti": false,
+      "typ": "Kino",
+      "typ_id": 11,
+      "upraveno": "2026-11-18T07:22:39",
+      "vicedenni": false,
+      "vstupenky": "",
+      "web": "https://www.dk-kromeriz.cz/avengers-doomsday",
+      "youtube": "gVndBKAeoYM",
+      "zacatek": "2026-12-28T19:00:00",
       "zdarma": false
     }
   ],
